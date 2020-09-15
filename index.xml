@@ -7,7 +7,7 @@
     <description>Room of Requirement</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>©</copyright><lastBuildDate>Sat, 01 Jun 2030 13:00:00 +0000</lastBuildDate>
     <image>
-      <url>/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <url>/images/icon_hub0cb53550ede56fdccc60540659dbf84_11803_512x512_fill_lanczos_center_2.png</url>
       <title>Room of Requirement</title>
       <link>/</link>
     </image>
@@ -302,7 +302,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-736812594&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-465839217&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -312,7 +312,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-736812594&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-465839217&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
