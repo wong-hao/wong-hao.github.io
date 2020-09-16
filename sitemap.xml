@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/authors/</loc>
+    <lastmod>2030-06-01T13:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/talk/example/</loc>
     <lastmod>2030-06-01T13:00:00+00:00</lastmod>
   </url>
@@ -23,8 +28,8 @@
   </url>
   
   <url>
-    <loc>/authors/</loc>
-    <lastmod>2020-09-09T00:00:00+00:00</lastmod>
+    <loc>/author/%E7%8E%8B%E6%98%8A/</loc>
+    <lastmod>2030-06-01T13:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -49,11 +54,6 @@
   
   <url>
     <loc>/category/%E6%B1%87%E6%8A%A5/</loc>
-    <lastmod>2020-09-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/author/%E7%8E%8B%E6%98%8A/</loc>
     <lastmod>2020-09-09T00:00:00+00:00</lastmod>
   </url>
   
