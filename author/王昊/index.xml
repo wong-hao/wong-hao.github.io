@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>王昊 | Room of Requirement</title>
-    <link>haowong.com/author/%E7%8E%8B%E6%98%8A/</link>
-      <atom:link href="haowong.com/author/%E7%8E%8B%E6%98%8A/index.xml" rel="self" type="application/rss+xml" />
+    <link>/author/%E7%8E%8B%E6%98%8A/</link>
+      <atom:link href="/author/%E7%8E%8B%E6%98%8A/index.xml" rel="self" type="application/rss+xml" />
     <description>王昊</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>No copy</copyright><lastBuildDate>Sat, 01 Jun 2030 13:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>©</copyright><lastBuildDate>Sat, 01 Jun 2030 13:00:00 +0000</lastBuildDate>
     <image>
-      <url>/haowong.com/images/icon_hub0cb53550ede56fdccc60540659dbf84_11803_512x512_fill_lanczos_center_2.png</url>
+      <url>/images/icon_hub0cb53550ede56fdccc60540659dbf84_11803_512x512_fill_lanczos_center_2.png</url>
       <title>王昊</title>
-      <link>haowong.com/author/%E7%8E%8B%E6%98%8A/</link>
+      <link>/author/%E7%8E%8B%E6%98%8A/</link>
     </image>
     
     <item>
       <title>Seminar</title>
-      <link>haowong.com/talk/seminar/</link>
+      <link>/talk/seminar/</link>
       <pubDate>Sat, 01 Jun 2030 13:00:00 +0000</pubDate>
-      <guid>haowong.com/talk/seminar/</guid>
+      <guid>/talk/seminar/</guid>
       <description>&lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
     Click on the &lt;strong&gt;Slides&lt;/strong&gt; button above to view the built-in slides feature.
@@ -98,9 +98,9 @@
     
     <item>
       <title>第七次汇报</title>
-      <link>haowong.com/post/report/%E7%AC%AC%E4%B8%83%E6%AC%A1%E6%B1%87%E6%8A%A5/</link>
+      <link>/post/report/%E7%AC%AC%E4%B8%83%E6%AC%A1%E6%B1%87%E6%8A%A5/</link>
       <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>
-      <guid>haowong.com/post/report/%E7%AC%AC%E4%B8%83%E6%AC%A1%E6%B1%87%E6%8A%A5/</guid>
+      <guid>/post/report/%E7%AC%AC%E4%B8%83%E6%AC%A1%E6%B1%87%E6%8A%A5/</guid>
       <description>&lt;p&gt;问题：学习Latex&lt;/p&gt;
 &lt;p&gt;阅读材料：第三次汇报阅读材料1&lt;/p&gt;
 &lt;p&gt;整合资料: 
@@ -109,9 +109,9 @@
     
     <item>
       <title>第六次汇报</title>
-      <link>haowong.com/post/report/%E7%AC%AC%E5%85%AD%E6%AC%A1%E6%B1%87%E6%8A%A5/</link>
+      <link>/post/report/%E7%AC%AC%E5%85%AD%E6%AC%A1%E6%B1%87%E6%8A%A5/</link>
       <pubDate>Mon, 24 Aug 2020 00:00:00 +0000</pubDate>
-      <guid>haowong.com/post/report/%E7%AC%AC%E5%85%AD%E6%AC%A1%E6%B1%87%E6%8A%A5/</guid>
+      <guid>/post/report/%E7%AC%AC%E5%85%AD%E6%AC%A1%E6%B1%87%E6%8A%A5/</guid>
       <description>&lt;p&gt;整合资料: 
 &lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVZsSGx4VE5lLXREbDA5SHJPNXI0aFVCNjZOaGxpeFFJQ1BEUFVGVFlZc0pIQT9lPXVuZTllWA==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击下载&lt;/a&gt;&lt;/p&gt;
 </description>
@@ -119,9 +119,9 @@
     
     <item>
       <title>第五次汇报</title>
-      <link>haowong.com/post/report/%E7%AC%AC%E4%BA%94%E6%AC%A1%E6%B1%87%E6%8A%A5-/</link>
+      <link>/post/report/%E7%AC%AC%E4%BA%94%E6%AC%A1%E6%B1%87%E6%8A%A5-/</link>
       <pubDate>Tue, 18 Aug 2020 00:00:00 +0000</pubDate>
-      <guid>haowong.com/post/report/%E7%AC%AC%E4%BA%94%E6%AC%A1%E6%B1%87%E6%8A%A5-/</guid>
+      <guid>/post/report/%E7%AC%AC%E4%BA%94%E6%AC%A1%E6%B1%87%E6%8A%A5-/</guid>
       <description>&lt;h3 id=&#34;分工&#34;&gt;分工&lt;/h3&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;阅读模式与方法
 阅读后的思考与综述
@@ -132,9 +132,9 @@
     
     <item>
       <title>第三次汇报</title>
-      <link>haowong.com/post/report/%E7%AC%AC%E4%B8%89%E6%AC%A1%E6%B1%87%E6%8A%A5/</link>
+      <link>/post/report/%E7%AC%AC%E4%B8%89%E6%AC%A1%E6%B1%87%E6%8A%A5/</link>
       <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
-      <guid>haowong.com/post/report/%E7%AC%AC%E4%B8%89%E6%AC%A1%E6%B1%87%E6%8A%A5/</guid>
+      <guid>/post/report/%E7%AC%AC%E4%B8%89%E6%AC%A1%E6%B1%87%E6%8A%A5/</guid>
       <description>&lt;p&gt;整合资料: 
 &lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWZLWGhXTURCb3hPaFczUE5pVWR4eUFCSWZJQk1SaU00SldNRVJuSFV6dm02dz9lPUR6MElmRA==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击下载&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;阅读的文件1: 
@@ -145,9 +145,9 @@
     
     <item>
       <title>第二次汇报</title>
-      <link>haowong.com/post/report/%E7%AC%AC%E4%BA%8C%E6%AC%A1%E6%B1%87%E6%8A%A5/</link>
+      <link>/post/report/%E7%AC%AC%E4%BA%8C%E6%AC%A1%E6%B1%87%E6%8A%A5/</link>
       <pubDate>Wed, 22 Jul 2020 00:00:00 +0000</pubDate>
-      <guid>haowong.com/post/report/%E7%AC%AC%E4%BA%8C%E6%AC%A1%E6%B1%87%E6%8A%A5/</guid>
+      <guid>/post/report/%E7%AC%AC%E4%BA%8C%E6%AC%A1%E6%B1%87%E6%8A%A5/</guid>
       <description>&lt;p&gt;ppt: 
 &lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWVKY09rLWlGdUZDZ3NjdmpYNUczb2tCR2dNTE9fNWEyUWlGQjhJWDRnemRrdz9lPWRDTHFJaw==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击下载&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;阅读的文件: 
@@ -156,9 +156,9 @@
     
     <item>
       <title>第四次汇报</title>
-      <link>haowong.com/post/report/%E7%AC%AC%E5%9B%9B%E6%AC%A1%E6%B1%87%E6%8A%A5/</link>
+      <link>/post/report/%E7%AC%AC%E5%9B%9B%E6%AC%A1%E6%B1%87%E6%8A%A5/</link>
       <pubDate>Wed, 22 Jul 2020 00:00:00 +0000</pubDate>
-      <guid>haowong.com/post/report/%E7%AC%AC%E5%9B%9B%E6%AC%A1%E6%B1%87%E6%8A%A5/</guid>
+      <guid>/post/report/%E7%AC%AC%E5%9B%9B%E6%AC%A1%E6%B1%87%E6%8A%A5/</guid>
       <description>&lt;h3 id=&#34;问题&#34;&gt;问题&lt;/h3&gt;
 &lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;删去一些不要的内容
 图片可以写稿子，但一定不能按稿念，会对不上
@@ -180,9 +180,9 @@
     
     <item>
       <title>第一次汇报</title>
-      <link>haowong.com/post/report/%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%B1%87%E6%8A%A5/</link>
+      <link>/post/report/%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%B1%87%E6%8A%A5/</link>
       <pubDate>Sat, 18 Jul 2020 00:00:00 +0000</pubDate>
-      <guid>haowong.com/post/report/%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%B1%87%E6%8A%A5/</guid>
+      <guid>/post/report/%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%B1%87%E6%8A%A5/</guid>
       <description>&lt;p&gt;汇报ppt: 
 &lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWR6NUg3c0JCa0pKb2Qxbm5TQmowSm9CNUMtcXVTVGFfemhzX1hFd2I1cC1QZz9lPWZBT2FnOQ==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击下载&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;阅读的文件: 
@@ -194,9 +194,9 @@
     
     <item>
       <title>An example preprint / working paper</title>
-      <link>haowong.com/publication/preprint/</link>
+      <link>/publication/preprint/</link>
       <pubDate>Sun, 07 Apr 2019 00:00:00 +0000</pubDate>
-      <guid>haowong.com/publication/preprint/</guid>
+      <guid>/publication/preprint/</guid>
       <description>&lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
     Click the &lt;em&gt;Slides&lt;/em&gt; button above to demo Academic&amp;rsquo;s Markdown slides feature.
@@ -209,9 +209,9 @@
     
     <item>
       <title>Display Jupyter Notebooks with Academic</title>
-      <link>haowong.com/post/jupyter/</link>
+      <link>/post/jupyter/</link>
       <pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate>
-      <guid>haowong.com/post/jupyter/</guid>
+      <guid>/post/jupyter/</guid>
       <description>&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from IPython.core.display import Image
 Image(&#39;https://www.python.org/static/community_logos/python-logo-master-v3-TM-flattened.png&#39;)
 &lt;/code&gt;&lt;/pre&gt;
@@ -258,9 +258,9 @@ date: 2019-09-01
     
     <item>
       <title>Academic: the website builder for Hugo</title>
-      <link>haowong.com/post/getting-started/</link>
+      <link>/post/getting-started/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>haowong.com/post/getting-started/</guid>
+      <guid>/post/getting-started/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Create a free website with Academic using Markdown, Jupyter, or RStudio. Choose a beautiful color theme and build anything with the Page Builder - over 40 &lt;em&gt;widgets&lt;/em&gt;, &lt;em&gt;themes&lt;/em&gt;, and &lt;em&gt;language packs&lt;/em&gt; included!&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;
 &lt;a href=&#34;https://academic-demo.netlify.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Check out the latest &lt;strong&gt;demo&lt;/strong&gt;&lt;/a&gt; of what you&amp;rsquo;ll get in less than 10 minutes, or 
@@ -405,9 +405,9 @@ date: 2019-09-01
     
     <item>
       <title>An example journal article</title>
-      <link>haowong.com/publication/journal-article/</link>
+      <link>/publication/journal-article/</link>
       <pubDate>Tue, 01 Sep 2015 00:00:00 +0000</pubDate>
-      <guid>haowong.com/publication/journal-article/</guid>
+      <guid>/publication/journal-article/</guid>
       <description>&lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
     Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
@@ -425,9 +425,9 @@ date: 2019-09-01
     
     <item>
       <title>An example conference paper</title>
-      <link>haowong.com/publication/conference-paper/</link>
+      <link>/publication/conference-paper/</link>
       <pubDate>Mon, 01 Jul 2013 00:00:00 +0000</pubDate>
-      <guid>haowong.com/publication/conference-paper/</guid>
+      <guid>/publication/conference-paper/</guid>
       <description>&lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
     Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
