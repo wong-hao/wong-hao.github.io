@@ -153,11 +153,6 @@
   </url>
   
   <url>
-    <loc>https://haowong.com/tag/demo/</loc>
-    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://haowong.com/project/external-project/</loc>
     <lastmod>2016-04-27T00:00:00+00:00</lastmod>
   </url>
@@ -169,6 +164,11 @@
   
   <url>
     <loc>https://haowong.com/project/</loc>
+    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://haowong.com/tag/wireless-communication/</loc>
     <lastmod>2016-04-27T00:00:00+00:00</lastmod>
   </url>
   
