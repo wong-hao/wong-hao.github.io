@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Recent &amp; Upcoming Talks | Room of Requirement</title>
+    <link>https://haowong.com/talk/</link>
+      <atom:link href="https://haowong.com/talk/index.xml" rel="self" type="application/rss+xml" />
+    <description>Recent &amp; Upcoming Talks</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>©</copyright><lastBuildDate>Sat, 01 Jun 2030 13:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://haowong.com/images/icon_hub0cb53550ede56fdccc60540659dbf84_11803_512x512_fill_lanczos_center_2.png</url>
+      <title>Recent &amp; Upcoming Talks</title>
+      <link>https://haowong.com/talk/</link>
+    </image>
+    
+    <item>
+      <title>Example Talk</title>
+      <link>https://haowong.com/talk/example/</link>
+      <pubDate>Sat, 01 Jun 2030 13:00:00 +0000</pubDate>
+      <guid>https://haowong.com/talk/example/</guid>
+      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click on the &lt;strong&gt;Slides&lt;/strong&gt; button above to view the built-in slides feature.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Slides can be added in a few ways:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Create&lt;/strong&gt; slides using Academic&amp;rsquo;s 
+&lt;a href=&#34;https://sourcethemes.com/academic/docs/managing-content/#create-slides&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;em&gt;Slides&lt;/em&gt;&lt;/a&gt; feature and link using &lt;code&gt;slides&lt;/code&gt; parameter in the front matter of the talk file&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Upload&lt;/strong&gt; an existing slide deck to &lt;code&gt;static/&lt;/code&gt; and link using &lt;code&gt;url_slides&lt;/code&gt; parameter in the front matter of the talk file&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Embed&lt;/strong&gt; your slides (e.g. Google Slides) or presentation video on this page using 
+&lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;shortcodes&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Further talk details can easily be added to this page using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Seminar</title>
+      <link>https://haowong.com/talk/seminar/</link>
+      <pubDate>Sat, 01 Jun 2030 13:00:00 +0000</pubDate>
+      <guid>https://haowong.com/talk/seminar/</guid>
+      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click on the &lt;strong&gt;Slides&lt;/strong&gt; button above to view the built-in slides feature.
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;Slides can be added in a few ways:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Create&lt;/strong&gt; slides using Academic&amp;rsquo;s 
+&lt;a href=&#34;https://sourcethemes.com/academic/docs/managing-content/#create-slides&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;em&gt;Slides&lt;/em&gt;&lt;/a&gt; feature and link using &lt;code&gt;slides&lt;/code&gt; parameter in the front matter of the talk file&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Upload&lt;/strong&gt; an existing slide deck to &lt;code&gt;static/&lt;/code&gt; and link using &lt;code&gt;url_slides&lt;/code&gt; parameter in the front matter of the talk file&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Embed&lt;/strong&gt; your slides (e.g. Google Slides) or presentation video on this page using 
+&lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;shortcodes&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Further talk details can easily be added to this page using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
+&lt;h3 id=&#34;时间安排表每周二晚630&#34;&gt;时间安排表（每周二晚6.30）&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.qq.com/sheet/DRVFQUExjaXZKbVdk?tab=BB08J2&#34;&gt;https://docs.qq.com/sheet/DRVFQUExjaXZKbVdk?tab=BB08J2&lt;/a&gt;
+&lt;img src=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVZuX2R2b3cxS1JMZ2w4Z3dhOEhUWVFCY3FDNzlrMjdIbEl5V2dDLXZzblFtQT9lPW13QmYxZA==.mp3&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;内容要求&#34;&gt;内容要求&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;1.研究的问题：为什么好
+2.研究现状
+3.用的技术，方法，创新性
+4.实验
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;时长要求&#34;&gt;时长要求&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;1.一篇文章15-20min
+2.一共三篇
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;团队组成&#34;&gt;团队组成&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;1.刘彧静：研一
+         软院保研
+
+2.马胜：研二
+     无线网络视频传输优化
+
+3.孙声宇：研二
+     数据采集，资源调度分配
+
+4.顾啸林：博二
+     无线网络
+
+5.业苇渡：硕读一年，博五
+         无人机调度、边缘计算
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;关注问题&#34;&gt;关注问题&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;预演，不用演讲稿，特别注意讲解图片、公式与算法
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;第一篇&#34;&gt;第一篇&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;与第四次汇报相同
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;第二篇&#34;&gt;第二篇&lt;/h2&gt;
+&lt;p&gt;阅读的文件: 
+&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9oaHUyMDE2LW15LnNoYXJlcG9pbnQuY29tLzpiOi9nL3BlcnNvbmFsL3pvbmU5NzEwMTZfaGh1X2VkdV9jbi9FYU1Xd0hUX1ZZcEVyWTBlZFdaOXByZ0J1MWNxTHpDMWdmZlBMUjJjbzBSLXlRP2U9eVl3WENk.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击阅读&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;汇报ppt: 
+&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9oaHUyMDE2LW15LnNoYXJlcG9pbnQuY29tLzpwOi9nL3BlcnNvbmFsL3pvbmU5NzEwMTZfaGh1X2VkdV9jbi9FVG04NW1JX1FZZE9pdnAwZ19ocG9fWUJ6YkV4S25obk5VdFFfSEk4X0laNk93P2U9RFFVNTA5.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击阅读&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;作者主页: 
+&lt;a href=&#34;https://www.akshaygadre.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击观看&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;项目主页: 
+&lt;a href=&#34;https://www.witechlab.com/chime.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击观看&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;作者ppt: 
+&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9oaHUyMDE2LW15LnNoYXJlcG9pbnQuY29tLzpiOi9nL3BlcnNvbmFsL3pvbmU5NzEwMTZfaGh1X2VkdV9jbi9FYnFfeGVKTkRqeE1zZTFNM2ZjTlhtNEJDRWJEZzB0TTVyY1RiUzdMSmd2bHdBP2U9N3I4bWwx.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击阅读&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;作者的演讲: 
+&lt;a href=&#34;https://www.usenix.org/conference/nsdi20/presentation/gadre&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击阅读&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;会议详情：
+&lt;a href=&#34;https://www.usenix.org/conference/nsdi20&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击阅读&lt;/a&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;复数权重
+三次样条插值法
+保护频带
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;第三篇&#34;&gt;第三篇&lt;/h2&gt;
+&lt;p&gt;阅读的文件：
+&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9oaHUyMDE2LW15LnNoYXJlcG9pbnQuY29tLzpiOi9nL3BlcnNvbmFsL3pvbmU5NzEwMTZfaGh1X2VkdV9jbi9FVUpZNmh6MUh0OVBoeTZ3X0tNcllJc0JUMjRzRG9BMVkwWUJIMGdrNHFEU013P2U9YzMySmZj.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击阅读&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;汇报ppt: 
+&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9oaHUyMDE2LW15LnNoYXJlcG9pbnQuY29tLzpwOi9nL3BlcnNvbmFsL3pvbmU5NzEwMTZfaGh1X2VkdV9jbi9FVnlkWTlpQ2lWaElxUmhrRzIyWjd6NEJsMTlTdnNtWFI0QzV5bzlaVmM4M2hnP2U9RkdscVUx.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击阅读&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;会议详情：
+&lt;a href=&#34;https://infocom.info/day/1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击阅读&lt;/a&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;RSSI：dBm与SNR：db的区别，可以将其用于分析公式(11)(12)
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
