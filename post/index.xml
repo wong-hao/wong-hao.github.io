@@ -5,12 +5,510 @@
     <link>https://haowong.com/post/</link>
       <atom:link href="https://haowong.com/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>©</copyright><lastBuildDate>Wed, 09 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>©</copyright><lastBuildDate>Sat, 26 Sep 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://haowong.com/images/icon_hub0cb53550ede56fdccc60540659dbf84_11803_512x512_fill_lanczos_center_2.png</url>
       <title>Posts</title>
       <link>https://haowong.com/post/</link>
     </image>
+    
+    <item>
+      <title>Markdown语法</title>
+      <link>https://haowong.com/2020/09/26/markdown%E8%AF%AD%E6%B3%95/</link>
+      <pubDate>Sat, 26 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>https://haowong.com/2020/09/26/markdown%E8%AF%AD%E6%B3%95/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;此文档在更新时可能会被覆盖或删除&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在使用Markdown之前，你可能需要先了解一下关于markdown的简单语法。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;1标题&#34;&gt;1.标题&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;使用 &lt;code&gt;#&lt;/code&gt; 表示标题，一级标题使用一个 &lt;code&gt;#&lt;/code&gt; ，二级标题使用两个 &lt;code&gt;##&lt;/code&gt; ，以此类推，共有六级标题。&lt;/li&gt;
+&lt;li&gt;使用 &lt;code&gt;=====&lt;/code&gt; 表示高阶标题，使用 &lt;code&gt;---------&lt;/code&gt; 表示次阶标题。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;#&lt;/code&gt; 和标题之间记得有个空格哦。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;====&lt;/code&gt; 和 &lt;code&gt;----&lt;/code&gt; 表示标题时，大于等于2个都可以表示。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;2引用&#34;&gt;2.引用&lt;/h3&gt;
+&lt;p&gt;使用 &lt;code&gt;&amp;gt;&lt;/code&gt; 表示引用， &lt;code&gt;&amp;gt;&amp;gt;&lt;/code&gt; 表示引用里面再套一层引用，依次类推。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;如果 &lt;code&gt;&amp;gt;&lt;/code&gt; 和 &lt;code&gt;&amp;gt;&amp;gt;&lt;/code&gt; 嵌套使用的话，从 &lt;code&gt;&amp;gt;&amp;gt;&lt;/code&gt; 退到 &lt;code&gt;&amp;gt;&lt;/code&gt; 时，必须之间要加一个空格或者 &lt;code&gt;&amp;gt;&lt;/code&gt; 作为过渡，否则默认为下一行和上一行是同一级别的引用。如示例所示。&lt;/li&gt;
+&lt;li&gt;引用标记里可以使用其他标记，如：有序列表或无序列表标记，代码标记等。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;示例&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;这是一级引用&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;这是二级引用&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;这是三级引用&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;这是一级引用&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;3-代码块&#34;&gt;3 代码块&lt;/h3&gt;
+&lt;p&gt;使用3个连续的` 符号包围起来表示代码块。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;本文档所有使用讲解Markdown语法标记示例的地方都是使用代码块标记的。&lt;/li&gt;
+&lt;li&gt;代码块前后都得有换行哦&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;示例&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$(document).ready(function() {
+  $(&#39;pre code&#39;).each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+});
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;4-行内代码&#34;&gt;4 行内代码&lt;/h3&gt;
+&lt;p&gt;使用``表示行内代码。本页部分文字中间的英文字母就是使用行内代码标记标记的。&lt;/p&gt;
+&lt;p&gt;示例&lt;/p&gt;
+&lt;p&gt;这是 &lt;code&gt;javascript&lt;/code&gt; 代码&lt;/p&gt;
+&lt;h3 id=&#34;5-链接&#34;&gt;5 链接&lt;/h3&gt;
+&lt;p&gt;使用 &lt;code&gt;[](link)&lt;/code&gt; 表示行内链接。其中：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;[]&lt;/code&gt; 内的内容为要添加链接的文字。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;link&lt;/code&gt; 为链接地址。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;示例&lt;/p&gt;
+&lt;p&gt;我觉得
+&lt;a href=&#34;https://apps.apple.com/app/id1472328263&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Markdown&lt;/a&gt;真是个棒棒哒的编辑器😊.&lt;/p&gt;
+&lt;h3 id=&#34;6-数学公式&#34;&gt;6 数学公式&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;$&lt;/code&gt;包围的区块将会解析为数学公式，连续的&lt;code&gt;$$&lt;/code&gt;将独占一行并居中显示&lt;/p&gt;
+&lt;p&gt;示例&lt;/p&gt;
+&lt;p&gt;当 $a \ne 0$, 此方程式有两个解 $ax^2 + bx + c = 0$，他们是&lt;/p&gt;
+&lt;p&gt;$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$&lt;/p&gt;
+&lt;h3 id=&#34;7-导入图片&#34;&gt;7 导入图片&lt;/h3&gt;
+&lt;p&gt;使用 &lt;code&gt;![Alt text](/path/to/img.jpg)&lt;/code&gt; 导入图片。其中：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Alt text&lt;/code&gt; 为如果图片无法显示时显示的文字；&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;/path/to/img.jpg&lt;/code&gt; 为图片所在路径；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;点击辅助键盘中的添加图片按钮可快捷添加图片&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;==本地引用==是图片直接存储到本地通过相对路径引用，无需网络连接&lt;/li&gt;
+&lt;li&gt;==上传图片==将把图片上传至图床，这样在文档或图片移动时仍然可以访问图片&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;示例&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://i.loli.net/2020/03/14/I8wCZN4r9UltqTd.jpg&#34; alt=&#34;Markdown&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;8-todo-list&#34;&gt;8 Todo List&lt;/h3&gt;
+&lt;p&gt;小写x表示已完成， 空格表示未完成&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 支持数学公式&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 支持TodoList&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 支持自定义样式&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 支持自定义图床&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;9-粗体斜体高亮和删除线&#34;&gt;9 粗体，斜体，高亮和删除线&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;使用 &lt;code&gt;**&lt;/code&gt; 或者 &lt;code&gt;__&lt;/code&gt; 表示&lt;strong&gt;粗体&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;使用 &lt;code&gt;*&lt;/code&gt; 或者 &lt;code&gt;_&lt;/code&gt; 表示&lt;em&gt;斜体&lt;/em&gt;。&lt;/li&gt;
+&lt;li&gt;使用&lt;code&gt;==&lt;/code&gt;表示==高亮==&lt;/li&gt;
+&lt;li&gt;使用&lt;code&gt;~~&lt;/code&gt;表示&lt;del&gt;删除&lt;/del&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;*&lt;/code&gt;，&lt;code&gt;=&lt;/code&gt; 或 &lt;code&gt;_&lt;/code&gt; 的后面&lt;strong&gt;不要跟空格哦&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;10-列表&#34;&gt;10 列表&lt;/h3&gt;
+&lt;p&gt;使用 &lt;code&gt;1. 2. 3.&lt;/code&gt; 表示有序列表，使用 &lt;code&gt;*&lt;/code&gt; 或 &lt;code&gt;-&lt;/code&gt; 或 &lt;code&gt;+&lt;/code&gt; 表示无序列表。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;无序列表或有序列表标记和后面的文字之间要有一个空格隔开。&lt;/li&gt;
+&lt;li&gt;有序列表标记不是按照你写的数字进行显示的，而是根据当前有序列表标记所在位置显示的，如示例1所示。&lt;/li&gt;
+&lt;li&gt;无序列表的项目符号是按照实心圆、空心圆、实心方格的层级关系递进的，如例2所示。通常情况下，同一层级使用同一种标记表示，便于自己查看和管理。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;例1有序列表&#34;&gt;例1：有序列表&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;第一点&lt;/li&gt;
+&lt;li&gt;第二点&lt;/li&gt;
+&lt;li&gt;第三点&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;例2无序列表&#34;&gt;例2：无序列表&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;一级无序列表内容
+&lt;ul&gt;
+&lt;li&gt;二级无序列表内容&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;二级无序列表内容
+&lt;ul&gt;
+&lt;li&gt;三级无序列表内容&lt;/li&gt;
+&lt;li&gt;三级无序列表内容&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;一级无序列表内容
+&lt;ul&gt;
+&lt;li&gt;二级无序列表内容&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;11-分割线&#34;&gt;11 分割线&lt;/h3&gt;
+&lt;p&gt;使用 &lt;code&gt;---&lt;/code&gt; 或者 &lt;code&gt;***&lt;/code&gt; 或者 &lt;code&gt;* * *&lt;/code&gt; 表示水平分割线。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;只要 &lt;code&gt;*&lt;/code&gt; 或者 &lt;code&gt;-&lt;/code&gt; 大于等于三个就可组成一条平行线。&lt;/li&gt;
+&lt;li&gt;使用 &lt;code&gt;---&lt;/code&gt; 作为水平分割线时，要在它的前后都空一行，防止 &lt;code&gt;---&lt;/code&gt; 被当成标题标记的表示方式。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;示例&lt;/p&gt;
+&lt;hr&gt;
+&lt;hr&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;12表格&#34;&gt;12表格&lt;/h3&gt;
+&lt;p&gt;上面空一行下面空两行&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Heading&lt;/th&gt;
+&lt;th&gt;Heading&lt;/th&gt;
+&lt;th&gt;Heading&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Cell&lt;/td&gt;
+&lt;td&gt;Cell&lt;/td&gt;
+&lt;td&gt;Cell&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Cell&lt;/td&gt;
+&lt;td&gt;Cell&lt;/td&gt;
+&lt;td&gt;Cell&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;添加边框:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Heading&lt;/th&gt;
+&lt;th&gt;Heading&lt;/th&gt;
+&lt;th&gt;Heading&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Cell&lt;/td&gt;
+&lt;td&gt;Cell&lt;/td&gt;
+&lt;td&gt;Cell&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Cell&lt;/td&gt;
+&lt;td&gt;Cell&lt;/td&gt;
+&lt;td&gt;Cell&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;对齐方式:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;Heading&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;Heading&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;Heading&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Left&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Center&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;Right&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Left&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Center&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;Right&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;img src=&#34;https://my-wechat.mdnice.com/logo.svg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;请使用 &lt;strong&gt;Chrome&lt;/strong&gt; 浏览器。&lt;/p&gt;
+&lt;p&gt;请阅读下方文本熟悉工具使用方法，本文可直接拷贝到微信中预览。&lt;/p&gt;
+&lt;h2 id=&#34;1-markdown-nice-简介&#34;&gt;1 Markdown Nice 简介&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;支持自定义样式的 Markdown 编辑器&lt;/li&gt;
+&lt;li&gt;支持微信公众号、知乎和稀土掘金&lt;/li&gt;
+&lt;li&gt;欢迎扫码回复「排版」加入用户群&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://my-wechat.mdnice.com/wechat.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;2-主题&#34;&gt;2 主题&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://preview.mdnice.com/themes/&#34;&gt;https://preview.mdnice.com/themes/&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;欢迎提交主题，提供更多文章示例~~&lt;/p&gt;
+&lt;h2 id=&#34;3-通用语法&#34;&gt;3 通用语法&lt;/h2&gt;
+&lt;h3 id=&#34;31-标题&#34;&gt;3.1 标题&lt;/h3&gt;
+&lt;p&gt;在文字写书写不同数量的&lt;code&gt;#&lt;/code&gt;可以完成不同的标题，如下：&lt;/p&gt;
+&lt;h1 id=&#34;一级标题&#34;&gt;一级标题&lt;/h1&gt;
+&lt;h2 id=&#34;二级标题&#34;&gt;二级标题&lt;/h2&gt;
+&lt;h3 id=&#34;三级标题&#34;&gt;三级标题&lt;/h3&gt;
+&lt;h3 id=&#34;32-无序列表&#34;&gt;3.2 无序列表&lt;/h3&gt;
+&lt;p&gt;无序列表的使用，在符号&lt;code&gt;-&lt;/code&gt;后加空格使用。如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;无序列表 1&lt;/li&gt;
+&lt;li&gt;无序列表 2&lt;/li&gt;
+&lt;li&gt;无序列表 3&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如果要控制列表的层级，则需要在符号&lt;code&gt;-&lt;/code&gt;前使用空格。如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;无序列表 1&lt;/li&gt;
+&lt;li&gt;无序列表 2
+&lt;ul&gt;
+&lt;li&gt;无序列表 2.1&lt;/li&gt;
+&lt;li&gt;无序列表 2.2&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;由于微信原因，最多支持到二级列表&lt;/strong&gt;。&lt;/p&gt;
+&lt;h3 id=&#34;33-有序列表&#34;&gt;3.3 有序列表&lt;/h3&gt;
+&lt;p&gt;有序列表的使用，在数字及符号&lt;code&gt;.&lt;/code&gt;后加空格后输入内容，如下：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;有序列表 1&lt;/li&gt;
+&lt;li&gt;有序列表 2&lt;/li&gt;
+&lt;li&gt;有序列表 3&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;34-粗体和斜体&#34;&gt;3.4 粗体和斜体&lt;/h3&gt;
+&lt;p&gt;粗体的使用是在需要加粗的文字前后各加两个&lt;code&gt;*&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;而斜体的使用则是在需要斜体的文字前后各加一个&lt;code&gt;*&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;如果要使用粗体和斜体，那么就是在需要操作的文字前后加三个&lt;code&gt;*&lt;/code&gt;。如下：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;这个是粗体&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;这个是斜体&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;这个是粗体加斜体&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;注：由于 commonmark 标准，可能会导致加粗与想象不一致，如下&lt;/p&gt;
+&lt;p&gt;**今天天气好晴朗，**处处好风光。&lt;/p&gt;
+&lt;p&gt;这个是正常现象，请参考
+&lt;a href=&#34;https://github.com/markdown-it/markdown-it/issues/410&#34; title=&#34;加粗 Issue&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;加粗 Issue&lt;/a&gt;。&lt;/p&gt;
+&lt;h3 id=&#34;35-链接&#34;&gt;3.5 链接&lt;/h3&gt;
+&lt;p&gt;微信公众号仅支持公众号文章链接，即域名为&lt;code&gt;https://mp.weixin.qq.com/&lt;/code&gt;的合法链接。使用方法如下所示：&lt;/p&gt;
+&lt;p&gt;对于该论述，欢迎读者查阅之前发过的文章，
+&lt;a href=&#34;https://mp.weixin.qq.com/s/s5IhxV2ooX3JN_X416nidA&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;你是《未来世界的幸存者》么？&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;36-引用&#34;&gt;3.6 引用&lt;/h3&gt;
+&lt;p&gt;引用的格式是在符号 &lt;code&gt;&amp;gt;&lt;/code&gt; 后面书写文字，文字的内容可以包含标题、链接、图片、粗体和斜体等。&lt;/p&gt;
+&lt;p&gt;一级引用如下：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;h3 id=&#34;一级引用示例&#34;&gt;一级引用示例&lt;/h3&gt;
+&lt;p&gt;读一本好书，就是在和高尚的人谈话。 &lt;strong&gt;——歌德&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://mp.weixin.qq.com/s/lM808MxUu6tp8zU8SBu3sg&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Markdown Nice最全功能介绍&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://my-wechat.mdnice.com/wechat.jpg&#34; alt=&#34;这里写图片描述&#34;&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;当使用多个 &lt;code&gt;&amp;gt;&lt;/code&gt; 符号时，就会变成多级引用&lt;/p&gt;
+&lt;p&gt;二级引用如下：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;blockquote&gt;
+&lt;h3 id=&#34;二级引用示例&#34;&gt;二级引用示例&lt;/h3&gt;
+&lt;p&gt;读一本好书，就是在和高尚的人谈话。 &lt;strong&gt;——歌德&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://mp.weixin.qq.com/s/lM808MxUu6tp8zU8SBu3sg&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Markdown Nice最全功能介绍&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://my-wechat.mdnice.com/wechat.jpg&#34; alt=&#34;这里写图片描述&#34;&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;三级引用如下：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;blockquote&gt;
+&lt;blockquote&gt;
+&lt;h3 id=&#34;三级引用示例&#34;&gt;三级引用示例&lt;/h3&gt;
+&lt;p&gt;读一本好书，就是在和高尚的人谈话。 &lt;strong&gt;——歌德&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://mp.weixin.qq.com/s/lM808MxUu6tp8zU8SBu3sg&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Markdown Nice最全功能介绍&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://my-wechat.mdnice.com/wechat.jpg&#34; alt=&#34;这里写图片描述&#34;&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;37-分割线&#34;&gt;3.7 分割线&lt;/h3&gt;
+&lt;p&gt;可以在一行中用三个以上的减号来建立一个分隔线，同时需要在分隔线的上面空一行。如下：&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;38-删除线&#34;&gt;3.8 删除线&lt;/h3&gt;
+&lt;p&gt;删除线的使用，在需要删除的文字前后各使用两个&lt;code&gt;~&lt;/code&gt;，如下：&lt;/p&gt;
+&lt;p&gt;&lt;del&gt;这是要被删除的内容。&lt;/del&gt;&lt;/p&gt;
+&lt;h3 id=&#34;39-表格&#34;&gt;3.9 表格&lt;/h3&gt;
+&lt;p&gt;可以使用冒号来定义表格的对齐方式，如下：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;姓名&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;年龄&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;工作&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;小可爱&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;18&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;吃可爱多&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;小小勇敢&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;20&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;爬棵勇敢树&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;小小小机智&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;22&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;看一本机智书&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;宽度过长的表格可以滚动，可在自定义主题中调节宽度：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;姓名&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;年龄&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;工作&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;邮箱&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;手机&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;小可爱&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;18&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;吃可爱多&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;a href=&#34;mailto:lovely@test.com&#34;&gt;lovely@test.com&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;18812345678&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;小小勇敢&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;20&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;爬棵勇敢树&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;a href=&#34;mailto:brave@test.com&#34;&gt;brave@test.com&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;17712345678&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;小小小机智&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;22&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;看一本机智书&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;a href=&#34;mailto:smart@test.com&#34;&gt;smart@test.com&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;16612345678&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;310-图片&#34;&gt;3.10 图片&lt;/h3&gt;
+&lt;p&gt;插入图片，如果是行内图片则无图例，否则有图例，格式如下：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://my-wechat.mdnice.com/wechat.jpg&#34; alt=&#34;这里写图片描述&#34;&gt;&lt;/p&gt;
+&lt;p&gt;可以通过在图片尾部添加宽度和高度控制图片大小，用法如下：&lt;/p&gt;
+&lt;p&gt;![同时设置宽度和高度](&lt;a href=&#34;https://my-wechat.mdnice.com/logo.png&#34;&gt;https://my-wechat.mdnice.com/logo.png&lt;/a&gt; =150x150)&lt;/p&gt;
+&lt;p&gt;![只设置宽度，推荐使用百分比](&lt;a href=&#34;https://my-wechat.mdnice.com/logo.png&#34;&gt;https://my-wechat.mdnice.com/logo.png&lt;/a&gt; =40%x)&lt;/p&gt;
+&lt;p&gt;该语法比较特殊，其他 Markdown 编辑器不完全通用。&lt;/p&gt;
+&lt;p&gt;支持 jpg、png、gif、svg 等图片格式，&lt;strong&gt;其中 svg 文件仅可在微信公众平台中使用&lt;/strong&gt;，svg 文件示例如下：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://my-wechat.mdnice.com/i-am-svg.svg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;支持图片&lt;strong&gt;拖拽和截图粘贴&lt;/strong&gt;到编辑器中上传，上传时使用当前选择的图床。&lt;/li&gt;
+&lt;li&gt;可使用&lt;strong&gt;格式-&amp;gt;图片&lt;/strong&gt;上传本地图片，网站目前支持「图壳」图床，失败率低，但是只可保存一天用于排版&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;注：仅支持 https 的图片，图片粘贴到微信、知乎或掘金时会自动上传其服务器，不必担心使用上述图床会导致图片丢失&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;图片还可以和链接嵌套使用，能够实现推荐卡片的效果，用法如下：&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://mp.weixin.qq.com/s/lM808MxUu6tp8zU8SBu3sg&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;img src=&#34;https://my-wechat.mdnice.com/dance.gif&#34; alt=&#34;Markdown Nice 最全功能介绍&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;4-特殊语法&#34;&gt;4. 特殊语法&lt;/h2&gt;
+&lt;h3 id=&#34;41-脚注&#34;&gt;4.1 脚注&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;支持平台：微信公众号、知乎。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;脚注与链接的区别如下所示：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;链接：[文字](链接)
+脚注：[文字](脚注解释 &amp;quot;脚注名字&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;有人认为在
+&lt;a href=&#34;https://en.wikipedia.org/wiki/Front-end_web_development&#34; title=&#34;Front-end web development&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;大前端时代&lt;/a&gt;的背景下，移动端开发（Android、IOS）将逐步退出历史舞台。&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&#34;%e6%98%af%e6%8c%87%e6%8e%8c%e6%8f%a1%e5%a4%9a%e7%a7%8d%e6%8a%80%e8%83%bd%ef%bc%8c%e5%b9%b6%e8%83%bd%e5%88%a9%e7%94%a8%e5%a4%9a%e7%a7%8d%e6%8a%80%e8%83%bd%e7%8b%ac%e7%ab%8b%e5%ae%8c%e6%88%90%e4%ba%a7%e5%93%81%e7%9a%84%e4%ba%ba%e3%80%82&#34; title=&#34;什么是全栈工程师&#34;&gt;全栈工程师&lt;/a&gt;在业务开发流程中起到了至关重要的作用。&lt;/p&gt;
+&lt;p&gt;脚注内容请拉到最下面观看。&lt;/p&gt;
+&lt;h3 id=&#34;42-代码块&#34;&gt;4.2 代码块&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;支持平台：微信公众号、知乎。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;如果在一个行内需要引用代码，只要用反引号引起来就好，如下：&lt;/p&gt;
+&lt;p&gt;Use the &lt;code&gt;printf()&lt;/code&gt; function.&lt;/p&gt;
+&lt;p&gt;在需要高亮的代码块的前一行及后一行使用三个反引号，同时&lt;strong&gt;第一行反引号后面表示代码块所使用的语言&lt;/strong&gt;，如下：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-java&#34;&gt;// FileName: HelloWorld.java
+public class HelloWorld {
+  // Java 入口程序，程序从此入口
+  public static void main(String[] args) {
+    System.out.println(&amp;quot;Hello,World!&amp;quot;); // 向控制台打印一条语句
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;支持以下语言种类：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;bash
+clojure，cpp，cs，css
+dart，dockerfile, diff
+erlang
+go，gradle，groovy
+haskell
+java，javascript，json，julia
+kotlin
+lisp，lua
+makefile，markdown，matlab
+objectivec
+perl，php，python
+r，ruby，rust
+scala，shell，sql，swift
+tex，typescript
+verilog，vhdl
+xml
+yaml
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;如果想要更换代码主题，可在上方挑选，不支持代码主题自定义。&lt;/p&gt;
+&lt;p&gt;其中&lt;strong&gt;微信代码主题与微信官方一致&lt;/strong&gt;，有以下注意事项：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;带行号且不换行，代码大小与官方一致&lt;/li&gt;
+&lt;li&gt;需要在代码块处标志语言，否则无法高亮&lt;/li&gt;
+&lt;li&gt;粘贴到公众号后，用鼠标点代码块内外一次，完成高亮&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;diff 不能同时和其他语言的高亮同时显示，且需要调整代码主题为微信代码主题以外的代码主题才能看到 diff 效果，使用效果如下:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-diff&#34;&gt;+ 新增项
+- 删除项
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;其他主题不带行号，可自定义是否换行，代码大小与当前编辑器一致&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;43-数学公式&#34;&gt;4.3 数学公式&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;支持平台：微信公众号、知乎。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;行内公式使用方法，比如这个化学公式：$\ce{Hg^2+ -&amp;gt;[I-] HgI2 -&amp;gt;[I-] [Hg^{II}I4]^2-}$&lt;/p&gt;
+&lt;p&gt;块公式使用方法如下：&lt;/p&gt;
+&lt;p&gt;$$H(D_2) = -\left(\frac{2}{4}\log_2 \frac{2}{4} + \frac{2}{4}\log_2 \frac{2}{4}\right) = 1$$&lt;/p&gt;
+&lt;p&gt;矩阵：&lt;/p&gt;
+&lt;p&gt;$$
+\begin{pmatrix}
+1 &amp;amp; a_1 &amp;amp; a_1^2 &amp;amp; \cdots &amp;amp; a_1^n \&lt;br&gt;
+1 &amp;amp; a_2 &amp;amp; a_2^2 &amp;amp; \cdots &amp;amp; a_2^n \&lt;br&gt;
+\vdots &amp;amp; \vdots &amp;amp; \vdots &amp;amp; \ddots &amp;amp; \vdots \&lt;br&gt;
+1 &amp;amp; a_m &amp;amp; a_m^2 &amp;amp; \cdots &amp;amp; a_m^n \&lt;br&gt;
+\end{pmatrix}
+$$&lt;/p&gt;
+&lt;p&gt;公式由于微信不支持，目前的解决方案是转成 svg 放到微信中，无需调整，矢量不失真。&lt;/p&gt;
+&lt;p&gt;目前测试如果公式量过大，在 Chrome 下会存在粘贴后无响应，但是在 Firefox 中始终能够成功。&lt;/p&gt;
+&lt;h3 id=&#34;44-toc&#34;&gt;4.4 TOC&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;支持平台：微信公众号、知乎。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;TOC 全称为 Table of Content，列出全部标题。由于示例标题过多，需要使用将下方代码段去除即可。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[TOC]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;由于微信只支持到二级列表，本工具仅支持二级标题和三级标题的显示。&lt;/p&gt;
+&lt;h3 id=&#34;45-注音符号&#34;&gt;4.5 注音符号&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;支持平台：微信公众号。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;支持注音符号，用法如下：&lt;/p&gt;
+&lt;p&gt;Markdown Nice 这么好用，简直是{喜大普奔|hē hē hē hē}呀！&lt;/p&gt;
+&lt;h3 id=&#34;46-横屏滑动幻灯片&#34;&gt;4.6 横屏滑动幻灯片&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;支持平台：微信公众号。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;通过&lt;code&gt;&amp;lt;![](url),![](url)&amp;gt;&lt;/code&gt;这种语法设置横屏滑动滑动片，具体用法如下：&lt;/p&gt;
+&lt;p&gt;&amp;lt;&lt;img src=&#34;https://my-wechat.mdnice.com/blue.jpg&#34; alt=&#34;蓝1&#34;&gt;,&lt;img src=&#34;https://my-wechat.mdnice.com/green.jpg&#34; alt=&#34;绿2&#34;&gt;,&lt;img src=&#34;https://my-wechat.mdnice.com/red.jpg&#34; alt=&#34;红3&#34;&gt;&amp;gt;&lt;/p&gt;
+&lt;h2 id=&#34;5-其他语法&#34;&gt;5 其他语法&lt;/h2&gt;
+&lt;h3 id=&#34;51-html&#34;&gt;5.1 HTML&lt;/h3&gt;
+&lt;p&gt;支持原生 HTML 语法，请写内联样式，如下：&lt;/p&gt;
+&lt;p&gt;&lt;span style=&#34;display:block;text-align:right;color:orangered;&#34;&gt;橙色居右&lt;/span&gt;
+&lt;span style=&#34;display:block;text-align:center;color:orangered;&#34;&gt;橙色居中&lt;/span&gt;&lt;/p&gt;
+&lt;h3 id=&#34;52-uml&#34;&gt;5.2 UML&lt;/h3&gt;
+&lt;p&gt;不支持，推荐使用开源工具&lt;code&gt;https://draw.io/&lt;/code&gt;制作后再导入图片&lt;/p&gt;
+&lt;h3 id=&#34;53-更多文档&#34;&gt;5.3 更多文档&lt;/h3&gt;
+&lt;p&gt;更多文档请参考 
+&lt;a href=&#34;https://preview.mdnice.com/articles/&#34; title=&#34;更多文档&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;markdown-nice-docs&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>第七次汇报</title>
@@ -137,7 +635,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-897564213&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-734512869&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -147,7 +645,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-897564213&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-734512869&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
