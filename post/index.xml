@@ -19,7 +19,14 @@
       <guid>https://haowong.com/2020/09/26/markdown%E8%AF%AD%E6%B3%95/</guid>
       <description>&lt;p&gt;&lt;strong&gt;此文档在更新时可能会被覆盖或删除&lt;/strong&gt;&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;在使用Markdown之前，你可能需要先了解一下关于markdown的简单语法。&lt;/p&gt;
+&lt;p&gt;在使用Markdown之前，你可能需要先了解一下关于markdown的简单语法&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Latex-&amp;gt;Markdown: pandoc -s main.tex -o main.md&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://liam.page/2014/09/08/latex-introduction/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Latex入门&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
 &lt;/blockquote&gt;
 &lt;h3 id=&#34;1标题&#34;&gt;1.标题&lt;/h3&gt;
 &lt;ul&gt;
@@ -635,7 +642,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-953467821&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-768952314&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -645,7 +652,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-953467821&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-768952314&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
