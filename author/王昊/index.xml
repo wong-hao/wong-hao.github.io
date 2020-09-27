@@ -31,72 +31,152 @@
 &lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;shortcodes&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Further talk details can easily be added to this page using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
-&lt;h3 id=&#34;时间安排表每周二晚630&#34;&gt;时间安排表（每周二晚6.30）&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&#34;https://docs.qq.com/sheet/DRVFQUExjaXZKbVdk?tab=BB08J2&#34;&gt;https://docs.qq.com/sheet/DRVFQUExjaXZKbVdk?tab=BB08J2&lt;/a&gt;
-&lt;img src=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVZuX2R2b3cxS1JMZ2w4Z3dhOEhUWVFCY3FDNzlrMjdIbEl5V2dDLXZzblFtQT9lPW13QmYxZA==.mp3&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;校历&#34;&gt;校历&lt;/h3&gt;
+&lt;h1 id=&#34;1-问题&#34;&gt;1 问题&lt;/h1&gt;
+&lt;h2 id=&#34;11-第一篇&#34;&gt;1.1 第一篇&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 待定&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;12-第二篇&#34;&gt;1.2 第二篇&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 复数权重&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 三次样条插值法&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 保护频带&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;13-第三篇&#34;&gt;1.3 第三篇&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 待定&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;2-日期&#34;&gt;2 日期&lt;/h1&gt;
+&lt;h2 id=&#34;21-时间安排表&#34;&gt;2.1 时间安排表&lt;/h2&gt;
+&lt;h3 id=&#34;211-实时&#34;&gt;2.1.1 实时&lt;/h3&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://docs.qq.com/sheet/DRVFQUExjaXZKbVdk?tab=BB08J2&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;每周二晚6.30&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;212-可视化&#34;&gt;2.1.2 可视化&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVZuX2R2b3cxS1JMZ2w4Z3dhOEhUWVFCY3FDNzlrMjdIbEl5V2dDLXZzblFtQT9lPW13QmYxZA==.mp3&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;22-校历&#34;&gt;2.2 校历&lt;/h2&gt;
 &lt;p&gt;&lt;img src=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVp5QURjUG90ZHhNb09CeHAta2RLM2NCZzR6bDRCbmlIVWpQTUFjakhPaFlqUT9lPThDWHdmTg==.mp3&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;内容要求&#34;&gt;内容要求&lt;/h3&gt;
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;1.研究的问题：为什么好
-2.研究现状
-3.用的技术，方法，创新性
-4.实验
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;时长要求&#34;&gt;时长要求&lt;/h3&gt;
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;1.一篇文章15-20min
-2.一共三篇
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;团队组成&#34;&gt;团队组成&lt;/h3&gt;
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;1.刘彧静：研一
-         软院保研
-
-2.马胜：研二
-     无线网络视频传输优化
-
-3.孙声宇：研二
-     数据采集，资源调度分配
-
-4.顾啸林：博二
-     无线网络
-
-5.业苇渡：硕读一年，博五
-         无人机调度、边缘计算
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;关注问题&#34;&gt;关注问题&lt;/h3&gt;
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;预演，不用演讲稿，特别注意讲解图片、公式与算法
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;第一篇&#34;&gt;第一篇&lt;/h2&gt;
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;与第四次汇报相同
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;第二篇&#34;&gt;第二篇&lt;/h2&gt;
-&lt;p&gt;阅读的文件: 
-&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9oaHUyMDE2LW15LnNoYXJlcG9pbnQuY29tLzpiOi9nL3BlcnNvbmFsL3pvbmU5NzEwMTZfaGh1X2VkdV9jbi9FYU1Xd0hUX1ZZcEVyWTBlZFdaOXByZ0J1MWNxTHpDMWdmZlBMUjJjbzBSLXlRP2U9eVl3WENk.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击阅读&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;汇报ppt: 
-&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9oaHUyMDE2LW15LnNoYXJlcG9pbnQuY29tLzpwOi9nL3BlcnNvbmFsL3pvbmU5NzEwMTZfaGh1X2VkdV9jbi9FVG04NW1JX1FZZE9pdnAwZ19ocG9fWUJ6YkV4S25obk5VdFFfSEk4X0laNk93P2U9RFFVNTA5.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击阅读&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;作者主页: 
-&lt;a href=&#34;https://www.akshaygadre.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击观看&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;项目主页: 
-&lt;a href=&#34;https://www.witechlab.com/chime.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击观看&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;作者ppt: 
-&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9oaHUyMDE2LW15LnNoYXJlcG9pbnQuY29tLzpiOi9nL3BlcnNvbmFsL3pvbmU5NzEwMTZfaGh1X2VkdV9jbi9FYnFfeGVKTkRqeE1zZTFNM2ZjTlhtNEJDRWJEZzB0TTVyY1RiUzdMSmd2bHdBP2U9N3I4bWwx.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击阅读&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;作者的演讲: 
-&lt;a href=&#34;https://www.usenix.org/conference/nsdi20/presentation/gadre&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击阅读&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;会议详情：
-&lt;a href=&#34;https://www.usenix.org/conference/nsdi20&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击阅读&lt;/a&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;复数权重
-三次样条插值法
-保护频带
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;第三篇&#34;&gt;第三篇&lt;/h2&gt;
-&lt;p&gt;阅读的文件：
-&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9oaHUyMDE2LW15LnNoYXJlcG9pbnQuY29tLzpiOi9nL3BlcnNvbmFsL3pvbmU5NzEwMTZfaGh1X2VkdV9jbi9FVUpZNmh6MUh0OVBoeTZ3X0tNcllJc0JUMjRzRG9BMVkwWUJIMGdrNHFEU013P2U9YzMySmZj.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击阅读&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;汇报ppt: 
-&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9oaHUyMDE2LW15LnNoYXJlcG9pbnQuY29tLzpwOi9nL3BlcnNvbmFsL3pvbmU5NzEwMTZfaGh1X2VkdV9jbi9FVnlkWTlpQ2lWaElxUmhrRzIyWjd6NEJsMTlTdnNtWFI0QzV5bzlaVmM4M2hnP2U9RkdscVUx.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击阅读&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;会议详情：
-&lt;a href=&#34;https://infocom.info/day/1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击阅读&lt;/a&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;RSSI：dBm与SNR：db的区别，可以将其用于分析公式(11)(12)
-&lt;/code&gt;&lt;/pre&gt;
-</description>
+&lt;h1 id=&#34;3-团队组成&#34;&gt;3 团队组成&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;刘彧静&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;年级&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;研一&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;研究方向&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;软院保研计院&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;马胜&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;年级
+&lt;ul&gt;
+&lt;li&gt;研二&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;研究方向
+&lt;ul&gt;
+&lt;li&gt;无线网络视频传输优化&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;孙声宇&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;年级
+&lt;ul&gt;
+&lt;li&gt;研二&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;研究方向
+&lt;ul&gt;
+&lt;li&gt;数据采集&lt;/li&gt;
+&lt;li&gt;资源调度分配&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;顾啸林&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;年级
+&lt;ul&gt;
+&lt;li&gt;博二&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;研究方向
+&lt;ul&gt;
+&lt;li&gt;无线网络&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;业苇渡&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;年级
+&lt;ul&gt;
+&lt;li&gt;硕读一年&lt;/li&gt;
+&lt;li&gt;博五&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;研究方向
+&lt;ul&gt;
+&lt;li&gt;无人机调度&lt;/li&gt;
+&lt;li&gt;边缘计算&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;4-总览&#34;&gt;4 总览&lt;/h1&gt;
+&lt;h2 id=&#34;41-第一场&#34;&gt;4.1 第一场&lt;/h2&gt;
+&lt;p&gt;同第四次汇报&lt;/p&gt;
+&lt;h2 id=&#34;42-第二场&#34;&gt;4.2 第二场&lt;/h2&gt;
+&lt;h3 id=&#34;421-源文件&#34;&gt;4.2.1 源文件&lt;/h3&gt;
+&lt;h4 id=&#34;4211-阅读的文件1&#34;&gt;4.2.1.1 阅读的文件1&lt;/h4&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9oaHUyMDE2LW15LnNoYXJlcG9pbnQuY29tLzpiOi9nL3BlcnNvbmFsL3pvbmU5NzEwMTZfaGh1X2VkdV9jbi9FYU1Xd0hUX1ZZcEVyWTBlZFdaOXByZ0J1MWNxTHpDMWdmZlBMUjJjbzBSLXlRP2U9eVl3WENk.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击下载&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;4212-作者的演讲&#34;&gt;4.2.1.2 作者的演讲&lt;/h4&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://www.usenix.org/conference/nsdi20/presentation/gadre&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击下载&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;4213-作者的主页&#34;&gt;4.2.1.3 作者的主页&lt;/h4&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://www.akshaygadre.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击下载&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;4214-项目的主页&#34;&gt;4.2.1.4 项目的主页&lt;/h4&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://www.witechlab.com/chime.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击下载&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;4215-作者的ppt&#34;&gt;4.2.1.5 作者的ppt&lt;/h4&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9oaHUyMDE2LW15LnNoYXJlcG9pbnQuY29tLzpiOi9nL3BlcnNvbmFsL3pvbmU5NzEwMTZfaGh1X2VkdV9jbi9FYnFfeGVKTkRqeE1zZTFNM2ZjTlhtNEJDRWJEZzB0TTVyY1RiUzdMSmd2bHdBP2U9N3I4bWwx.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击下载&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;4215-会议的详情&#34;&gt;4.2.1.5 会议的详情&lt;/h4&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://www.usenix.org/conference/nsdi20&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击下载&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;422-自己工作&#34;&gt;4.2.2 自己工作&lt;/h3&gt;
+&lt;h4 id=&#34;4221-汇报ppt&#34;&gt;4.2.2.1 汇报ppt&lt;/h4&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9oaHUyMDE2LW15LnNoYXJlcG9pbnQuY29tLzpwOi9nL3BlcnNvbmFsL3pvbmU5NzEwMTZfaGh1X2VkdV9jbi9FVG04NW1JX1FZZE9pdnAwZ19ocG9fWUJ6YkV4S25obk5VdFFfSEk4X0laNk93P2U9RFFVNTA5.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击下载&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;43-第三场&#34;&gt;4.3 第三场&lt;/h2&gt;
+&lt;h3 id=&#34;431-源文件&#34;&gt;4.3.1 源文件&lt;/h3&gt;
+&lt;h4 id=&#34;4311-阅读的文件1&#34;&gt;4.3.1.1 阅读的文件1&lt;/h4&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9oaHUyMDE2LW15LnNoYXJlcG9pbnQuY29tLzpiOi9nL3BlcnNvbmFsL3pvbmU5NzEwMTZfaGh1X2VkdV9jbi9FVUpZNmh6MUh0OVBoeTZ3X0tNcllJc0JUMjRzRG9BMVkwWUJIMGdrNHFEU013P2U9YzMySmZj.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击下载&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;4312-会议的详情&#34;&gt;4.3.1.2 会议的详情&lt;/h4&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://infocom.info/day/1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击下载&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;432-自己工作&#34;&gt;4.3.2 自己工作&lt;/h3&gt;
+&lt;h4 id=&#34;4321-汇报ppt&#34;&gt;4.3.2.1 汇报ppt&lt;/h4&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9oaHUyMDE2LW15LnNoYXJlcG9pbnQuY29tLzpwOi9nL3BlcnNvbmFsL3pvbmU5NzEwMTZfaGh1X2VkdV9jbi9FVnlkWTlpQ2lWaElxUmhrRzIyWjd6NEJsMTlTdnNtWFI0QzV5bzlaVmM4M2hnP2U9RkdscVUx.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击下载&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -609,9 +689,16 @@ $$&lt;/p&gt;
       <link>https://haowong.com/2020/09/09/%E7%AC%AC%E4%B8%83%E6%AC%A1%E6%B1%87%E6%8A%A5/</link>
       <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>
       <guid>https://haowong.com/2020/09/09/%E7%AC%AC%E4%B8%83%E6%AC%A1%E6%B1%87%E6%8A%A5/</guid>
-      <description>&lt;p&gt;问题：学习Latex&lt;/p&gt;
-&lt;p&gt;阅读材料：第三次汇报阅读材料1&lt;/p&gt;
-&lt;p&gt;整合资料: 
+      <description>&lt;h1 id=&#34;1-问题&#34;&gt;1 问题&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 学习Latex&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;2-源文件&#34;&gt;2 源文件&lt;/h1&gt;
+&lt;h2 id=&#34;21-阅读的文件1&#34;&gt;2.1 阅读的文件1&lt;/h2&gt;
+&lt;p&gt;第三次汇报阅读材料1&lt;/p&gt;
+&lt;h1 id=&#34;3-自己工作&#34;&gt;3 自己工作&lt;/h1&gt;
+&lt;h2 id=&#34;31-整合资料&#34;&gt;3.1 整合资料&lt;/h2&gt;
+&lt;p&gt;
 &lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVg2WG9UTU54THREa0YyWDFLcXd0WGNCS2pIZXdSaWFUbTlmWGJadUp5c0lKZz9lPTloeVNWbQ==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击下载&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
@@ -620,9 +707,17 @@ $$&lt;/p&gt;
       <link>https://haowong.com/2020/08/24/%E7%AC%AC%E5%85%AD%E6%AC%A1%E6%B1%87%E6%8A%A5/</link>
       <pubDate>Mon, 24 Aug 2020 00:00:00 +0000</pubDate>
       <guid>https://haowong.com/2020/08/24/%E7%AC%AC%E5%85%AD%E6%AC%A1%E6%B1%87%E6%8A%A5/</guid>
-      <description>&lt;p&gt;整合资料: 
-&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVZsSGx4VE5lLXREbDA5SHJPNXI0aFVCNjZOaGxpeFFJQ1BEUFVGVFlZc0pIQT9lPXVuZTllWA==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击下载&lt;/a&gt;&lt;/p&gt;
-</description>
+      <description>&lt;h1 id=&#34;1-问题&#34;&gt;1 问题&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 无&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;2-源文件&#34;&gt;2 源文件&lt;/h1&gt;
+&lt;h2 id=&#34;21-阅读的文件1&#34;&gt;2.1 阅读的文件1&lt;/h2&gt;
+&lt;p&gt;见Onedrive&lt;/p&gt;
+&lt;h1 id=&#34;3-自己工作&#34;&gt;3 自己工作&lt;/h1&gt;
+&lt;h2 id=&#34;31-整合资料&#34;&gt;3.1 整合资料&lt;/h2&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVZsSGx4VE5lLXREbDA5SHJPNXI0aFVCNjZOaGxpeFFJQ1BEUFVGVFlZc0pIQT9lPXVuZTllWA==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击下载&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -630,11 +725,21 @@ $$&lt;/p&gt;
       <link>https://haowong.com/2020/08/18/%E7%AC%AC%E4%BA%94%E6%AC%A1%E6%B1%87%E6%8A%A5/</link>
       <pubDate>Tue, 18 Aug 2020 00:00:00 +0000</pubDate>
       <guid>https://haowong.com/2020/08/18/%E7%AC%AC%E4%BA%94%E6%AC%A1%E6%B1%87%E6%8A%A5/</guid>
-      <description>&lt;h3 id=&#34;分工&#34;&gt;分工&lt;/h3&gt;
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;阅读模式与方法
-阅读后的思考与综述
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;整合资料: 
+      <description>&lt;h1 id=&#34;1-问题&#34;&gt;1 问题&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 无&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;2-源文件&#34;&gt;2 源文件&lt;/h1&gt;
+&lt;h2 id=&#34;21-阅读的文件1&#34;&gt;2.1 阅读的文件1&lt;/h2&gt;
+&lt;p&gt;见Onedrive&lt;/p&gt;
+&lt;h1 id=&#34;3-自己工作&#34;&gt;3 自己工作&lt;/h1&gt;
+&lt;h2 id=&#34;31-分工&#34;&gt;3.1 分工&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 阅读模式与方法&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 阅读后的思考与综述&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;32-整合资料&#34;&gt;3.2 整合资料&lt;/h2&gt;
+&lt;p&gt;
 &lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWZzVVM4dWZVRTVCdnVpaDZlTU8xQ2dCMF9pZ2xjb2Iwa0pwS3h6b1ZJLWlpUT9lPVUzeFByeg==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击下载&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
@@ -643,12 +748,21 @@ $$&lt;/p&gt;
       <link>https://haowong.com/2020/08/12/%E7%AC%AC%E4%B8%89%E6%AC%A1%E6%B1%87%E6%8A%A5/</link>
       <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
       <guid>https://haowong.com/2020/08/12/%E7%AC%AC%E4%B8%89%E6%AC%A1%E6%B1%87%E6%8A%A5/</guid>
-      <description>&lt;p&gt;整合资料: 
-&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWZLWGhXTURCb3hPaFczUE5pVWR4eUFCSWZJQk1SaU00SldNRVJuSFV6dm02dz9lPUR6MElmRA==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击下载&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;阅读的文件1: 
+      <description>&lt;h1 id=&#34;1-问题&#34;&gt;1 问题&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 无&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;2-源文件&#34;&gt;2 源文件&lt;/h1&gt;
+&lt;h2 id=&#34;21-阅读的文件1&#34;&gt;2.1 阅读的文件1&lt;/h2&gt;
+&lt;p&gt;
 &lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVZKZFc1c3k0TmxCc2lVTEJabXZ5OFFCU3dyQ3ZJX3BUaDhrZGp5b0pPYVRpUT9lPUQ5SGI2NQ==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击下载&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;阅读的文件2: 
-&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVdmci1LRFFERVZFanY4VHBMdHRnNWdCdXZjX2NMTmRZcnFKRGY0cEtzMXN4UT9lPWcwb2hMWA==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击下载&lt;/a&gt;&lt;/p&gt;</description>
+&lt;h2 id=&#34;22-阅读的文件2&#34;&gt;2.2 阅读的文件2&lt;/h2&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVdmci1LRFFERVZFanY4VHBMdHRnNWdCdXZjX2NMTmRZcnFKRGY0cEtzMXN4UT9lPWcwb2hMWA==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击下载&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;3-自己工作&#34;&gt;3 自己工作&lt;/h1&gt;
+&lt;h2 id=&#34;31-整合资料&#34;&gt;3.1 整合资料&lt;/h2&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWZLWGhXTURCb3hPaFczUE5pVWR4eUFCSWZJQk1SaU00SldNRVJuSFV6dm02dz9lPUR6MElmRA==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击下载&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -656,10 +770,18 @@ $$&lt;/p&gt;
       <link>https://haowong.com/2020/07/22/%E7%AC%AC%E4%BA%8C%E6%AC%A1%E6%B1%87%E6%8A%A5/</link>
       <pubDate>Wed, 22 Jul 2020 00:00:00 +0000</pubDate>
       <guid>https://haowong.com/2020/07/22/%E7%AC%AC%E4%BA%8C%E6%AC%A1%E6%B1%87%E6%8A%A5/</guid>
-      <description>&lt;p&gt;ppt: 
-&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWVKY09rLWlGdUZDZ3NjdmpYNUczb2tCR2dNTE9fNWEyUWlGQjhJWDRnemRrdz9lPWRDTHFJaw==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击下载&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;阅读的文件: 
-&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVNabTRPOXRicnBFamxMVHl0OV9EYjhCRTBmSFlQRmdETVp5VmRhWU5zV2F2dz9lPXdnU0RjVQ==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击下载&lt;/a&gt;&lt;/p&gt;</description>
+      <description>&lt;h1 id=&#34;1-问题&#34;&gt;1 问题&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 无&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;2-源文件&#34;&gt;2 源文件&lt;/h1&gt;
+&lt;h2 id=&#34;21-阅读的文件1&#34;&gt;2.1 阅读的文件1&lt;/h2&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVNabTRPOXRicnBFamxMVHl0OV9EYjhCRTBmSFlQRmdETVp5VmRhWU5zV2F2dz9lPXdnU0RjVQ==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击下载&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;3-自己工作&#34;&gt;3 自己工作&lt;/h1&gt;
+&lt;h2 id=&#34;31-汇报ppt&#34;&gt;3.1 汇报ppt&lt;/h2&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWVKY09rLWlGdUZDZ3NjdmpYNUczb2tCR2dNTE9fNWEyUWlGQjhJWDRnemRrdz9lPWRDTHFJaw==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击下载&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -667,23 +789,32 @@ $$&lt;/p&gt;
       <link>https://haowong.com/2020/07/22/%E7%AC%AC%E5%9B%9B%E6%AC%A1%E6%B1%87%E6%8A%A5/</link>
       <pubDate>Wed, 22 Jul 2020 00:00:00 +0000</pubDate>
       <guid>https://haowong.com/2020/07/22/%E7%AC%AC%E5%9B%9B%E6%AC%A1%E6%B1%87%E6%8A%A5/</guid>
-      <description>&lt;h3 id=&#34;问题&#34;&gt;问题&lt;/h3&gt;
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;删去一些不要的内容
-图片可以写稿子，但一定不能按稿念，会对不上
-给作者发邮件请教：BCL长什么样，其0-100体现在哪，如何采样RSSI，纠错的过程究竟是什么，是对所有copy都纠错吗
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;阅读的文件: 
-&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVFUdHVKQm9SQ0pDbG9JdXZRYkU2TG9CZ3BUX21FdTNXUUhLLThZXzkta2xMQT9lPVE3UGlWYw==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击阅读&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;汇报ppt: 
-&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVgtZ1lOM3BJZnRKbnRYY1ZoX2VESVVCZWFobXRoUXM0NGxkRGFtdm51bzkxdz9lPXp4TWttcQ==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击下载&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;作者的演讲: 
-&lt;a href=&#34;https://www.youtube.com/watch?v=7Yv2q1auvK4&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击观看&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;作者主页: 
-&lt;a href=&#34;http://artur.balanuta.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击观看&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;项目主页:
-&lt;a href=&#34;https://wise.ece.cmu.edu/projects/opr.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击观看&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;会议详情:
-&lt;a href=&#34;https://www.sigmobile.org/mobisys/2020/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击观看&lt;/a&gt;&lt;/p&gt;</description>
+      <description>&lt;h1 id=&#34;1-问题&#34;&gt;1 问题&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 删去一些不要的内容&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 可以写稿子，但一定不能按稿念，会对不上&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 给作者发邮件请教：BCL长什么样，其0-100体现在哪，如何采样RSSI，纠错的过程究竟是什么，是对所有copy都纠错吗&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;2-源文件&#34;&gt;2 源文件&lt;/h1&gt;
+&lt;h2 id=&#34;21-阅读的文件1&#34;&gt;2.1 阅读的文件1&lt;/h2&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVFUdHVKQm9SQ0pDbG9JdXZRYkU2TG9CZ3BUX21FdTNXUUhLLThZXzkta2xMQT9lPVE3UGlWYw==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击下载&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;22-作者的演讲&#34;&gt;2.2 作者的演讲&lt;/h2&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://www.youtube.com/watch?v=7Yv2q1auvK4&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击下载&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;23-作者的主页&#34;&gt;2.3 作者的主页&lt;/h2&gt;
+&lt;p&gt;
+&lt;a href=&#34;http://artur.balanuta.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击下载&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;24-项目的主页&#34;&gt;2.4 项目的主页&lt;/h2&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://wise.ece.cmu.edu/projects/opr.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击下载&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;25-会议的详情&#34;&gt;2.5 会议的详情&lt;/h2&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://www.sigmobile.org/mobisys/2020/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击下载&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;3-自己工作&#34;&gt;3 自己工作&lt;/h1&gt;
+&lt;h2 id=&#34;31-汇报ppt&#34;&gt;3.1 汇报ppt&lt;/h2&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVgtZ1lOM3BJZnRKbnRYY1ZoX2VESVVCZWFobXRoUXM0NGxkRGFtdm51bzkxdz9lPXp4TWttcQ==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击下载&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -691,13 +822,18 @@ $$&lt;/p&gt;
       <link>https://haowong.com/2020/07/18/%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%B1%87%E6%8A%A5/</link>
       <pubDate>Sat, 18 Jul 2020 00:00:00 +0000</pubDate>
       <guid>https://haowong.com/2020/07/18/%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%B1%87%E6%8A%A5/</guid>
-      <description>&lt;p&gt;汇报ppt: 
-&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWR6NUg3c0JCa0pKb2Qxbm5TQmowSm9CNUMtcXVTVGFfemhzX1hFd2I1cC1QZz9lPWZBT2FnOQ==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击下载&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;阅读的文件: 
+      <description>&lt;h1 id=&#34;1-问题&#34;&gt;1 问题&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 已经在ppt中标注了&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;2-源文件&#34;&gt;2 源文件&lt;/h1&gt;
+&lt;h2 id=&#34;21-阅读的文件1&#34;&gt;2.1 阅读的文件1&lt;/h2&gt;
+&lt;p&gt;
 &lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWY0eUpzUnRJYVJNbFYxc3dwM2pyMk1CdE82VnVnWHhmaEZDNUtMRFVVZXM1UT9lPW9aQ1Rlbg==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击下载&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&#34;问题&#34;&gt;问题&lt;/h3&gt;
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;在PPT中勾画出了
-&lt;/code&gt;&lt;/pre&gt;</description>
+&lt;h1 id=&#34;3-自己工作&#34;&gt;3 自己工作&lt;/h1&gt;
+&lt;h2 id=&#34;31-汇报ppt&#34;&gt;3.1 汇报ppt&lt;/h2&gt;
+&lt;p&gt;
+&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWR6NUg3c0JCa0pKb2Qxbm5TQmowSm9CNUMtcXVTVGFfemhzX1hFd2I1cC1QZz9lPWZBT2FnOQ==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击下载&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
