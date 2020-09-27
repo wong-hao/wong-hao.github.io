@@ -642,7 +642,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-768952314&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-158637492&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -652,7 +652,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-768952314&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-158637492&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
@@ -1083,6 +1083,30 @@ date: 2019-09-01
 &lt;a href=&#34;https://georgecushen.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;George Cushen&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Released under the 
 &lt;a href=&#34;https://github.com/gcushen/hugo-academic/blob/master/LICENSE.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;MIT&lt;/a&gt; license.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>日常汇报</title>
+      <link>https://haowong.com/1/01/01/%E6%97%A5%E5%B8%B8%E6%B1%87%E6%8A%A5/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://haowong.com/1/01/01/%E6%97%A5%E5%B8%B8%E6%B1%87%E6%8A%A5/</guid>
+      <description>&lt;h1 id=&#34;问题&#34;&gt;问题&lt;/h1&gt;
+&lt;p&gt;中国在East Asia.&lt;/p&gt;
+&lt;h1 id=&#34;源文件&#34;&gt;源文件&lt;/h1&gt;
+&lt;h2 id=&#34;阅读的文件1&#34;&gt;阅读的文件1&lt;/h2&gt;
+&lt;h4 id=&#34;点击下载&#34;&gt;点击下载&lt;/h4&gt;
+&lt;p&gt;
+&lt;a href=&#34;www.baidu.com&#34;&gt;Here it is&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;阅读的文件2&#34;&gt;阅读的文件2&lt;/h2&gt;
+&lt;h4 id=&#34;点击下载-1&#34;&gt;点击下载&lt;/h4&gt;
+&lt;p&gt;
+&lt;a href=&#34;www.baidu.com&#34;&gt;Here it is&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;自己工作&#34;&gt;自己工作&lt;/h1&gt;
+&lt;h2 id=&#34;powerpoint&#34;&gt;PowerPoint&lt;/h2&gt;
+&lt;h4 id=&#34;点击下载-2&#34;&gt;点击下载&lt;/h4&gt;
+&lt;p&gt;
+&lt;a href=&#34;www.baidu.com&#34;&gt;Here it is&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
