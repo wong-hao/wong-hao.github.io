@@ -847,21 +847,28 @@
 <blockquote>
 <p>Raspberry Pi OS (32-bit) with desktop and recommended software</p>
 </blockquote>
-<p><strong>注意仅能使用Linux Kernel version:4.19.97及以下的版本，否则gpio7将会占用从而一直不能正确启动</strong></p>
-<p>Gitee版本代码相比Github做了三点改变：
+<p><strong>注意仅能使用Linux Kernel version:
+<a href="http://downloads.raspberrypi.org/raspios_armhf/release_notes.txt" target="_blank" rel="noopener">4.19.97</a>及以下的版本，否则gpio7将会占用从而一直不能正确启动</strong></p>
+<p>
+<a href="https://gitee.com/rejeee/gw1302s/commit/b06b85a7c87fce9f7d462f55b5913a3dc0c47df9" target="_blank" rel="noopener">Gitee版本代码</a>相比
+<a href="https://github.com/Lora-net/sx1302_hal/commit/6291e62ef9a161ae41037a0df1a86e9943a907b9" target="_blank" rel="noopener">Github</a>做了三点改变：
 <strong><em>其实Gitee之前的commit全部是copy的Github，就最后改了下</em></strong></p>
 <ol>
 <li>消除温度传感器I2C（<em>据说不注释掉不能启动</em>）</li>
-<li>某些无关紧要的ture改为false（<em>完全不影响</em>）</li>
+<li>boardconf.lorawan_public ture改为false（<em>完全不影响</em>）</li>
 <li>重置脚本&rsquo;reset_lgw.sh&rsquo;的GPIO23改成了7，且去掉了GPIO18相关代码
 （<em>GPIO7存在才能启动，GPIO18改不改没关系</em>）</li>
 </ol>
 <h4 id="12-备份">1.2 备份</h4>
 <ol>
-<li>Gitee版采用的代码Commit id: d9ef27fdecf2352d7ab6b85d50fb7a3e38a162ae</li>
-<li>Github版采用的代码Commit id（<em>Gitee抄到这后面就自己改了</em>）: 6291e62ef9a161ae41037a0df1a86e9943a907b9</li>
+<li>Gitee版采用的代码Commit id（<em>选用自动安装脚本</em>）: 
+<a href="https://gitee.com/rejeee/gw1302s/commit/d9ef27fdecf2352d7ab6b85d50fb7a3e38a162ae" target="_blank" rel="noopener">d9ef27fdecf2352d7ab6b85d50fb7a3e38a162ae</a></li>
+<li>Github版采用的代码Commit id（<em>Gitee抄到这后面就自己改了</em>）: 
+<a href="https://github.com/Lora-net/sx1302_hal/commit/6291e62ef9a161ae41037a0df1a86e9943a907b9" target="_blank" rel="noopener">6291e62ef9a161ae41037a0df1a86e9943a907b9</a></li>
 <li>
-<a href="https://downloads.raspberrypi.org/raspbian/images/raspbian-2020-02-14/2020-02-13-raspbian-buster.zip" target="_blank" rel="noopener">官方系统镜像</a></li>
+<a href="https://downloads.raspberrypi.org/raspbian/images/" target="_blank" rel="noopener">历代系统</a></li>
+<li>
+<a href="https://downloads.raspberrypi.org/raspbian/images/raspbian-2020-02-14/2020-02-13-raspbian-buster.zip" target="_blank" rel="noopener">4.19.97系统镜像</a></li>
 </ol>
 <h3 id="2实验步骤">2.实验步骤</h3>
 
