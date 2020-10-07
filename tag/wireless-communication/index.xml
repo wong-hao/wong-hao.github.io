@@ -47,9 +47,11 @@ ERROR: [main] failed to start the concentrator
 &lt;/ol&gt;
 &lt;h4 id=&#34;12-备份&#34;&gt;1.2 备份&lt;/h4&gt;
 &lt;ol&gt;
-&lt;li&gt;Gitee版采用的代码Commit id（&lt;em&gt;选用自动安装脚本&amp;rsquo;install.sh&amp;rsquo;&lt;/em&gt;）: 
+&lt;li&gt;
+&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOnU6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWRwVnYzQldadk5HaVgxTmJhWUVhdWdCVzhBbHIxWVJCU21Zb0dyVHpfbDQ5UT9lPTljNXZmMg==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Gitee版&lt;/a&gt;采用的代码Commit id（&lt;em&gt;选用自动安装脚本&amp;rsquo;install.sh&amp;rsquo;&lt;/em&gt;）: 
 &lt;a href=&#34;https://gitee.com/rejeee/gw1302s/commit/d9ef27fdecf2352d7ab6b85d50fb7a3e38a162ae&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;d9ef27fdecf2352d7ab6b85d50fb7a3e38a162ae&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Github版采用的代码Commit id（&lt;em&gt;Gitee抄到这后面就自己改了&lt;/em&gt;）: 
+&lt;li&gt;
+&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOnU6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVJsdlB0MWQ2eDVQc1lTSzgtRG5UdGNCcGRNTmVyZV81VlprZWlNa1g1UmV4dz9lPTF5ZWJicA==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Github版&lt;/a&gt;采用的代码Commit id（&lt;em&gt;Gitee抄到这后面就自己改了&lt;/em&gt;）: 
 &lt;a href=&#34;https://github.com/Lora-net/sx1302_hal/commit/6291e62ef9a161ae41037a0df1a86e9943a907b9&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;6291e62ef9a161ae41037a0df1a86e9943a907b9&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;
 &lt;a href=&#34;https://downloads.raspberrypi.org/raspbian/images/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;历代系统&lt;/a&gt;&lt;/li&gt;
