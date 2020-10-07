@@ -292,7 +292,8 @@ ERROR: [main] failed to start the concentrator
 &lt;/li&gt;
 &lt;li&gt;作用
 &lt;ul&gt;
-&lt;li&gt;判断是否真正上网了，或者说真正处理数据了&lt;/li&gt;
+&lt;li&gt;判断是否真正上网了，或者说真正处理数据了
+&lt;img src=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVl1MFJYUDlmRjVEa0VsSHpsWDJGM2dCUjBLY0xlNEJycnJxODFXMTdqTjFFZz9lPW1oRUJSTw==.mp3&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;副作用
@@ -993,7 +994,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-563127894&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-768294351&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -1003,7 +1004,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-563127894&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-768294351&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
