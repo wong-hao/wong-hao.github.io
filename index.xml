@@ -212,14 +212,25 @@
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;strong&gt;注意仅能使用Linux Kernel version:
 &lt;a href=&#34;http://downloads.raspberrypi.org/raspios_armhf/release_notes.txt&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;4.19.97&lt;/a&gt;及以下的版本，否则gpio7将会占用从而一直不能正确启动&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;// 报错提示
+./reset_lgw.sh: 22: echo: echo: I/O error
+./reset_lgw.sh: 25: ./reset_lgw.sh: cannot create /sys/class/gpio/gpio7/direction: Directory noexistent
+CoreCell reset through GPIO7...
+./reset_lgw.sh: 32: ./reset_lgw.sh: cannot create /sys/class/gpio/gpio7/value: Directory noexistent
+./reset_lgw.sh: 33: ./reset_lgw.sh: cannot create /sys/class/gpio/gpio7/value: Directory noexistent
+ERROR: failed to connect
+// 或者是
+ERROR: [main] failed to start the concentrator 
+&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;
 &lt;a href=&#34;https://gitee.com/rejeee/gw1302s/commit/b06b85a7c87fce9f7d462f55b5913a3dc0c47df9&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Gitee版本代码&lt;/a&gt;相比
 &lt;a href=&#34;https://github.com/Lora-net/sx1302_hal/commit/6291e62ef9a161ae41037a0df1a86e9943a907b9&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Github&lt;/a&gt;做了三点改变：
 &lt;strong&gt;&lt;em&gt;其实Gitee之前的commit全部是copy的Github，就最后改了下&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;消除温度传感器I2C（&lt;em&gt;据说不注释掉不能启动&lt;/em&gt;）&lt;/li&gt;
-&lt;li&gt;boardconf.lorawan_public ture改为false（&lt;em&gt;完全不影响&lt;/em&gt;）&lt;/li&gt;
-&lt;li&gt;重置脚本&amp;rsquo;reset_lgw.sh&amp;rsquo;的GPIO23改成了7，且去掉了GPIO18相关代码
+&lt;li&gt;使用&lt;code&gt;#if USE_I2C_SENSOR ... #endif&lt;/code&gt;消除温度传感器I2C（&lt;em&gt;据说不注释掉不能启动&lt;/em&gt;）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;boardconf.lorawan_public = true;&lt;/code&gt;改成了&lt;code&gt;boardconf.lorawan_public = false;&lt;/code&gt;
+（&lt;em&gt;完全不影响&lt;/em&gt;）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;SX1302_RESET_PIN=7&lt;/code&gt;改成了&lt;code&gt;SX1302_RESET_PIN=23&lt;/code&gt;且去掉了GPIO18相关代码
 （&lt;em&gt;GPIO7存在才能启动，GPIO18改不改没关系&lt;/em&gt;）&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h4 id=&#34;12-备份&#34;&gt;1.2 备份&lt;/h4&gt;
@@ -239,10 +250,10 @@
 &lt;ul&gt;
 &lt;li&gt;模式切换
 &lt;ul&gt;
-&lt;li&gt;透传模式要先&#39;+++&#39;进入AT模式&lt;/li&gt;
+&lt;li&gt;透传模式要先使用&lt;code&gt;+++&lt;/code&gt;进入AT模式&lt;/li&gt;
 &lt;li&gt;AT模式可直接使用AT指令&lt;/li&gt;
-&lt;li&gt;（&lt;em&gt;AT指令需且仅需空一行后发送，但与&amp;rsquo;自动换行&amp;rsquo;无关，那个是屏幕上显示的东西换行&lt;/em&gt;）&lt;/li&gt;
-&lt;li&gt;AT模式下不能发送接收数据，需要使用AT指令ATT返回透传模式&lt;/li&gt;
+&lt;li&gt;（&lt;em&gt;AT指令需且仅需在指令后空一行再发送，但与&amp;rsquo;自动换行&amp;rsquo;无关，那个是屏幕上显示的东西换行&lt;/em&gt;）&lt;/li&gt;
+&lt;li&gt;AT模式下不能发送接收数据，需要使用AT指令&lt;code&gt;ATT&lt;/code&gt;返回透传模式&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;复位按键
@@ -943,7 +954,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-354781296&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-782543961&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -953,7 +964,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-354781296&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-782543961&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();

@@ -849,14 +849,25 @@
 </blockquote>
 <p><strong>注意仅能使用Linux Kernel version:
 <a href="http://downloads.raspberrypi.org/raspios_armhf/release_notes.txt" target="_blank" rel="noopener">4.19.97</a>及以下的版本，否则gpio7将会占用从而一直不能正确启动</strong></p>
+<pre><code class="language-cpp">// 报错提示
+./reset_lgw.sh: 22: echo: echo: I/O error
+./reset_lgw.sh: 25: ./reset_lgw.sh: cannot create /sys/class/gpio/gpio7/direction: Directory noexistent
+CoreCell reset through GPIO7...
+./reset_lgw.sh: 32: ./reset_lgw.sh: cannot create /sys/class/gpio/gpio7/value: Directory noexistent
+./reset_lgw.sh: 33: ./reset_lgw.sh: cannot create /sys/class/gpio/gpio7/value: Directory noexistent
+ERROR: failed to connect
+// 或者是
+ERROR: [main] failed to start the concentrator 
+</code></pre>
 <p>
 <a href="https://gitee.com/rejeee/gw1302s/commit/b06b85a7c87fce9f7d462f55b5913a3dc0c47df9" target="_blank" rel="noopener">Gitee版本代码</a>相比
 <a href="https://github.com/Lora-net/sx1302_hal/commit/6291e62ef9a161ae41037a0df1a86e9943a907b9" target="_blank" rel="noopener">Github</a>做了三点改变：
 <strong><em>其实Gitee之前的commit全部是copy的Github，就最后改了下</em></strong></p>
 <ol>
-<li>消除温度传感器I2C（<em>据说不注释掉不能启动</em>）</li>
-<li>boardconf.lorawan_public ture改为false（<em>完全不影响</em>）</li>
-<li>重置脚本&rsquo;reset_lgw.sh&rsquo;的GPIO23改成了7，且去掉了GPIO18相关代码
+<li>使用<code>#if USE_I2C_SENSOR ... #endif</code>消除温度传感器I2C（<em>据说不注释掉不能启动</em>）</li>
+<li><code>boardconf.lorawan_public = true;</code>改成了<code>boardconf.lorawan_public = false;</code>
+（<em>完全不影响</em>）</li>
+<li><code>SX1302_RESET_PIN=7</code>改成了<code>SX1302_RESET_PIN=23</code>且去掉了GPIO18相关代码
 （<em>GPIO7存在才能启动，GPIO18改不改没关系</em>）</li>
 </ol>
 <h4 id="12-备份">1.2 备份</h4>
@@ -876,10 +887,10 @@
 <ul>
 <li>模式切换
 <ul>
-<li>透传模式要先'+++'进入AT模式</li>
+<li>透传模式要先使用<code>+++</code>进入AT模式</li>
 <li>AT模式可直接使用AT指令</li>
-<li>（<em>AT指令需且仅需空一行后发送，但与&rsquo;自动换行&rsquo;无关，那个是屏幕上显示的东西换行</em>）</li>
-<li>AT模式下不能发送接收数据，需要使用AT指令ATT返回透传模式</li>
+<li>（<em>AT指令需且仅需在指令后空一行再发送，但与&rsquo;自动换行&rsquo;无关，那个是屏幕上显示的东西换行</em>）</li>
+<li>AT模式下不能发送接收数据，需要使用AT指令<code>ATT</code>返回透传模式</li>
 </ul>
 </li>
 <li>复位按键
