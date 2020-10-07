@@ -233,6 +233,26 @@
 &lt;li&gt;
 &lt;a href=&#34;https://downloads.raspberrypi.org/raspbian/images/raspbian-2020-02-14/2020-02-13-raspbian-buster.zip&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;4.19.97系统镜像&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
+&lt;h4 id=&#34;13-m-hl9-ev&#34;&gt;1.3 M-HL9-EV&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;按键
+&lt;ul&gt;
+&lt;li&gt;模式切换
+&lt;ul&gt;
+&lt;li&gt;透传模式要先&#39;+++&#39;进入AT模式&lt;/li&gt;
+&lt;li&gt;AT模式可直接使用AT指令&lt;/li&gt;
+&lt;li&gt;（&lt;em&gt;AT指令需且仅需空一行后发送，但与&amp;rsquo;自动换行&amp;rsquo;无关，那个是屏幕上显示的东西换行&lt;/em&gt;）&lt;/li&gt;
+&lt;li&gt;AT模式下不能发送接收数据，需要使用AT指令ATT返回透传模式&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;复位按键
+&lt;ul&gt;
+&lt;li&gt;重置串口&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h3 id=&#34;2实验步骤&#34;&gt;2.实验步骤&lt;/h3&gt;
 </description>
     </item>
@@ -923,7 +943,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-742659183&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-354781296&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -933,7 +953,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-742659183&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-354781296&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
