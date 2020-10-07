@@ -867,7 +867,7 @@ ERROR: [main] failed to start the concentrator
 <li>使用<code>#if USE_I2C_SENSOR ... #endif</code>消除温度传感器I2C（<em>据说不注释掉不能启动</em>）</li>
 <li><code>boardconf.lorawan_public = true;</code>改成了<code>boardconf.lorawan_public = false;</code>
 （<em>完全不影响</em>）</li>
-<li><code>SX1302_RESET_PIN=7</code>改成了<code>SX1302_RESET_PIN=23</code>且去掉了GPIO18相关代码
+<li><code>SX1302_RESET_PIN=23</code>改成了<code>SX1302_RESET_PIN=7</code>且去掉了GPIO18相关代码
 （<em>GPIO7存在才能启动，GPIO18改不改没关系</em>）</li>
 </ol>
 <h4 id="12-备份">1.2 备份</h4>
@@ -902,6 +902,45 @@ ERROR: [main] failed to start the concentrator
 </li>
 </ul>
 <h3 id="2实验步骤">2.实验步骤</h3>
+<h4 id="21硬件">2.1硬件</h4>
+<ol>
+<li>sx1302连直黑天线</li>
+<li>
+<a href="https://www.bilibili.com/video/BV1Yt411N7MV" target="_blank" rel="noopener">M-HL9-EV连金黄天线</a></li>
+</ol>
+<ul>
+<li>使用树莓派搭建网关注册到腾讯云
+<ul>
+<li>主要步骤
+<ul>
+<li>
+<a href="http://www.njrjzn.com/zhichifuwu/chenggonganli/44.html" target="_blank" rel="noopener">官网</a></li>
+</ul>
+</li>
+<li>补充
+<ul>
+<li>
+<a href="https://www.wpgdadatong.com/cn/solution/detail?PID=5357" target="_blank" rel="noopener">获取GwEUI</a>，即在<code>gw1302s/bin</code>下使用<code>./chip_id</code>，注意还要用该值替换掉<code>gw1302s/bin/global_conf.json</code>中的<code>gateway_ID</code>，且需要去掉开头的0x，这是代表十六进制的开头</li>
+<li>运行<code>./lora_pkt_fwd</code>即可看到
+<a href="https://console.cloud.tencent.com/iotexplorer/project/prj-xpc7prs7/gateway/list?table" target="_blank" rel="noopener">状态在线</a></li>
+<li>
+<a href="https://zhuanlan.zhihu.com/p/158540396" target="_blank" rel="noopener">云处理数据</a></li>
+</ul>
+</li>
+<li>作用
+<ul>
+<li>判断是否真正上网了，或者说真正处理数据了</li>
+</ul>
+</li>
+<li>副作用
+<ul>
+<li>会使<code>gw1302s/bin/global_conf.json</code>中的<code>&quot;gateway_conf&quot;</code>下面的许多数据如<code>server_address</code>
+<a href="https://zhuanlan.zhihu.com/p/154451911" target="_blank" rel="noopener">自动修改默认值</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 
     </div>
 

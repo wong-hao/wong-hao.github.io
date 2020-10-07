@@ -230,7 +230,7 @@ ERROR: [main] failed to start the concentrator
 &lt;li&gt;使用&lt;code&gt;#if USE_I2C_SENSOR ... #endif&lt;/code&gt;消除温度传感器I2C（&lt;em&gt;据说不注释掉不能启动&lt;/em&gt;）&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;boardconf.lorawan_public = true;&lt;/code&gt;改成了&lt;code&gt;boardconf.lorawan_public = false;&lt;/code&gt;
 （&lt;em&gt;完全不影响&lt;/em&gt;）&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;SX1302_RESET_PIN=7&lt;/code&gt;改成了&lt;code&gt;SX1302_RESET_PIN=23&lt;/code&gt;且去掉了GPIO18相关代码
+&lt;li&gt;&lt;code&gt;SX1302_RESET_PIN=23&lt;/code&gt;改成了&lt;code&gt;SX1302_RESET_PIN=7&lt;/code&gt;且去掉了GPIO18相关代码
 （&lt;em&gt;GPIO7存在才能启动，GPIO18改不改没关系&lt;/em&gt;）&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h4 id=&#34;12-备份&#34;&gt;1.2 备份&lt;/h4&gt;
@@ -265,6 +265,45 @@ ERROR: [main] failed to start the concentrator
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;2实验步骤&#34;&gt;2.实验步骤&lt;/h3&gt;
+&lt;h4 id=&#34;21硬件&#34;&gt;2.1硬件&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;sx1302连直黑天线&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://www.bilibili.com/video/BV1Yt411N7MV&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;M-HL9-EV连金黄天线&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;使用树莓派搭建网关注册到腾讯云
+&lt;ul&gt;
+&lt;li&gt;主要步骤
+&lt;ul&gt;
+&lt;li&gt;
+&lt;a href=&#34;http://www.njrjzn.com/zhichifuwu/chenggonganli/44.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;官网&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;补充
+&lt;ul&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://www.wpgdadatong.com/cn/solution/detail?PID=5357&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;获取GwEUI&lt;/a&gt;，即在&lt;code&gt;gw1302s/bin&lt;/code&gt;下使用&lt;code&gt;./chip_id&lt;/code&gt;，注意还要用该值替换掉&lt;code&gt;gw1302s/bin/global_conf.json&lt;/code&gt;中的&lt;code&gt;gateway_ID&lt;/code&gt;，且需要去掉开头的0x，这是代表十六进制的开头&lt;/li&gt;
+&lt;li&gt;运行&lt;code&gt;./lora_pkt_fwd&lt;/code&gt;即可看到
+&lt;a href=&#34;https://console.cloud.tencent.com/iotexplorer/project/prj-xpc7prs7/gateway/list?table&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;状态在线&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://zhuanlan.zhihu.com/p/158540396&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;云处理数据&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;作用
+&lt;ul&gt;
+&lt;li&gt;判断是否真正上网了，或者说真正处理数据了&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;副作用
+&lt;ul&gt;
+&lt;li&gt;会使&lt;code&gt;gw1302s/bin/global_conf.json&lt;/code&gt;中的&lt;code&gt;&amp;quot;gateway_conf&amp;quot;&lt;/code&gt;下面的许多数据如&lt;code&gt;server_address&lt;/code&gt;
+&lt;a href=&#34;https://zhuanlan.zhihu.com/p/154451911&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;自动修改默认值&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     
@@ -954,7 +993,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-782543961&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-563127894&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -964,7 +1003,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-782543961&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-563127894&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
