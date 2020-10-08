@@ -13,7 +13,7 @@
     </image>
     
     <item>
-      <title>树莓派与Lora</title>
+      <title>Rejeee SX1302S and M-HL9-EV</title>
       <link>https://haowong.com/project/internal-project/</link>
       <pubDate>Tue, 06 Oct 2020 00:00:00 +0000</pubDate>
       <guid>https://haowong.com/project/internal-project/</guid>
@@ -121,6 +121,18 @@ ERROR: [main] failed to start the concentrator
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
+&lt;h4 id=&#34;22源码&#34;&gt;2.2源码&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;gw1302s/libloragw&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;gw1302s/packet_forwarder&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;gw1302s/tools/payload_tools&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;gw1302s/util_net_downlink&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;gw1302s/util_chip_id&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;五个Helper program在主目录下，通过每个Helper下的&lt;code&gt;makefile&lt;/code&gt;文件将必要的文件&lt;code&gt;scp&lt;/code&gt;到&lt;code&gt;../target.cfg&lt;/code&gt;中的&lt;code&gt;TARGET_DIR&lt;/code&gt;中&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;故&lt;code&gt;gw1302s/bin&lt;/code&gt;下看不懂的文件去看对应Helper program下的&lt;code&gt;Readme.md&lt;/code&gt;，但执行还是在这里执行&lt;/p&gt;
 </description>
     </item>
     
