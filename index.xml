@@ -300,8 +300,9 @@ ERROR: [main] failed to start the concentrator
 &lt;/li&gt;
 &lt;li&gt;副作用
 &lt;ul&gt;
-&lt;li&gt;会使&lt;code&gt;gw1302s/bin/global_conf.json&lt;/code&gt;中的&lt;code&gt;&amp;quot;gateway_conf&amp;quot;&lt;/code&gt;下面的许多数据如&lt;code&gt;server_address&lt;/code&gt;
-&lt;a href=&#34;https://zhuanlan.zhihu.com/p/154451911&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;自动修改默认值&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;会使&lt;code&gt;gw1302s/bin/global_conf.json&lt;/code&gt;中的&lt;code&gt;&amp;quot;gateway_conf&amp;quot;&lt;/code&gt;下面的&lt;code&gt;server_address&lt;/code&gt;
+&lt;a href=&#34;https://zhuanlan.zhihu.com/p/154451911&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;自动修改默认值&lt;/a&gt;，可与卖家给的
+&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/13154904.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;攻略&lt;/a&gt;对比&lt;/li&gt;
 &lt;li&gt;不会影响使用&lt;code&gt;./test_loragw_hal_rx -r 1250 -a 475.5 -b 476.5&lt;/code&gt;进行接收测试，尚不清楚对&lt;code&gt;./lora_pkt_fwd&lt;/code&gt;本地传输信号的影响&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -997,7 +998,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-476893152&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-628719354&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -1007,7 +1008,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-476893152&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-628719354&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
