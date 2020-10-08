@@ -298,12 +298,13 @@ ERROR: [main] failed to start the concentrator
 &lt;img src=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWJKVlJHRExxQjlJdDdvaU1nM3k3TU1CUWdVUGhCa0lwQWVnTk11cDZ6VEp5UT9lPTJoUGlUYQ==.mp3&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;副作用
+&lt;li&gt;注意
 &lt;ul&gt;
-&lt;li&gt;会使&lt;code&gt;gw1302s/bin/global_conf.json&lt;/code&gt;中的&lt;code&gt;&amp;quot;gateway_conf&amp;quot;&lt;/code&gt;下面的&lt;code&gt;server_address&lt;/code&gt;
-&lt;a href=&#34;https://zhuanlan.zhihu.com/p/154451911&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;自动修改默认值&lt;/a&gt;，可与卖家给的
-&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/13154904.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;攻略&lt;/a&gt;对比&lt;/li&gt;
-&lt;li&gt;不会影响使用&lt;code&gt;./test_loragw_hal_rx -r 1250 -a 475.5 -b 476.5&lt;/code&gt;进行接收测试，尚不清楚对&lt;code&gt;./lora_pkt_fwd&lt;/code&gt;本地传输信号的影响&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://gitee.com/rejeee/gw1302s/commit/c425b67a5ccaaef0dd1042da08974245124c069b&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Gitee版本&lt;/a&gt;直接增加了一个文件&lt;code&gt;gw1302s/packet_forwarder/global_conf.json&lt;/code&gt;，并将其中的&lt;code&gt;&amp;quot;gateway_conf&amp;quot;&lt;/code&gt;下面的&lt;code&gt;server_address&lt;/code&gt;
+&lt;a href=&#34;https://zhuanlan.zhihu.com/p/154451911&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;默认值localhost修改为了腾讯云&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;卖家给的
+&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/13154904.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;攻略&lt;/a&gt;有另一种&lt;code&gt;global_conf.json&lt;/code&gt;的思路&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -1010,7 +1011,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-873415962&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-259134876&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -1020,7 +1021,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-873415962&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-259134876&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
