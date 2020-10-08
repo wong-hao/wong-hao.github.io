@@ -301,8 +301,8 @@ ERROR: [main] failed to start the concentrator
 &lt;li&gt;注意
 &lt;ul&gt;
 &lt;li&gt;
-&lt;a href=&#34;https://gitee.com/rejeee/gw1302s/commit/c425b67a5ccaaef0dd1042da08974245124c069b&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Gitee版本&lt;/a&gt;直接增加了一个文件&lt;code&gt;gw1302s/packet_forwarder/global_conf.json&lt;/code&gt;，并将其中的&lt;code&gt;&amp;quot;gateway_conf&amp;quot;&lt;/code&gt;下面的&lt;code&gt;server_address&lt;/code&gt;
-&lt;a href=&#34;https://zhuanlan.zhihu.com/p/154451911&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;默认值localhost修改为了腾讯云&lt;/a&gt;&lt;/li&gt;
+&lt;a href=&#34;https://gitee.com/rejeee/gw1302s/commit/c425b67a5ccaaef0dd1042da08974245124c069b&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Gitee版本&lt;/a&gt;直接增加了一个文件&lt;code&gt;gw1302s/packet_forwarder/global_conf.json&lt;/code&gt;，其特点是&lt;code&gt;&amp;quot;gateway_conf&amp;quot;&lt;/code&gt;下面的&lt;code&gt;server_address&lt;/code&gt;
+&lt;a href=&#34;https://zhuanlan.zhihu.com/p/154451911&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;由localhost修改为了loragw.things.qcloud.com&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;卖家给的
 &lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/13154904.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;攻略&lt;/a&gt;有另一种&lt;code&gt;global_conf.json&lt;/code&gt;的思路&lt;/li&gt;
 &lt;/ul&gt;
@@ -1011,7 +1011,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-259134876&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-697153248&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -1021,7 +1021,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-259134876&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-697153248&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
