@@ -935,13 +935,15 @@ ERROR: [main] failed to start the concentrator
 <img src="https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWJKVlJHRExxQjlJdDdvaU1nM3k3TU1CUWdVUGhCa0lwQWVnTk11cDZ6VEp5UT9lPTJoUGlUYQ==.mp3" alt="image"></li>
 </ul>
 </li>
-<li>注意
+<li>global_conf.json
 <ul>
 <li>
 <a href="https://gitee.com/rejeee/gw1302s/commit/c425b67a5ccaaef0dd1042da08974245124c069b" target="_blank" rel="noopener">Gitee版本</a>直接增加了一个文件<code>gw1302s/packet_forwarder/global_conf.json</code>，其特点是<code>&quot;gateway_conf&quot;</code>下面的<code>server_address</code>
 <a href="https://zhuanlan.zhihu.com/p/154451911" target="_blank" rel="noopener">由localhost修改为了loragw.things.qcloud.com</a></li>
-<li>卖家给的
-<a href="https://www.cnblogs.com/answerinthewind/p/13154904.html" target="_blank" rel="noopener">攻略</a>有另一种<code>global_conf.json</code>的思路</li>
+<li><code>make install_conf</code>即安装<code>global_conf.json</code>
+,卖家给的
+<a href="https://www.cnblogs.com/answerinthewind/p/13154904.html" target="_blank" rel="noopener">攻略</a>、官方的
+<a href="https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVQzOWdIRUc4YU5DbHFMVzBjRGkwVjBCZjZGQmUzWUpkSnh0YVhXbUlLdnFtUT9lPW9qNjEzcg==.mp3" target="_blank" rel="noopener">参考文献</a>均给出了其中的参数意义</li>
 </ul>
 </li>
 </ul>
@@ -958,7 +960,7 @@ ERROR: [main] failed to start the concentrator
 <blockquote>
 <p>五个Helper program在主目录下，通过每个Helper下的<code>makefile</code>文件将必要的文件<code>scp</code>到<code>../target.cfg</code>中的<code>TARGET_DIR</code>中</p>
 </blockquote>
-<p>故<code>gw1302s/bin</code>下看不懂的文件去看对应Helper program下的<code>Readme.md</code>，但执行还是在这里执行</p>
+<p>故<code>gw1302s/bin</code>下看不懂的文件去看对应Helper program下的<code>Readme.md</code>，但可执行文件还是看这里</p>
 
     </div>
 

@@ -298,13 +298,15 @@ ERROR: [main] failed to start the concentrator
 &lt;img src=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWJKVlJHRExxQjlJdDdvaU1nM3k3TU1CUWdVUGhCa0lwQWVnTk11cDZ6VEp5UT9lPTJoUGlUYQ==.mp3&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;注意
+&lt;li&gt;global_conf.json
 &lt;ul&gt;
 &lt;li&gt;
 &lt;a href=&#34;https://gitee.com/rejeee/gw1302s/commit/c425b67a5ccaaef0dd1042da08974245124c069b&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Gitee版本&lt;/a&gt;直接增加了一个文件&lt;code&gt;gw1302s/packet_forwarder/global_conf.json&lt;/code&gt;，其特点是&lt;code&gt;&amp;quot;gateway_conf&amp;quot;&lt;/code&gt;下面的&lt;code&gt;server_address&lt;/code&gt;
 &lt;a href=&#34;https://zhuanlan.zhihu.com/p/154451911&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;由localhost修改为了loragw.things.qcloud.com&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;卖家给的
-&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/13154904.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;攻略&lt;/a&gt;有另一种&lt;code&gt;global_conf.json&lt;/code&gt;的思路&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;make install_conf&lt;/code&gt;即安装&lt;code&gt;global_conf.json&lt;/code&gt;
+,卖家给的
+&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/13154904.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;攻略&lt;/a&gt;、官方的
+&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVQzOWdIRUc4YU5DbHFMVzBjRGkwVjBCZjZGQmUzWUpkSnh0YVhXbUlLdnFtUT9lPW9qNjEzcg==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;参考文献&lt;/a&gt;均给出了其中的参数意义&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -321,7 +323,7 @@ ERROR: [main] failed to start the concentrator
 &lt;blockquote&gt;
 &lt;p&gt;五个Helper program在主目录下，通过每个Helper下的&lt;code&gt;makefile&lt;/code&gt;文件将必要的文件&lt;code&gt;scp&lt;/code&gt;到&lt;code&gt;../target.cfg&lt;/code&gt;中的&lt;code&gt;TARGET_DIR&lt;/code&gt;中&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;故&lt;code&gt;gw1302s/bin&lt;/code&gt;下看不懂的文件去看对应Helper program下的&lt;code&gt;Readme.md&lt;/code&gt;，但执行还是在这里执行&lt;/p&gt;
+&lt;p&gt;故&lt;code&gt;gw1302s/bin&lt;/code&gt;下看不懂的文件去看对应Helper program下的&lt;code&gt;Readme.md&lt;/code&gt;，但可执行文件还是看这里&lt;/p&gt;
 </description>
     </item>
     
@@ -1011,7 +1013,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-697153248&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-258467319&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -1021,7 +1023,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-697153248&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-258467319&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
