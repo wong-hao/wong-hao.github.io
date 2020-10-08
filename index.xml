@@ -270,8 +270,8 @@ ERROR: [main] failed to start the concentrator
 &lt;h4 id=&#34;21硬件&#34;&gt;2.1硬件&lt;/h4&gt;
 &lt;ol&gt;
 &lt;li&gt;sx1302连直黑天线&lt;/li&gt;
-&lt;li&gt;
-&lt;a href=&#34;https://www.bilibili.com/video/BV1Yt411N7MV&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;M-HL9-EV连金黄天线&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;官方建议
+&lt;a href=&#34;https://www.bilibili.com/video/BV1Yt411N7MV&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;M-HL9-EV连金黄天线&lt;/a&gt;，但实测用直黑天线进行接受测试效果更好&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
 &lt;li&gt;使用树莓派搭建网关注册到腾讯云
@@ -302,6 +302,7 @@ ERROR: [main] failed to start the concentrator
 &lt;ul&gt;
 &lt;li&gt;会使&lt;code&gt;gw1302s/bin/global_conf.json&lt;/code&gt;中的&lt;code&gt;&amp;quot;gateway_conf&amp;quot;&lt;/code&gt;下面的许多数据如&lt;code&gt;server_address&lt;/code&gt;
 &lt;a href=&#34;https://zhuanlan.zhihu.com/p/154451911&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;自动修改默认值&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;不会影响使用&lt;code&gt;./test_loragw_hal_rx -r 1250 -a 475.5 -b 476.5&lt;/code&gt;进行接收测试，尚不清楚对&lt;code&gt;./lora_pkt_fwd&lt;/code&gt;本地传输信号的影响&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -996,7 +997,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-237596481&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-476893152&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -1006,7 +1007,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-237596481&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-476893152&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();

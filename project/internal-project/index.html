@@ -907,8 +907,8 @@ ERROR: [main] failed to start the concentrator
 <h4 id="21硬件">2.1硬件</h4>
 <ol>
 <li>sx1302连直黑天线</li>
-<li>
-<a href="https://www.bilibili.com/video/BV1Yt411N7MV" target="_blank" rel="noopener">M-HL9-EV连金黄天线</a></li>
+<li>官方建议
+<a href="https://www.bilibili.com/video/BV1Yt411N7MV" target="_blank" rel="noopener">M-HL9-EV连金黄天线</a>，但实测用直黑天线进行接受测试效果更好</li>
 </ol>
 <ul>
 <li>使用树莓派搭建网关注册到腾讯云
@@ -939,6 +939,7 @@ ERROR: [main] failed to start the concentrator
 <ul>
 <li>会使<code>gw1302s/bin/global_conf.json</code>中的<code>&quot;gateway_conf&quot;</code>下面的许多数据如<code>server_address</code>
 <a href="https://zhuanlan.zhihu.com/p/154451911" target="_blank" rel="noopener">自动修改默认值</a></li>
+<li>不会影响使用<code>./test_loragw_hal_rx -r 1250 -a 475.5 -b 476.5</code>进行接收测试，尚不清楚对<code>./lora_pkt_fwd</code>本地传输信号的影响</li>
 </ul>
 </li>
 </ul>
