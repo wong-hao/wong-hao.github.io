@@ -136,6 +136,21 @@ ERROR: [main] failed to start the concentrator
 &lt;p&gt;五个Helper program在主目录下，通过每个Helper下的&lt;code&gt;makefile&lt;/code&gt;文件将必要的文件&lt;code&gt;scp&lt;/code&gt;到&lt;code&gt;../target.cfg&lt;/code&gt;中的&lt;code&gt;TARGET_DIR&lt;/code&gt;中&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;故&lt;code&gt;gw1302s/bin&lt;/code&gt;下看不懂的文件去看对应Helper program下的&lt;code&gt;Readme.md&lt;/code&gt;，但可执行文件还是看这里&lt;/p&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;./lora_pkt_fwd
+&lt;ul&gt;
+&lt;li&gt;接收到数据包的真实显示
+&lt;ul&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://blog.csdn.net/quending/article/details/84979181&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;网页一&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;a href=&#34;https://forum.chirpstack.io/t/how-to-change-lora-gateway-bridge-configuration/6350/4&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;网页二&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     
