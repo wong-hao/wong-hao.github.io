@@ -5,7 +5,7 @@
     <link>https://haowong.com/tag/wireless-communication/</link>
       <atom:link href="https://haowong.com/tag/wireless-communication/index.xml" rel="self" type="application/rss+xml" />
     <description>Wireless Communication</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>©</copyright><lastBuildDate>Tue, 06 Oct 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>©</copyright><lastBuildDate>Tue, 06 Oct 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://haowong.com/images/icon_hub0cb53550ede56fdccc60540659dbf84_11803_512x512_fill_lanczos_center_2.png</url>
       <title>Wireless Communication</title>
@@ -22,8 +22,7 @@
 &lt;blockquote&gt;
 &lt;p&gt;Raspberry Pi OS (32-bit) with desktop and recommended software&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;strong&gt;注意仅能使用Linux Kernel version:
-&lt;a href=&#34;http://downloads.raspberrypi.org/raspios_armhf/release_notes.txt&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;4.19.97&lt;/a&gt;及以下的版本，否则gpio7将会占用从而一直不能正确启动&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;注意仅能使用Linux Kernel version:&lt;a href=&#34;http://downloads.raspberrypi.org/raspios_armhf/release_notes.txt&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;4.19.97&lt;/a&gt;及以下的版本，否则gpio7将会占用从而一直不能正确启动&lt;/strong&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;// 报错提示
 ./reset_lgw.sh: 22: echo: echo: I/O error
 ./reset_lgw.sh: 25: ./reset_lgw.sh: cannot create /sys/class/gpio/gpio7/direction: Directory noexistent
@@ -34,9 +33,7 @@ ERROR: failed to connect
 // 或者是
 ERROR: [main] failed to start the concentrator 
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;
-&lt;a href=&#34;https://gitee.com/rejeee/gw1302s/commit/b06b85a7c87fce9f7d462f55b5913a3dc0c47df9&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Gitee版本代码&lt;/a&gt;相比
-&lt;a href=&#34;https://github.com/Lora-net/sx1302_hal/commit/6291e62ef9a161ae41037a0df1a86e9943a907b9&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Github&lt;/a&gt;做了三点改变：
+&lt;p&gt;&lt;a href=&#34;https://gitee.com/rejeee/gw1302s/commit/b06b85a7c87fce9f7d462f55b5913a3dc0c47df9&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Gitee版本代码&lt;/a&gt;相比&lt;a href=&#34;https://github.com/Lora-net/sx1302_hal/commit/6291e62ef9a161ae41037a0df1a86e9943a907b9&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Github&lt;/a&gt;做了三点改变：
 &lt;strong&gt;&lt;em&gt;其实Gitee之前的commit全部是copy的Github，就最后改了下&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;使用&lt;code&gt;#if USE_I2C_SENSOR ... #endif&lt;/code&gt;消除温度传感器I2C（&lt;em&gt;据说不注释掉不能启动&lt;/em&gt;）&lt;/li&gt;
@@ -47,16 +44,10 @@ ERROR: [main] failed to start the concentrator
 &lt;/ol&gt;
 &lt;h4 id=&#34;12-备份&#34;&gt;1.2 备份&lt;/h4&gt;
 &lt;ol&gt;
-&lt;li&gt;
-&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOnU6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWRwVnYzQldadk5HaVgxTmJhWUVhdWdCVzhBbHIxWVJCU21Zb0dyVHpfbDQ5UT9lPTljNXZmMg==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Gitee版&lt;/a&gt;采用的代码Commit id（&lt;em&gt;选用自动安装脚本&amp;rsquo;install.sh&amp;rsquo;&lt;/em&gt;）: 
-&lt;a href=&#34;https://gitee.com/rejeee/gw1302s/commit/d9ef27fdecf2352d7ab6b85d50fb7a3e38a162ae&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;d9ef27fdecf2352d7ab6b85d50fb7a3e38a162ae&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;
-&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOnU6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVJsdlB0MWQ2eDVQc1lTSzgtRG5UdGNCcGRNTmVyZV81VlprZWlNa1g1UmV4dz9lPTF5ZWJicA==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Github版&lt;/a&gt;采用的代码Commit id（&lt;em&gt;Gitee抄到这后面就自己改了&lt;/em&gt;）: 
-&lt;a href=&#34;https://github.com/Lora-net/sx1302_hal/commit/6291e62ef9a161ae41037a0df1a86e9943a907b9&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;6291e62ef9a161ae41037a0df1a86e9943a907b9&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;
-&lt;a href=&#34;https://downloads.raspberrypi.org/raspbian/images/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;历代系统&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;
-&lt;a href=&#34;https://downloads.raspberrypi.org/raspbian/images/raspbian-2020-02-14/2020-02-13-raspbian-buster.zip&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;4.19.97系统镜像&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOnU6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWRwVnYzQldadk5HaVgxTmJhWUVhdWdCVzhBbHIxWVJCU21Zb0dyVHpfbDQ5UT9lPTljNXZmMg==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Gitee版&lt;/a&gt;采用的代码Commit id（&lt;em&gt;选用自动安装脚本&amp;rsquo;install.sh&amp;rsquo;&lt;/em&gt;）: &lt;a href=&#34;https://gitee.com/rejeee/gw1302s/commit/d9ef27fdecf2352d7ab6b85d50fb7a3e38a162ae&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;d9ef27fdecf2352d7ab6b85d50fb7a3e38a162ae&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOnU6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVJsdlB0MWQ2eDVQc1lTSzgtRG5UdGNCcGRNTmVyZV81VlprZWlNa1g1UmV4dz9lPTF5ZWJicA==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Github版&lt;/a&gt;采用的代码Commit id（&lt;em&gt;Gitee抄到这后面就自己改了&lt;/em&gt;）: &lt;a href=&#34;https://github.com/Lora-net/sx1302_hal/commit/6291e62ef9a161ae41037a0df1a86e9943a907b9&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;6291e62ef9a161ae41037a0df1a86e9943a907b9&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://downloads.raspberrypi.org/raspbian/images/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;历代系统&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://downloads.raspberrypi.org/raspbian/images/raspbian-2020-02-14/2020-02-13-raspbian-buster.zip&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;4.19.97系统镜像&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h4 id=&#34;13-m-hl9-ev&#34;&gt;1.3 M-HL9-EV&lt;/h4&gt;
 &lt;ul&gt;
@@ -82,26 +73,21 @@ ERROR: [main] failed to start the concentrator
 &lt;h4 id=&#34;21硬件&#34;&gt;2.1硬件&lt;/h4&gt;
 &lt;ol&gt;
 &lt;li&gt;sx1302连直黑天线&lt;/li&gt;
-&lt;li&gt;官方建议
-&lt;a href=&#34;https://www.bilibili.com/video/BV1Yt411N7MV&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;M-HL9-EV连金黄天线&lt;/a&gt;，但实测用直黑天线进行接受测试效果更好&lt;/li&gt;
+&lt;li&gt;官方建议&lt;a href=&#34;https://www.bilibili.com/video/BV1Yt411N7MV&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;M-HL9-EV连金黄天线&lt;/a&gt;，但实测用直黑天线进行接受测试效果更好&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
 &lt;li&gt;使用树莓派搭建网关注册到腾讯云
 &lt;ul&gt;
 &lt;li&gt;主要步骤
 &lt;ul&gt;
-&lt;li&gt;
-&lt;a href=&#34;http://www.njrjzn.com/zhichifuwu/chenggonganli/44.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;官网&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.njrjzn.com/zhichifuwu/chenggonganli/44.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;官网&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;补充
 &lt;ul&gt;
-&lt;li&gt;
-&lt;a href=&#34;https://www.wpgdadatong.com/cn/solution/detail?PID=5357&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;获取GwEUI&lt;/a&gt;，即在&lt;code&gt;gw1302s/bin&lt;/code&gt;下使用&lt;code&gt;./chip_id&lt;/code&gt;，注意还要用该值替换掉&lt;code&gt;gw1302s/bin/global_conf.json&lt;/code&gt;中的&lt;code&gt;gateway_ID&lt;/code&gt;，且需要去掉开头的0x，这是代表十六进制的开头&lt;/li&gt;
-&lt;li&gt;运行&lt;code&gt;./lora_pkt_fwd&lt;/code&gt;即可看到
-&lt;a href=&#34;https://console.cloud.tencent.com/iotexplorer/project/prj-xpc7prs7/gateway/list?table&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;状态在线&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;
-&lt;a href=&#34;https://zhuanlan.zhihu.com/p/158540396&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;云处理数据&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.wpgdadatong.com/cn/solution/detail?PID=5357&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;获取GwEUI&lt;/a&gt;，即在&lt;code&gt;gw1302s/bin&lt;/code&gt;下使用&lt;code&gt;./chip_id&lt;/code&gt;，注意还要用该值替换掉&lt;code&gt;gw1302s/bin/global_conf.json&lt;/code&gt;中的&lt;code&gt;gateway_ID&lt;/code&gt;，且需要去掉开头的0x，这是代表十六进制的开头&lt;/li&gt;
+&lt;li&gt;运行&lt;code&gt;./lora_pkt_fwd&lt;/code&gt;即可看到&lt;a href=&#34;https://console.cloud.tencent.com/iotexplorer/project/prj-xpc7prs7/gateway/list?table&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;状态在线&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/158540396&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;云处理数据&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;作用
@@ -112,13 +98,9 @@ ERROR: [main] failed to start the concentrator
 &lt;/li&gt;
 &lt;li&gt;global_conf.json
 &lt;ul&gt;
-&lt;li&gt;
-&lt;a href=&#34;https://gitee.com/rejeee/gw1302s/commit/c425b67a5ccaaef0dd1042da08974245124c069b&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Gitee版本&lt;/a&gt;直接增加了一个文件&lt;code&gt;gw1302s/packet_forwarder/global_conf.json&lt;/code&gt;，其特点是&lt;code&gt;&amp;quot;gateway_conf&amp;quot;&lt;/code&gt;下面的&lt;code&gt;server_address&lt;/code&gt;
-&lt;a href=&#34;https://zhuanlan.zhihu.com/p/154451911&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;由localhost修改为了loragw.things.qcloud.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://gitee.com/rejeee/gw1302s/commit/c425b67a5ccaaef0dd1042da08974245124c069b&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Gitee版本&lt;/a&gt;直接增加了一个文件&lt;code&gt;gw1302s/packet_forwarder/global_conf.json&lt;/code&gt;，其特点是&lt;code&gt;&amp;quot;gateway_conf&amp;quot;&lt;/code&gt;下面的&lt;code&gt;server_address&lt;/code&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/154451911&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;由localhost修改为了loragw.things.qcloud.com&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;make install_conf&lt;/code&gt;即安装&lt;code&gt;global_conf.json&lt;/code&gt;
-,卖家给的
-&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/13154904.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;攻略&lt;/a&gt;、官方的
-&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVQzOWdIRUc4YU5DbHFMVzBjRGkwVjBCZjZGQmUzWUpkSnh0YVhXbUlLdnFtUT9lPW9qNjEzcg==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;参考文献&lt;/a&gt;均给出了其中的参数意义&lt;/li&gt;
+,卖家给的&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/13154904.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;攻略&lt;/a&gt;、官方的&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVQzOWdIRUc4YU5DbHFMVzBjRGkwVjBCZjZGQmUzWUpkSnh0YVhXbUlLdnFtUT9lPW9qNjEzcg==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;参考文献&lt;/a&gt;均给出了其中的参数意义&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -142,10 +124,8 @@ ERROR: [main] failed to start the concentrator
 &lt;ul&gt;
 &lt;li&gt;接收到数据包的真实显示
 &lt;ul&gt;
-&lt;li&gt;
-&lt;a href=&#34;https://blog.csdn.net/quending/article/details/84979181&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;网页一&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;
-&lt;a href=&#34;https://forum.chirpstack.io/t/how-to-change-lora-gateway-bridge-configuration/6350/4&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;网页二&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/quending/article/details/84979181&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;网页一&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://forum.chirpstack.io/t/how-to-change-lora-gateway-bridge-configuration/6350/4&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;网页二&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;

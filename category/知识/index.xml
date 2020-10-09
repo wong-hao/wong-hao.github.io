@@ -5,7 +5,7 @@
     <link>https://haowong.com/category/%E7%9F%A5%E8%AF%86/</link>
       <atom:link href="https://haowong.com/category/%E7%9F%A5%E8%AF%86/index.xml" rel="self" type="application/rss+xml" />
     <description>知识</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>©</copyright><lastBuildDate>Sat, 26 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>©</copyright><lastBuildDate>Sat, 26 Sep 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://haowong.com/images/icon_hub0cb53550ede56fdccc60540659dbf84_11803_512x512_fill_lanczos_center_2.png</url>
       <title>知识</title>
@@ -23,8 +23,7 @@
 &lt;blockquote&gt;
 &lt;p&gt;Latex-&amp;gt;Markdown: pandoc -s main.tex -o main.md&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;
-&lt;a href=&#34;https://liam.page/2014/09/08/latex-introduction/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Latex入门&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://liam.page/2014/09/08/latex-introduction/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Latex入门&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;/blockquote&gt;
 &lt;/blockquote&gt;
@@ -81,8 +80,7 @@
 &lt;li&gt;&lt;code&gt;link&lt;/code&gt; 为链接地址。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;示例&lt;/p&gt;
-&lt;p&gt;我觉得
-&lt;a href=&#34;https://apps.apple.com/app/id1472328263&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Markdown&lt;/a&gt;真是个棒棒哒的编辑器😊.&lt;/p&gt;
+&lt;p&gt;我觉得&lt;a href=&#34;https://apps.apple.com/app/id1472328263&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Markdown&lt;/a&gt;真是个棒棒哒的编辑器😊.&lt;/p&gt;
 &lt;h3 id=&#34;6-数学公式&#34;&gt;6 数学公式&lt;/h3&gt;
 &lt;p&gt;&lt;code&gt;$&lt;/code&gt;包围的区块将会解析为数学公式，连续的&lt;code&gt;$$&lt;/code&gt;将独占一行并居中显示&lt;/p&gt;
 &lt;p&gt;示例&lt;/p&gt;
@@ -281,20 +279,17 @@
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;这个是粗体加斜体&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;注：由于 commonmark 标准，可能会导致加粗与想象不一致，如下&lt;/p&gt;
 &lt;p&gt;**今天天气好晴朗，**处处好风光。&lt;/p&gt;
-&lt;p&gt;这个是正常现象，请参考
-&lt;a href=&#34;https://github.com/markdown-it/markdown-it/issues/410&#34; title=&#34;加粗 Issue&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;加粗 Issue&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;这个是正常现象，请参考&lt;a href=&#34;https://github.com/markdown-it/markdown-it/issues/410&#34; title=&#34;加粗 Issue&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;加粗 Issue&lt;/a&gt;。&lt;/p&gt;
 &lt;h3 id=&#34;35-链接&#34;&gt;3.5 链接&lt;/h3&gt;
 &lt;p&gt;微信公众号仅支持公众号文章链接，即域名为&lt;code&gt;https://mp.weixin.qq.com/&lt;/code&gt;的合法链接。使用方法如下所示：&lt;/p&gt;
-&lt;p&gt;对于该论述，欢迎读者查阅之前发过的文章，
-&lt;a href=&#34;https://mp.weixin.qq.com/s/s5IhxV2ooX3JN_X416nidA&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;你是《未来世界的幸存者》么？&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;对于该论述，欢迎读者查阅之前发过的文章，&lt;a href=&#34;https://mp.weixin.qq.com/s/s5IhxV2ooX3JN_X416nidA&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;你是《未来世界的幸存者》么？&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&#34;36-引用&#34;&gt;3.6 引用&lt;/h3&gt;
 &lt;p&gt;引用的格式是在符号 &lt;code&gt;&amp;gt;&lt;/code&gt; 后面书写文字，文字的内容可以包含标题、链接、图片、粗体和斜体等。&lt;/p&gt;
 &lt;p&gt;一级引用如下：&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;h3 id=&#34;一级引用示例&#34;&gt;一级引用示例&lt;/h3&gt;
 &lt;p&gt;读一本好书，就是在和高尚的人谈话。 &lt;strong&gt;——歌德&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;
-&lt;a href=&#34;https://mp.weixin.qq.com/s/lM808MxUu6tp8zU8SBu3sg&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Markdown Nice最全功能介绍&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://mp.weixin.qq.com/s/lM808MxUu6tp8zU8SBu3sg&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Markdown Nice最全功能介绍&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://my-wechat.mdnice.com/wechat.jpg&#34; alt=&#34;这里写图片描述&#34;&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;当使用多个 &lt;code&gt;&amp;gt;&lt;/code&gt; 符号时，就会变成多级引用&lt;/p&gt;
@@ -303,8 +298,7 @@
 &lt;blockquote&gt;
 &lt;h3 id=&#34;二级引用示例&#34;&gt;二级引用示例&lt;/h3&gt;
 &lt;p&gt;读一本好书，就是在和高尚的人谈话。 &lt;strong&gt;——歌德&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;
-&lt;a href=&#34;https://mp.weixin.qq.com/s/lM808MxUu6tp8zU8SBu3sg&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Markdown Nice最全功能介绍&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://mp.weixin.qq.com/s/lM808MxUu6tp8zU8SBu3sg&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Markdown Nice最全功能介绍&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://my-wechat.mdnice.com/wechat.jpg&#34; alt=&#34;这里写图片描述&#34;&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;/blockquote&gt;
@@ -314,8 +308,7 @@
 &lt;blockquote&gt;
 &lt;h3 id=&#34;三级引用示例&#34;&gt;三级引用示例&lt;/h3&gt;
 &lt;p&gt;读一本好书，就是在和高尚的人谈话。 &lt;strong&gt;——歌德&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;
-&lt;a href=&#34;https://mp.weixin.qq.com/s/lM808MxUu6tp8zU8SBu3sg&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Markdown Nice最全功能介绍&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://mp.weixin.qq.com/s/lM808MxUu6tp8zU8SBu3sg&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Markdown Nice最全功能介绍&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://my-wechat.mdnice.com/wechat.jpg&#34; alt=&#34;这里写图片描述&#34;&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;/blockquote&gt;
@@ -404,8 +397,7 @@
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;注：仅支持 https 的图片，图片粘贴到微信、知乎或掘金时会自动上传其服务器，不必担心使用上述图床会导致图片丢失&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;图片还可以和链接嵌套使用，能够实现推荐卡片的效果，用法如下：&lt;/p&gt;
-&lt;p&gt;
-&lt;a href=&#34;https://mp.weixin.qq.com/s/lM808MxUu6tp8zU8SBu3sg&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;img src=&#34;https://my-wechat.mdnice.com/dance.gif&#34; alt=&#34;Markdown Nice 最全功能介绍&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://mp.weixin.qq.com/s/lM808MxUu6tp8zU8SBu3sg&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;img src=&#34;https://my-wechat.mdnice.com/dance.gif&#34; alt=&#34;Markdown Nice 最全功能介绍&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;4-特殊语法&#34;&gt;4. 特殊语法&lt;/h2&gt;
 &lt;h3 id=&#34;41-脚注&#34;&gt;4.1 脚注&lt;/h3&gt;
 &lt;blockquote&gt;
@@ -415,10 +407,8 @@
 &lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;链接：[文字](链接)
 脚注：[文字](脚注解释 &amp;quot;脚注名字&amp;quot;)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;有人认为在
-&lt;a href=&#34;https://en.wikipedia.org/wiki/Front-end_web_development&#34; title=&#34;Front-end web development&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;大前端时代&lt;/a&gt;的背景下，移动端开发（Android、IOS）将逐步退出历史舞台。&lt;/p&gt;
-&lt;p&gt;
-&lt;a href=&#34;%e6%98%af%e6%8c%87%e6%8e%8c%e6%8f%a1%e5%a4%9a%e7%a7%8d%e6%8a%80%e8%83%bd%ef%bc%8c%e5%b9%b6%e8%83%bd%e5%88%a9%e7%94%a8%e5%a4%9a%e7%a7%8d%e6%8a%80%e8%83%bd%e7%8b%ac%e7%ab%8b%e5%ae%8c%e6%88%90%e4%ba%a7%e5%93%81%e7%9a%84%e4%ba%ba%e3%80%82&#34; title=&#34;什么是全栈工程师&#34;&gt;全栈工程师&lt;/a&gt;在业务开发流程中起到了至关重要的作用。&lt;/p&gt;
+&lt;p&gt;有人认为在&lt;a href=&#34;https://en.wikipedia.org/wiki/Front-end_web_development&#34; title=&#34;Front-end web development&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;大前端时代&lt;/a&gt;的背景下，移动端开发（Android、IOS）将逐步退出历史舞台。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;%e6%98%af%e6%8c%87%e6%8e%8c%e6%8f%a1%e5%a4%9a%e7%a7%8d%e6%8a%80%e8%83%bd%ef%bc%8c%e5%b9%b6%e8%83%bd%e5%88%a9%e7%94%a8%e5%a4%9a%e7%a7%8d%e6%8a%80%e8%83%bd%e7%8b%ac%e7%ab%8b%e5%ae%8c%e6%88%90%e4%ba%a7%e5%93%81%e7%9a%84%e4%ba%ba%e3%80%82&#34; title=&#34;什么是全栈工程师&#34;&gt;全栈工程师&lt;/a&gt;在业务开发流程中起到了至关重要的作用。&lt;/p&gt;
 &lt;p&gt;脚注内容请拉到最下面观看。&lt;/p&gt;
 &lt;h3 id=&#34;42-代码块&#34;&gt;4.2 代码块&lt;/h3&gt;
 &lt;blockquote&gt;
@@ -513,8 +503,7 @@ $$&lt;/p&gt;
 &lt;h3 id=&#34;52-uml&#34;&gt;5.2 UML&lt;/h3&gt;
 &lt;p&gt;不支持，推荐使用开源工具&lt;code&gt;https://draw.io/&lt;/code&gt;制作后再导入图片&lt;/p&gt;
 &lt;h3 id=&#34;53-更多文档&#34;&gt;5.3 更多文档&lt;/h3&gt;
-&lt;p&gt;更多文档请参考 
-&lt;a href=&#34;https://preview.mdnice.com/articles/&#34; title=&#34;更多文档&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;markdown-nice-docs&lt;/a&gt;&lt;/p&gt;</description>
+&lt;p&gt;更多文档请参考 &lt;a href=&#34;https://preview.mdnice.com/articles/&#34; title=&#34;更多文档&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;markdown-nice-docs&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>
