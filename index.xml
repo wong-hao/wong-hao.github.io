@@ -219,6 +219,7 @@ ERROR: [main] failed to start the concentrator
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOnU6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWRwVnYzQldadk5HaVgxTmJhWUVhdWdCVzhBbHIxWVJCU21Zb0dyVHpfbDQ5UT9lPTljNXZmMg==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Gitee版&lt;/a&gt;采用的代码Commit id（&lt;em&gt;选用自动安装脚本&amp;rsquo;install.sh&amp;rsquo;&lt;/em&gt;）: &lt;a href=&#34;https://gitee.com/rejeee/gw1302s/commit/d9ef27fdecf2352d7ab6b85d50fb7a3e38a162ae&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;d9ef27fdecf2352d7ab6b85d50fb7a3e38a162ae&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOnU6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVJsdlB0MWQ2eDVQc1lTSzgtRG5UdGNCcGRNTmVyZV81VlprZWlNa1g1UmV4dz9lPTF5ZWJicA==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Github版&lt;/a&gt;采用的代码Commit id（&lt;em&gt;Gitee抄到这后面就自己改了&lt;/em&gt;）: &lt;a href=&#34;https://github.com/Lora-net/sx1302_hal/commit/6291e62ef9a161ae41037a0df1a86e9943a907b9&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;6291e62ef9a161ae41037a0df1a86e9943a907b9&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;卖家给了所谓&lt;code&gt;搭建好基本环境&lt;/code&gt;的&lt;a href=&#34;&#34;&gt;系统&lt;/a&gt;，实际上就是刷了旧版4.19，升级了还是不能用，没解决任何问题&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://downloads.raspberrypi.org/raspbian/images/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;历代系统&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://downloads.raspberrypi.org/raspbian/images/raspbian-2020-02-14/2020-02-13-raspbian-buster.zip&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;4.19.97系统镜像&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
@@ -931,7 +932,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-279458631&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-578219643&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -941,7 +942,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-279458631&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-578219643&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
