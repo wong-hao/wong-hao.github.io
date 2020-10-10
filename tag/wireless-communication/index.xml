@@ -42,6 +42,16 @@ ERROR: [main] failed to start the concentrator
 &lt;li&gt;&lt;code&gt;SX1302_RESET_PIN=23&lt;/code&gt;改成了&lt;code&gt;SX1302_RESET_PIN=7&lt;/code&gt;且去掉了GPIO18相关代码
 （&lt;em&gt;GPIO7存在才能启动，GPIO18改不改没关系&lt;/em&gt;）&lt;/li&gt;
 &lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;网关射频模组
+&lt;ul&gt;
+&lt;li&gt;寄存器读写测试：1%概率成功
+&lt;img src=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWE2WkZIVERwWEJMdlExenVJZWZwNjBCbmhsWUkzWkFjYlMxbndyU09QdXJoQT9lPUVvMktuZg==.mp3&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
+&lt;li&gt;发送测试成功&lt;/li&gt;
+&lt;li&gt;接受测试成功&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h4 id=&#34;12-备份&#34;&gt;1.2 备份&lt;/h4&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOnU6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWRwVnYzQldadk5HaVgxTmJhWUVhdWdCVzhBbHIxWVJCU21Zb0dyVHpfbDQ5UT9lPTljNXZmMg==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Gitee版&lt;/a&gt;采用的代码Commit id（&lt;em&gt;选用自动安装脚本&amp;rsquo;install.sh&amp;rsquo;&lt;/em&gt;）: &lt;a href=&#34;https://gitee.com/rejeee/gw1302s/commit/d9ef27fdecf2352d7ab6b85d50fb7a3e38a162ae&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;d9ef27fdecf2352d7ab6b85d50fb7a3e38a162ae&lt;/a&gt;&lt;/li&gt;
