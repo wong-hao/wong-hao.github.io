@@ -48,7 +48,8 @@ ERROR: [main] failed to start the concentrator
 &lt;li&gt;寄存器读写测试：1%概率成功
 &lt;img src=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWE2WkZIVERwWEJMdlExenVJZWZwNjBCbmhsWUkzWkFjYlMxbndyU09QdXJoQT9lPUVvMktuZg==.mp3&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
 &lt;li&gt;发送测试成功&lt;/li&gt;
-&lt;li&gt;接受测试成功&lt;/li&gt;
+&lt;li&gt;接受测试：官方建议&lt;a href=&#34;https://www.bilibili.com/video/BV1Yt411N7MV&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;M-HL9-EV连金黄天线&lt;/a&gt;，但实测用直黑天线进行接受测试效果更好，且发包间隔要长，避免丢包接收不到
+&lt;img src=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVF2Y1kteVJ5TUJGbWpfSkpiYkRRSkFCVVh0dkFTVFpZMDgydnlrclJENTJmQT9lPUVMd05PMw==.mp3&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -82,10 +83,6 @@ ERROR: [main] failed to start the concentrator
 &lt;/ul&gt;
 &lt;h3 id=&#34;2实验步骤&#34;&gt;2.实验步骤&lt;/h3&gt;
 &lt;h4 id=&#34;21硬件&#34;&gt;2.1硬件&lt;/h4&gt;
-&lt;ol&gt;
-&lt;li&gt;sx1302连直黑天线&lt;/li&gt;
-&lt;li&gt;官方建议&lt;a href=&#34;https://www.bilibili.com/video/BV1Yt411N7MV&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;M-HL9-EV连金黄天线&lt;/a&gt;，但实测用直黑天线进行接受测试效果更好&lt;/li&gt;
-&lt;/ol&gt;
 &lt;ul&gt;
 &lt;li&gt;使用树莓派搭建网关注册到腾讯云
 &lt;ul&gt;
