@@ -901,7 +901,7 @@ ERROR: [main] failed to start the concentrator
 <strong><em>其实Gitee之前的commit全部是copy的Github，就最后改了下</em></strong></p>
 <ol>
 <li>使用<code>#if USE_I2C_SENSOR ... #endif</code>消除温度传感器I2C（<em>据说不注释掉不能启动</em>）</li>
-<li><strong>boardconf.lorawan_public = true;<strong>改成了</strong>boardconf.lorawan_public = false;</strong>
+<li><strong>boardconf.lorawan_public = true</strong>改成了<strong>boardconf.lorawan_public = false</strong>
 （<em>完全不影响</em>）</li>
 <li><strong>SX1302_RESET_PIN=23</strong>改成了<strong>SX1302_RESET_PIN=7</strong>且去掉了GPIO18相关代码
 （<em>GPIO7存在才能启动，GPIO18改不改没关系</em>）</li>
