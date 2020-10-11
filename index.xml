@@ -305,7 +305,7 @@ ERROR: [main] failed to start the concentrator
 &lt;p&gt;故&lt;strong&gt;gw1302s/bin&lt;/strong&gt;下看不懂的文件去看对应Helper program下的&lt;strong&gt;Readme.md&lt;/strong&gt;，但可执行文件还是看这里&lt;/p&gt;
 &lt;hr&gt;
 &lt;ul&gt;
-&lt;li&gt;./lora_pkt_fwd
+&lt;li&gt;&lt;code&gt;./lora_pkt_fwd&lt;/code&gt;
 &lt;ul&gt;
 &lt;li&gt;接收到数据包的真实显示
 &lt;ul&gt;
@@ -936,7 +936,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-928135476&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-512496873&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -946,7 +946,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-928135476&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-512496873&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();

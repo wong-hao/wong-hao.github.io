@@ -132,7 +132,7 @@ ERROR: [main] failed to start the concentrator
 &lt;p&gt;故&lt;strong&gt;gw1302s/bin&lt;/strong&gt;下看不懂的文件去看对应Helper program下的&lt;strong&gt;Readme.md&lt;/strong&gt;，但可执行文件还是看这里&lt;/p&gt;
 &lt;hr&gt;
 &lt;ul&gt;
-&lt;li&gt;./lora_pkt_fwd
+&lt;li&gt;&lt;code&gt;./lora_pkt_fwd&lt;/code&gt;
 &lt;ul&gt;
 &lt;li&gt;接收到数据包的真实显示
 &lt;ul&gt;
