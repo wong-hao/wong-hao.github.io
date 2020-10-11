@@ -901,9 +901,9 @@ ERROR: [main] failed to start the concentrator
 <strong><em>其实Gitee之前的commit全部是copy的Github，就最后改了下</em></strong></p>
 <ol>
 <li>使用<code>#if USE_I2C_SENSOR ... #endif</code>消除温度传感器I2C（<em>据说不注释掉不能启动</em>）</li>
-<li><code>boardconf.lorawan_public = true;</code>改成了<code>boardconf.lorawan_public = false;</code>
+<li><strong>boardconf.lorawan_public = true;<strong>改成了</strong>boardconf.lorawan_public = false;</strong>
 （<em>完全不影响</em>）</li>
-<li><code>SX1302_RESET_PIN=23</code>改成了<code>SX1302_RESET_PIN=7</code>且去掉了GPIO18相关代码
+<li><strong>SX1302_RESET_PIN=23</strong>改成了<strong>SX1302_RESET_PIN=7</strong>且去掉了GPIO18相关代码
 （<em>GPIO7存在才能启动，GPIO18改不改没关系</em>）</li>
 </ol>
 <ul>
@@ -911,17 +911,20 @@ ERROR: [main] failed to start the concentrator
 <ul>
 <li>寄存器读写测试：1%概率成功
 <img src="https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWE2WkZIVERwWEJMdlExenVJZWZwNjBCbmhsWUkzWkFjYlMxbndyU09QdXJoQT9lPUVvMktuZg==.mp3" alt="image"></li>
-<li>发送测试成功</li>
+<li>发送测试成功
+<img src="https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVdEbjF4UDQwaDlJZ1B1SGFVMjgxTXNCdGhna1IxUlRXdlIxdWNlcXBrUUJyZz9lPUNKMGFpcw==.mp3" alt="image"></li>
 <li>接受测试：官方建议<a href="https://www.bilibili.com/video/BV1Yt411N7MV" target="_blank" rel="noopener">M-HL9-EV连金黄天线</a>，但实测用直黑天线进行接受测试效果更好，且发包间隔要长，避免丢包接收不到
-<img src="https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVF2Y1kteVJ5TUJGbWpfSkpiYkRRSkFCVVh0dkFTVFpZMDgydnlrclJENTJmQT9lPUVMd05PMw==.mp3" alt="image"></li>
+<img src="https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVF2Y1kteVJ5TUJGbWpfSkpiYkRRSkFCVVh0dkFTVFpZMDgydnlrclJENTJmQT9lPXNGVmdDUA==.mp3" alt="image">
+<img src="https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVRQQUpRb0NuSkJNdWI0OUpDQWNscGdCZHltUDhBUlZfaGxYUzJkMzVXdjlLUT9lPTFkNHR0TQ==.mp3" alt="image"></li>
+<li>发送接收均用的<strong>Hex</strong></li>
 </ul>
 </li>
 </ul>
-<h4 id="12-备份">1.2 备份</h4>
+<h4 id="12-系统备份">1.2 系统备份</h4>
 <ol>
 <li><a href="#">Gitee版</a>采用的代码Commit id（<em>选用自动安装脚本&rsquo;install.sh&rsquo;</em>）: <a href="https://gitee.com/rejeee/gw1302s/commit/d9ef27fdecf2352d7ab6b85d50fb7a3e38a162ae" target="_blank" rel="noopener">d9ef27fdecf2352d7ab6b85d50fb7a3e38a162ae</a></li>
 <li><a href="#">Github版</a>采用的代码Commit id（<em>Gitee抄到这后面就自己改了</em>）: <a href="https://github.com/Lora-net/sx1302_hal/commit/6291e62ef9a161ae41037a0df1a86e9943a907b9" target="_blank" rel="noopener">6291e62ef9a161ae41037a0df1a86e9943a907b9</a></li>
-<li>卖家给了所谓<code>搭建好基本环境</code>的<a href="https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOnU6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVpVeXREN1pkTDVBZy14c3hjTXQ0NElCVEI1TTgyV2xHcWJOUFgxOGZZWmhaUT9lPXRrQUx1Zg==.mp3" target="_blank" rel="noopener">系统</a>，实际上就是刷了4.19，升级了还是不能用，没解决任何问题</li>
+<li>卖家给了所谓<strong>搭建好基本环境</strong>的<a href="https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOnU6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVpVeXREN1pkTDVBZy14c3hjTXQ0NElCVEI1TTgyV2xHcWJOUFgxOGZZWmhaUT9lPXRrQUx1Zg==.mp3" target="_blank" rel="noopener">系统</a>，实际上就是刷了4.19，升级了还是不能用，没解决任何问题</li>
 <li><a href="https://downloads.raspberrypi.org/raspbian/images/" target="_blank" rel="noopener">历代系统</a></li>
 <li><a href="https://mirrors.tuna.tsinghua.edu.cn/raspbian-images/raspios_armhf/images/raspios_armhf-2020-05-28/2020-05-27-raspios-buster-armhf.zip" target="_blank" rel="noopener">4.19.118系统清华镜像</a></li>
 </ol>
@@ -942,6 +945,7 @@ ERROR: [main] failed to start the concentrator
 <li>重置串口</li>
 </ul>
 </li>
+<li><a href="https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOnU6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVl0NnU0Zjh5ckpHdW41b1l3eFRtZ2NCTFZSYlg0cm1JT2kxemRENkhrM011Zz9lPVRORFZIcQ==.mp3" target="_blank" rel="noopener">配置备份</a></li>
 </ul>
 </li>
 </ul>
@@ -957,7 +961,7 @@ ERROR: [main] failed to start the concentrator
 </li>
 <li>补充
 <ul>
-<li><a href="https://www.wpgdadatong.com/cn/solution/detail?PID=5357" target="_blank" rel="noopener">获取GwEUI</a>，即在<code>gw1302s/bin</code>下使用<code>./chip_id</code>，注意还要用该值替换掉<code>gw1302s/bin/global_conf.json</code>中的<code>gateway_ID</code>，且需要去掉开头的0x，这是代表十六进制的开头</li>
+<li><a href="https://www.wpgdadatong.com/cn/solution/detail?PID=5357" target="_blank" rel="noopener">获取GwEUI</a>，即在<strong>gw1302s/bin</strong>下使用<code>./chip_id</code>，注意还要用该值替换掉<strong>gw1302s/bin/global_conf.json</strong>中的<strong>gateway_ID`</strong>，且需要去掉开头的0x，这是代表十六进制的开头</li>
 <li>运行<code>./lora_pkt_fwd</code>即可看到<a href="https://console.cloud.tencent.com/iotexplorer/project/prj-xpc7prs7/gateway/list?table" target="_blank" rel="noopener">状态在线</a></li>
 <li><a href="https://zhuanlan.zhihu.com/p/158540396" target="_blank" rel="noopener">云处理数据</a></li>
 </ul>
@@ -970,9 +974,9 @@ ERROR: [main] failed to start the concentrator
 </li>
 <li>global_conf.json
 <ul>
-<li><a href="https://gitee.com/rejeee/gw1302s/commit/c425b67a5ccaaef0dd1042da08974245124c069b" target="_blank" rel="noopener">Gitee版本</a>直接增加了一个文件<code>gw1302s/packet_forwarder/global_conf.json</code>，其特点是<code>&quot;gateway_conf&quot;</code>下面的<code>server_address</code><a href="https://blog.csdn.net/RAKwireless/article/details/107101582" target="_blank" rel="noopener">由localhost修改为了loragw.things.qcloud.com</a></li>
-<li><code>make install_conf</code>即安装<code>global_conf.json</code></li>
-<li>卖家给的<a href="https://www.cnblogs.com/answerinthewind/p/13154904.html" target="_blank" rel="noopener">攻略</a>跟用<code>install.sh</code>生成的主要差别在radio_1与radio_2的<code>ferq</code>不同，攻略的效果好；官方的<a href="https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVQzOWdIRUc4YU5DbHFMVzBjRGkwVjBCZjZGQmUzWUpkSnh0YVhXbUlLdnFtUT9lPW9qNjEzcg==.mp3" target="_blank" rel="noopener">参考文献</a>和攻略均给出了其中的参数意义</li>
+<li><a href="https://gitee.com/rejeee/gw1302s/commit/c425b67a5ccaaef0dd1042da08974245124c069b" target="_blank" rel="noopener">Gitee版本</a>直接增加了一个文件<strong>gw1302s/packet_forwarder/global_conf.json</strong>，其特点是<strong>gateway_conf</strong>下面的<strong>server_address</strong><a href="https://blog.csdn.net/RAKwireless/article/details/107101582" target="_blank" rel="noopener">由localhost修改为了loragw.things.qcloud.com</a></li>
+<li><code>make install_conf</code>即安装<strong>global_conf.json</strong></li>
+<li>卖家给的<a href="https://www.cnblogs.com/answerinthewind/p/13154904.html" target="_blank" rel="noopener">攻略</a>跟用<code>install.sh</code>生成的主要差别在radio_1与radio_2的<strong>ferq</strong>不同，攻略的效果好；官方的<a href="https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVQzOWdIRUc4YU5DbHFMVzBjRGkwVjBCZjZGQmUzWUpkSnh0YVhXbUlLdnFtUT9lPW9qNjEzcg==.mp3" target="_blank" rel="noopener">参考文献</a>和攻略均给出了其中的参数意义</li>
 </ul>
 </li>
 </ul>
@@ -980,16 +984,16 @@ ERROR: [main] failed to start the concentrator
 </ul>
 <h4 id="22源码">2.2源码</h4>
 <ol>
-<li><code>gw1302s/libloragw</code></li>
-<li><code>gw1302s/packet_forwarder</code></li>
-<li><code>gw1302s/tools/payload_tools</code></li>
-<li><code>gw1302s/util_net_downlink</code></li>
-<li><code>gw1302s/util_chip_id</code></li>
+<li><strong>gw1302s/libloragw</strong></li>
+<li><strong>gw1302s/packet_forwarder</strong></li>
+<li><strong>gw1302s/tools/payload_tools</strong></li>
+<li><strong>gw1302s/util_net_downlink</strong></li>
+<li><strong>gw1302s/util_chip_id</strong></li>
 </ol>
 <blockquote>
-<p>五个Helper program在主目录下，通过每个Helper下的<code>makefile</code>文件将必要的文件<code>scp</code>到<code>../target.cfg</code>中的<code>TARGET_DIR</code>中</p>
+<p>五个Helper program在主目录下，通过每个Helper下的<strong>makefile</strong>文件将必要的文件<code>scp</code>到<strong>target.cfg</strong>中的<strong>TARGET_DIR</strong>中</p>
 </blockquote>
-<p>故<code>gw1302s/bin</code>下看不懂的文件去看对应Helper program下的<code>Readme.md</code>，但可执行文件还是看这里</p>
+<p>故<strong>gw1302s/bin</strong>下看不懂的文件去看对应Helper program下的<strong>Readme.md</strong>，但可执行文件还是看这里</p>
 <hr>
 <ul>
 <li>./lora_pkt_fwd
