@@ -88,7 +88,7 @@ ERROR: [main] failed to start the concentrator
 &lt;h3 id=&#34;2实验步骤&#34;&gt;2.实验步骤&lt;/h3&gt;
 &lt;h4 id=&#34;21硬件&#34;&gt;2.1硬件&lt;/h4&gt;
 &lt;ul&gt;
-&lt;li&gt;使用树莓派搭建网关注册到腾讯云
+&lt;li&gt;使用树莓派搭建网关注册到腾讯物联网开发平台
 &lt;ul&gt;
 &lt;li&gt;主要步骤
 &lt;ul&gt;
@@ -120,6 +120,8 @@ ERROR: [main] failed to start the concentrator
 &lt;li&gt;卖家给的&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/13154904.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;攻略&lt;/a&gt;跟用&lt;code&gt;install.sh&lt;/code&gt;生成的主要差别在radio_1与radio_2的&lt;strong&gt;ferq&lt;/strong&gt;不同，攻略的效果好；官方的&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVQzOWdIRUc4YU5DbHFMVzBjRGkwVjBCZjZGQmUzWUpkSnh0YVhXbUlLdnFtUT9lPW9qNjEzcg==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;参考文献&lt;/a&gt;和攻略均给出了其中的参数意义&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://console.cloud.tencent.com/iotexplorer&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;腾讯物联网开发平台&lt;/a&gt;&lt;/strong&gt; 对标 &lt;strong&gt;&lt;a href=&#34;https://linkwan.console.aliyun.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;阿里云物联网络管理平台&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://console.cloud.tencent.com/iothub&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;腾讯物联网通信&lt;/a&gt;&lt;/strong&gt; 对标 &lt;strong&gt;&lt;a href=&#34;https://iot.console.aliyun.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;阿里云物联网平台&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -143,6 +145,8 @@ ERROR: [main] failed to start the concentrator
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/quending/article/details/84979181&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;网页一&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://forum.chirpstack.io/t/how-to-change-lora-gateway-bridge-configuration/6350/4&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;网页二&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/quending/article/details/86483352&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;网页三&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/quending/article/details/86481598&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;网页四&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
