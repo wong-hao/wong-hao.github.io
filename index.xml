@@ -272,7 +272,12 @@ ERROR: [main] failed to start the concentrator
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.wpgdadatong.com/cn/solution/detail?PID=5357&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;获取GwEUI&lt;/a&gt;，即在&lt;strong&gt;gw1302s/bin&lt;/strong&gt;下使用&lt;code&gt;./chip_id&lt;/code&gt;，注意还要用该值替换掉&lt;strong&gt;gw1302s/bin/global_conf.json&lt;/strong&gt;中的&lt;strong&gt;gateway_ID`&lt;/strong&gt;，且需要去掉开头的0x，这是代表十六进制的开头&lt;/li&gt;
 &lt;li&gt;运行&lt;code&gt;./lora_pkt_fwd&lt;/code&gt;即可看到&lt;a href=&#34;https://console.cloud.tencent.com/iotexplorer/project/prj-xpc7prs7/gateway/list?table&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;状态在线&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/158540396&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;云处理数据&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;云解析数据
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/RAKwireless/article/details/107251605&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;数据模板1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cloud.tencent.com/document/product/1081/44921&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;数据模板2&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;作用
@@ -936,7 +941,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-512496873&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-423978615&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -946,7 +951,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-512496873&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-423978615&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
