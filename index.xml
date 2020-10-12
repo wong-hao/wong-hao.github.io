@@ -247,6 +247,7 @@ ERROR: [main] failed to start the concentrator
 &lt;img src=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWJhOTJVWGRsbjFHaGdBLTZNZlB2T2dCWHUwT2ROd2VUNUgzb1JYN2p1d01FQT9lPXgwZkxkWg==.mp3&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
 &lt;li&gt;AT模式可直接使用AT指令，注意&lt;strong&gt;必须换行&lt;/strong&gt;
 &lt;img src=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVNIQmpUdFJaSE5GbTBCSlJuYmRJeWNCU25yaU84U2FnSzNaYjY4endDVHZJdz9lPW5meGNBeg==.mp3&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
+&lt;li&gt;查询配置参数 &lt;img src=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWZMVGRJNjZhWmxOdnpVd1NVemdPYndCYnBuSmRqU0hNNE8tX3BDcG16LXZsQT9lPTczVmxTcg==.mp3&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
 &lt;li&gt;AT模式下不能发送接收数据，需要使用AT指令&lt;code&gt;ATT&lt;/code&gt;加&lt;strong&gt;换行&lt;/strong&gt;返回透传模式&lt;/li&gt;
 &lt;li&gt;发送接收均用的&lt;strong&gt;Ascii&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -947,7 +948,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-254638917&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-542189736&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -957,7 +958,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-254638917&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-542189736&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
