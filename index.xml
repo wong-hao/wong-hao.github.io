@@ -300,26 +300,9 @@ ERROR: [main] failed to start the concentrator
 &lt;li&gt;&lt;strong&gt;前导码: 0x12&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;M-HL9-EV
 &lt;ul&gt;
-&lt;li&gt;按键
-&lt;ul&gt;
-&lt;li&gt;模式切换
-&lt;ul&gt;
-&lt;li&gt;透传模式要先使用&lt;code&gt;+++&lt;/code&gt;进入AT模式，注意&lt;strong&gt;不能换行&lt;/strong&gt;
-&lt;img src=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWJhOTJVWGRsbjFHaGdBLTZNZlB2T2dCWHUwT2ROd2VUNUgzb1JYN2p1d01FQT9lPXgwZkxkWg==.mp3&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
-&lt;li&gt;AT模式可直接使用AT指令，注意&lt;strong&gt;必须换行&lt;/strong&gt;
-&lt;img src=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVNIQmpUdFJaSE5GbTBCSlJuYmRJeWNCU25yaU84U2FnSzNaYjY4endDVHZJdz9lPW5meGNBeg==.mp3&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
-&lt;li&gt;查询配置参数 &lt;img src=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWZMVGRJNjZhWmxOdnpVd1NVemdPYndCYnBuSmRqU0hNNE8tX3BDcG16LXZsQT9lPTczVmxTcg==.mp3&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
-&lt;li&gt;AT模式下不能发送接收数据，需要使用AT指令&lt;code&gt;ATT&lt;/code&gt;加&lt;strong&gt;换行&lt;/strong&gt;返回透传模式&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.rejeee.com/documents/APP_DOC/M-KL9_how_to_enter_configuration_mode.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;配置方法&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.rejeee.com/documents/APP_DOC/M-KL9_parameter.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;M-KL9参数意义&lt;/a&gt;，具体配置方法看用户手册&lt;/li&gt;
 &lt;li&gt;发送接收均用的&lt;strong&gt;Ascii&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;复位按键
-&lt;ul&gt;
-&lt;li&gt;重置串口&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOnU6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVl0NnU0Zjh5ckpHdW41b1l3eFRtZ2NCTFZSYlg0cm1JT2kxemRENkhrM011Zz9lPVRORFZIcQ==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;配置备份&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;示例
 &lt;img src=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVN2MG03VmpERzFIak1pd0VDZ184LTRCUkFacnlhQ0NJQzRpa2FYZEJoM252QT9lPU9MVEJTVQ==.mp3&#34; alt=&#34;image&#34;&gt;
@@ -328,7 +311,7 @@ ERROR: [main] failed to start the concentrator
 &lt;img src=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVVPTTljUTJJcGhEa1JxWm85V0lFaDBCS1BqOXV2WXVQVnA1UGJYbGtOOElXUT9lPXAxdGNKMQ==.mp3&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;参数解释
+&lt;li&gt;通信参数解释
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/quending/article/details/84979181&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;网页一&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://forum.chirpstack.io/t/how-to-change-lora-gateway-bridge-configuration/6350/4&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;网页二&lt;/a&gt;&lt;/li&gt;
@@ -961,7 +944,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-192638745&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-861254397&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -971,7 +954,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-192638745&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-861254397&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
