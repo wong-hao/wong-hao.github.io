@@ -190,7 +190,7 @@
       <link>https://haowong.com/project/internal-project/</link>
       <pubDate>Tue, 06 Oct 2020 00:00:00 +0000</pubDate>
       <guid>https://haowong.com/project/internal-project/</guid>
-      <description>&lt;h3 id=&#34;1实验环境&#34;&gt;1.实验环境&lt;/h3&gt;
+      <description>&lt;h3 id=&#34;1-实验环境&#34;&gt;1 实验环境&lt;/h3&gt;
 &lt;h4 id=&#34;11-操作系统&#34;&gt;1.1 操作系统&lt;/h4&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Raspberry Pi OS (32-bit) with desktop and recommended software&lt;/p&gt;
@@ -261,9 +261,25 @@ ERROR: [main] failed to start the concentrator
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;2实验步骤&#34;&gt;2.实验步骤&lt;/h3&gt;
-&lt;h4 id=&#34;21硬件&#34;&gt;2.1硬件&lt;/h4&gt;
+&lt;h3 id=&#34;2-实验步骤&#34;&gt;2 实验步骤&lt;/h3&gt;
+&lt;h4 id=&#34;21-源码&#34;&gt;2.1 源码&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;gw1302s/libloragw&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;gw1302s/packet_forwarder&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;gw1302s/tools/payload_tools&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;gw1302s/util_net_downlink&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;gw1302s/util_chip_id&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;五个Helper program在主目录下，通过每个Helper下的&lt;strong&gt;makefile&lt;/strong&gt;文件将必要的文件&lt;code&gt;scp&lt;/code&gt;到&lt;strong&gt;target.cfg&lt;/strong&gt;中的&lt;strong&gt;TARGET_DIR&lt;/strong&gt;中&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;故&lt;strong&gt;gw1302s/bin&lt;/strong&gt;下看不懂的文件去看对应Helper program下的&lt;strong&gt;Readme.md&lt;/strong&gt;，但可执行文件还是看这里&lt;/p&gt;
+&lt;h4 id=&#34;22-通信lora_pkt_fwd&#34;&gt;2.2 通信&lt;code&gt;./lora_pkt_fwd&lt;/code&gt;&lt;/h4&gt;
 &lt;ul&gt;
+&lt;li&gt;公有
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;global.config&lt;/strong&gt;中的&lt;strong&gt;lorawan_public: true&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;前导码: 0x34&lt;/strong&gt;，&lt;a href=&#34;http://lora.timeddd.com/forum.php?mod=viewthread&amp;amp;tid=521&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;连接不通&lt;/a&gt;的元凶&lt;/li&gt;
 &lt;li&gt;使用树莓派搭建网关注册到腾讯物联网开发平台
 &lt;ul&gt;
 &lt;li&gt;主要步骤
@@ -301,38 +317,21 @@ ERROR: [main] failed to start the concentrator
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4 id=&#34;22源码&#34;&gt;2.2源码&lt;/h4&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;gw1302s/libloragw&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;gw1302s/packet_forwarder&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;gw1302s/tools/payload_tools&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;gw1302s/util_net_downlink&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;gw1302s/util_chip_id&lt;/strong&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;blockquote&gt;
-&lt;p&gt;五个Helper program在主目录下，通过每个Helper下的&lt;strong&gt;makefile&lt;/strong&gt;文件将必要的文件&lt;code&gt;scp&lt;/code&gt;到&lt;strong&gt;target.cfg&lt;/strong&gt;中的&lt;strong&gt;TARGET_DIR&lt;/strong&gt;中&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;故&lt;strong&gt;gw1302s/bin&lt;/strong&gt;下看不懂的文件去看对应Helper program下的&lt;strong&gt;Readme.md&lt;/strong&gt;，但可执行文件还是看这里&lt;/p&gt;
-&lt;hr&gt;
+&lt;/li&gt;
+&lt;li&gt;私有
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;./lora_pkt_fwd&lt;/code&gt;
-&lt;ul&gt;
-&lt;li&gt;接收到数据包的真实显示
+&lt;li&gt;&lt;strong&gt;global.config&lt;/strong&gt;中的&lt;strong&gt;lorawan_public: true&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;前导码: 0x12&lt;/strong&gt;
+&lt;img src=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVZHQloxQV9VY0ZHbU9VVVpTazJkQVFCNW9acjVSc0JBWUNmSVVGakRwOGV4QT9lPVV0TDM2eQ==.mp3&#34; alt=&#34;image&#34;&gt;
+&lt;img src=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWQ0dlZBeEJhVHBMc3g5TTFIdENaWXNCWGpRR3g3U3JqN1VWcmxtSlZWeHdfQT9lPUcyYTdXSQ==.mp3&#34; alt=&#34;image&#34;&gt;
+&lt;img src=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWZ6N2czek9HZ1JMb211WklaejJwaHdCRU5aVmQzM09VZnpFYlhzQS1vc1pHQT9lPXc2QzNTYw==.mp3&#34; alt=&#34;image&#34;&gt;
+&lt;img src=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVVkV1RKU05nNzFHcEQ5YUh5SFFMUWNCU0JtNW5RcTlFSDRwcHVhT21lZkNidz9lPVp5aXFXNw==.mp3&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
+&lt;li&gt;正确接收的例子
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/quending/article/details/84979181&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;网页一&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://forum.chirpstack.io/t/how-to-change-lora-gateway-bridge-configuration/6350/4&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;网页二&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/quending/article/details/86483352&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;网页三&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/quending/article/details/86481598&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;网页四&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;点对网关通信
-&lt;ul&gt;
-&lt;li&gt;注意事项&lt;a href=&#34;https://www.bilibili.com/video/BV1yE411q7B5&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;视频&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://lora.timeddd.com/forum.php?mod=viewthread&amp;amp;tid=521&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;连接不通&lt;/a&gt;的元凶&lt;strong&gt;前导码&lt;/strong&gt;：因为发射端默认前导码为0x12，故将&lt;strong&gt;global.config&lt;/strong&gt;中的&lt;strong&gt;lorawan_public: true&lt;/strong&gt;改为&lt;strong&gt;lorawan_public: false&lt;/strong&gt;，使其前导码从0x34改为0x12，与发射端相同
-&lt;img src=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVZHQloxQV9VY0ZHbU9VVVpTazJkQVFCNW9acjVSc0JBWUNmSVVGakRwOGV4QT9lPVV0TDM2eQ==.mp3&#34; alt=&#34;image&#34;&gt;
-&lt;img src=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWQ0dlZBeEJhVHBMc3g5TTFIdENaWXNCWGpRR3g3U3JqN1VWcmxtSlZWeHdfQT9lPUcyYTdXSQ==.mp3&#34; alt=&#34;image&#34;&gt;
-&lt;img src=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWZ6N2czek9HZ1JMb211WklaejJwaHdCRU5aVmQzM09VZnpFYlhzQS1vc1pHQT9lPXc2QzNTYw==.mp3&#34; alt=&#34;image&#34;&gt;
-&lt;img src=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVVkV1RKU05nNzFHcEQ5YUh5SFFMUWNCU0JtNW5RcTlFSDRwcHVhT21lZkNidz9lPVp5aXFXNw==.mp3&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -958,7 +957,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-587264913&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-541782693&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -968,7 +967,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-587264913&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-541782693&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
