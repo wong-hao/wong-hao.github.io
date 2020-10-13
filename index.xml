@@ -328,7 +328,11 @@ ERROR: [main] failed to start the concentrator
 &lt;li&gt;点对网关通信
 &lt;ul&gt;
 &lt;li&gt;注意事项&lt;a href=&#34;https://www.bilibili.com/video/BV1yE411q7B5&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;视频&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://lora.timeddd.com/forum.php?mod=viewthread&amp;amp;tid=521&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;相似经历&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://lora.timeddd.com/forum.php?mod=viewthread&amp;amp;tid=521&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;连接不通&lt;/a&gt;的元凶&lt;strong&gt;前导码&lt;/strong&gt;：将&lt;strong&gt;global.config&lt;/strong&gt;中的&lt;strong&gt;lorawan_public: true&lt;/strong&gt;改为&lt;strong&gt;lorawan_public: false&lt;/strong&gt;，使其前导码为0x12，与发射端相同
+&lt;img src=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVZHQloxQV9VY0ZHbU9VVVpTazJkQVFCNW9acjVSc0JBWUNmSVVGakRwOGV4QT9lPVV0TDM2eQ==.mp3&#34; alt=&#34;image&#34;&gt;
+&lt;img src=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWQ0dlZBeEJhVHBMc3g5TTFIdENaWXNCWGpRR3g3U3JqN1VWcmxtSlZWeHdfQT9lPUcyYTdXSQ==.mp3&#34; alt=&#34;image&#34;&gt;
+&lt;img src=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWZ6N2czek9HZ1JMb211WklaejJwaHdCRU5aVmQzM09VZnpFYlhzQS1vc1pHQT9lPXc2QzNTYw==.mp3&#34; alt=&#34;image&#34;&gt;
+&lt;img src=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVVkV1RKU05nNzFHcEQ5YUh5SFFMUWNCU0JtNW5RcTlFSDRwcHVhT21lZkNidz9lPVp5aXFXNw==.mp3&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -954,7 +958,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-869173425&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-718645329&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -964,7 +968,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-869173425&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-718645329&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
