@@ -3,13 +3,28 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://haowong.com/courses/example2/</loc>
-    <lastmod>2018-09-09T00:00:00+00:00</lastmod>
+    <loc>https://haowong.com/courses/course4/</loc>
+    <lastmod>2020-10-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://haowong.com/courses/example/</loc>
-    <lastmod>2018-09-09T00:00:00+00:00</lastmod>
+    <loc>https://haowong.com/courses/course3/</loc>
+    <lastmod>2020-10-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://haowong.com/courses/course2/</loc>
+    <lastmod>2020-10-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://haowong.com/courses/course5/</loc>
+    <lastmod>2020-10-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://haowong.com/courses/course1/</loc>
+    <lastmod>2020-10-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -40,6 +55,11 @@
   <url>
     <loc>https://haowong.com/author/%E7%8E%8B%E6%98%8A/</loc>
     <lastmod>2030-06-01T13:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://haowong.com/courses/</loc>
+    <lastmod>2020-10-12T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -175,11 +195,6 @@
   <url>
     <loc>https://haowong.com/slides/seminar/</loc>
     <lastmod>2019-02-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://haowong.com/courses/</loc>
-    <lastmod>2018-09-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
