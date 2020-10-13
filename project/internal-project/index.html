@@ -928,30 +928,6 @@ ERROR: [main] failed to start the concentrator
 <li><a href="https://downloads.raspberrypi.org/raspbian/images/" target="_blank" rel="noopener">历代系统</a></li>
 <li><a href="https://mirrors.tuna.tsinghua.edu.cn/raspbian-images/raspios_armhf/images/raspios_armhf-2020-05-28/2020-05-27-raspios-buster-armhf.zip" target="_blank" rel="noopener">4.19.118系统清华镜像</a></li>
 </ol>
-<h4 id="13-m-hl9-ev">1.3 M-HL9-EV</h4>
-<ul>
-<li>按键
-<ul>
-<li>模式切换
-<ul>
-<li>透传模式要先使用<code>+++</code>进入AT模式，注意<strong>不能换行</strong>
-<img src="https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWJhOTJVWGRsbjFHaGdBLTZNZlB2T2dCWHUwT2ROd2VUNUgzb1JYN2p1d01FQT9lPXgwZkxkWg==.mp3" alt="image"></li>
-<li>AT模式可直接使用AT指令，注意<strong>必须换行</strong>
-<img src="https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVNIQmpUdFJaSE5GbTBCSlJuYmRJeWNCU25yaU84U2FnSzNaYjY4endDVHZJdz9lPW5meGNBeg==.mp3" alt="image"></li>
-<li>查询配置参数 <img src="https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWZMVGRJNjZhWmxOdnpVd1NVemdPYndCYnBuSmRqU0hNNE8tX3BDcG16LXZsQT9lPTczVmxTcg==.mp3" alt="image"></li>
-<li>AT模式下不能发送接收数据，需要使用AT指令<code>ATT</code>加<strong>换行</strong>返回透传模式</li>
-<li>发送接收均用的<strong>Ascii</strong></li>
-</ul>
-</li>
-<li>复位按键
-<ul>
-<li>重置串口</li>
-</ul>
-</li>
-<li><a href="https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOnU6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVl0NnU0Zjh5ckpHdW41b1l3eFRtZ2NCTFZSYlg0cm1JT2kxemRENkhrM011Zz9lPVRORFZIcQ==.mp3" target="_blank" rel="noopener">配置备份</a></li>
-</ul>
-</li>
-</ul>
 <h3 id="2-实验步骤">2 实验步骤</h3>
 <h4 id="21-源码">2.1 源码</h4>
 <ol>
@@ -1012,11 +988,37 @@ ERROR: [main] failed to start the concentrator
 <li>私有
 <ul>
 <li><strong>global.config</strong>中的<strong>lorawan_public: true</strong></li>
-<li><strong>前导码: 0x12</strong>
+<li><strong>前导码: 0x12</strong></li>
+<li>M-HL9-EV
+<ul>
+<li>按键
+<ul>
+<li>模式切换
+<ul>
+<li>透传模式要先使用<code>+++</code>进入AT模式，注意<strong>不能换行</strong>
+<img src="https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWJhOTJVWGRsbjFHaGdBLTZNZlB2T2dCWHUwT2ROd2VUNUgzb1JYN2p1d01FQT9lPXgwZkxkWg==.mp3" alt="image"></li>
+<li>AT模式可直接使用AT指令，注意<strong>必须换行</strong>
+<img src="https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVNIQmpUdFJaSE5GbTBCSlJuYmRJeWNCU25yaU84U2FnSzNaYjY4endDVHZJdz9lPW5meGNBeg==.mp3" alt="image"></li>
+<li>查询配置参数 <img src="https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWZMVGRJNjZhWmxOdnpVd1NVemdPYndCYnBuSmRqU0hNNE8tX3BDcG16LXZsQT9lPTczVmxTcg==.mp3" alt="image"></li>
+<li>AT模式下不能发送接收数据，需要使用AT指令<code>ATT</code>加<strong>换行</strong>返回透传模式</li>
+<li>发送接收均用的<strong>Ascii</strong></li>
+</ul>
+</li>
+<li>复位按键
+<ul>
+<li>重置串口</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOnU6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVl0NnU0Zjh5ckpHdW41b1l3eFRtZ2NCTFZSYlg0cm1JT2kxemRENkhrM011Zz9lPVRORFZIcQ==.mp3" target="_blank" rel="noopener">配置备份</a></li>
+<li>示例
 <img src="https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVZHQloxQV9VY0ZHbU9VVVpTazJkQVFCNW9acjVSc0JBWUNmSVVGakRwOGV4QT9lPVV0TDM2eQ==.mp3" alt="image">
 <img src="https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWQ0dlZBeEJhVHBMc3g5TTFIdENaWXNCWGpRR3g3U3JqN1VWcmxtSlZWeHdfQT9lPUcyYTdXSQ==.mp3" alt="image">
 <img src="https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWZ6N2czek9HZ1JMb211WklaejJwaHdCRU5aVmQzM09VZnpFYlhzQS1vc1pHQT9lPXc2QzNTYw==.mp3" alt="image">
 <img src="https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVVkV1RKU05nNzFHcEQ5YUh5SFFMUWNCU0JtNW5RcTlFSDRwcHVhT21lZkNidz9lPVp5aXFXNw==.mp3" alt="image"></li>
+</ul>
+</li>
 <li>正确接收的例子
 <ul>
 <li><a href="https://blog.csdn.net/quending/article/details/84979181" target="_blank" rel="noopener">网页一</a></li>
