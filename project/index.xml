@@ -77,65 +77,38 @@ ERROR: [main] failed to start the concentrator
 &lt;p&gt;五个Helper program在主目录下，通过每个Helper下的&lt;strong&gt;makefile&lt;/strong&gt;文件将必要的文件&lt;code&gt;scp&lt;/code&gt;到&lt;strong&gt;target.cfg&lt;/strong&gt;中的&lt;strong&gt;TARGET_DIR&lt;/strong&gt;中&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;故&lt;strong&gt;gw1302s/bin&lt;/strong&gt;下看不懂的文件去看对应Helper program下的&lt;strong&gt;Readme.md&lt;/strong&gt;，但可执行文件还是看这里&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/iotisan/article/details/72633960?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param&amp;amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;iotisan源码工程梳理&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/iotisan/article/details/90180706&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;iotisan源码工程梳理&lt;/a&gt;&lt;/p&gt;
 &lt;h4 id=&#34;22-lorawan&#34;&gt;2.2 LoRaWAN&lt;/h4&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/RAKwireless/article/details/106470764#%E4%B8%80%E3%80%81LoRaWAN%E5%85%B8%E5%9E%8B%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;RAKwireless&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/6200497.html#4472555&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;AnswerInTheWind&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://connect.ed-diamond.com/MISC/MISCHS-015/LORAWAN-deploiement-d-une-infrastructure-de-test&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;完整案例&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h4 id=&#34;23-end-nodes-gatewaylora_pkt_fwd&#34;&gt;2.3 End Nodes-&amp;gt;Gateway&lt;code&gt;./lora_pkt_fwd&lt;/code&gt;&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;global_conf.json
+&lt;h4 id=&#34;23-end-nodes-gateway&#34;&gt;2.3 End Nodes-&amp;gt;Gateway&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;M-HL9-EV&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.rejeee.com/documents/APP_DOC/M-KL9_how_to_enter_configuration_mode.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;进入配置方法&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.rejeee.com/documents/APP_DOC/M-KL9_parameter.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;M-KL9&lt;/strong&gt;参数意义&lt;/a&gt;，具体配置参数看用户手册&lt;/li&gt;
+&lt;li&gt;发送接收均用的&lt;strong&gt;Ascii&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;串口工具注册码: &lt;strong&gt;CCCCC-AAAAA-FFFFF-0E013-6EE85&lt;/strong&gt;及&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOnU6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVhwanp4VFBhUHhPc0pVWFRGeUIweFlCWG5sT0QwaDVkaVl0NEE2bnViMlhuZz9lPU54TGhQMQ==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;配置备份&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;24-gateway-network-server&#34;&gt;2.4 Gateway-&amp;gt;Network Server&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;global_conf.json&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://gitee.com/rejeee/gw1302s/commit/c425b67a5ccaaef0dd1042da08974245124c069b&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Gitee版本&lt;/a&gt;直接增加了一个文件&lt;strong&gt;gw1302s/packet_forwarder/global_conf.json&lt;/strong&gt;，其特点是&lt;strong&gt;gateway_conf&lt;/strong&gt;下面的&lt;strong&gt;server_address&lt;/strong&gt;&lt;a href=&#34;https://blog.csdn.net/RAKwireless/article/details/107101582&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;由localhost修改为了loragw.things.qcloud.com&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;make install_conf&lt;/code&gt;即安装&lt;strong&gt;global_conf.json&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;卖家给的&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/13154904.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;攻略&lt;/a&gt;跟用&lt;code&gt;install.sh&lt;/code&gt;生成的主要差别在radio_1与radio_2的&lt;strong&gt;ferq&lt;/strong&gt;不同，攻略的效果好；官方的&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVQzOWdIRUc4YU5DbHFMVzBjRGkwVjBCZjZGQmUzWUpkSnh0YVhXbUlLdnFtUT9lPW9qNjEzcg==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;参考文献&lt;/a&gt;和攻略还有&lt;a href=&#34;https://www.bilibili.com/video/BV1gp4y1v7UB&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;视频&lt;/a&gt;均给出了&lt;strong&gt;global_conf.json&lt;/strong&gt;的参数意义&lt;/li&gt;
 &lt;/ul&gt;
-&lt;hr&gt;
-&lt;/li&gt;
-&lt;li&gt;通信
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;global.config&lt;/strong&gt;中的&lt;strong&gt;lorawan_public: true&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;前导码: 0x12&lt;/strong&gt;，&lt;a href=&#34;http://lora.timeddd.com/forum.php?mod=viewthread&amp;amp;tid=521&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;连接不通&lt;/a&gt;的元凶&lt;/li&gt;
-&lt;li&gt;M-HL9-EV
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.rejeee.com/documents/APP_DOC/M-KL9_how_to_enter_configuration_mode.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;进入配置方法&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.rejeee.com/documents/APP_DOC/M-KL9_parameter.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;M-KL9&lt;/strong&gt;参数意义&lt;/a&gt;，具体配置参数看用户手册&lt;/li&gt;
-&lt;li&gt;发送接收均用的&lt;strong&gt;Ascii&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;串口工具注册码: &lt;strong&gt;CCCCC-AAAAA-FFFFF-0E013-6EE85&lt;/strong&gt;及&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOnU6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVhwanp4VFBhUHhPc0pVWFRGeUIweFlCWG5sT0QwaDVkaVl0NEE2bnViMlhuZz9lPU54TGhQMQ==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;配置备份&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;示例
-&lt;img src=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWJlNW9NYU1sT0JPZ2pDR3dwZTRkaU1CeU92c2xwdGN2YWluZUYxZ3RSdDdVUT9lPVppN2J2aQ==.mp3&#34; alt=&#34;image&#34;&gt;
-&lt;img src=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWEwOHpxSnZ5VmxLaG15bHM3VF9WdWtCQWxtSnpjRWRPamRrakpnWWdHMXZDdz9lPXVrWE15Tw==.mp3&#34; alt=&#34;image&#34;&gt;
-&lt;img src=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWV1WDRaeHZWYlJMbkV5NXZvcUJQbklCX2F1V2tkb0JPNUc5X2pxQW91Y0JQdz9lPWxwaVpuOQ==.mp3&#34; alt=&#34;image&#34;&gt;
-&lt;img src=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVRMb3RDQVN1eDVFdDhuWUVzeWFjdThCenVEczhmN0ZpZHVaUnZ2cDUzQndBZz9lPUVKU2czWA==.mp3&#34; alt=&#34;image&#34;&gt;
-&lt;img src=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWRZZE12UzJrYTFKcWlqTWdfbG5sczRCX3Z1M1ZrZ3dXM25hLW1ENVlwb3Bodz9lPWxOcHdPQw==.mp3&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
-&lt;li&gt;通信参数解释&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/quending/article/details/84979181&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;网页一&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://forum.chirpstack.io/t/how-to-change-lora-gateway-bridge-configuration/6350/4&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;网页二&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/quending/article/details/86483352&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;网页三&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/quending/article/details/86481598&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;网页四&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/6213529.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;网页五&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://gitee.com/rejeee/gw1302s/blob/master/packet_forwarder/PROTOCOL.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;网页六&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;确认问题
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://iot.wifx.net/docs/lorix-os/latest/user-s-guide/lorawan/packet-forwarders/udp-packet-forwarder/troubleshooting&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;0% acknowledegd&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;24-gateway-network-server&#34;&gt;2.4 Gateway-&amp;gt;Network Server&lt;/h4&gt;
 &lt;p&gt;&lt;strong&gt;Close Source Network Servers&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;global.config&lt;/strong&gt;中的&lt;strong&gt;lorawan_public: true&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;前导码: 0x34&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;使用树莓派搭建网关注册到腾讯物联网开发平台
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;global.config&lt;/strong&gt;中的&lt;strong&gt;lorawan_public: true&lt;/strong&gt;，&lt;a href=&#34;http://lora.timeddd.com/forum.php?mod=viewthread&amp;amp;tid=521&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;连接不通&lt;/a&gt;的元凶&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;前导码: 0x34&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;使用树莓派搭建网关注册到腾讯物联网开发平台&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;主要步骤
 &lt;ul&gt;
@@ -162,6 +135,31 @@ ERROR: [main] failed to start the concentrator
 &lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://console.cloud.tencent.com/iotexplorer&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;腾讯物联网开发平台&lt;/a&gt;&lt;/strong&gt; 对标 &lt;strong&gt;&lt;a href=&#34;https://linkwan.console.aliyun.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;阿里云物联网络管理平台&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://console.cloud.tencent.com/iothub&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;腾讯物联网通信&lt;/a&gt;&lt;/strong&gt; 对标 &lt;strong&gt;&lt;a href=&#34;https://iot.console.aliyun.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;阿里云物联网平台&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;示例
+&lt;img src=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWJlNW9NYU1sT0JPZ2pDR3dwZTRkaU1CeU92c2xwdGN2YWluZUYxZ3RSdDdVUT9lPVppN2J2aQ==.mp3&#34; alt=&#34;image&#34;&gt;
+&lt;img src=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWEwOHpxSnZ5VmxLaG15bHM3VF9WdWtCQWxtSnpjRWRPamRrakpnWWdHMXZDdz9lPXVrWE15Tw==.mp3&#34; alt=&#34;image&#34;&gt;
+&lt;img src=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWV1WDRaeHZWYlJMbkV5NXZvcUJQbklCX2F1V2tkb0JPNUc5X2pxQW91Y0JQdz9lPWxwaVpuOQ==.mp3&#34; alt=&#34;image&#34;&gt;
+&lt;img src=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVRMb3RDQVN1eDVFdDhuWUVzeWFjdThCenVEczhmN0ZpZHVaUnZ2cDUzQndBZz9lPUVKU2czWA==.mp3&#34; alt=&#34;image&#34;&gt;
+&lt;img src=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWRZZE12UzJrYTFKcWlqTWdfbG5sczRCX3Z1M1ZrZ3dXM25hLW1ENVlwb3Bodz9lPWxOcHdPQw==.mp3&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;通信参数解释&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/quending/article/details/84979181&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;网页一&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://forum.chirpstack.io/t/how-to-change-lora-gateway-bridge-configuration/6350/4&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;网页二&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/quending/article/details/86483352&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;网页三&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/quending/article/details/86481598&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;网页四&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/6213529.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;网页五&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://gitee.com/rejeee/gw1302s/blob/master/packet_forwarder/PROTOCOL.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;网页六&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;确认问题
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://iot.wifx.net/docs/lorix-os/latest/user-s-guide/lorawan/packet-forwarders/udp-packet-forwarder/troubleshooting&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;0% acknowledegd&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
