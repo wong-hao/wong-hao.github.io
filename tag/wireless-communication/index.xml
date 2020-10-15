@@ -135,30 +135,17 @@ ERROR: [main] failed to start the concentrator
 &lt;li&gt;&lt;strong&gt;前导码: 0x12&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;M-HL9-EV
 &lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;http://www.rejeee.com/documents/APP_DOC/M-KL9_how_to_enter_configuration_mode.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;进入配置方法&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;http://www.rejeee.com/documents/APP_DOC/M-KL9_parameter.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;M-KL9&lt;/strong&gt;参数意义&lt;/a&gt;，具体配置参数看用户手册&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;发送接收均用的&lt;strong&gt;Ascii&lt;/strong&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;串口注册码: CCCCC-AAAAA-FFFFF-0E013-6EE85&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOnU6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVl0NnU0Zjh5ckpHdW41b1l3eFRtZ2NCTFZSYlg0cm1JT2kxemRENkhrM011Zz9lPVRORFZIcQ==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;串口工具配置备份&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.rejeee.com/documents/APP_DOC/M-KL9_how_to_enter_configuration_mode.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;进入配置方法&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.rejeee.com/documents/APP_DOC/M-KL9_parameter.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;M-KL9&lt;/strong&gt;参数意义&lt;/a&gt;，具体配置参数看用户手册&lt;/li&gt;
+&lt;li&gt;发送接收均用的&lt;strong&gt;Ascii&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;串口工具注册码: &lt;strong&gt;CCCCC-AAAAA-FFFFF-0E013-6EE85&lt;/strong&gt;及&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOnU6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVl0NnU0Zjh5ckpHdW41b1l3eFRtZ2NCTFZSYlg0cm1JT2kxemRENkhrM011Zz9lPVRORFZIcQ==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;配置备份&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;示例
+&lt;li&gt;示例
 &lt;img src=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWJlNW9NYU1sT0JPZ2pDR3dwZTRkaU1CeU92c2xwdGN2YWluZUYxZ3RSdDdVUT9lPVppN2J2aQ==.mp3&#34; alt=&#34;image&#34;&gt;
 &lt;img src=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWEwOHpxSnZ5VmxLaG15bHM3VF9WdWtCQWxtSnpjRWRPamRrakpnWWdHMXZDdz9lPXVrWE15Tw==.mp3&#34; alt=&#34;image&#34;&gt;
 &lt;img src=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWV1WDRaeHZWYlJMbkV5NXZvcUJQbklCX2F1V2tkb0JPNUc5X2pxQW91Y0JQdz9lPWxwaVpuOQ==.mp3&#34; alt=&#34;image&#34;&gt;
-&lt;img src=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVRMb3RDQVN1eDVFdDhuWUVzeWFjdThCenVEczhmN0ZpZHVaUnZ2cDUzQndBZz9lPUVKU2czWA==.mp3&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
+&lt;img src=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVRMb3RDQVN1eDVFdDhuWUVzeWFjdThCenVEczhmN0ZpZHVaUnZ2cDUzQndBZz9lPUVKU2czWA==.mp3&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
 &lt;li&gt;私有通信参数解释&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/quending/article/details/84979181&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;网页一&lt;/a&gt;
 &lt;ul&gt;
