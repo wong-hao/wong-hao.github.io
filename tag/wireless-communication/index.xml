@@ -77,7 +77,7 @@ ERROR: [main] failed to start the concentrator
 &lt;p&gt;五个Helper program在主目录下，通过每个Helper下的&lt;strong&gt;makefile&lt;/strong&gt;文件将必要的文件&lt;code&gt;scp&lt;/code&gt;到&lt;strong&gt;target.cfg&lt;/strong&gt;中的&lt;strong&gt;TARGET_DIR&lt;/strong&gt;中&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;故&lt;strong&gt;gw1302s/bin&lt;/strong&gt;下看不懂的文件去看对应Helper program下的&lt;strong&gt;Readme.md&lt;/strong&gt;，但可执行文件还是看这里&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/iotisan/article/details/72633960?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param&amp;amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;iotisan&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/iotisan/article/details/72633960?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param&amp;amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;iotisan源码工程梳理&lt;/a&gt;&lt;/p&gt;
 &lt;h4 id=&#34;22-lorawan&#34;&gt;2.2 LoRaWAN&lt;/h4&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/RAKwireless/article/details/106470764#%E4%B8%80%E3%80%81LoRaWAN%E5%85%B8%E5%9E%8B%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;RAKwireless&lt;/a&gt;&lt;/li&gt;
