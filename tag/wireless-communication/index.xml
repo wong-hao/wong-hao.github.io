@@ -77,7 +77,13 @@ ERROR: [main] failed to start the concentrator
 &lt;p&gt;五个Helper program在主目录下，通过每个Helper下的&lt;strong&gt;makefile&lt;/strong&gt;文件将必要的文件&lt;code&gt;scp&lt;/code&gt;到&lt;strong&gt;target.cfg&lt;/strong&gt;中的&lt;strong&gt;TARGET_DIR&lt;/strong&gt;中&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;故&lt;strong&gt;gw1302s/bin&lt;/strong&gt;下看不懂的文件去看对应Helper program下的&lt;strong&gt;Readme.md&lt;/strong&gt;，但可执行文件还是看这里&lt;/p&gt;
-&lt;h4 id=&#34;22-通信lora_pkt_fwd&#34;&gt;2.2 通信&lt;code&gt;./lora_pkt_fwd&lt;/code&gt;&lt;/h4&gt;
+&lt;h4 id=&#34;22-lorawan&#34;&gt;2.2 LoRaWAN&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/RAKwireless/article/details/106470764#%E4%B8%80%E3%80%81LoRaWAN%E5%85%B8%E5%9E%8B%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;RAKwireless&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/6200497.html#4472555&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;AnswerInTheWind&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://connect.ed-diamond.com/MISC/MISCHS-015/LORAWAN-deploiement-d-une-infrastructure-de-test&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;完整案例&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;23-end-nodes-gatewaylora_pkt_fwd&#34;&gt;2.3 End Nodes-&amp;gt;Gateway&lt;code&gt;./lora_pkt_fwd&lt;/code&gt;&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;global_conf.json
 &lt;ul&gt;
@@ -171,7 +177,7 @@ ERROR: [main] failed to start the concentrator
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4 id=&#34;23-lorawan&#34;&gt;2.3 LoRaWAN&lt;/h4&gt;
+&lt;h4 id=&#34;24-gateway-network-server&#34;&gt;2.4 Gateway-&amp;gt;Network Server&lt;/h4&gt;
 &lt;p&gt;&lt;strong&gt;开源网络模块&lt;/strong&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.thethingsnetwork.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Thethingsnetwork/Rakwireless&lt;/a&gt;&lt;/li&gt;
@@ -184,7 +190,6 @@ ERROR: [main] failed to start the concentrator
 &lt;li&gt;&lt;a href=&#34;https://www.gnuradio.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GUNRadio&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;strong&gt;方法&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://connect.ed-diamond.com/MISC/MISCHS-015/LORAWAN-deploiement-d-une-infrastructure-de-test&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;步骤&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.freesion.com/article/1023121538/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoRaServer&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://learn.adafruit.com/the-things-network-for-feather?view=all&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TTN&lt;/a&gt;&lt;/p&gt;
 </description>
