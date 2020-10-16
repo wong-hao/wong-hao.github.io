@@ -209,7 +209,7 @@ Received 3 packets (total:3)
 &lt;li&gt;&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/6200497.html#4472555&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;AnswerInTheWind&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://connect.ed-diamond.com/MISC/MISCHS-015/LORAWAN-deploiement-d-une-infrastructure-de-test&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;完整案例&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h4 id=&#34;23-end-nodes-gateway&#34;&gt;2.3 End Nodes-&amp;gt;Gateway&lt;/h4&gt;
+&lt;h4 id=&#34;23-devicesend-nodes-gateway&#34;&gt;2.3 Devices/End Nodes-&amp;gt;Gateway&lt;/h4&gt;
 &lt;p&gt;&lt;strong&gt;M-HL9-EV&lt;/strong&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&#34;http://www.rejeee.com/documents/APP_DOC/M-KL9_how_to_enter_configuration_mode.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;进入配置方法&lt;/a&gt;&lt;/li&gt;
@@ -438,6 +438,9 @@ udp             0           0      127.0.0.1:60570    127.0.0.1:1700       ESTAB
 &lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/iotisan/article/details/90412873&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoraServer2&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://console.thethingsnetwork.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TTN官方入门&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://learn.adafruit.com/the-things-network-for-feather?view=all&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TTN&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://os.mbed.com/docs/mbed-os/v5.15/tutorials/LoRa-tutorial.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Mbed-Os: TTN&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;a href=&#34;https://fiware-lorawan.readthedocs.io/en/latest/users_manual/index.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Fireware: LoRaServer+TTN&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
