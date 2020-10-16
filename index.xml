@@ -455,9 +455,12 @@ Flash:     0
 &lt;/li&gt;
 &lt;li&gt;作用
 &lt;ul&gt;
-&lt;li&gt;判断是否真正上网了，或者说真正处理数据了
-&lt;img src=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWJKVlJHRExxQjlJdDdvaU1nM3k3TU1CUWdVUGhCa0lwQWVnTk11cDZ6VEp5UT9lPTJoUGlUYQ==.mp3&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
+&lt;li&gt;判断是否真正上网了，或者说真正处理数据了&lt;/li&gt;
 &lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;网关名称            GwEUI            描述            区域            运行状态       最后上报时间       添加时间
+raspberrypi1    0016c001ff10d3f6    -              苏州市           在线         2020-10-01        2020-10-01
+raspberrypi2    0016c001ff10d3f7    -              苏州市           在线         2020-10-01        2020-10-01
+&lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://console.cloud.tencent.com/iotexplorer&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;腾讯物联网开发平台&lt;/a&gt;&lt;/strong&gt; 对标 &lt;strong&gt;&lt;a href=&#34;https://linkwan.console.aliyun.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;阿里云物联网络管理平台&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://console.cloud.tencent.com/iothub&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;腾讯物联网通信&lt;/a&gt;&lt;/strong&gt; 对标 &lt;strong&gt;&lt;a href=&#34;https://iot.console.aliyun.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;阿里云物联网平台&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
@@ -1228,7 +1231,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-132769485&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-936241875&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -1238,7 +1241,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-132769485&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-936241875&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
