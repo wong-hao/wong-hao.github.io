@@ -438,6 +438,8 @@ udp             0           0      127.0.0.1:60570    127.0.0.1:1700       ESTAB
 &lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/iotisan/article/details/90412873&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoraServer2&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://console.thethingsnetwork.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TTN官方入门&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://learn.adafruit.com/the-things-network-for-feather?view=all&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TTN&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.thethingsnetwork.org/docs/gateways/packet-forwarder/semtech-udp.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TTN global.config1&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.thethingsnetwork.org/docs/gateways/start/connection.html#semtech-udp-protocol&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TTN global.config2&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://os.mbed.com/docs/mbed-os/v5.15/tutorials/LoRa-tutorial.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Mbed-Os: TTN&lt;/a&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;a href=&#34;https://fiware-lorawan.readthedocs.io/en/latest/users_manual/index.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Fireware: LoRaServer+TTN&lt;/a&gt;&lt;/p&gt;
