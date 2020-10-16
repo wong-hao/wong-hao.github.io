@@ -219,12 +219,137 @@ ERROR: [main] failed to start the concentrator
 &lt;li&gt;网关射频模组
 &lt;ul&gt;
 &lt;li&gt;寄存器读写测试：1%概率成功
-&lt;img src=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWE2WkZIVERwWEJMdlExenVJZWZwNjBCbmhsWUkzWkFjYlMxbndyU09QdXJoQT9lPUVvMktuZg==.mp3&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;pi@raspberrypi:~/gw1302s/bin $ ./test_loragw_reg
+CoreCell reset through GPIO7...
+## TEST#1: read all registers and check default value for non-read-only registers
+________________
+TEST#1 PASSED
+________________
+
+## TEST#2: read/write test on all non-read-only, non-pulse, non-w0clr, non-wlclr registers
+________________
+TEST#2 PASSED
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
 &lt;li&gt;发送测试成功
-&lt;img src=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVdEbjF4UDQwaDlJZ1B1SGFVMjgxTXNCdGhna1IxUlRXdlIxdWNlcXBrUUJyZz9lPUNKMGFpcw==.mp3&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;pi@raspberrypi:~/gw1302s/bin $ ./test_loragw_hal_tx -r 1250 -f 480.1 -m LORA -b 125 -s 12 -z 20
+Sending 1 LoRa packets on 480100000 Hz (Bw 125 kHz, SF 12, CR 1, 20 bytes payload, 8 symbols preamble, explicit header, non-inverted polarity) at 0 dBm TX done
+
+Nb packets sent: 1 (1)
+CoreCell reset through GPIO7...
+=========== Test End ===========
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
 &lt;li&gt;接受测试：官方建议&lt;a href=&#34;https://www.bilibili.com/video/BV1Yt411N7MV&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;M-HL9-EV连金黄天线&lt;/a&gt;，但实测用直黑天线也行，且发包间隔要长，避免丢包接收不到
-&lt;img src=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVF2Y1kteVJ5TUJGbWpfSkpiYkRRSkFCVVh0dkFTVFpZMDgydnlrclJENTJmQT9lPXNGVmdDUA==.mp3&#34; alt=&#34;image&#34;&gt;
-&lt;img src=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVRQQUpRb0NuSkJNdWI0OUpDQWNscGdCZHltUDhBUlZfaGxYUzJkMzVXdjlLUT9lPTFkNHR0TQ==.mp3&#34; alt=&#34;image&#34;&gt;&lt;/li&gt;
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;pi@raspberrypi:~/gw1302s/bin $ ./test_loragw_hal_rx -r 1250 -a 475.5 -b 476.5
+===== sx1302 HAL RX test =====
+INFO: rxpkt buffer size is set to 16
+INFO: Select channel mode 0
+CoreCell reset through GPIO7...
+Waiting for packets...
+
+----- LoRa packet -----
+count_us: 51070567
+size:     3
+chan:     2
+status:   0x11
+datr:     12
+codr:     1
+rf_chain  1
+freq_hez  476500000
+snr_avg   -10.5
+rssi_chan:95.0
+rssi_sig :88.0
+crc:      0x496E
+AB CD EF
+Received 1 packets (total:0)
+
+----- LoRa packet -----
+count_us: 71074694
+size:     3
+chan:     5
+status:   0x10
+datr:     12
+codr:     1
+rf_chain  0
+freq_hez  475500000
+snr_avg   6.8
+rssi_chan:146.0
+rssi_sig :147.0
+crc:      0xC96E
+AB CD EF
+Received 1 packets (total:1)
+
+----- LoRa packet -----
+count_us: 91068896
+size:     3
+chan:     0
+status:   0x10
+datr:     12
+codr:     1
+rf_chain  1
+freq_hez  476100000
+snr_avg   8.5
+rssi_chan:149.0
+rssi_sig :150.0
+crc:      0xC96E
+AB CD EF
+Received 1 packets (total:2)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;pi@raspberrypi:~/gw1302s/bin $ ./test_loragw_hal_rx -r 1250 -a 475.5 -b 476.5
+===== sx1302 HAL RX test =====
+INFO: rxpkt buffer size is set to 16
+INFO: Select channel mode 0
+CoreCell reset through GPIO7...
+Waiting for packets...
+
+----- LoRa packet -----
+  count_us: 48944281
+  size:     3
+  chan:     3
+  status:   0x10
+  datr:     12
+  codr:     1
+  rf_chain  0
+  freq_hez  475100000
+  snr_avg   -6.5
+  rssi_chan:131.0
+  rssi_sig :125.0
+  crc:      0x0625
+12 34 56
+
+ ----- LoRa packet -----
+  count_us: 48944290
+  size:     3
+  chan:     0
+  status:   0x10
+  datr:     12
+  codr:     1
+  rf_chain  1
+  freq_hez  476100000
+  snr_avg   10.2
+  rssi_chan:197.0
+  rssi_sig :198.0
+  crc:      0x0625
+12 34 56
+      
+ ----- LoRa packet -----
+  count_us: 48944289
+  size:     3
+  chan:     6
+  status:   0x10
+  datr:     12
+  codr:     1
+  rf_chain  0
+  freq_hez  475100000
+  snr_avg   -5.8
+  rssi_chan:131.0
+  rssi_sig :126.0
+  crc:      0x0625
+12 34 56
+Received 3 packets (total:3)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
 &lt;li&gt;发送接收均用的&lt;strong&gt;Hex&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -263,8 +388,36 @@ ERROR: [main] failed to start the concentrator
 &lt;li&gt;&lt;a href=&#34;http://www.rejeee.com/documents/APP_DOC/M-KL9_how_to_enter_configuration_mode.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;进入配置方法&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://www.rejeee.com/documents/APP_DOC/M-KL9_parameter.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;M-KL9&lt;/strong&gt;参数意义&lt;/a&gt;，具体配置参数看用户手册&lt;/li&gt;
 &lt;li&gt;发送接收均用的&lt;strong&gt;Ascii&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;串口工具注册码: &lt;strong&gt;CCCCC-AAAAA-FFFFF-0E013-6EE85&lt;/strong&gt;及&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOnU6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVhwanp4VFBhUHhPc0pVWFRGeUIweFlCWG5sT0QwaDVkaVl0NEE2bnViMlhuZz9lPU54TGhQMQ==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;配置备份&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;串口工具注册码: &lt;strong&gt;CCCCC-AAAAA-FFFFF-0E013-6EE85&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;配置&lt;/li&gt;
 &lt;/ol&gt;
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;NET:       Node to Gateway
+TFREQ:     475.5MHz
+RFREQ:     506.5MHz
+POW:       20dBm
+BW:        125kHz
+TSF:       12
+RSF:       12
+CR:        4/5
+MODE:      LORA
+SYNC:      0x12
+PREM:      8, 10
+FIX:       0, 0
+CRC:       ON
+TIQ:       OFF
+RIQ:       ON
+SEQ:       OFF
+IP:        ON
+AES:       OFF
+ACK:       ON
+LDR:       0, 0
+LCP:       0
+LFT:       0
+RXW:       0
+FNB:       0x00
+TYPE:      0x00
+Flash:     0
+&lt;/code&gt;&lt;/pre&gt;
 &lt;h4 id=&#34;24-gateway-network-server&#34;&gt;2.4 Gateway-&amp;gt;Network Server&lt;/h4&gt;
 &lt;p&gt;&lt;strong&gt;global_conf.json&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -311,12 +464,111 @@ ERROR: [main] failed to start the concentrator
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;示例
-&lt;img src=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWJlNW9NYU1sT0JPZ2pDR3dwZTRkaU1CeU92c2xwdGN2YWluZUYxZ3RSdDdVUT9lPVppN2J2aQ==.mp3&#34; alt=&#34;image&#34;&gt;
-&lt;img src=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWEwOHpxSnZ5VmxLaG15bHM3VF9WdWtCQWxtSnpjRWRPamRrakpnWWdHMXZDdz9lPXVrWE15Tw==.mp3&#34; alt=&#34;image&#34;&gt;
-&lt;img src=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWV1WDRaeHZWYlJMbkV5NXZvcUJQbklCX2F1V2tkb0JPNUc5X2pxQW91Y0JQdz9lPWxwaVpuOQ==.mp3&#34; alt=&#34;image&#34;&gt;
-&lt;img src=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVRMb3RDQVN1eDVFdDhuWUVzeWFjdThCenVEczhmN0ZpZHVaUnZ2cDUzQndBZz9lPUVKU2czWA==.mp3&#34; alt=&#34;image&#34;&gt;
-&lt;img src=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWRZZE12UzJrYTFKcWlqTWdfbG5sczRCX3Z1M1ZrZ3dXM25hLW1ENVlwb3Bodz9lPWxOcHdPQw==.mp3&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;p&gt;示例&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;INFO: Received pkt from mote: 1350200C (fcnt=2)
+
+JSON up: {&amp;quot;rxpk&amp;quot;:[{&amp;quot;jver&amp;quot;:1,&amp;quot;tmst&amp;quot;:36805201,&amp;quot;chan&amp;quot;:4,&amp;quot;rfch&amp;quot;:1,&amp;quot;freq&amp;quot;:475.100000,&amp;quot;mid&amp;quot;:1,&amp;quot;stat&amp;quot;:1,&amp;quot;modu&amp;quot;:&amp;quot;LORA&amp;quot;,&amp;quot;datr&amp;quot;:&amp;quot;SF12Bw125&amp;quot;,&amp;quot;codr&amp;quot;:&amp;quot;4/5&amp;quot;,&amp;quot;rssis&amp;quot;:-89,&amp;quot;lsnr&amp;quot;:-6.0,&amp;quot;foff&amp;quot;:1152,&amp;quot;rssi&amp;quot;:-83,&amp;quot;size&amp;quot;:11,&amp;quot;data&amp;quot;:&amp;quot;QQwgUBMAAgCrze8=&amp;quot;}]}
+
+##### 2020-10-14 01:27:37 GMT #####
+### [UPSTREAM] ###
+# RF packets received by concentrator: 2
+# CRC_OK: 50.00%, CRC_FAIL: 50.00%, NO_CRC: 0.00%
+# RF packets forwarded: 1 (11 bytes)
+# PUSH_DATA datagrams sent: 2 (354 bytes)
+# PUSH_DATA acknowledeged: 0.00%
+### [DOWNSTREAM] ###
+# PULL_DATA sent: 3 (0.00%)
+# PULL_RESP(onse) datagrams received: 0 (0 bytes)
+# RF packets sent to concentrator: 0 (0 bytes)
+# TX errors: 0
+### SX1302 Status ###
+# SX1302 counter (INST): 60932988
+# SX1302 counter (PPS): 0
+# BEACON queued: 0
+# BEACON sent so far: 0
+# BEACON rejected: 0
+### [JIT] ###
+src/jitqueue.c:442:jit_print_queue(): INFO: [jit] queue is empty
+#--------
+src/jitqueue.c:442:jit_print_queue(): INFO: [jit] queue is empty
+### [GPS] ###
+# GPS sync is disabled
+### Concentrator temperature 0 C ###
+##### END #####
+
+JSON up: {&amp;quot;stat&amp;quot;:{&amp;quot;time&amp;quot;:&amp;quot;2020-10-14 01:27:37 GMT&amp;quot;,&amp;quot;rxnb&amp;quot;:2,&amp;quot;rxok&amp;quot;:1,&amp;quot;rxfw&amp;quot;:1,&amp;quot;ackr&amp;quot;:0.0,&amp;quot;dwnb&amp;quot;:0,&amp;quot;txnb&amp;quot;:0,&amp;quot;temp&amp;quot;:0.0}}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;INFO: Received pkt from mote: 1350200C (fcnt=24)
+
+JSON up: {&amp;quot;rxpk&amp;quot;:[{&amp;quot;jver&amp;quot;:1,&amp;quot;tmst&amp;quot;:260919897,&amp;quot;chan&amp;quot;:4,&amp;quot;rfch&amp;quot;:1,&amp;quot;freq&amp;quot;:475.100000,&amp;quot;mid&amp;quot;:2,&amp;quot;stat&amp;quot;:1,&amp;quot;modu&amp;quot;:&amp;quot;LORA&amp;quot;,&amp;quot;datr&amp;quot;:&amp;quot;SF12Bw125&amp;quot;,&amp;quot;codr&amp;quot;:&amp;quot;4/5&amp;quot;,&amp;quot;rssis&amp;quot;:-88,&amp;quot;lsnr&amp;quot;:-8.0,&amp;quot;foff&amp;quot;:1205,&amp;quot;rssi&amp;quot;:-81,&amp;quot;size&amp;quot;:11,&amp;quot;data&amp;quot;:&amp;quot;QQwgUBMAGAASNFY=&amp;quot;}]}
+
+##### 2020-10-14 01:31:07 GMT #####
+### [UPSTREAM] ###
+# RF packets received by concentrator: 1
+# CRC_OK: 100.00%, CRC_FAIL: 0.00%, NO_CRC: 0.00%
+# RF packets forwarded: 1 (11 bytes)
+# PUSH_DATA datagrams sent: 2 (355 bytes)
+# PUSH_DATA acknowledeged: 0.00%
+### [DOWNSTREAM] ###
+# PULL_DATA sent: 3 (0.00%)
+# PULL_RESP(onse) datagrams received: 0 (0 bytes)
+# RF packets sent to concentrator: 0 (0 bytes)
+# TX errors: 0
+### SX1302 Status ###
+# SX1302 counter (INST): 270938815
+# SX1302 counter (PPS): 0
+# BEACON queued: 0
+# BEACON sent so far: 0
+# BEACON rejected: 0
+### [JIT] ###
+src/jitqueue.c:442:jit_print_queue(): INFO: [jit] queue is empty
+#--------
+src/jitqueue.c:442:jit_print_queue(): INFO: [jit] queue is empty
+### [GPS] ###
+# GPS sync is disabled
+### Concentrator temperature 0 C ###
+##### END #####
+
+JSON up: {&amp;quot;stat&amp;quot;:{&amp;quot;time&amp;quot;:&amp;quot;2020-10-14 01:31:07 GMT&amp;quot;,&amp;quot;rxnb&amp;quot;:1,&amp;quot;rxok&amp;quot;:1,&amp;quot;rxfw&amp;quot;:1,&amp;quot;ackr&amp;quot;:0.0,&amp;quot;dwnb&amp;quot;:0,&amp;quot;txnb&amp;quot;:0,&amp;quot;temp&amp;quot;:0.0}}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;INFO: Received pkt from mote: 1350200C (fcnt=35)
+
+JSON up: {&amp;quot;rxpk&amp;quot;:[{&amp;quot;jver&amp;quot;:1,&amp;quot;tmst&amp;quot;:37097539,&amp;quot;chan&amp;quot;:7,&amp;quot;rfch&amp;quot;:1,&amp;quot;freq&amp;quot;:475.700000,&amp;quot;mid&amp;quot;:3,&amp;quot;stat&amp;quot;:1,&amp;quot;modu&amp;quot;:&amp;quot;LORA&amp;quot;,&amp;quot;datr&amp;quot;:&amp;quot;SF12Bw125&amp;quot;,&amp;quot;codr&amp;quot;:&amp;quot;4/5&amp;quot;,&amp;quot;rssis&amp;quot;:-93,&amp;quot;lsnr&amp;quot;:-22.2,&amp;quot;foff&amp;quot;:4,&amp;quot;rssi&amp;quot;:-83,&amp;quot;size&amp;quot;:11,&amp;quot;data&amp;quot;:&amp;quot;QQwgUBMAIwAaKzw=&amp;quot;}]}
+
+##### 2020-10-14 01:38:10 GMT #####
+### [UPSTREAM] ###
+# RF packets received by concentrator: 2
+# CRC_OK: 50.00%, CRC_FAIL: 50.00%, NO_CRC: 0.00%
+# RF packets forwarded: 1 (11 bytes)
+# PUSH_DATA datagrams sent: 2 (352 bytes)
+# PUSH_DATA acknowledeged: 0.00%
+### [DOWNSTREAM] ###
+# PULL_DATA sent: 3 (0.00%)
+# PULL_RESP(onse) datagrams received: 0 (0 bytes)
+# RF packets sent to concentrator: 0 (0 bytes)
+# TX errors: 0
+### SX1302 Status ###
+# SX1302 counter (INST): 60932951
+# SX1302 counter (PPS): 0
+# BEACON queued: 0
+# BEACON sent so far: 0
+# BEACON rejected: 0
+### [JIT] ###
+src/jitqueue.c:442:jit_print_queue(): INFO: [jit] queue is empty
+#--------
+src/jitqueue.c:442:jit_print_queue(): INFO: [jit] queue is empty
+### [GPS] ###
+# GPS sync is disabled
+### Concentrator temperature 0 C ###
+##### END #####
+
+JSON up: {&amp;quot;stat&amp;quot;:{&amp;quot;time&amp;quot;:&amp;quot;2020-10-14 01:38:10 GMT&amp;quot;,&amp;quot;rxnb&amp;quot;:2,&amp;quot;rxok&amp;quot;:1,&amp;quot;rxfw&amp;quot;:1,&amp;quot;ackr&amp;quot;:0.0,&amp;quot;dwnb&amp;quot;:0,&amp;quot;txnb&amp;quot;:0,&amp;quot;temp&amp;quot;:0.0}}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;pi@raspberrypi:~ $ netstat -anp
+Proto      Recv-Q      Send-Q      Local Address      Foreign Address      State       PID/Program name
+udp             0           0      127.0.0.1:41018    127.0.0.1:1700       ESTABLISHED 1021/./lora_pkt_fwd
+udp             0           0      127.0.0.1:60570    127.0.0.1:1700       ESTABLISHED 1021/./lora_pkt_fwd
+&lt;/code&gt;&lt;/pre&gt;
 &lt;ul&gt;
 &lt;li&gt;通信参数解释&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/quending/article/details/84979181&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;网页一&lt;/a&gt;
@@ -325,10 +577,11 @@ ERROR: [main] failed to start the concentrator
 &lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/quending/article/details/86483352&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;网页三&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/quending/article/details/86481598&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;网页四&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/6213529.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;网页五&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://gitee.com/rejeee/gw1302s/blob/master/packet_forwarder/PROTOCOL.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;网页六&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.wpgdadatong.com/cn/solution/detail?PID=5357&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;网页六&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://gitee.com/rejeee/gw1302s/blob/master/packet_forwarder/PROTOCOL.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;网页七&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;确认问题
+&lt;li&gt;Network Server connectivity
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://iot.wifx.net/docs/lorix-os/latest/user-s-guide/lorawan/packet-forwarders/udp-packet-forwarder/troubleshooting&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;0% acknowledegd&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -975,7 +1228,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-479628531&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-132769485&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -985,7 +1238,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-479628531&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-132769485&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();

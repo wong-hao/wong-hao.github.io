@@ -910,12 +910,137 @@ ERROR: [main] failed to start the concentrator
 <li>网关射频模组
 <ul>
 <li>寄存器读写测试：1%概率成功
-<img src="https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWE2WkZIVERwWEJMdlExenVJZWZwNjBCbmhsWUkzWkFjYlMxbndyU09QdXJoQT9lPUVvMktuZg==.mp3" alt="image"></li>
+<pre><code class="language-cpp">pi@raspberrypi:~/gw1302s/bin $ ./test_loragw_reg
+CoreCell reset through GPIO7...
+## TEST#1: read all registers and check default value for non-read-only registers
+________________
+TEST#1 PASSED
+________________
+
+## TEST#2: read/write test on all non-read-only, non-pulse, non-w0clr, non-wlclr registers
+________________
+TEST#2 PASSED
+</code></pre>
+</li>
 <li>发送测试成功
-<img src="https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVdEbjF4UDQwaDlJZ1B1SGFVMjgxTXNCdGhna1IxUlRXdlIxdWNlcXBrUUJyZz9lPUNKMGFpcw==.mp3" alt="image"></li>
+<pre><code class="language-cpp">pi@raspberrypi:~/gw1302s/bin $ ./test_loragw_hal_tx -r 1250 -f 480.1 -m LORA -b 125 -s 12 -z 20
+Sending 1 LoRa packets on 480100000 Hz (Bw 125 kHz, SF 12, CR 1, 20 bytes payload, 8 symbols preamble, explicit header, non-inverted polarity) at 0 dBm TX done
+
+Nb packets sent: 1 (1)
+CoreCell reset through GPIO7...
+=========== Test End ===========
+</code></pre>
+</li>
 <li>接受测试：官方建议<a href="https://www.bilibili.com/video/BV1Yt411N7MV" target="_blank" rel="noopener">M-HL9-EV连金黄天线</a>，但实测用直黑天线也行，且发包间隔要长，避免丢包接收不到
-<img src="https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVF2Y1kteVJ5TUJGbWpfSkpiYkRRSkFCVVh0dkFTVFpZMDgydnlrclJENTJmQT9lPXNGVmdDUA==.mp3" alt="image">
-<img src="https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVRQQUpRb0NuSkJNdWI0OUpDQWNscGdCZHltUDhBUlZfaGxYUzJkMzVXdjlLUT9lPTFkNHR0TQ==.mp3" alt="image"></li>
+<pre><code class="language-cpp">pi@raspberrypi:~/gw1302s/bin $ ./test_loragw_hal_rx -r 1250 -a 475.5 -b 476.5
+===== sx1302 HAL RX test =====
+INFO: rxpkt buffer size is set to 16
+INFO: Select channel mode 0
+CoreCell reset through GPIO7...
+Waiting for packets...
+
+----- LoRa packet -----
+count_us: 51070567
+size:     3
+chan:     2
+status:   0x11
+datr:     12
+codr:     1
+rf_chain  1
+freq_hez  476500000
+snr_avg   -10.5
+rssi_chan:95.0
+rssi_sig :88.0
+crc:      0x496E
+AB CD EF
+Received 1 packets (total:0)
+
+----- LoRa packet -----
+count_us: 71074694
+size:     3
+chan:     5
+status:   0x10
+datr:     12
+codr:     1
+rf_chain  0
+freq_hez  475500000
+snr_avg   6.8
+rssi_chan:146.0
+rssi_sig :147.0
+crc:      0xC96E
+AB CD EF
+Received 1 packets (total:1)
+
+----- LoRa packet -----
+count_us: 91068896
+size:     3
+chan:     0
+status:   0x10
+datr:     12
+codr:     1
+rf_chain  1
+freq_hez  476100000
+snr_avg   8.5
+rssi_chan:149.0
+rssi_sig :150.0
+crc:      0xC96E
+AB CD EF
+Received 1 packets (total:2)
+</code></pre>
+<pre><code class="language-cpp">pi@raspberrypi:~/gw1302s/bin $ ./test_loragw_hal_rx -r 1250 -a 475.5 -b 476.5
+===== sx1302 HAL RX test =====
+INFO: rxpkt buffer size is set to 16
+INFO: Select channel mode 0
+CoreCell reset through GPIO7...
+Waiting for packets...
+
+----- LoRa packet -----
+  count_us: 48944281
+  size:     3
+  chan:     3
+  status:   0x10
+  datr:     12
+  codr:     1
+  rf_chain  0
+  freq_hez  475100000
+  snr_avg   -6.5
+  rssi_chan:131.0
+  rssi_sig :125.0
+  crc:      0x0625
+12 34 56
+
+ ----- LoRa packet -----
+  count_us: 48944290
+  size:     3
+  chan:     0
+  status:   0x10
+  datr:     12
+  codr:     1
+  rf_chain  1
+  freq_hez  476100000
+  snr_avg   10.2
+  rssi_chan:197.0
+  rssi_sig :198.0
+  crc:      0x0625
+12 34 56
+      
+ ----- LoRa packet -----
+  count_us: 48944289
+  size:     3
+  chan:     6
+  status:   0x10
+  datr:     12
+  codr:     1
+  rf_chain  0
+  freq_hez  475100000
+  snr_avg   -5.8
+  rssi_chan:131.0
+  rssi_sig :126.0
+  crc:      0x0625
+12 34 56
+Received 3 packets (total:3)
+</code></pre>
+</li>
 <li>发送接收均用的<strong>Hex</strong></li>
 </ul>
 </li>
@@ -954,8 +1079,36 @@ ERROR: [main] failed to start the concentrator
 <li><a href="http://www.rejeee.com/documents/APP_DOC/M-KL9_how_to_enter_configuration_mode.pdf" target="_blank" rel="noopener">进入配置方法</a></li>
 <li><a href="http://www.rejeee.com/documents/APP_DOC/M-KL9_parameter.pdf" target="_blank" rel="noopener"><strong>M-KL9</strong>参数意义</a>，具体配置参数看用户手册</li>
 <li>发送接收均用的<strong>Ascii</strong></li>
-<li>串口工具注册码: <strong>CCCCC-AAAAA-FFFFF-0E013-6EE85</strong>及<a href="https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOnU6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVhwanp4VFBhUHhPc0pVWFRGeUIweFlCWG5sT0QwaDVkaVl0NEE2bnViMlhuZz9lPU54TGhQMQ==.mp3" target="_blank" rel="noopener">配置备份</a></li>
+<li>串口工具注册码: <strong>CCCCC-AAAAA-FFFFF-0E013-6EE85</strong></li>
+<li>配置</li>
 </ol>
+<pre><code class="language-cpp">NET:       Node to Gateway
+TFREQ:     475.5MHz
+RFREQ:     506.5MHz
+POW:       20dBm
+BW:        125kHz
+TSF:       12
+RSF:       12
+CR:        4/5
+MODE:      LORA
+SYNC:      0x12
+PREM:      8, 10
+FIX:       0, 0
+CRC:       ON
+TIQ:       OFF
+RIQ:       ON
+SEQ:       OFF
+IP:        ON
+AES:       OFF
+ACK:       ON
+LDR:       0, 0
+LCP:       0
+LFT:       0
+RXW:       0
+FNB:       0x00
+TYPE:      0x00
+Flash:     0
+</code></pre>
 <h4 id="24-gateway-network-server">2.4 Gateway-&gt;Network Server</h4>
 <p><strong>global_conf.json</strong></p>
 <ul>
@@ -1002,12 +1155,111 @@ ERROR: [main] failed to start the concentrator
 </ul>
 </li>
 <li>
-<p>示例
-<img src="https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWJlNW9NYU1sT0JPZ2pDR3dwZTRkaU1CeU92c2xwdGN2YWluZUYxZ3RSdDdVUT9lPVppN2J2aQ==.mp3" alt="image">
-<img src="https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWEwOHpxSnZ5VmxLaG15bHM3VF9WdWtCQWxtSnpjRWRPamRrakpnWWdHMXZDdz9lPXVrWE15Tw==.mp3" alt="image">
-<img src="https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWV1WDRaeHZWYlJMbkV5NXZvcUJQbklCX2F1V2tkb0JPNUc5X2pxQW91Y0JQdz9lPWxwaVpuOQ==.mp3" alt="image">
-<img src="https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVRMb3RDQVN1eDVFdDhuWUVzeWFjdThCenVEczhmN0ZpZHVaUnZ2cDUzQndBZz9lPUVKU2czWA==.mp3" alt="image">
-<img src="https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWRZZE12UzJrYTFKcWlqTWdfbG5sczRCX3Z1M1ZrZ3dXM25hLW1ENVlwb3Bodz9lPWxOcHdPQw==.mp3" alt="image"></p>
+<p>示例</p>
+<pre><code class="language-cpp">INFO: Received pkt from mote: 1350200C (fcnt=2)
+
+JSON up: {&quot;rxpk&quot;:[{&quot;jver&quot;:1,&quot;tmst&quot;:36805201,&quot;chan&quot;:4,&quot;rfch&quot;:1,&quot;freq&quot;:475.100000,&quot;mid&quot;:1,&quot;stat&quot;:1,&quot;modu&quot;:&quot;LORA&quot;,&quot;datr&quot;:&quot;SF12Bw125&quot;,&quot;codr&quot;:&quot;4/5&quot;,&quot;rssis&quot;:-89,&quot;lsnr&quot;:-6.0,&quot;foff&quot;:1152,&quot;rssi&quot;:-83,&quot;size&quot;:11,&quot;data&quot;:&quot;QQwgUBMAAgCrze8=&quot;}]}
+
+##### 2020-10-14 01:27:37 GMT #####
+### [UPSTREAM] ###
+# RF packets received by concentrator: 2
+# CRC_OK: 50.00%, CRC_FAIL: 50.00%, NO_CRC: 0.00%
+# RF packets forwarded: 1 (11 bytes)
+# PUSH_DATA datagrams sent: 2 (354 bytes)
+# PUSH_DATA acknowledeged: 0.00%
+### [DOWNSTREAM] ###
+# PULL_DATA sent: 3 (0.00%)
+# PULL_RESP(onse) datagrams received: 0 (0 bytes)
+# RF packets sent to concentrator: 0 (0 bytes)
+# TX errors: 0
+### SX1302 Status ###
+# SX1302 counter (INST): 60932988
+# SX1302 counter (PPS): 0
+# BEACON queued: 0
+# BEACON sent so far: 0
+# BEACON rejected: 0
+### [JIT] ###
+src/jitqueue.c:442:jit_print_queue(): INFO: [jit] queue is empty
+#--------
+src/jitqueue.c:442:jit_print_queue(): INFO: [jit] queue is empty
+### [GPS] ###
+# GPS sync is disabled
+### Concentrator temperature 0 C ###
+##### END #####
+
+JSON up: {&quot;stat&quot;:{&quot;time&quot;:&quot;2020-10-14 01:27:37 GMT&quot;,&quot;rxnb&quot;:2,&quot;rxok&quot;:1,&quot;rxfw&quot;:1,&quot;ackr&quot;:0.0,&quot;dwnb&quot;:0,&quot;txnb&quot;:0,&quot;temp&quot;:0.0}}
+</code></pre>
+<pre><code class="language-cpp">INFO: Received pkt from mote: 1350200C (fcnt=24)
+
+JSON up: {&quot;rxpk&quot;:[{&quot;jver&quot;:1,&quot;tmst&quot;:260919897,&quot;chan&quot;:4,&quot;rfch&quot;:1,&quot;freq&quot;:475.100000,&quot;mid&quot;:2,&quot;stat&quot;:1,&quot;modu&quot;:&quot;LORA&quot;,&quot;datr&quot;:&quot;SF12Bw125&quot;,&quot;codr&quot;:&quot;4/5&quot;,&quot;rssis&quot;:-88,&quot;lsnr&quot;:-8.0,&quot;foff&quot;:1205,&quot;rssi&quot;:-81,&quot;size&quot;:11,&quot;data&quot;:&quot;QQwgUBMAGAASNFY=&quot;}]}
+
+##### 2020-10-14 01:31:07 GMT #####
+### [UPSTREAM] ###
+# RF packets received by concentrator: 1
+# CRC_OK: 100.00%, CRC_FAIL: 0.00%, NO_CRC: 0.00%
+# RF packets forwarded: 1 (11 bytes)
+# PUSH_DATA datagrams sent: 2 (355 bytes)
+# PUSH_DATA acknowledeged: 0.00%
+### [DOWNSTREAM] ###
+# PULL_DATA sent: 3 (0.00%)
+# PULL_RESP(onse) datagrams received: 0 (0 bytes)
+# RF packets sent to concentrator: 0 (0 bytes)
+# TX errors: 0
+### SX1302 Status ###
+# SX1302 counter (INST): 270938815
+# SX1302 counter (PPS): 0
+# BEACON queued: 0
+# BEACON sent so far: 0
+# BEACON rejected: 0
+### [JIT] ###
+src/jitqueue.c:442:jit_print_queue(): INFO: [jit] queue is empty
+#--------
+src/jitqueue.c:442:jit_print_queue(): INFO: [jit] queue is empty
+### [GPS] ###
+# GPS sync is disabled
+### Concentrator temperature 0 C ###
+##### END #####
+
+JSON up: {&quot;stat&quot;:{&quot;time&quot;:&quot;2020-10-14 01:31:07 GMT&quot;,&quot;rxnb&quot;:1,&quot;rxok&quot;:1,&quot;rxfw&quot;:1,&quot;ackr&quot;:0.0,&quot;dwnb&quot;:0,&quot;txnb&quot;:0,&quot;temp&quot;:0.0}}
+</code></pre>
+<pre><code class="language-cpp">INFO: Received pkt from mote: 1350200C (fcnt=35)
+
+JSON up: {&quot;rxpk&quot;:[{&quot;jver&quot;:1,&quot;tmst&quot;:37097539,&quot;chan&quot;:7,&quot;rfch&quot;:1,&quot;freq&quot;:475.700000,&quot;mid&quot;:3,&quot;stat&quot;:1,&quot;modu&quot;:&quot;LORA&quot;,&quot;datr&quot;:&quot;SF12Bw125&quot;,&quot;codr&quot;:&quot;4/5&quot;,&quot;rssis&quot;:-93,&quot;lsnr&quot;:-22.2,&quot;foff&quot;:4,&quot;rssi&quot;:-83,&quot;size&quot;:11,&quot;data&quot;:&quot;QQwgUBMAIwAaKzw=&quot;}]}
+
+##### 2020-10-14 01:38:10 GMT #####
+### [UPSTREAM] ###
+# RF packets received by concentrator: 2
+# CRC_OK: 50.00%, CRC_FAIL: 50.00%, NO_CRC: 0.00%
+# RF packets forwarded: 1 (11 bytes)
+# PUSH_DATA datagrams sent: 2 (352 bytes)
+# PUSH_DATA acknowledeged: 0.00%
+### [DOWNSTREAM] ###
+# PULL_DATA sent: 3 (0.00%)
+# PULL_RESP(onse) datagrams received: 0 (0 bytes)
+# RF packets sent to concentrator: 0 (0 bytes)
+# TX errors: 0
+### SX1302 Status ###
+# SX1302 counter (INST): 60932951
+# SX1302 counter (PPS): 0
+# BEACON queued: 0
+# BEACON sent so far: 0
+# BEACON rejected: 0
+### [JIT] ###
+src/jitqueue.c:442:jit_print_queue(): INFO: [jit] queue is empty
+#--------
+src/jitqueue.c:442:jit_print_queue(): INFO: [jit] queue is empty
+### [GPS] ###
+# GPS sync is disabled
+### Concentrator temperature 0 C ###
+##### END #####
+
+JSON up: {&quot;stat&quot;:{&quot;time&quot;:&quot;2020-10-14 01:38:10 GMT&quot;,&quot;rxnb&quot;:2,&quot;rxok&quot;:1,&quot;rxfw&quot;:1,&quot;ackr&quot;:0.0,&quot;dwnb&quot;:0,&quot;txnb&quot;:0,&quot;temp&quot;:0.0}}
+</code></pre>
+<pre><code class="language-cpp">pi@raspberrypi:~ $ netstat -anp
+Proto      Recv-Q      Send-Q      Local Address      Foreign Address      State       PID/Program name
+udp             0           0      127.0.0.1:41018    127.0.0.1:1700       ESTABLISHED 1021/./lora_pkt_fwd
+udp             0           0      127.0.0.1:60570    127.0.0.1:1700       ESTABLISHED 1021/./lora_pkt_fwd
+</code></pre>
 <ul>
 <li>通信参数解释</li>
 <li><a href="https://blog.csdn.net/quending/article/details/84979181" target="_blank" rel="noopener">网页一</a>
@@ -1016,10 +1268,11 @@ ERROR: [main] failed to start the concentrator
 <li><a href="https://blog.csdn.net/quending/article/details/86483352" target="_blank" rel="noopener">网页三</a></li>
 <li><a href="https://blog.csdn.net/quending/article/details/86481598" target="_blank" rel="noopener">网页四</a></li>
 <li><a href="https://www.cnblogs.com/answerinthewind/p/6213529.html" target="_blank" rel="noopener">网页五</a></li>
-<li><a href="https://gitee.com/rejeee/gw1302s/blob/master/packet_forwarder/PROTOCOL.md" target="_blank" rel="noopener">网页六</a></li>
+<li><a href="https://www.wpgdadatong.com/cn/solution/detail?PID=5357" target="_blank" rel="noopener">网页六</a></li>
+<li><a href="https://gitee.com/rejeee/gw1302s/blob/master/packet_forwarder/PROTOCOL.md" target="_blank" rel="noopener">网页七</a></li>
 </ul>
 </li>
-<li>确认问题
+<li>Network Server connectivity
 <ul>
 <li><a href="https://iot.wifx.net/docs/lorix-os/latest/user-s-guide/lorawan/packet-forwarders/udp-packet-forwarder/troubleshooting" target="_blank" rel="noopener">0% acknowledegd</a></li>
 </ul>
