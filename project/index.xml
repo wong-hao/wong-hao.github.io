@@ -252,7 +252,7 @@ Flash:     0
 &lt;li&gt;&lt;code&gt;make install_conf&lt;/code&gt;即安装&lt;strong&gt;global_conf.json&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;卖家给的&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/13154904.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;攻略&lt;/a&gt;跟用&lt;code&gt;install.sh&lt;/code&gt;生成的主要差别在radio_1与radio_2的&lt;strong&gt;ferq&lt;/strong&gt;不同，攻略的效果好；官方的&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVQzOWdIRUc4YU5DbHFMVzBjRGkwVjBCZjZGQmUzWUpkSnh0YVhXbUlLdnFtUT9lPW9qNjEzcg==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;参考文献&lt;/a&gt;和攻略还有&lt;a href=&#34;https://www.bilibili.com/video/BV1gp4y1v7UB&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;视频&lt;/a&gt;均给出了&lt;strong&gt;global_conf.json&lt;/strong&gt;的参数意义&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Close Source Network Servers&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Cloud-hosted: Close Source LoRaWAN Network Servers&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;global.config&lt;/strong&gt;中的&lt;strong&gt;lorawan_public: true&lt;/strong&gt;，&lt;a href=&#34;http://lora.timeddd.com/forum.php?mod=viewthread&amp;amp;tid=521&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;连接不通&lt;/a&gt;的元凶&lt;/p&gt;
@@ -419,14 +419,14 @@ udp             0           0      127.0.0.1:60570    127.0.0.1:1700       ESTAB
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Open Source Network Servers&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Cloud-hosted: Open Source LoRaWAN Network Servers&lt;/strong&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.thethingsnetwork.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Thethingsnetwork/Rakwireless&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.chirpstack.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoraServer/ChirpStack&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://openchirp.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;OpenChirp&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.lancaster.ac.uk/scc/sites/lora/lorasim.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoraSim&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;strong&gt;Gateway-Embedded Network Servers&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Integrated: Gateway-Embedded LoRaWAN Network Servers&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.actility.com/lorawan-network-server/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;特点&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;模拟软件&lt;/strong&gt;&lt;/p&gt;
 &lt;ol&gt;
