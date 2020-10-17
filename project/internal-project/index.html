@@ -881,8 +881,8 @@
   <div class="article-container">
 
     <div class="article-style">
-      <h3 id="1-实验环境">1 实验环境</h3>
-<h4 id="11-操作系统">1.1 操作系统</h4>
+      <h1 id="1-实验环境">1 实验环境</h1>
+<h2 id="11-操作系统">1.1 操作系统</h2>
 <blockquote>
 <p>Raspberry Pi OS (32-bit) with desktop and recommended software</p>
 </blockquote>
@@ -1045,7 +1045,7 @@ Received 3 packets (total:3)
 </ul>
 </li>
 </ul>
-<h4 id="12-系统备份">1.2 系统备份</h4>
+<h2 id="12-系统备份">1.2 系统备份</h2>
 <ol>
 <li><a href="https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOnU6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVdLWEhRd1h5cnRDaGVTMDM0WTFsSjhCVlhJSThGUmd3QzhuZ0lFRlpqVW5EQT9lPWR1WXNKVQ==.mp3" target="_blank" rel="noopener">Gitee版</a>采用的代码Commit id（<em>选用自动安装脚本&rsquo;install.sh&rsquo;</em>）: <a href="https://gitee.com/rejeee/gw1302s/commit/d9ef27fdecf2352d7ab6b85d50fb7a3e38a162ae" target="_blank" rel="noopener">d9ef27fdecf2352d7ab6b85d50fb7a3e38a162ae</a></li>
 <li><a href="#">Github版</a>采用的代码Commit id（<em>Gitee抄到这后面就自己改了</em>）: <a href="https://github.com/Lora-net/sx1302_hal/commit/6291e62ef9a161ae41037a0df1a86e9943a907b9" target="_blank" rel="noopener">6291e62ef9a161ae41037a0df1a86e9943a907b9</a></li>
@@ -1053,14 +1053,14 @@ Received 3 packets (total:3)
 <li><a href="https://downloads.raspberrypi.org/raspbian/images/" target="_blank" rel="noopener">历代系统</a></li>
 <li><a href="https://mirrors.tuna.tsinghua.edu.cn/raspbian-images/raspios_armhf/images/raspios_armhf-2020-05-28/2020-05-27-raspios-buster-armhf.zip" target="_blank" rel="noopener">4.19.118系统清华镜像</a></li>
 </ol>
-<h3 id="2-实验步骤">2 实验步骤</h3>
-<h4 id="21-lorawan">2.1 LoRaWAN</h4>
+<h1 id="2-实验步骤">2 实验步骤</h1>
+<h2 id="21-lorawan">2.1 LoRaWAN</h2>
 <ol>
 <li><a href="https://blog.csdn.net/RAKwireless/article/details/106470764#%E4%B8%80%E3%80%81LoRaWAN%E5%85%B8%E5%9E%8B%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84" target="_blank" rel="noopener">RAKwireless</a></li>
 <li><a href="https://www.cnblogs.com/answerinthewind/p/6200497.html#4472555" target="_blank" rel="noopener">AnswerInTheWind</a></li>
 <li><a href="https://connect.ed-diamond.com/MISC/MISCHS-015/LORAWAN-deploiement-d-une-infrastructure-de-test" target="_blank" rel="noopener">完整案例</a></li>
 </ol>
-<h4 id="22-devicesend-nodes">2.2 Devices/End Nodes</h4>
+<h2 id="22-devicesend-nodes">2.2 Devices/End Nodes</h2>
 <p><strong><a href="http://www.njrjzn.com/chanpinzhongxin/SX127xmozuxilie/4.html" target="_blank" rel="noopener">M-HL9-EV</a></strong></p>
 <ol>
 <li><a href="http://www.rejeee.com/documents/APP_DOC/M-KL9_how_to_enter_configuration_mode.pdf" target="_blank" rel="noopener">进入配置方法</a></li>
@@ -1096,7 +1096,7 @@ FNB:       0x00
 TYPE:      0x00
 Flash:     0
 </code></pre>
-<h4 id="23-gateway">2.3 Gateway</h4>
+<h2 id="23-gateway">2.3 Gateway</h2>
 <p><strong>SX1302</strong></p>
 <ol>
 <li><a href="https://www.semtech.com/products/wireless-rf/lora-gateways/sx1302cxxxgw1" target="_blank" rel="noopener">Semtech</a></li>
@@ -1126,7 +1126,7 @@ Flash:     0
 <li><code>make install_conf</code>即安装<strong>global_conf.json</strong></li>
 <li>卖家给的<a href="https://www.cnblogs.com/answerinthewind/p/13154904.html" target="_blank" rel="noopener">攻略</a>跟用<code>install.sh</code>生成的主要差别在radio_1与radio_2的<strong>ferq</strong>不同，攻略的效果好；官方的<a href="https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVQzOWdIRUc4YU5DbHFMVzBjRGkwVjBCZjZGQmUzWUpkSnh0YVhXbUlLdnFtUT9lPW9qNjEzcg==.mp3" target="_blank" rel="noopener">参考文献</a>和攻略还有<a href="https://www.bilibili.com/video/BV1gp4y1v7UB" target="_blank" rel="noopener">视频</a>均给出了<strong>global_conf.json</strong>的参数意义</li>
 </ul>
-<h4 id="24-network-server">2.4 Network Server</h4>
+<h2 id="24-network-server">2.4 Network Server</h2>
 <p><strong>Cloud-hosted: Close Source LoRaWAN Network Servers Platforms</strong></p>
 <ul>
 <li>
