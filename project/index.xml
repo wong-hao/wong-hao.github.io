@@ -442,7 +442,6 @@ udp             0           0      127.0.0.1:60570    127.0.0.1:1700       ESTAB
 &lt;p&gt;&lt;a href=&#34;https://www.chirpstack.io/project/guides/debian-ubuntu/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoraServer官方入门&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.freesion.com/article/1023121538/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoRaServer1&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/iotisan/article/details/90412873&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoraServer2&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.chirpstack.io/gateway-bridge/gateway/raspberrypi/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoraServer3&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.chirpstack.io/gateway-bridge/backends/semtech-udp/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoraServer global.config&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://console.thethingsnetwork.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TTN官方入门&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://learn.adafruit.com/the-things-network-for-feather?view=all&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TTN&lt;/a&gt;&lt;/p&gt;
