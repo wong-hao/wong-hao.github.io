@@ -1054,26 +1054,13 @@ Received 3 packets (total:3)
 <li><a href="https://mirrors.tuna.tsinghua.edu.cn/raspbian-images/raspios_armhf/images/raspios_armhf-2020-05-28/2020-05-27-raspios-buster-armhf.zip" target="_blank" rel="noopener">4.19.118系统清华镜像</a></li>
 </ol>
 <h3 id="2-实验步骤">2 实验步骤</h3>
-<h4 id="21-源码">2.1 源码</h4>
-<ol>
-<li><strong>gw1302s/libloragw</strong></li>
-<li><strong>gw1302s/packet_forwarder</strong></li>
-<li><strong>gw1302s/tools/payload_tools</strong></li>
-<li><strong>gw1302s/util_net_downlink</strong></li>
-<li><strong>gw1302s/util_chip_id</strong></li>
-</ol>
-<blockquote>
-<p>五个Helper program在主目录下，通过每个Helper下的<strong>makefile</strong>文件将必要的文件<code>scp</code>到<strong>target.cfg</strong>中的<strong>TARGET_DIR</strong>中</p>
-</blockquote>
-<p>故<strong>gw1302s/bin</strong>下看不懂的文件去看对应Helper program下的<strong>Readme.md</strong>，但可执行文件还是看这里</p>
-<p><a href="https://blog.csdn.net/iotisan/article/details/90180706" target="_blank" rel="noopener">iotisan源码工程梳理</a></p>
-<h4 id="22-lorawan">2.2 LoRaWAN</h4>
+<h4 id="21-lorawan">2.1 LoRaWAN</h4>
 <ol>
 <li><a href="https://blog.csdn.net/RAKwireless/article/details/106470764#%E4%B8%80%E3%80%81LoRaWAN%E5%85%B8%E5%9E%8B%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84" target="_blank" rel="noopener">RAKwireless</a></li>
 <li><a href="https://www.cnblogs.com/answerinthewind/p/6200497.html#4472555" target="_blank" rel="noopener">AnswerInTheWind</a></li>
 <li><a href="https://connect.ed-diamond.com/MISC/MISCHS-015/LORAWAN-deploiement-d-une-infrastructure-de-test" target="_blank" rel="noopener">完整案例</a></li>
 </ol>
-<h4 id="23-devicesend-nodes-gateway">2.3 Devices/End Nodes-&gt;Gateway</h4>
+<h4 id="22-devicesend-nodes">2.2 Devices/End Nodes</h4>
 <p><strong><a href="http://www.njrjzn.com/chanpinzhongxin/SX127xmozuxilie/4.html" target="_blank" rel="noopener">M-HL9-EV</a></strong></p>
 <ol>
 <li><a href="http://www.rejeee.com/documents/APP_DOC/M-KL9_how_to_enter_configuration_mode.pdf" target="_blank" rel="noopener">进入配置方法</a></li>
@@ -1109,19 +1096,38 @@ FNB:       0x00
 TYPE:      0x00
 Flash:     0
 </code></pre>
-<h4 id="24-gateway-network-server">2.4 Gateway-&gt;Network Server</h4>
+<h4 id="23-gateway">2.3 Gateway</h4>
 <p><strong>SX1302</strong></p>
 <ol>
-<li><a href="https://www.semtech.com/products/wireless-rf/lora-gateways/sx1302cxxxgw1" target="_blank" rel="noopener">semtech</a></li>
-<li><a href="http://www.njrjzn.com/chanpinzhongxin/SX1302mozuxilie/28.html" target="_blank" rel="noopener">rejeee</a></li>
+<li><a href="https://www.semtech.com/products/wireless-rf/lora-gateways/sx1302cxxxgw1" target="_blank" rel="noopener">Semtech</a></li>
+<li><a href="http://www.njrjzn.com/chanpinzhongxin/SX1302mozuxilie/28.html" target="_blank" rel="noopener">Rejeee</a></li>
 </ol>
+<p><strong>LoRaWAN gateway software implementation</strong></p>
+<ol>
+<li><a href="https://tech-journal.semtech.com/expert-series-5-things-you-need-to-know-about-lorawan-based-gateways" target="_blank" rel="noopener">UDP Packet forwarder project</a>，采用这个</li>
+<li><a href="https://lora-developers.semtech.com/resources/tools/lora-basics-station/?url=quick.html" target="_blank" rel="noopener">LoRa Basics™ Station</a></li>
+</ol>
+<p><strong>源码</strong></p>
+<ol>
+<li><strong>gw1302s/libloragw</strong></li>
+<li><strong>gw1302s/packet_forwarder</strong></li>
+<li><strong>gw1302s/tools/payload_tools</strong></li>
+<li><strong>gw1302s/util_net_downlink</strong></li>
+<li><strong>gw1302s/util_chip_id</strong></li>
+</ol>
+<blockquote>
+<p>五个Helper program在主目录下，通过每个Helper下的<strong>makefile</strong>文件将必要的文件<code>scp</code>到<strong>target.cfg</strong>中的<strong>TARGET_DIR</strong>中</p>
+</blockquote>
+<p>故<strong>gw1302s/bin</strong>下看不懂的文件去看对应Helper program下的<strong>Readme.md</strong>，但可执行文件还是看这里</p>
+<p><a href="https://blog.csdn.net/iotisan/article/details/90180706" target="_blank" rel="noopener">iotisan源码工程梳理</a></p>
 <p><strong>global_conf.json</strong></p>
 <ul>
 <li><a href="https://gitee.com/rejeee/gw1302s/commit/c425b67a5ccaaef0dd1042da08974245124c069b" target="_blank" rel="noopener">Gitee版本</a>直接增加了一个文件<strong>gw1302s/packet_forwarder/global_conf.json</strong>，其特点是<strong>gateway_conf</strong>下面的<strong>server_address</strong><a href="https://blog.csdn.net/RAKwireless/article/details/107101582" target="_blank" rel="noopener">由localhost修改为了loragw.things.qcloud.com</a></li>
 <li><code>make install_conf</code>即安装<strong>global_conf.json</strong></li>
 <li>卖家给的<a href="https://www.cnblogs.com/answerinthewind/p/13154904.html" target="_blank" rel="noopener">攻略</a>跟用<code>install.sh</code>生成的主要差别在radio_1与radio_2的<strong>ferq</strong>不同，攻略的效果好；官方的<a href="https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVQzOWdIRUc4YU5DbHFMVzBjRGkwVjBCZjZGQmUzWUpkSnh0YVhXbUlLdnFtUT9lPW9qNjEzcg==.mp3" target="_blank" rel="noopener">参考文献</a>和攻略还有<a href="https://www.bilibili.com/video/BV1gp4y1v7UB" target="_blank" rel="noopener">视频</a>均给出了<strong>global_conf.json</strong>的参数意义</li>
 </ul>
-<p><strong>Cloud-hosted: Close Source LoRaWAN Network Servers</strong></p>
+<h4 id="25-network-server">2.5 Network Server</h4>
+<p><strong>Cloud-hosted: Close Source LoRaWAN Network Servers Platforms</strong></p>
 <ul>
 <li>
 <p><strong>global.config</strong>中的<strong>lorawan_public: true</strong>，<a href="http://lora.timeddd.com/forum.php?mod=viewthread&amp;tid=521" target="_blank" rel="noopener">连接不通</a>的元凶</p>
@@ -1288,15 +1294,16 @@ udp             0           0      127.0.0.1:60570    127.0.0.1:1700       ESTAB
 </ul>
 </li>
 </ul>
-<p><strong>Cloud-hosted: Open Source LoRaWAN Network Servers</strong></p>
+<p><strong>Cloud-hosted: Open Source LoRaWAN Network Servers Platforms</strong></p>
 <ol>
 <li><a href="https://www.thethingsnetwork.org/" target="_blank" rel="noopener">Thethingsnetwork/Rakwireless</a></li>
 <li><a href="https://www.chirpstack.io/" target="_blank" rel="noopener">LoraServer/ChirpStack</a></li>
 <li><a href="https://openchirp.io/" target="_blank" rel="noopener">OpenChirp</a></li>
 <li><a href="https://www.lancaster.ac.uk/scc/sites/lora/lorasim.html" target="_blank" rel="noopener">LoraSim</a></li>
 <li><a href="https://apac.iot.semtech.cloud/" target="_blank" rel="noopener">Semtech</a></li>
+<li><a href="https://cn1.loriot.io/login" target="_blank" rel="noopener">Loriot</a></li>
 </ol>
-<p><strong>Integrated: Gateway-Embedded LoRaWAN Network Servers</strong></p>
+<p><strong>Integrated: Gateway-Embedded LoRaWAN Network Servers Platforms</strong></p>
 <p><a href="https://www.actility.com/lorawan-network-server/" target="_blank" rel="noopener">特点</a></p>
 <p><strong>模拟软件</strong></p>
 <ol>
