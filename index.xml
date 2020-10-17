@@ -619,11 +619,10 @@ udp             0           0      127.0.0.1:60570    127.0.0.1:1700       ESTAB
 &lt;li&gt;&lt;a href=&#34;https://www.gnuradio.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GUNRadio&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;strong&gt;方法&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.chirpstack.io/project/guides/debian-ubuntu/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoRaServer官方入门&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.freesion.com/article/1023121538/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoRaServer1&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/iotisan/article/details/90412873&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoRaServer2&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/Mculover666/article/details/104059771&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoRaServer3&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/quending/article/details/86178497&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoRaServer4&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.chirpstack.io/project/guides/docker-compose/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoRaServer官方入门&lt;/a&gt;，均选择&lt;strong&gt;Docker&lt;/strong&gt;安装&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/Mculover666/article/details/104059771&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoRaServer1&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.freesion.com/article/1023121538/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoRaServer2&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/iotisan/article/details/90412873&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoRaServer3&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.chirpstack.io/gateway-bridge/backends/semtech-udp/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoraServer global.config&lt;/a&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;a href=&#34;https://console.thethingsnetwork.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TTN官方入门&lt;/a&gt;&lt;/p&gt;
@@ -1253,7 +1252,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-562371498&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-124689735&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -1263,7 +1262,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-562371498&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-124689735&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
