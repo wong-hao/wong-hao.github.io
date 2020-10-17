@@ -210,7 +210,7 @@ Received 3 packets (total:3)
 &lt;li&gt;&lt;a href=&#34;https://connect.ed-diamond.com/MISC/MISCHS-015/LORAWAN-deploiement-d-une-infrastructure-de-test&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;完整案例&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h4 id=&#34;23-devicesend-nodes-gateway&#34;&gt;2.3 Devices/End Nodes-&amp;gt;Gateway&lt;/h4&gt;
-&lt;p&gt;&lt;strong&gt;M-HL9-EV&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;http://www.njrjzn.com/chanpinzhongxin/SX127xmozuxilie/4.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;M-HL9-EV&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&#34;http://www.rejeee.com/documents/APP_DOC/M-KL9_how_to_enter_configuration_mode.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;进入配置方法&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://www.rejeee.com/documents/APP_DOC/M-KL9_parameter.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;M-KL9&lt;/strong&gt;参数意义&lt;/a&gt;，具体配置参数看用户手册&lt;/li&gt;
@@ -246,6 +246,11 @@ TYPE:      0x00
 Flash:     0
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h4 id=&#34;24-gateway-network-server&#34;&gt;2.4 Gateway-&amp;gt;Network Server&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;SX1302&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.semtech.com/products/wireless-rf/lora-gateways/sx1302cxxxgw1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;semtech&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.njrjzn.com/chanpinzhongxin/SX1302mozuxilie/28.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;rejeee&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
 &lt;p&gt;&lt;strong&gt;global_conf.json&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://gitee.com/rejeee/gw1302s/commit/c425b67a5ccaaef0dd1042da08974245124c069b&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Gitee版本&lt;/a&gt;直接增加了一个文件&lt;strong&gt;gw1302s/packet_forwarder/global_conf.json&lt;/strong&gt;，其特点是&lt;strong&gt;gateway_conf&lt;/strong&gt;下面的&lt;strong&gt;server_address&lt;/strong&gt;&lt;a href=&#34;https://blog.csdn.net/RAKwireless/article/details/107101582&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;由localhost修改为了loragw.things.qcloud.com&lt;/a&gt;&lt;/li&gt;
@@ -425,6 +430,7 @@ udp             0           0      127.0.0.1:60570    127.0.0.1:1700       ESTAB
 &lt;li&gt;&lt;a href=&#34;https://www.chirpstack.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoraServer/ChirpStack&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://openchirp.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;OpenChirp&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.lancaster.ac.uk/scc/sites/lora/lorasim.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoraSim&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://apac.iot.semtech.cloud/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Semtech&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;strong&gt;Integrated: Gateway-Embedded LoRaWAN Network Servers&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.actility.com/lorawan-network-server/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;特点&lt;/a&gt;&lt;/p&gt;
