@@ -1170,57 +1170,26 @@ raspberrypi2    0016c001ff10d3f7    -              苏州市           在线   
 </li>
 <li>
 <p>示例</p>
-<pre><code class="language-cpp">INFO: Received pkt from mote: 1350200C (fcnt=2)
+<pre><code class="language-cpp">INFO: Received pkt from mote: 1350200C (fcnt=13)
 
-JSON up: {&quot;rxpk&quot;:[{&quot;jver&quot;:1,&quot;tmst&quot;:36805201,&quot;chan&quot;:4,&quot;rfch&quot;:1,&quot;freq&quot;:475.100000,&quot;mid&quot;:1,&quot;stat&quot;:1,&quot;modu&quot;:&quot;LORA&quot;,&quot;datr&quot;:&quot;SF12Bw125&quot;,&quot;codr&quot;:&quot;4/5&quot;,&quot;rssis&quot;:-89,&quot;lsnr&quot;:-6.0,&quot;foff&quot;:1152,&quot;rssi&quot;:-83,&quot;size&quot;:11,&quot;data&quot;:&quot;QQwgUBMAAgCrze8=&quot;}]}
+JSON up: {&quot;rxpk&quot;:[{&quot;jver&quot;:1,&quot;tmst&quot;:137795171,&quot;chan&quot;:4,&quot;rfch&quot;:1,&quot;freq&quot;:475.100000,&quot;mid&quot;:0,&quot;stat&quot;:1,&quot;modu&quot;:&quot;LORA&quot;,&quot;datr&quot;:&quot;SF12Bw125&quot;,&quot;codr&quot;:&quot;4/5&quot;,&quot;rssis&quot;:-84,&quot;lsnr&quot;:-5.0,&quot;foff&quot;:786,&quot;rssi&quot;:-80,&quot;size&quot;:13,&quot;data&quot;:&quot;gQwgUBMADQANAKvN7w==&quot;}]}
+INFO: [up] PUSH_ACK received in 40ms
+INFO: [down] PULL_ACK received in 34ms
 
-##### 2020-10-14 01:27:37 GMT #####
-### [UPSTREAM] ###
-# RF packets received by concentrator: 2
-# CRC_OK: 50.00%, CRC_FAIL: 50.00%, NO_CRC: 0.00%
-# RF packets forwarded: 1 (11 bytes)
-# PUSH_DATA datagrams sent: 2 (354 bytes)
-# PUSH_DATA acknowledeged: 0.00%
-### [DOWNSTREAM] ###
-# PULL_DATA sent: 3 (0.00%)
-# PULL_RESP(onse) datagrams received: 0 (0 bytes)
-# RF packets sent to concentrator: 0 (0 bytes)
-# TX errors: 0
-### SX1302 Status ###
-# SX1302 counter (INST): 60932988
-# SX1302 counter (PPS): 0
-# BEACON queued: 0
-# BEACON sent so far: 0
-# BEACON rejected: 0
-### [JIT] ###
-src/jitqueue.c:442:jit_print_queue(): INFO: [jit] queue is empty
-#--------
-src/jitqueue.c:442:jit_print_queue(): INFO: [jit] queue is empty
-### [GPS] ###
-# GPS sync is disabled
-### Concentrator temperature 0 C ###
-##### END #####
-
-JSON up: {&quot;stat&quot;:{&quot;time&quot;:&quot;2020-10-14 01:27:37 GMT&quot;,&quot;rxnb&quot;:2,&quot;rxok&quot;:1,&quot;rxfw&quot;:1,&quot;ackr&quot;:0.0,&quot;dwnb&quot;:0,&quot;txnb&quot;:0,&quot;temp&quot;:0.0}}
-</code></pre>
-<pre><code class="language-cpp">INFO: Received pkt from mote: 1350200C (fcnt=24)
-
-JSON up: {&quot;rxpk&quot;:[{&quot;jver&quot;:1,&quot;tmst&quot;:260919897,&quot;chan&quot;:4,&quot;rfch&quot;:1,&quot;freq&quot;:475.100000,&quot;mid&quot;:2,&quot;stat&quot;:1,&quot;modu&quot;:&quot;LORA&quot;,&quot;datr&quot;:&quot;SF12Bw125&quot;,&quot;codr&quot;:&quot;4/5&quot;,&quot;rssis&quot;:-88,&quot;lsnr&quot;:-8.0,&quot;foff&quot;:1205,&quot;rssi&quot;:-81,&quot;size&quot;:11,&quot;data&quot;:&quot;QQwgUBMAGAASNFY=&quot;}]}
-
-##### 2020-10-14 01:31:07 GMT #####
+##### 2020-10-18 10:49:51 GMT #####
 ### [UPSTREAM] ###
 # RF packets received by concentrator: 1
 # CRC_OK: 100.00%, CRC_FAIL: 0.00%, NO_CRC: 0.00%
-# RF packets forwarded: 1 (11 bytes)
-# PUSH_DATA datagrams sent: 2 (355 bytes)
-# PUSH_DATA acknowledeged: 0.00%
+# RF packets forwarded: 1 (13 bytes)
+# PUSH_DATA datagrams sent: 2 (360 bytes)
+# PUSH_DATA acknowledeged: 100.00%
 ### [DOWNSTREAM] ###
-# PULL_DATA sent: 3 (0.00%)
+# PULL_DATA sent: 3 (100.00%)
 # PULL_RESP(onse) datagrams received: 0 (0 bytes)
 # RF packets sent to concentrator: 0 (0 bytes)
 # TX errors: 0
 ### SX1302 Status ###
-# SX1302 counter (INST): 270938815
+# SX1302 counter (INST): 150921885
 # SX1302 counter (PPS): 0
 # BEACON queued: 0
 # BEACON sent so far: 0
@@ -1234,45 +1203,10 @@ src/jitqueue.c:442:jit_print_queue(): INFO: [jit] queue is empty
 ### Concentrator temperature 0 C ###
 ##### END #####
 
-JSON up: {&quot;stat&quot;:{&quot;time&quot;:&quot;2020-10-14 01:31:07 GMT&quot;,&quot;rxnb&quot;:1,&quot;rxok&quot;:1,&quot;rxfw&quot;:1,&quot;ackr&quot;:0.0,&quot;dwnb&quot;:0,&quot;txnb&quot;:0,&quot;temp&quot;:0.0}}
-</code></pre>
-<pre><code class="language-cpp">INFO: Received pkt from mote: 1350200C (fcnt=35)
-
-JSON up: {&quot;rxpk&quot;:[{&quot;jver&quot;:1,&quot;tmst&quot;:37097539,&quot;chan&quot;:7,&quot;rfch&quot;:1,&quot;freq&quot;:475.700000,&quot;mid&quot;:3,&quot;stat&quot;:1,&quot;modu&quot;:&quot;LORA&quot;,&quot;datr&quot;:&quot;SF12Bw125&quot;,&quot;codr&quot;:&quot;4/5&quot;,&quot;rssis&quot;:-93,&quot;lsnr&quot;:-22.2,&quot;foff&quot;:4,&quot;rssi&quot;:-83,&quot;size&quot;:11,&quot;data&quot;:&quot;QQwgUBMAIwAaKzw=&quot;}]}
-
-##### 2020-10-14 01:38:10 GMT #####
-### [UPSTREAM] ###
-# RF packets received by concentrator: 2
-# CRC_OK: 50.00%, CRC_FAIL: 50.00%, NO_CRC: 0.00%
-# RF packets forwarded: 1 (11 bytes)
-# PUSH_DATA datagrams sent: 2 (352 bytes)
-# PUSH_DATA acknowledeged: 0.00%
-### [DOWNSTREAM] ###
-# PULL_DATA sent: 3 (0.00%)
-# PULL_RESP(onse) datagrams received: 0 (0 bytes)
-# RF packets sent to concentrator: 0 (0 bytes)
-# TX errors: 0
-### SX1302 Status ###
-# SX1302 counter (INST): 60932951
-# SX1302 counter (PPS): 0
-# BEACON queued: 0
-# BEACON sent so far: 0
-# BEACON rejected: 0
-### [JIT] ###
-src/jitqueue.c:442:jit_print_queue(): INFO: [jit] queue is empty
-#--------
-src/jitqueue.c:442:jit_print_queue(): INFO: [jit] queue is empty
-### [GPS] ###
-# GPS sync is disabled
-### Concentrator temperature 0 C ###
-##### END #####
-
-JSON up: {&quot;stat&quot;:{&quot;time&quot;:&quot;2020-10-14 01:38:10 GMT&quot;,&quot;rxnb&quot;:2,&quot;rxok&quot;:1,&quot;rxfw&quot;:1,&quot;ackr&quot;:0.0,&quot;dwnb&quot;:0,&quot;txnb&quot;:0,&quot;temp&quot;:0.0}}
-</code></pre>
-<pre><code class="language-cpp">pi@raspberrypi:~ $ netstat -anp
-Proto      Recv-Q      Send-Q      Local Address      Foreign Address      State       PID/Program name
-udp             0           0      127.0.0.1:41018    127.0.0.1:1700       ESTABLISHED 1021/./lora_pkt_fwd
-udp             0           0      127.0.0.1:60570    127.0.0.1:1700       ESTABLISHED 1021/./lora_pkt_fwd
+JSON up: {&quot;stat&quot;:{&quot;time&quot;:&quot;2020-10-18 10:49:51 GMT&quot;,&quot;rxnb&quot;:1,&quot;rxok&quot;:1,&quot;rxfw&quot;:1,&quot;ackr&quot;:100.0,&quot;dwnb&quot;:0,&quot;txnb&quot;:0,&quot;temp&quot;:0.0}}
+INFO: [up] PUSH_ACK received in 34ms
+INFO: [down] PULL_ACK received in 35ms
+INFO: [down] PULL_ACK received in 37ms
 </code></pre>
 <ul>
 <li>通信参数解释</li>
