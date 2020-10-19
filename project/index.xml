@@ -214,7 +214,7 @@ TSF:       12
 RSF:       12
 CR:        4/5
 MODE:      LORA
-SYNC:      0x12
+SYNC:      0x12/0x34
 PREM:      8, 10
 FIX:       0, 0
 CRC:       ON
@@ -266,10 +266,7 @@ Flash:     0
 &lt;p&gt;&lt;strong&gt;Cloud-hosted: Close Source LoRaWAN Network Servers Platforms&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;strong&gt;global.config&lt;/strong&gt;中的&lt;strong&gt;lorawan_public: true&lt;/strong&gt;，&lt;a href=&#34;http://lora.timeddd.com/forum.php?mod=viewthread&amp;amp;tid=521&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;连接不通&lt;/a&gt;的元凶&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;前导码: 0x34&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;global.config&lt;/strong&gt;中的&lt;strong&gt;lorawan_public: true&lt;/strong&gt;，&lt;a href=&#34;http://lora.timeddd.com/forum.php?mod=viewthread&amp;amp;tid=521&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;连接不通&lt;/a&gt;的元凶，true对应于sync word &lt;strong&gt;0x34&lt;/strong&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;使用树莓派搭建网关注册到腾讯物联网开发平台&lt;/p&gt;
@@ -380,7 +377,7 @@ INFO: [down] PULL_ACK received in 37ms
 &lt;li&gt;&lt;a href=&#34;https://www.gnuradio.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GUNRadio&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;strong&gt;方法&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.chirpstack.io/project/guides/docker-compose/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoRaServer:Debian 1&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.chirpstack.io/project/guides/debian-ubuntu/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoRaServer:Debian 1&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/a1989214/article/details/106832570&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoRaServer:Debian 2&lt;/a&gt;，&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;NS配置文件：&lt;strong&gt;dsn=&amp;quot;postgres://chirpstack_ns:dbpassword@localhost/chirpstack_ns?sslmode=disable&amp;rdquo;&lt;/strong&gt;&lt;/li&gt;

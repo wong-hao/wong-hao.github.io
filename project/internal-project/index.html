@@ -1078,7 +1078,7 @@ TSF:       12
 RSF:       12
 CR:        4/5
 MODE:      LORA
-SYNC:      0x12
+SYNC:      0x12/0x34
 PREM:      8, 10
 FIX:       0, 0
 CRC:       ON
@@ -1130,10 +1130,7 @@ Flash:     0
 <p><strong>Cloud-hosted: Close Source LoRaWAN Network Servers Platforms</strong></p>
 <ul>
 <li>
-<p><strong>global.config</strong>中的<strong>lorawan_public: true</strong>，<a href="http://lora.timeddd.com/forum.php?mod=viewthread&amp;tid=521" target="_blank" rel="noopener">连接不通</a>的元凶</p>
-</li>
-<li>
-<p><strong>前导码: 0x34</strong></p>
+<p><strong>global.config</strong>中的<strong>lorawan_public: true</strong>，<a href="http://lora.timeddd.com/forum.php?mod=viewthread&amp;tid=521" target="_blank" rel="noopener">连接不通</a>的元凶，true对应于sync word <strong>0x34</strong></p>
 </li>
 <li>
 <p>使用树莓派搭建网关注册到腾讯物联网开发平台</p>
@@ -1244,7 +1241,7 @@ INFO: [down] PULL_ACK received in 37ms
 <li><a href="https://www.gnuradio.org/" target="_blank" rel="noopener">GUNRadio</a></li>
 </ol>
 <p><strong>方法</strong></p>
-<p><a href="https://www.chirpstack.io/project/guides/docker-compose/" target="_blank" rel="noopener">LoRaServer:Debian 1</a></p>
+<p><a href="https://www.chirpstack.io/project/guides/debian-ubuntu/" target="_blank" rel="noopener">LoRaServer:Debian 1</a></p>
 <p><a href="https://blog.csdn.net/a1989214/article/details/106832570" target="_blank" rel="noopener">LoRaServer:Debian 2</a>，</p>
 <ol>
 <li>NS配置文件：<strong>dsn=&quot;postgres://chirpstack_ns:dbpassword@localhost/chirpstack_ns?sslmode=disable&rdquo;</strong></li>
