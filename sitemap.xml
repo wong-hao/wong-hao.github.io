@@ -3,7 +3,12 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://haowong.com/courses/course3/</loc>
+    <loc>https://haowong.com/courses/courselist/</loc>
+    <lastmod>2020-10-12T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://haowong.com/courses/course1/</loc>
     <lastmod>2020-10-12T00:00:00+00:00</lastmod>
   </url>
   
@@ -13,7 +18,7 @@
   </url>
   
   <url>
-    <loc>https://haowong.com/courses/course1/</loc>
+    <loc>https://haowong.com/courses/course3/</loc>
     <lastmod>2020-10-12T00:00:00+00:00</lastmod>
   </url>
   
