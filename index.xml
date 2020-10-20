@@ -557,15 +557,20 @@ INFO: [down] PULL_ACK received in 37ms
 &lt;li&gt;NS配置文件：注释掉所有&lt;strong&gt;extral chanels&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;AS配置文件：&lt;strong&gt;dsn=&amp;quot;postgres://chirpstack_as:dbpassword@localhost/chirpstack_as?sslmode=disable&amp;rdquo;&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;AS配置文件文件：服务器运行&lt;code&gt;openssl rand -base64 32&lt;/code&gt;，添加到 &lt;strong&gt;JWT_SECRET&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;非Docker好处：可以一直开着服务器，可以在开着的同时启动其他进程，可以配置文件内容更多&lt;/li&gt;
-&lt;li&gt;Dockers好处：安装、卸载方便&lt;/li&gt;
+&lt;li&gt;配置文件更丰富&lt;/li&gt;
 &lt;/ol&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/Mculover666/article/details/104059771&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoRaServer:docker1&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.freesion.com/article/1023121538/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoRaServer:docker2&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/iotisan/article/details/90412873&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoRaServer:docker3&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.chirpstack.io/project/guides/docker-compose/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoRaServer:docker1&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/Mculover666/article/details/104059771&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoRaServer:docker2&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.freesion.com/article/1023121538/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoRaServer:docker3&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/iotisan/article/details/90412873&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoRaServer:docker4&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.chirpstack.io/gateway-bridge/backends/semtech-udp/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoraServer global.config&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;允许&lt;a href=&#34;https://help.aliyun.com/document_detail/25475.html?spm=a2c4g.11186623.2.14.81c071afVJYuXn#allowRemoteAccess&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;公网远程&lt;/a&gt;连接http://47.110.36.225:8080/&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Docker后台运行&lt;/li&gt;
+&lt;li&gt;停止部分容器&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;阿里云允许&lt;a href=&#34;https://help.aliyun.com/document_detail/25475.html?spm=a2c4g.11186623.2.14.81c071afVJYuXn#allowRemoteAccess&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;公网远程&lt;/a&gt;连接http://47.110.36.225:8080/&lt;/strong&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;协议类型          端口范围          授权对象
 UDP             8080/8080        0.0.0.0/0
 &lt;/code&gt;&lt;/pre&gt;
@@ -1201,7 +1206,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-578639421&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-752381496&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -1211,7 +1216,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-578639421&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-752381496&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
