@@ -5,7 +5,7 @@
     <link>https://haowong.com/project/</link>
       <atom:link href="https://haowong.com/project/index.xml" rel="self" type="application/rss+xml" />
     <description>Projects</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>©</copyright><lastBuildDate>Tue, 06 Oct 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>©</copyright><lastBuildDate>Wed, 21 Oct 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://haowong.com/images/icon_hub0cb53550ede56fdccc60540659dbf84_11803_512x512_fill_lanczos_center_2.png</url>
       <title>Projects</title>
@@ -13,7 +13,15 @@
     </image>
     
     <item>
-      <title>Rejeee M-HL9-EV and SX1302S</title>
+      <title>Code View of LoRa_PKT_FWD</title>
+      <link>https://haowong.com/project/codeview/</link>
+      <pubDate>Wed, 21 Oct 2020 00:00:00 +0000</pubDate>
+      <guid>https://haowong.com/project/codeview/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>LoRa and LoRaWAN</title>
       <link>https://haowong.com/project/internal-project/</link>
       <pubDate>Tue, 06 Oct 2020 00:00:00 +0000</pubDate>
       <guid>https://haowong.com/project/internal-project/</guid>

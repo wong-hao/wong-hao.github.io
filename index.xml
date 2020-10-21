@@ -186,7 +186,15 @@
     </item>
     
     <item>
-      <title>Rejeee M-HL9-EV and SX1302S</title>
+      <title>Code View of LoRa_PKT_FWD</title>
+      <link>https://haowong.com/project/codeview/</link>
+      <pubDate>Wed, 21 Oct 2020 00:00:00 +0000</pubDate>
+      <guid>https://haowong.com/project/codeview/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>LoRa and LoRaWAN</title>
       <link>https://haowong.com/project/internal-project/</link>
       <pubDate>Tue, 06 Oct 2020 00:00:00 +0000</pubDate>
       <guid>https://haowong.com/project/internal-project/</guid>
@@ -1213,7 +1221,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-823917546&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-726319845&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -1223,7 +1231,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-823917546&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-726319845&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
