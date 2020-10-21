@@ -1125,6 +1125,8 @@ Flash:     0
 <li><a href="https://gitee.com/rejeee/gw1302s/commit/c425b67a5ccaaef0dd1042da08974245124c069b" target="_blank" rel="noopener">Gitee版本</a>直接增加了一个文件<strong>gw1302s/packet_forwarder/global_conf.json</strong>，其特点是<strong>gateway_conf</strong>下面的<strong>server_address</strong><a href="https://blog.csdn.net/RAKwireless/article/details/107101582" target="_blank" rel="noopener">由localhost修改为了loragw.things.qcloud.com</a></li>
 <li><code>make install_conf</code>即安装<strong>global_conf.json</strong></li>
 <li>卖家给的<a href="https://www.cnblogs.com/answerinthewind/p/13154904.html" target="_blank" rel="noopener">攻略</a>跟用<code>install.sh</code>生成的主要差别在radio_1与radio_2的<strong>ferq</strong>不同，攻略的效果好；官方的<a href="https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVQzOWdIRUc4YU5DbHFMVzBjRGkwVjBCZjZGQmUzWUpkSnh0YVhXbUlLdnFtUT9lPW9qNjEzcg==.mp3" target="_blank" rel="noopener">参考文献</a>和攻略还有<a href="https://www.bilibili.com/video/BV1gp4y1v7UB" target="_blank" rel="noopener">视频</a>均给出了<strong>global_conf.json</strong>的参数意义</li>
+<li><a href="https://forum.chirpstack.io/t/semtech-udp-packet-forwarder-setting/9490/2" target="_blank" rel="noopener">&ldquo;server_address&quot;与Gateway Bridge运行地址一致</a></li>
+<li>每次更换为备份时&quot;gateway_ID&quot;都要修改与树莓派保持一致</li>
 </ul>
 <h2 id="24-network-server">2.4 Network Server</h2>
 <p><strong>Cloud-hosted: Close Source LoRaWAN Network Servers Platforms</strong></p>
@@ -1263,9 +1265,10 @@ INFO: [down] PULL_ACK received in 37ms
 <li>停止所有容器 <code>docker stop $(docker ps -aq)</code></li>
 </ol>
 <hr>
-<p><strong>阿里云允许<a href="https://help.aliyun.com/document_detail/25475.html?spm=a2c4g.11186623.2.14.81c071afVJYuXn#allowRemoteAccess" target="_blank" rel="noopener">公网远程</a>连接http://47.110.36.225:8080/</strong></p>
+<p>**阿里云允许<a href="https://help.aliyun.com/document_detail/25475.html?spm=a2c4g.11186623.2.14.81c071afVJYuXn#allowRemoteAccess" target="_blank" rel="noopener">公网远程</a>连接http://47.110.36.225:8080/**+1700入口</p>
 <pre><code class="language-cpp">协议类型          端口范围          授权对象
 UDP             8080/8080        0.0.0.0/0
+UDP             1700/1700        0.0.0.0/0
 </code></pre>
 <pre><code class="language-cpp">account  password
  admin    admin

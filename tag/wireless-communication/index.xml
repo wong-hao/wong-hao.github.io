@@ -261,6 +261,8 @@ Flash:     0
 &lt;li&gt;&lt;a href=&#34;https://gitee.com/rejeee/gw1302s/commit/c425b67a5ccaaef0dd1042da08974245124c069b&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Gitee版本&lt;/a&gt;直接增加了一个文件&lt;strong&gt;gw1302s/packet_forwarder/global_conf.json&lt;/strong&gt;，其特点是&lt;strong&gt;gateway_conf&lt;/strong&gt;下面的&lt;strong&gt;server_address&lt;/strong&gt;&lt;a href=&#34;https://blog.csdn.net/RAKwireless/article/details/107101582&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;由localhost修改为了loragw.things.qcloud.com&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;make install_conf&lt;/code&gt;即安装&lt;strong&gt;global_conf.json&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;卖家给的&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/13154904.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;攻略&lt;/a&gt;跟用&lt;code&gt;install.sh&lt;/code&gt;生成的主要差别在radio_1与radio_2的&lt;strong&gt;ferq&lt;/strong&gt;不同，攻略的效果好；官方的&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVQzOWdIRUc4YU5DbHFMVzBjRGkwVjBCZjZGQmUzWUpkSnh0YVhXbUlLdnFtUT9lPW9qNjEzcg==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;参考文献&lt;/a&gt;和攻略还有&lt;a href=&#34;https://www.bilibili.com/video/BV1gp4y1v7UB&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;视频&lt;/a&gt;均给出了&lt;strong&gt;global_conf.json&lt;/strong&gt;的参数意义&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://forum.chirpstack.io/t/semtech-udp-packet-forwarder-setting/9490/2&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&amp;ldquo;server_address&amp;quot;与Gateway Bridge运行地址一致&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;每次更换为备份时&amp;quot;gateway_ID&amp;quot;都要修改与树莓派保持一致&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;24-network-server&#34;&gt;2.4 Network Server&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;Cloud-hosted: Close Source LoRaWAN Network Servers Platforms&lt;/strong&gt;&lt;/p&gt;
@@ -399,9 +401,10 @@ INFO: [down] PULL_ACK received in 37ms
 &lt;li&gt;停止所有容器 &lt;code&gt;docker stop $(docker ps -aq)&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;strong&gt;阿里云允许&lt;a href=&#34;https://help.aliyun.com/document_detail/25475.html?spm=a2c4g.11186623.2.14.81c071afVJYuXn#allowRemoteAccess&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;公网远程&lt;/a&gt;连接http://47.110.36.225:8080/&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;**阿里云允许&lt;a href=&#34;https://help.aliyun.com/document_detail/25475.html?spm=a2c4g.11186623.2.14.81c071afVJYuXn#allowRemoteAccess&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;公网远程&lt;/a&gt;连接http://47.110.36.225:8080/**+1700入口&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;协议类型          端口范围          授权对象
 UDP             8080/8080        0.0.0.0/0
+UDP             1700/1700        0.0.0.0/0
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;account  password
  admin    admin
