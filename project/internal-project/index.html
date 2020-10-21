@@ -1108,19 +1108,6 @@ Flash:     0
 <li><a href="https://tech-journal.semtech.com/expert-series-5-things-you-need-to-know-about-lorawan-based-gateways" target="_blank" rel="noopener">UDP Packet forwarder project</a>，采用这个</li>
 <li><a href="https://lora-developers.semtech.com/resources/tools/lora-basics-station/?url=quick.html" target="_blank" rel="noopener">LoRa Basics™ Station</a></li>
 </ol>
-<p><strong>源码</strong></p>
-<ol>
-<li><strong>gw1302s/libloragw</strong></li>
-<li><strong>gw1302s/packet_forwarder</strong></li>
-<li><strong>gw1302s/tools/payload_tools</strong></li>
-<li><strong>gw1302s/util_net_downlink</strong></li>
-<li><strong>gw1302s/util_chip_id</strong></li>
-</ol>
-<blockquote>
-<p>五个Helper program在主目录下，通过每个Helper下的<strong>makefile</strong>文件将必要的文件<code>scp</code>到<strong>target.cfg</strong>中的<strong>TARGET_DIR</strong>中</p>
-</blockquote>
-<p>故<strong>gw1302s/bin</strong>下看不懂的文件去看对应Helper program下的<strong>Readme.md</strong>，但可执行文件还是看这里</p>
-<p><a href="https://blog.csdn.net/iotisan/article/details/90180706" target="_blank" rel="noopener">iotisan源码工程梳理</a></p>
 <p><strong>global_conf.json</strong></p>
 <ul>
 <li><a href="https://gitee.com/rejeee/gw1302s/commit/c425b67a5ccaaef0dd1042da08974245124c069b" target="_blank" rel="noopener">Gitee版本</a>直接增加了一个文件<strong>gw1302s/packet_forwarder/global_conf.json</strong>，其特点是<strong>gateway_conf</strong>下面的<strong>server_address</strong><a href="https://blog.csdn.net/RAKwireless/article/details/107101582" target="_blank" rel="noopener">由localhost修改为了loragw.things.qcloud.com</a></li>
