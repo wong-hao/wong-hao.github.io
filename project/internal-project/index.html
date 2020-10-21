@@ -1052,6 +1052,7 @@ Received 3 packets (total:3)
 <li>卖家给了所谓<strong>搭建好基本环境</strong>的<a href="https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOnU6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVpVeXREN1pkTDVBZy14c3hjTXQ0NElCVEI1TTgyV2xHcWJOUFgxOGZZWmhaUT9lPXRrQUx1Zg==.mp3" target="_blank" rel="noopener">系统</a>，实际上就是刷了4.19，升级了还是不能用，没解决任何问题</li>
 <li><a href="https://downloads.raspberrypi.org/raspbian/images/" target="_blank" rel="noopener">历代系统</a></li>
 <li><a href="https://mirrors.tuna.tsinghua.edu.cn/raspbian-images/raspios_armhf/images/raspios_armhf-2020-05-28/2020-05-27-raspios-buster-armhf.zip" target="_blank" rel="noopener">4.19.118系统清华镜像</a></li>
+<li>每次更换为备份时，&ldquo;global.config&quot;中&quot;gateway_ID&quot;都要修改与树莓派保持一致、&ldquo;lorawan_public&quot;与发射端保持一致</li>
 </ol>
 <h1 id="2-实验步骤">2 实验步骤</h1>
 <h2 id="21-lorawan">2.1 LoRaWAN</h2>
@@ -1126,7 +1127,6 @@ Flash:     0
 <li><code>make install_conf</code>即安装<strong>global_conf.json</strong></li>
 <li>卖家给的<a href="https://www.cnblogs.com/answerinthewind/p/13154904.html" target="_blank" rel="noopener">攻略</a>跟用<code>install.sh</code>生成的主要差别在radio_1与radio_2的<strong>ferq</strong>不同，攻略的效果好；官方的<a href="https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVQzOWdIRUc4YU5DbHFMVzBjRGkwVjBCZjZGQmUzWUpkSnh0YVhXbUlLdnFtUT9lPW9qNjEzcg==.mp3" target="_blank" rel="noopener">参考文献</a>和攻略还有<a href="https://www.bilibili.com/video/BV1gp4y1v7UB" target="_blank" rel="noopener">视频</a>均给出了<strong>global_conf.json</strong>的参数意义</li>
 <li><a href="https://forum.chirpstack.io/t/semtech-udp-packet-forwarder-setting/9490/2" target="_blank" rel="noopener">&ldquo;server_address&quot;与Gateway Bridge运行地址一致</a></li>
-<li>每次更换为备份时&quot;gateway_ID&quot;都要修改与树莓派保持一致</li>
 </ul>
 <h2 id="24-network-server">2.4 Network Server</h2>
 <p><strong>Cloud-hosted: Close Source LoRaWAN Network Servers Platforms</strong></p>

@@ -361,6 +361,7 @@ Received 3 packets (total:3)
 &lt;li&gt;卖家给了所谓&lt;strong&gt;搭建好基本环境&lt;/strong&gt;的&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOnU6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVpVeXREN1pkTDVBZy14c3hjTXQ0NElCVEI1TTgyV2xHcWJOUFgxOGZZWmhaUT9lPXRrQUx1Zg==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;系统&lt;/a&gt;，实际上就是刷了4.19，升级了还是不能用，没解决任何问题&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://downloads.raspberrypi.org/raspbian/images/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;历代系统&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://mirrors.tuna.tsinghua.edu.cn/raspbian-images/raspios_armhf/images/raspios_armhf-2020-05-28/2020-05-27-raspios-buster-armhf.zip&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;4.19.118系统清华镜像&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;每次更换为备份时，&amp;ldquo;global.config&amp;quot;中&amp;quot;gateway_ID&amp;quot;都要修改与树莓派保持一致、&amp;ldquo;lorawan_public&amp;quot;与发射端保持一致&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h1 id=&#34;2-实验步骤&#34;&gt;2 实验步骤&lt;/h1&gt;
 &lt;h2 id=&#34;21-lorawan&#34;&gt;2.1 LoRaWAN&lt;/h2&gt;
@@ -435,7 +436,6 @@ Flash:     0
 &lt;li&gt;&lt;code&gt;make install_conf&lt;/code&gt;即安装&lt;strong&gt;global_conf.json&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;卖家给的&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/13154904.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;攻略&lt;/a&gt;跟用&lt;code&gt;install.sh&lt;/code&gt;生成的主要差别在radio_1与radio_2的&lt;strong&gt;ferq&lt;/strong&gt;不同，攻略的效果好；官方的&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVQzOWdIRUc4YU5DbHFMVzBjRGkwVjBCZjZGQmUzWUpkSnh0YVhXbUlLdnFtUT9lPW9qNjEzcg==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;参考文献&lt;/a&gt;和攻略还有&lt;a href=&#34;https://www.bilibili.com/video/BV1gp4y1v7UB&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;视频&lt;/a&gt;均给出了&lt;strong&gt;global_conf.json&lt;/strong&gt;的参数意义&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://forum.chirpstack.io/t/semtech-udp-packet-forwarder-setting/9490/2&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&amp;ldquo;server_address&amp;quot;与Gateway Bridge运行地址一致&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;每次更换为备份时&amp;quot;gateway_ID&amp;quot;都要修改与树莓派保持一致&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;24-network-server&#34;&gt;2.4 Network Server&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;Cloud-hosted: Close Source LoRaWAN Network Servers Platforms&lt;/strong&gt;&lt;/p&gt;
@@ -1211,7 +1211,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-475123869&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-612745983&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -1221,7 +1221,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-475123869&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-612745983&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
