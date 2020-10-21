@@ -1126,7 +1126,7 @@ Flash:     0
 <li><a href="https://gitee.com/rejeee/gw1302s/commit/c425b67a5ccaaef0dd1042da08974245124c069b" target="_blank" rel="noopener">Gitee版本</a>直接增加了一个文件<strong>gw1302s/packet_forwarder/global_conf.json</strong>，其特点是<strong>gateway_conf</strong>下面的<strong>server_address</strong><a href="https://blog.csdn.net/RAKwireless/article/details/107101582" target="_blank" rel="noopener">由localhost修改为了loragw.things.qcloud.com</a></li>
 <li><code>make install_conf</code>即安装<strong>global_conf.json</strong></li>
 <li>卖家给的<a href="https://www.cnblogs.com/answerinthewind/p/13154904.html" target="_blank" rel="noopener">攻略</a>跟用<code>install.sh</code>生成的主要差别在radio_1与radio_2的<strong>ferq</strong>不同，攻略的效果好；官方的<a href="https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVQzOWdIRUc4YU5DbHFMVzBjRGkwVjBCZjZGQmUzWUpkSnh0YVhXbUlLdnFtUT9lPW9qNjEzcg==.mp3" target="_blank" rel="noopener">参考文献</a>和攻略还有<a href="https://www.bilibili.com/video/BV1gp4y1v7UB" target="_blank" rel="noopener">视频</a>均给出了<strong>global_conf.json</strong>的参数意义</li>
-<li><a href="https://forum.chirpstack.io/t/semtech-udp-packet-forwarder-setting/9490/2" target="_blank" rel="noopener">&ldquo;server_address&quot;与Gateway Bridge运行地址一致</a></li>
+<li><a href="https://forum.chirpstack.io/t/semtech-udp-packet-forwarder-setting/9490/2" target="_blank" rel="noopener">&ldquo;server_address&quot;与Gateway Bridge运行地址一致</a>，Gateway Bridge可安装在<a href="https://www.chirpstack.io/project/architecture/" target="_blank" rel="noopener">网关上或云端</a></li>
 <li><a href="https://www.chirpstack.io/project/guides/connect-gateway/" target="_blank" rel="noopener">查看网关是否连接上了网络服务器</a>，<code>tcpdump</code>指令需要通过<code>sudo apt update &amp;&amp; sudo apt install tcpdump</code>安装</li>
 </ul>
 <h2 id="24-network-server">2.4 Network Server</h2>
@@ -1251,6 +1251,7 @@ INFO: [down] PULL_ACK received in 37ms
 <li>NS配置文件：注释掉所有<strong>extral chanels</strong></li>
 <li>AS配置文件：<strong>dsn=&quot;postgres://chirpstack_as:dbpassword@localhost/chirpstack_as?sslmode=disable&rdquo;</strong></li>
 <li>AS配置文件文件：服务器运行<code>openssl rand -base64 32</code>，添加到 <strong>JWT_SECRET</strong></li>
+<li>可查看NS、AS等日志</li>
 </ol>
 <hr>
 <p><a href="https://www.chirpstack.io/project/guides/docker-compose/" target="_blank" rel="noopener">LoRaServer:docker1</a></p>
