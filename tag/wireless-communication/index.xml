@@ -394,8 +394,10 @@ INFO: [down] PULL_ACK received in 37ms
 &lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/iotisan/article/details/78398978&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoRaServer:docker5&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.chirpstack.io/gateway-bridge/backends/semtech-udp/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoraServer global.config&lt;/a&gt;&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;Docker后台运行&lt;/li&gt;
-&lt;li&gt;停止部分容器&lt;/li&gt;
+&lt;li&gt;Docker后台运行 &lt;code&gt;docker-compose up -d&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;停止部分容器 &lt;code&gt;docker ps -a&lt;/code&gt; + &lt;code&gt;docker stop 容器ID&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;停止所有容器 &lt;code&gt;docker stop $(docker ps -aq)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;问题：无法更改LoRaWAN频段EU868&lt;/li&gt;
 &lt;/ol&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;strong&gt;阿里云允许&lt;a href=&#34;https://help.aliyun.com/document_detail/25475.html?spm=a2c4g.11186623.2.14.81c071afVJYuXn#allowRemoteAccess&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;公网远程&lt;/a&gt;连接http://47.110.36.225:8080/&lt;/strong&gt;&lt;/p&gt;

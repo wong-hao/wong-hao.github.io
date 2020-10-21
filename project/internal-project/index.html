@@ -1258,8 +1258,10 @@ INFO: [down] PULL_ACK received in 37ms
 <p><a href="https://blog.csdn.net/iotisan/article/details/78398978" target="_blank" rel="noopener">LoRaServer:docker5</a></p>
 <p><a href="https://www.chirpstack.io/gateway-bridge/backends/semtech-udp/" target="_blank" rel="noopener">LoraServer global.config</a></p>
 <ol>
-<li>Docker后台运行</li>
-<li>停止部分容器</li>
+<li>Docker后台运行 <code>docker-compose up -d</code></li>
+<li>停止部分容器 <code>docker ps -a</code> + <code>docker stop 容器ID</code></li>
+<li>停止所有容器 <code>docker stop $(docker ps -aq)</code></li>
+<li>问题：无法更改LoRaWAN频段EU868</li>
 </ol>
 <hr>
 <p><strong>阿里云允许<a href="https://help.aliyun.com/document_detail/25475.html?spm=a2c4g.11186623.2.14.81c071afVJYuXn#allowRemoteAccess" target="_blank" rel="noopener">公网远程</a>连接http://47.110.36.225:8080/</strong></p>
