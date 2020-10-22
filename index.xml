@@ -186,10 +186,10 @@
     </item>
     
     <item>
-      <title>Code View of LoRa_PKT_FWD</title>
-      <link>https://haowong.com/project/codeview/</link>
+      <title>Code Review of LoRa_PKT_FWD</title>
+      <link>https://haowong.com/project/codereview/</link>
       <pubDate>Wed, 21 Oct 2020 00:00:00 +0000</pubDate>
-      <guid>https://haowong.com/project/codeview/</guid>
+      <guid>https://haowong.com/project/codereview/</guid>
       <description></description>
     </item>
     
@@ -1208,7 +1208,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-482613975&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-148593672&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -1218,7 +1218,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-482613975&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-148593672&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
