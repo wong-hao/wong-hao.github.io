@@ -1208,7 +1208,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-148593672&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-297154683&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -1218,7 +1218,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-148593672&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-297154683&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
@@ -1770,9 +1770,9 @@ Three
     
     <item>
       <title>Privacy Policy</title>
-      <link>https://haowong.com/privacy/</link>
+      <link>https://haowong.com/father/privacy/</link>
       <pubDate>Thu, 28 Jun 2018 00:00:00 +0100</pubDate>
-      <guid>https://haowong.com/privacy/</guid>
+      <guid>https://haowong.com/father/privacy/</guid>
       <description>&lt;p&gt;&lt;strong&gt;We&amp;rsquo;re having a really bad day.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;The Unicorns have taken over. We&amp;rsquo;re doing our best to get them under control and get GitHub back up and running.&lt;/p&gt;
 &lt;p&gt;Contact Support — GitHub Status — @githubstatus
@@ -1930,6 +1930,14 @@ Three
 &lt;/div&gt;
 &lt;p&gt;Supplementary notes can be added here, including &lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;code and math&lt;/a&gt;.&lt;/p&gt;
 </description>
+    </item>
+    
+    <item>
+      <title>Father</title>
+      <link>https://haowong.com/privacy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://haowong.com/privacy/</guid>
+      <description></description>
     </item>
     
   </channel>
