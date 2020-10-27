@@ -911,6 +911,52 @@
 select * from *
 group by *
 having *</p>
+<hr>
+<p>10&rsquo;:</p>
+<blockquote>
+<p>Find all customers who have both an account and a loan at the bank.</p>
+</blockquote>
+<pre><code class="language-sql">select distinct customer_name
+    from borrower
+    where customer_name in(select customer_name
+                           from depositor)
+</code></pre>
+<blockquote>
+<p>Find all customers who have a loan at the bank but do not have an account at the bank.</p>
+</blockquote>
+<pre><code class="language-sql">select distinct customer_name
+   from borrower
+   where customer_name not in(select customer_name
+                              from depositor)
+</code></pre>
+<p>10&rsquo;:</p>
+<blockquote>
+<p>Find the names of all branches that have greater assets than all branches located in Brooklyn.</p>
+</blockquote>
+<pre><code class="language-sql">select branch_name
+    from branch
+    where assets&gt;all
+        (select assets
+         from branch
+         where branch_city = 'Brooklyn')
+</code></pre>
+<hr>
+<p>10&rsquo;:</p>
+<blockquote>
+<p>Find all cusomers who have an account at all branches located in Brooklyn.</p>
+</blockquote>
+<pre><code class="language-sql">select distinct S.customer_name
+    from depositor as S
+    where not exists(
+      (select branch_name
+      from branch
+      where branch_city = 'Brooklyn')
+          except
+      (select R.branch_name
+      from depositor as T, account as R
+      where T.account_number - R.account_number and
+          S.customer_name - T.customer_name))
+---</code></pre>
 
           </div>
 
