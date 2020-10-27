@@ -196,7 +196,13 @@ Received 3 packets (total:3)
 &lt;li&gt;卖家给了所谓&lt;strong&gt;搭建好基本环境&lt;/strong&gt;的&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOnU6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVpVeXREN1pkTDVBZy14c3hjTXQ0NElCVEI1TTgyV2xHcWJOUFgxOGZZWmhaUT9lPXRrQUx1Zg==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;系统&lt;/a&gt;，实际上就是刷了4.19，升级了还是不能用，没解决任何问题&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://downloads.raspberrypi.org/raspbian/images/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;历代系统&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://mirrors.tuna.tsinghua.edu.cn/raspbian-images/raspios_armhf/images/raspios_armhf-2020-05-28/2020-05-27-raspios-buster-armhf.zip&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;4.19.118系统清华镜像&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;每次更换为备份时，&amp;ldquo;global.config&amp;quot;中&amp;quot;gateway_ID&amp;quot;都要修改与树莓派保持一致、&amp;ldquo;lorawan_public&amp;quot;与发射端保持一致&lt;/li&gt;
+&lt;li&gt;每次更换为备份时:
+&lt;ul&gt;
+&lt;li&gt;&amp;ldquo;global.config&amp;quot;中&amp;quot;gateway_ID&amp;quot;都要修改与树莓派保持一致&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;lorawan_public&amp;quot;与发射端保持一致&lt;/li&gt;
+&lt;li&gt;先连接外接显示器，新wifi密码为1234567890，注意显示器已开启热插拔&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h1 id=&#34;2-实验步骤&#34;&gt;2 实验步骤&lt;/h1&gt;
 &lt;h2 id=&#34;21-lorawan&#34;&gt;2.1 LoRaWAN&lt;/h2&gt;
