@@ -851,7 +851,13 @@
 </blockquote>
 <p>如<strong>球员转会</strong></p>
 <h3 id="4-考试">4 考试</h3>
-<p><strong>SQL Query</strong></p>
+<h4 id="41-data-model">4.1 Data Model</h4>
+<ol>
+<li>Data Structure</li>
+<li>Data Operation</li>
+<li>Data Constraint</li>
+</ol>
+<h4 id="42-sql-query-descriptive-language">4.2 SQL Query: Descriptive Language</h4>
 <p>10&rsquo;:</p>
 <table>
 <thead>
@@ -956,7 +962,21 @@ having *</p>
       from depositor as T, account as R
       where T.account_number - R.account_number and
           S.customer_name - T.customer_name))
----</code></pre>
+</code></pre>
+<hr>
+<p>10&rsquo;:</p>
+<pre><code class="language-sql">select SNO
+from student S
+where not exists(
+  select *
+  from course C
+  where not exists(
+    select
+    from S_C
+    where S_C.SNO = S.SNO and S_C.CNO.CNO = C.CNO
+    )
+       )
+</code></pre>
 
           </div>
 
