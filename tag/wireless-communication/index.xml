@@ -17,18 +17,18 @@
       <link>https://haowong.com/project/codereview/</link>
       <pubDate>Wed, 21 Oct 2020 00:00:00 +0000</pubDate>
       <guid>https://haowong.com/project/codereview/</guid>
-      <description>&lt;h1 id=&#34;1-从显示中反推代码作用&#34;&gt;1 从显示中反推代码作用&lt;/h1&gt;
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;//main()
+      <description>&lt;h1 id=&#34;1-从显示反推代码运行流程&#34;&gt;1 从显示反推代码运行流程&lt;/h1&gt;
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;//main(): display version informations
 *** Packet Forwarder ***
 Version: 1.0.5
 *** SX1302 HAL library version info ***
 Version: 1.0.5;
 ***
+//main(): display host endianness
 INFO: Little endian host
 INFO: found configuration file global_conf.json, parsing it
 
-//parse_SX130x_configuration()
-
+//parse_SX130x_configuration(): point to the gateway configuration object
 INFO: global_conf.json does contain a JSON object named SX130x_conf, parsing SX1302 parameters
 INFO: spidev_path /dev/spidev0.0, lorawan_public 1, clksrc 0, full_duplex 0
 INFO: antenna_gain 0 dBi
@@ -47,8 +47,7 @@ INFO: Lora multi-SF channel 7&amp;gt;  radio 1, IF 300000 Hz, 125 kHz bw, SF 5 t
 INFO: Lora std channel&amp;gt; radio 1, IF -200000 Hz, 250000 Hz bw, SF 7, Explicit header
 INFO: FSK channel&amp;gt; radio 1, IF 300000 Hz, 125000 Hz bw, 50000 bps datarate
 
-//parse_gateway_configuration()
-
+//parse_gateway_configuration(): point to the gateway configuration object
 INFO: global_conf.json does contain a JSON object named gateway_conf, parsing gateway parameters
 INFO: gateway MAC address is configured to 0016C001FF10D3F6
 INFO: server hostname or IP address is configured to &amp;quot;47.110.36.225&amp;quot;
@@ -67,26 +66,26 @@ INFO: Beaconing modulation bandwidth is set to 125000Hz
 INFO: Beaconing TX power is set to 14dBm
 INFO: Beaconing information descriptor is set to 0
 
-//parse_debug_configuration()
-
+//parse_debug_configuration(): point to the gateway configuration object
 INFO: global_conf.json does contain a JSON object named debug_conf, parsing debug parameters
 INFO: got 2 debug reference payload
 INFO: reference payload ID 0 is 0xCAFE1234
 INFO: reference payload ID 1 is 0xCAFE2345
 INFO: setting debug log file name to loragw_hal.log
 
-//?
+//main(): Board reset
 CoreCell reset through GPIO7...
+
+//?
 INFO: Configuring SX1250_0 in single input mode
 INFO: Configuring SX1250_1 in single input mode
 
 //main(): starting the concentrator
-
 INFO: [main] concentrator started, packet can now be received
 INFO: concentrator EUI: 0x0016c001ff10d3f6
 &lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;//thread_up(): PUSH_DATA packet: Upstream JSON data structure: rxpk
-
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;//thread_up(): start of JSON structure
+//PUSH_DATA packet: Upstream JSON data structure: rxpk
 INFO: Received pkt from mote: 1350200C (fcnt=13)
 
 JSON up: {&amp;quot;rxpk&amp;quot;:[{&amp;quot;jver&amp;quot;:1,&amp;quot;tmst&amp;quot;:137795171,&amp;quot;chan&amp;quot;:4,&amp;quot;rfch&amp;quot;:1,&amp;quot;freq&amp;quot;:475.100000,&amp;quot;mid&amp;quot;:0,&amp;quot;stat&amp;quot;:1,&amp;quot;modu&amp;quot;:&amp;quot;LORA&amp;quot;,&amp;quot;datr&amp;quot;:&amp;quot;SF12Bw125&amp;quot;,&amp;quot;codr&amp;quot;:&amp;quot;4/5&amp;quot;,&amp;quot;rssis&amp;quot;:-84,&amp;quot;lsnr&amp;quot;:-5.0,&amp;quot;foff&amp;quot;:786,&amp;quot;rssi&amp;quot;:-80,&amp;quot;size&amp;quot;:13,&amp;quot;data&amp;quot;:&amp;quot;gQwgUBMADQANAKvN7w==&amp;quot;}]}
@@ -94,7 +93,6 @@ INFO: [up] PUSH_ACK received in 40ms
 INFO: [down] PULL_ACK received in 34ms
 
 //main(): display a report
-
 ##### 2020-10-18 10:49:51 GMT #####
 ### [UPSTREAM] ###
 # RF packets received by concentrator: 1
@@ -122,8 +120,8 @@ src/jitqueue.c:442:jit_print_queue(): INFO: [jit] queue is empty
 ### Concentrator temperature 0 C ###
 ##### END #####
 
-//main(): PUSH_DATA packet: Upstream JSON data structure: stat
-
+//main(): generate a JSON report (will be sent to server by upstream thread)
+//PUSH_DATA packet: Upstream JSON data structure: stat
 JSON up: {&amp;quot;stat&amp;quot;:{&amp;quot;time&amp;quot;:&amp;quot;2020-10-18 10:49:51 GMT&amp;quot;,&amp;quot;rxnb&amp;quot;:1,&amp;quot;rxok&amp;quot;:1,&amp;quot;rxfw&amp;quot;:1,&amp;quot;ackr&amp;quot;:100.0,&amp;quot;dwnb&amp;quot;:0,&amp;quot;txnb&amp;quot;:0,&amp;quot;temp&amp;quot;:0.0}}
 INFO: [up] PUSH_ACK received in 34ms
 INFO: [down] PULL_ACK received in 35ms
