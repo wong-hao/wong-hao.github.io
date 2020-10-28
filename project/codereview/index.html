@@ -992,7 +992,7 @@ JSON up: {&quot;rxpk&quot;:[{&quot;jver&quot;:1,&quot;tmst&quot;:137795171,&quot
 INFO: [up] PUSH_ACK received in 40ms
 INFO: [down] PULL_ACK received in 34ms
 
-//main(): display a report
+//main(): display a report (status report)
 ##### 2020-10-18 10:49:51 GMT #####
 ### [UPSTREAM] ###
 # RF packets received by concentrator: 1
@@ -1034,6 +1034,23 @@ INFO: concentrator stopped successfully
 CoreCell reset through GPIO7...
 INFO: Exiting packet forwarder program
 </code></pre>
+<h1 id="2-复杂函数">2 复杂函数</h1>
+<h2 id="21-json">2.1 json</h2>
+<h2 id="22-thread">2.2 thread</h2>
+<ol>
+<li><a href="https://blog.csdn.net/yusiguyuan/article/details/40627775" target="_blank" rel="noopener">pthread_mutex_lock()/pthread_mutex_unlock()</a></li>
+<li>
+<ul>
+<li><a href="https://blog.csdn.net/zyex1108/article/details/45154211" target="_blank" rel="noopener">time()</a></li>
+<li><a href="https://www.runoob.com/cprogramming/c-function-gmtime.html" target="_blank" rel="noopener">gtime()</a></li>
+<li><a href="https://blog.csdn.net/SanQi_Abao/article/details/94964665" target="_blank" rel="noopener">strftime()</a></li>
+</ul>
+</li>
+</ol>
+<h2 id="23-socket">2.3 socket</h2>
+<ol>
+<li><a href="https://blog.csdn.net/z735640642/article/details/84306589" target="_blank" rel="noopener">setsockopt()</a></li>
+</ol>
 
     </div>
 

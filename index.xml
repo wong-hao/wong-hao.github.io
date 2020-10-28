@@ -264,7 +264,7 @@ JSON up: {&amp;quot;rxpk&amp;quot;:[{&amp;quot;jver&amp;quot;:1,&amp;quot;tmst&a
 INFO: [up] PUSH_ACK received in 40ms
 INFO: [down] PULL_ACK received in 34ms
 
-//main(): display a report
+//main(): display a report (status report)
 ##### 2020-10-18 10:49:51 GMT #####
 ### [UPSTREAM] ###
 # RF packets received by concentrator: 1
@@ -306,6 +306,23 @@ INFO: concentrator stopped successfully
 CoreCell reset through GPIO7...
 INFO: Exiting packet forwarder program
 &lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;2-复杂函数&#34;&gt;2 复杂函数&lt;/h1&gt;
+&lt;h2 id=&#34;21-json&#34;&gt;2.1 json&lt;/h2&gt;
+&lt;h2 id=&#34;22-thread&#34;&gt;2.2 thread&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/yusiguyuan/article/details/40627775&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;pthread_mutex_lock()/pthread_mutex_unlock()&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/zyex1108/article/details/45154211&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;time()&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.runoob.com/cprogramming/c-function-gmtime.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;gtime()&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/SanQi_Abao/article/details/94964665&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;strftime()&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;23-socket&#34;&gt;2.3 socket&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/z735640642/article/details/84306589&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;setsockopt()&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
 </description>
     </item>
     
@@ -1298,7 +1315,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-596432718&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-526791438&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -1308,7 +1325,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-596432718&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-526791438&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
