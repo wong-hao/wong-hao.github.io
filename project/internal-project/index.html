@@ -863,8 +863,6 @@
 
 <div class="btn-links mb-3">
   
-  <a class="btn btn-outline-primary my-1" href="https://github.com/wong-hao/sx1302_hal" target="_blank" rel="noopener">Go to Project Site</a>
-  
   
 
 
@@ -1155,128 +1153,26 @@ Flash:     0
 </ol>
 <p><strong>global_conf.json</strong></p>
 <ul>
-<li><a href="https://gitee.com/rejeee/gw1302s/commit/c425b67a5ccaaef0dd1042da08974245124c069b" target="_blank" rel="noopener">Gitee版本</a>直接增加了一个文件<strong>gw1302s/packet_forwarder/global_conf.json</strong>，其特点是<strong>gateway_conf</strong>下面的<strong>server_address</strong><a href="https://blog.csdn.net/RAKwireless/article/details/107101582" target="_blank" rel="noopener">由localhost修改为了loragw.things.qcloud.com</a></li>
-<li><code>make install_conf</code>即安装<strong>global_conf.json</strong></li>
-<li>卖家给的<a href="https://www.cnblogs.com/answerinthewind/p/13154904.html" target="_blank" rel="noopener">攻略</a>跟用<code>install.sh</code>生成的主要差别在radio_1与radio_2的<strong>ferq</strong>不同，攻略的效果好；官方的<a href="https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVQzOWdIRUc4YU5DbHFMVzBjRGkwVjBCZjZGQmUzWUpkSnh0YVhXbUlLdnFtUT9lPW9qNjEzcg==.mp3" target="_blank" rel="noopener">参考文献</a>和攻略还有<a href="https://www.bilibili.com/video/BV1gp4y1v7UB" target="_blank" rel="noopener">视频</a>均给出了<strong>global_conf.json</strong>的参数意义</li>
-<li><a href="https://forum.chirpstack.io/t/semtech-udp-packet-forwarder-setting/9490/2" target="_blank" rel="noopener">&ldquo;server_address&quot;与Gateway Bridge运行地址一致</a>，Gateway Bridge可安装在<a href="https://www.chirpstack.io/project/architecture/" target="_blank" rel="noopener">网关上或云端</a></li>
-<li><a href="https://www.chirpstack.io/project/guides/connect-gateway/" target="_blank" rel="noopener">查看网关是否连接上了网络服务器</a>，<code>tcpdump</code>指令需要通过<code>sudo apt update &amp;&amp; sudo apt install tcpdump</code>安装</li>
-</ul>
-<p><strong>parse_SX130x_configuration</strong></p>
-<pre><code class="language-cpp">//main()
-*** Packet Forwarder ***
-Version: 1.0.5
-*** SX1302 HAL library version info ***
-Version: 1.0.5;
-***
-INFO: Little endian host
-INFO: found configuration file global_conf.json, parsing it
-
-//parse_SX130x_configuration()
-
-INFO: global_conf.json does contain a JSON object named SX130x_conf, parsing SX1302 parameters
-INFO: spidev_path /dev/spidev0.0, lorawan_public 1, clksrc 0, full_duplex 0
-INFO: antenna_gain 0 dBi
-INFO: Configuring legacy timestamp
-INFO: Configuring Tx Gain LUT for rf_chain 0 with 16 indexes for sx1250
-INFO: radio 0 enabled (type SX1250), center frequency 474600000, RSSI offset -207.000000, tx enabled 1, single input mode 1
-INFO: radio 1 enabled (type SX1250), center frequency 475400000, RSSI offset -207.000000, tx enabled 0, single input mode 1
-INFO: Lora multi-SF channel 0&gt;  radio 0, IF -300000 Hz, 125 kHz bw, SF 5 to 12
-INFO: Lora multi-SF channel 1&gt;  radio 0, IF -100000 Hz, 125 kHz bw, SF 5 to 12
-INFO: Lora multi-SF channel 2&gt;  radio 0, IF 100000 Hz, 125 kHz bw, SF 5 to 12
-INFO: Lora multi-SF channel 3&gt;  radio 0, IF 300000 Hz, 125 kHz bw, SF 5 to 12
-INFO: Lora multi-SF channel 4&gt;  radio 1, IF -300000 Hz, 125 kHz bw, SF 5 to 12
-INFO: Lora multi-SF channel 5&gt;  radio 1, IF -100000 Hz, 125 kHz bw, SF 5 to 12
-INFO: Lora multi-SF channel 6&gt;  radio 1, IF 100000 Hz, 125 kHz bw, SF 5 to 12
-INFO: Lora multi-SF channel 7&gt;  radio 1, IF 300000 Hz, 125 kHz bw, SF 5 to 12
-INFO: Lora std channel&gt; radio 1, IF -200000 Hz, 250000 Hz bw, SF 7, Explicit header
-INFO: FSK channel&gt; radio 1, IF 300000 Hz, 125000 Hz bw, 50000 bps datarate
-
-//parse_gateway_configuration()
-
-INFO: global_conf.json does contain a JSON object named gateway_conf, parsing gateway parameters
-INFO: gateway MAC address is configured to 0016C001FF10D3F6
-INFO: server hostname or IP address is configured to &quot;47.110.36.225&quot;
-INFO: upstream port is configured to &quot;1700&quot;
-INFO: downstream port is configured to &quot;1700&quot;
-INFO: downstream keep-alive interval is configured to 10 seconds
-INFO: statistics display interval is configured to 30 seconds
-INFO: upstream PUSH_DATA time-out is configured to 100 ms
-INFO: packets received with a valid CRC will be forwarded
-INFO: packets received with a CRC error will NOT be forwarded
-INFO: packets received with no CRC will NOT be forwarded
-INFO: Beaconing period is configured to 0 seconds
-INFO: Beaconing signal will be emitted at 869525000 Hz
-INFO: Beaconing datarate is set to SF9
-INFO: Beaconing modulation bandwidth is set to 125000Hz
-INFO: Beaconing TX power is set to 14dBm
-INFO: Beaconing information descriptor is set to 0
-
-//parse_debug_configuration()
-
-INFO: global_conf.json does contain a JSON object named debug_conf, parsing debug parameters
-INFO: got 2 debug reference payload
-INFO: reference payload ID 0 is 0xCAFE1234
-INFO: reference payload ID 1 is 0xCAFE2345
-INFO: setting debug log file name to loragw_hal.log
-
-//?
-CoreCell reset through GPIO7...
-INFO: Configuring SX1250_0 in single input mode
-INFO: Configuring SX1250_1 in single input mode
-
-//main(): starting the concentrator
-
-INFO: [main] concentrator started, packet can now be received
-INFO: concentrator EUI: 0x0016c001ff10d3f6
-</code></pre>
-<p><strong>PUSH_DATA packet: Upstream JSON data structure</strong></p>
-<pre><code class="language-cpp">//thread_up(): PUSH_DATA packet: Upstream JSON data structure: rxpk
-
-INFO: Received pkt from mote: 1350200C (fcnt=13)
-
-JSON up: {&quot;rxpk&quot;:[{&quot;jver&quot;:1,&quot;tmst&quot;:137795171,&quot;chan&quot;:4,&quot;rfch&quot;:1,&quot;freq&quot;:475.100000,&quot;mid&quot;:0,&quot;stat&quot;:1,&quot;modu&quot;:&quot;LORA&quot;,&quot;datr&quot;:&quot;SF12Bw125&quot;,&quot;codr&quot;:&quot;4/5&quot;,&quot;rssis&quot;:-84,&quot;lsnr&quot;:-5.0,&quot;foff&quot;:786,&quot;rssi&quot;:-80,&quot;size&quot;:13,&quot;data&quot;:&quot;gQwgUBMADQANAKvN7w==&quot;}]}
-INFO: [up] PUSH_ACK received in 40ms
-INFO: [down] PULL_ACK received in 34ms
-
-//main(): display a report
-
-##### 2020-10-18 10:49:51 GMT #####
-### [UPSTREAM] ###
-# RF packets received by concentrator: 1
-# CRC_OK: 100.00%, CRC_FAIL: 0.00%, NO_CRC: 0.00%
-# RF packets forwarded: 1 (13 bytes)
-# PUSH_DATA datagrams sent: 2 (360 bytes)
-# PUSH_DATA acknowledeged: 100.00%
-### [DOWNSTREAM] ###
-# PULL_DATA sent: 3 (100.00%)
-# PULL_RESP(onse) datagrams received: 0 (0 bytes)
-# RF packets sent to concentrator: 0 (0 bytes)
-# TX errors: 0
-### SX1302 Status ###
-# SX1302 counter (INST): 150921885
-# SX1302 counter (PPS): 0
-# BEACON queued: 0
-# BEACON sent so far: 0
-# BEACON rejected: 0
-### [JIT] ###
-src/jitqueue.c:442:jit_print_queue(): INFO: [jit] queue is empty
-#--------
-src/jitqueue.c:442:jit_print_queue(): INFO: [jit] queue is empty
-### [GPS] ###
-# GPS sync is disabled
-### Concentrator temperature 0 C ###
-##### END #####
-
-//main(): PUSH_DATA packet: Upstream JSON data structure: stat
-
-JSON up: {&quot;stat&quot;:{&quot;time&quot;:&quot;2020-10-18 10:49:51 GMT&quot;,&quot;rxnb&quot;:1,&quot;rxok&quot;:1,&quot;rxfw&quot;:1,&quot;ackr&quot;:100.0,&quot;dwnb&quot;:0,&quot;txnb&quot;:0,&quot;temp&quot;:0.0}}
-INFO: [up] PUSH_ACK received in 34ms
-INFO: [down] PULL_ACK received in 35ms
-INFO: [down] PULL_ACK received in 37ms
-</code></pre>
-<ul>
-<li>通信参数解释</li>
-<li><a href="https://blog.csdn.net/quending/article/details/84979181" target="_blank" rel="noopener">网页一</a>
+<li>
+<p><a href="https://gitee.com/rejeee/gw1302s/commit/c425b67a5ccaaef0dd1042da08974245124c069b" target="_blank" rel="noopener">Gitee版本</a>直接增加了一个文件<strong>gw1302s/packet_forwarder/global_conf.json</strong>，其特点是<strong>gateway_conf</strong>下面的<strong>server_address</strong><a href="https://blog.csdn.net/RAKwireless/article/details/107101582" target="_blank" rel="noopener">由localhost修改为了loragw.things.qcloud.com</a></p>
+</li>
+<li>
+<p><code>make install_conf</code>即安装<strong>global_conf.json</strong></p>
+</li>
+<li>
+<p>卖家给的<a href="https://www.cnblogs.com/answerinthewind/p/13154904.html" target="_blank" rel="noopener">攻略</a>跟用<code>install.sh</code>生成的主要差别在radio_1与radio_2的<strong>ferq</strong>不同，攻略的效果好；官方的<a href="https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVQzOWdIRUc4YU5DbHFMVzBjRGkwVjBCZjZGQmUzWUpkSnh0YVhXbUlLdnFtUT9lPW9qNjEzcg==.mp3" target="_blank" rel="noopener">参考文献</a>和攻略还有<a href="https://www.bilibili.com/video/BV1gp4y1v7UB" target="_blank" rel="noopener">视频</a>均给出了<strong>global_conf.json</strong>的参数意义</p>
+</li>
+<li>
+<p><a href="https://forum.chirpstack.io/t/semtech-udp-packet-forwarder-setting/9490/2" target="_blank" rel="noopener">&ldquo;server_address&quot;与Gateway Bridge运行地址一致</a>，Gateway Bridge可安装在<a href="https://www.chirpstack.io/project/architecture/" target="_blank" rel="noopener">网关上或云端</a></p>
+</li>
+<li>
+<p><a href="https://www.chirpstack.io/project/guides/connect-gateway/" target="_blank" rel="noopener">查看网关是否连接上了网络服务器</a>，<code>tcpdump</code>指令需要通过<code>sudo apt update &amp;&amp; sudo apt install tcpdump</code>安装</p>
+</li>
+<li>
+<p>通信参数解释</p>
+</li>
+<li>
+<p><a href="https://blog.csdn.net/quending/article/details/84979181" target="_blank" rel="noopener">网页一</a></p>
 <ul>
 <li><a href="https://forum.chirpstack.io/t/how-to-change-lora-gateway-bridge-configuration/6350/4" target="_blank" rel="noopener">网页二</a></li>
 <li><a href="https://blog.csdn.net/quending/article/details/86483352" target="_blank" rel="noopener">网页三</a></li>
@@ -1286,7 +1182,8 @@ INFO: [down] PULL_ACK received in 37ms
 <li><a href="https://gitee.com/rejeee/gw1302s/blob/master/packet_forwarder/PROTOCOL.md" target="_blank" rel="noopener">网页七</a></li>
 </ul>
 </li>
-<li>Network Server connectivity
+<li>
+<p>Network Server connectivity</p>
 <ul>
 <li><a href="https://iot.wifx.net/docs/lorix-os/latest/user-s-guide/lorawan/packet-forwarders/udp-packet-forwarder/troubleshooting" target="_blank" rel="noopener">0% acknowledegd</a></li>
 </ul>
