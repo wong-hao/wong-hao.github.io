@@ -125,6 +125,14 @@ INFO: [up] PUSH_ACK received in 34ms
 INFO: [down] PULL_ACK received in 35ms
 INFO: [down] PULL_ACK received in 37ms
 &lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;//thread_up()
+INFO: End of upstream thread
+
+//main(): if an exit signal was received, try to quit properly + Board reset
+INFO: concentrator stopped successfully
+CoreCell reset through GPIO7...
+INFO: Exiting packet forwarder program
+&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     
