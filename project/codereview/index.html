@@ -863,8 +863,6 @@
 
 <div class="btn-links mb-3">
   
-  <a class="btn btn-outline-primary my-1" href="https://github.com/wong-hao/sx1302_hal" target="_blank" rel="noopener">Go to Project Site</a>
-  
   
 
 
@@ -880,6 +878,14 @@
 
 
 
+
+  
+  
+    
+  
+<a class="btn btn-outline-primary my-1 mr-1" href="https://github.com/wong-hao/sx1302_hal" target="_blank" rel="noopener">
+  Code
+</a>
 
 
 
@@ -903,7 +909,7 @@
 <div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 226px;">
   <div style="position: relative">
     <img src="/project/codereview/featured_hu84dfb21f757a46b5302a4f6bf04b8da4_88406_720x0_resize_lanczos_2.png" alt="" class="featured-image">
-    <span class="article-header-caption">Photo by Toa Heftiba on Unsplash</span>
+    <span class="article-header-caption">Photo by Chirpstack</span>
   </div>
 </div>
 
@@ -912,7 +918,119 @@
   <div class="article-container">
 
     <div class="article-style">
-      
+      <h1 id="1-从显示中反推代码作用">1 从显示中反推代码作用</h1>
+<pre><code class="language-cpp">//main()
+*** Packet Forwarder ***
+Version: 1.0.5
+*** SX1302 HAL library version info ***
+Version: 1.0.5;
+***
+INFO: Little endian host
+INFO: found configuration file global_conf.json, parsing it
+
+//parse_SX130x_configuration()
+
+INFO: global_conf.json does contain a JSON object named SX130x_conf, parsing SX1302 parameters
+INFO: spidev_path /dev/spidev0.0, lorawan_public 1, clksrc 0, full_duplex 0
+INFO: antenna_gain 0 dBi
+INFO: Configuring legacy timestamp
+INFO: Configuring Tx Gain LUT for rf_chain 0 with 16 indexes for sx1250
+INFO: radio 0 enabled (type SX1250), center frequency 474600000, RSSI offset -207.000000, tx enabled 1, single input mode 1
+INFO: radio 1 enabled (type SX1250), center frequency 475400000, RSSI offset -207.000000, tx enabled 0, single input mode 1
+INFO: Lora multi-SF channel 0&gt;  radio 0, IF -300000 Hz, 125 kHz bw, SF 5 to 12
+INFO: Lora multi-SF channel 1&gt;  radio 0, IF -100000 Hz, 125 kHz bw, SF 5 to 12
+INFO: Lora multi-SF channel 2&gt;  radio 0, IF 100000 Hz, 125 kHz bw, SF 5 to 12
+INFO: Lora multi-SF channel 3&gt;  radio 0, IF 300000 Hz, 125 kHz bw, SF 5 to 12
+INFO: Lora multi-SF channel 4&gt;  radio 1, IF -300000 Hz, 125 kHz bw, SF 5 to 12
+INFO: Lora multi-SF channel 5&gt;  radio 1, IF -100000 Hz, 125 kHz bw, SF 5 to 12
+INFO: Lora multi-SF channel 6&gt;  radio 1, IF 100000 Hz, 125 kHz bw, SF 5 to 12
+INFO: Lora multi-SF channel 7&gt;  radio 1, IF 300000 Hz, 125 kHz bw, SF 5 to 12
+INFO: Lora std channel&gt; radio 1, IF -200000 Hz, 250000 Hz bw, SF 7, Explicit header
+INFO: FSK channel&gt; radio 1, IF 300000 Hz, 125000 Hz bw, 50000 bps datarate
+
+//parse_gateway_configuration()
+
+INFO: global_conf.json does contain a JSON object named gateway_conf, parsing gateway parameters
+INFO: gateway MAC address is configured to 0016C001FF10D3F6
+INFO: server hostname or IP address is configured to &quot;47.110.36.225&quot;
+INFO: upstream port is configured to &quot;1700&quot;
+INFO: downstream port is configured to &quot;1700&quot;
+INFO: downstream keep-alive interval is configured to 10 seconds
+INFO: statistics display interval is configured to 30 seconds
+INFO: upstream PUSH_DATA time-out is configured to 100 ms
+INFO: packets received with a valid CRC will be forwarded
+INFO: packets received with a CRC error will NOT be forwarded
+INFO: packets received with no CRC will NOT be forwarded
+INFO: Beaconing period is configured to 0 seconds
+INFO: Beaconing signal will be emitted at 869525000 Hz
+INFO: Beaconing datarate is set to SF9
+INFO: Beaconing modulation bandwidth is set to 125000Hz
+INFO: Beaconing TX power is set to 14dBm
+INFO: Beaconing information descriptor is set to 0
+
+//parse_debug_configuration()
+
+INFO: global_conf.json does contain a JSON object named debug_conf, parsing debug parameters
+INFO: got 2 debug reference payload
+INFO: reference payload ID 0 is 0xCAFE1234
+INFO: reference payload ID 1 is 0xCAFE2345
+INFO: setting debug log file name to loragw_hal.log
+
+//?
+CoreCell reset through GPIO7...
+INFO: Configuring SX1250_0 in single input mode
+INFO: Configuring SX1250_1 in single input mode
+
+//main(): starting the concentrator
+
+INFO: [main] concentrator started, packet can now be received
+INFO: concentrator EUI: 0x0016c001ff10d3f6
+</code></pre>
+<pre><code class="language-cpp">//thread_up(): PUSH_DATA packet: Upstream JSON data structure: rxpk
+
+INFO: Received pkt from mote: 1350200C (fcnt=13)
+
+JSON up: {&quot;rxpk&quot;:[{&quot;jver&quot;:1,&quot;tmst&quot;:137795171,&quot;chan&quot;:4,&quot;rfch&quot;:1,&quot;freq&quot;:475.100000,&quot;mid&quot;:0,&quot;stat&quot;:1,&quot;modu&quot;:&quot;LORA&quot;,&quot;datr&quot;:&quot;SF12Bw125&quot;,&quot;codr&quot;:&quot;4/5&quot;,&quot;rssis&quot;:-84,&quot;lsnr&quot;:-5.0,&quot;foff&quot;:786,&quot;rssi&quot;:-80,&quot;size&quot;:13,&quot;data&quot;:&quot;gQwgUBMADQANAKvN7w==&quot;}]}
+INFO: [up] PUSH_ACK received in 40ms
+INFO: [down] PULL_ACK received in 34ms
+
+//main(): display a report
+
+##### 2020-10-18 10:49:51 GMT #####
+### [UPSTREAM] ###
+# RF packets received by concentrator: 1
+# CRC_OK: 100.00%, CRC_FAIL: 0.00%, NO_CRC: 0.00%
+# RF packets forwarded: 1 (13 bytes)
+# PUSH_DATA datagrams sent: 2 (360 bytes)
+# PUSH_DATA acknowledeged: 100.00%
+### [DOWNSTREAM] ###
+# PULL_DATA sent: 3 (100.00%)
+# PULL_RESP(onse) datagrams received: 0 (0 bytes)
+# RF packets sent to concentrator: 0 (0 bytes)
+# TX errors: 0
+### SX1302 Status ###
+# SX1302 counter (INST): 150921885
+# SX1302 counter (PPS): 0
+# BEACON queued: 0
+# BEACON sent so far: 0
+# BEACON rejected: 0
+### [JIT] ###
+src/jitqueue.c:442:jit_print_queue(): INFO: [jit] queue is empty
+#--------
+src/jitqueue.c:442:jit_print_queue(): INFO: [jit] queue is empty
+### [GPS] ###
+# GPS sync is disabled
+### Concentrator temperature 0 C ###
+##### END #####
+
+//main(): PUSH_DATA packet: Upstream JSON data structure: stat
+
+JSON up: {&quot;stat&quot;:{&quot;time&quot;:&quot;2020-10-18 10:49:51 GMT&quot;,&quot;rxnb&quot;:1,&quot;rxok&quot;:1,&quot;rxfw&quot;:1,&quot;ackr&quot;:100.0,&quot;dwnb&quot;:0,&quot;txnb&quot;:0,&quot;temp&quot;:0.0}}
+INFO: [up] PUSH_ACK received in 34ms
+INFO: [down] PULL_ACK received in 35ms
+INFO: [down] PULL_ACK received in 37ms
+</code></pre>
+
     </div>
 
     
