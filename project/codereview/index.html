@@ -986,7 +986,6 @@ INFO: [main] concentrator started, packet can now be received
 INFO: concentrator EUI: 0x0016c001ff10d3f6
 </code></pre>
 <pre><code class="language-cpp">//thread_up(): start of JSON structure
-//PUSH_DATA packet: Upstream JSON data structure: rxpk
 INFO: Received pkt from mote: 1350200C (fcnt=13)
 
 JSON up: {&quot;rxpk&quot;:[{&quot;jver&quot;:1,&quot;tmst&quot;:137795171,&quot;chan&quot;:4,&quot;rfch&quot;:1,&quot;freq&quot;:475.100000,&quot;mid&quot;:0,&quot;stat&quot;:1,&quot;modu&quot;:&quot;LORA&quot;,&quot;datr&quot;:&quot;SF12Bw125&quot;,&quot;codr&quot;:&quot;4/5&quot;,&quot;rssis&quot;:-84,&quot;lsnr&quot;:-5.0,&quot;foff&quot;:786,&quot;rssi&quot;:-80,&quot;size&quot;:13,&quot;data&quot;:&quot;gQwgUBMADQANAKvN7w==&quot;}]}
@@ -1022,7 +1021,6 @@ src/jitqueue.c:442:jit_print_queue(): INFO: [jit] queue is empty
 ##### END #####
 
 //main(): generate a JSON report (will be sent to server by upstream thread)
-//PUSH_DATA packet: Upstream JSON data structure: stat
 JSON up: {&quot;stat&quot;:{&quot;time&quot;:&quot;2020-10-18 10:49:51 GMT&quot;,&quot;rxnb&quot;:1,&quot;rxok&quot;:1,&quot;rxfw&quot;:1,&quot;ackr&quot;:100.0,&quot;dwnb&quot;:0,&quot;txnb&quot;:0,&quot;temp&quot;:0.0}}
 INFO: [up] PUSH_ACK received in 34ms
 INFO: [down] PULL_ACK received in 35ms
