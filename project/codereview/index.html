@@ -989,7 +989,11 @@ INFO: concentrator EUI: 0x0016c001ff10d3f6
 INFO: Received pkt from mote: 1350200C (fcnt=13)
 
 JSON up: {&quot;rxpk&quot;:[{&quot;jver&quot;:1,&quot;tmst&quot;:137795171,&quot;chan&quot;:4,&quot;rfch&quot;:1,&quot;freq&quot;:475.100000,&quot;mid&quot;:0,&quot;stat&quot;:1,&quot;modu&quot;:&quot;LORA&quot;,&quot;datr&quot;:&quot;SF12Bw125&quot;,&quot;codr&quot;:&quot;4/5&quot;,&quot;rssis&quot;:-84,&quot;lsnr&quot;:-5.0,&quot;foff&quot;:786,&quot;rssi&quot;:-80,&quot;size&quot;:13,&quot;data&quot;:&quot;gQwgUBMADQANAKvN7w==&quot;}]}
+
+//thread_up(): send datagram to server + wait for acknowledge (in 2 times, to catch extra packets)
 INFO: [up] PUSH_ACK received in 40ms
+
+//thread_down()
 INFO: [down] PULL_ACK received in 34ms
 
 //main(): display a report (status report)
@@ -1022,7 +1026,11 @@ src/jitqueue.c:442:jit_print_queue(): INFO: [jit] queue is empty
 
 //main(): generate a JSON report (will be sent to server by upstream thread)
 JSON up: {&quot;stat&quot;:{&quot;time&quot;:&quot;2020-10-18 10:49:51 GMT&quot;,&quot;rxnb&quot;:1,&quot;rxok&quot;:1,&quot;rxfw&quot;:1,&quot;ackr&quot;:100.0,&quot;dwnb&quot;:0,&quot;txnb&quot;:0,&quot;temp&quot;:0.0}}
+
+//thread_up():  send datagram to server + wait for acknowledge (in 2 times, to catch extra packets)
 INFO: [up] PUSH_ACK received in 34ms
+
+//thread_down()
 INFO: [down] PULL_ACK received in 35ms
 INFO: [down] PULL_ACK received in 37ms
 </code></pre>
@@ -1050,6 +1058,7 @@ INFO: Exiting packet forwarder program
 <h2 id="23-socket">2.3 socket</h2>
 <ol>
 <li><a href="https://blog.csdn.net/z735640642/article/details/84306589" target="_blank" rel="noopener">setsockopt()</a></li>
+<li><a href="https://www.cnblogs.com/fnlingnzb-learner/p/8523206.html" target="_blank" rel="noopener">recv</a></li>
 </ol>
 
     </div>
