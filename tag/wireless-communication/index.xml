@@ -92,7 +92,7 @@ JSON up: {&amp;quot;rxpk&amp;quot;:[{&amp;quot;jver&amp;quot;:1,&amp;quot;tmst&a
 //thread_up(): send datagram to server + wait for acknowledge (in 2 times, to catch extra packets)
 INFO: [up] PUSH_ACK received in 40ms
 
-//thread_down()
+//thread_down(): if the datagram is an ACK, check token
 INFO: [down] PULL_ACK received in 34ms
 
 //main(): display a report (status report)
@@ -129,7 +129,7 @@ JSON up: {&amp;quot;stat&amp;quot;:{&amp;quot;time&amp;quot;:&amp;quot;2020-10-1
 //thread_up():  send datagram to server + wait for acknowledge (in 2 times, to catch extra packets)
 INFO: [up] PUSH_ACK received in 34ms
 
-//thread_down()
+//thread_down(): if the datagram is an ACK, check token
 INFO: [down] PULL_ACK received in 35ms
 INFO: [down] PULL_ACK received in 37ms
 &lt;/code&gt;&lt;/pre&gt;
@@ -151,6 +151,7 @@ INFO: Exiting packet forwarder program
 &lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/zyex1108/article/details/45154211&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;time()&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.runoob.com/cprogramming/c-function-gmtime.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;gtime()&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/SanQi_Abao/article/details/94964665&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;strftime()&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/weixin_44880138/article/details/102605681&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;clock_gettime&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
@@ -158,6 +159,15 @@ INFO: Exiting packet forwarder program
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/z735640642/article/details/84306589&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;setsockopt()&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.cnblogs.com/fnlingnzb-learner/p/8523206.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;recv&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;3-问题&#34;&gt;3 问题&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;函数运行顺序&lt;/li&gt;
+&lt;li&gt;函数调用情况&lt;/li&gt;
+&lt;li&gt;调用外部文件函数&lt;/li&gt;
+&lt;li&gt;线程理解&lt;/li&gt;
+&lt;li&gt;C库函数&lt;/li&gt;
+&lt;li&gt;变量含义&lt;/li&gt;
 &lt;/ol&gt;
 </description>
     </item>

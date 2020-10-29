@@ -993,7 +993,7 @@ JSON up: {&quot;rxpk&quot;:[{&quot;jver&quot;:1,&quot;tmst&quot;:137795171,&quot
 //thread_up(): send datagram to server + wait for acknowledge (in 2 times, to catch extra packets)
 INFO: [up] PUSH_ACK received in 40ms
 
-//thread_down()
+//thread_down(): if the datagram is an ACK, check token
 INFO: [down] PULL_ACK received in 34ms
 
 //main(): display a report (status report)
@@ -1030,7 +1030,7 @@ JSON up: {&quot;stat&quot;:{&quot;time&quot;:&quot;2020-10-18 10:49:51 GMT&quot;
 //thread_up():  send datagram to server + wait for acknowledge (in 2 times, to catch extra packets)
 INFO: [up] PUSH_ACK received in 34ms
 
-//thread_down()
+//thread_down(): if the datagram is an ACK, check token
 INFO: [down] PULL_ACK received in 35ms
 INFO: [down] PULL_ACK received in 37ms
 </code></pre>
@@ -1052,6 +1052,7 @@ INFO: Exiting packet forwarder program
 <li><a href="https://blog.csdn.net/zyex1108/article/details/45154211" target="_blank" rel="noopener">time()</a></li>
 <li><a href="https://www.runoob.com/cprogramming/c-function-gmtime.html" target="_blank" rel="noopener">gtime()</a></li>
 <li><a href="https://blog.csdn.net/SanQi_Abao/article/details/94964665" target="_blank" rel="noopener">strftime()</a></li>
+<li><a href="https://blog.csdn.net/weixin_44880138/article/details/102605681" target="_blank" rel="noopener">clock_gettime</a></li>
 </ul>
 </li>
 </ol>
@@ -1059,6 +1060,15 @@ INFO: Exiting packet forwarder program
 <ol>
 <li><a href="https://blog.csdn.net/z735640642/article/details/84306589" target="_blank" rel="noopener">setsockopt()</a></li>
 <li><a href="https://www.cnblogs.com/fnlingnzb-learner/p/8523206.html" target="_blank" rel="noopener">recv</a></li>
+</ol>
+<h1 id="3-问题">3 问题</h1>
+<ol>
+<li>函数运行顺序</li>
+<li>函数调用情况</li>
+<li>调用外部文件函数</li>
+<li>线程理解</li>
+<li>C库函数</li>
+<li>变量含义</li>
 </ol>
 
     </div>
