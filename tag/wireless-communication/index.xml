@@ -165,7 +165,7 @@ INFO: Exiting packet forwarder program
 &lt;li&gt;函数运行顺序&lt;/li&gt;
 &lt;li&gt;Downstream不知道看不看&lt;/li&gt;
 &lt;li&gt;函数调用情况&lt;/li&gt;
-&lt;li&gt;调用外部文件函数&lt;/li&gt;
+&lt;li&gt;调用外部文件函数，如parson.c里面的json解析函数、base64.c的加密/解密函数&lt;/li&gt;
 &lt;li&gt;线程理解&lt;/li&gt;
 &lt;li&gt;C库函数&lt;/li&gt;
 &lt;li&gt;变量含义&lt;/li&gt;
