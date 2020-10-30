@@ -163,6 +163,7 @@ INFO: Exiting packet forwarder program
 &lt;h1 id=&#34;3-问题&#34;&gt;3 问题&lt;/h1&gt;
 &lt;ol&gt;
 &lt;li&gt;函数运行顺序&lt;/li&gt;
+&lt;li&gt;Downstream不知道看不看&lt;/li&gt;
 &lt;li&gt;函数调用情况&lt;/li&gt;
 &lt;li&gt;调用外部文件函数&lt;/li&gt;
 &lt;li&gt;线程理解&lt;/li&gt;
