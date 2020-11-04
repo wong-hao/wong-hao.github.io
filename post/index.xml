@@ -519,17 +519,17 @@ $$&lt;/p&gt;
     </item>
     
     <item>
-      <title>第八次汇报</title>
-      <link>https://haowong.com/2020/09/09/%E7%AC%AC%E5%85%AB%E6%AC%A1%E6%B1%87%E6%8A%A5/</link>
+      <title>第九次汇报</title>
+      <link>https://haowong.com/2020/09/09/%E7%AC%AC%E4%B9%9D%E6%AC%A1%E6%B1%87%E6%8A%A5/</link>
       <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>
-      <guid>https://haowong.com/2020/09/09/%E7%AC%AC%E5%85%AB%E6%AC%A1%E6%B1%87%E6%8A%A5/</guid>
+      <guid>https://haowong.com/2020/09/09/%E7%AC%AC%E4%B9%9D%E6%AC%A1%E6%B1%87%E6%8A%A5/</guid>
       <description>&lt;h3 id=&#34;1-问题&#34;&gt;1 问题&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 无&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;2-源文件&#34;&gt;2 源文件&lt;/h3&gt;
 &lt;h4 id=&#34;21-作者的演讲&#34;&gt;2.1 作者的演讲&lt;/h4&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=Fnw-Qz6QyLc&amp;amp;feature=youtu.be&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击下载&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=-z16odpf_eg&amp;amp;feature=youtu.be&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;31′40″&lt;/a&gt;&lt;/p&gt;
 &lt;h4 id=&#34;22-会议的详情&#34;&gt;2.2 会议的详情&lt;/h4&gt;
 &lt;p&gt;&lt;a href=&#34;https://icnp20.cs.ucr.edu/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击下载&lt;/a&gt;&lt;/p&gt;</description>
     </item>
@@ -545,7 +545,7 @@ $$&lt;/p&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;2-源文件&#34;&gt;2 源文件&lt;/h3&gt;
 &lt;h4 id=&#34;21-作者的演讲&#34;&gt;2.1 作者的演讲&lt;/h4&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=Fnw-Qz6QyLc&amp;amp;feature=youtu.be&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击下载&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=Fnw-Qz6QyLc&amp;amp;feature=youtu.be&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;46′10″&lt;/a&gt;&lt;/p&gt;
 &lt;h4 id=&#34;22-会议的详情&#34;&gt;2.2 会议的详情&lt;/h4&gt;
 &lt;p&gt;&lt;a href=&#34;https://icnp20.cs.ucr.edu/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击下载&lt;/a&gt;&lt;/p&gt;</description>
     </item>
@@ -661,7 +661,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-361279584&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-341798652&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -671,7 +671,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-361279584&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-341798652&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
