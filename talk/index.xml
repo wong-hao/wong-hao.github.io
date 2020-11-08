@@ -66,6 +66,7 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 观察论文里提到的后端/云端是否是TTN、Chirpstack这种NS&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 每篇讲稿都要加上备注&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 看相关工作以拓宽知识面，可以观察哪些被多次提到&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;2-日期&#34;&gt;2 日期&lt;/h3&gt;
 &lt;h4 id=&#34;21-时间安排表&#34;&gt;2.1 时间安排表&lt;/h4&gt;
