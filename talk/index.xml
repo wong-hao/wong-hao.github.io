@@ -52,7 +52,7 @@
 &lt;h3 id=&#34;1-问题&#34;&gt;1 问题&lt;/h3&gt;
 &lt;h4 id=&#34;11-第一篇&#34;&gt;1.1 第一篇&lt;/h4&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 待定&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Frame Structure和7.2里的安全部分&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h4 id=&#34;12-第二篇&#34;&gt;1.2 第二篇&lt;/h4&gt;
 &lt;ul&gt;
@@ -63,6 +63,11 @@
 &lt;h4 id=&#34;13-第三篇&#34;&gt;1.3 第三篇&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 待定&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;14-共性&#34;&gt;1.4 共性&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 观察论文里提到的后端/云端是否是TTN、Chirpstack这种NS&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 每篇讲稿都要加上备注&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;2-日期&#34;&gt;2 日期&lt;/h3&gt;
 &lt;h4 id=&#34;21-时间安排表&#34;&gt;2.1 时间安排表&lt;/h4&gt;
