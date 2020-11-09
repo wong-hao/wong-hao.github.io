@@ -1163,7 +1163,7 @@ Flash:     0
 <p>卖家给的<a href="https://www.cnblogs.com/answerinthewind/p/13154904.html" target="_blank" rel="noopener">攻略</a>跟用<code>install.sh</code>生成的主要差别在radio_1与radio_2的<strong>ferq</strong>不同，攻略的效果好；官方的<a href="https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVQzOWdIRUc4YU5DbHFMVzBjRGkwVjBCZjZGQmUzWUpkSnh0YVhXbUlLdnFtUT9lPW9qNjEzcg==.mp3" target="_blank" rel="noopener">参考文献</a>和攻略还有<a href="https://www.bilibili.com/video/BV1gp4y1v7UB" target="_blank" rel="noopener">视频</a>均给出了<strong>global_conf.json</strong>的参数意义</p>
 </li>
 <li>
-<p><a href="https://forum.chirpstack.io/t/semtech-udp-packet-forwarder-setting/9490/2" target="_blank" rel="noopener">&ldquo;server_address&quot;与Gateway Bridge运行地址一致</a>，Gateway Bridge可安装在<a href="https://www.chirpstack.io/project/architecture/" target="_blank" rel="noopener">网关上或云端</a></p>
+<p><a href="https://forum.chirpstack.io/t/semtech-udp-packet-forwarder-setting/9490/2" target="_blank" rel="noopener">&ldquo;server_address&quot;与Gateway Bridge运行地址一致</a>，Gateway Bridge可安装在<a href="https://www.chirpstack.io/project/architecture/" target="_blank" rel="noopener">网关上或云端</a>，如本文就为47.110.36.225而不是localhost</p>
 </li>
 <li>
 <p><a href="https://www.chirpstack.io/project/guides/connect-gateway/" target="_blank" rel="noopener">查看网关是否连接上了网络服务器</a>，<code>tcpdump</code>指令需要通过<code>sudo apt update &amp;&amp; sudo apt install tcpdump</code>安装</p>
@@ -1269,7 +1269,7 @@ UDP             1700/1700        0.0.0.0/0
 <pre><code class="language-cpp">account  password
  admin    admin
 </code></pre>
-<p><strong>服务器地址</strong>: <a href="http://loraserver.haowong.com">http://loraserver.haowong.com</a>:8080/</p>
+<p><strong>服务器地址</strong>: http://47.110.36.225:8080/，不能设置域名解析（需要备案）</p>
 <hr>
 <p><a href="https://console.thethingsnetwork.org/" target="_blank" rel="noopener">TTN官方入门</a></p>
 <p><a href="https://learn.adafruit.com/the-things-network-for-feather?view=all" target="_blank" rel="noopener">TTN</a></p>

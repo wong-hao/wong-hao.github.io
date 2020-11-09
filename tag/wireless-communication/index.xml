@@ -423,7 +423,7 @@ Flash:     0
 &lt;p&gt;卖家给的&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/13154904.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;攻略&lt;/a&gt;跟用&lt;code&gt;install.sh&lt;/code&gt;生成的主要差别在radio_1与radio_2的&lt;strong&gt;ferq&lt;/strong&gt;不同，攻略的效果好；官方的&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVQzOWdIRUc4YU5DbHFMVzBjRGkwVjBCZjZGQmUzWUpkSnh0YVhXbUlLdnFtUT9lPW9qNjEzcg==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;参考文献&lt;/a&gt;和攻略还有&lt;a href=&#34;https://www.bilibili.com/video/BV1gp4y1v7UB&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;视频&lt;/a&gt;均给出了&lt;strong&gt;global_conf.json&lt;/strong&gt;的参数意义&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://forum.chirpstack.io/t/semtech-udp-packet-forwarder-setting/9490/2&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&amp;ldquo;server_address&amp;quot;与Gateway Bridge运行地址一致&lt;/a&gt;，Gateway Bridge可安装在&lt;a href=&#34;https://www.chirpstack.io/project/architecture/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;网关上或云端&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://forum.chirpstack.io/t/semtech-udp-packet-forwarder-setting/9490/2&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&amp;ldquo;server_address&amp;quot;与Gateway Bridge运行地址一致&lt;/a&gt;，Gateway Bridge可安装在&lt;a href=&#34;https://www.chirpstack.io/project/architecture/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;网关上或云端&lt;/a&gt;，如本文就为47.110.36.225而不是localhost&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.chirpstack.io/project/guides/connect-gateway/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;查看网关是否连接上了网络服务器&lt;/a&gt;，&lt;code&gt;tcpdump&lt;/code&gt;指令需要通过&lt;code&gt;sudo apt update &amp;amp;&amp;amp; sudo apt install tcpdump&lt;/code&gt;安装&lt;/p&gt;
@@ -529,7 +529,7 @@ UDP             1700/1700        0.0.0.0/0
 &lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;account  password
  admin    admin
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;strong&gt;服务器地址&lt;/strong&gt;: &lt;a href=&#34;http://loraserver.haowong.com&#34;&gt;http://loraserver.haowong.com&lt;/a&gt;:8080/&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;服务器地址&lt;/strong&gt;: http://47.110.36.225:8080/，不能设置域名解析（需要备案）&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;a href=&#34;https://console.thethingsnetwork.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TTN官方入门&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://learn.adafruit.com/the-things-network-for-feather?view=all&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TTN&lt;/a&gt;&lt;/p&gt;
