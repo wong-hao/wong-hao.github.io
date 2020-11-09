@@ -64,8 +64,9 @@
 &lt;/ul&gt;
 &lt;h4 id=&#34;14-共性&#34;&gt;1.4 共性&lt;/h4&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 观察论文里提到的后端/云端都是Network Server，如TTN、LoRaServer&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 将Speech Draft移植到ppt的备注处，并重新看论文修改，最后都从到到尾演习说一遍&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 观察论文里提到的后端/云端是否都是Network Server，如TTN、LoRaServer&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 备注：所有页面都写，只有图、公式、算法读；文字性叙述备用&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 演习一遍&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 看相关工作以拓宽知识面，可以观察哪些被多次提到&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 看未来工作找到方向&lt;/li&gt;
 &lt;/ul&gt;
@@ -1379,7 +1380,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-461852937&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-216937584&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -1389,7 +1390,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-461852937&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-216937584&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
