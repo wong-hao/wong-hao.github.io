@@ -354,6 +354,9 @@ INFO: Exiting packet forwarder program
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; c library function&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 变量含义&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h1 id=&#34;4-完成后&#34;&gt;4 完成后&lt;/h1&gt;
+&lt;p&gt;在&lt;strong&gt;gw1302s&lt;/strong&gt;执行&lt;code&gt;make clean all&lt;/code&gt;，调用所有helper program的make clean
+再执行&lt;code&gt;make install&lt;/code&gt;，调用所有helper program的make install，把可执行程序都&lt;code&gt;scp&lt;/code&gt;到gw1302s/bin中&lt;/p&gt;
 </description>
     </item>
     
@@ -1380,7 +1383,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-216937584&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-459138276&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -1390,7 +1393,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-216937584&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-459138276&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
