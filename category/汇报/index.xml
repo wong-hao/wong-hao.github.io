@@ -51,6 +51,7 @@
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 快速傅里叶变换频谱泄露、信道衰落&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 离散傅里叶变换采样&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; MATLAB信号处理&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 与第四次汇报的区别：物理层而非链路层、多发射而非多接收&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;2-源文件&#34;&gt;2 源文件&lt;/h3&gt;
 &lt;h4 id=&#34;21-作者的演讲&#34;&gt;2.1 作者的演讲&lt;/h4&gt;
