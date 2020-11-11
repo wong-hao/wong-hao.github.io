@@ -155,7 +155,7 @@
 &lt;h6 id=&#34;4215-作者的ppt&#34;&gt;4.2.1.5 作者的ppt&lt;/h6&gt;
 &lt;p&gt;&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9oaHUyMDE2LW15LnNoYXJlcG9pbnQuY29tLzpiOi9nL3BlcnNvbmFsL3pvbmU5NzEwMTZfaGh1X2VkdV9jbi9FYnFfeGVKTkRqeE1zZTFNM2ZjTlhtNEJDRWJEZzB0TTVyY1RiUzdMSmd2bHdBP2U9N3I4bWwx.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击下载&lt;/a&gt;&lt;/p&gt;
 &lt;h6 id=&#34;4215-会议的详情&#34;&gt;4.2.1.5 会议的详情&lt;/h6&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.usenix.org/conference/nsdi20&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击下载&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.usenix.org/conference/nsdi20&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;NSDI &amp;lsquo;20&lt;/a&gt;&lt;/p&gt;
 &lt;h5 id=&#34;422-自己工作&#34;&gt;4.2.2 自己工作&lt;/h5&gt;
 &lt;h6 id=&#34;4221-汇报ppt&#34;&gt;4.2.2.1 汇报ppt&lt;/h6&gt;
 &lt;p&gt;&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9oaHUyMDE2LW15LnNoYXJlcG9pbnQuY29tLzpwOi9nL3BlcnNvbmFsL3pvbmU5NzEwMTZfaGh1X2VkdV9jbi9FVG04NW1JX1FZZE9pdnAwZ19ocG9fWUJ6YkV4S25obk5VdFFfSEk4X0laNk93P2U9RFFVNTA5.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击下载&lt;/a&gt;&lt;/p&gt;
@@ -164,7 +164,7 @@
 &lt;h6 id=&#34;4311-阅读的文件1&#34;&gt;4.3.1.1 阅读的文件1&lt;/h6&gt;
 &lt;p&gt;&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9oaHUyMDE2LW15LnNoYXJlcG9pbnQuY29tLzpiOi9nL3BlcnNvbmFsL3pvbmU5NzEwMTZfaGh1X2VkdV9jbi9FVUpZNmh6MUh0OVBoeTZ3X0tNcllJc0JUMjRzRG9BMVkwWUJIMGdrNHFEU013P2U9YzMySmZj.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击下载&lt;/a&gt;&lt;/p&gt;
 &lt;h6 id=&#34;4312-会议的详情&#34;&gt;4.3.1.2 会议的详情&lt;/h6&gt;
-&lt;p&gt;&lt;a href=&#34;https://infocom.info/day/1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击下载&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://infocom.info/day/1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;INFOCOM 2020&lt;/a&gt;&lt;/p&gt;
 &lt;h5 id=&#34;432-自己工作&#34;&gt;4.3.2 自己工作&lt;/h5&gt;
 &lt;h6 id=&#34;4321-汇报ppt&#34;&gt;4.3.2.1 汇报ppt&lt;/h6&gt;
 &lt;p&gt;&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9oaHUyMDE2LW15LnNoYXJlcG9pbnQuY29tLzpwOi9nL3BlcnNvbmFsL3pvbmU5NzEwMTZfaGh1X2VkdV9jbi9FVnlkWTlpQ2lWaElxUmhrRzIyWjd6NEJsMTlTdnNtWFI0QzV5bzlaVmM4M2hnP2U9RkdscVUx.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击下载&lt;/a&gt;&lt;/p&gt;
@@ -689,13 +689,13 @@ $$&lt;/p&gt;
       <guid>https://haowong.com/2020/09/09/%E7%AC%AC%E4%B9%9D%E6%AC%A1%E6%B1%87%E6%8A%A5/</guid>
       <description>&lt;h3 id=&#34;1-问题&#34;&gt;1 问题&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 无&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; ADR原理及如何在NS上实现/开启&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;2-源文件&#34;&gt;2 源文件&lt;/h3&gt;
 &lt;h4 id=&#34;21-作者的演讲&#34;&gt;2.1 作者的演讲&lt;/h4&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=-z16odpf_eg&amp;amp;feature=youtu.be&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;31′40″&lt;/a&gt;&lt;/p&gt;
 &lt;h4 id=&#34;22-会议的详情&#34;&gt;2.2 会议的详情&lt;/h4&gt;
-&lt;p&gt;&lt;a href=&#34;https://icnp20.cs.ucr.edu/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击下载&lt;/a&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;a href=&#34;https://icnp20.cs.ucr.edu/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ICNP 2020&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -714,7 +714,7 @@ $$&lt;/p&gt;
 &lt;h4 id=&#34;21-作者的演讲&#34;&gt;2.1 作者的演讲&lt;/h4&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=Fnw-Qz6QyLc&amp;amp;feature=youtu.be&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;46′10″&lt;/a&gt;&lt;/p&gt;
 &lt;h4 id=&#34;22-会议的详情&#34;&gt;2.2 会议的详情&lt;/h4&gt;
-&lt;p&gt;&lt;a href=&#34;https://icnp20.cs.ucr.edu/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击下载&lt;/a&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;a href=&#34;https://icnp20.cs.ucr.edu/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ICNP 2020&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -786,7 +786,7 @@ $$&lt;/p&gt;
 &lt;h4 id=&#34;21-作者的主页&#34;&gt;2.1 作者的主页&lt;/h4&gt;
 &lt;p&gt;&lt;a href=&#34;http://artur.balanuta.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击下载&lt;/a&gt;&lt;/p&gt;
 &lt;h4 id=&#34;22-会议的详情&#34;&gt;2.2 会议的详情&lt;/h4&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.sigmobile.org/mobisys/2020/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击下载&lt;/a&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;a href=&#34;https://www.sigmobile.org/mobisys/2020/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;MobiSys 2020&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
