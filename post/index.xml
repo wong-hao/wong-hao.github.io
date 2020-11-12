@@ -548,7 +548,7 @@ $$&lt;/p&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 快速傅里叶变换频谱泄露、信道衰落&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 离散傅里叶变换采样&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; MATLAB信号处理&lt;/li&gt;
-&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 与第四次汇报的区别：物理层而非链路层、多发射而非多接收&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 与第四次汇报的区别：(1)Physical Layer / Link Layer，(2)&lt;strong&gt;many&lt;/strong&gt;(devices)-&lt;strong&gt;to&lt;/strong&gt;-&lt;strong&gt;one&lt;/strong&gt;(gateway) / &lt;strong&gt;one&lt;/strong&gt;(device)-&lt;strong&gt;to&lt;/strong&gt;-&lt;strong&gt;many&lt;/strong&gt;(gateways)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;2-源文件&#34;&gt;2 源文件&lt;/h3&gt;
 &lt;h4 id=&#34;21-作者的演讲&#34;&gt;2.1 作者的演讲&lt;/h4&gt;
@@ -671,7 +671,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-327986154&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-129845736&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -681,7 +681,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-327986154&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-129845736&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
