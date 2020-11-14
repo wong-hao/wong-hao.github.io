@@ -57,6 +57,7 @@
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 复数权重&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 三次样条插值法&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 保护频带&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 看是不是和第一篇一样是多接受考虑多径效应的&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h4 id=&#34;13-第三篇&#34;&gt;1.3 第三篇&lt;/h4&gt;
 &lt;ul&gt;
