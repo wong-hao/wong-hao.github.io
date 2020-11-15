@@ -527,6 +527,7 @@ $$&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; ADR原理及如何在NS上实现/开启&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; TTN[11]&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 美化ppt布局&lt;/li&gt;
 &lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 根据作者演讲和ppt修改自己的ppt&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 与seminar No.3很像，都是根据比目前已有的SF选择方法&amp;rsquo;ADR&amp;rsquo;更好的输入输出模型选择SF&lt;/li&gt;
 &lt;/ul&gt;
@@ -550,6 +551,7 @@ $$&lt;/p&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 快速傅里叶变换频谱泄露、信道衰落&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 离散傅里叶变换采样&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; MATLAB信号处理&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 美化ppt布局&lt;/li&gt;
 &lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 根据作者演讲和ppt修改自己的ppt&lt;/li&gt;
 &lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 与第四次汇报的区别：(1)Physical Layer / Link Layer，(2)&lt;strong&gt;many&lt;/strong&gt;(devices)-&lt;strong&gt;to&lt;/strong&gt;-&lt;strong&gt;one&lt;/strong&gt;(gateway) / &lt;strong&gt;one&lt;/strong&gt;(device)-&lt;strong&gt;to&lt;/strong&gt;-&lt;strong&gt;many&lt;/strong&gt;(gateways)&lt;/li&gt;
 &lt;/ul&gt;
@@ -676,7 +678,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-413967582&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-148572936&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -686,7 +688,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-413967582&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-148572936&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
