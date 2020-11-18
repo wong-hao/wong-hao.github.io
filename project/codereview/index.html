@@ -918,8 +918,107 @@
   <div class="article-container">
 
     <div class="article-style">
-      <h1 id="1-从显示反推代码运行流程">1 从显示反推代码运行流程</h1>
-<pre><code class="language-cpp">//main(): display version informations
+      <h1 id="1-globalconfig">1 global.config</h1>
+<pre><code class="language-cpp">{
+    &quot;SX130x_conf&quot;: {
+        &quot;spidev_path&quot;: &quot;/dev/spidev0.0&quot;,
+        &quot;lorawan_public&quot;: true,
+        &quot;clksrc&quot;: 0,
+        &quot;antenna_gain&quot;: 0, /* antenna gain, in dBi */
+        &quot;full_duplex&quot;: false,
+        &quot;precision_timestamp&quot;: {
+            &quot;enable&quot;: false,
+            &quot;max_ts_metrics&quot;: 255,
+            &quot;nb_symbols&quot;: 1
+        },
+        &quot;radio_0&quot;: {
+            &quot;enable&quot;: true,
+            &quot;type&quot;: &quot;SX1250&quot;,
+            &quot;single_input_mode&quot;: true,
+            &quot;freq&quot;: 470600000,
+            &quot;rssi_offset&quot;: -207.0,
+            &quot;rssi_tcomp&quot;: {&quot;coeff_a&quot;: 0, &quot;coeff_b&quot;: 0, &quot;coeff_c&quot;: 20.41, &quot;coeff_d&quot;: 2162.56, &quot;coeff_e&quot;: 0},
+            &quot;tx_enable&quot;: true,
+            &quot;tx_freq_min&quot;: 470000000,
+            &quot;tx_freq_max&quot;: 510000000,
+            &quot;tx_gain_lut&quot;:[
+                {&quot;rf_power&quot;: -6, &quot;pa_gain&quot;: 0, &quot;pwr_idx&quot;:  0},
+                {&quot;rf_power&quot;: -3, &quot;pa_gain&quot;: 0, &quot;pwr_idx&quot;:  1},
+                {&quot;rf_power&quot;:  0, &quot;pa_gain&quot;: 0, &quot;pwr_idx&quot;:  2},
+                {&quot;rf_power&quot;:  3, &quot;pa_gain&quot;: 1, &quot;pwr_idx&quot;:  3},
+                {&quot;rf_power&quot;:  6, &quot;pa_gain&quot;: 1, &quot;pwr_idx&quot;:  4},
+                {&quot;rf_power&quot;: 10, &quot;pa_gain&quot;: 1, &quot;pwr_idx&quot;:  5},
+                {&quot;rf_power&quot;: 11, &quot;pa_gain&quot;: 1, &quot;pwr_idx&quot;:  6},
+                {&quot;rf_power&quot;: 12, &quot;pa_gain&quot;: 2, &quot;pwr_idx&quot;:  7},
+                {&quot;rf_power&quot;: 13, &quot;pa_gain&quot;: 1, &quot;pwr_idx&quot;:  8},
+                {&quot;rf_power&quot;: 14, &quot;pa_gain&quot;: 2, &quot;pwr_idx&quot;:  9},
+                {&quot;rf_power&quot;: 16, &quot;pa_gain&quot;: 2, &quot;pwr_idx&quot;: 10},
+                {&quot;rf_power&quot;: 20, &quot;pa_gain&quot;: 3, &quot;pwr_idx&quot;: 11},
+                {&quot;rf_power&quot;: 23, &quot;pa_gain&quot;: 3, &quot;pwr_idx&quot;: 12},
+                {&quot;rf_power&quot;: 25, &quot;pa_gain&quot;: 3, &quot;pwr_idx&quot;: 13},
+                {&quot;rf_power&quot;: 26, &quot;pa_gain&quot;: 3, &quot;pwr_idx&quot;: 14},
+                {&quot;rf_power&quot;: 27, &quot;pa_gain&quot;: 3, &quot;pwr_idx&quot;: 15}
+            ]
+        },
+        &quot;radio_1&quot;: {
+            &quot;enable&quot;: true,
+            &quot;type&quot;: &quot;SX1250&quot;,
+            &quot;single_input_mode&quot;: true,
+            &quot;freq&quot;: 471400000,
+            &quot;rssi_offset&quot;: -207.0,
+            &quot;rssi_tcomp&quot;: {&quot;coeff_a&quot;: 0, &quot;coeff_b&quot;: 0, &quot;coeff_c&quot;: 20.41, &quot;coeff_d&quot;: 2162.56, &quot;coeff_e&quot;: 0},
+            &quot;tx_enable&quot;: false
+        },
+        &quot;chan_multiSF_0&quot;: {&quot;enable&quot;: true, &quot;radio&quot;: 0, &quot;if&quot;: -300000},
+        &quot;chan_multiSF_1&quot;: {&quot;enable&quot;: true, &quot;radio&quot;: 0, &quot;if&quot;: -100000},
+        &quot;chan_multiSF_2&quot;: {&quot;enable&quot;: true, &quot;radio&quot;: 0, &quot;if&quot;:  100000},
+        &quot;chan_multiSF_3&quot;: {&quot;enable&quot;: true, &quot;radio&quot;: 0, &quot;if&quot;:  300000},
+        &quot;chan_multiSF_4&quot;: {&quot;enable&quot;: true, &quot;radio&quot;: 1, &quot;if&quot;: -300000},
+        &quot;chan_multiSF_5&quot;: {&quot;enable&quot;: true, &quot;radio&quot;: 1, &quot;if&quot;: -100000},
+        &quot;chan_multiSF_6&quot;: {&quot;enable&quot;: true, &quot;radio&quot;: 1, &quot;if&quot;:  100000},
+        &quot;chan_multiSF_7&quot;: {&quot;enable&quot;: true, &quot;radio&quot;: 1, &quot;if&quot;:  300000},
+        &quot;chan_Lora_std&quot;:  {&quot;enable&quot;: true, &quot;radio&quot;: 1, &quot;if&quot;: -200000, &quot;bandwidth&quot;: 250000, &quot;spread_factor&quot;: 7,
+                           &quot;implicit_hdr&quot;: false, &quot;implicit_payload_length&quot;: 17, &quot;implicit_crc_en&quot;: false, &quot;implicit_coderate&quot;: 1},
+        &quot;chan_FSK&quot;:       {&quot;enable&quot;: true, &quot;radio&quot;: 1, &quot;if&quot;:  300000, &quot;bandwidth&quot;: 125000, &quot;datarate&quot;: 50000}
+    },
+
+    &quot;gateway_conf&quot;: {
+        &quot;gateway_ID&quot;: &quot;fffedca6320e9516&quot;,
+        /* change with default server address/ports */
+        &quot;server_address&quot;: &quot;loragw.things.qcloud.com&quot;,
+        &quot;serv_port_up&quot;: 1700,
+        &quot;serv_port_down&quot;: 1700,
+        /* adjust the following parameters for your network */
+        &quot;keepalive_interval&quot;: 10,
+        &quot;stat_interval&quot;: 30,
+        &quot;push_timeout_ms&quot;: 100,
+        /* forward only valid packets */
+        &quot;forward_crc_valid&quot;: true,
+        &quot;forward_crc_error&quot;: false,
+        &quot;forward_crc_disabled&quot;: false,
+        /* Beaconing parameters */
+        &quot;beacon_period&quot;: 0,
+        &quot;beacon_freq_hz&quot;: 869525000,
+        &quot;beacon_datarate&quot;: 9,
+        &quot;beacon_bw_hz&quot;: 125000,
+        &quot;beacon_power&quot;: 14,
+        &quot;beacon_infodesc&quot;: 0
+    },
+
+    &quot;debug_conf&quot;: {
+        &quot;ref_payload&quot;:[
+            {&quot;id&quot;: &quot;0xCAFE1234&quot;},
+            {&quot;id&quot;: &quot;0xCAFE2345&quot;}
+        ],
+        &quot;log_file&quot;: &quot;loragw_hal.log&quot;
+    }
+}
+```cpp
+
+# 2 从显示反推代码运行流程
+
+```cpp
+//main(): display version informations
 *** Packet Forwarder ***
 Version: 1.0.5
 *** SX1302 HAL library version info ***
@@ -1042,9 +1141,9 @@ INFO: concentrator stopped successfully
 CoreCell reset through GPIO7...
 INFO: Exiting packet forwarder program
 </code></pre>
-<h1 id="2-复杂函数">2 复杂函数</h1>
-<h2 id="21-json">2.1 json</h2>
-<h2 id="22-thread">2.2 thread</h2>
+<h1 id="3-复杂函数">3 复杂函数</h1>
+<h2 id="31-json">3.1 json</h2>
+<h2 id="32-thread">3.2 thread</h2>
 <ol>
 <li><a href="https://blog.csdn.net/yusiguyuan/article/details/40627775" target="_blank" rel="noopener">pthread_mutex_lock()/pthread_mutex_unlock()</a></li>
 <li>
@@ -1056,12 +1155,12 @@ INFO: Exiting packet forwarder program
 </ul>
 </li>
 </ol>
-<h2 id="23-socket">2.3 socket</h2>
+<h2 id="33-socket">3.3 socket</h2>
 <ol>
 <li><a href="https://blog.csdn.net/z735640642/article/details/84306589" target="_blank" rel="noopener">setsockopt()</a></li>
 <li><a href="https://www.cnblogs.com/fnlingnzb-learner/p/8523206.html" target="_blank" rel="noopener">recv</a></li>
 </ol>
-<h1 id="3-问题">3 问题</h1>
+<h1 id="4-问题">4 问题</h1>
 <ul>
 <li><input disabled="" type="checkbox"> 函数运行顺序</li>
 <li><input disabled="" type="checkbox"> Downstream</li>
@@ -1071,7 +1170,7 @@ INFO: Exiting packet forwarder program
 <li><input disabled="" type="checkbox"> c library function</li>
 <li><input disabled="" type="checkbox"> 变量含义</li>
 </ul>
-<h1 id="4-完成后">4 完成后</h1>
+<h1 id="5-修改c程序完成后想要让脚本跟着修改">5 修改c程序完成后想要让脚本跟着修改</h1>
 <p>在<strong>gw1302s</strong>执行<code>make clean all</code>，调用所有helper program的make clean
 再执行<code>make install</code>，调用所有helper program的make install，把可执行程序都<code>scp</code>到gw1302s/bin中</p>
 
