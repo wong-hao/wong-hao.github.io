@@ -17,7 +17,8 @@
       <link>https://haowong.com/project/codereview/</link>
       <pubDate>Wed, 21 Oct 2020 00:00:00 +0000</pubDate>
       <guid>https://haowong.com/project/codereview/</guid>
-      <description>&lt;h1 id=&#34;1-globalconfig&#34;&gt;1 global.config&lt;/h1&gt;
+      <description>&lt;h1 id=&#34;0-protocolhttpsgiteecomrejeeegw1302sblobmasterpacket_forwarderprotocolmd&#34;&gt;0 &lt;a href=&#34;https://gitee.com/rejeee/gw1302s/blob/master/packet_forwarder/PROTOCOL.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;PROTOCOL&lt;/a&gt;&lt;/h1&gt;
+&lt;h1 id=&#34;1-globalconfig&#34;&gt;1 global.config&lt;/h1&gt;
 &lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;{
     &amp;quot;SX130x_conf&amp;quot;: {
         &amp;quot;spidev_path&amp;quot;: &amp;quot;/dev/spidev0.0&amp;quot;,
@@ -263,7 +264,8 @@ INFO: Exiting packet forwarder program
 &lt;ul&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 函数运行顺序&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Downstream&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 函数相互调用情况&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; no GPS&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 函数相互调用情况，如主函数生成五种线程以管理上游和下游、GPS&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 调用外部文件函数，如parson.c里面的json解析函数、base64.c的加密/解密函数&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; thread理解&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; c library function&lt;/li&gt;
