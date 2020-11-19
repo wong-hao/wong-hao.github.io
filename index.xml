@@ -443,23 +443,43 @@ INFO: Exiting packet forwarder program
 &lt;/ol&gt;
 &lt;h1 id=&#34;4-问题&#34;&gt;4 问题&lt;/h1&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;a href=&#34;https://gitee.com/rejeee/gw1302s/tree/master/packet_forwarder&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Just-In-Time&amp;rdquo; downlink scheduling&lt;/a&gt;：&lt;code&gt;jit_enqueue&lt;/code&gt;：txpkt、beacon_pkt&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; no GPS&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 外部文件函数调用，如parson.c里面的prase&amp;hellip;json解析函数、base64.c的bin_to_b64/b64_to_bin&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; thread理解&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; c library function&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 变量含义&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&#34;5-内部程序调用&#34;&gt;5 内部程序调用&lt;/h1&gt;
+&lt;h1 id=&#34;5---just-in-time-downlink-schedulinghttpsgiteecomrejeeegw1302streemasterpacket_forwarder&#34;&gt;5 - &lt;a href=&#34;https://gitee.com/rejeee/gw1302s/tree/master/packet_forwarder&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Just-In-Time&amp;rdquo; downlink scheduling&lt;/a&gt;&lt;/h1&gt;
+&lt;h1 id=&#34;51-tx-scheduling&#34;&gt;5.1 TX scheduling&lt;/h1&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;code&gt;main&lt;/code&gt;：&lt;code&gt;usage&lt;/code&gt;、&lt;code&gt;parse_SX130x_configuration&lt;/code&gt;、&lt;code&gt;parse_gateway_configuration&lt;/code&gt;、&lt;code&gt;parse_debug_configuration&lt;/code&gt;、&lt;code&gt;sig_handler&lt;/code&gt;、&lt;code&gt;5 threads&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;thread_down&lt;/code&gt;：&lt;code&gt;sig_handler&lt;/code&gt;、&lt;code&gt;difftimespec&lt;/code&gt;、&lt;code&gt;crc16&lt;/code&gt;、&lt;code&gt;get_tx_gain_lut_index&lt;/code&gt;、&lt;code&gt;send_tx_ack&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;thread_up&lt;/code&gt;：&lt;code&gt;sig_handler&lt;/code&gt;、&lt;code&gt;difftimespec&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;thread_jit&lt;/code&gt;：&lt;code&gt;sig_handler&lt;/code&gt;、&lt;code&gt;print_tx_status&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;thread_gps&lt;/code&gt;：&lt;code&gt;gps_process_sync&lt;/code&gt;、&lt;code&gt;gps_process_coords&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;thread_valid&lt;/code&gt;：&lt;code&gt;sig_handler&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;TX packet：txpkt&lt;/li&gt;
+&lt;li&gt;Beacon：beacon_pkt&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h1 id=&#34;6-修改c程序完成后想要让脚本跟着修改&#34;&gt;6 修改c程序完成后想要让脚本跟着修改&lt;/h1&gt;
+&lt;p&gt;&lt;code&gt;jit_enqueue&lt;/code&gt;：对应THREAD 2&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;jit_peek&lt;/code&gt;：对应THREAD 3&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;jit_dequeue&lt;/code&gt;：对应THREAD 3&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Possible failures that may occur and that have to be reported to the server are: &amp;hellip;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;通过&lt;code&gt;send_tx_ack&lt;/code&gt;完成&lt;/p&gt;
+&lt;h1 id=&#34;6-程序与线程理解&#34;&gt;6 程序与线程理解&lt;/h1&gt;
+&lt;p&gt;&lt;code&gt;main&lt;/code&gt;：&lt;code&gt;usage&lt;/code&gt;、&lt;code&gt;parse_SX130x_configuration&lt;/code&gt;、&lt;code&gt;parse_gateway_configuration&lt;/code&gt;、&lt;code&gt;parse_debug_configuration&lt;/code&gt;、&lt;code&gt;sig_handler&lt;/code&gt;、&lt;code&gt;5 threads&lt;/code&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;/* &amp;mdash; THREAD 1: RECEIVING PACKETS AND FORWARDING THEM &amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;- */&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;thread_up&lt;/code&gt;：&lt;code&gt;sig_handler&lt;/code&gt;、&lt;code&gt;difftimespec&lt;/code&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;/* &amp;mdash; THREAD 2: POLLING SERVER AND ENQUEUING PACKETS IN JIT QUEUE &amp;mdash;&amp;mdash;&amp;mdash;- */&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;thread_down&lt;/code&gt;：&lt;code&gt;sig_handler&lt;/code&gt;、&lt;code&gt;difftimespec&lt;/code&gt;、&lt;code&gt;crc16&lt;/code&gt;、&lt;code&gt;get_tx_gain_lut_index&lt;/code&gt;、&lt;code&gt;send_tx_ack&lt;/code&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;/* &amp;mdash; THREAD 3: CHECKING PACKETS TO BE SENT FROM JIT QUEUE AND SEND THEM &amp;mdash; */&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;thread_jit&lt;/code&gt;：&lt;code&gt;sig_handler&lt;/code&gt;、&lt;code&gt;print_tx_status&lt;/code&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;/* &amp;mdash; THREAD 4: PARSE GPS MESSAGE AND KEEP GATEWAY IN SYNC &amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;ndash; */&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;thread_gps&lt;/code&gt;：&lt;code&gt;gps_process_sync&lt;/code&gt;、&lt;code&gt;gps_process_coords&lt;/code&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;/* &amp;mdash; THREAD 5: CHECK TIME REFERENCE AND CALCULATE XTAL CORRECTION &amp;mdash;&amp;mdash;&amp;mdash; */&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;thread_valid&lt;/code&gt;：&lt;code&gt;sig_handler&lt;/code&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;7-修改c程序完成后想要让脚本跟着修改&#34;&gt;7 修改c程序完成后想要让脚本跟着修改&lt;/h1&gt;
 &lt;p&gt;在&lt;strong&gt;gw1302s&lt;/strong&gt;执行&lt;code&gt;make clean all&lt;/code&gt;，调用所有helper program的make clean
 再执行&lt;code&gt;make install&lt;/code&gt;，调用所有helper program的make install，把可执行程序都&lt;code&gt;scp&lt;/code&gt;到gw1302s/bin中&lt;/p&gt;
 </description>
@@ -1505,7 +1525,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-964521783&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-234657819&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -1515,7 +1535,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-964521783&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-234657819&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();

@@ -1163,23 +1163,43 @@ INFO: Exiting packet forwarder program
 </ol>
 <h1 id="4-问题">4 问题</h1>
 <ul>
-<li><input disabled="" type="checkbox"> <a href="https://gitee.com/rejeee/gw1302s/tree/master/packet_forwarder" target="_blank" rel="noopener">Just-In-Time&rdquo; downlink scheduling</a>：<code>jit_enqueue</code>：txpkt、beacon_pkt</li>
 <li><input disabled="" type="checkbox"> no GPS</li>
 <li><input disabled="" type="checkbox"> 外部文件函数调用，如parson.c里面的prase&hellip;json解析函数、base64.c的bin_to_b64/b64_to_bin</li>
-<li><input disabled="" type="checkbox"> thread理解</li>
 <li><input disabled="" type="checkbox"> c library function</li>
 <li><input disabled="" type="checkbox"> 变量含义</li>
 </ul>
-<h1 id="5-内部程序调用">5 内部程序调用</h1>
+<h1 id="5---just-in-time-downlink-schedulinghttpsgiteecomrejeeegw1302streemasterpacket_forwarder">5 - <a href="https://gitee.com/rejeee/gw1302s/tree/master/packet_forwarder" target="_blank" rel="noopener">Just-In-Time&rdquo; downlink scheduling</a></h1>
+<h1 id="51-tx-scheduling">5.1 TX scheduling</h1>
 <ol>
-<li><code>main</code>：<code>usage</code>、<code>parse_SX130x_configuration</code>、<code>parse_gateway_configuration</code>、<code>parse_debug_configuration</code>、<code>sig_handler</code>、<code>5 threads</code></li>
-<li><code>thread_down</code>：<code>sig_handler</code>、<code>difftimespec</code>、<code>crc16</code>、<code>get_tx_gain_lut_index</code>、<code>send_tx_ack</code></li>
-<li><code>thread_up</code>：<code>sig_handler</code>、<code>difftimespec</code></li>
-<li><code>thread_jit</code>：<code>sig_handler</code>、<code>print_tx_status</code></li>
-<li><code>thread_gps</code>：<code>gps_process_sync</code>、<code>gps_process_coords</code></li>
-<li><code>thread_valid</code>：<code>sig_handler</code></li>
+<li>TX packet：txpkt</li>
+<li>Beacon：beacon_pkt</li>
 </ol>
-<h1 id="6-修改c程序完成后想要让脚本跟着修改">6 修改c程序完成后想要让脚本跟着修改</h1>
+<p><code>jit_enqueue</code>：对应THREAD 2</p>
+<p><code>jit_peek</code>：对应THREAD 3</p>
+<p><code>jit_dequeue</code>：对应THREAD 3</p>
+<blockquote>
+<p>Possible failures that may occur and that have to be reported to the server are: &hellip;</p>
+</blockquote>
+<p>通过<code>send_tx_ack</code>完成</p>
+<h1 id="6-程序与线程理解">6 程序与线程理解</h1>
+<p><code>main</code>：<code>usage</code>、<code>parse_SX130x_configuration</code>、<code>parse_gateway_configuration</code>、<code>parse_debug_configuration</code>、<code>sig_handler</code>、<code>5 threads</code></p>
+<hr>
+<p>/* &mdash; THREAD 1: RECEIVING PACKETS AND FORWARDING THEM &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;- */</p>
+<p><code>thread_up</code>：<code>sig_handler</code>、<code>difftimespec</code></p>
+<hr>
+<p>/* &mdash; THREAD 2: POLLING SERVER AND ENQUEUING PACKETS IN JIT QUEUE &mdash;&mdash;&mdash;- */</p>
+<p><code>thread_down</code>：<code>sig_handler</code>、<code>difftimespec</code>、<code>crc16</code>、<code>get_tx_gain_lut_index</code>、<code>send_tx_ack</code></p>
+<hr>
+<p>/* &mdash; THREAD 3: CHECKING PACKETS TO BE SENT FROM JIT QUEUE AND SEND THEM &mdash; */</p>
+<p><code>thread_jit</code>：<code>sig_handler</code>、<code>print_tx_status</code></p>
+<hr>
+<p>/* &mdash; THREAD 4: PARSE GPS MESSAGE AND KEEP GATEWAY IN SYNC &mdash;&mdash;&mdash;&mdash;&mdash;&ndash; */</p>
+<p><code>thread_gps</code>：<code>gps_process_sync</code>、<code>gps_process_coords</code></p>
+<hr>
+<p>/* &mdash; THREAD 5: CHECK TIME REFERENCE AND CALCULATE XTAL CORRECTION &mdash;&mdash;&mdash; */</p>
+<p><code>thread_valid</code>：<code>sig_handler</code></p>
+<hr>
+<h1 id="7-修改c程序完成后想要让脚本跟着修改">7 修改c程序完成后想要让脚本跟着修改</h1>
 <p>在<strong>gw1302s</strong>执行<code>make clean all</code>，调用所有helper program的make clean
 再执行<code>make install</code>，调用所有helper program的make install，把可执行程序都<code>scp</code>到gw1302s/bin中</p>
 
