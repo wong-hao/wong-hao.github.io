@@ -426,33 +426,40 @@ INFO: Exiting packet forwarder program
 &lt;h2 id=&#34;31-json&#34;&gt;3.1 json&lt;/h2&gt;
 &lt;h2 id=&#34;32-thread&#34;&gt;3.2 thread&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/yusiguyuan/article/details/40627775&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;pthread_mutex_lock()/pthread_mutex_unlock()&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/yusiguyuan/article/details/40627775&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;pthread_mutex_lock()/pthread_mutex_unlock()&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/zyex1108/article/details/45154211&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;time()&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.runoob.com/cprogramming/c-function-gmtime.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;gtime()&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/SanQi_Abao/article/details/94964665&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;strftime()&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/weixin_44880138/article/details/102605681&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;clock_gettime&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/zyex1108/article/details/45154211&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;time()&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.runoob.com/cprogramming/c-function-gmtime.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;gtime()&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/SanQi_Abao/article/details/94964665&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;strftime()&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/weixin_44880138/article/details/102605681&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;clock_gettime&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;33-socket&#34;&gt;3.3 socket&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/z735640642/article/details/84306589&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;setsockopt()&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.cnblogs.com/fnlingnzb-learner/p/8523206.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;recv&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/z735640642/article/details/84306589&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;setsockopt()&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.cnblogs.com/fnlingnzb-learner/p/8523206.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;recv&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h1 id=&#34;4-问题&#34;&gt;4 问题&lt;/h1&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 函数运行顺序&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Downstream&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;a href=&#34;https://gitee.com/rejeee/gw1302s/tree/master/packet_forwarder&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Just-In-Time&amp;rdquo; downlink scheduling&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; no GPS&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 函数相互调用情况，如主函数生成五种线程以管理上游和下游、GPS&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 调用外部文件函数，如parson.c里面的json解析函数、base64.c的加密/解密函数&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 外部文件函数调用，如parson.c里面的prase&amp;hellip;json解析函数、base64.c的bin_to_b64/b64_to_bin&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; thread理解&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; c library function&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 变量含义&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&#34;5-修改c程序完成后想要让脚本跟着修改&#34;&gt;5 修改c程序完成后想要让脚本跟着修改&lt;/h1&gt;
+&lt;h1 id=&#34;5-内部程序调用&#34;&gt;5 内部程序调用&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;main&lt;/code&gt;：&lt;code&gt;usage&lt;/code&gt;、&lt;code&gt;parse_SX130x_configuration&lt;/code&gt;、&lt;code&gt;parse_gateway_configuration&lt;/code&gt;、&lt;code&gt;parse_debug_configuration&lt;/code&gt;、&lt;code&gt;sig_handler&lt;/code&gt;、&lt;code&gt;5 threads&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;thread_down&lt;/code&gt;：&lt;code&gt;sig_handler&lt;/code&gt;、&lt;code&gt;difftimespec&lt;/code&gt;、&lt;code&gt;crc16&lt;/code&gt;、&lt;code&gt;get_tx_gain_lut_index&lt;/code&gt;、&lt;code&gt;send_tx_ack&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;thread_up&lt;/code&gt;：&lt;code&gt;sig_handler&lt;/code&gt;、&lt;code&gt;difftimespec&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;thread_jit&lt;/code&gt;：&lt;code&gt;sig_handler&lt;/code&gt;、&lt;code&gt;print_tx_status&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;thread_gps&lt;/code&gt;：&lt;code&gt;gps_process_sync&lt;/code&gt;、&lt;code&gt;gps_process_coords&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;thread_valid&lt;/code&gt;：&lt;code&gt;sig_handler&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;6-修改c程序完成后想要让脚本跟着修改&#34;&gt;6 修改c程序完成后想要让脚本跟着修改&lt;/h1&gt;
 &lt;p&gt;在&lt;strong&gt;gw1302s&lt;/strong&gt;执行&lt;code&gt;make clean all&lt;/code&gt;，调用所有helper program的make clean
 再执行&lt;code&gt;make install&lt;/code&gt;，调用所有helper program的make install，把可执行程序都&lt;code&gt;scp&lt;/code&gt;到gw1302s/bin中&lt;/p&gt;
 </description>
@@ -1498,7 +1505,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-413279586&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-965821374&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -1508,7 +1515,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-413279586&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-965821374&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();

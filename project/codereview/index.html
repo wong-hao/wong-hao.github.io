@@ -1146,33 +1146,40 @@ INFO: Exiting packet forwarder program
 <h2 id="31-json">3.1 json</h2>
 <h2 id="32-thread">3.2 thread</h2>
 <ol>
-<li><a href="https://blog.csdn.net/yusiguyuan/article/details/40627775" target="_blank" rel="noopener">pthread_mutex_lock()/pthread_mutex_unlock()</a></li>
+<li><a href="https://blog.csdn.net/yusiguyuan/article/details/40627775" target="_blank" rel="noopener"><code>pthread_mutex_lock()/pthread_mutex_unlock()</code></a></li>
 <li>
 <ul>
-<li><a href="https://blog.csdn.net/zyex1108/article/details/45154211" target="_blank" rel="noopener">time()</a></li>
-<li><a href="https://www.runoob.com/cprogramming/c-function-gmtime.html" target="_blank" rel="noopener">gtime()</a></li>
-<li><a href="https://blog.csdn.net/SanQi_Abao/article/details/94964665" target="_blank" rel="noopener">strftime()</a></li>
-<li><a href="https://blog.csdn.net/weixin_44880138/article/details/102605681" target="_blank" rel="noopener">clock_gettime</a></li>
+<li><a href="https://blog.csdn.net/zyex1108/article/details/45154211" target="_blank" rel="noopener"><code>time()</code></a></li>
+<li><a href="https://www.runoob.com/cprogramming/c-function-gmtime.html" target="_blank" rel="noopener"><code>gtime()</code></a></li>
+<li><a href="https://blog.csdn.net/SanQi_Abao/article/details/94964665" target="_blank" rel="noopener"><code>strftime()</code></a></li>
+<li><a href="https://blog.csdn.net/weixin_44880138/article/details/102605681" target="_blank" rel="noopener"><code>clock_gettime</code></a></li>
 </ul>
 </li>
 </ol>
 <h2 id="33-socket">3.3 socket</h2>
 <ol>
-<li><a href="https://blog.csdn.net/z735640642/article/details/84306589" target="_blank" rel="noopener">setsockopt()</a></li>
-<li><a href="https://www.cnblogs.com/fnlingnzb-learner/p/8523206.html" target="_blank" rel="noopener">recv</a></li>
+<li><a href="https://blog.csdn.net/z735640642/article/details/84306589" target="_blank" rel="noopener"><code>setsockopt()</code></a></li>
+<li><a href="https://www.cnblogs.com/fnlingnzb-learner/p/8523206.html" target="_blank" rel="noopener"><code>recv</code></a></li>
 </ol>
 <h1 id="4-问题">4 问题</h1>
 <ul>
-<li><input disabled="" type="checkbox"> 函数运行顺序</li>
-<li><input disabled="" type="checkbox"> Downstream</li>
+<li><input disabled="" type="checkbox"> <a href="https://gitee.com/rejeee/gw1302s/tree/master/packet_forwarder" target="_blank" rel="noopener">Just-In-Time&rdquo; downlink scheduling</a></li>
 <li><input disabled="" type="checkbox"> no GPS</li>
-<li><input disabled="" type="checkbox"> 函数相互调用情况，如主函数生成五种线程以管理上游和下游、GPS</li>
-<li><input disabled="" type="checkbox"> 调用外部文件函数，如parson.c里面的json解析函数、base64.c的加密/解密函数</li>
+<li><input disabled="" type="checkbox"> 外部文件函数调用，如parson.c里面的prase&hellip;json解析函数、base64.c的bin_to_b64/b64_to_bin</li>
 <li><input disabled="" type="checkbox"> thread理解</li>
 <li><input disabled="" type="checkbox"> c library function</li>
 <li><input disabled="" type="checkbox"> 变量含义</li>
 </ul>
-<h1 id="5-修改c程序完成后想要让脚本跟着修改">5 修改c程序完成后想要让脚本跟着修改</h1>
+<h1 id="5-内部程序调用">5 内部程序调用</h1>
+<ol>
+<li><code>main</code>：<code>usage</code>、<code>parse_SX130x_configuration</code>、<code>parse_gateway_configuration</code>、<code>parse_debug_configuration</code>、<code>sig_handler</code>、<code>5 threads</code></li>
+<li><code>thread_down</code>：<code>sig_handler</code>、<code>difftimespec</code>、<code>crc16</code>、<code>get_tx_gain_lut_index</code>、<code>send_tx_ack</code></li>
+<li><code>thread_up</code>：<code>sig_handler</code>、<code>difftimespec</code></li>
+<li><code>thread_jit</code>：<code>sig_handler</code>、<code>print_tx_status</code></li>
+<li><code>thread_gps</code>：<code>gps_process_sync</code>、<code>gps_process_coords</code></li>
+<li><code>thread_valid</code>：<code>sig_handler</code></li>
+</ol>
+<h1 id="6-修改c程序完成后想要让脚本跟着修改">6 修改c程序完成后想要让脚本跟着修改</h1>
 <p>在<strong>gw1302s</strong>执行<code>make clean all</code>，调用所有helper program的make clean
 再执行<code>make install</code>，调用所有helper program的make install，把可执行程序都<code>scp</code>到gw1302s/bin中</p>
 
