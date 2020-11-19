@@ -262,7 +262,7 @@ INFO: Exiting packet forwarder program
 &lt;/ol&gt;
 &lt;h1 id=&#34;4-问题&#34;&gt;4 问题&lt;/h1&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;a href=&#34;https://gitee.com/rejeee/gw1302s/tree/master/packet_forwarder&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Just-In-Time&amp;rdquo; downlink scheduling&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;a href=&#34;https://gitee.com/rejeee/gw1302s/tree/master/packet_forwarder&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Just-In-Time&amp;rdquo; downlink scheduling&lt;/a&gt;：&lt;code&gt;jit_enqueue&lt;/code&gt;：txpkt、beacon_pkt&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; no GPS&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 外部文件函数调用，如parson.c里面的prase&amp;hellip;json解析函数、base64.c的bin_to_b64/b64_to_bin&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; thread理解&lt;/li&gt;
