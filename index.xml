@@ -365,6 +365,7 @@ INFO: Configuring SX1250_1 in single input mode
 INFO: [main] concentrator started, packet can now be received
 INFO: concentrator EUI: 0x0016c001ff10d3f6
 &lt;/code&gt;&lt;/pre&gt;
+&lt;hr&gt;
 &lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;//thread_up(): start of JSON structure
 INFO: Received pkt from mote: 1350200C (fcnt=13)
 
@@ -378,33 +379,38 @@ INFO: [down] PULL_ACK received in 34ms
 
 //main(): display a report (status report)
 ##### 2020-10-18 10:49:51 GMT #####
+
 ### [UPSTREAM] ###
-# RF packets received by concentrator: 1
-# CRC_OK: 100.00%, CRC_FAIL: 0.00%, NO_CRC: 0.00%
-# RF packets forwarded: 1 (13 bytes)
-# PUSH_DATA datagrams sent: 2 (360 bytes)
-# PUSH_DATA acknowledeged: 100.00%
+# RF packets received by concentrator: 1 //thread_up
+# CRC_OK: 100.00%, CRC_FAIL: 0.00%, NO_CRC: 0.00% //thread_up
+# RF packets forwarded: 1 (13 bytes) //thread_up
+# PUSH_DATA datagrams sent: 2 (360 bytes) //PUSH_DATA：thread_up
+# PUSH_DATA acknowledeged: 100.00% //PUSH_ACK：thread_up
+
 ### [DOWNSTREAM] ###
-# PULL_DATA sent: 3 (100.00%)
-# PULL_RESP(onse) datagrams received: 0 (0 bytes)
-# RF packets sent to concentrator: 0 (0 bytes)
-# TX errors: 0
+# PULL_DATA sent: 3 (100.00%) //PULL_DATA(PULL_ACK：thread_down
+# PULL_RESP(onse) datagrams received: 0 (0 bytes) //PULL_RESP：thread_down
+# RF packets sent to concentrator: 0 (0 bytes) //thread_jit
+# TX errors: 0 //thread_jit
+
 ### SX1302 Status ###
 # SX1302 counter (INST): 150921885
 # SX1302 counter (PPS): 0
-# BEACON queued: 0
-# BEACON sent so far: 0
-# BEACON rejected: 0
+# BEACON queued: 0 //thread_down
+# BEACON sent so far: 0 //thread_jit
+# BEACON rejected: 0 //thread_down
+
 ### [JIT] ###
-src/jitqueue.c:442:jit_print_queue(): INFO: [jit] queue is empty
+src/jitqueue.c:442:jit_print_queue(): INFO: [jit] queue is empty //thread_down
 #--------
-src/jitqueue.c:442:jit_print_queue(): INFO: [jit] queue is empty
+src/jitqueue.c:442:jit_print_queue(): INFO: [jit] queue is empty //thread_down
+
 ### [GPS] ###
 # GPS sync is disabled
 ### Concentrator temperature 0 C ###
 ##### END #####
-
-//main(): generate a JSON report (will be sent to server by upstream thread)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;//main(): generate a JSON report (will be sent to server by upstream thread)
 JSON up: {&amp;quot;stat&amp;quot;:{&amp;quot;time&amp;quot;:&amp;quot;2020-10-18 10:49:51 GMT&amp;quot;,&amp;quot;rxnb&amp;quot;:1,&amp;quot;rxok&amp;quot;:1,&amp;quot;rxfw&amp;quot;:1,&amp;quot;ackr&amp;quot;:100.0,&amp;quot;dwnb&amp;quot;:0,&amp;quot;txnb&amp;quot;:0,&amp;quot;temp&amp;quot;:0.0}}
 
 //thread_up():  send datagram to server + wait for acknowledge (in 2 times, to catch extra packets)
@@ -414,6 +420,7 @@ INFO: [up] PUSH_ACK received in 34ms
 INFO: [down] PULL_ACK received in 35ms
 INFO: [down] PULL_ACK received in 37ms
 &lt;/code&gt;&lt;/pre&gt;
+&lt;hr&gt;
 &lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;//thread_up()
 INFO: End of upstream thread
 
@@ -443,7 +450,7 @@ INFO: Exiting packet forwarder program
 &lt;/ol&gt;
 &lt;h1 id=&#34;4-问题&#34;&gt;4 问题&lt;/h1&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; no GPS&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; GPS相关，如reference&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 外部文件函数调用，如parson.c里面的prase&amp;hellip;json解析函数、base64.c的bin_to_b64/b64_to_bin&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; c library function&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 变量含义&lt;/li&gt;
@@ -461,8 +468,17 @@ INFO: Exiting packet forwarder program
 &lt;p&gt;Possible failures that may occur and that have to be reported to the server are: &amp;hellip;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;通过&lt;code&gt;send_tx_ack&lt;/code&gt;完成&lt;/p&gt;
-&lt;h1 id=&#34;6-程序与线程理解&#34;&gt;6 程序与线程理解&lt;/h1&gt;
-&lt;p&gt;&lt;code&gt;main&lt;/code&gt;：&lt;code&gt;usage&lt;/code&gt;、&lt;code&gt;parse_SX130x_configuration&lt;/code&gt;、&lt;code&gt;parse_gateway_configuration&lt;/code&gt;、&lt;code&gt;parse_debug_configuration&lt;/code&gt;、&lt;code&gt;sig_handler&lt;/code&gt;、&lt;code&gt;5 threads&lt;/code&gt;&lt;/p&gt;
+&lt;h1 id=&#34;6-程序调用与线程理解&#34;&gt;6 程序调用与线程理解&lt;/h1&gt;
+&lt;p&gt;&lt;code&gt;main&lt;/code&gt;：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;usage&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;parse_SX130x_configuration&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;parse_gateway_configuration&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;parse_debug_configuration&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sig_handler&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;5 threads&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;2~4显示固定内容，thread_up显示UPSTREAM json内容，main显示5 threads得到的统计内容&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;/* &amp;mdash; THREAD 1: RECEIVING PACKETS AND FORWARDING THEM &amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;- */&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;thread_up&lt;/code&gt;：&lt;code&gt;sig_handler&lt;/code&gt;、&lt;code&gt;difftimespec&lt;/code&gt;&lt;/p&gt;
@@ -1525,7 +1541,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-234657819&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-392174568&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -1535,7 +1551,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-234657819&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-392174568&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
