@@ -202,22 +202,25 @@ INFO: [down] PULL_ACK received in 34ms
 ### [UPSTREAM] ###
 # RF packets received by concentrator: 1 //thread_up
 # CRC_OK: 100.00%, CRC_FAIL: 0.00%, NO_CRC: 0.00% //thread_up
-# RF packets forwarded: 1 (13 bytes) //thread_up
-# PUSH_DATA datagrams sent: 2 (360 bytes) //PUSH_DATA：thread_up
+# RF packets forwarded: 1 (13 bytes) //thread_up(thread_up)
+# PUSH_DATA datagrams sent: 2 (360 bytes) //PUSH_DATA：thread_up(thread_up)
 # PUSH_DATA acknowledeged: 100.00% //PUSH_ACK：thread_up
 
 ### [DOWNSTREAM] ###
-# PULL_DATA sent: 3 (100.00%) //PULL_DATA(PULL_ACK：thread_down
-# PULL_RESP(onse) datagrams received: 0 (0 bytes) //PULL_RESP：thread_down
-# RF packets sent to concentrator: 0 (0 bytes) //thread_jit
-# TX errors: 0 //thread_jit
+# PULL_DATA sent: 3 (100.00%) //PULL_DATA(PULL_ACK)：thread_down
+# PULL_RESP(onse) datagrams received: 0 (0 bytes) //PULL_RESP：thread_down(thread_down)
+/*一个RF都没有发送当然没有出现任何错误了*/
+# RF packets sent to concentrator: 0 (0 bytes) //thread_jit/thread_down
+# TX errors: 0 //TX_ACK：thread_jit：lgw_send
+# TX rejected... //TX_ACK：thread_down：send_tx_ack
+
 
 ### SX1302 Status ###
 # SX1302 counter (INST): 150921885
 # SX1302 counter (PPS): 0
-# BEACON queued: 0 //thread_down
-# BEACON sent so far: 0 //thread_jit
-# BEACON rejected: 0 //thread_down
+# BEACON queued: 0 //thread_down：jit_enqueue
+# BEACON sent so far: 0 //thread_jit：jit_peek/jit_dequeue
+# BEACON rejected: 0 //thread_down：jit_enqueue
 
 ### [JIT] ###
 src/jitqueue.c:442:jit_print_queue(): INFO: [jit] queue is empty //thread_down
@@ -276,13 +279,16 @@ INFO: Exiting packet forwarder program
 &lt;/ul&gt;
 &lt;h1 id=&#34;5---just-in-time-downlink-schedulinghttpsgiteecomrejeeegw1302streemasterpacket_forwarder&#34;&gt;5 - &lt;a href=&#34;https://gitee.com/rejeee/gw1302s/tree/master/packet_forwarder&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Just-In-Time&amp;rdquo; downlink scheduling&lt;/a&gt;&lt;/h1&gt;
 &lt;h1 id=&#34;51-tx-scheduling&#34;&gt;5.1 TX scheduling&lt;/h1&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;TX在RF chain上实现，即jit_queue与其有关&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;TX packet：txpkt&lt;/li&gt;
 &lt;li&gt;Beacon：beacon_pkt&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;code&gt;jit_enqueue&lt;/code&gt;：对应THREAD 2&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;jit_peek&lt;/code&gt;：对应THREAD 3&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;jit_dequeue&lt;/code&gt;：对应THREAD 3&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;code&gt;jit_enqueue&lt;/code&gt;：对应THREAD 2：thread_down&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;jit_peek&lt;/code&gt;：对应THREAD 3：thread_jit&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;jit_dequeue&lt;/code&gt;：对应THREAD 3：thread_jit&lt;/p&gt;
+&lt;p&gt;jit函数具体实现在&lt;strong&gt;packet_forwarder\src\jitqueue.c&lt;/strong&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Possible failures that may occur and that have to be reported to the server are: &amp;hellip;&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -300,19 +306,41 @@ INFO: Exiting packet forwarder program
 &lt;p&gt;2~4显示固定内容，thread_up显示UPSTREAM json内容，main显示5 threads得到的统计内容&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;/* &amp;mdash; THREAD 1: RECEIVING PACKETS AND FORWARDING THEM &amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;- */&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;thread_up&lt;/code&gt;：&lt;code&gt;sig_handler&lt;/code&gt;、&lt;code&gt;difftimespec&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;thread_up&lt;/code&gt;：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;sig_handler&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;difftimespec&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
 &lt;hr&gt;
 &lt;p&gt;/* &amp;mdash; THREAD 2: POLLING SERVER AND ENQUEUING PACKETS IN JIT QUEUE &amp;mdash;&amp;mdash;&amp;mdash;- */&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;thread_down&lt;/code&gt;：&lt;code&gt;sig_handler&lt;/code&gt;、&lt;code&gt;difftimespec&lt;/code&gt;、&lt;code&gt;crc16&lt;/code&gt;、&lt;code&gt;get_tx_gain_lut_index&lt;/code&gt;、&lt;code&gt;send_tx_ack&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;thread_down&lt;/code&gt;：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;sig_handler&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;difftimespec&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;crc16&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;get_tx_gain_lut_index&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;send_tx_ack&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
 &lt;hr&gt;
 &lt;p&gt;/* &amp;mdash; THREAD 3: CHECKING PACKETS TO BE SENT FROM JIT QUEUE AND SEND THEM &amp;mdash; */&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;thread_jit&lt;/code&gt;：&lt;code&gt;sig_handler&lt;/code&gt;、&lt;code&gt;print_tx_status&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;thread_jit&lt;/code&gt;：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;sig_handler&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;print_tx_status&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
 &lt;hr&gt;
 &lt;p&gt;/* &amp;mdash; THREAD 4: PARSE GPS MESSAGE AND KEEP GATEWAY IN SYNC &amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;ndash; */&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;thread_gps&lt;/code&gt;：&lt;code&gt;gps_process_sync&lt;/code&gt;、&lt;code&gt;gps_process_coords&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;thread_gps&lt;/code&gt;：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;gps_process_sync&lt;/code&gt;、&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;gps_process_coords&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
 &lt;hr&gt;
 &lt;p&gt;/* &amp;mdash; THREAD 5: CHECK TIME REFERENCE AND CALCULATE XTAL CORRECTION &amp;mdash;&amp;mdash;&amp;mdash; */&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;thread_valid&lt;/code&gt;：&lt;code&gt;sig_handler&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;thread_valid&lt;/code&gt;：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;sig_handler&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
 &lt;hr&gt;
 &lt;h1 id=&#34;7-修改c程序完成后想要让脚本跟着修改&#34;&gt;7 修改c程序完成后想要让脚本跟着修改&lt;/h1&gt;
 &lt;p&gt;在&lt;strong&gt;gw1302s&lt;/strong&gt;执行&lt;code&gt;make clean all&lt;/code&gt;，调用所有helper program的make clean
