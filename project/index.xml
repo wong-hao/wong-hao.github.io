@@ -406,9 +406,8 @@ ERROR: [main] failed to start the concentrator
 &lt;p&gt;&lt;a href=&#34;https://gitee.com/rejeee/gw1302s/commit/b06b85a7c87fce9f7d462f55b5913a3dc0c47df9&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Gitee版本代码&lt;/a&gt;相比&lt;a href=&#34;https://github.com/Lora-net/sx1302_hal/commit/6291e62ef9a161ae41037a0df1a86e9943a907b9&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Github&lt;/a&gt;做了三点改变：
 &lt;strong&gt;&lt;em&gt;其实Gitee之前的commit全部是copy的Github，就最后改了下&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;使用&lt;code&gt;#if USE_I2C_SENSOR ... #endif&lt;/code&gt;消除温度传感器I2C（&lt;em&gt;据说不注释掉不能启动&lt;/em&gt;）&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;boardconf.lorawan_public = true&lt;/strong&gt;改成了&lt;strong&gt;boardconf.lorawan_public = false&lt;/strong&gt;
-（&lt;em&gt;完全不影响&lt;/em&gt;）&lt;/li&gt;
+&lt;li&gt;使用&lt;code&gt;#if USE_I2C_SENSOR ... #endif&lt;/code&gt;注释了 I2C 接口的温度传感器代码（&lt;em&gt;据说不注释掉不能启动&lt;/em&gt;）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;boardconf.lorawan_public = true&lt;/strong&gt;改成了&lt;strong&gt;boardconf.lorawan_public = false&lt;/strong&gt;，收发测试程序的同步字修改为 &lt;strong&gt;private&lt;/strong&gt; 即 &lt;strong&gt;0x12&lt;/strong&gt;；但这与安装生成的&lt;strong&gt;global.config&lt;/strong&gt;文件中的同步字设置不同，故实际收发与测试时，终端同步字设置相反&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;SX1302_RESET_PIN=23&lt;/strong&gt;改成了&lt;strong&gt;SX1302_RESET_PIN=7&lt;/strong&gt;且去掉了GPIO18相关代码
 （&lt;em&gt;GPIO7存在才能启动，GPIO18改不改没关系&lt;/em&gt;）&lt;/li&gt;
 &lt;/ol&gt;

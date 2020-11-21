@@ -937,9 +937,8 @@ ERROR: [main] failed to start the concentrator
 <p><a href="https://gitee.com/rejeee/gw1302s/commit/b06b85a7c87fce9f7d462f55b5913a3dc0c47df9" target="_blank" rel="noopener">Gitee版本代码</a>相比<a href="https://github.com/Lora-net/sx1302_hal/commit/6291e62ef9a161ae41037a0df1a86e9943a907b9" target="_blank" rel="noopener">Github</a>做了三点改变：
 <strong><em>其实Gitee之前的commit全部是copy的Github，就最后改了下</em></strong></p>
 <ol>
-<li>使用<code>#if USE_I2C_SENSOR ... #endif</code>消除温度传感器I2C（<em>据说不注释掉不能启动</em>）</li>
-<li><strong>boardconf.lorawan_public = true</strong>改成了<strong>boardconf.lorawan_public = false</strong>
-（<em>完全不影响</em>）</li>
+<li>使用<code>#if USE_I2C_SENSOR ... #endif</code>注释了 I2C 接口的温度传感器代码（<em>据说不注释掉不能启动</em>）</li>
+<li><strong>boardconf.lorawan_public = true</strong>改成了<strong>boardconf.lorawan_public = false</strong>，收发测试程序的同步字修改为 <strong>private</strong> 即 <strong>0x12</strong>；但这与安装生成的<strong>global.config</strong>文件中的同步字设置不同，故实际收发与测试时，终端同步字设置相反</li>
 <li><strong>SX1302_RESET_PIN=23</strong>改成了<strong>SX1302_RESET_PIN=7</strong>且去掉了GPIO18相关代码
 （<em>GPIO7存在才能启动，GPIO18改不改没关系</em>）</li>
 </ol>
