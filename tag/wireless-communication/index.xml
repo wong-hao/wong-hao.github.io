@@ -369,7 +369,14 @@ INFO: concentrator stopped successfully
 CoreCell reset through GPIO7...
 INFO: Exiting packet forwarder program
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;33-protocolhttpsgiteecomrejeeegw1302sblobmasterpacket_forwarderprotocolmd&#34;&gt;3.3 &lt;a href=&#34;https://gitee.com/rejeee/gw1302s/blob/master/packet_forwarder/PROTOCOL.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;PROTOCOL&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;33-communication-process&#34;&gt;3.3 Communication process&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://gitee.com/rejeee/gw1302s/blob/master/packet_forwarder/PROTOCOL.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;PROTOCOL&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVJ4VTcxc1RCNFJEaFhVU0RUTXlXdU1CNHc1NHQyZ3JhT3NvdUpVckszYkt0dz9lPUVoWXBMdw==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoRaWAN Network Server Demonstration:
+Gateway to Server Interface Definition&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWV6TEpyY0lBMEJBbUpGQVlpN0NpcDRCWENDZEVFWm43RjZ6SXVJbmlvUDZzZz9lPUhQdGE5bA==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoRaWAN Network Server Demonstration:
+Inter-Server interface definition&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
 &lt;h1 id=&#34;4-修改c程序完成后想要让脚本跟着修改&#34;&gt;4 修改c程序完成后想要让脚本跟着修改&lt;/h1&gt;
 &lt;p&gt;在&lt;strong&gt;gw1302s&lt;/strong&gt;执行&lt;code&gt;make clean all&lt;/code&gt;，调用所有helper program的make clean
 再执行&lt;code&gt;make install&lt;/code&gt;，调用所有helper program的make install，把可执行程序都&lt;code&gt;scp&lt;/code&gt;到gw1302s/bin中&lt;/p&gt;
