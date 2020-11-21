@@ -277,8 +277,45 @@ INFO: Exiting packet forwarder program
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; c library function&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 变量含义&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&#34;5---just-in-time-downlink-schedulinghttpsgiteecomrejeeegw1302streemasterpacket_forwarder&#34;&gt;5 - &lt;a href=&#34;https://gitee.com/rejeee/gw1302s/tree/master/packet_forwarder&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Just-In-Time&amp;rdquo; downlink scheduling&lt;/a&gt;&lt;/h1&gt;
-&lt;h1 id=&#34;51-tx-scheduling&#34;&gt;5.1 TX scheduling&lt;/h1&gt;
+&lt;h1 id=&#34;5-外部函数调用&#34;&gt;5 外部函数调用&lt;/h1&gt;
+&lt;h2 id=&#34;51-c-library-function&#34;&gt;5.1 c library function&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include &amp;lt;stdint.h&amp;gt;         /* C99 types */
+#include &amp;lt;stdbool.h&amp;gt;        /* bool type */
+#include &amp;lt;stdio.h&amp;gt;          /* printf, fprintf, snprintf, fopen, fputs */
+#include &amp;lt;inttypes.h&amp;gt;       /* PRIx64, PRIu64... */
+
+#include &amp;lt;string.h&amp;gt;         /* memset */
+#include &amp;lt;signal.h&amp;gt;         /* sigaction */
+#include &amp;lt;time.h&amp;gt;           /* time, clock_gettime, strftime, gmtime */
+#include &amp;lt;sys/time.h&amp;gt;       /* timeval */
+#include &amp;lt;unistd.h&amp;gt;         /* getopt, access */
+#include &amp;lt;stdlib.h&amp;gt;         /* atoi, exit */
+#include &amp;lt;errno.h&amp;gt;          /* error messages */
+#include &amp;lt;math.h&amp;gt;           /* modf */
+
+#include &amp;lt;sys/socket.h&amp;gt;     /* socket specific definitions */
+#include &amp;lt;netinet/in.h&amp;gt;     /* INET constants and stuff */
+#include &amp;lt;arpa/inet.h&amp;gt;      /* IP address conversion stuff */
+#include &amp;lt;netdb.h&amp;gt;          /* gai_strerror */
+
+#include &amp;lt;pthread.h&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;52-libtools&#34;&gt;5.2 libtools&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include &amp;quot;parson.h&amp;quot;  //.. / libtools / src / parson.c
+#include &amp;quot;base64.h&amp;quot; //.. / libtools / src / base64.c
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;53-libloragw&#34;&gt;5.3 libloragw&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include &amp;quot;loragw_hal.h&amp;quot; //.. / libloragw / src / loragw_hal.c
+#include &amp;quot;loragw_aux.h&amp;quot; //.. / libloragw / src / loragw_aux.c
+#include &amp;quot;loragw_reg.h&amp;quot; //.. / libloragw / src / loragw_reg.c
+#include &amp;quot;loragw_gps.h&amp;quot; //.. / libloragw / src / loragw_gps.c
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;54-jitqueue&#34;&gt;5.4 jitqueue&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include &amp;quot;jitqueue.h&amp;quot; //.. / packet_forwarder / src / jitqueue.c
+#include &amp;quot;trace.h&amp;quot; //.. / packet_forwarder / inc / trace.h
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;a href=&#34;https://gitee.com/rejeee/gw1302s/tree/master/packet_forwarder&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Just-In-Time&amp;rdquo; downlink scheduling&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;541-tx-scheduling&#34;&gt;5.4.1 TX scheduling&lt;/h3&gt;
 &lt;p&gt;&lt;em&gt;&lt;strong&gt;TX在RF chain上实现，即jit_queue与其有关&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;TX packet：txpkt&lt;/li&gt;
@@ -288,12 +325,11 @@ INFO: Exiting packet forwarder program
 &lt;p&gt;&lt;code&gt;jit_enqueue&lt;/code&gt;：对应THREAD 2：thread_down&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;jit_peek&lt;/code&gt;：对应THREAD 3：thread_jit&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;jit_dequeue&lt;/code&gt;：对应THREAD 3：thread_jit&lt;/p&gt;
-&lt;p&gt;jit函数具体实现在&lt;strong&gt;packet_forwarder\src\jitqueue.c&lt;/strong&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Possible failures that may occur and that have to be reported to the server are: &amp;hellip;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;通过&lt;code&gt;send_tx_ack&lt;/code&gt;完成&lt;/p&gt;
-&lt;h1 id=&#34;6-程序调用与线程理解&#34;&gt;6 程序调用与线程理解&lt;/h1&gt;
+&lt;h1 id=&#34;6-内部程序调用与线程理解&#34;&gt;6 内部程序调用与线程理解&lt;/h1&gt;
 &lt;p&gt;&lt;code&gt;main&lt;/code&gt;：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;code&gt;usage&lt;/code&gt;&lt;/li&gt;

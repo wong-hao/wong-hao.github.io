@@ -1178,8 +1178,45 @@ INFO: Exiting packet forwarder program
 <li><input disabled="" type="checkbox"> c library function</li>
 <li><input disabled="" type="checkbox"> 变量含义</li>
 </ul>
-<h1 id="5---just-in-time-downlink-schedulinghttpsgiteecomrejeeegw1302streemasterpacket_forwarder">5 - <a href="https://gitee.com/rejeee/gw1302s/tree/master/packet_forwarder" target="_blank" rel="noopener">Just-In-Time&rdquo; downlink scheduling</a></h1>
-<h1 id="51-tx-scheduling">5.1 TX scheduling</h1>
+<h1 id="5-外部函数调用">5 外部函数调用</h1>
+<h2 id="51-c-library-function">5.1 c library function</h2>
+<pre><code class="language-cpp">#include &lt;stdint.h&gt;         /* C99 types */
+#include &lt;stdbool.h&gt;        /* bool type */
+#include &lt;stdio.h&gt;          /* printf, fprintf, snprintf, fopen, fputs */
+#include &lt;inttypes.h&gt;       /* PRIx64, PRIu64... */
+
+#include &lt;string.h&gt;         /* memset */
+#include &lt;signal.h&gt;         /* sigaction */
+#include &lt;time.h&gt;           /* time, clock_gettime, strftime, gmtime */
+#include &lt;sys/time.h&gt;       /* timeval */
+#include &lt;unistd.h&gt;         /* getopt, access */
+#include &lt;stdlib.h&gt;         /* atoi, exit */
+#include &lt;errno.h&gt;          /* error messages */
+#include &lt;math.h&gt;           /* modf */
+
+#include &lt;sys/socket.h&gt;     /* socket specific definitions */
+#include &lt;netinet/in.h&gt;     /* INET constants and stuff */
+#include &lt;arpa/inet.h&gt;      /* IP address conversion stuff */
+#include &lt;netdb.h&gt;          /* gai_strerror */
+
+#include &lt;pthread.h&gt;
+</code></pre>
+<h2 id="52-libtools">5.2 libtools</h2>
+<pre><code class="language-cpp">#include &quot;parson.h&quot;  //.. / libtools / src / parson.c
+#include &quot;base64.h&quot; //.. / libtools / src / base64.c
+</code></pre>
+<h2 id="53-libloragw">5.3 libloragw</h2>
+<pre><code class="language-cpp">#include &quot;loragw_hal.h&quot; //.. / libloragw / src / loragw_hal.c
+#include &quot;loragw_aux.h&quot; //.. / libloragw / src / loragw_aux.c
+#include &quot;loragw_reg.h&quot; //.. / libloragw / src / loragw_reg.c
+#include &quot;loragw_gps.h&quot; //.. / libloragw / src / loragw_gps.c
+</code></pre>
+<h2 id="54-jitqueue">5.4 jitqueue</h2>
+<pre><code class="language-cpp">#include &quot;jitqueue.h&quot; //.. / packet_forwarder / src / jitqueue.c
+#include &quot;trace.h&quot; //.. / packet_forwarder / inc / trace.h
+</code></pre>
+<p><a href="https://gitee.com/rejeee/gw1302s/tree/master/packet_forwarder" target="_blank" rel="noopener">Just-In-Time&rdquo; downlink scheduling</a></p>
+<h3 id="541-tx-scheduling">5.4.1 TX scheduling</h3>
 <p><em><strong>TX在RF chain上实现，即jit_queue与其有关</strong></em></p>
 <ol>
 <li>TX packet：txpkt</li>
@@ -1189,12 +1226,11 @@ INFO: Exiting packet forwarder program
 <p><code>jit_enqueue</code>：对应THREAD 2：thread_down</p>
 <p><code>jit_peek</code>：对应THREAD 3：thread_jit</p>
 <p><code>jit_dequeue</code>：对应THREAD 3：thread_jit</p>
-<p>jit函数具体实现在<strong>packet_forwarder\src\jitqueue.c</strong></p>
 <blockquote>
 <p>Possible failures that may occur and that have to be reported to the server are: &hellip;</p>
 </blockquote>
 <p>通过<code>send_tx_ack</code>完成</p>
-<h1 id="6-程序调用与线程理解">6 程序调用与线程理解</h1>
+<h1 id="6-内部程序调用与线程理解">6 内部程序调用与线程理解</h1>
 <p><code>main</code>：</p>
 <ol>
 <li><code>usage</code></li>
