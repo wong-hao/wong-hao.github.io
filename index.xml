@@ -196,8 +196,7 @@
       <link>https://haowong.com/project/codereview/</link>
       <pubDate>Wed, 21 Oct 2020 00:00:00 +0000</pubDate>
       <guid>https://haowong.com/project/codereview/</guid>
-      <description>&lt;h1 id=&#34;0-protocolhttpsgiteecomrejeeegw1302sblobmasterpacket_forwarderprotocolmd&#34;&gt;0 &lt;a href=&#34;https://gitee.com/rejeee/gw1302s/blob/master/packet_forwarder/PROTOCOL.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;PROTOCOL&lt;/a&gt;&lt;/h1&gt;
-&lt;h1 id=&#34;1-globalconfig&#34;&gt;1 global.config&lt;/h1&gt;
+      <description>&lt;h1 id=&#34;1-globalconfig&#34;&gt;1 global.config&lt;/h1&gt;
 &lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;{
     &amp;quot;SX130x_conf&amp;quot;: {
         &amp;quot;spidev_path&amp;quot;: &amp;quot;/dev/spidev0.0&amp;quot;,
@@ -292,12 +291,131 @@
         &amp;quot;log_file&amp;quot;: &amp;quot;loragw_hal.log&amp;quot;
     }
 }
-```cpp
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;2-外部函数调用&#34;&gt;2 外部函数调用&lt;/h1&gt;
+&lt;h2 id=&#34;21-c-library-function&#34;&gt;2.1 c library function&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include &amp;lt;stdint.h&amp;gt;         /* C99 types */
+#include &amp;lt;stdbool.h&amp;gt;        /* bool type */
+#include &amp;lt;stdio.h&amp;gt;          /* printf, fprintf, snprintf, fopen, fputs */
+#include &amp;lt;inttypes.h&amp;gt;       /* PRIx64, PRIu64... */
 
-# 2 从显示反推代码运行流程
+#include &amp;lt;string.h&amp;gt;         /* memset */
+#include &amp;lt;signal.h&amp;gt;         /* sigaction */
+#include &amp;lt;time.h&amp;gt;           /* time, clock_gettime, strftime, gmtime */
+#include &amp;lt;sys/time.h&amp;gt;       /* timeval */
+#include &amp;lt;unistd.h&amp;gt;         /* getopt, access */
+#include &amp;lt;stdlib.h&amp;gt;         /* atoi, exit */
+#include &amp;lt;errno.h&amp;gt;          /* error messages */
+#include &amp;lt;math.h&amp;gt;           /* modf */
 
-```cpp
-//main(): display version informations
+#include &amp;lt;sys/socket.h&amp;gt;     /* socket specific definitions */
+#include &amp;lt;netinet/in.h&amp;gt;     /* INET constants and stuff */
+#include &amp;lt;arpa/inet.h&amp;gt;      /* IP address conversion stuff */
+#include &amp;lt;netdb.h&amp;gt;          /* gai_strerror */
+
+#include &amp;lt;pthread.h&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;211-复杂函数&#34;&gt;2.1.1 复杂函数&lt;/h3&gt;
+&lt;h4 id=&#34;2111-thread&#34;&gt;2.1.1.1 thread&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/yusiguyuan/article/details/40627775&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;pthread_mutex_lock()/pthread_mutex_unlock()&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/zyex1108/article/details/45154211&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;time()&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.runoob.com/cprogramming/c-function-gmtime.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;gtime()&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/SanQi_Abao/article/details/94964665&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;strftime()&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/weixin_44880138/article/details/102605681&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;clock_gettime&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;2112-socket&#34;&gt;2.1.1.2 socket&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/z735640642/article/details/84306589&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;setsockopt()&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.cnblogs.com/fnlingnzb-learner/p/8523206.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;recv&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;22-libtools&#34;&gt;2.2 libtools&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include &amp;quot;parson.h&amp;quot;  //.. / libtools / src / parson.c
+#include &amp;quot;base64.h&amp;quot; //.. / libtools / src / base64.c
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;221-复杂函数&#34;&gt;2.2.1 复杂函数&lt;/h3&gt;
+&lt;p&gt;Json prase&lt;/p&gt;
+&lt;h2 id=&#34;23-libloragw&#34;&gt;2.3 libloragw&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include &amp;quot;loragw_hal.h&amp;quot; //.. / libloragw / src / loragw_hal.c
+#include &amp;quot;loragw_aux.h&amp;quot; //.. / libloragw / src / loragw_aux.c
+#include &amp;quot;loragw_reg.h&amp;quot; //.. / libloragw / src / loragw_reg.c
+#include &amp;quot;loragw_gps.h&amp;quot; //.. / libloragw / src / loragw_gps.c
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;24-jitqueue&#34;&gt;2.4 jitqueue&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include &amp;quot;jitqueue.h&amp;quot; //.. / packet_forwarder / src / jitqueue.c
+#include &amp;quot;trace.h&amp;quot; //.. / packet_forwarder / inc / trace.h
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;a href=&#34;https://gitee.com/rejeee/gw1302s/tree/master/packet_forwarder&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Just-In-Time&amp;rdquo; downlink scheduling&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;241-tx-scheduling&#34;&gt;2.4.1 TX scheduling&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;TX在RF chain上实现，即jit_queue与其有关&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;TX packet：txpkt&lt;/li&gt;
+&lt;li&gt;Beacon：beacon_pkt&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;code&gt;jit_enqueue&lt;/code&gt;：对应THREAD 2：thread_down&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;jit_peek&lt;/code&gt;：对应THREAD 3：thread_jit&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;jit_dequeue&lt;/code&gt;：对应THREAD 3：thread_jit&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Possible failures that may occur and that have to be reported to the server are: &amp;hellip;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;通过&lt;code&gt;send_tx_ack&lt;/code&gt;完成&lt;/p&gt;
+&lt;h1 id=&#34;3-内部程序调用与线程理解&#34;&gt;3 内部程序调用与线程理解&lt;/h1&gt;
+&lt;h2 id=&#34;31-理论&#34;&gt;3.1 理论&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;main&lt;/code&gt;：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;usage&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;parse_SX130x_configuration&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;parse_gateway_configuration&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;parse_debug_configuration&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sig_handler&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;5 threads&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;2~4显示固定内容，thread_up显示UPSTREAM json内容，main显示5 threads得到的统计内容&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;/* &amp;mdash; THREAD 1: RECEIVING PACKETS AND FORWARDING THEM &amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;- */&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;thread_up&lt;/code&gt;：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;sig_handler&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;difftimespec&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;p&gt;/* &amp;mdash; THREAD 2: POLLING SERVER AND ENQUEUING PACKETS IN JIT QUEUE &amp;mdash;&amp;mdash;&amp;mdash;- */&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;thread_down&lt;/code&gt;：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;sig_handler&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;difftimespec&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;crc16&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;get_tx_gain_lut_index&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;send_tx_ack&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;p&gt;/* &amp;mdash; THREAD 3: CHECKING PACKETS TO BE SENT FROM JIT QUEUE AND SEND THEM &amp;mdash; */&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;thread_jit&lt;/code&gt;：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;sig_handler&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;print_tx_status&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;p&gt;/* &amp;mdash; THREAD 4: PARSE GPS MESSAGE AND KEEP GATEWAY IN SYNC &amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;ndash; */&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;thread_gps&lt;/code&gt;：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;gps_process_sync&lt;/code&gt;、&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;gps_process_coords&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;p&gt;/* &amp;mdash; THREAD 5: CHECK TIME REFERENCE AND CALCULATE XTAL CORRECTION &amp;mdash;&amp;mdash;&amp;mdash; */&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;thread_valid&lt;/code&gt;：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;sig_handler&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;32-实证&#34;&gt;3.2 实证&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;//main(): display version informations
 *** Packet Forwarder ***
 Version: 1.0.5
 *** SX1302 HAL library version info ***
@@ -430,135 +548,16 @@ INFO: concentrator stopped successfully
 CoreCell reset through GPIO7...
 INFO: Exiting packet forwarder program
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h1 id=&#34;3-复杂函数&#34;&gt;3 复杂函数&lt;/h1&gt;
-&lt;h2 id=&#34;31-json&#34;&gt;3.1 json&lt;/h2&gt;
-&lt;h2 id=&#34;32-thread&#34;&gt;3.2 thread&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/yusiguyuan/article/details/40627775&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;pthread_mutex_lock()/pthread_mutex_unlock()&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/zyex1108/article/details/45154211&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;time()&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.runoob.com/cprogramming/c-function-gmtime.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;gtime()&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/SanQi_Abao/article/details/94964665&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;strftime()&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/weixin_44880138/article/details/102605681&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;clock_gettime&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;33-socket&#34;&gt;3.3 socket&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/z735640642/article/details/84306589&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;setsockopt()&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.cnblogs.com/fnlingnzb-learner/p/8523206.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;recv&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h1 id=&#34;4-问题&#34;&gt;4 问题&lt;/h1&gt;
+&lt;h2 id=&#34;33-protocolhttpsgiteecomrejeeegw1302sblobmasterpacket_forwarderprotocolmd&#34;&gt;3.3 &lt;a href=&#34;https://gitee.com/rejeee/gw1302s/blob/master/packet_forwarder/PROTOCOL.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;PROTOCOL&lt;/a&gt;&lt;/h2&gt;
+&lt;h1 id=&#34;4-修改c程序完成后想要让脚本跟着修改&#34;&gt;4 修改c程序完成后想要让脚本跟着修改&lt;/h1&gt;
+&lt;p&gt;在&lt;strong&gt;gw1302s&lt;/strong&gt;执行&lt;code&gt;make clean all&lt;/code&gt;，调用所有helper program的make clean
+再执行&lt;code&gt;make install&lt;/code&gt;，调用所有helper program的make install，把可执行程序都&lt;code&gt;scp&lt;/code&gt;到gw1302s/bin中&lt;/p&gt;
+&lt;h1 id=&#34;5-问题&#34;&gt;5 问题&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; GPS相关，如reference&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 温度相关&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 变量含义&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&#34;5-外部函数调用&#34;&gt;5 外部函数调用&lt;/h1&gt;
-&lt;h2 id=&#34;51-c-library-function&#34;&gt;5.1 c library function&lt;/h2&gt;
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include &amp;lt;stdint.h&amp;gt;         /* C99 types */
-#include &amp;lt;stdbool.h&amp;gt;        /* bool type */
-#include &amp;lt;stdio.h&amp;gt;          /* printf, fprintf, snprintf, fopen, fputs */
-#include &amp;lt;inttypes.h&amp;gt;       /* PRIx64, PRIu64... */
-
-#include &amp;lt;string.h&amp;gt;         /* memset */
-#include &amp;lt;signal.h&amp;gt;         /* sigaction */
-#include &amp;lt;time.h&amp;gt;           /* time, clock_gettime, strftime, gmtime */
-#include &amp;lt;sys/time.h&amp;gt;       /* timeval */
-#include &amp;lt;unistd.h&amp;gt;         /* getopt, access */
-#include &amp;lt;stdlib.h&amp;gt;         /* atoi, exit */
-#include &amp;lt;errno.h&amp;gt;          /* error messages */
-#include &amp;lt;math.h&amp;gt;           /* modf */
-
-#include &amp;lt;sys/socket.h&amp;gt;     /* socket specific definitions */
-#include &amp;lt;netinet/in.h&amp;gt;     /* INET constants and stuff */
-#include &amp;lt;arpa/inet.h&amp;gt;      /* IP address conversion stuff */
-#include &amp;lt;netdb.h&amp;gt;          /* gai_strerror */
-
-#include &amp;lt;pthread.h&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;52-libtools&#34;&gt;5.2 libtools&lt;/h2&gt;
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include &amp;quot;parson.h&amp;quot;  //.. / libtools / src / parson.c
-#include &amp;quot;base64.h&amp;quot; //.. / libtools / src / base64.c
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;53-libloragw&#34;&gt;5.3 libloragw&lt;/h2&gt;
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include &amp;quot;loragw_hal.h&amp;quot; //.. / libloragw / src / loragw_hal.c
-#include &amp;quot;loragw_aux.h&amp;quot; //.. / libloragw / src / loragw_aux.c
-#include &amp;quot;loragw_reg.h&amp;quot; //.. / libloragw / src / loragw_reg.c
-#include &amp;quot;loragw_gps.h&amp;quot; //.. / libloragw / src / loragw_gps.c
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;54-jitqueue&#34;&gt;5.4 jitqueue&lt;/h2&gt;
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include &amp;quot;jitqueue.h&amp;quot; //.. / packet_forwarder / src / jitqueue.c
-#include &amp;quot;trace.h&amp;quot; //.. / packet_forwarder / inc / trace.h
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;a href=&#34;https://gitee.com/rejeee/gw1302s/tree/master/packet_forwarder&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Just-In-Time&amp;rdquo; downlink scheduling&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&#34;541-tx-scheduling&#34;&gt;5.4.1 TX scheduling&lt;/h3&gt;
-&lt;p&gt;&lt;em&gt;&lt;strong&gt;TX在RF chain上实现，即jit_queue与其有关&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;TX packet：txpkt&lt;/li&gt;
-&lt;li&gt;Beacon：beacon_pkt&lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr&gt;
-&lt;p&gt;&lt;code&gt;jit_enqueue&lt;/code&gt;：对应THREAD 2：thread_down&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;jit_peek&lt;/code&gt;：对应THREAD 3：thread_jit&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;jit_dequeue&lt;/code&gt;：对应THREAD 3：thread_jit&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Possible failures that may occur and that have to be reported to the server are: &amp;hellip;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;通过&lt;code&gt;send_tx_ack&lt;/code&gt;完成&lt;/p&gt;
-&lt;h1 id=&#34;6-内部程序调用与线程理解&#34;&gt;6 内部程序调用与线程理解&lt;/h1&gt;
-&lt;p&gt;&lt;code&gt;main&lt;/code&gt;：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;code&gt;usage&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;parse_SX130x_configuration&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;parse_gateway_configuration&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;parse_debug_configuration&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;sig_handler&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;5 threads&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;2~4显示固定内容，thread_up显示UPSTREAM json内容，main显示5 threads得到的统计内容&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;/* &amp;mdash; THREAD 1: RECEIVING PACKETS AND FORWARDING THEM &amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;- */&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;thread_up&lt;/code&gt;：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;code&gt;sig_handler&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;difftimespec&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr&gt;
-&lt;p&gt;/* &amp;mdash; THREAD 2: POLLING SERVER AND ENQUEUING PACKETS IN JIT QUEUE &amp;mdash;&amp;mdash;&amp;mdash;- */&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;thread_down&lt;/code&gt;：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;code&gt;sig_handler&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;difftimespec&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;crc16&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;get_tx_gain_lut_index&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;send_tx_ack&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr&gt;
-&lt;p&gt;/* &amp;mdash; THREAD 3: CHECKING PACKETS TO BE SENT FROM JIT QUEUE AND SEND THEM &amp;mdash; */&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;thread_jit&lt;/code&gt;：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;code&gt;sig_handler&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;print_tx_status&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr&gt;
-&lt;p&gt;/* &amp;mdash; THREAD 4: PARSE GPS MESSAGE AND KEEP GATEWAY IN SYNC &amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;ndash; */&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;thread_gps&lt;/code&gt;：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;code&gt;gps_process_sync&lt;/code&gt;、&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;gps_process_coords&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr&gt;
-&lt;p&gt;/* &amp;mdash; THREAD 5: CHECK TIME REFERENCE AND CALCULATE XTAL CORRECTION &amp;mdash;&amp;mdash;&amp;mdash; */&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;thread_valid&lt;/code&gt;：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;code&gt;sig_handler&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr&gt;
-&lt;h1 id=&#34;7-修改c程序完成后想要让脚本跟着修改&#34;&gt;7 修改c程序完成后想要让脚本跟着修改&lt;/h1&gt;
-&lt;p&gt;在&lt;strong&gt;gw1302s&lt;/strong&gt;执行&lt;code&gt;make clean all&lt;/code&gt;，调用所有helper program的make clean
-再执行&lt;code&gt;make install&lt;/code&gt;，调用所有helper program的make install，把可执行程序都&lt;code&gt;scp&lt;/code&gt;到gw1302s/bin中&lt;/p&gt;
 </description>
     </item>
     
@@ -1602,7 +1601,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-753126489&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-946728351&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -1612,7 +1611,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-753126489&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-946728351&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();

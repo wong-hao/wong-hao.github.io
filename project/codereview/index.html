@@ -918,8 +918,7 @@
   <div class="article-container">
 
     <div class="article-style">
-      <h1 id="0-protocolhttpsgiteecomrejeeegw1302sblobmasterpacket_forwarderprotocolmd">0 <a href="https://gitee.com/rejeee/gw1302s/blob/master/packet_forwarder/PROTOCOL.md" target="_blank" rel="noopener">PROTOCOL</a></h1>
-<h1 id="1-globalconfig">1 global.config</h1>
+      <h1 id="1-globalconfig">1 global.config</h1>
 <pre><code class="language-cpp">{
     &quot;SX130x_conf&quot;: {
         &quot;spidev_path&quot;: &quot;/dev/spidev0.0&quot;,
@@ -1014,12 +1013,131 @@
         &quot;log_file&quot;: &quot;loragw_hal.log&quot;
     }
 }
-```cpp
+</code></pre>
+<h1 id="2-外部函数调用">2 外部函数调用</h1>
+<h2 id="21-c-library-function">2.1 c library function</h2>
+<pre><code class="language-cpp">#include &lt;stdint.h&gt;         /* C99 types */
+#include &lt;stdbool.h&gt;        /* bool type */
+#include &lt;stdio.h&gt;          /* printf, fprintf, snprintf, fopen, fputs */
+#include &lt;inttypes.h&gt;       /* PRIx64, PRIu64... */
 
-# 2 从显示反推代码运行流程
+#include &lt;string.h&gt;         /* memset */
+#include &lt;signal.h&gt;         /* sigaction */
+#include &lt;time.h&gt;           /* time, clock_gettime, strftime, gmtime */
+#include &lt;sys/time.h&gt;       /* timeval */
+#include &lt;unistd.h&gt;         /* getopt, access */
+#include &lt;stdlib.h&gt;         /* atoi, exit */
+#include &lt;errno.h&gt;          /* error messages */
+#include &lt;math.h&gt;           /* modf */
 
-```cpp
-//main(): display version informations
+#include &lt;sys/socket.h&gt;     /* socket specific definitions */
+#include &lt;netinet/in.h&gt;     /* INET constants and stuff */
+#include &lt;arpa/inet.h&gt;      /* IP address conversion stuff */
+#include &lt;netdb.h&gt;          /* gai_strerror */
+
+#include &lt;pthread.h&gt;
+</code></pre>
+<h3 id="211-复杂函数">2.1.1 复杂函数</h3>
+<h4 id="2111-thread">2.1.1.1 thread</h4>
+<ol>
+<li><a href="https://blog.csdn.net/yusiguyuan/article/details/40627775" target="_blank" rel="noopener"><code>pthread_mutex_lock()/pthread_mutex_unlock()</code></a></li>
+<li>
+<ul>
+<li><a href="https://blog.csdn.net/zyex1108/article/details/45154211" target="_blank" rel="noopener"><code>time()</code></a></li>
+<li><a href="https://www.runoob.com/cprogramming/c-function-gmtime.html" target="_blank" rel="noopener"><code>gtime()</code></a></li>
+<li><a href="https://blog.csdn.net/SanQi_Abao/article/details/94964665" target="_blank" rel="noopener"><code>strftime()</code></a></li>
+<li><a href="https://blog.csdn.net/weixin_44880138/article/details/102605681" target="_blank" rel="noopener"><code>clock_gettime</code></a></li>
+</ul>
+</li>
+</ol>
+<h4 id="2112-socket">2.1.1.2 socket</h4>
+<ol>
+<li><a href="https://blog.csdn.net/z735640642/article/details/84306589" target="_blank" rel="noopener"><code>setsockopt()</code></a></li>
+<li><a href="https://www.cnblogs.com/fnlingnzb-learner/p/8523206.html" target="_blank" rel="noopener"><code>recv</code></a></li>
+</ol>
+<h2 id="22-libtools">2.2 libtools</h2>
+<pre><code class="language-cpp">#include &quot;parson.h&quot;  //.. / libtools / src / parson.c
+#include &quot;base64.h&quot; //.. / libtools / src / base64.c
+</code></pre>
+<h3 id="221-复杂函数">2.2.1 复杂函数</h3>
+<p>Json prase</p>
+<h2 id="23-libloragw">2.3 libloragw</h2>
+<pre><code class="language-cpp">#include &quot;loragw_hal.h&quot; //.. / libloragw / src / loragw_hal.c
+#include &quot;loragw_aux.h&quot; //.. / libloragw / src / loragw_aux.c
+#include &quot;loragw_reg.h&quot; //.. / libloragw / src / loragw_reg.c
+#include &quot;loragw_gps.h&quot; //.. / libloragw / src / loragw_gps.c
+</code></pre>
+<h2 id="24-jitqueue">2.4 jitqueue</h2>
+<pre><code class="language-cpp">#include &quot;jitqueue.h&quot; //.. / packet_forwarder / src / jitqueue.c
+#include &quot;trace.h&quot; //.. / packet_forwarder / inc / trace.h
+</code></pre>
+<p><a href="https://gitee.com/rejeee/gw1302s/tree/master/packet_forwarder" target="_blank" rel="noopener">Just-In-Time&rdquo; downlink scheduling</a></p>
+<h3 id="241-tx-scheduling">2.4.1 TX scheduling</h3>
+<p><em><strong>TX在RF chain上实现，即jit_queue与其有关</strong></em></p>
+<ol>
+<li>TX packet：txpkt</li>
+<li>Beacon：beacon_pkt</li>
+</ol>
+<hr>
+<p><code>jit_enqueue</code>：对应THREAD 2：thread_down</p>
+<p><code>jit_peek</code>：对应THREAD 3：thread_jit</p>
+<p><code>jit_dequeue</code>：对应THREAD 3：thread_jit</p>
+<blockquote>
+<p>Possible failures that may occur and that have to be reported to the server are: &hellip;</p>
+</blockquote>
+<p>通过<code>send_tx_ack</code>完成</p>
+<h1 id="3-内部程序调用与线程理解">3 内部程序调用与线程理解</h1>
+<h2 id="31-理论">3.1 理论</h2>
+<p><code>main</code>：</p>
+<ol>
+<li><code>usage</code></li>
+<li><code>parse_SX130x_configuration</code></li>
+<li><code>parse_gateway_configuration</code></li>
+<li><code>parse_debug_configuration</code></li>
+<li><code>sig_handler</code></li>
+<li><code>5 threads</code></li>
+</ol>
+<p>2~4显示固定内容，thread_up显示UPSTREAM json内容，main显示5 threads得到的统计内容</p>
+<hr>
+<p>/* &mdash; THREAD 1: RECEIVING PACKETS AND FORWARDING THEM &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;- */</p>
+<p><code>thread_up</code>：</p>
+<ol>
+<li><code>sig_handler</code></li>
+<li><code>difftimespec</code></li>
+</ol>
+<hr>
+<p>/* &mdash; THREAD 2: POLLING SERVER AND ENQUEUING PACKETS IN JIT QUEUE &mdash;&mdash;&mdash;- */</p>
+<p><code>thread_down</code>：</p>
+<ol>
+<li><code>sig_handler</code></li>
+<li><code>difftimespec</code></li>
+<li><code>crc16</code></li>
+<li><code>get_tx_gain_lut_index</code></li>
+<li><code>send_tx_ack</code></li>
+</ol>
+<hr>
+<p>/* &mdash; THREAD 3: CHECKING PACKETS TO BE SENT FROM JIT QUEUE AND SEND THEM &mdash; */</p>
+<p><code>thread_jit</code>：</p>
+<ol>
+<li><code>sig_handler</code></li>
+<li><code>print_tx_status</code></li>
+</ol>
+<hr>
+<p>/* &mdash; THREAD 4: PARSE GPS MESSAGE AND KEEP GATEWAY IN SYNC &mdash;&mdash;&mdash;&mdash;&mdash;&ndash; */</p>
+<p><code>thread_gps</code>：</p>
+<ol>
+<li><code>gps_process_sync</code>、</li>
+<li><code>gps_process_coords</code></li>
+</ol>
+<hr>
+<p>/* &mdash; THREAD 5: CHECK TIME REFERENCE AND CALCULATE XTAL CORRECTION &mdash;&mdash;&mdash; */</p>
+<p><code>thread_valid</code>：</p>
+<ol>
+<li><code>sig_handler</code></li>
+</ol>
+<hr>
+<h2 id="32-实证">3.2 实证</h2>
+<pre><code class="language-cpp">//main(): display version informations
 *** Packet Forwarder ***
 Version: 1.0.5
 *** SX1302 HAL library version info ***
@@ -1152,135 +1270,16 @@ INFO: concentrator stopped successfully
 CoreCell reset through GPIO7...
 INFO: Exiting packet forwarder program
 </code></pre>
-<h1 id="3-复杂函数">3 复杂函数</h1>
-<h2 id="31-json">3.1 json</h2>
-<h2 id="32-thread">3.2 thread</h2>
-<ol>
-<li><a href="https://blog.csdn.net/yusiguyuan/article/details/40627775" target="_blank" rel="noopener"><code>pthread_mutex_lock()/pthread_mutex_unlock()</code></a></li>
-<li>
-<ul>
-<li><a href="https://blog.csdn.net/zyex1108/article/details/45154211" target="_blank" rel="noopener"><code>time()</code></a></li>
-<li><a href="https://www.runoob.com/cprogramming/c-function-gmtime.html" target="_blank" rel="noopener"><code>gtime()</code></a></li>
-<li><a href="https://blog.csdn.net/SanQi_Abao/article/details/94964665" target="_blank" rel="noopener"><code>strftime()</code></a></li>
-<li><a href="https://blog.csdn.net/weixin_44880138/article/details/102605681" target="_blank" rel="noopener"><code>clock_gettime</code></a></li>
-</ul>
-</li>
-</ol>
-<h2 id="33-socket">3.3 socket</h2>
-<ol>
-<li><a href="https://blog.csdn.net/z735640642/article/details/84306589" target="_blank" rel="noopener"><code>setsockopt()</code></a></li>
-<li><a href="https://www.cnblogs.com/fnlingnzb-learner/p/8523206.html" target="_blank" rel="noopener"><code>recv</code></a></li>
-</ol>
-<h1 id="4-问题">4 问题</h1>
+<h2 id="33-protocolhttpsgiteecomrejeeegw1302sblobmasterpacket_forwarderprotocolmd">3.3 <a href="https://gitee.com/rejeee/gw1302s/blob/master/packet_forwarder/PROTOCOL.md" target="_blank" rel="noopener">PROTOCOL</a></h2>
+<h1 id="4-修改c程序完成后想要让脚本跟着修改">4 修改c程序完成后想要让脚本跟着修改</h1>
+<p>在<strong>gw1302s</strong>执行<code>make clean all</code>，调用所有helper program的make clean
+再执行<code>make install</code>，调用所有helper program的make install，把可执行程序都<code>scp</code>到gw1302s/bin中</p>
+<h1 id="5-问题">5 问题</h1>
 <ul>
 <li><input disabled="" type="checkbox"> GPS相关，如reference</li>
 <li><input disabled="" type="checkbox"> 温度相关</li>
 <li><input disabled="" type="checkbox"> 变量含义</li>
 </ul>
-<h1 id="5-外部函数调用">5 外部函数调用</h1>
-<h2 id="51-c-library-function">5.1 c library function</h2>
-<pre><code class="language-cpp">#include &lt;stdint.h&gt;         /* C99 types */
-#include &lt;stdbool.h&gt;        /* bool type */
-#include &lt;stdio.h&gt;          /* printf, fprintf, snprintf, fopen, fputs */
-#include &lt;inttypes.h&gt;       /* PRIx64, PRIu64... */
-
-#include &lt;string.h&gt;         /* memset */
-#include &lt;signal.h&gt;         /* sigaction */
-#include &lt;time.h&gt;           /* time, clock_gettime, strftime, gmtime */
-#include &lt;sys/time.h&gt;       /* timeval */
-#include &lt;unistd.h&gt;         /* getopt, access */
-#include &lt;stdlib.h&gt;         /* atoi, exit */
-#include &lt;errno.h&gt;          /* error messages */
-#include &lt;math.h&gt;           /* modf */
-
-#include &lt;sys/socket.h&gt;     /* socket specific definitions */
-#include &lt;netinet/in.h&gt;     /* INET constants and stuff */
-#include &lt;arpa/inet.h&gt;      /* IP address conversion stuff */
-#include &lt;netdb.h&gt;          /* gai_strerror */
-
-#include &lt;pthread.h&gt;
-</code></pre>
-<h2 id="52-libtools">5.2 libtools</h2>
-<pre><code class="language-cpp">#include &quot;parson.h&quot;  //.. / libtools / src / parson.c
-#include &quot;base64.h&quot; //.. / libtools / src / base64.c
-</code></pre>
-<h2 id="53-libloragw">5.3 libloragw</h2>
-<pre><code class="language-cpp">#include &quot;loragw_hal.h&quot; //.. / libloragw / src / loragw_hal.c
-#include &quot;loragw_aux.h&quot; //.. / libloragw / src / loragw_aux.c
-#include &quot;loragw_reg.h&quot; //.. / libloragw / src / loragw_reg.c
-#include &quot;loragw_gps.h&quot; //.. / libloragw / src / loragw_gps.c
-</code></pre>
-<h2 id="54-jitqueue">5.4 jitqueue</h2>
-<pre><code class="language-cpp">#include &quot;jitqueue.h&quot; //.. / packet_forwarder / src / jitqueue.c
-#include &quot;trace.h&quot; //.. / packet_forwarder / inc / trace.h
-</code></pre>
-<p><a href="https://gitee.com/rejeee/gw1302s/tree/master/packet_forwarder" target="_blank" rel="noopener">Just-In-Time&rdquo; downlink scheduling</a></p>
-<h3 id="541-tx-scheduling">5.4.1 TX scheduling</h3>
-<p><em><strong>TX在RF chain上实现，即jit_queue与其有关</strong></em></p>
-<ol>
-<li>TX packet：txpkt</li>
-<li>Beacon：beacon_pkt</li>
-</ol>
-<hr>
-<p><code>jit_enqueue</code>：对应THREAD 2：thread_down</p>
-<p><code>jit_peek</code>：对应THREAD 3：thread_jit</p>
-<p><code>jit_dequeue</code>：对应THREAD 3：thread_jit</p>
-<blockquote>
-<p>Possible failures that may occur and that have to be reported to the server are: &hellip;</p>
-</blockquote>
-<p>通过<code>send_tx_ack</code>完成</p>
-<h1 id="6-内部程序调用与线程理解">6 内部程序调用与线程理解</h1>
-<p><code>main</code>：</p>
-<ol>
-<li><code>usage</code></li>
-<li><code>parse_SX130x_configuration</code></li>
-<li><code>parse_gateway_configuration</code></li>
-<li><code>parse_debug_configuration</code></li>
-<li><code>sig_handler</code></li>
-<li><code>5 threads</code></li>
-</ol>
-<p>2~4显示固定内容，thread_up显示UPSTREAM json内容，main显示5 threads得到的统计内容</p>
-<hr>
-<p>/* &mdash; THREAD 1: RECEIVING PACKETS AND FORWARDING THEM &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;- */</p>
-<p><code>thread_up</code>：</p>
-<ol>
-<li><code>sig_handler</code></li>
-<li><code>difftimespec</code></li>
-</ol>
-<hr>
-<p>/* &mdash; THREAD 2: POLLING SERVER AND ENQUEUING PACKETS IN JIT QUEUE &mdash;&mdash;&mdash;- */</p>
-<p><code>thread_down</code>：</p>
-<ol>
-<li><code>sig_handler</code></li>
-<li><code>difftimespec</code></li>
-<li><code>crc16</code></li>
-<li><code>get_tx_gain_lut_index</code></li>
-<li><code>send_tx_ack</code></li>
-</ol>
-<hr>
-<p>/* &mdash; THREAD 3: CHECKING PACKETS TO BE SENT FROM JIT QUEUE AND SEND THEM &mdash; */</p>
-<p><code>thread_jit</code>：</p>
-<ol>
-<li><code>sig_handler</code></li>
-<li><code>print_tx_status</code></li>
-</ol>
-<hr>
-<p>/* &mdash; THREAD 4: PARSE GPS MESSAGE AND KEEP GATEWAY IN SYNC &mdash;&mdash;&mdash;&mdash;&mdash;&ndash; */</p>
-<p><code>thread_gps</code>：</p>
-<ol>
-<li><code>gps_process_sync</code>、</li>
-<li><code>gps_process_coords</code></li>
-</ol>
-<hr>
-<p>/* &mdash; THREAD 5: CHECK TIME REFERENCE AND CALCULATE XTAL CORRECTION &mdash;&mdash;&mdash; */</p>
-<p><code>thread_valid</code>：</p>
-<ol>
-<li><code>sig_handler</code></li>
-</ol>
-<hr>
-<h1 id="7-修改c程序完成后想要让脚本跟着修改">7 修改c程序完成后想要让脚本跟着修改</h1>
-<p>在<strong>gw1302s</strong>执行<code>make clean all</code>，调用所有helper program的make clean
-再执行<code>make install</code>，调用所有helper program的make install，把可执行程序都<code>scp</code>到gw1302s/bin中</p>
 
     </div>
 
