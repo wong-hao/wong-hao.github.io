@@ -452,8 +452,7 @@ INFO: Exiting packet forwarder program
 &lt;h1 id=&#34;4-问题&#34;&gt;4 问题&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; GPS相关，如reference&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 外部文件函数调用，如parson.c里面的prase&amp;hellip;json解析函数、base64.c的bin_to_b64/b64_to_bin&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; c library function&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 温度相关&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 变量含义&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&#34;5-外部函数调用&#34;&gt;5 外部函数调用&lt;/h1&gt;
@@ -1603,7 +1602,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-432571968&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-753126489&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -1613,7 +1612,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-432571968&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-753126489&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
