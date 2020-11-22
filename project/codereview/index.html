@@ -283,7 +283,7 @@
   
   <meta property="og:site_name" content="Room of Requirement">
   <meta property="og:url" content="https://haowong.com/project/codereview/">
-  <meta property="og:title" content="Code Review of LoRa_PKT_FWD | Room of Requirement">
+  <meta property="og:title" content="Code Review of Helper programs &#39;LoRa_PKT_FWD&#39; | Room of Requirement">
   <meta property="og:description" content="This is an code review and comments"><meta property="og:image" content="https://haowong.com/project/codereview/featured.png">
   <meta property="twitter:image" content="https://haowong.com/project/codereview/featured.png"><meta property="og:locale" content="en-us">
   
@@ -314,7 +314,7 @@
     "@type": "WebPage",
     "@id": "https://haowong.com/project/codereview/"
   },
-  "headline": "Code Review of LoRa_PKT_FWD",
+  "headline": "Code Review of Helper programs 'LoRa_PKT_FWD'",
   
   "image": [
     "https://haowong.com/project/codereview/featured.png"
@@ -354,7 +354,7 @@
 
 
 
-  <title>Code Review of LoRa_PKT_FWD | Room of Requirement</title>
+  <title>Code Review of Helper programs &#39;LoRa_PKT_FWD&#39; | Room of Requirement</title>
 
 </head>
 
@@ -809,7 +809,7 @@
 
 
 <div class="article-container pt-3">
-  <h1>Code Review of LoRa_PKT_FWD</h1>
+  <h1>Code Review of Helper programs &#39;LoRa_PKT_FWD&#39;</h1>
 
   
 
@@ -918,9 +918,9 @@
   <div class="article-container">
 
     <div class="article-style">
-      <h1 id="1-globalconfig">1 global.config</h1>
+      <h1 id="1-json-configuration-file-globalconfig">1 JSON configuration file: global.config</h1>
 <pre><code class="language-cpp">{
-    &quot;SX130x_conf&quot;: {
+    &quot;SX130x_conf&quot;: { //parameters for the Lora concentrator board 
         &quot;spidev_path&quot;: &quot;/dev/spidev0.0&quot;,
         &quot;lorawan_public&quot;: true,
         &quot;clksrc&quot;: 0,
@@ -982,7 +982,7 @@
         &quot;chan_FSK&quot;:       {&quot;enable&quot;: true, &quot;radio&quot;: 1, &quot;if&quot;:  300000, &quot;bandwidth&quot;: 125000, &quot;datarate&quot;: 50000}
     },
 
-    &quot;gateway_conf&quot;: {
+    &quot;gateway_conf&quot;: { //gateway parameters
         &quot;gateway_ID&quot;: &quot;fffedca6320e9516&quot;,
         /* change with default server address/ports */
         &quot;server_address&quot;: &quot;loragw.things.qcloud.com&quot;,
@@ -1014,7 +1014,8 @@
     }
 }
 </code></pre>
-<h1 id="2-外部函数调用">2 外部函数调用</h1>
+<h1 id="2-dependancies">2 DEPENDANCIES</h1>
+<p><strong>注意：.h文件介绍用法，.c文件介绍实现，都需要看</strong></p>
 <h2 id="21-c-library-function">2.1 c library function</h2>
 <pre><code class="language-cpp">#include &lt;stdint.h&gt;         /* C99 types */
 #include &lt;stdbool.h&gt;        /* bool type */
@@ -1061,7 +1062,7 @@
 </code></pre>
 <h3 id="221-复杂函数">2.2.1 复杂函数</h3>
 <p>Json prase</p>
-<h2 id="23-libloragw">2.3 libloragw</h2>
+<h2 id="23-core-library-libloragw">2.3 Core library: libloragw</h2>
 <pre><code class="language-cpp">#include &quot;loragw_hal.h&quot; //.. / libloragw / src / loragw_hal.c
 #include &quot;loragw_aux.h&quot; //.. / libloragw / src / loragw_aux.c
 #include &quot;loragw_reg.h&quot; //.. / libloragw / src / loragw_reg.c
@@ -1079,15 +1080,13 @@
 <li>Beacon：beacon_pkt</li>
 </ol>
 <hr>
+<p><code>jit_init</code>：对应THREAD 2：thread_down</p>
 <p><code>jit_enqueue</code>：对应THREAD 2：thread_down</p>
 <p><code>jit_peek</code>：对应THREAD 3：thread_jit</p>
 <p><code>jit_dequeue</code>：对应THREAD 3：thread_jit</p>
-<blockquote>
-<p>Possible failures that may occur and that have to be reported to the server are: &hellip;</p>
-</blockquote>
-<p>通过<code>send_tx_ack</code>完成</p>
-<h1 id="3-内部程序调用与线程理解">3 内部程序调用与线程理解</h1>
-<h2 id="31-理论">3.1 理论</h2>
+<p><code>jit_queue_is_full/jit_queue_is_empty</code>：被它们调用的private functions</p>
+<h1 id="3-private-functions-and-threads">3 PRIVATE FUNCTIONS and threads</h1>
+<h2 id="31-theory">3.1 Theory</h2>
 <p><code>main</code>：</p>
 <ol>
 <li><code>usage</code></li>
@@ -1113,14 +1112,24 @@
 <li><code>difftimespec</code></li>
 <li><code>crc16</code></li>
 <li><code>get_tx_gain_lut_index</code></li>
-<li><code>send_tx_ack</code></li>
+<li>
+<blockquote>
+<p>Possible failures that may occur and that have to be reported to the server are: &hellip;
+<code>send_tx_ack</code>：</p>
+</blockquote>
+</li>
 </ol>
 <hr>
 <p>/* &mdash; THREAD 3: CHECKING PACKETS TO BE SENT FROM JIT QUEUE AND SEND THEM &mdash; */</p>
 <p><code>thread_jit</code>：</p>
 <ol>
-<li><code>sig_handler</code></li>
-<li><code>print_tx_status</code></li>
+<li>
+<p><code>sig_handler</code></p>
+</li>
+<li>
+<p><code>print_tx_status</code></p>
+<p>分析：是从gateway到node的通信，因为含downlink A/B/C、Beacon等packet</p>
+</li>
 </ol>
 <hr>
 <p>/* &mdash; THREAD 4: PARSE GPS MESSAGE AND KEEP GATEWAY IN SYNC &mdash;&mdash;&mdash;&mdash;&mdash;&ndash; */</p>
@@ -1136,7 +1145,7 @@
 <li><code>sig_handler</code></li>
 </ol>
 <hr>
-<h2 id="32-实证">3.2 实证</h2>
+<h2 id="32-empirical-experiment">3.2 Empirical experiment</h2>
 <pre><code class="language-cpp">//main(): display version informations
 *** Packet Forwarder ***
 Version: 1.0.5
@@ -1278,12 +1287,30 @@ Gateway to Server Interface Definition</a></li>
 <li><a href="https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWV6TEpyY0lBMEJBbUpGQVlpN0NpcDRCWENDZEVFWm43RjZ6SXVJbmlvUDZzZz9lPUhQdGE5bA==.mp3" target="_blank" rel="noopener">LoRaWAN Network Server Demonstration:
 Inter-Server interface definition</a></li>
 </ol>
-<h1 id="4-修改c程序完成后想要让脚本跟着修改">4 修改c程序完成后想要让脚本跟着修改</h1>
-<p>在<strong>gw1302s</strong>执行<code>make clean all</code>，调用所有helper program的make clean
-再执行<code>make install</code>，调用所有helper program的make install，把可执行程序都<code>scp</code>到gw1302s/bin中</p>
+<h3 id="331-upstream-protocol">3.3.1 UPstream protocol</h3>
+<ol>
+<li>PUSH_DATA packet：thread_up</li>
+<li>PUSH_ACK packet：thread_up</li>
+</ol>
+<h3 id="332-downstream-protocol">3.3.2 Downstream protocol</h3>
+<ol>
+<li>PULL_DATA packet：thread_down</li>
+<li>PULL_ACK packet：thread_down</li>
+<li>PULL_RESP packet：thread_down
+<ul>
+<li>Class C：imme (immediately)</li>
+<li>Class A：tmst (timestamp)</li>
+<li>Class B：tmms (GPS time -&gt; timestamp)</li>
+</ul>
+</li>
+<li>TX_ACK packet：thread_down</li>
+</ol>
+<h1 id="4-compile-install-and-run-instructions">4 Compile, install and run instructions</h1>
+<p>在<strong>gw1302s</strong>执行<code>make clean all</code>，调用所有helper program的make clean，即Clean and compile everything</p>
+<p>再执行<code>make install</code>，调用所有helper program的make install，把可执行程序都<code>scp</code>到gw1302s/bin中</p>
 <h1 id="5-问题">5 问题</h1>
 <ul>
-<li><input disabled="" type="checkbox"> GPS相关，如reference</li>
+<li><input disabled="" type="checkbox"> CLASSB：GPS PPS同步相关，如reference</li>
 <li><input disabled="" type="checkbox"> 温度相关</li>
 <li><input disabled="" type="checkbox"> 变量含义</li>
 </ul>
@@ -1316,7 +1343,7 @@ Inter-Server interface definition</a></li>
       
       
       <li>
-        <a href="https://twitter.com/intent/tweet?url=https://haowong.com/project/codereview/&amp;text=Code%20Review%20of%20LoRa_PKT_FWD" target="_blank" rel="noopener" class="share-btn-twitter">
+        <a href="https://twitter.com/intent/tweet?url=https://haowong.com/project/codereview/&amp;text=Code%20Review%20of%20Helper%20programs%20&amp;#39;LoRa_PKT_FWD&amp;#39;" target="_blank" rel="noopener" class="share-btn-twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
@@ -1329,7 +1356,7 @@ Inter-Server interface definition</a></li>
       
       
       <li>
-        <a href="https://www.facebook.com/sharer.php?u=https://haowong.com/project/codereview/&amp;t=Code%20Review%20of%20LoRa_PKT_FWD" target="_blank" rel="noopener" class="share-btn-facebook">
+        <a href="https://www.facebook.com/sharer.php?u=https://haowong.com/project/codereview/&amp;t=Code%20Review%20of%20Helper%20programs%20&amp;#39;LoRa_PKT_FWD&amp;#39;" target="_blank" rel="noopener" class="share-btn-facebook">
           <i class="fab fa-facebook"></i>
         </a>
       </li>
@@ -1342,7 +1369,7 @@ Inter-Server interface definition</a></li>
       
       
       <li>
-        <a href="mailto:?subject=Code%20Review%20of%20LoRa_PKT_FWD&amp;body=https://haowong.com/project/codereview/" target="_blank" rel="noopener" class="share-btn-email">
+        <a href="mailto:?subject=Code%20Review%20of%20Helper%20programs%20&amp;#39;LoRa_PKT_FWD&amp;#39;&amp;body=https://haowong.com/project/codereview/" target="_blank" rel="noopener" class="share-btn-email">
           <i class="fas fa-envelope"></i>
         </a>
       </li>
@@ -1355,7 +1382,7 @@ Inter-Server interface definition</a></li>
       
       
       <li>
-        <a href="https://www.linkedin.com/shareArticle?url=https://haowong.com/project/codereview/&amp;title=Code%20Review%20of%20LoRa_PKT_FWD" target="_blank" rel="noopener" class="share-btn-linkedin">
+        <a href="https://www.linkedin.com/shareArticle?url=https://haowong.com/project/codereview/&amp;title=Code%20Review%20of%20Helper%20programs%20&amp;#39;LoRa_PKT_FWD&amp;#39;" target="_blank" rel="noopener" class="share-btn-linkedin">
           <i class="fab fa-linkedin-in"></i>
         </a>
       </li>
@@ -1368,7 +1395,7 @@ Inter-Server interface definition</a></li>
       
       
       <li>
-        <a href="https://service.weibo.com/share/share.php?url=https://haowong.com/project/codereview/&amp;title=Code%20Review%20of%20LoRa_PKT_FWD" target="_blank" rel="noopener" class="share-btn-weibo">
+        <a href="https://service.weibo.com/share/share.php?url=https://haowong.com/project/codereview/&amp;title=Code%20Review%20of%20Helper%20programs%20&amp;#39;LoRa_PKT_FWD&amp;#39;" target="_blank" rel="noopener" class="share-btn-weibo">
           <i class="fab fa-weibo"></i>
         </a>
       </li>

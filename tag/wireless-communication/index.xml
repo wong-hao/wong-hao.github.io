@@ -13,13 +13,13 @@
     </image>
     
     <item>
-      <title>Code Review of LoRa_PKT_FWD</title>
+      <title>Code Review of Helper programs &#39;LoRa_PKT_FWD&#39;</title>
       <link>https://haowong.com/project/codereview/</link>
       <pubDate>Wed, 21 Oct 2020 00:00:00 +0000</pubDate>
       <guid>https://haowong.com/project/codereview/</guid>
-      <description>&lt;h1 id=&#34;1-globalconfig&#34;&gt;1 global.config&lt;/h1&gt;
+      <description>&lt;h1 id=&#34;1-json-configuration-file-globalconfig&#34;&gt;1 JSON configuration file: global.config&lt;/h1&gt;
 &lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;{
-    &amp;quot;SX130x_conf&amp;quot;: {
+    &amp;quot;SX130x_conf&amp;quot;: { //parameters for the Lora concentrator board 
         &amp;quot;spidev_path&amp;quot;: &amp;quot;/dev/spidev0.0&amp;quot;,
         &amp;quot;lorawan_public&amp;quot;: true,
         &amp;quot;clksrc&amp;quot;: 0,
@@ -81,7 +81,7 @@
         &amp;quot;chan_FSK&amp;quot;:       {&amp;quot;enable&amp;quot;: true, &amp;quot;radio&amp;quot;: 1, &amp;quot;if&amp;quot;:  300000, &amp;quot;bandwidth&amp;quot;: 125000, &amp;quot;datarate&amp;quot;: 50000}
     },
 
-    &amp;quot;gateway_conf&amp;quot;: {
+    &amp;quot;gateway_conf&amp;quot;: { //gateway parameters
         &amp;quot;gateway_ID&amp;quot;: &amp;quot;fffedca6320e9516&amp;quot;,
         /* change with default server address/ports */
         &amp;quot;server_address&amp;quot;: &amp;quot;loragw.things.qcloud.com&amp;quot;,
@@ -113,7 +113,8 @@
     }
 }
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h1 id=&#34;2-外部函数调用&#34;&gt;2 外部函数调用&lt;/h1&gt;
+&lt;h1 id=&#34;2-dependancies&#34;&gt;2 DEPENDANCIES&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;注意：.h文件介绍用法，.c文件介绍实现，都需要看&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id=&#34;21-c-library-function&#34;&gt;2.1 c library function&lt;/h2&gt;
 &lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include &amp;lt;stdint.h&amp;gt;         /* C99 types */
 #include &amp;lt;stdbool.h&amp;gt;        /* bool type */
@@ -160,7 +161,7 @@
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;221-复杂函数&#34;&gt;2.2.1 复杂函数&lt;/h3&gt;
 &lt;p&gt;Json prase&lt;/p&gt;
-&lt;h2 id=&#34;23-libloragw&#34;&gt;2.3 libloragw&lt;/h2&gt;
+&lt;h2 id=&#34;23-core-library-libloragw&#34;&gt;2.3 Core library: libloragw&lt;/h2&gt;
 &lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include &amp;quot;loragw_hal.h&amp;quot; //.. / libloragw / src / loragw_hal.c
 #include &amp;quot;loragw_aux.h&amp;quot; //.. / libloragw / src / loragw_aux.c
 #include &amp;quot;loragw_reg.h&amp;quot; //.. / libloragw / src / loragw_reg.c
@@ -178,15 +179,13 @@
 &lt;li&gt;Beacon：beacon_pkt&lt;/li&gt;
 &lt;/ol&gt;
 &lt;hr&gt;
+&lt;p&gt;&lt;code&gt;jit_init&lt;/code&gt;：对应THREAD 2：thread_down&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;jit_enqueue&lt;/code&gt;：对应THREAD 2：thread_down&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;jit_peek&lt;/code&gt;：对应THREAD 3：thread_jit&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;jit_dequeue&lt;/code&gt;：对应THREAD 3：thread_jit&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Possible failures that may occur and that have to be reported to the server are: &amp;hellip;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;通过&lt;code&gt;send_tx_ack&lt;/code&gt;完成&lt;/p&gt;
-&lt;h1 id=&#34;3-内部程序调用与线程理解&#34;&gt;3 内部程序调用与线程理解&lt;/h1&gt;
-&lt;h2 id=&#34;31-理论&#34;&gt;3.1 理论&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;jit_queue_is_full/jit_queue_is_empty&lt;/code&gt;：被它们调用的private functions&lt;/p&gt;
+&lt;h1 id=&#34;3-private-functions-and-threads&#34;&gt;3 PRIVATE FUNCTIONS and threads&lt;/h1&gt;
+&lt;h2 id=&#34;31-theory&#34;&gt;3.1 Theory&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;main&lt;/code&gt;：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;code&gt;usage&lt;/code&gt;&lt;/li&gt;
@@ -212,14 +211,24 @@
 &lt;li&gt;&lt;code&gt;difftimespec&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;crc16&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;get_tx_gain_lut_index&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;send_tx_ack&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Possible failures that may occur and that have to be reported to the server are: &amp;hellip;
+&lt;code&gt;send_tx_ack&lt;/code&gt;：&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
 &lt;hr&gt;
 &lt;p&gt;/* &amp;mdash; THREAD 3: CHECKING PACKETS TO BE SENT FROM JIT QUEUE AND SEND THEM &amp;mdash; */&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;thread_jit&lt;/code&gt;：&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;code&gt;sig_handler&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;print_tx_status&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;sig_handler&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;print_tx_status&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;分析：是从gateway到node的通信，因为含downlink A/B/C、Beacon等packet&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
 &lt;hr&gt;
 &lt;p&gt;/* &amp;mdash; THREAD 4: PARSE GPS MESSAGE AND KEEP GATEWAY IN SYNC &amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;ndash; */&lt;/p&gt;
@@ -235,7 +244,7 @@
 &lt;li&gt;&lt;code&gt;sig_handler&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;hr&gt;
-&lt;h2 id=&#34;32-实证&#34;&gt;3.2 实证&lt;/h2&gt;
+&lt;h2 id=&#34;32-empirical-experiment&#34;&gt;3.2 Empirical experiment&lt;/h2&gt;
 &lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;//main(): display version informations
 *** Packet Forwarder ***
 Version: 1.0.5
@@ -377,12 +386,30 @@ Gateway to Server Interface Definition&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWV6TEpyY0lBMEJBbUpGQVlpN0NpcDRCWENDZEVFWm43RjZ6SXVJbmlvUDZzZz9lPUhQdGE5bA==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoRaWAN Network Server Demonstration:
 Inter-Server interface definition&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h1 id=&#34;4-修改c程序完成后想要让脚本跟着修改&#34;&gt;4 修改c程序完成后想要让脚本跟着修改&lt;/h1&gt;
-&lt;p&gt;在&lt;strong&gt;gw1302s&lt;/strong&gt;执行&lt;code&gt;make clean all&lt;/code&gt;，调用所有helper program的make clean
-再执行&lt;code&gt;make install&lt;/code&gt;，调用所有helper program的make install，把可执行程序都&lt;code&gt;scp&lt;/code&gt;到gw1302s/bin中&lt;/p&gt;
+&lt;h3 id=&#34;331-upstream-protocol&#34;&gt;3.3.1 UPstream protocol&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;PUSH_DATA packet：thread_up&lt;/li&gt;
+&lt;li&gt;PUSH_ACK packet：thread_up&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;332-downstream-protocol&#34;&gt;3.3.2 Downstream protocol&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;PULL_DATA packet：thread_down&lt;/li&gt;
+&lt;li&gt;PULL_ACK packet：thread_down&lt;/li&gt;
+&lt;li&gt;PULL_RESP packet：thread_down
+&lt;ul&gt;
+&lt;li&gt;Class C：imme (immediately)&lt;/li&gt;
+&lt;li&gt;Class A：tmst (timestamp)&lt;/li&gt;
+&lt;li&gt;Class B：tmms (GPS time -&amp;gt; timestamp)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;TX_ACK packet：thread_down&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;4-compile-install-and-run-instructions&#34;&gt;4 Compile, install and run instructions&lt;/h1&gt;
+&lt;p&gt;在&lt;strong&gt;gw1302s&lt;/strong&gt;执行&lt;code&gt;make clean all&lt;/code&gt;，调用所有helper program的make clean，即Clean and compile everything&lt;/p&gt;
+&lt;p&gt;再执行&lt;code&gt;make install&lt;/code&gt;，调用所有helper program的make install，把可执行程序都&lt;code&gt;scp&lt;/code&gt;到gw1302s/bin中&lt;/p&gt;
 &lt;h1 id=&#34;5-问题&#34;&gt;5 问题&lt;/h1&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; GPS相关，如reference&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; CLASSB：GPS PPS同步相关，如reference&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 温度相关&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 变量含义&lt;/li&gt;
 &lt;/ul&gt;
@@ -751,6 +778,7 @@ UDP             1700/1700        0.0.0.0/0
 &lt;p&gt;&lt;a href=&#34;https://www.thethingsnetwork.org/docs/gateways/packet-forwarder/semtech-udp.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TTN global.config1&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.thethingsnetwork.org/docs/gateways/start/connection.html#semtech-udp-protocol&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TTN global.config2&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://os.mbed.com/docs/mbed-os/v5.15/tutorials/LoRa-tutorial.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Mbed-Os: TTN&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.thethingsnetwork.org/forum/t/sx1302-using-semtech-packet-forwarder-can-not-register-the-gateway/41211/34&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;SX1302网关转发器修改版&lt;/a&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;a href=&#34;https://fiware-lorawan.readthedocs.io/en/latest/users_manual/index.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Fireware: LoRaServer+TTN&lt;/a&gt;&lt;/p&gt;
 &lt;h1 id=&#34;3-其他&#34;&gt;3 其他&lt;/h1&gt;
