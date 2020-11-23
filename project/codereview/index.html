@@ -1054,7 +1054,11 @@
 <h4 id="2112-socket">2.1.1.2 socket</h4>
 <ol>
 <li><a href="https://blog.csdn.net/z735640642/article/details/84306589" target="_blank" rel="noopener"><code>setsockopt()</code></a></li>
-<li><a href="https://www.cnblogs.com/fnlingnzb-learner/p/8523206.html" target="_blank" rel="noopener"><code>recv</code></a></li>
+<li><a href="https://www.cnblogs.com/fnlingnzb-learner/p/8523206.html" target="_blank" rel="noopener"><code>recv()</code></a></li>
+</ol>
+<h4 id="2113-string">2.1.1.3 String</h4>
+<ol>
+<li><a href="https://baike.baidu.com/item/snprintf%28%29" target="_blank" rel="noopener"><code>snprintf()</code></a></li>
 </ol>
 <h2 id="22-libtools">2.2 libtools</h2>
 <pre><code class="language-cpp">#include &quot;parson.h&quot;  //.. / libtools / src / parson.c
@@ -1089,14 +1093,14 @@
 <h2 id="31-theory">3.1 Theory</h2>
 <p><code>main</code>：</p>
 <ol>
-<li><code>usage</code></li>
+<li><code>usage</code>：<code>./lora_pkt_fwd -h</code></li>
 <li><code>parse_SX130x_configuration</code></li>
 <li><code>parse_gateway_configuration</code></li>
 <li><code>parse_debug_configuration</code></li>
 <li><code>sig_handler</code></li>
 <li><code>5 threads</code></li>
 </ol>
-<p>2~4显示固定内容，thread_up显示UPSTREAM json内容，main显示5 threads得到的统计内容</p>
+<p>作用：2~4显示固定内容，thread_up显示UPSTREAM json内容，main显示5 threads得到的统计内容</p>
 <hr>
 <p>/* &mdash; THREAD 1: RECEIVING PACKETS AND FORWARDING THEM &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;- */</p>
 <p><code>thread_up</code>：</p>
@@ -1123,19 +1127,14 @@
 <p>/* &mdash; THREAD 3: CHECKING PACKETS TO BE SENT FROM JIT QUEUE AND SEND THEM &mdash; */</p>
 <p><code>thread_jit</code>：</p>
 <ol>
-<li>
-<p><code>sig_handler</code></p>
-</li>
-<li>
-<p><code>print_tx_status</code></p>
-<p>分析：是从gateway到node的通信，因为含downlink A/B/C、Beacon等packet</p>
-</li>
+<li><code>sig_handler</code></li>
+<li><code>print_tx_status</code></li>
 </ol>
-<hr>
+<h2 id="分析是从gateway到node的通信因为含downlink-abcbeacon等packet">分析：是从gateway到node的通信，因为含downlink A/B/C、Beacon等packet</h2>
 <p>/* &mdash; THREAD 4: PARSE GPS MESSAGE AND KEEP GATEWAY IN SYNC &mdash;&mdash;&mdash;&mdash;&mdash;&ndash; */</p>
 <p><code>thread_gps</code>：</p>
 <ol>
-<li><code>gps_process_sync</code>、</li>
+<li><code>gps_process_sync</code>：time_reference_gps；具体的GPS &lt;-&gt; timestamp TIME REFERENCE</li>
 <li><code>gps_process_coords</code></li>
 </ol>
 <hr>
@@ -1144,6 +1143,15 @@
 <ol>
 <li><code>sig_handler</code></li>
 </ol>
+<ul>
+<li>TIME REFERENCE：gps_ref_valid；用于判断是否启用TIME REFERENCE</li>
+<li>XTAL CORRECTIOn：
+<ul>
+<li>xtal_correct_ok</li>
+<li>xtal_correct</li>
+</ul>
+</li>
+</ul>
 <hr>
 <h2 id="32-empirical-experiment">3.2 Empirical experiment</h2>
 <pre><code class="language-cpp">//main(): display version informations

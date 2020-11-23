@@ -153,7 +153,11 @@
 &lt;h4 id=&#34;2112-socket&#34;&gt;2.1.1.2 socket&lt;/h4&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/z735640642/article/details/84306589&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;setsockopt()&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.cnblogs.com/fnlingnzb-learner/p/8523206.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;recv&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.cnblogs.com/fnlingnzb-learner/p/8523206.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;recv()&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;2113-string&#34;&gt;2.1.1.3 String&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://baike.baidu.com/item/snprintf%28%29&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;snprintf()&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;22-libtools&#34;&gt;2.2 libtools&lt;/h2&gt;
 &lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include &amp;quot;parson.h&amp;quot;  //.. / libtools / src / parson.c
@@ -188,14 +192,14 @@
 &lt;h2 id=&#34;31-theory&#34;&gt;3.1 Theory&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;main&lt;/code&gt;：&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;code&gt;usage&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;usage&lt;/code&gt;：&lt;code&gt;./lora_pkt_fwd -h&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;parse_SX130x_configuration&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;parse_gateway_configuration&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;parse_debug_configuration&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;sig_handler&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;5 threads&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;2~4显示固定内容，thread_up显示UPSTREAM json内容，main显示5 threads得到的统计内容&lt;/p&gt;
+&lt;p&gt;作用：2~4显示固定内容，thread_up显示UPSTREAM json内容，main显示5 threads得到的统计内容&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;/* &amp;mdash; THREAD 1: RECEIVING PACKETS AND FORWARDING THEM &amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;- */&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;thread_up&lt;/code&gt;：&lt;/p&gt;
@@ -222,19 +226,14 @@
 &lt;p&gt;/* &amp;mdash; THREAD 3: CHECKING PACKETS TO BE SENT FROM JIT QUEUE AND SEND THEM &amp;mdash; */&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;thread_jit&lt;/code&gt;：&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;sig_handler&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;print_tx_status&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;分析：是从gateway到node的通信，因为含downlink A/B/C、Beacon等packet&lt;/p&gt;
-&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sig_handler&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;print_tx_status&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;hr&gt;
+&lt;h2 id=&#34;分析是从gateway到node的通信因为含downlink-abcbeacon等packet&#34;&gt;分析：是从gateway到node的通信，因为含downlink A/B/C、Beacon等packet&lt;/h2&gt;
 &lt;p&gt;/* &amp;mdash; THREAD 4: PARSE GPS MESSAGE AND KEEP GATEWAY IN SYNC &amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;ndash; */&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;thread_gps&lt;/code&gt;：&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;code&gt;gps_process_sync&lt;/code&gt;、&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;gps_process_sync&lt;/code&gt;：time_reference_gps；具体的GPS &amp;lt;-&amp;gt; timestamp TIME REFERENCE&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;gps_process_coords&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;hr&gt;
@@ -243,6 +242,15 @@
 &lt;ol&gt;
 &lt;li&gt;&lt;code&gt;sig_handler&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;TIME REFERENCE：gps_ref_valid；用于判断是否启用TIME REFERENCE&lt;/li&gt;
+&lt;li&gt;XTAL CORRECTIOn：
+&lt;ul&gt;
+&lt;li&gt;xtal_correct_ok&lt;/li&gt;
+&lt;li&gt;xtal_correct&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;32-empirical-experiment&#34;&gt;3.2 Empirical experiment&lt;/h2&gt;
 &lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;//main(): display version informations
