@@ -1144,10 +1144,11 @@
 <p><code>thread_valid</code>：</p>
 <ol>
 <li><code>sig_handler</code></li>
+<li>变量控制</li>
 </ol>
 <ul>
 <li>TIME REFERENCE：gps_ref_valid；用于判断是否启用TIME REFERENCE</li>
-<li>XTAL CORRECTIOn：
+<li>XTAL CORRECTION：
 <ul>
 <li>xtal_correct_ok</li>
 <li>xtal_correct</li>
@@ -1271,8 +1272,9 @@ src/jitqueue.c:442:jit_print_queue(): INFO: [jit] queue is empty //thread_down
 ### Concentrator temperature 0 C ###
 ##### END #####
 </code></pre>
-<pre><code class="language-cpp">/*main(): generate a JSON report (will be sent to server by upstream thread)
-'status report': &quot;stat&quot; object
+<pre><code class="language-cpp">/*main()生成： generate a JSON report (will be sent to server by upstream thread)
+thread_up()发送：add status report if a new one is available ('status report': &quot;stat&quot; object)
+其实本来和上面的rxpt对象同属于一个json，“同时发送显示”；但是因为程序运行顺序原因“同时发送不同时显示”了
 */
 JSON up: {&quot;stat&quot;:{&quot;time&quot;:&quot;2020-10-18 10:49:51 GMT&quot;,&quot;rxnb&quot;:1,&quot;rxok&quot;:1,&quot;rxfw&quot;:1,&quot;ackr&quot;:100.0,&quot;dwnb&quot;:0,&quot;txnb&quot;:0,&quot;temp&quot;:0.0}}
 
