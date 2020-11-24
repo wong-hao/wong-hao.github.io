@@ -321,7 +321,9 @@
 &lt;h3 id=&#34;211-复杂函数&#34;&gt;2.1.1 复杂函数&lt;/h3&gt;
 &lt;h4 id=&#34;2111-thread&#34;&gt;2.1.1.1 thread&lt;/h4&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/yusiguyuan/article/details/40627775&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;pthread_mutex_lock()/pthread_mutex_unlock()&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/yusiguyuan/article/details/40627775&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;pthread_mutex_lock() / pthread_mutex_unlock()&lt;/code&gt;&lt;/a&gt;，注意每次使用时lock的pthread_mutex_t对象都不同&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://ask.csdn.net/questions/267690?utm_medium=distribute.pc_relevant_t0.none-task-ask_topic-BlogCommendFromBaidu-1.control&amp;amp;depth_1-utm_source=distribute.pc_relevant_t0.none-task-ask_topic-BlogCommendFromBaidu-1.control&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;pthread_join()&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.cnblogs.com/lijunamneg/archive/2013/01/25/2877211.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;phtread_cancel()&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/zyex1108/article/details/45154211&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;time()&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
@@ -501,9 +503,10 @@ INFO: [main] concentrator started, packet can now be received
 INFO: concentrator EUI: 0x0016c001ff10d3f6
 &lt;/code&gt;&lt;/pre&gt;
 &lt;hr&gt;
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;//thread_up(): start of JSON structure
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;
 INFO: Received pkt from mote: 1350200C (fcnt=13)
 
+//thread_up(): start of JSON structure
 JSON up: {&amp;quot;rxpk&amp;quot;:[{&amp;quot;jver&amp;quot;:1,&amp;quot;tmst&amp;quot;:137795171,&amp;quot;chan&amp;quot;:4,&amp;quot;rfch&amp;quot;:1,&amp;quot;freq&amp;quot;:475.100000,&amp;quot;mid&amp;quot;:0,&amp;quot;stat&amp;quot;:1,&amp;quot;modu&amp;quot;:&amp;quot;LORA&amp;quot;,&amp;quot;datr&amp;quot;:&amp;quot;SF12Bw125&amp;quot;,&amp;quot;codr&amp;quot;:&amp;quot;4/5&amp;quot;,&amp;quot;rssis&amp;quot;:-84,&amp;quot;lsnr&amp;quot;:-5.0,&amp;quot;foff&amp;quot;:786,&amp;quot;rssi&amp;quot;:-80,&amp;quot;size&amp;quot;:13,&amp;quot;data&amp;quot;:&amp;quot;gQwgUBMADQANAKvN7w==&amp;quot;}]}
 
 //thread_up(): send datagram to server + wait for acknowledge (in 2 times, to catch extra packets)
@@ -512,7 +515,7 @@ INFO: [up] PUSH_ACK received in 40ms
 //thread_down(): if the datagram is an ACK, check token
 INFO: [down] PULL_ACK received in 34ms
 
-//main(): display a report (status report)
+//main(): display a report
 ##### 2020-10-18 10:49:51 GMT #####
 
 ### [UPSTREAM] ###
@@ -548,7 +551,9 @@ src/jitqueue.c:442:jit_print_queue(): INFO: [jit] queue is empty //thread_down
 ### Concentrator temperature 0 C ###
 ##### END #####
 &lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;//main(): generate a JSON report (will be sent to server by upstream thread)
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;/*main(): generate a JSON report (will be sent to server by upstream thread)
+&#39;status report&#39;: &amp;quot;stat&amp;quot; object
+*/
 JSON up: {&amp;quot;stat&amp;quot;:{&amp;quot;time&amp;quot;:&amp;quot;2020-10-18 10:49:51 GMT&amp;quot;,&amp;quot;rxnb&amp;quot;:1,&amp;quot;rxok&amp;quot;:1,&amp;quot;rxfw&amp;quot;:1,&amp;quot;ackr&amp;quot;:100.0,&amp;quot;dwnb&amp;quot;:0,&amp;quot;txnb&amp;quot;:0,&amp;quot;temp&amp;quot;:0.0}}
 
 //thread_up():  send datagram to server + wait for acknowledge (in 2 times, to catch extra packets)
@@ -923,7 +928,7 @@ raspberrypi2    0016c001ff10d3f7    -              苏州市           在线   
 &lt;ol&gt;
 &lt;li&gt;[ThethingsStack/Rakwireless]
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.thethingsnetwork.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;The Things Network&lt;/a&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.thethingsnetwork.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;The Things Network：在线版&lt;/a&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://console.thethingsnetwork.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TTN官方入门&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://learn.adafruit.com/the-things-network-for-feather?view=all&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TTN&lt;/a&gt;&lt;/li&gt;
@@ -933,19 +938,19 @@ raspberrypi2    0016c001ff10d3f7    -              苏州市           在线   
 &lt;li&gt;&lt;a href=&#34;https://www.thethingsnetwork.org/forum/t/sx1302-using-semtech-packet-forwarder-can-not-register-the-gateway/41211/34&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;SX1302网关转发器修改版&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://thethingsstack.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;The Things Stack&lt;/a&gt;
+&lt;li&gt;&lt;a href=&#34;https://thethingsstack.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;The Things Stack：安装版&lt;/a&gt;
 &lt;ul&gt;
 &lt;li&gt;Docket install&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.chirpstack.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoraServer/ChirpStack&lt;/a&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.chirpstack.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ChirpStack：安装版&lt;/a&gt;
 &lt;ul&gt;
 &lt;li&gt;Debian install
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.chirpstack.io/project/guides/debian-ubuntu/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoRaServer:Debian 1&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/a1989214/article/details/106832570&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoRaServer:Debian 2&lt;/a&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.chirpstack.io/project/guides/debian-ubuntu/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ChirpStack:Debian 1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/a1989214/article/details/106832570&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ChirpStack:Debian 2&lt;/a&gt;
 &lt;ul&gt;
 &lt;li&gt;NS配置文件：&lt;strong&gt;dsn=&amp;quot;postgres://chirpstack_ns:dbpassword@localhost/chirpstack_ns?sslmode=disable&amp;rdquo;&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;NS配置文件：注释掉所有&lt;strong&gt;extral chanels&lt;/strong&gt;&lt;/li&gt;
@@ -958,13 +963,13 @@ raspberrypi2    0016c001ff10d3f7    -              苏州市           在线   
 &lt;/li&gt;
 &lt;li&gt;Docket install
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://fiware-lorawan.readthedocs.io/en/latest/users_manual/index.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Fireware: LoRaServer+TTN&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.chirpstack.io/project/guides/docker-compose/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoRaServer:docker1&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/Mculover666/article/details/104059771&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoRaServer:docker2&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.freesion.com/article/1023121538/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoRaServer:docker3&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/iotisan/article/details/90412873&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoRaServer:docker4&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/iotisan/article/details/78398978&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoRaServer:docker5&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.chirpstack.io/gateway-bridge/backends/semtech-udp/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoraServer global.config&lt;/a&gt;
+&lt;li&gt;&lt;a href=&#34;https://fiware-lorawan.readthedocs.io/en/latest/users_manual/index.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Fireware: ChirpStack+TTN&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.chirpstack.io/project/guides/docker-compose/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ChirpStack:docker1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/Mculover666/article/details/104059771&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ChirpStack:docker2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.freesion.com/article/1023121538/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ChirpStack:docker3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/iotisan/article/details/90412873&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ChirpStack:docker4&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/iotisan/article/details/78398978&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ChirpStack:docker5&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.chirpstack.io/gateway-bridge/backends/semtech-udp/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ChirpStack global.config&lt;/a&gt;
 &lt;ul&gt;
 &lt;li&gt;NS配置文件：注释掉所有&lt;a href=&#34;https://blog.csdn.net/zoug16/article/details/104928565&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;extral chanels&lt;/strong&gt;&lt;/a&gt;，其在/chirpstack-docker/configuration/chirpstack-network-server/chirpstack-network-server.toml&lt;/li&gt;
 &lt;li&gt;Docker分离模式后台运行 &lt;code&gt;docker-compose up -d&lt;/code&gt;&lt;/li&gt;
@@ -976,11 +981,12 @@ raspberrypi2    0016c001ff10d3f7    -              苏州市           在线   
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://lora-developers.semtech.com/resources/network-server/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Semtech Network Server：在线版&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://openchirp.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;OpenChirp&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.lancaster.ac.uk/scc/sites/lora/lorasim.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoraSim&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://apac.iot.semtech.cloud/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Semtech&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://apac.iot.semtech.cloud/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Semtech network test servers&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://cn1.loriot.io/dashboard&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Loriot&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;上面所有需要自行安装Stack的方法都需要注意：&lt;strong&gt;&lt;a href=&#34;https://help.aliyun.com/document_detail/25475.html?spm=a2c4g.11186623.2.14.81c071afVJYuXn#allowRemoteAccess&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;阿里云服务器配置&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
 &lt;/ol&gt;
@@ -1677,7 +1683,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-514236789&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-135678924&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -1687,7 +1693,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-514236789&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-135678924&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
