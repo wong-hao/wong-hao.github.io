@@ -709,7 +709,8 @@ $$&lt;/p&gt;
       <description>&lt;h3 id=&#34;1-问题&#34;&gt;1 问题&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 快速傅里叶变换加窗&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 快速傅里叶变换频谱泄露、信道衰落&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 快速傅里叶变换频谱泄露&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 快速傅里叶变换频谱信道衰落&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 离散傅里叶变换采样&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; MATLAB信号处理&lt;/li&gt;
 &lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 频率偏移相关和semenar no.2相关&lt;/li&gt;
@@ -723,7 +724,17 @@ $$&lt;/p&gt;
 &lt;h4 id=&#34;22-作者的ppt&#34;&gt;2.2 作者的ppt&lt;/h4&gt;
 &lt;p&gt;&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOnA6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWNnWW1PV1dLVGxJZ2dpOFMza3kxRGtCS1BYaDZ2R0pOMS1KS1NKY1RiMnFndz9lPVdLd3RCUg==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;下载&lt;/a&gt;&lt;/p&gt;
 &lt;h4 id=&#34;23-会议的详情&#34;&gt;2.3 会议的详情&lt;/h4&gt;
-&lt;p&gt;&lt;a href=&#34;https://icnp20.cs.ucr.edu/program.html#posterdemo&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ICNP 2020&lt;/a&gt;&lt;/p&gt;</description>
+&lt;p&gt;&lt;a href=&#34;https://icnp20.cs.ucr.edu/program.html#posterdemo&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ICNP 2020&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;3-傅里叶变换-fourier-transform&#34;&gt;3 傅里叶变换 (Fourier transform)&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.jianshu.com/p/4cb34e716fd1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;FT&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/shenziheng1/article/details/52891807&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;FFT1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://zh.wikipedia.org/wiki/%E5%BF%AB%E9%80%9F%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;FFT2&lt;/a&gt;：用FFT计算DFT会得到与直接用DFT定义计算相同的结果；最重要的区别是FFT更快&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</description>
     </item>
     
     <item>

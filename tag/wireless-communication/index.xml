@@ -161,6 +161,8 @@
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&#34;https://baike.baidu.com/item/snprintf%28%29&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;snprintf()&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
+&lt;h4 id=&#34;2114-sequence&#34;&gt;2.1.1.4 Sequence&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/dwell548560/article/details/76187095&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;#if...#endif &lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;22-libtools&#34;&gt;2.2 libtools&lt;/h2&gt;
 &lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include &amp;quot;parson.h&amp;quot;  //.. / libtools / src / parson.c
 #include &amp;quot;base64.h&amp;quot; //.. / libtools / src / base64.c
@@ -217,12 +219,7 @@
 &lt;li&gt;&lt;code&gt;difftimespec&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;crc16&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;get_tx_gain_lut_index&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Possible failures that may occur and that have to be reported to the server are: &amp;hellip;
-&lt;code&gt;send_tx_ack&lt;/code&gt;：&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;send_tx_ack&lt;/code&gt;：gps_enabled与gps_ref_valid任意一个不满足都会发送JIT_ERROR_GPS_UNLOCKED，说明gps出问题统一用&lt;strong&gt;UNLOCKED&lt;/strong&gt;代替&lt;/li&gt;
 &lt;/ol&gt;
 &lt;hr&gt;
 &lt;p&gt;/* &amp;mdash; THREAD 3: CHECKING PACKETS TO BE SENT FROM JIT QUEUE AND SEND THEM &amp;mdash; */&lt;/p&gt;
@@ -297,7 +294,7 @@ INFO: upstream PUSH_DATA time-out is configured to 100 ms
 INFO: packets received with a valid CRC will be forwarded
 INFO: packets received with a CRC error will NOT be forwarded
 INFO: packets received with no CRC will NOT be forwarded
-INFO: Beaconing period is configured to 0 seconds
+INFO: Beaconing period is configured to 0 seconds //disable class B beacon
 INFO: Beaconing signal will be emitted at 869525000 Hz
 INFO: Beaconing datarate is set to SF9
 INFO: Beaconing modulation bandwidth is set to 125000Hz
