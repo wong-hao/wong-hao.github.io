@@ -349,7 +349,7 @@
 #include &amp;quot;base64.h&amp;quot; //.. / libtools / src / base64.c
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;221-复杂函数&#34;&gt;2.2.1 复杂函数&lt;/h3&gt;
-&lt;p&gt;Json prase&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://kgabis.github.io/parson/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Parson library&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;23-core-library-libloragw&#34;&gt;2.3 Core library: libloragw&lt;/h2&gt;
 &lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include &amp;quot;loragw_hal.h&amp;quot; //.. / libloragw / src / loragw_hal.c
 #include &amp;quot;loragw_aux.h&amp;quot; //.. / libloragw / src / loragw_aux.c
@@ -360,21 +360,9 @@
 &lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include &amp;quot;jitqueue.h&amp;quot; //.. / packet_forwarder / src / jitqueue.c
 #include &amp;quot;trace.h&amp;quot; //.. / packet_forwarder / inc / trace.h
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;a href=&#34;https://gitee.com/rejeee/gw1302s/tree/master/packet_forwarder&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Just-In-Time&amp;rdquo; downlink scheduling&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&#34;241-tx-scheduling&#34;&gt;2.4.1 TX scheduling&lt;/h3&gt;
-&lt;p&gt;&lt;em&gt;&lt;strong&gt;TX在RF chain上实现，即jit_queue与其有关&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;TX packet：txpkt&lt;/li&gt;
-&lt;li&gt;Beacon：beacon_pkt&lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr&gt;
-&lt;p&gt;&lt;code&gt;jit_init&lt;/code&gt;：对应THREAD 2：thread_down&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;jit_enqueue&lt;/code&gt;：对应THREAD 2：thread_down&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;jit_peek&lt;/code&gt;：对应THREAD 3：thread_jit&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;jit_dequeue&lt;/code&gt;：对应THREAD 3：thread_jit&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;jit_queue_is_full/jit_queue_is_empty&lt;/code&gt;：被它们调用的private functions&lt;/p&gt;
 &lt;h1 id=&#34;3-private-functions-and-threads&#34;&gt;3 PRIVATE FUNCTIONS and threads&lt;/h1&gt;
 &lt;h2 id=&#34;31-theory&#34;&gt;3.1 Theory&lt;/h2&gt;
+&lt;h3 id=&#34;311-main&#34;&gt;3.1.1 main&lt;/h3&gt;
 &lt;p&gt;&lt;code&gt;main&lt;/code&gt;：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;code&gt;usage&lt;/code&gt;：&lt;code&gt;./lora_pkt_fwd -h&lt;/code&gt;&lt;/li&gt;
@@ -384,8 +372,9 @@
 &lt;li&gt;&lt;code&gt;sig_handler&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;5 threads&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;作用：2~4显示固定内容，thread_up显示UPSTREAM json内容，main显示5 threads得到的统计内容&lt;/p&gt;
+&lt;p&gt;作用：2~4显示固定内容，thread_up显示UPSTREAM json内容，main显示5 threads得到的统计内容，详见3.2节&lt;/p&gt;
 &lt;hr&gt;
+&lt;h3 id=&#34;312-5-threads&#34;&gt;3.1.2 5 threads&lt;/h3&gt;
 &lt;p&gt;/* &amp;mdash; THREAD 1: RECEIVING PACKETS AND FORWARDING THEM &amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;- */&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;thread_up&lt;/code&gt;：&lt;/p&gt;
 &lt;ol&gt;
@@ -402,6 +391,14 @@
 &lt;li&gt;&lt;code&gt;get_tx_gain_lut_index&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;send_tx_ack&lt;/code&gt;：gps_enabled与gps_ref_valid任意一个不满足都会发送JIT_ERROR_GPS_UNLOCKED，说明gps出问题统一用&lt;strong&gt;UNLOCKED&lt;/strong&gt;代替&lt;/li&gt;
 &lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;jit_init&lt;/code&gt;：对应THREAD 2：thread_down&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;jit_enqueue&lt;/code&gt;：对应THREAD 2：thread_down&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;hr&gt;
 &lt;p&gt;/* &amp;mdash; THREAD 3: CHECKING PACKETS TO BE SENT FROM JIT QUEUE AND SEND THEM &amp;mdash; */&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;thread_jit&lt;/code&gt;：&lt;/p&gt;
@@ -409,7 +406,18 @@
 &lt;li&gt;&lt;code&gt;sig_handler&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;print_tx_status&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id=&#34;分析是从gateway到node的通信因为含downlink-abcbeacon等packet&#34;&gt;分析：是从gateway到node的通信，因为含downlink A/B/C、Beacon等packet&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;jit_peek&lt;/code&gt;：对应THREAD 3：thread_jit&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;jit_dequeue&lt;/code&gt;：对应THREAD 3：thread_jit&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;jit_queue_is_full/jit_queue_is_empty&lt;/code&gt;：被上述四个函数调用的private functions&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;分析是从gateway到node的通信--just-in-time-downlink-schedulinghttpsgiteecomrejeeegw1302streemasterpacket_forwarder&#34;&gt;分析：是从gateway到node的通信,  &lt;a href=&#34;https://gitee.com/rejeee/gw1302s/tree/master/packet_forwarder&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Just-In-Time&amp;rdquo; downlink scheduling&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;/* &amp;mdash; THREAD 4: PARSE GPS MESSAGE AND KEEP GATEWAY IN SYNC &amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;ndash; */&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;thread_gps&lt;/code&gt;：&lt;/p&gt;
 &lt;ol&gt;
@@ -586,16 +594,26 @@ Inter-Server interface definition&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id=&#34;332-downstream-protocol&#34;&gt;3.3.2 Downstream protocol&lt;/h3&gt;
 &lt;ol&gt;
-&lt;li&gt;PULL_DATA packet：thread_down&lt;/li&gt;
-&lt;li&gt;PULL_ACK packet：thread_down&lt;/li&gt;
-&lt;li&gt;PULL_RESP packet：thread_down
+&lt;li&gt;
+&lt;p&gt;PULL_DATA packet：thread_down&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;PULL_ACK packet：thread_down&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;PULL_RESP packet：thread_down
+prase这些packet的json分辨Class&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Class C：imme (immediately)&lt;/li&gt;
-&lt;li&gt;Class A：tmst (timestamp)&lt;/li&gt;
+&lt;li&gt;Class A：tmst (timestamp)，一般不采用：因为gps_tty_path与beacon_period的设置&lt;/li&gt;
 &lt;li&gt;Class B：tmms (GPS time -&amp;gt; timestamp)&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;根据数据包类型将其jit_enqueue到jit_queue&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;TX_ACK packet：thread_down&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;TX_ACK packet：thread_down
+将jit_queue中的数据包发送到终端节点：jit_peek/jit_dequeue&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h1 id=&#34;4-compile-install-and-run-instructions&#34;&gt;4 Compile, install and run instructions&lt;/h1&gt;
 &lt;p&gt;在&lt;strong&gt;gw1302s&lt;/strong&gt;执行&lt;code&gt;make clean all&lt;/code&gt;，调用所有helper program的make clean，即Clean and compile everything&lt;/p&gt;
@@ -1697,7 +1715,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-862945317&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-591432687&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -1707,7 +1725,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-862945317&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-591432687&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();

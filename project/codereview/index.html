@@ -1069,7 +1069,7 @@
 #include &quot;base64.h&quot; //.. / libtools / src / base64.c
 </code></pre>
 <h3 id="221-复杂函数">2.2.1 复杂函数</h3>
-<p>Json prase</p>
+<p><a href="http://kgabis.github.io/parson/" target="_blank" rel="noopener">Parson library</a></p>
 <h2 id="23-core-library-libloragw">2.3 Core library: libloragw</h2>
 <pre><code class="language-cpp">#include &quot;loragw_hal.h&quot; //.. / libloragw / src / loragw_hal.c
 #include &quot;loragw_aux.h&quot; //.. / libloragw / src / loragw_aux.c
@@ -1080,21 +1080,9 @@
 <pre><code class="language-cpp">#include &quot;jitqueue.h&quot; //.. / packet_forwarder / src / jitqueue.c
 #include &quot;trace.h&quot; //.. / packet_forwarder / inc / trace.h
 </code></pre>
-<p><a href="https://gitee.com/rejeee/gw1302s/tree/master/packet_forwarder" target="_blank" rel="noopener">Just-In-Time&rdquo; downlink scheduling</a></p>
-<h3 id="241-tx-scheduling">2.4.1 TX scheduling</h3>
-<p><em><strong>TX在RF chain上实现，即jit_queue与其有关</strong></em></p>
-<ol>
-<li>TX packet：txpkt</li>
-<li>Beacon：beacon_pkt</li>
-</ol>
-<hr>
-<p><code>jit_init</code>：对应THREAD 2：thread_down</p>
-<p><code>jit_enqueue</code>：对应THREAD 2：thread_down</p>
-<p><code>jit_peek</code>：对应THREAD 3：thread_jit</p>
-<p><code>jit_dequeue</code>：对应THREAD 3：thread_jit</p>
-<p><code>jit_queue_is_full/jit_queue_is_empty</code>：被它们调用的private functions</p>
 <h1 id="3-private-functions-and-threads">3 PRIVATE FUNCTIONS and threads</h1>
 <h2 id="31-theory">3.1 Theory</h2>
+<h3 id="311-main">3.1.1 main</h3>
 <p><code>main</code>：</p>
 <ol>
 <li><code>usage</code>：<code>./lora_pkt_fwd -h</code></li>
@@ -1104,8 +1092,9 @@
 <li><code>sig_handler</code></li>
 <li><code>5 threads</code></li>
 </ol>
-<p>作用：2~4显示固定内容，thread_up显示UPSTREAM json内容，main显示5 threads得到的统计内容</p>
+<p>作用：2~4显示固定内容，thread_up显示UPSTREAM json内容，main显示5 threads得到的统计内容，详见3.2节</p>
 <hr>
+<h3 id="312-5-threads">3.1.2 5 threads</h3>
 <p>/* &mdash; THREAD 1: RECEIVING PACKETS AND FORWARDING THEM &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;- */</p>
 <p><code>thread_up</code>：</p>
 <ol>
@@ -1122,6 +1111,14 @@
 <li><code>get_tx_gain_lut_index</code></li>
 <li><code>send_tx_ack</code>：gps_enabled与gps_ref_valid任意一个不满足都会发送JIT_ERROR_GPS_UNLOCKED，说明gps出问题统一用<strong>UNLOCKED</strong>代替</li>
 </ol>
+<ul>
+<li>
+<p><code>jit_init</code>：对应THREAD 2：thread_down</p>
+</li>
+<li>
+<p><code>jit_enqueue</code>：对应THREAD 2：thread_down</p>
+</li>
+</ul>
 <hr>
 <p>/* &mdash; THREAD 3: CHECKING PACKETS TO BE SENT FROM JIT QUEUE AND SEND THEM &mdash; */</p>
 <p><code>thread_jit</code>：</p>
@@ -1129,7 +1126,18 @@
 <li><code>sig_handler</code></li>
 <li><code>print_tx_status</code></li>
 </ol>
-<h2 id="分析是从gateway到node的通信因为含downlink-abcbeacon等packet">分析：是从gateway到node的通信，因为含downlink A/B/C、Beacon等packet</h2>
+<ul>
+<li>
+<p><code>jit_peek</code>：对应THREAD 3：thread_jit</p>
+</li>
+<li>
+<p><code>jit_dequeue</code>：对应THREAD 3：thread_jit</p>
+</li>
+<li>
+<p><code>jit_queue_is_full/jit_queue_is_empty</code>：被上述四个函数调用的private functions</p>
+</li>
+</ul>
+<h2 id="分析是从gateway到node的通信--just-in-time-downlink-schedulinghttpsgiteecomrejeeegw1302streemasterpacket_forwarder">分析：是从gateway到node的通信,  <a href="https://gitee.com/rejeee/gw1302s/tree/master/packet_forwarder" target="_blank" rel="noopener">Just-In-Time&rdquo; downlink scheduling</a></h2>
 <p>/* &mdash; THREAD 4: PARSE GPS MESSAGE AND KEEP GATEWAY IN SYNC &mdash;&mdash;&mdash;&mdash;&mdash;&ndash; */</p>
 <p><code>thread_gps</code>：</p>
 <ol>
@@ -1306,16 +1314,26 @@ Inter-Server interface definition</a></li>
 </ol>
 <h3 id="332-downstream-protocol">3.3.2 Downstream protocol</h3>
 <ol>
-<li>PULL_DATA packet：thread_down</li>
-<li>PULL_ACK packet：thread_down</li>
-<li>PULL_RESP packet：thread_down
+<li>
+<p>PULL_DATA packet：thread_down</p>
+</li>
+<li>
+<p>PULL_ACK packet：thread_down</p>
+</li>
+<li>
+<p>PULL_RESP packet：thread_down
+prase这些packet的json分辨Class</p>
 <ul>
 <li>Class C：imme (immediately)</li>
-<li>Class A：tmst (timestamp)</li>
+<li>Class A：tmst (timestamp)，一般不采用：因为gps_tty_path与beacon_period的设置</li>
 <li>Class B：tmms (GPS time -&gt; timestamp)</li>
 </ul>
+<p>根据数据包类型将其jit_enqueue到jit_queue</p>
 </li>
-<li>TX_ACK packet：thread_down</li>
+<li>
+<p>TX_ACK packet：thread_down
+将jit_queue中的数据包发送到终端节点：jit_peek/jit_dequeue</p>
+</li>
 </ol>
 <h1 id="4-compile-install-and-run-instructions">4 Compile, install and run instructions</h1>
 <p>在<strong>gw1302s</strong>执行<code>make clean all</code>，调用所有helper program的make clean，即Clean and compile everything</p>
