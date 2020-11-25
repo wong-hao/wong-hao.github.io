@@ -421,9 +421,8 @@ Inter-Server interface definition&lt;/a&gt;&lt;/li&gt;
 &lt;p&gt;再执行&lt;code&gt;make install&lt;/code&gt;，调用所有helper program的make install，把可执行程序都&lt;code&gt;scp&lt;/code&gt;到gw1302s/bin中&lt;/p&gt;
 &lt;h1 id=&#34;5-问题&#34;&gt;5 问题&lt;/h1&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; CLASSB：GPS PPS同步相关，如reference&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; GPS、beacon、Class B相关看不看&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 温度相关&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 变量含义&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
