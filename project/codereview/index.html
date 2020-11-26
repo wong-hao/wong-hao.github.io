@@ -1254,20 +1254,19 @@ INFO: [down] PULL_ACK received in 34ms
 ### [DOWNSTREAM] ###
 # PULL_DATA sent: 3 (100.00%) //PULL_DATA(PULL_ACK)：thread_down
 # PULL_RESP(onse) datagrams received: 0 (0 bytes) //PULL_RESP：thread_down(thread_down)
-# RF packets sent to concentrator: 0 (0 bytes) //thread_jit调用lgw_send(thread_down)
-/*一个RF都没有发送当然没有出现任何错误了，sent = no error + error*/
-# TX errors: 0 //thread_jit调用lgw_send
-
-if (cp_nb_tx_requested != 0 ) //thread_down根据PULL_RESP得到的downlink_type调用jit_enqueue插入classA/B/C
-# TX rejected... //TX_ACK：thread_down调用send_tx_ack(jit_result是错误类型)
+# RF packets sent to concentrator: 0 (0 bytes) //thread_jit发送jit里的downlink packet(thread_down)
+/*sent = ok + error*/
+# TX errors: 0 //RF packets sent to concentrator失败的
+if (cp_nb_tx_requested != 0 ) //thread_down根据PULL_RESP得到的downlink_type使得packet enqueue jit
+# TX rejected... //TX_ACK：packet enqueue失败的；send_tx_ack发送具体错误
 
 
 ### SX1302 Status ###
 # SX1302 counter (INST): 150921885
 # SX1302 counter (PPS): 0
-# BEACON queued: 0 //thread_down根据JIT_PKT_TYPE_BEACON调用jit_enqueue插入beacon
-# BEACON sent so far: 0 //thread_jit调用jit_peek/jit_dequeue
-# BEACON rejected: 0 //thread_down调用jit_enqueue
+# BEACON queued: 0 //thread_down根据JIT_PKT_TYPE_BEACON使得beacon enqueue jit
+# BEACON sent so far: 0 //RF packets sent to concentrator对应的
+# BEACON rejected: 0 //BEACON queued失败的
 
 ### [JIT] ###
 src/jitqueue.c:442:jit_print_queue(): INFO: [jit] queue is empty //thread_down
@@ -1343,6 +1342,7 @@ Inter-Server interface definition</a></li>
 <ul>
 <li><input disabled="" type="checkbox"> GPS、beacon、Class B相关看不看</li>
 <li><input disabled="" type="checkbox"> 温度相关</li>
+<li><input disabled="" type="checkbox"> RF packets forwarded比PUSH_DATA datagrams sent少</li>
 </ul>
 
     </div>
