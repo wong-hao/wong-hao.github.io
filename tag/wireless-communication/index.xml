@@ -442,6 +442,7 @@ Inter-Server interface definition&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; GPS、beacon、Class B相关看不看&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 温度相关&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; RF packets forwarded比PUSH_DATA datagrams sent少&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; DEPENDANCIES相关的函数定义及实现&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
