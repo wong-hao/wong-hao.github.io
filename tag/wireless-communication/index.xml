@@ -147,7 +147,7 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/zyex1108/article/details/45154211&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;time()&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.runoob.com/cprogramming/c-function-gmtime.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;gtime()&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/SanQi_Abao/article/details/94964665&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;strftime()&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/SanQi_Abao/article/details/94964665&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;strftime()&lt;/code&gt;&lt;/a&gt;：获得stat_timestamp：目前的格林威治时间&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/weixin_44880138/article/details/102605681&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;clock_gettime&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
