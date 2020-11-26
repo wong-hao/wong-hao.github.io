@@ -952,7 +952,8 @@ raspberrypi2    0016c001ff10d3f7    -              苏州市           在线   
 &lt;li&gt;&lt;a href=&#34;https://www.thethingsnetwork.org/docs/gateways/packet-forwarder/semtech-udp.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TTN global.config1&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.thethingsnetwork.org/docs/gateways/start/connection.html#semtech-udp-protocol&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TTN global.config2&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://os.mbed.com/docs/mbed-os/v5.15/tutorials/LoRa-tutorial.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Mbed-Os: TTN&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.thethingsnetwork.org/forum/t/sx1302-using-semtech-packet-forwarder-can-not-register-the-gateway/41211/34&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;SX1302网关转发器修改版&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.thethingsnetwork.org/forum/t/sx1302-using-semtech-packet-forwarder-can-not-register-the-gateway/41211/34&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;SX1302网关转发器修改版讨论&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmY6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRXJIZWhXTnVTa3RLaWQ5U0ZSWHFUVFFCUkV6d1FFNnlEZG5ua1dqZVc0dDU2dz9lPUswaUc5bw==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;SX1302网关转发器修改版代码&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://thethingsstack.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;The Things Stack：安装版&lt;/a&gt;
@@ -1716,7 +1717,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-349215768&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-345172968&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -1726,7 +1727,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-349215768&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-345172968&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
