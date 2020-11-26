@@ -534,18 +534,20 @@ INFO: [down] PULL_ACK received in 34ms
 ### [DOWNSTREAM] ###
 # PULL_DATA sent: 3 (100.00%) //PULL_DATA(PULL_ACK)：thread_down
 # PULL_RESP(onse) datagrams received: 0 (0 bytes) //PULL_RESP：thread_down(thread_down)
-/*一个RF都没有发送当然没有出现任何错误了*/
-# RF packets sent to concentrator: 0 (0 bytes) //thread_jit/thread_down
-# TX errors: 0 //TX_ACK：thread_jit：lgw_send
-# TX rejected... //TX_ACK：thread_down：send_tx_ack
+# RF packets sent to concentrator: 0 (0 bytes) //thread_jit调用lgw_send(thread_down)
+/*一个RF都没有发送当然没有出现任何错误了，sent = no error + error*/
+# TX errors: 0 //thread_jit调用lgw_send
+
+if (cp_nb_tx_requested != 0 ) //thread_down根据PULL_RESP得到的downlink_type调用jit_enqueue插入classA/B/C
+# TX rejected... //TX_ACK：thread_down调用send_tx_ack(jit_result是错误类型)
 
 
 ### SX1302 Status ###
 # SX1302 counter (INST): 150921885
 # SX1302 counter (PPS): 0
-# BEACON queued: 0 //thread_down：jit_enqueue
-# BEACON sent so far: 0 //thread_jit：jit_peek/jit_dequeue
-# BEACON rejected: 0 //thread_down：jit_enqueue
+# BEACON queued: 0 //thread_down根据JIT_PKT_TYPE_BEACON调用jit_enqueue插入beacon
+# BEACON sent so far: 0 //thread_jit调用jit_peek/jit_dequeue
+# BEACON rejected: 0 //thread_down调用jit_enqueue
 
 ### [JIT] ###
 src/jitqueue.c:442:jit_print_queue(): INFO: [jit] queue is empty //thread_down
@@ -1714,7 +1716,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-497328615&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-431985762&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -1724,7 +1726,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-497328615&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-431985762&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
