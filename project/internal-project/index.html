@@ -1147,8 +1147,13 @@ Flash:     0
 </ol>
 <p><strong>LoRaWAN gateway software implementation</strong></p>
 <ol>
-<li><a href="https://tech-journal.semtech.com/expert-series-5-things-you-need-to-know-about-lorawan-based-gateways" target="_blank" rel="noopener">UDP Packet forwarder project</a>，采用这个</li>
-<li><a href="https://lora-developers.semtech.com/resources/tools/lora-basics-station/?url=quick.html" target="_blank" rel="noopener">LoRa Basics™ Station</a></li>
+<li><a href="https://github.com/Lora-net/sx1302_hal" target="_blank" rel="noopener">UDP Packet forwarder project</a>，默认</li>
+<li><a href="https://tech-journal.semtech.com/expert-series-5-things-you-need-to-know-about-lorawan-based-gateways" target="_blank" rel="noopener">LoRa Basics Station</a>
+<ul>
+<li>LoRa Basics Station = Semtech UDP packet forwarder + ChirpStack Gateway Bridge</li>
+<li><a href="https://github.com/lorabasics/basicstation" target="_blank" rel="noopener">源码</a></li>
+</ul>
+</li>
 </ol>
 <p><strong>global_conf.json</strong></p>
 <ul>
@@ -1285,7 +1290,16 @@ raspberrypi2    0016c001ff10d3f7    -              苏州市           在线   
 <li><a href="https://www.chirpstack.io/project/guides/connect-gateway/" target="_blank" rel="noopener">查看网关是否连接上了网络服务器</a>，<code>tcpdump</code>指令需要通过<code>sudo apt update &amp;&amp; sudo apt install tcpdump</code>安装</li>
 </ul>
 </li>
-<li><a href="https://lora-developers.semtech.com/resources/network-server/" target="_blank" rel="noopener">Semtech Network Server：在线版</a></li>
+<li><a href="https://lora-developers.semtech.com/resources/network-server/" target="_blank" rel="noopener">Semtech Network Server：在线版</a>
+<ul>
+<li><a href="https://lora-developers.semtech.com/resources/network-server/faq-network-server/" target="_blank" rel="noopener">指南</a>
+<ul>
+<li>在网关上安装ChirpStack Gateway Bridge后与Semtech UDP packet forwarder联用</li>
+<li>或直接使用LoRa Basics Station</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="https://openchirp.io/" target="_blank" rel="noopener">OpenChirp</a></li>

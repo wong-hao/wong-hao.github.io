@@ -862,8 +862,13 @@ Flash:     0
 &lt;/ol&gt;
 &lt;p&gt;&lt;strong&gt;LoRaWAN gateway software implementation&lt;/strong&gt;&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;https://tech-journal.semtech.com/expert-series-5-things-you-need-to-know-about-lorawan-based-gateways&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;UDP Packet forwarder project&lt;/a&gt;，采用这个&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://lora-developers.semtech.com/resources/tools/lora-basics-station/?url=quick.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoRa Basics™ Station&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Lora-net/sx1302_hal&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;UDP Packet forwarder project&lt;/a&gt;，默认&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://tech-journal.semtech.com/expert-series-5-things-you-need-to-know-about-lorawan-based-gateways&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoRa Basics Station&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;LoRa Basics Station = Semtech UDP packet forwarder + ChirpStack Gateway Bridge&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/lorabasics/basicstation&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;源码&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;strong&gt;global_conf.json&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -1000,7 +1005,16 @@ raspberrypi2    0016c001ff10d3f7    -              苏州市           在线   
 &lt;li&gt;&lt;a href=&#34;https://www.chirpstack.io/project/guides/connect-gateway/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;查看网关是否连接上了网络服务器&lt;/a&gt;，&lt;code&gt;tcpdump&lt;/code&gt;指令需要通过&lt;code&gt;sudo apt update &amp;amp;&amp;amp; sudo apt install tcpdump&lt;/code&gt;安装&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://lora-developers.semtech.com/resources/network-server/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Semtech Network Server：在线版&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://lora-developers.semtech.com/resources/network-server/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Semtech Network Server：在线版&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://lora-developers.semtech.com/resources/network-server/faq-network-server/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;指南&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;在网关上安装ChirpStack Gateway Bridge后与Semtech UDP packet forwarder联用&lt;/li&gt;
+&lt;li&gt;或直接使用LoRa Basics Station&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://openchirp.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;OpenChirp&lt;/a&gt;&lt;/li&gt;
@@ -1713,7 +1727,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-475892613&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-352894761&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -1723,7 +1737,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-475892613&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-352894761&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
