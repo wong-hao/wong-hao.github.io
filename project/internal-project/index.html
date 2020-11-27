@@ -1162,12 +1162,6 @@ Flash:     0
 <p>卖家给的<a href="https://www.cnblogs.com/answerinthewind/p/13154904.html" target="_blank" rel="noopener">攻略</a>跟用<code>install.sh</code>生成的主要差别在radio_1与radio_2的<strong>ferq</strong>不同，攻略的效果好；官方的<a href="https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVQzOWdIRUc4YU5DbHFMVzBjRGkwVjBCZjZGQmUzWUpkSnh0YVhXbUlLdnFtUT9lPW9qNjEzcg==.mp3" target="_blank" rel="noopener">参考文献</a>和攻略还有<a href="https://www.bilibili.com/video/BV1gp4y1v7UB" target="_blank" rel="noopener">视频</a>均给出了<strong>global_conf.json</strong>的参数意义</p>
 </li>
 <li>
-<p><a href="https://forum.chirpstack.io/t/semtech-udp-packet-forwarder-setting/9490/2" target="_blank" rel="noopener">&ldquo;server_address&quot;与Gateway Bridge运行地址一致</a>，Gateway Bridge可安装在<a href="https://www.chirpstack.io/project/architecture/" target="_blank" rel="noopener">网关上或云端</a>，如本文就为47.110.36.225而不是localhost</p>
-</li>
-<li>
-<p><a href="https://www.chirpstack.io/project/guides/connect-gateway/" target="_blank" rel="noopener">查看网关是否连接上了网络服务器</a>，<code>tcpdump</code>指令需要通过<code>sudo apt update &amp;&amp; sudo apt install tcpdump</code>安装</p>
-</li>
-<li>
 <p>通信参数解释</p>
 </li>
 <li>
@@ -1238,7 +1232,7 @@ raspberrypi2    0016c001ff10d3f7    -              苏州市           在线   
 <li><a href="https://www.thethingsnetwork.org/docs/gateways/packet-forwarder/semtech-udp.html" target="_blank" rel="noopener">TTN global.config1</a></li>
 <li><a href="https://www.thethingsnetwork.org/docs/gateways/start/connection.html#semtech-udp-protocol" target="_blank" rel="noopener">TTN global.config2</a></li>
 <li><a href="https://os.mbed.com/docs/mbed-os/v5.15/tutorials/LoRa-tutorial.html" target="_blank" rel="noopener">Mbed-Os: TTN</a></li>
-<li><a href="https://www.thethingsnetwork.org/forum/t/sx1302-using-semtech-packet-forwarder-can-not-register-the-gateway/41211/34" target="_blank" rel="noopener">SX1302网关转发器修改版讨论</a>：server_address选择thethings.meshed.com.au可保证正常通信；温度改为int可保证console显示connected</li>
+<li><a href="https://www.thethingsnetwork.org/forum/t/sx1302-using-semtech-packet-forwarder-can-not-register-the-gateway/41211/34" target="_blank" rel="noopener">SX1302网关转发器修改版讨论</a>：server_address选择<a href="https://blog.csdn.net/freemote/article/details/90315395" target="_blank" rel="noopener">router.cn.thethings.network</a>；温度改为int可保证console显示connected</li>
 </ul>
 </li>
 <li><a href="https://thethingsstack.io/" target="_blank" rel="noopener">The Things Stack：安装版</a>
@@ -1287,6 +1281,8 @@ raspberrypi2    0016c001ff10d3f7    -              苏州市           在线   
 </li>
 </ul>
 </li>
+<li><a href="https://forum.chirpstack.io/t/semtech-udp-packet-forwarder-setting/9490/2" target="_blank" rel="noopener">&ldquo;server_address&quot;与Gateway Bridge运行地址一致</a>，Gateway Bridge可安装在<a href="https://www.chirpstack.io/project/architecture/" target="_blank" rel="noopener">网关上或云端</a>，如本文就为47.110.36.225而不是localhost</li>
+<li><a href="https://www.chirpstack.io/project/guides/connect-gateway/" target="_blank" rel="noopener">查看网关是否连接上了网络服务器</a>，<code>tcpdump</code>指令需要通过<code>sudo apt update &amp;&amp; sudo apt install tcpdump</code>安装</li>
 </ul>
 </li>
 <li><a href="https://lora-developers.semtech.com/resources/network-server/" target="_blank" rel="noopener">Semtech Network Server：在线版</a></li>

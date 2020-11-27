@@ -696,12 +696,6 @@ Flash:     0
 &lt;p&gt;卖家给的&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/13154904.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;攻略&lt;/a&gt;跟用&lt;code&gt;install.sh&lt;/code&gt;生成的主要差别在radio_1与radio_2的&lt;strong&gt;ferq&lt;/strong&gt;不同，攻略的效果好；官方的&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVQzOWdIRUc4YU5DbHFMVzBjRGkwVjBCZjZGQmUzWUpkSnh0YVhXbUlLdnFtUT9lPW9qNjEzcg==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;参考文献&lt;/a&gt;和攻略还有&lt;a href=&#34;https://www.bilibili.com/video/BV1gp4y1v7UB&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;视频&lt;/a&gt;均给出了&lt;strong&gt;global_conf.json&lt;/strong&gt;的参数意义&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://forum.chirpstack.io/t/semtech-udp-packet-forwarder-setting/9490/2&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&amp;ldquo;server_address&amp;quot;与Gateway Bridge运行地址一致&lt;/a&gt;，Gateway Bridge可安装在&lt;a href=&#34;https://www.chirpstack.io/project/architecture/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;网关上或云端&lt;/a&gt;，如本文就为47.110.36.225而不是localhost&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.chirpstack.io/project/guides/connect-gateway/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;查看网关是否连接上了网络服务器&lt;/a&gt;，&lt;code&gt;tcpdump&lt;/code&gt;指令需要通过&lt;code&gt;sudo apt update &amp;amp;&amp;amp; sudo apt install tcpdump&lt;/code&gt;安装&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
 &lt;p&gt;通信参数解释&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -772,7 +766,7 @@ raspberrypi2    0016c001ff10d3f7    -              苏州市           在线   
 &lt;li&gt;&lt;a href=&#34;https://www.thethingsnetwork.org/docs/gateways/packet-forwarder/semtech-udp.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TTN global.config1&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.thethingsnetwork.org/docs/gateways/start/connection.html#semtech-udp-protocol&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TTN global.config2&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://os.mbed.com/docs/mbed-os/v5.15/tutorials/LoRa-tutorial.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Mbed-Os: TTN&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.thethingsnetwork.org/forum/t/sx1302-using-semtech-packet-forwarder-can-not-register-the-gateway/41211/34&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;SX1302网关转发器修改版讨论&lt;/a&gt;：server_address选择thethings.meshed.com.au可保证正常通信；温度改为int可保证console显示connected&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.thethingsnetwork.org/forum/t/sx1302-using-semtech-packet-forwarder-can-not-register-the-gateway/41211/34&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;SX1302网关转发器修改版讨论&lt;/a&gt;：server_address选择&lt;a href=&#34;https://blog.csdn.net/freemote/article/details/90315395&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;router.cn.thethings.network&lt;/a&gt;；温度改为int可保证console显示connected&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://thethingsstack.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;The Things Stack：安装版&lt;/a&gt;
@@ -821,6 +815,8 @@ raspberrypi2    0016c001ff10d3f7    -              苏州市           在线   
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://forum.chirpstack.io/t/semtech-udp-packet-forwarder-setting/9490/2&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&amp;ldquo;server_address&amp;quot;与Gateway Bridge运行地址一致&lt;/a&gt;，Gateway Bridge可安装在&lt;a href=&#34;https://www.chirpstack.io/project/architecture/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;网关上或云端&lt;/a&gt;，如本文就为47.110.36.225而不是localhost&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.chirpstack.io/project/guides/connect-gateway/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;查看网关是否连接上了网络服务器&lt;/a&gt;，&lt;code&gt;tcpdump&lt;/code&gt;指令需要通过&lt;code&gt;sudo apt update &amp;amp;&amp;amp; sudo apt install tcpdump&lt;/code&gt;安装&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://lora-developers.semtech.com/resources/network-server/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Semtech Network Server：在线版&lt;/a&gt;&lt;/li&gt;
