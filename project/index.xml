@@ -200,7 +200,7 @@
 &lt;li&gt;&lt;code&gt;sig_handler&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;difftimespec&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;hr&gt;
+&lt;h2 id=&#34;lgw_receive接收数据包rxpkt并根据其属性构建upstream的datagram&#34;&gt;&lt;code&gt;lgw_receive&lt;/code&gt;接收数据包rxpkt，并根据其属性构建UPSTREAM的datagram&lt;/h2&gt;
 &lt;p&gt;/* &amp;mdash; THREAD 2: POLLING SERVER AND ENQUEUING PACKETS IN JIT QUEUE &amp;mdash;&amp;mdash;&amp;mdash;- */&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;thread_down&lt;/code&gt;：&lt;/p&gt;
 &lt;ol&gt;
@@ -443,6 +443,7 @@ Inter-Server interface definition&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 温度相关&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; RF packets forwarded比PUSH_DATA datagrams sent少&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; DEPENDANCIES相关的函数定义及实现&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; RF chain、IF chain&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
