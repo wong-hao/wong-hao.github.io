@@ -1269,9 +1269,9 @@ if (cp_nb_tx_requested != 0 ) //thread_down根据PULL_RESP得到的downlink_type
 # BEACON rejected: 0 //BEACON queued失败的
 
 ### [JIT] ### //jit = RF chains
-src/jitqueue.c:442:jit_print_queue(): INFO: [jit] queue is empty //thread_down：已经在jit[0]里的beacon和packet
+src/jitqueue.c:442:jit_print_queue(): INFO: [jit] queue is empty //thread_down：已经enqueue jit[0]里的beacon和packet
 #--------
-src/jitqueue.c:442:jit_print_queue(): INFO: [jit] queue is empty //thread_down:已经在jit[1]里的beacon和packet
+src/jitqueue.c:442:jit_print_queue(): INFO: [jit] queue is empty //thread_down:已经enqueue jit[1]里的beacon和packet
 
 ### [GPS] ###
 # GPS sync is disabled
