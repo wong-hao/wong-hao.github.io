@@ -1006,7 +1006,7 @@ raspberrypi2    0016c001ff10d3f7    -              苏州市           在线   
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://forum.chirpstack.io/t/semtech-udp-packet-forwarder-setting/9490/2&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&amp;ldquo;server_address&amp;quot;与Gateway Bridge运行地址一致&lt;/a&gt;，Gateway Bridge可安装在&lt;a href=&#34;https://www.chirpstack.io/project/architecture/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;网关上或云端&lt;/a&gt;，如本文就为47.110.36.225而不是localhost&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://forum.chirpstack.io/t/semtech-udp-packet-forwarder-setting/9490/2&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&amp;ldquo;server_address&amp;quot;与ChirpStack Gateway Bridge运行地址一致&lt;/a&gt;，Docker安装时ChirpStack Gateway Bridge默认安装在&lt;a href=&#34;https://www.chirpstack.io/project/architecture/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;云端&lt;/a&gt;，如本文就为47.110.36.225而不是localhost&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.chirpstack.io/project/guides/connect-gateway/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;查看网关是否连接上了网络服务器&lt;/a&gt;，&lt;code&gt;tcpdump&lt;/code&gt;指令需要通过&lt;code&gt;sudo apt update &amp;amp;&amp;amp; sudo apt install tcpdump&lt;/code&gt;安装&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -1732,7 +1732,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-184293576&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-794312568&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -1742,7 +1742,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-184293576&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-794312568&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
