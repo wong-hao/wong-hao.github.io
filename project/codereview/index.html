@@ -1061,16 +1061,23 @@
 <h4 id="2113-string">2.1.1.3 String</h4>
 <ol>
 <li><a href="https://baike.baidu.com/item/snprintf%28%29" target="_blank" rel="noopener"><code>snprintf()</code></a></li>
+<li><a href="https://www.runoob.com/cprogramming/c-function-modf.html" target="_blank" rel="noopener"><code>modf()</code></a></li>
 </ol>
 <h4 id="2114-sequence">2.1.1.4 Sequence</h4>
 <p><a href="https://blog.csdn.net/dwell548560/article/details/76187095" target="_blank" rel="noopener"><code>#if...#endif </code></a></p>
-<h2 id="22-libtools">2.2 libtools</h2>
+<h2 id="22-third-party-librarieslibtools">2.2 Third party libraries：libtools</h2>
 <pre><code class="language-cpp">#include &quot;parson.h&quot;  //.. / libtools / src / parson.c
 #include &quot;base64.h&quot; //.. / libtools / src / base64.c
 </code></pre>
 <h3 id="221-复杂函数">2.2.1 复杂函数</h3>
 <p><a href="http://kgabis.github.io/parson/" target="_blank" rel="noopener">Parson library</a></p>
 <h2 id="23-core-library-libloragw">2.3 Core library: libloragw</h2>
+<blockquote>
+<p>statically linked with the libloragw Lora concentrator library</p>
+</blockquote>
+<blockquote>
+<p>The sx1302_hal is a host driver/HAL to build a Corecell reference design which communicates through SPI with a concentrator board based on Semtech SX1302 multi-channel modem and SX1250 RF transceivers</p>
+</blockquote>
 <pre><code class="language-cpp">#include &quot;loragw_hal.h&quot; //.. / libloragw / src / loragw_hal.c
 #include &quot;loragw_aux.h&quot; //.. / libloragw / src / loragw_aux.c
 #include &quot;loragw_reg.h&quot; //.. / libloragw / src / loragw_reg.c
@@ -1235,10 +1242,7 @@ INFO: Received pkt from mote: 1350200C (fcnt=13)
 //thread_up(): start of JSON structure
 JSON up: {&quot;rxpk&quot;:[{&quot;jver&quot;:1,&quot;tmst&quot;:137795171,&quot;chan&quot;:4,&quot;rfch&quot;:1,&quot;freq&quot;:475.100000,&quot;mid&quot;:0,&quot;stat&quot;:1,&quot;modu&quot;:&quot;LORA&quot;,&quot;datr&quot;:&quot;SF12Bw125&quot;,&quot;codr&quot;:&quot;4/5&quot;,&quot;rssis&quot;:-84,&quot;lsnr&quot;:-5.0,&quot;foff&quot;:786,&quot;rssi&quot;:-80,&quot;size&quot;:13,&quot;data&quot;:&quot;gQwgUBMADQANAKvN7w==&quot;}]}
 
-//thread_up(): send datagram to server + wait for acknowledge (in 2 times, to catch extra packets)
 INFO: [up] PUSH_ACK received in 40ms
-
-//thread_down(): if the datagram is an ACK, check token
 INFO: [down] PULL_ACK received in 34ms
 
 //main(): display a report
@@ -1284,10 +1288,7 @@ thread_up()发送：add status report if a new one is available ('status report'
 */
 JSON up: {&quot;stat&quot;:{&quot;time&quot;:&quot;2020-10-18 10:49:51 GMT&quot;,&quot;rxnb&quot;:1,&quot;rxok&quot;:1,&quot;rxfw&quot;:1,&quot;ackr&quot;:100.0,&quot;dwnb&quot;:0,&quot;txnb&quot;:0,&quot;temp&quot;:0.0}}
 
-//thread_up():  send datagram to server + wait for acknowledge (in 2 times, to catch extra packets)
 INFO: [up] PUSH_ACK received in 34ms
-
-//thread_down(): if the datagram is an ACK, check token
 INFO: [down] PULL_ACK received in 35ms
 INFO: [down] PULL_ACK received in 37ms
 </code></pre>
@@ -1323,7 +1324,7 @@ Inter-Server interface definition</a></li>
 </li>
 <li>
 <p>PULL_RESP packet：thread_down</p>
-<p>prase这些packet的json分辨Class</p>
+<p>prase这些packet的json分辨downlink packet class，决定发射时间（与beacon无关）</p>
 <ul>
 <li>Class C：imme (immediately)</li>
 <li>Class A：tmst (timestamp)，一般不采用：因为global.config中gps_tty_path与beacon_period的设置</li>
