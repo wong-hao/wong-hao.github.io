@@ -675,6 +675,11 @@ FNB:       0x00
 TYPE:      0x00
 Flash:     0
 &lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;221-入网&#34;&gt;2.2.1 入网&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/jiangjunjie_2005/article/details/104439355&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Rimelink&lt;/a&gt;
+&lt;a href=&#34;https://blog.csdn.net/jiangjunjie_2005/article/details/54754927&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;中国地区&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;222-下行通信&#34;&gt;2.2.2 下行通信&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.thethingsnetwork.org/forum/t/how-to-get-downlink-communication/41712/12&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TTN&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;23-gateway&#34;&gt;2.3 Gateway&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;SX1302&lt;/strong&gt;&lt;/p&gt;
 &lt;ol&gt;
@@ -838,6 +843,7 @@ raspberrypi2    0016c001ff10d3f7    -              苏州市           在线   
 &lt;li&gt;或直接使用LoRa Basics Station&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
+&lt;li&gt;优点：可同时选用不同频段，如CN470，EU868&amp;hellip;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
