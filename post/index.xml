@@ -573,6 +573,7 @@ $$&lt;/p&gt;
 &lt;li&gt;&lt;a href=&#34;https://zh.wikipedia.org/wiki/%E5%BF%AB%E9%80%9F%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;FFT2&lt;/a&gt;：用FFT计算DFT会得到与直接用DFT定义计算相同的结果；最重要的区别是FFT更快&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
+&lt;li&gt;算法课给了相关PPT&lt;/li&gt;
 &lt;/ol&gt;</description>
     </item>
     
@@ -690,7 +691,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-436512897&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-197342658&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -700,7 +701,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-436512897&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-197342658&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();

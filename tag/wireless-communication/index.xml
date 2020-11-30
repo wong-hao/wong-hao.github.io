@@ -674,6 +674,7 @@ Flash:     0
 &lt;h3 id=&#34;221-入网&#34;&gt;2.2.1 入网&lt;/h3&gt;
 &lt;h4 id=&#34;2211-abp&#34;&gt;2.2.1.1 ABP&lt;/h4&gt;
 &lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/RAKwireless/article/details/106186894&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;RAKwireless&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.chirpstack.io/application-server/use/devices/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Chirpstack&lt;/a&gt;&lt;/p&gt;
 &lt;h4 id=&#34;2212-otaa&#34;&gt;2.2.1.2 OTAA&lt;/h4&gt;
 &lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/RAKwireless/article/details/106135373&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;RAKwireless&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/jiangjunjie_2005/article/details/54754927&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;中国地区&lt;/a&gt;&lt;/p&gt;
@@ -875,11 +876,16 @@ UDP             1700/1700        0.0.0.0/0
 &lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/RAKwireless/article/details/106470764#%E4%B8%80%E3%80%81LoRaWAN%E5%85%B8%E5%9E%8B%E7%BD%91%E7%BB%9C%E7%BB%93%E6%9E%84&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;RAKwireless&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/6200497.html#4472555&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;AnswerInTheWind&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://blog.hobairiku.site/2018/02/26/LoRa-Server-Project/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Rimelink&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.thethingsnetwork.org/docs/applications/mqtt/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TheThingsNetwork&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.thethingsnetwork.org/docs/applications/mqtt/quick-start.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TheThingsNetwork&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.chirpstack.io/application-server/integrations/mqtt/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ChirpStack&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://thethingsstack.io/integrations/mqtt/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TheThingStack&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/freemote/article/details/106361732&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;freemote&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&#34;252-下行通信&#34;&gt;2.5.2 下行通信&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.thethingsnetwork.org/forum/t/how-to-get-downlink-communication/41712/12&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TheThingsNetwork&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.thethingsnetwork.org/forum/t/how-to-get-downlink-communication/41712/12&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TheThingsNetwork1&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.thethingsnetwork.org/docs/devices/uno/quick-start.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TheThingsNetwork2&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.chirpstack.io/project/architecture/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Chirpstack&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/13154904.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;AnswerInTheWind&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/freemote/article/details/90315395&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;freemote&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/jiangjunjie_2005/article/details/104439355&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Rimelink&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;http://lora.timeddd.com/forum.php?mod=viewthread&amp;amp;tid=540&amp;amp;extra=page%3D1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoraWAN论坛&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&#34;253-adr&#34;&gt;2.5.3 ADR&lt;/h3&gt;
