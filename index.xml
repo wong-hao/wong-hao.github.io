@@ -853,13 +853,19 @@ TYPE:      0x00
 Flash:     0
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;221-入网&#34;&gt;2.2.1 入网&lt;/h3&gt;
-&lt;h4 id=&#34;2211-abp&#34;&gt;2.2.1.1 ABP&lt;/h4&gt;
+&lt;h4 id=&#34;2211-概述&#34;&gt;2.2.1.1 概述&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/6213027.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;AnswerInTheWind&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;2212-abp&#34;&gt;2.2.1.2 ABP&lt;/h4&gt;
 &lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/RAKwireless/article/details/106186894&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;RAKwireless&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.chirpstack.io/application-server/use/devices/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Chirpstack&lt;/a&gt;&lt;/p&gt;
-&lt;h4 id=&#34;2212-otaa&#34;&gt;2.2.1.2 OTAA&lt;/h4&gt;
+&lt;h4 id=&#34;2213-otaa&#34;&gt;2.2.1.3 OTAA&lt;/h4&gt;
 &lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/RAKwireless/article/details/106135373&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;RAKwireless&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/jiangjunjie_2005/article/details/54754927&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;中国地区&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/6213529.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;AnswerInTheWind&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;2214-rejeee&#34;&gt;2.2.1.4 Rejeee&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/13517529.html#4758586&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;这家的节点不支持LoRaWAN，节点只有私有协议的&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWVfQkIxUFl2M3RKb01ZUTMxQ1hidXdCZWVoZmdnNkpPUEJxX1FGdzBhb3NzUT9lPWJmbmM4TA==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;8. 芮捷LPWAN协议&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://space.bilibili.com/7682653?spm_id_from=333.788.b_765f7570696e666f.1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;视频&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;23-gateway&#34;&gt;2.3 Gateway&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;SX1302&lt;/strong&gt;&lt;/p&gt;
 &lt;ol&gt;
@@ -885,7 +891,7 @@ Flash:     0
 &lt;p&gt;&lt;code&gt;make install_conf&lt;/code&gt;即安装&lt;strong&gt;global_conf.json&lt;/strong&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;卖家给的&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/13154904.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;攻略&lt;/a&gt;跟用&lt;code&gt;install.sh&lt;/code&gt;生成的主要差别在radio_1与radio_2的&lt;strong&gt;ferq&lt;/strong&gt;不同，攻略的效果好；官方的&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVQzOWdIRUc4YU5DbHFMVzBjRGkwVjBCZjZGQmUzWUpkSnh0YVhXbUlLdnFtUT9lPW9qNjEzcg==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;参考文献&lt;/a&gt;和攻略还有&lt;a href=&#34;https://www.bilibili.com/video/BV1gp4y1v7UB&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;视频&lt;/a&gt;均给出了&lt;strong&gt;global_conf.json&lt;/strong&gt;的参数意义&lt;/p&gt;
+&lt;p&gt;卖家给的&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/13154904.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;攻略&lt;/a&gt;跟用&lt;code&gt;install.sh&lt;/code&gt;生成的主要差别在radio_1与radio_2的&lt;strong&gt;ferq&lt;/strong&gt;不同，攻略的效果好；官方的&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVQzOWdIRUc4YU5DbHFMVzBjRGkwVjBCZjZGQmUzWUpkSnh0YVhXbUlLdnFtUT9lPW9qNjEzcg==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;参考文献&lt;/a&gt;给出了&lt;strong&gt;global_conf.json&lt;/strong&gt;的参数意义&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;通信参数解释&lt;/p&gt;
@@ -917,7 +923,7 @@ Flash:     0
 &lt;ul&gt;
 &lt;li&gt;主要步骤
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.njrjzn.com/zhichifuwu/chenggonganli/44.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;官网&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/13517529.html#4758586&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;AnswerInTheWind&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;补充
@@ -1760,7 +1766,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-897264315&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-684195732&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -1770,7 +1776,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-897264315&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-684195732&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
