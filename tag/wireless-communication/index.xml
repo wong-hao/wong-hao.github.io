@@ -415,12 +415,14 @@ CoreCell reset through GPIO7...
 INFO: Exiting packet forwarder program
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;33-basic-communication-protocol-between-lora-gateway-and-network-server&#34;&gt;3.3 Basic communication protocol between LoRa gateway and Network Server&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;可查的最详细的相关资料&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&#34;https://gitee.com/rejeee/gw1302s/blob/master/packet_forwarder/PROTOCOL.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;PROTOCOL&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVJ4VTcxc1RCNFJEaFhVU0RUTXlXdU1CNHc1NHQyZ3JhT3NvdUpVckszYkt0dz9lPUVoWXBMdw==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoRaWAN Network Server Demonstration:
 Gateway to Server Interface Definition&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWV6TEpyY0lBMEJBbUpGQVlpN0NpcDRCWENDZEVFWm43RjZ6SXVJbmlvUDZzZz9lPUhQdGE5bA==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoRaWAN Network Server Demonstration:
-Inter-Server interface definition&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVJXaXJLdnJiVEZPaS1xUGk3OFFfVTRCUm4tM1dwLXVwNTNLdVJ6ZE9leDllZz9lPXR6OWh3eA==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;剖析 LoRaWAN Gateway 核心代码&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id=&#34;331-upstream-protocol&#34;&gt;3.3.1 UPstream protocol&lt;/h3&gt;
 &lt;ol&gt;
@@ -452,22 +454,14 @@ Inter-Server interface definition&lt;/a&gt;&lt;/li&gt;
 &lt;h1 id=&#34;4-compile-install-and-run-instructions&#34;&gt;4 Compile, install and run instructions&lt;/h1&gt;
 &lt;p&gt;在&lt;strong&gt;gw1302s&lt;/strong&gt;执行&lt;code&gt;make clean all&lt;/code&gt;，调用所有helper program的make clean，即Clean and compile everything&lt;/p&gt;
 &lt;p&gt;再执行&lt;code&gt;make install&lt;/code&gt;，调用所有helper program的make install，把可执行程序都&lt;code&gt;scp&lt;/code&gt;到gw1302s/bin中&lt;/p&gt;
-&lt;h1 id=&#34;5-问题&#34;&gt;5 问题&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; GPS、beacon、Class B相关看不看&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 温度相关&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; RF packets forwarded比PUSH_DATA datagrams sent少&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; DEPENDANCIES相关的函数定义及实现&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; RF chain、IF chain&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&#34;6-硬件&#34;&gt;6 硬件&lt;/h1&gt;
-&lt;h2 id=&#34;61-组成&#34;&gt;6.1 组成&lt;/h2&gt;
+&lt;h1 id=&#34;5-硬件&#34;&gt;5 硬件&lt;/h1&gt;
+&lt;h2 id=&#34;51-组成&#34;&gt;5.1 组成&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;multi-channel SX1302 baseband IC&lt;/li&gt;
 &lt;li&gt;two SX1250 RF transceivers&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;这与global.config中的&amp;quot;SX130x_conf&amp;quot;紧密相关：&lt;a href=&#34;https://gitee.com/rejeee/gw1302s/tree/master/packet_forwarder&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&amp;ldquo;SX130x_conf&amp;rdquo; that should contain the parameters for the Lora concentrator board (RF channels definition, modem parameters, etc) &lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;62-concentrator&#34;&gt;6.2 Concentrator&lt;/h2&gt;
+&lt;h2 id=&#34;52-concentrator&#34;&gt;5.2 Concentrator&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;https://semtech.my.salesforce.com/sfc/p/#E0000000JelG/a/2R000000HV3G/an5Oh4KfiY7tAO1MO7RiPOj08WUpOTjPHSF57_.NlJ0&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;参考设计&lt;/a&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;The SX1302 digital baseband chip is a highly innovative digital signal processing engine
@@ -478,8 +472,15 @@ modulation schemes over the 150-960 MHz ISM frequency bands.&lt;/li&gt;
 &lt;li&gt;One SX1302 and two SX1250 transceivers are used to complete an eight channel LoRa
 concentrator.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id=&#34;与程序的关系&#34;&gt;与程序的关系&lt;/h2&gt;
+&lt;h2 id=&#34;53-与程序的关系&#34;&gt;5.3 与程序的关系&lt;/h2&gt;
 &lt;p&gt;thread_jit入队出队的队列正是两个SX1250对应的radio_0、radio_1&lt;/p&gt;
+&lt;h1 id=&#34;6-问题&#34;&gt;6 问题&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 温度相关&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; RF packets forwarded比PUSH_DATA datagrams sent少&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; DEPENDANCIES相关的函数定义及实现&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &amp;ldquo;SX130x_conf&amp;quot;相关，如RF chain、IF chain等参数&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     
