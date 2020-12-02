@@ -1021,7 +1021,6 @@
 }
 </code></pre>
 <h1 id="2-dependancies">2 DEPENDANCIES</h1>
-<p><strong>注意：.h文件介绍用法，.c文件介绍实现，都需要看</strong></p>
 <h2 id="21-c-library-function">2.1 c library function</h2>
 <pre><code class="language-cpp">#include &lt;stdint.h&gt;         /* C99 types */
 #include &lt;stdbool.h&gt;        /* bool type */
@@ -1093,6 +1092,21 @@
 <pre><code class="language-cpp">#include &quot;jitqueue.h&quot; //.. / packet_forwarder / src / jitqueue.c
 #include &quot;trace.h&quot; //.. / packet_forwarder / inc / trace.h
 </code></pre>
+<h2 id="25-注意">2.5 注意</h2>
+<ol>
+<li>.h文件介绍用法，.c文件介绍实现，都需要看</li>
+<li>jit_*函数和lgw _*_*函数的用法：
+<ul>
+<li>a = function(b, &amp;c, &hellip;)
+<ul>
+<li>a：判断函数是否调用 (执行)成功的返回值</li>
+<li>b：函数利用的变量</li>
+<li>c：<em><strong>函数改变的/得到的变量</strong></em></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
 <h1 id="3-private-functions-and-threads">3 PRIVATE FUNCTIONS and threads</h1>
 <h2 id="31-theory">3.1 Theory</h2>
 <h3 id="311-main">3.1.1 main</h3>
@@ -1353,6 +1367,26 @@ Inter-Server interface definition</a></li>
 <li><input disabled="" type="checkbox"> DEPENDANCIES相关的函数定义及实现</li>
 <li><input disabled="" type="checkbox"> RF chain、IF chain</li>
 </ul>
+<h1 id="6-硬件">6 硬件</h1>
+<h2 id="61-组成">6.1 组成</h2>
+<ol>
+<li>multi-channel SX1302 baseband IC</li>
+<li>two SX1250 RF transceivers</li>
+</ol>
+<p>这与global.config中的&quot;SX130x_conf&quot;紧密相关：<a href="https://gitee.com/rejeee/gw1302s/tree/master/packet_forwarder" target="_blank" rel="noopener">&ldquo;SX130x_conf&rdquo; that should contain the parameters for the Lora concentrator board (RF channels definition, modem parameters, etc) </a></p>
+<h2 id="62-concentrator">6.2 Concentrator</h2>
+<p><a href="https://semtech.my.salesforce.com/sfc/p/#E0000000JelG/a/2R000000HV3G/an5Oh4KfiY7tAO1MO7RiPOj08WUpOTjPHSF57_.NlJ0" target="_blank" rel="noopener">参考设计</a></p>
+<ol>
+<li>The SX1302 digital baseband chip is a highly innovative digital signal processing engine
+equipped with 16 modulators, capable of demodulating 64 combinations of LoRa packets,
+and 2 separate modulators</li>
+<li>The SX1250 is a highly integrated RF to IQ transceiver capable of supporting multiple
+modulation schemes over the 150-960 MHz ISM frequency bands.</li>
+<li>One SX1302 and two SX1250 transceivers are used to complete an eight channel LoRa
+concentrator.</li>
+</ol>
+<h2 id="与程序的关系">与程序的关系</h2>
+<p>thread_jit入队出队的队列正是两个SX1250对应的radio_0、radio_1</p>
 
     </div>
 

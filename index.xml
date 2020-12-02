@@ -295,7 +295,6 @@
 }
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h1 id=&#34;2-dependancies&#34;&gt;2 DEPENDANCIES&lt;/h1&gt;
-&lt;p&gt;&lt;strong&gt;注意：.h文件介绍用法，.c文件介绍实现，都需要看&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id=&#34;21-c-library-function&#34;&gt;2.1 c library function&lt;/h2&gt;
 &lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include &amp;lt;stdint.h&amp;gt;         /* C99 types */
 #include &amp;lt;stdbool.h&amp;gt;        /* bool type */
@@ -367,6 +366,21 @@
 &lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include &amp;quot;jitqueue.h&amp;quot; //.. / packet_forwarder / src / jitqueue.c
 #include &amp;quot;trace.h&amp;quot; //.. / packet_forwarder / inc / trace.h
 &lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;25-注意&#34;&gt;2.5 注意&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;.h文件介绍用法，.c文件介绍实现，都需要看&lt;/li&gt;
+&lt;li&gt;jit_*函数和lgw _*_*函数的用法：
+&lt;ul&gt;
+&lt;li&gt;a = function(b, &amp;amp;c, &amp;hellip;)
+&lt;ul&gt;
+&lt;li&gt;a：判断函数是否调用 (执行)成功的返回值&lt;/li&gt;
+&lt;li&gt;b：函数利用的变量&lt;/li&gt;
+&lt;li&gt;c：&lt;em&gt;&lt;strong&gt;函数改变的/得到的变量&lt;/strong&gt;&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
 &lt;h1 id=&#34;3-private-functions-and-threads&#34;&gt;3 PRIVATE FUNCTIONS and threads&lt;/h1&gt;
 &lt;h2 id=&#34;31-theory&#34;&gt;3.1 Theory&lt;/h2&gt;
 &lt;h3 id=&#34;311-main&#34;&gt;3.1.1 main&lt;/h3&gt;
@@ -627,6 +641,26 @@ Inter-Server interface definition&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; DEPENDANCIES相关的函数定义及实现&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; RF chain、IF chain&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h1 id=&#34;6-硬件&#34;&gt;6 硬件&lt;/h1&gt;
+&lt;h2 id=&#34;61-组成&#34;&gt;6.1 组成&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;multi-channel SX1302 baseband IC&lt;/li&gt;
+&lt;li&gt;two SX1250 RF transceivers&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;这与global.config中的&amp;quot;SX130x_conf&amp;quot;紧密相关：&lt;a href=&#34;https://gitee.com/rejeee/gw1302s/tree/master/packet_forwarder&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&amp;ldquo;SX130x_conf&amp;rdquo; that should contain the parameters for the Lora concentrator board (RF channels definition, modem parameters, etc) &lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;62-concentrator&#34;&gt;6.2 Concentrator&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://semtech.my.salesforce.com/sfc/p/#E0000000JelG/a/2R000000HV3G/an5Oh4KfiY7tAO1MO7RiPOj08WUpOTjPHSF57_.NlJ0&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;参考设计&lt;/a&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;The SX1302 digital baseband chip is a highly innovative digital signal processing engine
+equipped with 16 modulators, capable of demodulating 64 combinations of LoRa packets,
+and 2 separate modulators&lt;/li&gt;
+&lt;li&gt;The SX1250 is a highly integrated RF to IQ transceiver capable of supporting multiple
+modulation schemes over the 150-960 MHz ISM frequency bands.&lt;/li&gt;
+&lt;li&gt;One SX1302 and two SX1250 transceivers are used to complete an eight channel LoRa
+concentrator.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;与程序的关系&#34;&gt;与程序的关系&lt;/h2&gt;
+&lt;p&gt;thread_jit入队出队的队列正是两个SX1250对应的radio_0、radio_1&lt;/p&gt;
 </description>
     </item>
     
@@ -1766,7 +1800,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-392647185&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-927863415&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -1776,7 +1810,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-392647185&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-927863415&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
