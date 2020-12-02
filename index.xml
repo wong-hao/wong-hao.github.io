@@ -221,7 +221,7 @@
             &amp;quot;tx_enable&amp;quot;: true,
             &amp;quot;tx_freq_min&amp;quot;: 470000000,
             &amp;quot;tx_freq_max&amp;quot;: 510000000,
-            &amp;quot;tx_gain_lut&amp;quot;:[
+            &amp;quot;tx_gain_lut&amp;quot;:[ //tx_gain: transmit gain; lut: Look-Up-Table
                 {&amp;quot;rf_power&amp;quot;: -6, &amp;quot;pa_gain&amp;quot;: 0, &amp;quot;pwr_idx&amp;quot;:  0},
                 {&amp;quot;rf_power&amp;quot;: -3, &amp;quot;pa_gain&amp;quot;: 0, &amp;quot;pwr_idx&amp;quot;:  1},
                 {&amp;quot;rf_power&amp;quot;:  0, &amp;quot;pa_gain&amp;quot;: 0, &amp;quot;pwr_idx&amp;quot;:  2},
@@ -604,6 +604,7 @@ INFO: Exiting packet forwarder program
 &lt;li&gt;&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVJ4VTcxc1RCNFJEaFhVU0RUTXlXdU1CNHc1NHQyZ3JhT3NvdUpVckszYkt0dz9lPUVoWXBMdw==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoRaWAN Network Server Demonstration:
 Gateway to Server Interface Definition&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVJXaXJLdnJiVEZPaS1xUGk3OFFfVTRCUm4tM1dwLXVwNTNLdVJ6ZE9leDllZz9lPXR6OWh3eA==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;剖析 LoRaWAN Gateway 核心代码&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/13154904.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;global_conf.json参数含义&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id=&#34;331-upstream-protocol&#34;&gt;3.3.1 UPstream protocol&lt;/h3&gt;
 &lt;ol&gt;
@@ -1801,7 +1802,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-326951874&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-758236491&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -1811,7 +1812,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-326951874&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-758236491&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
