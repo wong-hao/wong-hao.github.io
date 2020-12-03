@@ -931,8 +931,20 @@
 <li><a href="https://lora.readthedocs.io/en/latest/#id11" target="_blank" rel="noopener">SNR、RSSI</a></li>
 <li>阅读过的paper</li>
 </ol>
-<h1 id="2-实验环境">2 实验环境</h1>
-<h2 id="21-操作系统">2.1 操作系统</h2>
+<h1 id="2-lorawan-specification规范">2 LoRaWAN Specification规范</h1>
+<h2 id="21-lora-alliancehttpslora-allianceorglorawan-for-developers">2.1 <a href="https://lora-alliance.org/lorawan-for-developers" target="_blank" rel="noopener">LoRa Alliance</a></h2>
+<h2 id="22-lorawan-regional-parameters">2.2 LoRaWAN Regional Parameters</h2>
+<ol>
+<li>中国
+<ul>
+<li><a href="https://blog.csdn.net/jiangjunjie_2005/article/details/54754927" target="_blank" rel="noopener">RimeLink</a></li>
+<li><a href="https://blog.csdn.net/iotisan/article/details/55056092" target="_blank" rel="noopener">iotisan</a></li>
+</ul>
+</li>
+<li><a href="https://www.sghoslya.com/p/table-01-data-rate-configuration.html" target="_blank" rel="noopener">EU</a></li>
+</ol>
+<h1 id="3-实验环境">3 实验环境</h1>
+<h2 id="31-操作系统">3.1 操作系统</h2>
 <blockquote>
 <p>Raspberry Pi OS (32-bit) with desktop and recommended software</p>
 </blockquote>
@@ -1094,7 +1106,7 @@ Received 3 packets (total:3)
 </ul>
 </li>
 </ul>
-<h2 id="22-系统备份">2.2 系统备份</h2>
+<h2 id="32-系统备份">3.2 系统备份</h2>
 <ol>
 <li><a href="https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOnU6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVdLWEhRd1h5cnRDaGVTMDM0WTFsSjhCVlhJSThGUmd3QzhuZ0lFRlpqVW5EQT9lPWR1WXNKVQ==.mp3" target="_blank" rel="noopener">Gitee版</a>采用的代码Commit id（<em>选用自动安装脚本&rsquo;install.sh&rsquo;</em>）: <a href="https://gitee.com/rejeee/gw1302s/commit/d9ef27fdecf2352d7ab6b85d50fb7a3e38a162ae" target="_blank" rel="noopener">d9ef27fdecf2352d7ab6b85d50fb7a3e38a162ae</a></li>
 <li><a href="#">Github版</a>采用的代码Commit id（<em>Gitee抄到这后面就自己改了</em>）: <a href="https://github.com/Lora-net/sx1302_hal/commit/6291e62ef9a161ae41037a0df1a86e9943a907b9" target="_blank" rel="noopener">6291e62ef9a161ae41037a0df1a86e9943a907b9</a></li>
@@ -1109,10 +1121,10 @@ Received 3 packets (total:3)
 </ul>
 </li>
 </ol>
-<h1 id="3-实验步骤">3 实验步骤</h1>
-<h2 id="31-lorawan">3.1 LoRaWAN</h2>
+<h1 id="4-实验步骤">4 实验步骤</h1>
+<h2 id="41-lorawan">4.1 LoRaWAN</h2>
 <p><a href="https://connect.ed-diamond.com/MISC/MISCHS-015/LORAWAN-deploiement-d-une-infrastructure-de-test" target="_blank" rel="noopener">完整案例</a></p>
-<h2 id="32-devicesend-nodes">3.2 Devices/End Nodes</h2>
+<h2 id="42-devicesend-nodes">4.2 Devices/End Nodes</h2>
 <p><strong><a href="http://www.njrjzn.com/chanpinzhongxin/SX127xmozuxilie/4.html" target="_blank" rel="noopener">M-HL9-EV</a></strong></p>
 <ol>
 <li><a href="http://www.rejeee.com/documents/APP_DOC/M-KL9_how_to_enter_configuration_mode.pdf" target="_blank" rel="noopener">进入配置方法</a></li>
@@ -1148,21 +1160,21 @@ FNB:       0x00
 TYPE:      0x00
 Flash:     0
 </code></pre>
-<h3 id="321-入网">3.2.1 入网</h3>
-<h4 id="3211-概述">3.2.1.1 概述</h4>
+<h3 id="421-入网">4.2.1 入网</h3>
+<h4 id="4211-概述">4.2.1.1 概述</h4>
 <p><a href="https://www.cnblogs.com/answerinthewind/p/6213027.html" target="_blank" rel="noopener">AnswerInTheWind</a>
 <a href="https://www.thethingsnetwork.org/docs/lorawan/addressing.html" target="_blank" rel="noopener">TTN</a></p>
-<h4 id="3212-abp">3.2.1.2 ABP</h4>
+<h4 id="4212-abp">4.2.1.2 ABP</h4>
 <p><a href="https://blog.csdn.net/RAKwireless/article/details/106186894" target="_blank" rel="noopener">RAKwireless</a></p>
 <p><a href="https://www.chirpstack.io/application-server/use/devices/" target="_blank" rel="noopener">Chirpstack</a></p>
-<h4 id="3213-otaa">3.2.1.3 OTAA</h4>
+<h4 id="4213-otaa">4.2.1.3 OTAA</h4>
 <p><a href="https://blog.csdn.net/RAKwireless/article/details/106135373" target="_blank" rel="noopener">RAKwireless</a></p>
 <p><a href="https://www.cnblogs.com/answerinthewind/p/6213529.html" target="_blank" rel="noopener">AnswerInTheWind</a></p>
-<h4 id="3214-rejeee">3.2.1.4 Rejeee</h4>
+<h4 id="4214-rejeee">4.2.1.4 Rejeee</h4>
 <p><a href="https://www.cnblogs.com/answerinthewind/p/13517529.html#4758586" target="_blank" rel="noopener">这家的节点不支持LoRaWAN，节点只有私有协议的</a></p>
 <p><a href="https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWVfQkIxUFl2M3RKb01ZUTMxQ1hidXdCZWVoZmdnNkpPUEJxX1FGdzBhb3NzUT9lPWJmbmM4TA==.mp3" target="_blank" rel="noopener">8. 芮捷LPWAN协议</a></p>
 <p><a href="https://space.bilibili.com/7682653?spm_id_from=333.788.b_765f7570696e666f.1" target="_blank" rel="noopener">视频</a></p>
-<h2 id="33-gateway">3.3 Gateway</h2>
+<h2 id="43-gateway">4.3 Gateway</h2>
 <p><strong>SX1302</strong></p>
 <ol>
 <li><a href="https://www.semtech.com/products/wireless-rf/lora-gateways/sx1302cxxxgw1" target="_blank" rel="noopener">Semtech</a></li>
@@ -1184,7 +1196,7 @@ Flash:     0
 <li><code>make install_conf</code>即安装<strong>global_conf.json</strong></li>
 <li>卖家给的<a href="https://www.cnblogs.com/answerinthewind/p/13154904.html" target="_blank" rel="noopener">攻略</a>跟用<code>install.sh</code>生成的主要差别在radio_1与radio_2的<strong>ferq</strong>不同，攻略的效果好；官方的<a href="https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVQzOWdIRUc4YU5DbHFMVzBjRGkwVjBCZjZGQmUzWUpkSnh0YVhXbUlLdnFtUT9lPW9qNjEzcg==.mp3" target="_blank" rel="noopener">参考文献</a>给出了<strong>global_conf.json</strong>的参数意义</li>
 </ul>
-<h2 id="34-network-server">3.4 Network Server</h2>
+<h2 id="44-network-server">4.4 Network Server</h2>
 <hr>
 <p><strong>Cloud-hosted: Close Source LoRaWAN Network Servers Platforms</strong></p>
 <ul>
@@ -1328,8 +1340,8 @@ UDP             1700/1700        0.0.0.0/0
 <p><strong>Integrated: Gateway-Embedded LoRaWAN Network Servers Platforms</strong></p>
 <p><a href="https://www.actility.com/lorawan-network-server/" target="_blank" rel="noopener">特点</a></p>
 <hr>
-<h2 id="35-application-server">3.5 Application Server</h2>
-<h3 id="351-mqtt">3.5.1 MQTT</h3>
+<h2 id="45-application-server">4.5 Application Server</h2>
+<h3 id="451-mqtt">4.5.1 MQTT</h3>
 <p><a href="https://blog.csdn.net/RAKwireless/article/details/106711672" target="_blank" rel="noopener">RAKwireless</a></p>
 <p><a href="https://www.cnblogs.com/answerinthewind/p/6200497.html#4472555" target="_blank" rel="noopener">AnswerInTheWind</a></p>
 <p><a href="https://blog.hobairiku.site/2018/02/26/LoRa-Server-Project/" target="_blank" rel="noopener">Rimelink</a></p>
@@ -1337,7 +1349,7 @@ UDP             1700/1700        0.0.0.0/0
 <p><a href="https://www.chirpstack.io/application-server/integrations/mqtt/" target="_blank" rel="noopener">ChirpStack</a></p>
 <p><a href="https://thethingsstack.io/integrations/mqtt/" target="_blank" rel="noopener">TheThingStack</a></p>
 <p><a href="https://blog.csdn.net/freemote/article/details/106361732" target="_blank" rel="noopener">freemote</a></p>
-<h3 id="352-下行通信">3.5.2 下行通信</h3>
+<h3 id="452-下行通信">4.5.2 下行通信</h3>
 <p><a href="https://www.thethingsnetwork.org/forum/t/how-to-get-downlink-communication/41712/12" target="_blank" rel="noopener">TheThingsNetwork1</a></p>
 <p><a href="https://blog.csdn.net/quending/article/details/86481598" target="_blank" rel="noopener">quending</a></p>
 <p><a href="https://www.thethingsnetwork.org/docs/devices/uno/quick-start.html" target="_blank" rel="noopener">TheThingsNetwork2</a></p>
@@ -1346,23 +1358,11 @@ UDP             1700/1700        0.0.0.0/0
 <p><a href="https://blog.csdn.net/freemote/article/details/90315395" target="_blank" rel="noopener">freemote</a></p>
 <p><a href="https://blog.csdn.net/jiangjunjie_2005/article/details/104439355" target="_blank" rel="noopener">Rimelink</a></p>
 <p><a href="http://lora.timeddd.com/forum.php?mod=viewthread&amp;tid=540&amp;extra=page%3D1" target="_blank" rel="noopener">LoraWAN论坛</a></p>
-<h3 id="353-adr">3.5.3 ADR</h3>
+<h3 id="453-adr">4.5.3 ADR</h3>
 <p><a href="http://lora.timeddd.com/forum.php?mod=viewthread&amp;tid=428&amp;extra=page%3D1" target="_blank" rel="noopener">LoraWAN论坛</a>
 <a href="https://www.sghoslya.com/p/how-does-lorawan-nodes-changes-their.html" target="_blank" rel="noopener">Sakshama Ghoslya</a></p>
-<h3 id="354-去重">3.5.4 去重</h3>
+<h3 id="454-去重">4.5.4 去重</h3>
 <p><a href="http://lora.timeddd.com/forum.php?mod=viewthread&amp;tid=478&amp;extra=page%3D1" target="_blank" rel="noopener">LoraWAN论坛</a></p>
-<h1 id="4-lorawan-specification规范">4 LoRaWAN Specification规范</h1>
-<h2 id="41-lora-alliancehttpslora-allianceorglorawan-for-developers">4.1 <a href="https://lora-alliance.org/lorawan-for-developers" target="_blank" rel="noopener">LoRa Alliance</a></h2>
-<h2 id="42-lorawan-regional-parameters">4.2 LoRaWAN Regional Parameters</h2>
-<ol>
-<li>中国
-<ul>
-<li><a href="https://blog.csdn.net/jiangjunjie_2005/article/details/54754927" target="_blank" rel="noopener">RimeLink</a></li>
-<li><a href="https://blog.csdn.net/iotisan/article/details/55056092" target="_blank" rel="noopener">iotisan</a></li>
-</ul>
-</li>
-<li><a href="https://www.sghoslya.com/p/table-01-data-rate-configuration.html" target="_blank" rel="noopener">EU</a></li>
-</ol>
 <h1 id="5-其他">5 其他</h1>
 <ol>
 <li><a href="https://www.gnuradio.org/" target="_blank" rel="noopener">GUNRadio</a></li>

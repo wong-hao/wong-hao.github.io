@@ -691,8 +691,20 @@ concentrator.&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://lora.readthedocs.io/en/latest/#id11&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;SNR、RSSI&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;阅读过的paper&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h1 id=&#34;2-实验环境&#34;&gt;2 实验环境&lt;/h1&gt;
-&lt;h2 id=&#34;21-操作系统&#34;&gt;2.1 操作系统&lt;/h2&gt;
+&lt;h1 id=&#34;2-lorawan-specification规范&#34;&gt;2 LoRaWAN Specification规范&lt;/h1&gt;
+&lt;h2 id=&#34;21-lora-alliancehttpslora-allianceorglorawan-for-developers&#34;&gt;2.1 &lt;a href=&#34;https://lora-alliance.org/lorawan-for-developers&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoRa Alliance&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;22-lorawan-regional-parameters&#34;&gt;2.2 LoRaWAN Regional Parameters&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;中国
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/jiangjunjie_2005/article/details/54754927&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;RimeLink&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/iotisan/article/details/55056092&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;iotisan&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.sghoslya.com/p/table-01-data-rate-configuration.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;EU&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;3-实验环境&#34;&gt;3 实验环境&lt;/h1&gt;
+&lt;h2 id=&#34;31-操作系统&#34;&gt;3.1 操作系统&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Raspberry Pi OS (32-bit) with desktop and recommended software&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -854,7 +866,7 @@ Received 3 packets (total:3)
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;22-系统备份&#34;&gt;2.2 系统备份&lt;/h2&gt;
+&lt;h2 id=&#34;32-系统备份&#34;&gt;3.2 系统备份&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOnU6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVdLWEhRd1h5cnRDaGVTMDM0WTFsSjhCVlhJSThGUmd3QzhuZ0lFRlpqVW5EQT9lPWR1WXNKVQ==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Gitee版&lt;/a&gt;采用的代码Commit id（&lt;em&gt;选用自动安装脚本&amp;rsquo;install.sh&amp;rsquo;&lt;/em&gt;）: &lt;a href=&#34;https://gitee.com/rejeee/gw1302s/commit/d9ef27fdecf2352d7ab6b85d50fb7a3e38a162ae&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;d9ef27fdecf2352d7ab6b85d50fb7a3e38a162ae&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#&#34;&gt;Github版&lt;/a&gt;采用的代码Commit id（&lt;em&gt;Gitee抄到这后面就自己改了&lt;/em&gt;）: &lt;a href=&#34;https://github.com/Lora-net/sx1302_hal/commit/6291e62ef9a161ae41037a0df1a86e9943a907b9&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;6291e62ef9a161ae41037a0df1a86e9943a907b9&lt;/a&gt;&lt;/li&gt;
@@ -869,10 +881,10 @@ Received 3 packets (total:3)
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;h1 id=&#34;3-实验步骤&#34;&gt;3 实验步骤&lt;/h1&gt;
-&lt;h2 id=&#34;31-lorawan&#34;&gt;3.1 LoRaWAN&lt;/h2&gt;
+&lt;h1 id=&#34;4-实验步骤&#34;&gt;4 实验步骤&lt;/h1&gt;
+&lt;h2 id=&#34;41-lorawan&#34;&gt;4.1 LoRaWAN&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;https://connect.ed-diamond.com/MISC/MISCHS-015/LORAWAN-deploiement-d-une-infrastructure-de-test&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;完整案例&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;32-devicesend-nodes&#34;&gt;3.2 Devices/End Nodes&lt;/h2&gt;
+&lt;h2 id=&#34;42-devicesend-nodes&#34;&gt;4.2 Devices/End Nodes&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;&lt;a href=&#34;http://www.njrjzn.com/chanpinzhongxin/SX127xmozuxilie/4.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;M-HL9-EV&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&#34;http://www.rejeee.com/documents/APP_DOC/M-KL9_how_to_enter_configuration_mode.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;进入配置方法&lt;/a&gt;&lt;/li&gt;
@@ -908,21 +920,21 @@ FNB:       0x00
 TYPE:      0x00
 Flash:     0
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;321-入网&#34;&gt;3.2.1 入网&lt;/h3&gt;
-&lt;h4 id=&#34;3211-概述&#34;&gt;3.2.1.1 概述&lt;/h4&gt;
+&lt;h3 id=&#34;421-入网&#34;&gt;4.2.1 入网&lt;/h3&gt;
+&lt;h4 id=&#34;4211-概述&#34;&gt;4.2.1.1 概述&lt;/h4&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/6213027.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;AnswerInTheWind&lt;/a&gt;
 &lt;a href=&#34;https://www.thethingsnetwork.org/docs/lorawan/addressing.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TTN&lt;/a&gt;&lt;/p&gt;
-&lt;h4 id=&#34;3212-abp&#34;&gt;3.2.1.2 ABP&lt;/h4&gt;
+&lt;h4 id=&#34;4212-abp&#34;&gt;4.2.1.2 ABP&lt;/h4&gt;
 &lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/RAKwireless/article/details/106186894&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;RAKwireless&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.chirpstack.io/application-server/use/devices/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Chirpstack&lt;/a&gt;&lt;/p&gt;
-&lt;h4 id=&#34;3213-otaa&#34;&gt;3.2.1.3 OTAA&lt;/h4&gt;
+&lt;h4 id=&#34;4213-otaa&#34;&gt;4.2.1.3 OTAA&lt;/h4&gt;
 &lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/RAKwireless/article/details/106135373&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;RAKwireless&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/6213529.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;AnswerInTheWind&lt;/a&gt;&lt;/p&gt;
-&lt;h4 id=&#34;3214-rejeee&#34;&gt;3.2.1.4 Rejeee&lt;/h4&gt;
+&lt;h4 id=&#34;4214-rejeee&#34;&gt;4.2.1.4 Rejeee&lt;/h4&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/13517529.html#4758586&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;这家的节点不支持LoRaWAN，节点只有私有协议的&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWVfQkIxUFl2M3RKb01ZUTMxQ1hidXdCZWVoZmdnNkpPUEJxX1FGdzBhb3NzUT9lPWJmbmM4TA==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;8. 芮捷LPWAN协议&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://space.bilibili.com/7682653?spm_id_from=333.788.b_765f7570696e666f.1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;视频&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;33-gateway&#34;&gt;3.3 Gateway&lt;/h2&gt;
+&lt;h2 id=&#34;43-gateway&#34;&gt;4.3 Gateway&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;SX1302&lt;/strong&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.semtech.com/products/wireless-rf/lora-gateways/sx1302cxxxgw1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Semtech&lt;/a&gt;&lt;/li&gt;
@@ -944,7 +956,7 @@ Flash:     0
 &lt;li&gt;&lt;code&gt;make install_conf&lt;/code&gt;即安装&lt;strong&gt;global_conf.json&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;卖家给的&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/13154904.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;攻略&lt;/a&gt;跟用&lt;code&gt;install.sh&lt;/code&gt;生成的主要差别在radio_1与radio_2的&lt;strong&gt;ferq&lt;/strong&gt;不同，攻略的效果好；官方的&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVQzOWdIRUc4YU5DbHFMVzBjRGkwVjBCZjZGQmUzWUpkSnh0YVhXbUlLdnFtUT9lPW9qNjEzcg==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;参考文献&lt;/a&gt;给出了&lt;strong&gt;global_conf.json&lt;/strong&gt;的参数意义&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;34-network-server&#34;&gt;3.4 Network Server&lt;/h2&gt;
+&lt;h2 id=&#34;44-network-server&#34;&gt;4.4 Network Server&lt;/h2&gt;
 &lt;hr&gt;
 &lt;p&gt;&lt;strong&gt;Cloud-hosted: Close Source LoRaWAN Network Servers Platforms&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -1088,8 +1100,8 @@ UDP             1700/1700        0.0.0.0/0
 &lt;p&gt;&lt;strong&gt;Integrated: Gateway-Embedded LoRaWAN Network Servers Platforms&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.actility.com/lorawan-network-server/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;特点&lt;/a&gt;&lt;/p&gt;
 &lt;hr&gt;
-&lt;h2 id=&#34;35-application-server&#34;&gt;3.5 Application Server&lt;/h2&gt;
-&lt;h3 id=&#34;351-mqtt&#34;&gt;3.5.1 MQTT&lt;/h3&gt;
+&lt;h2 id=&#34;45-application-server&#34;&gt;4.5 Application Server&lt;/h2&gt;
+&lt;h3 id=&#34;451-mqtt&#34;&gt;4.5.1 MQTT&lt;/h3&gt;
 &lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/RAKwireless/article/details/106711672&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;RAKwireless&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/6200497.html#4472555&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;AnswerInTheWind&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://blog.hobairiku.site/2018/02/26/LoRa-Server-Project/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Rimelink&lt;/a&gt;&lt;/p&gt;
@@ -1097,7 +1109,7 @@ UDP             1700/1700        0.0.0.0/0
 &lt;p&gt;&lt;a href=&#34;https://www.chirpstack.io/application-server/integrations/mqtt/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ChirpStack&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://thethingsstack.io/integrations/mqtt/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TheThingStack&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/freemote/article/details/106361732&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;freemote&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&#34;352-下行通信&#34;&gt;3.5.2 下行通信&lt;/h3&gt;
+&lt;h3 id=&#34;452-下行通信&#34;&gt;4.5.2 下行通信&lt;/h3&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.thethingsnetwork.org/forum/t/how-to-get-downlink-communication/41712/12&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TheThingsNetwork1&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/quending/article/details/86481598&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;quending&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.thethingsnetwork.org/docs/devices/uno/quick-start.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TheThingsNetwork2&lt;/a&gt;&lt;/p&gt;
@@ -1106,23 +1118,11 @@ UDP             1700/1700        0.0.0.0/0
 &lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/freemote/article/details/90315395&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;freemote&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/jiangjunjie_2005/article/details/104439355&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Rimelink&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;http://lora.timeddd.com/forum.php?mod=viewthread&amp;amp;tid=540&amp;amp;extra=page%3D1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoraWAN论坛&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&#34;353-adr&#34;&gt;3.5.3 ADR&lt;/h3&gt;
+&lt;h3 id=&#34;453-adr&#34;&gt;4.5.3 ADR&lt;/h3&gt;
 &lt;p&gt;&lt;a href=&#34;http://lora.timeddd.com/forum.php?mod=viewthread&amp;amp;tid=428&amp;amp;extra=page%3D1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoraWAN论坛&lt;/a&gt;
 &lt;a href=&#34;https://www.sghoslya.com/p/how-does-lorawan-nodes-changes-their.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Sakshama Ghoslya&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&#34;354-去重&#34;&gt;3.5.4 去重&lt;/h3&gt;
+&lt;h3 id=&#34;454-去重&#34;&gt;4.5.4 去重&lt;/h3&gt;
 &lt;p&gt;&lt;a href=&#34;http://lora.timeddd.com/forum.php?mod=viewthread&amp;amp;tid=478&amp;amp;extra=page%3D1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoraWAN论坛&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&#34;4-lorawan-specification规范&#34;&gt;4 LoRaWAN Specification规范&lt;/h1&gt;
-&lt;h2 id=&#34;41-lora-alliancehttpslora-allianceorglorawan-for-developers&#34;&gt;4.1 &lt;a href=&#34;https://lora-alliance.org/lorawan-for-developers&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoRa Alliance&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;42-lorawan-regional-parameters&#34;&gt;4.2 LoRaWAN Regional Parameters&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;中国
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/jiangjunjie_2005/article/details/54754927&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;RimeLink&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/iotisan/article/details/55056092&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;iotisan&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.sghoslya.com/p/table-01-data-rate-configuration.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;EU&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
 &lt;h1 id=&#34;5-其他&#34;&gt;5 其他&lt;/h1&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.gnuradio.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GUNRadio&lt;/a&gt;&lt;/li&gt;
@@ -1811,7 +1811,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-562179843&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-628179543&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -1821,7 +1821,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-562179843&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-628179543&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
