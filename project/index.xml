@@ -234,7 +234,7 @@
 &lt;li&gt;&lt;code&gt;sig_handler&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;difftimespec&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;crc16&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;get_tx_gain_lut_index&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;get_tx_gain_lut_index&lt;/code&gt; //jit_enqueue前查tx_gain_lut表&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;send_tx_ack&lt;/code&gt;：gps_enabled与gps_ref_valid任意一个不满足都会发送JIT_ERROR_GPS_UNLOCKED，说明gps出问题统一用&lt;strong&gt;UNLOCKED&lt;/strong&gt;代替&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;

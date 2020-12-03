@@ -415,7 +415,7 @@
 &lt;li&gt;&lt;code&gt;sig_handler&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;difftimespec&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;crc16&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;get_tx_gain_lut_index&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;get_tx_gain_lut_index&lt;/code&gt; //jit_enqueue前查tx_gain_lut表&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;send_tx_ack&lt;/code&gt;：gps_enabled与gps_ref_valid任意一个不满足都会发送JIT_ERROR_GPS_UNLOCKED，说明gps出问题统一用&lt;strong&gt;UNLOCKED&lt;/strong&gt;代替&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
@@ -1811,7 +1811,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-123958746&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-562179843&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -1821,7 +1821,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-123958746&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-562179843&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
