@@ -424,6 +424,7 @@ INFO: Exiting packet forwarder program
 Gateway to Server Interface Definition&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVJXaXJLdnJiVEZPaS1xUGk3OFFfVTRCUm4tM1dwLXVwNTNLdVJ6ZE9leDllZz9lPXR6OWh3eA==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;剖析 LoRaWAN Gateway 核心代码&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/13154904.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;global_conf.json参数含义&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;[PROTOCOL相关]https://blog.csdn.net/m0_38008027/article/details/89086175&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id=&#34;331-upstream-protocol&#34;&gt;3.3.1 UPstream protocol&lt;/h3&gt;
 &lt;ol&gt;
@@ -806,7 +807,7 @@ raspberrypi2    0016c001ff10d3f7    -              苏州市           在线   
 &lt;li&gt;&lt;a href=&#34;https://www.thethingsnetwork.org/forum/t/sx1302-using-semtech-packet-forwarder-can-not-register-the-gateway/41211/34&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;SX1302网关转发器修改版讨论&lt;/a&gt;：server_address选择&lt;a href=&#34;https://blog.csdn.net/freemote/article/details/90315395&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;router.cn.thethings.network&lt;/a&gt;；温度改为int可保证console显示connected&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://thethingsstack.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;The Things Stack：安装版&lt;/a&gt;，&lt;a href=&#34;https://v2.cryptii.com/hexadecimal/base64&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Base64工具&lt;/a&gt;
+&lt;li&gt;&lt;a href=&#34;https://thethingsstack.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;The Things Stack：安装版&lt;/a&gt;，&lt;a href=&#34;https://cryptii.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Base64工具&lt;/a&gt;
 &lt;ul&gt;
 &lt;li&gt;Docket install&lt;/li&gt;
 &lt;/ul&gt;
@@ -908,6 +909,7 @@ UDP             1700/1700        0.0.0.0/0
 &lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/freemote/article/details/106361732&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;freemote&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&#34;352-下行通信&#34;&gt;3.5.2 下行通信&lt;/h3&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.thethingsnetwork.org/forum/t/how-to-get-downlink-communication/41712/12&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TheThingsNetwork1&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/quending/article/details/86481598&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;quending&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.thethingsnetwork.org/docs/devices/uno/quick-start.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TheThingsNetwork2&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.chirpstack.io/project/architecture/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Chirpstack&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/13154904.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;AnswerInTheWind&lt;/a&gt;&lt;/p&gt;
