@@ -211,17 +211,21 @@
             &amp;quot;max_ts_metrics&amp;quot;: 255,
             &amp;quot;nb_symbols&amp;quot;: 1
         },
+        //两个SX1250
         &amp;quot;radio_0&amp;quot;: {
-            &amp;quot;enable&amp;quot;: true,
+            &amp;quot;enable&amp;quot;: true, //包含了rx_enable与tx_enable
             &amp;quot;type&amp;quot;: &amp;quot;SX1250&amp;quot;,
             &amp;quot;single_input_mode&amp;quot;: true,
-            &amp;quot;freq&amp;quot;: 470600000,
+            &amp;quot;freq&amp;quot;: 470600000, //RX frequency
             &amp;quot;rssi_offset&amp;quot;: -207.0,
             &amp;quot;rssi_tcomp&amp;quot;: {&amp;quot;coeff_a&amp;quot;: 0, &amp;quot;coeff_b&amp;quot;: 0, &amp;quot;coeff_c&amp;quot;: 20.41, &amp;quot;coeff_d&amp;quot;: 2162.56, &amp;quot;coeff_e&amp;quot;: 0},
-            &amp;quot;tx_enable&amp;quot;: true,
-            &amp;quot;tx_freq_min&amp;quot;: 470000000,
+            &amp;quot;tx_enable&amp;quot;: true, 
+            /* check TX frequency before trying to queue packet */ //thread_down
+            &amp;quot;tx_freq_min&amp;quot;: 470000000, 
             &amp;quot;tx_freq_max&amp;quot;: 510000000,
-            &amp;quot;tx_gain_lut&amp;quot;:[ //tx_gain: transmit gain; lut: Look-Up-Table
+            /* check TX power before trying to queue packet, send a warning if not supported */ //thread_down
+            //tx_gain: transmit gain; lut: Look-Up-Table
+            &amp;quot;tx_gain_lut&amp;quot;:[ 
                 {&amp;quot;rf_power&amp;quot;: -6, &amp;quot;pa_gain&amp;quot;: 0, &amp;quot;pwr_idx&amp;quot;:  0},
                 {&amp;quot;rf_power&amp;quot;: -3, &amp;quot;pa_gain&amp;quot;: 0, &amp;quot;pwr_idx&amp;quot;:  1},
                 {&amp;quot;rf_power&amp;quot;:  0, &amp;quot;pa_gain&amp;quot;: 0, &amp;quot;pwr_idx&amp;quot;:  2},
@@ -247,8 +251,9 @@
             &amp;quot;freq&amp;quot;: 471400000,
             &amp;quot;rssi_offset&amp;quot;: -207.0,
             &amp;quot;rssi_tcomp&amp;quot;: {&amp;quot;coeff_a&amp;quot;: 0, &amp;quot;coeff_b&amp;quot;: 0, &amp;quot;coeff_c&amp;quot;: 20.41, &amp;quot;coeff_d&amp;quot;: 2162.56, &amp;quot;coeff_e&amp;quot;: 0},
-            &amp;quot;tx_enable&amp;quot;: false
+            &amp;quot;tx_enable&amp;quot;: false //SELECTED RF_CHAIN IS DISABLED FOR TX ON SELECTED BOARD
         },
+        //Receive 8 LoRa channels multi-data rates (SF5 ~ SF12 / 125 Simultaneously kHz) 
         &amp;quot;chan_multiSF_0&amp;quot;: {&amp;quot;enable&amp;quot;: true, &amp;quot;radio&amp;quot;: 0, &amp;quot;if&amp;quot;: -300000},
         &amp;quot;chan_multiSF_1&amp;quot;: {&amp;quot;enable&amp;quot;: true, &amp;quot;radio&amp;quot;: 0, &amp;quot;if&amp;quot;: -100000},
         &amp;quot;chan_multiSF_2&amp;quot;: {&amp;quot;enable&amp;quot;: true, &amp;quot;radio&amp;quot;: 0, &amp;quot;if&amp;quot;:  100000},
@@ -257,6 +262,7 @@
         &amp;quot;chan_multiSF_5&amp;quot;: {&amp;quot;enable&amp;quot;: true, &amp;quot;radio&amp;quot;: 1, &amp;quot;if&amp;quot;: -100000},
         &amp;quot;chan_multiSF_6&amp;quot;: {&amp;quot;enable&amp;quot;: true, &amp;quot;radio&amp;quot;: 1, &amp;quot;if&amp;quot;:  100000},
         &amp;quot;chan_multiSF_7&amp;quot;: {&amp;quot;enable&amp;quot;: true, &amp;quot;radio&amp;quot;: 1, &amp;quot;if&amp;quot;:  300000},
+        //2 mono-data rate (LoRa 250 / 500 kHz and FSK 50 kbps)
         &amp;quot;chan_Lora_std&amp;quot;:  {&amp;quot;enable&amp;quot;: true, &amp;quot;radio&amp;quot;: 1, &amp;quot;if&amp;quot;: -200000, &amp;quot;bandwidth&amp;quot;: 250000, &amp;quot;spread_factor&amp;quot;: 7,
                            &amp;quot;implicit_hdr&amp;quot;: false, &amp;quot;implicit_payload_length&amp;quot;: 17, &amp;quot;implicit_crc_en&amp;quot;: false, &amp;quot;implicit_coderate&amp;quot;: 1},
         &amp;quot;chan_FSK&amp;quot;:       {&amp;quot;enable&amp;quot;: true, &amp;quot;radio&amp;quot;: 1, &amp;quot;if&amp;quot;:  300000, &amp;quot;bandwidth&amp;quot;: 125000, &amp;quot;datarate&amp;quot;: 50000}
@@ -479,8 +485,8 @@ INFO: spidev_path /dev/spidev0.0, lorawan_public 1, clksrc 0, full_duplex 0
 INFO: antenna_gain 0 dBi
 INFO: Configuring legacy timestamp
 INFO: Configuring Tx Gain LUT for rf_chain 0 with 16 indexes for sx1250
-INFO: radio 0 enabled (type SX1250), center frequency 474600000, RSSI offset -207.000000, tx enabled 1, single input mode 1
-INFO: radio 1 enabled (type SX1250), center frequency 475400000, RSSI offset -207.000000, tx enabled 0, single input mode 1
+INFO: radio 0 enabled (type SX1250), center frequency 471400000, RSSI offset -207.000000, tx enabled 1, single input mode 1
+INFO: radio 1 enabled (type SX1250), center frequency 475000000, RSSI offset -207.000000, tx enabled 0, single input mode 1
 INFO: Lora multi-SF channel 0&amp;gt;  radio 0, IF -300000 Hz, 125 kHz bw, SF 5 to 12
 INFO: Lora multi-SF channel 1&amp;gt;  radio 0, IF -100000 Hz, 125 kHz bw, SF 5 to 12
 INFO: Lora multi-SF channel 2&amp;gt;  radio 0, IF 100000 Hz, 125 kHz bw, SF 5 to 12
@@ -645,7 +651,7 @@ Gateway to Server Interface Definition&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;这与global.config中的&amp;quot;SX130x_conf&amp;quot;紧密相关：&lt;a href=&#34;https://gitee.com/rejeee/gw1302s/tree/master/packet_forwarder&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&amp;ldquo;SX130x_conf&amp;rdquo; that should contain the parameters for the Lora concentrator board (RF channels definition, modem parameters, etc) &lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;52-concentrator&#34;&gt;5.2 Concentrator&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://semtech.my.salesforce.com/sfc/p/#E0000000JelG/a/2R000000HV3G/an5Oh4KfiY7tAO1MO7RiPOj08WUpOTjPHSF57_.NlJ0&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;参考设计&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://semtech.my.salesforce.com/sfc/p/#E0000000JelG/a/2R000000HV3G/an5Oh4KfiY7tAO1MO7RiPOj08WUpOTjPHSF57_.NlJ0&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Adobe PDFCorecell_Reference_Design_User_Guide；参考设计&lt;/a&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;The SX1302 digital baseband chip is a highly innovative digital signal processing engine
 equipped with 16 modulators, capable of demodulating 64 combinations of LoRa packets,
@@ -674,12 +680,15 @@ concentrator.&lt;/li&gt;
       <guid>https://haowong.com/project/internal-project/</guid>
       <description>&lt;h1 id=&#34;1-lora调制解调基础知识&#34;&gt;1 LoRa调制解调基础知识&lt;/h1&gt;
 &lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.semtech.com/search/results?keywords=Modulation&amp;#43;Basics%2A&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Semetech Modulation Basics&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://revspace.nl/DecodingLora&#34;&gt;https://revspace.nl/DecodingLora&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://electronics.stackexchange.com/questions/278192/understanding-the-relationship-between-lora-chips-chirps-symbols-and-bits&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;chip、chirp、bit、symbol&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://myriadrf.org/news/lora-modem-limesdr/&#34;&gt;https://myriadrf.org/news/lora-modem-limesdr/&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.sghoslya.com/p/lora_9.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Sakshama Ghoslya&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.sghoslya.com/p/how-to-buy-lora-matlab-codes.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;仿真代码&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/6206706.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;数据包格式&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;lorawan mac command&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://lora.readthedocs.io/en/latest/#id11&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;SNR、RSSI&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;阅读过的paper&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h1 id=&#34;2-实验环境&#34;&gt;2 实验环境&lt;/h1&gt;
@@ -1613,7 +1622,8 @@ $$&lt;/p&gt;
 &lt;h3 id=&#34;52-uml&#34;&gt;5.2 UML&lt;/h3&gt;
 &lt;p&gt;不支持，推荐使用开源工具&lt;code&gt;https://draw.io/&lt;/code&gt;制作后再导入图片&lt;/p&gt;
 &lt;h3 id=&#34;53-更多文档&#34;&gt;5.3 更多文档&lt;/h3&gt;
-&lt;p&gt;更多文档请参考 &lt;a href=&#34;https://preview.mdnice.com/articles/&#34; title=&#34;更多文档&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;markdown-nice-docs&lt;/a&gt;&lt;/p&gt;</description>
+&lt;p&gt;更多文档请参考 &lt;a href=&#34;https://preview.mdnice.com/articles/&#34; title=&#34;更多文档&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;markdown-nice-docs&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://editor.csdn.net/md/?spm=1001.2101.3001.4299&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;csdn Markdown&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -1801,7 +1811,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-458317296&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-123958746&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -1811,7 +1821,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-458317296&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-123958746&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
