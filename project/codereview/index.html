@@ -1207,7 +1207,7 @@ INFO: Configuring legacy timestamp
 INFO: Configuring Tx Gain LUT for rf_chain 0 with 16 indexes for sx1250
 INFO: radio 0 enabled (type SX1250), center frequency 471400000, RSSI offset -207.000000, tx enabled 1, single input mode 1
 INFO: radio 1 enabled (type SX1250), center frequency 475000000, RSSI offset -207.000000, tx enabled 0, single input mode 1
-INFO: Lora multi-SF channel 0&gt;  radio 0, IF -300000 Hz, 125 kHz bw, SF 5 to 12
+INFO: Lora multi-SF channel 0&gt;  radio 0, IF -300000 Hz, 125 kHz bw, SF 5 to 12 //Rb与Rs都由SF和BW决定
 INFO: Lora multi-SF channel 1&gt;  radio 0, IF -100000 Hz, 125 kHz bw, SF 5 to 12
 INFO: Lora multi-SF channel 2&gt;  radio 0, IF 100000 Hz, 125 kHz bw, SF 5 to 12
 INFO: Lora multi-SF channel 3&gt;  radio 0, IF 300000 Hz, 125 kHz bw, SF 5 to 12
@@ -1216,7 +1216,7 @@ INFO: Lora multi-SF channel 5&gt;  radio 1, IF -100000 Hz, 125 kHz bw, SF 5 to 1
 INFO: Lora multi-SF channel 6&gt;  radio 1, IF 100000 Hz, 125 kHz bw, SF 5 to 12
 INFO: Lora multi-SF channel 7&gt;  radio 1, IF 300000 Hz, 125 kHz bw, SF 5 to 12
 INFO: Lora std channel&gt; radio 1, IF -200000 Hz, 250000 Hz bw, SF 7, Explicit header
-INFO: FSK channel&gt; radio 1, IF 300000 Hz, 125000 Hz bw, 50000 bps datarate
+INFO: FSK channel&gt; radio 1, IF 300000 Hz, 125000 Hz bw, 50000 bps datarate //Rb (bps = bit/s);
 
 //parse_gateway_configuration(): point to the gateway configuration object
 INFO: global_conf.json does contain a JSON object named gateway_conf, parsing gateway parameters
@@ -1260,7 +1260,7 @@ INFO: concentrator EUI: 0x0016c001ff10d3f6
 INFO: Received pkt from mote: 1350200C (fcnt=13)
 
 //thread_up(): start of JSON structure
-JSON up: {&quot;rxpk&quot;:[{&quot;jver&quot;:1,&quot;tmst&quot;:137795171,&quot;chan&quot;:4,&quot;rfch&quot;:1,&quot;freq&quot;:475.100000,&quot;mid&quot;:0,&quot;stat&quot;:1,&quot;modu&quot;:&quot;LORA&quot;,&quot;datr&quot;:&quot;SF12Bw125&quot;,&quot;codr&quot;:&quot;4/5&quot;,&quot;rssis&quot;:-84,&quot;lsnr&quot;:-5.0,&quot;foff&quot;:786,&quot;rssi&quot;:-80,&quot;size&quot;:13,&quot;data&quot;:&quot;gQwgUBMADQANAKvN7w==&quot;}]}
+JSON up: {&quot;rxpk&quot;:[{&quot;jver&quot;:1,&quot;tmst&quot;:137795171,&quot;chan&quot;:4,&quot;rfch&quot;:1,&quot;freq&quot;:475.100000,&quot;mid&quot;:0,&quot;stat&quot;:1,&quot;modu&quot;:&quot;LORA&quot;,&quot;datr&quot;:&quot;SF12Bw125&quot;,&quot;codr&quot;:&quot;4/5&quot;,&quot;rssis&quot;:-84,&quot;lsnr&quot;:-5.0,&quot;foff&quot;:786,&quot;rssi&quot;:-80,&quot;size&quot;:13,&quot;data&quot;:&quot;gQwgUBMADQANAKvN7w==&quot;}]} //datr由SF、Bw计算得
 
 INFO: [up] PUSH_ACK received in 40ms
 INFO: [down] PULL_ACK received in 34ms
