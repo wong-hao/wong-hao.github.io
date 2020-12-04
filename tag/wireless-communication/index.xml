@@ -930,9 +930,10 @@ UDP             1700/1700        0.0.0.0/0
 &lt;p&gt;&lt;a href=&#34;https://thethingsstack.io/integrations/mqtt/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TheThingStack&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/freemote/article/details/106361732&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;freemote&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&#34;452-下行通信&#34;&gt;4.5.2 下行通信&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&#34;https://lora-developers.semtech.com/library/tech-papers-and-guides/lorawan-class-a-devices&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Semetech&lt;/a&gt;
-&lt;a href=&#34;https://www.thethingsnetwork.org/forum/t/how-to-get-downlink-communication/41712/12&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TheThingsNetwork1&lt;/a&gt;
-&lt;a href=&#34;https://www.thethingsnetwork.org/forum/u/haowong/messages/archive&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TheThingsNetwork2&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://lora-developers.semtech.com/library/tech-papers-and-guides/lorawan-class-a-devices&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Semetech1&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://lora-developers.semtech.com/library/tech-papers-and-guides/lorawan-class-b-devices&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Semetech2&lt;/a&gt;
+&lt;a href=&#34;https://www.thethingsnetwork.org/forum/t/how-to-get-downlink-communication/41712/12&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TheThingsNetwork1&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.thethingsnetwork.org/forum/u/haowong/messages/archive&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TheThingsNetwork2&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/quending/article/details/86481598&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;quending&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.thethingsnetwork.org/docs/devices/uno/quick-start.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TheThingsNetwork2&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.chirpstack.io/project/architecture/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Chirpstack1&lt;/a&gt;
