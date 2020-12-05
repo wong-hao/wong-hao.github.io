@@ -446,6 +446,7 @@
 &lt;/ul&gt;
 &lt;h2 id=&#34;分析是从gateway到node的通信--just-in-time-downlink-schedulinghttpsgiteecomrejeeegw1302streemasterpacket_forwarder&#34;&gt;分析：是从gateway到node的通信,  &lt;a href=&#34;https://gitee.com/rejeee/gw1302s/tree/master/packet_forwarder&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Just-In-Time&amp;rdquo; downlink scheduling&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;/* &amp;mdash; THREAD 4: PARSE GPS MESSAGE AND KEEP GATEWAY IN SYNC &amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;ndash; */&lt;/p&gt;
+&lt;p&gt;// &lt;a href=&#34;https://lora-developers.semtech.com/library/tech-papers-and-guides/lorawan-class-b-devices&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;In order for a LoRaWAN network to support Class B devices, all the LoRaWAN gateways in this network need to have a built-in GPS timing source, so they all can be synchronized to the exact beacon timing.&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;thread_gps&lt;/code&gt;：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;code&gt;gps_process_sync&lt;/code&gt;：time_reference_gps；具体的GPS &amp;lt;-&amp;gt; timestamp TIME REFERENCE&lt;/li&gt;
@@ -607,8 +608,7 @@ INFO: Exiting packet forwarder program
 &lt;/blockquote&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&#34;https://gitee.com/rejeee/gw1302s/blob/master/packet_forwarder/PROTOCOL.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;PROTOCOL&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVJ4VTcxc1RCNFJEaFhVU0RUTXlXdU1CNHc1NHQyZ3JhT3NvdUpVckszYkt0dz9lPUVoWXBMdw==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoRaWAN Network Server Demonstration:
-Gateway to Server Interface Definition&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVJ4VTcxc1RCNFJEaFhVU0RUTXlXdU1CNHc1NHQyZ3JhT3NvdUpVckszYkt0dz9lPUVoWXBMdw==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoRaWAN Network Server Demonstration: Gateway to Server Interface Definition&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVJXaXJLdnJiVEZPaS1xUGk3OFFfVTRCUm4tM1dwLXVwNTNLdVJ6ZE9leDllZz9lPXR6OWh3eA==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;剖析 LoRaWAN Gateway 核心代码&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/13154904.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;global_conf.json参数含义&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;[PROTOCOL相关]https://blog.csdn.net/m0_38008027/article/details/89086175&lt;/li&gt;
@@ -686,14 +686,20 @@ concentrator.&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://myriadrf.org/news/lora-modem-limesdr/&#34;&gt;https://myriadrf.org/news/lora-modem-limesdr/&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.sghoslya.com/p/lora_9.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Sakshama Ghoslya&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.sghoslya.com/p/how-to-buy-lora-matlab-codes.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;仿真代码&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/6206706.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;数据包格式&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;lorawan mac command&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://lora.readthedocs.io/en/latest/#id11&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;SNR、RSSI&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;数据包格式 / Lora Packet Format:
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/6206706.html&#34;&gt;https://www.cnblogs.com/answerinthewind/p/6206706.html&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://lora-alliance.org/lorawan-for-developers&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Core LoRaWAN Specification&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;lorawan mac command：&lt;a href=&#34;https://lora-alliance.org/lorawan-for-developers&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Core LoRaWAN Specification&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://lora.readthedocs.io/en/latest/#id11&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Lora&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVdHa3JTSE4zWlZEc3ptZGIzN2tKUmNCZFhQMU1sSTFHcURFdXJjcGdYTkJrZz9lPXNYOHRIdA==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Complete Reverse Engineering ofLoRa PHY&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;阅读过的paper&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h1 id=&#34;2-lorawan-specification规范&#34;&gt;2 LoRaWAN Specification规范&lt;/h1&gt;
-&lt;h2 id=&#34;21-lora-alliancehttpslora-allianceorglorawan-for-developers&#34;&gt;2.1 &lt;a href=&#34;https://lora-alliance.org/lorawan-for-developers&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoRa Alliance&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;22-lorawan-regional-parameters&#34;&gt;2.2 LoRaWAN Regional Parameters&lt;/h2&gt;
+&lt;h1 id=&#34;2-lorawan-specification地区规范&#34;&gt;2 LoRaWAN Specification地区规范&lt;/h1&gt;
+&lt;h2 id=&#34;21-lorawan-regional-parametershttpslora-allianceorglorawan-for-developers&#34;&gt;2.1 &lt;a href=&#34;https://lora-alliance.org/lorawan-for-developers&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoRaWAN Regional Parameters&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;22-特例&#34;&gt;2.2 特例&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;中国
 &lt;ul&gt;
@@ -1009,9 +1015,9 @@ raspberrypi2    0016c001ff10d3f7    -              苏州市           在线   
 &lt;li&gt;&lt;a href=&#34;https://www.thethingsnetwork.org/forum/t/sx1302-using-semtech-packet-forwarder-can-not-register-the-gateway/41211/34&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;SX1302网关转发器修改版讨论&lt;/a&gt;：server_address选择&lt;a href=&#34;https://blog.csdn.net/freemote/article/details/90315395&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;router.cn.thethings.network&lt;/a&gt;；温度改为int可保证console显示connected&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://thethingsstack.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;The Things Stack：安装版&lt;/a&gt;，&lt;a href=&#34;https://cryptii.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Base64工具&lt;/a&gt;
+&lt;li&gt;&lt;a href=&#34;https://thethingsstack.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;The Things Stack：安装版&lt;/a&gt;，&lt;a href=&#34;https://cryptii.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Base64工具1&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;Docket install&lt;/li&gt;
+&lt;li&gt;Docket install， &lt;a href=&#34;https://lorawan-packet-decoder-0ta6puiniaut.runkit.sh/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Base64工具2&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://forum.rakwireless.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Rakwireless&lt;/a&gt;&lt;/li&gt;
@@ -1127,9 +1133,11 @@ UDP             1700/1700        0.0.0.0/0
 &lt;p&gt;&lt;a href=&#34;http://lora.timeddd.com/forum.php?mod=viewthread&amp;amp;tid=428&amp;amp;extra=page%3D1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoraWAN论坛&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVZiNEttMzVTVWRMclNTMl91elRLaW9CZTNSLVJCakVVb3JINEFtZ0VpVW5jdz9lPXlFWXI1bA==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Semetech1&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.sghoslya.com/p/how-does-lorawan-nodes-changes-their.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Sakshama Ghoslya&lt;/a&gt;，对上面的补充&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://lora-developers.semtech.com/library/tech-papers-and-guides/understanding-adr/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Semetech2&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVNxdEZVbm9hQUpQaGZycl9nbTBDMjBCZFM4Wk1hQzFBZ2l6Z0p5bXJFcTdhQT9lPUhTOU1Gdw==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Semetech2&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://lora-developers.semtech.com/library/tech-papers-and-guides/understanding-adr/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Semetech3&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&#34;454-去重&#34;&gt;4.5.4 去重&lt;/h3&gt;
 &lt;p&gt;&lt;a href=&#34;http://lora.timeddd.com/forum.php?mod=viewthread&amp;amp;tid=478&amp;amp;extra=page%3D1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoraWAN论坛&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://lora-developers.semtech.com/library/tech-papers-and-guides/lora-and-lorawan/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Semetech&lt;/a&gt;&lt;/p&gt;
 &lt;h1 id=&#34;5-其他&#34;&gt;5 其他&lt;/h1&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.gnuradio.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GUNRadio&lt;/a&gt;&lt;/li&gt;
@@ -1818,7 +1826,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-594217368&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-894765123&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -1828,7 +1836,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-594217368&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-894765123&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
