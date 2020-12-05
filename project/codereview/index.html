@@ -1166,8 +1166,9 @@
 </ul>
 <h2 id="分析是从gateway到node的通信--just-in-time-downlink-schedulinghttpsgiteecomrejeeegw1302streemasterpacket_forwarder">分析：是从gateway到node的通信,  <a href="https://gitee.com/rejeee/gw1302s/tree/master/packet_forwarder" target="_blank" rel="noopener">Just-In-Time&rdquo; downlink scheduling</a></h2>
 <p>/* &mdash; THREAD 4: PARSE GPS MESSAGE AND KEEP GATEWAY IN SYNC &mdash;&mdash;&mdash;&mdash;&mdash;&ndash; */</p>
-<p>// <a href="https://lora-developers.semtech.com/library/tech-papers-and-guides/lorawan-class-b-devices" target="_blank" rel="noopener">In order for a LoRaWAN network to support Class B devices, all the LoRaWAN gateways in this network need to have a built-in GPS timing source, so they all can be synchronized to the exact beacon timing.</a></p>
-<p><code>thread_gps</code>：</p>
+<p>// <a href="https://lora-developers.semtech.com/library/tech-papers-and-guides/lorawan-class-b-devices" target="_blank" rel="noopener">In order for a LoRaWAN network to support Class B devices, all the LoRaWAN gateways in this network need to have a built-in GPS timing source, so they all can be synchronized to the exact beacon timing.</a>
+<a href="https://lora-developers.semtech.com/library/tech-papers-and-guides/lora-and-lorawan/">https://lora-developers.semtech.com/library/tech-papers-and-guides/lora-and-lorawan/</a>
+<code>thread_gps</code>：</p>
 <ol>
 <li><code>gps_process_sync</code>：time_reference_gps；具体的GPS &lt;-&gt; timestamp TIME REFERENCE</li>
 <li><code>gps_process_coords</code></li>
@@ -1281,9 +1282,10 @@ INFO: [down] PULL_ACK received in 34ms
 # PULL_RESP(onse) datagrams received: 0 (0 bytes) //PULL_RESP：thread_down(thread_down)
 # RF packets sent to concentrator: 0 (0 bytes) //thread_jit发送jit里的downlink packet(thread_down)
 /*sent = ok + error*/
-# TX errors: 0 //RF packets sent to concentrator失败的
+# TX errors: 0 //RF packets sent to concentrator失败的；其实这个应该在TX rejected下面，毕竟这里是发射了，下面的才入队错误
+
 if (cp_nb_tx_requested != 0 ) //thread_down根据PULL_RESP得到的downlink_type使得packet enqueue jit
-# TX rejected... //TX_ACK：packet enqueue失败的；send_tx_ack发送具体错误
+# TX rejected... //TX_ACK：packet enqueue失败的；send_tx_ack发送具体错误；注意与TX errors无关
 
 
 ### SX1302 Status ###
@@ -1305,7 +1307,9 @@ src/jitqueue.c:442:jit_print_queue(): INFO: [jit] queue is empty //thread_down:�
 </code></pre>
 <pre><code class="language-cpp">/*main()生成： generate a JSON report (will be sent to server by upstream thread)
 thread_up()发送：add status report if a new one is available ('status report': &quot;stat&quot; object)
-其实本来和上面的rxpt对象同属于一个json，“同时发送显示”；但是因为程序运行顺序原因“同时发送不同时显示”了
+
+stat和上面的rxpt对象同属于一个json，即“同时发送显示”；但是因为程序运行顺序原因“同时发送不同时显示”了
+优点：rxok和dwnb是接收/发射成功数，rxpt只有接收/发射总数，挺有用的；其他的都可以在rxpt找到
 */
 JSON up: {&quot;stat&quot;:{&quot;time&quot;:&quot;2020-10-18 10:49:51 GMT&quot;,&quot;rxnb&quot;:1,&quot;rxok&quot;:1,&quot;rxfw&quot;:1,&quot;ackr&quot;:100.0,&quot;dwnb&quot;:0,&quot;txnb&quot;:0,&quot;temp&quot;:0.0}}
 
@@ -1389,7 +1393,15 @@ concentrator.</li>
 <li><input disabled="" type="checkbox"> RF packets forwarded比PUSH_DATA datagrams sent少</li>
 <li><input disabled="" type="checkbox"> DEPENDANCIES相关的函数定义及实现</li>
 <li><input disabled="" type="checkbox"> &ldquo;SX130x_conf&quot;相关，如RF chain、IF chain等参数</li>
+<li><input disabled="" type="checkbox"> When I look at the gateway log, do the following messages indicate that a <strong>confirmed message</strong> is being sent:</li>
 </ul>
+<pre><code class="language-cpp">...
+INFO: [up] PUSH_ACK received in 34ms
+...
+# PUSH_DATA acknowledeged: **100.00% **
+...
+</code></pre>
+<p>Because I see it&rsquo;s better not to use comfirmed message, so if this is a sign that has already used it, what kind of settings should be adopted and how can I use uncomfirmed message instead.</p>
 
     </div>
 
