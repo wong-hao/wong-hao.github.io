@@ -673,7 +673,8 @@ concentrator.&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; RF packets forwarded比PUSH_DATA datagrams sent少&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; DEPENDANCIES相关的函数定义及实现&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &amp;ldquo;SX130x_conf&amp;quot;相关，如RF chain、IF chain等参数&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; When I look at the gateway log, do the following messages indicate that a &lt;strong&gt;confirmed message&lt;/strong&gt; is being sent:&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 我现在发的是不是confirmed message：发帖问之前先实验不连接NS会不会被网关ACK就知道是不是NS发的downlink了
+When I look at the gateway log, do the following messages indicate that a &lt;strong&gt;confirmed message&lt;/strong&gt; is being sent:&lt;/li&gt;
 &lt;/ul&gt;
 &lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;...
 INFO: [up] PUSH_ACK received in 34ms
@@ -1838,7 +1839,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-682475913&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-851492763&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -1848,7 +1849,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-682475913&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-851492763&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
