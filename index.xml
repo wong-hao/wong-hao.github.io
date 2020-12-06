@@ -416,7 +416,7 @@
 &lt;li&gt;&lt;code&gt;difftimespec&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;crc16&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;get_tx_gain_lut_index&lt;/code&gt; //jit_enqueue前查tx_gain_lut表&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;send_tx_ack&lt;/code&gt;：gps_enabled与gps_ref_valid任意一个不满足都会发送JIT_ERROR_GPS_UNLOCKED，说明gps出问题统一用&lt;strong&gt;UNLOCKED&lt;/strong&gt;代替&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;send_tx_ack&lt;/code&gt;：返回jit_enqueue相关错误；gps_enabled与gps_ref_valid任意一个不满足都会发送JIT_ERROR_GPS_UNLOCKED，说明gps出问题统一用&lt;strong&gt;UNLOCKED&lt;/strong&gt;代替&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -562,10 +562,10 @@ INFO: [down] PULL_ACK received in 34ms
 # PULL_RESP(onse) datagrams received: 0 (0 bytes) //PULL_RESP：thread_down(thread_down)
 # RF packets sent to concentrator: 0 (0 bytes) //thread_jit发送jit里的downlink packet(thread_down)
 /*sent = ok + error*/
-# TX errors: 0 //RF packets sent to concentrator失败的；其实这个应该在TX rejected下面，毕竟这里是发射了，下面的才入队错误
+# TX errors: 0 //RF packets sent to concentrator失败的；其实这个应该在TX rejected下面，毕竟这里是lgw_send错误，跟jit_peek/jit_dequeue的错误都没关系，更别说下面的jit_enqueue错误
 
 if (cp_nb_tx_requested != 0 ) //thread_down根据PULL_RESP得到的downlink_type使得packet enqueue jit
-# TX rejected... //TX_ACK：packet enqueue失败的；send_tx_ack发送具体错误；注意与TX errors无关
+# TX rejected... //TX_ACK：packet send_tx_ack发送jit_enqueue得到的jit_result；注意与TX errors无关
 
 
 ### SX1302 Status ###
@@ -694,19 +694,24 @@ INFO: [up] PUSH_ACK received in 34ms
       <description>&lt;h1 id=&#34;1-lora调制解调基础知识&#34;&gt;1 LoRa调制解调基础知识&lt;/h1&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.semtech.com/search/results?keywords=Modulation&amp;#43;Basics%2A&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Semetech Modulation Basics&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://revspace.nl/DecodingLora&#34;&gt;https://revspace.nl/DecodingLora&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://electronics.stackexchange.com/questions/278192/understanding-the-relationship-between-lora-chips-chirps-symbols-and-bits&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;chip、chirp/symbol、bit&lt;/a&gt;，结合上面的看&lt;/li&gt;
+&lt;li&gt;chip、chirp/symbol、bit：
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://electronics.stackexchange.com/questions/278192/understanding-the-relationship-between-lora-chips-chirps-symbols-and-bits&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;stackexchange&lt;/a&gt;，结合上面的看&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://lora.readthedocs.io/en/latest/#id11&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Mobilefish.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://myriadrf.org/news/lora-modem-limesdr/&#34;&gt;https://myriadrf.org/news/lora-modem-limesdr/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.sghoslya.com/p/lora_9.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Sakshama Ghoslya&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Everything: &lt;a href=&#34;https://www.sghoslya.com/p/lora_9.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Sakshama Ghoslya&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.sghoslya.com/p/how-to-buy-lora-matlab-codes.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;仿真代码&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;数据包格式 / Lora Packet Format:
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/6206706.html&#34;&gt;https://www.cnblogs.com/answerinthewind/p/6206706.html&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/6206706.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;AnswerInTheWind&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://lora-alliance.org/lorawan-for-developers&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Core LoRaWAN Specification&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.sghoslya.com/p/lora-is-chirp-spread-spectrum.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Sakshama Ghoslya&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://revspace.nl/DecodingLora&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DecodingLora&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;lorawan mac command：&lt;a href=&#34;https://lora-alliance.org/lorawan-for-developers&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Core LoRaWAN Specification&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://lora.readthedocs.io/en/latest/#id11&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Lora&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVdHa3JTSE4zWlZEc3ptZGIzN2tKUmNCZFhQMU1sSTFHcURFdXJjcGdYTkJrZz9lPXNYOHRIdA==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Complete Reverse Engineering ofLoRa PHY&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;阅读过的paper&lt;/li&gt;
 &lt;/ol&gt;
@@ -1026,6 +1031,7 @@ raspberrypi2    0016c001ff10d3f7    -              苏州市           在线   
 &lt;li&gt;&lt;a href=&#34;https://www.thethingsnetwork.org/docs/gateways/start/connection.html#semtech-udp-protocol&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TTN global.config2&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://os.mbed.com/docs/mbed-os/v5.15/tutorials/LoRa-tutorial.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Mbed-Os: TTN&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.thethingsnetwork.org/forum/t/sx1302-using-semtech-packet-forwarder-can-not-register-the-gateway/41211/34&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;SX1302网关转发器修改版讨论&lt;/a&gt;：server_address选择&lt;a href=&#34;https://blog.csdn.net/freemote/article/details/90315395&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;router.cn.thethings.network&lt;/a&gt;；温度改为int可保证console显示connected&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.thethingsnetwork.org/forum/t/limitations-data-rate-packet-size-30-seconds-uplink-and-10-messages-downlink-per-day-fair-access-policy-guidelines/1300&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Limitations&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://thethingsstack.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;The Things Stack：安装版&lt;/a&gt;，&lt;a href=&#34;https://cryptii.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Base64工具1&lt;/a&gt;
@@ -1839,7 +1845,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-583429617&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-516723498&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -1849,7 +1855,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-583429617&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-516723498&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();

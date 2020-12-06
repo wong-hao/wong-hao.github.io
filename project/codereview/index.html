@@ -1136,7 +1136,7 @@
 <li><code>difftimespec</code></li>
 <li><code>crc16</code></li>
 <li><code>get_tx_gain_lut_index</code> //jit_enqueue前查tx_gain_lut表</li>
-<li><code>send_tx_ack</code>：gps_enabled与gps_ref_valid任意一个不满足都会发送JIT_ERROR_GPS_UNLOCKED，说明gps出问题统一用<strong>UNLOCKED</strong>代替</li>
+<li><code>send_tx_ack</code>：返回jit_enqueue相关错误；gps_enabled与gps_ref_valid任意一个不满足都会发送JIT_ERROR_GPS_UNLOCKED，说明gps出问题统一用<strong>UNLOCKED</strong>代替</li>
 </ol>
 <ul>
 <li>
@@ -1282,10 +1282,10 @@ INFO: [down] PULL_ACK received in 34ms
 # PULL_RESP(onse) datagrams received: 0 (0 bytes) //PULL_RESP：thread_down(thread_down)
 # RF packets sent to concentrator: 0 (0 bytes) //thread_jit发送jit里的downlink packet(thread_down)
 /*sent = ok + error*/
-# TX errors: 0 //RF packets sent to concentrator失败的；其实这个应该在TX rejected下面，毕竟这里是发射了，下面的才入队错误
+# TX errors: 0 //RF packets sent to concentrator失败的；其实这个应该在TX rejected下面，毕竟这里是lgw_send错误，跟jit_peek/jit_dequeue的错误都没关系，更别说下面的jit_enqueue错误
 
 if (cp_nb_tx_requested != 0 ) //thread_down根据PULL_RESP得到的downlink_type使得packet enqueue jit
-# TX rejected... //TX_ACK：packet enqueue失败的；send_tx_ack发送具体错误；注意与TX errors无关
+# TX rejected... //TX_ACK：packet send_tx_ack发送jit_enqueue得到的jit_result；注意与TX errors无关
 
 
 ### SX1302 Status ###
