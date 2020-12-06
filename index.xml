@@ -211,7 +211,7 @@
             &amp;quot;max_ts_metrics&amp;quot;: 255,
             &amp;quot;nb_symbols&amp;quot;: 1
         },
-        //两个SX1250
+        //第一个SX1250
         &amp;quot;radio_0&amp;quot;: {
             &amp;quot;enable&amp;quot;: true, //包含了rx_enable与tx_enable
             &amp;quot;type&amp;quot;: &amp;quot;SX1250&amp;quot;,
@@ -244,6 +244,7 @@
                 {&amp;quot;rf_power&amp;quot;: 27, &amp;quot;pa_gain&amp;quot;: 3, &amp;quot;pwr_idx&amp;quot;: 15}
             ]
         },
+        //第二个SX1250
         &amp;quot;radio_1&amp;quot;: {
             &amp;quot;enable&amp;quot;: true,
             &amp;quot;type&amp;quot;: &amp;quot;SX1250&amp;quot;,
@@ -253,6 +254,7 @@
             &amp;quot;rssi_tcomp&amp;quot;: {&amp;quot;coeff_a&amp;quot;: 0, &amp;quot;coeff_b&amp;quot;: 0, &amp;quot;coeff_c&amp;quot;: 20.41, &amp;quot;coeff_d&amp;quot;: 2162.56, &amp;quot;coeff_e&amp;quot;: 0},
             &amp;quot;tx_enable&amp;quot;: false //SELECTED RF_CHAIN IS DISABLED FOR TX ON SELECTED BOARD
         },
+        //我猜是SX1302的10个接收通道
         //Receive 8 LoRa channels multi-data rates (SF5 ~ SF12 / 125 Simultaneously kHz) 
         &amp;quot;chan_multiSF_0&amp;quot;: {&amp;quot;enable&amp;quot;: true, &amp;quot;radio&amp;quot;: 0, &amp;quot;if&amp;quot;: -300000},
         &amp;quot;chan_multiSF_1&amp;quot;: {&amp;quot;enable&amp;quot;: true, &amp;quot;radio&amp;quot;: 0, &amp;quot;if&amp;quot;: -100000},
@@ -542,7 +544,8 @@ INFO: concentrator EUI: 0x0016c001ff10d3f6
 INFO: Received pkt from mote: 1350200C (fcnt=13)
 
 //thread_up(): start of JSON structure
-JSON up: {&amp;quot;rxpk&amp;quot;:[{&amp;quot;jver&amp;quot;:1,&amp;quot;tmst&amp;quot;:137795171,&amp;quot;chan&amp;quot;:4,&amp;quot;rfch&amp;quot;:1,&amp;quot;freq&amp;quot;:475.100000,&amp;quot;mid&amp;quot;:0,&amp;quot;stat&amp;quot;:1,&amp;quot;modu&amp;quot;:&amp;quot;LORA&amp;quot;,&amp;quot;datr&amp;quot;:&amp;quot;SF12Bw125&amp;quot;,&amp;quot;codr&amp;quot;:&amp;quot;4/5&amp;quot;,&amp;quot;rssis&amp;quot;:-84,&amp;quot;lsnr&amp;quot;:-5.0,&amp;quot;foff&amp;quot;:786,&amp;quot;rssi&amp;quot;:-80,&amp;quot;size&amp;quot;:13,&amp;quot;data&amp;quot;:&amp;quot;gQwgUBMADQANAKvN7w==&amp;quot;}]} //datr由SF、Bw计算得
+JSON up: {&amp;quot;rxpk&amp;quot;:[{&amp;quot;jver&amp;quot;:1,&amp;quot;tmst&amp;quot;:137795171,&amp;quot;chan&amp;quot;:4,&amp;quot;rfch&amp;quot;:1,&amp;quot;freq&amp;quot;:471.100000,&amp;quot;mid&amp;quot;:0,&amp;quot;stat&amp;quot;:1,&amp;quot;modu&amp;quot;:&amp;quot;LORA&amp;quot;,&amp;quot;datr&amp;quot;:&amp;quot;SF12Bw125&amp;quot;,&amp;quot;codr&amp;quot;:&amp;quot;4/5&amp;quot;,&amp;quot;rssis&amp;quot;:-84,&amp;quot;lsnr&amp;quot;:-5.0,&amp;quot;foff&amp;quot;:786,&amp;quot;rssi&amp;quot;:-80,&amp;quot;size&amp;quot;:13,&amp;quot;data&amp;quot;:&amp;quot;gQwgUBMADQANAKvN7w==&amp;quot;}]} //datr由SF、Bw计算得；freq是frequence of Concentrator “IF” channel on which the frame was
+received
 
 INFO: [up] PUSH_ACK received in 40ms
 INFO: [down] PULL_ACK received in 34ms
@@ -1847,7 +1850,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-381697245&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-361298457&#34; class=&#34;chart pb-3&#34; style=&#34;max-width: 100%; margin: auto;&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -1857,7 +1860,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-381697245&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-361298457&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();

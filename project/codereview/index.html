@@ -931,7 +931,7 @@
             &quot;max_ts_metrics&quot;: 255,
             &quot;nb_symbols&quot;: 1
         },
-        //两个SX1250
+        //第一个SX1250
         &quot;radio_0&quot;: {
             &quot;enable&quot;: true, //包含了rx_enable与tx_enable
             &quot;type&quot;: &quot;SX1250&quot;,
@@ -964,6 +964,7 @@
                 {&quot;rf_power&quot;: 27, &quot;pa_gain&quot;: 3, &quot;pwr_idx&quot;: 15}
             ]
         },
+        //第二个SX1250
         &quot;radio_1&quot;: {
             &quot;enable&quot;: true,
             &quot;type&quot;: &quot;SX1250&quot;,
@@ -973,6 +974,7 @@
             &quot;rssi_tcomp&quot;: {&quot;coeff_a&quot;: 0, &quot;coeff_b&quot;: 0, &quot;coeff_c&quot;: 20.41, &quot;coeff_d&quot;: 2162.56, &quot;coeff_e&quot;: 0},
             &quot;tx_enable&quot;: false //SELECTED RF_CHAIN IS DISABLED FOR TX ON SELECTED BOARD
         },
+        //我猜是SX1302的10个接收通道
         //Receive 8 LoRa channels multi-data rates (SF5 ~ SF12 / 125 Simultaneously kHz) 
         &quot;chan_multiSF_0&quot;: {&quot;enable&quot;: true, &quot;radio&quot;: 0, &quot;if&quot;: -300000},
         &quot;chan_multiSF_1&quot;: {&quot;enable&quot;: true, &quot;radio&quot;: 0, &quot;if&quot;: -100000},
@@ -1262,7 +1264,8 @@ INFO: concentrator EUI: 0x0016c001ff10d3f6
 INFO: Received pkt from mote: 1350200C (fcnt=13)
 
 //thread_up(): start of JSON structure
-JSON up: {&quot;rxpk&quot;:[{&quot;jver&quot;:1,&quot;tmst&quot;:137795171,&quot;chan&quot;:4,&quot;rfch&quot;:1,&quot;freq&quot;:475.100000,&quot;mid&quot;:0,&quot;stat&quot;:1,&quot;modu&quot;:&quot;LORA&quot;,&quot;datr&quot;:&quot;SF12Bw125&quot;,&quot;codr&quot;:&quot;4/5&quot;,&quot;rssis&quot;:-84,&quot;lsnr&quot;:-5.0,&quot;foff&quot;:786,&quot;rssi&quot;:-80,&quot;size&quot;:13,&quot;data&quot;:&quot;gQwgUBMADQANAKvN7w==&quot;}]} //datr由SF、Bw计算得
+JSON up: {&quot;rxpk&quot;:[{&quot;jver&quot;:1,&quot;tmst&quot;:137795171,&quot;chan&quot;:4,&quot;rfch&quot;:1,&quot;freq&quot;:471.100000,&quot;mid&quot;:0,&quot;stat&quot;:1,&quot;modu&quot;:&quot;LORA&quot;,&quot;datr&quot;:&quot;SF12Bw125&quot;,&quot;codr&quot;:&quot;4/5&quot;,&quot;rssis&quot;:-84,&quot;lsnr&quot;:-5.0,&quot;foff&quot;:786,&quot;rssi&quot;:-80,&quot;size&quot;:13,&quot;data&quot;:&quot;gQwgUBMADQANAKvN7w==&quot;}]} //datr由SF、Bw计算得；freq是frequence of Concentrator “IF” channel on which the frame was
+received
 
 INFO: [up] PUSH_ACK received in 40ms
 INFO: [down] PULL_ACK received in 34ms
