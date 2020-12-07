@@ -1207,9 +1207,9 @@ Flash:     0
 <li><code>make install_conf</code>即安装<strong>global_conf.json</strong></li>
 <li>卖家给的<a href="https://www.cnblogs.com/answerinthewind/p/13154904.html" target="_blank" rel="noopener">攻略</a>跟用<code>install.sh</code>生成的主要差别在radio_1与radio_2的<strong>ferq</strong>不同，攻略的效果好；官方的<a href="https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVQzOWdIRUc4YU5DbHFMVzBjRGkwVjBCZjZGQmUzWUpkSnh0YVhXbUlLdnFtUT9lPW9qNjEzcg==.mp3" target="_blank" rel="noopener">参考文献</a>给出了<strong>global_conf.json</strong>的参数意义</li>
 </ul>
-<h2 id="44-network-server">4.4 Network Server</h2>
+<h2 id="44-lorawan-network-server">4.4 LoraWAN Network Server</h2>
 <hr>
-<p><strong>Cloud-hosted: Close Source LoRaWAN Network Servers Platforms</strong></p>
+<h3 id="441-cloud-hosted-close-source-lorawan-network-servers-platforms">4.4.1 Cloud-hosted: Close Source LoRaWAN Network Servers Platforms</h3>
 <ul>
 <li><strong>global.config</strong>中的<strong>lorawan_public: true</strong>，<a href="http://lora.timeddd.com/forum.php?mod=viewthread&amp;tid=521" target="_blank" rel="noopener">连接不通</a>的元凶，true对应于sync word <strong>0x34</strong></li>
 <li>使用树莓派搭建网关注册到腾讯物联网开发平台
@@ -1246,7 +1246,7 @@ raspberrypi2    0016c001ff10d3f7    -              苏州市           在线   
 </li>
 </ul>
 <hr>
-<p><strong>Cloud-hosted: Open Source LoRaWAN Network Servers Platforms</strong></p>
+<h3 id="442-cloud-hosted-open-source-lorawan-network-servers-platforms">4.4.2 Cloud-hosted: Open Source LoRaWAN Network Servers Platforms</h3>
 <ol>
 <li>
 <ul>
@@ -1349,19 +1349,28 @@ UDP             1700/1700        0.0.0.0/0
 <li><strong>服务器地址</strong>: http://47.110.36.225:8080/，不能设置域名解析（需要备案）</li>
 </ul>
 <hr>
-<p><strong>Integrated: Gateway-Embedded LoRaWAN Network Servers Platforms</strong></p>
+<h3 id="443-integrated-gateway-embedded-lorawan-network-servers-platforms">4.4.3 Integrated: Gateway-Embedded LoRaWAN Network Servers Platforms</h3>
 <p><a href="https://www.actility.com/lorawan-network-server/" target="_blank" rel="noopener">特点</a></p>
+<p><a href="https://blog.csdn.net/RAKwireless/article/details/105298319" target="_blank" rel="noopener">RAKwireless</a></p>
 <hr>
-<h2 id="45-application-server">4.5 Application Server</h2>
-<h3 id="451-adr">4.5.1 ADR</h3>
+<h3 id="444-adr">4.4.4 ADR</h3>
+<p><a href="https://lora-alliance.org/lorawan-for-developers" target="_blank" rel="noopener">Core LoRaWAN Specification</a>：NS发送<code>LinkADRReq</code>到device</p>
 <p><a href="http://lora.timeddd.com/forum.php?mod=viewthread&amp;tid=428&amp;extra=page%3D1" target="_blank" rel="noopener">LoraWAN论坛</a></p>
 <p><a href="https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVZiNEttMzVTVWRMclNTMl91elRLaW9CZTNSLVJCakVVb3JINEFtZ0VpVW5jdz9lPXlFWXI1bA==.mp3" target="_blank" rel="noopener">Semetech1</a></p>
 <p><a href="https://www.sghoslya.com/p/how-does-lorawan-nodes-changes-their.html" target="_blank" rel="noopener">Sakshama Ghoslya</a>，对上面的补充</p>
 <p><a href="https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVNxdEZVbm9hQUpQaGZycl9nbTBDMjBCZFM4Wk1hQzFBZ2l6Z0p5bXJFcTdhQT9lPUhTOU1Gdw==.mp3" target="_blank" rel="noopener">Semetech2</a></p>
 <p><a href="https://lora-developers.semtech.com/library/tech-papers-and-guides/understanding-adr/" target="_blank" rel="noopener">Semetech3</a></p>
-<h3 id="452-去重">4.5.2 去重</h3>
+<h2 id="45-application-server-console">4.5 Application Server console</h2>
+<h3 id="451-去重">4.5.1 去重</h3>
 <p><a href="http://lora.timeddd.com/forum.php?mod=viewthread&amp;tid=478&amp;extra=page%3D1" target="_blank" rel="noopener">LoraWAN论坛</a></p>
 <p><a href="https://lora-developers.semtech.com/library/tech-papers-and-guides/lora-and-lorawan/" target="_blank" rel="noopener">Semetech</a></p>
+<h3 id="452-下行通信">4.5.2 下行通信</h3>
+<p><a href="https://blog.csdn.net/freemote/article/details/90315395" target="_blank" rel="noopener">freemote</a></p>
+<p><a href="https://forum.chirpstack.io/t/how-to-get-downlink-communication/9816/3?u=haowong" target="_blank" rel="noopener">Chirpstack</a></p>
+<p><a href="https://www.thethingsnetwork.org/forum/t/how-to-get-downlink-communication/41712/12" target="_blank" rel="noopener">TheThingsNetwork1</a></p>
+<p><a href="https://www.thethingsnetwork.org/forum/u/haowong/messages/archive" target="_blank" rel="noopener">TheThingsNetwork2</a></p>
+<p><a href="https://www.thethingsnetwork.org/docs/devices/uno/quick-start.html" target="_blank" rel="noopener">TheThingsNetwork3</a></p>
+<p><a href="https://blog.csdn.net/quending/article/details/86481598" target="_blank" rel="noopener">quending</a></p>
 <h2 id="46-end-application">4.6 End-application</h2>
 <h3 id="461-api">4.6.1 API</h3>
 <h4 id="4611-mqtt">4.6.1.1 MQTT</h4>
@@ -1376,14 +1385,9 @@ UDP             1700/1700        0.0.0.0/0
 <h4 id="4612-下行通信">4.6.1.2 下行通信</h4>
 <p><a href="https://lora-developers.semtech.com/library/tech-papers-and-guides/lorawan-class-a-devices" target="_blank" rel="noopener">Semetech1</a></p>
 <p><a href="https://lora-developers.semtech.com/library/tech-papers-and-guides/lorawan-class-b-devices" target="_blank" rel="noopener">Semetech2</a></p>
-<p><a href="https://www.thethingsnetwork.org/forum/t/how-to-get-downlink-communication/41712/12" target="_blank" rel="noopener">TheThingsNetwork1</a></p>
-<p><a href="https://www.thethingsnetwork.org/forum/u/haowong/messages/archive" target="_blank" rel="noopener">TheThingsNetwork2</a></p>
-<p><a href="https://blog.csdn.net/quending/article/details/86481598" target="_blank" rel="noopener">quending</a></p>
-<p><a href="https://www.thethingsnetwork.org/docs/devices/uno/quick-start.html" target="_blank" rel="noopener">TheThingsNetwork2</a></p>
 <p><a href="https://www.chirpstack.io/project/architecture/" target="_blank" rel="noopener">Chirpstack1</a></p>
 <p><a href="https://forum.chirpstack.io/t/how-to-get-downlink-communication/9816/3" target="_blank" rel="noopener">Chirpstack2</a></p>
 <p><a href="https://www.cnblogs.com/answerinthewind/p/13154904.html" target="_blank" rel="noopener">AnswerInTheWind</a></p>
-<p><a href="https://blog.csdn.net/freemote/article/details/90315395" target="_blank" rel="noopener">freemote</a></p>
 <p><a href="https://blog.csdn.net/jiangjunjie_2005/article/details/104439355" target="_blank" rel="noopener">Rimelink</a></p>
 <p><a href="http://lora.timeddd.com/forum.php?mod=viewthread&amp;tid=540&amp;extra=page%3D1" target="_blank" rel="noopener">LoraWAN论坛</a></p>
 <h4 id="4613-metadata元数据">4.6.1.3 Metadata元数据</h4>
