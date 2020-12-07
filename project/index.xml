@@ -792,6 +792,9 @@ Flash:     0
 &lt;p&gt;&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWVfQkIxUFl2M3RKb01ZUTMxQ1hidXdCZWVoZmdnNkpPUEJxX1FGdzBhb3NzUT9lPWJmbmM4TA==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;8. 芮捷LPWAN协议&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;http://www.rejeee.com/documents/SPEC/RJDS0052018-M-KL9_Specification_V1.1.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;模块不支持标准LoRaWAN协议模块&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://space.bilibili.com/7682653?spm_id_from=333.788.b_765f7570696e666f.1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;视频&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 弄清楚&lt;a href=&#34;https://forum.chirpstack.io/t/relation-between-sync-word-private-network-and-end-nodes/191/13?u=haowong&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;私有网络&lt;/a&gt;/非LoRaWAN网络怎么导出数据&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id=&#34;43-gateway&#34;&gt;4.3 Gateway&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;SX1302&lt;/strong&gt;&lt;/p&gt;
 &lt;ol&gt;
