@@ -932,10 +932,11 @@
 <li><a href="https://www.sghoslya.com/p/how-to-buy-lora-matlab-codes.html" target="_blank" rel="noopener">仿真代码</a></li>
 <li>数据包格式 / Lora Packet Format:
 <ul>
+<li><a href="https://lora-alliance.org/lorawan-for-developers" target="_blank" rel="noopener">Core LoRaWAN Specification</a>：最官方的文件，下面的东西都有包含</li>
 <li><a href="https://www.cnblogs.com/answerinthewind/p/6206706.html" target="_blank" rel="noopener">AnswerInTheWind</a></li>
-<li><a href="https://lora-alliance.org/lorawan-for-developers" target="_blank" rel="noopener">Core LoRaWAN Specification</a></li>
 <li><a href="https://www.sghoslya.com/p/lora-is-chirp-spread-spectrum.html" target="_blank" rel="noopener">Sakshama Ghoslya</a></li>
 <li><a href="https://revspace.nl/DecodingLora" target="_blank" rel="noopener">DecodingLora</a></li>
+<li><a href="https://www.rfwireless-world.com/Terminology/What-is-difference-between-Implicit-header-and-Explicit-header-in-LoRaWAN-packet.html" target="_blank" rel="noopener">Implicit header and Explicit header</a></li>
 </ul>
 </li>
 <li>lorawan mac command：<a href="https://lora-alliance.org/lorawan-for-developers" target="_blank" rel="noopener">Core LoRaWAN Specification</a></li>
@@ -975,6 +976,7 @@ ERROR: [main] failed to start the concentrator
 <ol>
 <li>使用<code>#if USE_I2C_SENSOR ... #endif</code>注释了 I2C 接口的温度传感器代码（<em>据说不注释掉不能启动</em>）</li>
 <li><strong>boardconf.lorawan_public = true</strong>改成了<strong>boardconf.lorawan_public = false</strong>，收发测试程序的同步字修改为 <strong>private</strong> 即 <strong>0x12</strong>；但这与安装生成的<strong>global.config</strong>文件中的同步字设置不同，故实际收发与测试时，终端同步字设置相反</li>
+<li>同步字：<a href="https://forum.chirpstack.io/t/relation-between-sync-word-private-network-and-end-nodes/191/13?u=haowong" target="_blank" rel="noopener">Chirpstack</a></li>
 <li><strong>SX1302_RESET_PIN=23</strong>改成了<strong>SX1302_RESET_PIN=7</strong>且去掉了GPIO18相关代码
 （<em>GPIO7存在才能启动，GPIO18改不改没关系</em>）</li>
 </ol>
@@ -1184,6 +1186,7 @@ Flash:     0
 <h4 id="4214-rejeee">4.2.1.4 Rejeee</h4>
 <p><a href="https://www.cnblogs.com/answerinthewind/p/13517529.html#4758586" target="_blank" rel="noopener">这家的节点不支持LoRaWAN，节点只有私有协议的</a></p>
 <p><a href="https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWVfQkIxUFl2M3RKb01ZUTMxQ1hidXdCZWVoZmdnNkpPUEJxX1FGdzBhb3NzUT9lPWJmbmM4TA==.mp3" target="_blank" rel="noopener">8. 芮捷LPWAN协议</a></p>
+<p><a href="http://www.rejeee.com/documents/SPEC/RJDS0052018-M-KL9_Specification_V1.1.pdf" target="_blank" rel="noopener">模块不支持标准LoRaWAN协议模块</a></p>
 <p><a href="https://space.bilibili.com/7682653?spm_id_from=333.788.b_765f7570696e666f.1" target="_blank" rel="noopener">视频</a></p>
 <h2 id="43-gateway">4.3 Gateway</h2>
 <p><strong>SX1302</strong></p>
@@ -1394,6 +1397,11 @@ UDP             1700/1700        0.0.0.0/0
 <p><a href="https://www.thethingsnetwork.org/forum/t/how-to-retrieve-metadata-from-data-storage-integration/19259/2?u=haowong" target="_blank" rel="noopener">TTN</a></p>
 <h3 id="462-sdks--libraries">4.6.2 SDKs &amp; Libraries</h3>
 <h3 id="463-integrations">4.6.3 Integrations</h3>
+<p><a href="https://www.loracloud.com/portal" target="_blank" rel="noopener">Lora Cloud</a></p>
+<ul>
+<li><a href="https://www.chirpstack.io/application-server/integrations/loracloud/" target="_blank" rel="noopener">Chirpstack</a></li>
+<li><a href="https://www.loracloud.com/documentation/device_management?url=gettingstarted.html#example-minimal-integration-with-the-things-network" target="_blank" rel="noopener">TTN</a></li>
+</ul>
 <h1 id="5-其他">5 其他</h1>
 <ol>
 <li><a href="https://www.gnuradio.org/" target="_blank" rel="noopener">GUNRadio</a></li>

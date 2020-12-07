@@ -74,6 +74,7 @@
             &amp;quot;tx_enable&amp;quot;: false //SELECTED RF_CHAIN IS DISABLED FOR TX ON SELECTED BOARD
         },
         //我猜是SX1302的10个接收通道
+        //10 programmable parallel demodulation paths
         //Receive 8 LoRa channels multi-data rates (SF5 ~ SF12 / 125 Simultaneously kHz) 
         &amp;quot;chan_multiSF_0&amp;quot;: {&amp;quot;enable&amp;quot;: true, &amp;quot;radio&amp;quot;: 0, &amp;quot;if&amp;quot;: -300000},
         &amp;quot;chan_multiSF_1&amp;quot;: {&amp;quot;enable&amp;quot;: true, &amp;quot;radio&amp;quot;: 0, &amp;quot;if&amp;quot;: -100000},
@@ -83,9 +84,11 @@
         &amp;quot;chan_multiSF_5&amp;quot;: {&amp;quot;enable&amp;quot;: true, &amp;quot;radio&amp;quot;: 1, &amp;quot;if&amp;quot;: -100000},
         &amp;quot;chan_multiSF_6&amp;quot;: {&amp;quot;enable&amp;quot;: true, &amp;quot;radio&amp;quot;: 1, &amp;quot;if&amp;quot;:  100000},
         &amp;quot;chan_multiSF_7&amp;quot;: {&amp;quot;enable&amp;quot;: true, &amp;quot;radio&amp;quot;: 1, &amp;quot;if&amp;quot;:  300000},
-        //2 mono-data rate (LoRa 250 / 500 kHz and FSK 50 kbps)
+        //mono-data rate
+        //用于网关间通讯
         &amp;quot;chan_Lora_std&amp;quot;:  {&amp;quot;enable&amp;quot;: true, &amp;quot;radio&amp;quot;: 1, &amp;quot;if&amp;quot;: -200000, &amp;quot;bandwidth&amp;quot;: 250000, &amp;quot;spread_factor&amp;quot;: 7,
                            &amp;quot;implicit_hdr&amp;quot;: false, &amp;quot;implicit_payload_length&amp;quot;: 17, &amp;quot;implicit_crc_en&amp;quot;: false, &amp;quot;implicit_coderate&amp;quot;: 1},
+        //and FSK 50 kbps
         &amp;quot;chan_FSK&amp;quot;:       {&amp;quot;enable&amp;quot;: true, &amp;quot;radio&amp;quot;: 1, &amp;quot;if&amp;quot;:  300000, &amp;quot;bandwidth&amp;quot;: 125000, &amp;quot;datarate&amp;quot;: 50000}
     },
 
@@ -121,6 +124,11 @@
     }
 }
 &lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;11-参数含义&#34;&gt;1.1 参数含义&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/13154904.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;AnswerInTheWind&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/jiangjunjie_2005/article/details/54603122&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Rimelink&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
 &lt;h1 id=&#34;2-dependancies&#34;&gt;2 DEPENDANCIES&lt;/h1&gt;
 &lt;h2 id=&#34;21-c-library-function&#34;&gt;2.1 c library function&lt;/h2&gt;
 &lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include &amp;lt;stdint.h&amp;gt;         /* C99 types */
@@ -363,7 +371,7 @@ INFO: concentrator EUI: 0x0016c001ff10d3f6
 INFO: Received pkt from mote: 1350200C (fcnt=13)
 
 //thread_up(): start of JSON structure
-JSON up: {&amp;quot;rxpk&amp;quot;:[{&amp;quot;jver&amp;quot;:1,&amp;quot;tmst&amp;quot;:137795171,&amp;quot;chan&amp;quot;:4,&amp;quot;rfch&amp;quot;:1,&amp;quot;freq&amp;quot;:471.100000,&amp;quot;mid&amp;quot;:0,&amp;quot;stat&amp;quot;:1,&amp;quot;modu&amp;quot;:&amp;quot;LORA&amp;quot;,&amp;quot;datr&amp;quot;:&amp;quot;SF12Bw125&amp;quot;,&amp;quot;codr&amp;quot;:&amp;quot;4/5&amp;quot;,&amp;quot;rssis&amp;quot;:-84,&amp;quot;lsnr&amp;quot;:-5.0,&amp;quot;foff&amp;quot;:786,&amp;quot;rssi&amp;quot;:-80,&amp;quot;size&amp;quot;:13,&amp;quot;data&amp;quot;:&amp;quot;gQwgUBMADQANAKvN7w==&amp;quot;}]} //datr由SF、Bw计算得；freq是frequence of Concentrator “IF” channel on which the frame was
+JSON up: {&amp;quot;rxpk&amp;quot;:[{&amp;quot;jver&amp;quot;:1,&amp;quot;tmst&amp;quot;:137795171,&amp;quot;chan&amp;quot;:4,&amp;quot;rfch&amp;quot;:1,&amp;quot;freq&amp;quot;:471.100000,&amp;quot;mid&amp;quot;:0,&amp;quot;stat&amp;quot;:1,&amp;quot;modu&amp;quot;:&amp;quot;LORA&amp;quot;,&amp;quot;datr&amp;quot;:&amp;quot;SF12Bw125&amp;quot;,&amp;quot;codr&amp;quot;:&amp;quot;4/5&amp;quot;,&amp;quot;rssis&amp;quot;:-84,&amp;quot;lsnr&amp;quot;:-5.0,&amp;quot;foff&amp;quot;:786,&amp;quot;rssi&amp;quot;:-80,&amp;quot;size&amp;quot;:13,&amp;quot;data&amp;quot;:&amp;quot;gQwgUBMADQANAKvN7w==&amp;quot;}]} //datr由SF、Bw计算得；freq是frequence of Concentrator “IF” channel on which the frame was；rssis、foff是SX1302新增的；
 received
 
 INFO: [up] PUSH_ACK received in 40ms
@@ -436,7 +444,6 @@ INFO: Exiting packet forwarder program
 &lt;li&gt;&lt;a href=&#34;https://gitee.com/rejeee/gw1302s/blob/master/packet_forwarder/PROTOCOL.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;PROTOCOL&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVJ4VTcxc1RCNFJEaFhVU0RUTXlXdU1CNHc1NHQyZ3JhT3NvdUpVckszYkt0dz9lPUVoWXBMdw==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoRaWAN Network Server Demonstration: Gateway to Server Interface Definition&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVJXaXJLdnJiVEZPaS1xUGk3OFFfVTRCUm4tM1dwLXVwNTNLdVJ6ZE9leDllZz9lPXR6OWh3eA==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;剖析 LoRaWAN Gateway 核心代码&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/13154904.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;global_conf.json参数含义&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;[PROTOCOL相关]https://blog.csdn.net/m0_38008027/article/details/89086175&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id=&#34;331-upstream-protocol&#34;&gt;3.3.1 UPstream protocol&lt;/h3&gt;
@@ -501,6 +508,8 @@ When I look at the gateway log, do the following messages indicate that a &lt;st
 &lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;...
 INFO: [up] PUSH_ACK received in 34ms
 ...
+INFO: [down] PULL_ACK received in 56ms
+...
 # PUSH_DATA acknowledeged: **100.00% **
 ...
 &lt;/code&gt;&lt;/pre&gt;
@@ -527,10 +536,11 @@ INFO: [up] PUSH_ACK received in 34ms
 &lt;li&gt;&lt;a href=&#34;https://www.sghoslya.com/p/how-to-buy-lora-matlab-codes.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;仿真代码&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;数据包格式 / Lora Packet Format:
 &lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://lora-alliance.org/lorawan-for-developers&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Core LoRaWAN Specification&lt;/a&gt;：最官方的文件，下面的东西都有包含&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/6206706.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;AnswerInTheWind&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://lora-alliance.org/lorawan-for-developers&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Core LoRaWAN Specification&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.sghoslya.com/p/lora-is-chirp-spread-spectrum.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Sakshama Ghoslya&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://revspace.nl/DecodingLora&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DecodingLora&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.rfwireless-world.com/Terminology/What-is-difference-between-Implicit-header-and-Explicit-header-in-LoRaWAN-packet.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Implicit header and Explicit header&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;lorawan mac command：&lt;a href=&#34;https://lora-alliance.org/lorawan-for-developers&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Core LoRaWAN Specification&lt;/a&gt;&lt;/li&gt;
@@ -570,6 +580,7 @@ ERROR: [main] failed to start the concentrator
 &lt;ol&gt;
 &lt;li&gt;使用&lt;code&gt;#if USE_I2C_SENSOR ... #endif&lt;/code&gt;注释了 I2C 接口的温度传感器代码（&lt;em&gt;据说不注释掉不能启动&lt;/em&gt;）&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;boardconf.lorawan_public = true&lt;/strong&gt;改成了&lt;strong&gt;boardconf.lorawan_public = false&lt;/strong&gt;，收发测试程序的同步字修改为 &lt;strong&gt;private&lt;/strong&gt; 即 &lt;strong&gt;0x12&lt;/strong&gt;；但这与安装生成的&lt;strong&gt;global.config&lt;/strong&gt;文件中的同步字设置不同，故实际收发与测试时，终端同步字设置相反&lt;/li&gt;
+&lt;li&gt;同步字：&lt;a href=&#34;https://forum.chirpstack.io/t/relation-between-sync-word-private-network-and-end-nodes/191/13?u=haowong&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Chirpstack&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;SX1302_RESET_PIN=23&lt;/strong&gt;改成了&lt;strong&gt;SX1302_RESET_PIN=7&lt;/strong&gt;且去掉了GPIO18相关代码
 （&lt;em&gt;GPIO7存在才能启动，GPIO18改不改没关系&lt;/em&gt;）&lt;/li&gt;
 &lt;/ol&gt;
@@ -779,6 +790,7 @@ Flash:     0
 &lt;h4 id=&#34;4214-rejeee&#34;&gt;4.2.1.4 Rejeee&lt;/h4&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/13517529.html#4758586&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;这家的节点不支持LoRaWAN，节点只有私有协议的&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWVfQkIxUFl2M3RKb01ZUTMxQ1hidXdCZWVoZmdnNkpPUEJxX1FGdzBhb3NzUT9lPWJmbmM4TA==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;8. 芮捷LPWAN协议&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.rejeee.com/documents/SPEC/RJDS0052018-M-KL9_Specification_V1.1.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;模块不支持标准LoRaWAN协议模块&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://space.bilibili.com/7682653?spm_id_from=333.788.b_765f7570696e666f.1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;视频&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;43-gateway&#34;&gt;4.3 Gateway&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;SX1302&lt;/strong&gt;&lt;/p&gt;
@@ -989,6 +1001,11 @@ UDP             1700/1700        0.0.0.0/0
 &lt;p&gt;&lt;a href=&#34;https://www.thethingsnetwork.org/forum/t/how-to-retrieve-metadata-from-data-storage-integration/19259/2?u=haowong&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TTN&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&#34;462-sdks--libraries&#34;&gt;4.6.2 SDKs &amp;amp; Libraries&lt;/h3&gt;
 &lt;h3 id=&#34;463-integrations&#34;&gt;4.6.3 Integrations&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.loracloud.com/portal&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Lora Cloud&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.chirpstack.io/application-server/integrations/loracloud/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Chirpstack&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.loracloud.com/documentation/device_management?url=gettingstarted.html#example-minimal-integration-with-the-things-network&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TTN&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h1 id=&#34;5-其他&#34;&gt;5 其他&lt;/h1&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.gnuradio.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GUNRadio&lt;/a&gt;&lt;/li&gt;
