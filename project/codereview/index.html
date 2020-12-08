@@ -1071,6 +1071,7 @@
 <h4 id="2112-socket">2.1.1.2 socket</h4>
 <ol>
 <li><a href="https://zhuanlan.zhihu.com/p/77023584" target="_blank" rel="noopener"><code>setsockopt()</code></a></li>
+<li><a href="https://www.cnblogs.com/jianqiang2010/archive/2010/08/20/1804598.htmll" target="_blank" rel="noopener"><code>send()</code></a></li>
 <li><a href="https://www.cnblogs.com/fnlingnzb-learner/p/8523206.html" target="_blank" rel="noopener"><code>recv()</code></a></li>
 </ol>
 <h4 id="2113-string">2.1.1.3 String</h4>
@@ -1284,8 +1285,8 @@ INFO: [down] PULL_ACK received in 34ms
 ### [UPSTREAM] ###
 # RF packets received by concentrator: 1 //thread_up
 # CRC_OK: 100.00%, CRC_FAIL: 0.00%, NO_CRC: 0.00% //thread_up
-# RF packets forwarded: 1 (13 bytes) //thread_up(thread_up)
-# PUSH_DATA datagrams sent: 2 (360 bytes) //PUSH_DATA：thread_up(thread_up)
+# RF packets forwarded: 1 (13 bytes) //thread_up(thread_up)：很少的原因是接收到的packet不通过CRC
+# PUSH_DATA datagrams sent: 2 (360 bytes) //PUSH_DATA：thread_up(thread_up)：比packet多的原因所有packet都没有通过CRC校验但有stat发
 # PUSH_DATA acknowledeged: 100.00% //PUSH_ACK：thread_up
 
 ### [DOWNSTREAM] ###
