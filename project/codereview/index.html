@@ -920,7 +920,7 @@
     <div class="article-style">
       <h1 id="1-json-configuration-file-globalconfig">1 JSON configuration file: global.config</h1>
 <pre><code class="language-cpp">{
-    &quot;SX130x_conf&quot;: { //parameters for the Lora concentrator board 
+    &quot;SX130x_conf&quot;: { //parameters for the Lora concentrator board；大部分prase的参数都通过lgw函数写到concentrator
         &quot;spidev_path&quot;: &quot;/dev/spidev0.0&quot;,
         &quot;lorawan_public&quot;: true,
         &quot;clksrc&quot;: 0,
@@ -974,8 +974,7 @@
             &quot;rssi_tcomp&quot;: {&quot;coeff_a&quot;: 0, &quot;coeff_b&quot;: 0, &quot;coeff_c&quot;: 20.41, &quot;coeff_d&quot;: 2162.56, &quot;coeff_e&quot;: 0},
             &quot;tx_enable&quot;: false //SELECTED RF_CHAIN IS DISABLED FOR TX ON SELECTED BOARD
         },
-        //我猜是SX1302的10个接收通道
-        //10 programmable parallel demodulation paths
+        //The SX1302 digital baseband chip contains ten programmable reception paths.
         //Receive 8 LoRa channels multi-data rates (SF5 ~ SF12 / 125 Simultaneously kHz) 
         &quot;chan_multiSF_0&quot;: {&quot;enable&quot;: true, &quot;radio&quot;: 0, &quot;if&quot;: -300000},
         &quot;chan_multiSF_1&quot;: {&quot;enable&quot;: true, &quot;radio&quot;: 0, &quot;if&quot;: -100000},
@@ -985,7 +984,7 @@
         &quot;chan_multiSF_5&quot;: {&quot;enable&quot;: true, &quot;radio&quot;: 1, &quot;if&quot;: -100000},
         &quot;chan_multiSF_6&quot;: {&quot;enable&quot;: true, &quot;radio&quot;: 1, &quot;if&quot;:  100000},
         &quot;chan_multiSF_7&quot;: {&quot;enable&quot;: true, &quot;radio&quot;: 1, &quot;if&quot;:  300000},
-        //mono-data rate
+        //high mono-data rate
         //用于网关间通讯
         &quot;chan_Lora_std&quot;:  {&quot;enable&quot;: true, &quot;radio&quot;: 1, &quot;if&quot;: -200000, &quot;bandwidth&quot;: 250000, &quot;spread_factor&quot;: 7,
                            &quot;implicit_hdr&quot;: false, &quot;implicit_payload_length&quot;: 17, &quot;implicit_crc_en&quot;: false, &quot;implicit_coderate&quot;: 1},
@@ -993,7 +992,7 @@
         &quot;chan_FSK&quot;:       {&quot;enable&quot;: true, &quot;radio&quot;: 1, &quot;if&quot;:  300000, &quot;bandwidth&quot;: 125000, &quot;datarate&quot;: 50000}
     },
 
-    &quot;gateway_conf&quot;: { //gateway parameters
+    &quot;gateway_conf&quot;: { //gateway parameters；所有prase的参数都存为全局变量
         &quot;gateway_ID&quot;: &quot;fffedca6320e9516&quot;,
         /* change with default server address/ports */
         &quot;server_address&quot;: &quot;loragw.things.qcloud.com&quot;,
@@ -1029,6 +1028,8 @@
 <ol>
 <li><a href="https://www.cnblogs.com/answerinthewind/p/13154904.html" target="_blank" rel="noopener">AnswerInTheWind</a></li>
 <li><a href="https://blog.csdn.net/jiangjunjie_2005/article/details/54603122" target="_blank" rel="noopener">Rimelink</a></li>
+<li>IF chain: <a href="https://lora-developers.semtech.com/knowledge-base/faq/P40" target="_blank" rel="noopener">Semetech</a></li>
+<li>antenna gain: <a href="https://lora-developers.semtech.com/knowledge-base/faq/P40" target="_blank" rel="noopener">Semetech</a></li>
 </ol>
 <h1 id="2-dependancies">2 DEPENDANCIES</h1>
 <h2 id="21-c-library-function">2.1 c library function</h2>
@@ -1073,6 +1074,9 @@
 <li><a href="https://zhuanlan.zhihu.com/p/77023584" target="_blank" rel="noopener"><code>setsockopt()</code></a></li>
 <li><a href="https://www.cnblogs.com/jianqiang2010/archive/2010/08/20/1804598.htmll" target="_blank" rel="noopener"><code>send()</code></a></li>
 <li><a href="https://www.cnblogs.com/fnlingnzb-learner/p/8523206.html" target="_blank" rel="noopener"><code>recv()</code></a></li>
+<li><a href="https://www.jianshu.com/p/df165c54d0b2" target="_blank" rel="noopener"><code>getaddrinfo()</code></a></li>
+<li><a href="https://blog.csdn.net/u011003120/article/details/78277133" target="_blank" rel="noopener"><code>getaddrinfo()</code></a></li>
+<li><a href="https://blog.csdn.net/cj83111/article/details/5364138" target="_blank" rel="noopener"><code>connect()</code></a></li>
 </ol>
 <h4 id="2113-string">2.1.1.3 String</h4>
 <ol>
@@ -1158,8 +1162,9 @@
 </li>
 </ul>
 <hr>
-<p>/* &mdash; THREAD 3: CHECKING PACKETS TO BE SENT FROM JIT QUEUE AND SEND THEM &mdash; */</p>
-<p><code>thread_jit</code>：</p>
+<p>/* &mdash; THREAD 3: CHECKING PACKETS TO BE SENT FROM JIT QUEUE AND SEND THEM &mdash; */
+//大部分的处理都在thread_down jit_enqueue时判断，发射时需要判断的东西很少，最多看是否lgw发射成功
+<code>thread_jit</code>：</p>
 <ol>
 <li><code>sig_handler</code></li>
 <li><code>print_tx_status</code></li>
@@ -1260,7 +1265,7 @@ INFO: setting debug log file name to loragw_hal.log
 //main(): Board reset
 CoreCell reset through GPIO7...
 
-//?
+//&quot;single_input_mode&quot;: true
 INFO: Configuring SX1250_0 in single input mode
 INFO: Configuring SX1250_1 in single input mode
 
@@ -1286,7 +1291,7 @@ INFO: [down] PULL_ACK received in 34ms
 # RF packets received by concentrator: 1 //thread_up
 # CRC_OK: 100.00%, CRC_FAIL: 0.00%, NO_CRC: 0.00% //thread_up
 # RF packets forwarded: 1 (13 bytes) //thread_up(thread_up)：很少的原因是接收到的packet不通过CRC
-# PUSH_DATA datagrams sent: 2 (360 bytes) //PUSH_DATA：thread_up(thread_up)：比packet多的原因所有packet都没有通过CRC校验但有stat发
+# PUSH_DATA datagrams sent: 2 (360 bytes) //PUSH_DATA：thread_up(thread_up)：比packet多的原因是有stat发
 # PUSH_DATA acknowledeged: 100.00% //PUSH_ACK：thread_up
 
 ### [DOWNSTREAM] ###

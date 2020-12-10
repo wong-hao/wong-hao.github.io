@@ -19,7 +19,7 @@
       <guid>https://haowong.com/project/codereview/</guid>
       <description>&lt;h1 id=&#34;1-json-configuration-file-globalconfig&#34;&gt;1 JSON configuration file: global.config&lt;/h1&gt;
 &lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;{
-    &amp;quot;SX130x_conf&amp;quot;: { //parameters for the Lora concentrator board 
+    &amp;quot;SX130x_conf&amp;quot;: { //parameters for the Lora concentrator board；大部分prase的参数都通过lgw函数写到concentrator
         &amp;quot;spidev_path&amp;quot;: &amp;quot;/dev/spidev0.0&amp;quot;,
         &amp;quot;lorawan_public&amp;quot;: true,
         &amp;quot;clksrc&amp;quot;: 0,
@@ -73,8 +73,7 @@
             &amp;quot;rssi_tcomp&amp;quot;: {&amp;quot;coeff_a&amp;quot;: 0, &amp;quot;coeff_b&amp;quot;: 0, &amp;quot;coeff_c&amp;quot;: 20.41, &amp;quot;coeff_d&amp;quot;: 2162.56, &amp;quot;coeff_e&amp;quot;: 0},
             &amp;quot;tx_enable&amp;quot;: false //SELECTED RF_CHAIN IS DISABLED FOR TX ON SELECTED BOARD
         },
-        //我猜是SX1302的10个接收通道
-        //10 programmable parallel demodulation paths
+        //The SX1302 digital baseband chip contains ten programmable reception paths.
         //Receive 8 LoRa channels multi-data rates (SF5 ~ SF12 / 125 Simultaneously kHz) 
         &amp;quot;chan_multiSF_0&amp;quot;: {&amp;quot;enable&amp;quot;: true, &amp;quot;radio&amp;quot;: 0, &amp;quot;if&amp;quot;: -300000},
         &amp;quot;chan_multiSF_1&amp;quot;: {&amp;quot;enable&amp;quot;: true, &amp;quot;radio&amp;quot;: 0, &amp;quot;if&amp;quot;: -100000},
@@ -84,7 +83,7 @@
         &amp;quot;chan_multiSF_5&amp;quot;: {&amp;quot;enable&amp;quot;: true, &amp;quot;radio&amp;quot;: 1, &amp;quot;if&amp;quot;: -100000},
         &amp;quot;chan_multiSF_6&amp;quot;: {&amp;quot;enable&amp;quot;: true, &amp;quot;radio&amp;quot;: 1, &amp;quot;if&amp;quot;:  100000},
         &amp;quot;chan_multiSF_7&amp;quot;: {&amp;quot;enable&amp;quot;: true, &amp;quot;radio&amp;quot;: 1, &amp;quot;if&amp;quot;:  300000},
-        //mono-data rate
+        //high mono-data rate
         //用于网关间通讯
         &amp;quot;chan_Lora_std&amp;quot;:  {&amp;quot;enable&amp;quot;: true, &amp;quot;radio&amp;quot;: 1, &amp;quot;if&amp;quot;: -200000, &amp;quot;bandwidth&amp;quot;: 250000, &amp;quot;spread_factor&amp;quot;: 7,
                            &amp;quot;implicit_hdr&amp;quot;: false, &amp;quot;implicit_payload_length&amp;quot;: 17, &amp;quot;implicit_crc_en&amp;quot;: false, &amp;quot;implicit_coderate&amp;quot;: 1},
@@ -92,7 +91,7 @@
         &amp;quot;chan_FSK&amp;quot;:       {&amp;quot;enable&amp;quot;: true, &amp;quot;radio&amp;quot;: 1, &amp;quot;if&amp;quot;:  300000, &amp;quot;bandwidth&amp;quot;: 125000, &amp;quot;datarate&amp;quot;: 50000}
     },
 
-    &amp;quot;gateway_conf&amp;quot;: { //gateway parameters
+    &amp;quot;gateway_conf&amp;quot;: { //gateway parameters；所有prase的参数都存为全局变量
         &amp;quot;gateway_ID&amp;quot;: &amp;quot;fffedca6320e9516&amp;quot;,
         /* change with default server address/ports */
         &amp;quot;server_address&amp;quot;: &amp;quot;loragw.things.qcloud.com&amp;quot;,
@@ -128,6 +127,8 @@
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/13154904.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;AnswerInTheWind&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/jiangjunjie_2005/article/details/54603122&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Rimelink&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;IF chain: &lt;a href=&#34;https://lora-developers.semtech.com/knowledge-base/faq/P40&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Semetech&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;antenna gain: &lt;a href=&#34;https://lora-developers.semtech.com/knowledge-base/faq/P40&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Semetech&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h1 id=&#34;2-dependancies&#34;&gt;2 DEPENDANCIES&lt;/h1&gt;
 &lt;h2 id=&#34;21-c-library-function&#34;&gt;2.1 c library function&lt;/h2&gt;
@@ -172,6 +173,9 @@
 &lt;li&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/77023584&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;setsockopt()&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.cnblogs.com/jianqiang2010/archive/2010/08/20/1804598.htmll&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;send()&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.cnblogs.com/fnlingnzb-learner/p/8523206.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;recv()&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.jianshu.com/p/df165c54d0b2&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;getaddrinfo()&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/u011003120/article/details/78277133&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;getaddrinfo()&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/cj83111/article/details/5364138&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;connect()&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h4 id=&#34;2113-string&#34;&gt;2.1.1.3 String&lt;/h4&gt;
 &lt;ol&gt;
@@ -257,8 +261,9 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
-&lt;p&gt;/* &amp;mdash; THREAD 3: CHECKING PACKETS TO BE SENT FROM JIT QUEUE AND SEND THEM &amp;mdash; */&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;thread_jit&lt;/code&gt;：&lt;/p&gt;
+&lt;p&gt;/* &amp;mdash; THREAD 3: CHECKING PACKETS TO BE SENT FROM JIT QUEUE AND SEND THEM &amp;mdash; */
+//大部分的处理都在thread_down jit_enqueue时判断，发射时需要判断的东西很少，最多看是否lgw发射成功
+&lt;code&gt;thread_jit&lt;/code&gt;：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;code&gt;sig_handler&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;print_tx_status&lt;/code&gt;&lt;/li&gt;
@@ -359,7 +364,7 @@ INFO: setting debug log file name to loragw_hal.log
 //main(): Board reset
 CoreCell reset through GPIO7...
 
-//?
+//&amp;quot;single_input_mode&amp;quot;: true
 INFO: Configuring SX1250_0 in single input mode
 INFO: Configuring SX1250_1 in single input mode
 
@@ -385,7 +390,7 @@ INFO: [down] PULL_ACK received in 34ms
 # RF packets received by concentrator: 1 //thread_up
 # CRC_OK: 100.00%, CRC_FAIL: 0.00%, NO_CRC: 0.00% //thread_up
 # RF packets forwarded: 1 (13 bytes) //thread_up(thread_up)：很少的原因是接收到的packet不通过CRC
-# PUSH_DATA datagrams sent: 2 (360 bytes) //PUSH_DATA：thread_up(thread_up)：比packet多的原因所有packet都没有通过CRC校验但有stat发
+# PUSH_DATA datagrams sent: 2 (360 bytes) //PUSH_DATA：thread_up(thread_up)：比packet多的原因是有stat发
 # PUSH_DATA acknowledeged: 100.00% //PUSH_ACK：thread_up
 
 ### [DOWNSTREAM] ###
@@ -532,7 +537,6 @@ INFO: [down] PULL_ACK received in 56ms
 &lt;li&gt;&lt;a href=&#34;https://lora.readthedocs.io/en/latest/#id11&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Mobilefish.com&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://myriadrf.org/news/lora-modem-limesdr/&#34;&gt;https://myriadrf.org/news/lora-modem-limesdr/&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Everything: &lt;a href=&#34;https://www.sghoslya.com/p/lora_9.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Sakshama Ghoslya&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.sghoslya.com/p/how-to-buy-lora-matlab-codes.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;仿真代码&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;数据包格式 / Lora Packet Format:
@@ -542,6 +546,8 @@ INFO: [down] PULL_ACK received in 56ms
 &lt;li&gt;&lt;a href=&#34;https://www.sghoslya.com/p/lora-is-chirp-spread-spectrum.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Sakshama Ghoslya&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://revspace.nl/DecodingLora&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DecodingLora&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.rfwireless-world.com/Terminology/What-is-difference-between-Implicit-header-and-Explicit-header-in-LoRaWAN-packet.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Implicit header and Explicit header&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://myriadrf.org/news/lora-modem-limesdr/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Demodulation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://lora-developers.semtech.com/knowledge-base/faq/P40&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Semetech&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;lorawan mac command：&lt;a href=&#34;https://lora-alliance.org/lorawan-for-developers&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Core LoRaWAN Specification&lt;/a&gt;&lt;/li&gt;
@@ -901,6 +907,7 @@ raspberrypi2    0016c001ff10d3f7    -              苏州市           在线   
 &lt;li&gt;Docket install
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://fiware-lorawan.readthedocs.io/en/latest/users_manual/index.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Fireware: ChirpStack+TTN&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.debugself.com/2019/12/08/lorawan_guide/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ChirpStack:docker0&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.chirpstack.io/project/guides/docker-compose/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ChirpStack:docker1&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/Mculover666/article/details/104059771&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ChirpStack:docker2&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.freesion.com/article/1023121538/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ChirpStack:docker3&lt;/a&gt;&lt;/li&gt;
@@ -977,25 +984,25 @@ UDP             1700/1700        0.0.0.0/0
 &lt;p&gt;&lt;a href=&#34;https://lora-developers.semtech.com/library/tech-papers-and-guides/lora-and-lorawan/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Semetech&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&#34;452-下行通信&#34;&gt;4.5.2 下行通信&lt;/h3&gt;
 &lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/freemote/article/details/90315395&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;freemote&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://forum.chirpstack.io/t/how-to-get-downlink-communication/9816/3?u=haowong&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Chirpstack&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://forum.chirpstack.io/t/how-to-get-downlink-communication/9816/3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Chirpstack&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.thethingsnetwork.org/forum/t/how-to-get-downlink-communication/41712/12&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TheThingsNetwork1&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.thethingsnetwork.org/forum/u/haowong/messages/archive&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TheThingsNetwork2&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.thethingsnetwork.org/docs/devices/uno/quick-start.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TheThingsNetwork3&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/quending/article/details/86481598&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;quending&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.hobairiku.site/2018/02/26/LoRa-Server-Project/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Rimelink&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;46-end-application&#34;&gt;4.6 End-application&lt;/h2&gt;
 &lt;h3 id=&#34;461-api&#34;&gt;4.6.1 API&lt;/h3&gt;
 &lt;h4 id=&#34;4611-mqtt&#34;&gt;4.6.1.1 MQTT&lt;/h4&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.emqx.io/cn/blog/mqtt-client-tools&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;2020 年常见 MQTT 客户端工具比较&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/RAKwireless/article/details/106711672&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;RAKwireless&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/6200497.html#4472555&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;AnswerInTheWind&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://blog.hobairiku.site/2018/02/26/LoRa-Server-Project/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Rimelink&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.thethingsnetwork.org/docs/applications/mqtt/quick-start.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TheThingsNetwork&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://forum.chirpstack.io/t/forming-downlink-packet-to-lora-node/215/16&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ChirpStack1&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.chirpstack.io/application-server/integrations/mqtt/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ChirpStack2&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://thethingsstack.io/integrations/mqtt/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TheThingStack&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/freemote/article/details/106361732&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;freemote&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.instructables.com/Store-Messages-From-Mosquitto-MQTT-Broker-Into-SQL/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;MQTT数据（有效负载）存储到数据库中的方法&lt;/a&gt;&lt;/p&gt;
-&lt;h4 id=&#34;4612-下行通信&#34;&gt;4.6.1.2 下行通信&lt;/h4&gt;
+&lt;h4 id=&#34;4612-mqtt下行通信&#34;&gt;4.6.1.2 MQTT下行通信&lt;/h4&gt;
 &lt;p&gt;&lt;a href=&#34;https://lora-developers.semtech.com/library/tech-papers-and-guides/lorawan-class-a-devices&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Semetech1&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://lora-developers.semtech.com/library/tech-papers-and-guides/lorawan-class-b-devices&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Semetech2&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.chirpstack.io/project/architecture/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Chirpstack1&lt;/a&gt;&lt;/p&gt;
