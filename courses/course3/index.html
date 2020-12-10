@@ -860,7 +860,7 @@
 <li>Data Constraint</li>
 </ol>
 <h4 id="33-sql-query-descriptive-language">3.3 SQL Query: Descriptive Language</h4>
-<p>10&rsquo;:</p>
+<p>10':</p>
 <table>
 <thead>
 <tr>
@@ -915,12 +915,12 @@
 </blockquote>
 <p>A: *</p>
 <hr>
-<p>5&rsquo;：
+<p>5'：
 select * from *
 group by *
 having *</p>
 <hr>
-<p>10&rsquo;:</p>
+<p>10':</p>
 <blockquote>
 <p>Find all customers who have both an account and a loan at the bank.</p>
 </blockquote>
@@ -937,7 +937,7 @@ having *</p>
    where customer_name not in(select customer_name
                               from depositor)
 </code></pre>
-<p>10&rsquo;:</p>
+<p>10':</p>
 <blockquote>
 <p>Find the names of all branches that have greater assets than all branches located in Brooklyn.</p>
 </blockquote>
@@ -949,7 +949,7 @@ having *</p>
          where branch_city = 'Brooklyn')
 </code></pre>
 <hr>
-<p>10&rsquo;:</p>
+<p>10':</p>
 <blockquote>
 <p>Find all cusomers who have an account at all branches located in Brooklyn.</p>
 </blockquote>
@@ -966,7 +966,7 @@ having *</p>
           S.customer_name - T.customer_name))
 </code></pre>
 <hr>
-<p>10&rsquo;:</p>
+<p>10':</p>
 <pre><code class="language-sql">select SNO
 from student S
 where not exists(
