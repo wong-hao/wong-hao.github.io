@@ -937,7 +937,7 @@ Received 3 packets (total:3)
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;注意：官方更新后的&lt;a href=&#34;https://github.com/Lora-net/sx1302_hal/commit/2c14708bdbf110d8ed2f2f3b2d33942249bbe2ba&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;代码2.0&lt;/a&gt;对应于&lt;a href=&#34;https://www.semtech.com/products/wireless-rf/lora-gateways/sx1302cssxxxgw1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Semtech SX1302CSSXXXGW1&lt;/a&gt;：&lt;a href=&#34;https://semtech.my.salesforce.com/sfc/p/#E0000000JelG/a/2R000000Hokn/i4xzbsLU2V6V92uDISoUfd3brd4MOpa0kyPyC_FPKXo&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;USB Corecell ref design for LBT Spectral Scan gateway User Guide&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;注意：官方更新后的&lt;a href=&#34;https://github.com/Lora-net/sx1302_hal/commit/2c14708bdbf110d8ed2f2f3b2d33942249bbe2ba&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;代码2.0&lt;/a&gt;对应于&lt;a href=&#34;https://www.semtech.com/products/wireless-rf/lora-gateways/sx1302cssxxxgw1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Semtech SX1302CSSXXXGW1&lt;/a&gt;：&lt;a href=&#34;https://semtech.my.salesforce.com/sfc/p/#E0000000JelG/a/2R000000Hokn/i4xzbsLU2V6V92uDISoUfd3brd4MOpa0kyPyC_FPKXo&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;USB Corecell ref design for LBT Spectral Scan gateway User Guide&lt;/a&gt;；还包含了&lt;a href=&#34;https://www.semtech.com/products/wireless-rf/lora-gateways/sx1302cfdxxxgw1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Semtech SX1302CFDXXXGW1&lt;/a&gt;：可从&lt;a href=&#34;https://github.com/Lora-net/sx1302_hal/blob/master/packet_forwarder/global_conf.json.sx1255.CN490.full-duplex&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;global_conf.json.sx1255.CN490.full-duplex&lt;/a&gt;看出&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;32-系统备份&#34;&gt;3.2 系统备份&lt;/h2&gt;
 &lt;ol&gt;
@@ -1926,7 +1926,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-296738451&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-587293416&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -1936,7 +1936,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-296738451&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-587293416&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
