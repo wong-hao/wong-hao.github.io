@@ -355,9 +355,31 @@
 &lt;li&gt;&lt;a href=&#34;https://www.cnblogs.com/jianqiang2010/archive/2010/08/20/1804598.htmll&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;send()&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.cnblogs.com/fnlingnzb-learner/p/8523206.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;recv()&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.jianshu.com/p/df165c54d0b2&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;getaddrinfo()&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/u011003120/article/details/78277133&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;getaddrinfo()&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/u011003120/article/details/78277133&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;getaddrinfo()&lt;/code&gt;&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;for (q=result; q!=NULL; q=q-&amp;gt;ai_next)：简单来说就是遍历。因为一个域名可能不止一个IP地址，所以，需要遍历res中的next，如下，是否还有下一个节点(即是否还有下一个IP地址信息)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;&#34;&gt;&lt;code&gt;getnameinfo()&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/cj83111/article/details/5364138&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;connect()&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
+&lt;p&gt;sock_up：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;init：main&lt;/li&gt;
+&lt;li&gt;send：PUSH_DATA&lt;/li&gt;
+&lt;li&gt;recv：PUSH_ACK&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;sock_down：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;init：main&lt;/li&gt;
+&lt;li&gt;send：PULL_DATA&lt;/li&gt;
+&lt;li&gt;recv：
+&lt;ul&gt;
+&lt;li&gt;PULL_ACK&lt;/li&gt;
+&lt;li&gt;PULL_RESP&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h4 id=&#34;2113-string&#34;&gt;2.1.1.3 String&lt;/h4&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&#34;https://baike.baidu.com/item/snprintf%28%29&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;snprintf()&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
@@ -1898,7 +1920,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-732516894&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-439568127&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -1908,7 +1930,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-732516894&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-439568127&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();

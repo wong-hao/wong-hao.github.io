@@ -1078,9 +1078,31 @@
 <li><a href="https://www.cnblogs.com/jianqiang2010/archive/2010/08/20/1804598.htmll" target="_blank" rel="noopener"><code>send()</code></a></li>
 <li><a href="https://www.cnblogs.com/fnlingnzb-learner/p/8523206.html" target="_blank" rel="noopener"><code>recv()</code></a></li>
 <li><a href="https://www.jianshu.com/p/df165c54d0b2" target="_blank" rel="noopener"><code>getaddrinfo()</code></a></li>
-<li><a href="https://blog.csdn.net/u011003120/article/details/78277133" target="_blank" rel="noopener"><code>getaddrinfo()</code></a></li>
+<li><a href="https://blog.csdn.net/u011003120/article/details/78277133" target="_blank" rel="noopener"><code>getaddrinfo()</code></a>
+<ul>
+<li>for (q=result; q!=NULL; q=q-&gt;ai_next)：简单来说就是遍历。因为一个域名可能不止一个IP地址，所以，需要遍历res中的next，如下，是否还有下一个节点(即是否还有下一个IP地址信息)</li>
+</ul>
+</li>
+<li><a href=""><code>getnameinfo()</code></a></li>
 <li><a href="https://blog.csdn.net/cj83111/article/details/5364138" target="_blank" rel="noopener"><code>connect()</code></a></li>
 </ol>
+<p>sock_up：</p>
+<ul>
+<li>init：main</li>
+<li>send：PUSH_DATA</li>
+<li>recv：PUSH_ACK</li>
+</ul>
+<p>sock_down：</p>
+<ul>
+<li>init：main</li>
+<li>send：PULL_DATA</li>
+<li>recv：
+<ul>
+<li>PULL_ACK</li>
+<li>PULL_RESP</li>
+</ul>
+</li>
+</ul>
 <h4 id="2113-string">2.1.1.3 String</h4>
 <ol>
 <li><a href="https://baike.baidu.com/item/snprintf%28%29" target="_blank" rel="noopener"><code>snprintf()</code></a></li>
