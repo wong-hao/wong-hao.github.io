@@ -773,7 +773,7 @@ Received 3 packets (total:3)
 &lt;ul&gt;
 &lt;li&gt;&amp;ldquo;global.config&amp;quot;中&amp;quot;gateway_ID&amp;quot;都要修改与树莓派保持一致&lt;/li&gt;
 &lt;li&gt;&amp;ldquo;lorawan_public&amp;quot;与发射端保持一致&lt;/li&gt;
-&lt;li&gt;先连接外接显示器，新wifi密码为1234567890，注意显示器已开启热插拔,但这样会占用额外内存&lt;/li&gt;
+&lt;li&gt;先连接外接显示器，寝室新wifi密码见群公告；注意显示器已开启热插拔,但这样会占用额外内存&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;

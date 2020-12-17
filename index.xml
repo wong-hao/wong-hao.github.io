@@ -954,7 +954,7 @@ Received 3 packets (total:3)
 &lt;ul&gt;
 &lt;li&gt;&amp;ldquo;global.config&amp;quot;中&amp;quot;gateway_ID&amp;quot;都要修改与树莓派保持一致&lt;/li&gt;
 &lt;li&gt;&amp;ldquo;lorawan_public&amp;quot;与发射端保持一致&lt;/li&gt;
-&lt;li&gt;先连接外接显示器，新wifi密码为1234567890，注意显示器已开启热插拔,但这样会占用额外内存&lt;/li&gt;
+&lt;li&gt;先连接外接显示器，寝室新wifi密码见群公告；注意显示器已开启热插拔,但这样会占用额外内存&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
@@ -1930,7 +1930,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-746239581&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-857149632&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -1940,7 +1940,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-746239581&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-857149632&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
