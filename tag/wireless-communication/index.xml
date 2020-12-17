@@ -614,7 +614,10 @@ ERROR: [main] failed to start the concentrator
 （&lt;em&gt;GPIO7存在才能启动，GPIO18改不改没关系&lt;/em&gt;）&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;网关射频模组
+&lt;li&gt;安装与测试教程：
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.semtech.com/products/wireless-rf/lora-gateways/sx1302cxxxgw1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Semtech SX1302CxxxGW1&lt;/a&gt;：&lt;a href=&#34;https://semtech.my.salesforce.com/sfc/p/#E0000000JelG/a/2R000000HV3G/an5Oh4KfiY7tAO1MO7RiPOj08WUpOTjPHSF57_.NlJ0&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Corecell ref design User Guide V1.2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.njrjzn.com/chanpinzhongxin/SX1302mozuxilie/21.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;M-GW1302S&lt;/a&gt;：&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVFEYUo0OHJlX1pPcUxjTUIwR1RyQThCaWVnS0lhVnJYeEVRUmNOLUVyb0xEQT9lPTVudm5BTA==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;M-GW1302S 用户手册(2)(1)(1)&lt;/a&gt;
 &lt;ul&gt;
 &lt;li&gt;寄存器读写测试：1%概率成功
 &lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;pi@raspberrypi:~/gw1302s/bin $ ./test_loragw_reg
@@ -752,12 +755,15 @@ Received 3 packets (total:3)
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;注意：官方更新后的&lt;a href=&#34;https://github.com/Lora-net/sx1302_hal/commit/2c14708bdbf110d8ed2f2f3b2d33942249bbe2ba&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;代码2.0&lt;/a&gt;对应于&lt;a href=&#34;https://www.semtech.com/products/wireless-rf/lora-gateways/sx1302cssxxxgw1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Semtech SX1302CSSXXXGW1&lt;/a&gt;：&lt;a href=&#34;https://semtech.my.salesforce.com/sfc/p/#E0000000JelG/a/2R000000Hokn/i4xzbsLU2V6V92uDISoUfd3brd4MOpa0kyPyC_FPKXo&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;USB Corecell ref design for LBT Spectral Scan gateway User Guide&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id=&#34;32-系统备份&#34;&gt;3.2 系统备份&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOnU6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVdLWEhRd1h5cnRDaGVTMDM0WTFsSjhCVlhJSThGUmd3QzhuZ0lFRlpqVW5EQT9lPWR1WXNKVQ==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Gitee版&lt;/a&gt;采用的代码Commit id（&lt;em&gt;选用自动安装脚本&amp;rsquo;install.sh&#39;&lt;/em&gt;）: &lt;a href=&#34;https://gitee.com/rejeee/gw1302s/commit/d9ef27fdecf2352d7ab6b85d50fb7a3e38a162ae&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;d9ef27fdecf2352d7ab6b85d50fb7a3e38a162ae&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#&#34;&gt;Github版&lt;/a&gt;采用的代码Commit id（&lt;em&gt;Gitee抄到这后面就自己改了&lt;/em&gt;）: &lt;a href=&#34;https://github.com/Lora-net/sx1302_hal/commit/6291e62ef9a161ae41037a0df1a86e9943a907b9&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;6291e62ef9a161ae41037a0df1a86e9943a907b9&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;卖家给了所谓&lt;strong&gt;搭建好基本环境&lt;/strong&gt;的&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOnU6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVpVeXREN1pkTDVBZy14c3hjTXQ0NElCVEI1TTgyV2xHcWJOUFgxOGZZWmhaUT9lPXRrQUx1Zg==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;系统&lt;/a&gt;，实际上就是刷了4.19，升级了还是不能用，没解决任何问题&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://downloads.raspberrypi.org/raspbian/images/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;历代系统&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://downloads.raspberrypi.org/raspbian/images/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;树莓派历代系统&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://mirrors.tuna.tsinghua.edu.cn/raspbian-images/raspios_armhf/images/raspios_armhf-2020-05-28/2020-05-27-raspios-buster-armhf.zip&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;4.19.118系统清华镜像&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;每次更换为备份时:
 &lt;ul&gt;
