@@ -35,7 +35,7 @@
     <item>
       <title>Seminar</title>
       <link>https://haowong.com/talk/seminar/</link>
-      <pubDate>Sat, 01 Jun 2030 13:00:00 +0000</pubDate>
+      <pubDate>Tue, 22 Dec 2020 13:00:00 +0000</pubDate>
       <guid>https://haowong.com/talk/seminar/</guid>
       <description>&lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
@@ -1091,7 +1091,7 @@ raspberrypi2    0016c001ff10d3f7    -              苏州市           在线   
 &lt;li&gt;&lt;a href=&#34;https://www.thethingsnetwork.org/forum/t/limitations-data-rate-packet-size-30-seconds-uplink-and-10-messages-downlink-per-day-fair-access-policy-guidelines/1300&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Limitations&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://thethingsstack.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;The Things Stack：安装版&lt;/a&gt;，&lt;a href=&#34;https://cryptii.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Base64工具1&lt;/a&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.thethingsindustries.com/docs/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;The Things Stack：安装版&lt;/a&gt;，&lt;a href=&#34;https://cryptii.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Base64工具1&lt;/a&gt;
 &lt;ul&gt;
 &lt;li&gt;Docket install， &lt;a href=&#34;https://lorawan-packet-decoder-0ta6puiniaut.runkit.sh/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Base64工具2&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -1930,7 +1930,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-857149632&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-238915476&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -1940,7 +1940,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-857149632&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-238915476&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
