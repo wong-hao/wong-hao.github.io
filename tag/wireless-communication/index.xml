@@ -543,6 +543,13 @@ INFO: [down] PULL_ACK received in 56ms
 ...
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Because I see it&amp;rsquo;s better not to use comfirmed message, so if this is a sign that has already used it, what kind of settings should be adopted and how can I use uncomfirmed message instead.&lt;/p&gt;
+&lt;h1 id=&#34;7-todo&#34;&gt;7 TODO&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 优化2.0.1版本代码&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 测试2.0.1版本是否能够正常收发数据，注意修改global.config接受频率&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 查看2.0.1是否适应新版本树莓派系统&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 若上述都满足，保存旧版本修改代码，新fork代码并添加注释&lt;/li&gt;
+&lt;/ul&gt;
 </description>
     </item>
     
