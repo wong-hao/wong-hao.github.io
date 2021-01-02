@@ -17,112 +17,47 @@
       <link>https://haowong.com/project/codereview/</link>
       <pubDate>Wed, 21 Oct 2020 00:00:00 +0000</pubDate>
       <guid>https://haowong.com/project/codereview/</guid>
-      <description>&lt;h1 id=&#34;1-json-configuration-file-globalconfig&#34;&gt;1 JSON configuration file: global.config&lt;/h1&gt;
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;{
-    &amp;quot;SX130x_conf&amp;quot;: { //parameters for the Lora concentrator board；大部分prase的参数都通过lgw函数写到concentrator
-        &amp;quot;spidev_path&amp;quot;: &amp;quot;/dev/spidev0.0&amp;quot;,
-        &amp;quot;lorawan_public&amp;quot;: true,
-        &amp;quot;clksrc&amp;quot;: 0,
-        &amp;quot;antenna_gain&amp;quot;: 0, /* antenna gain, in dBi */
-        &amp;quot;full_duplex&amp;quot;: false,
-        &amp;quot;precision_timestamp&amp;quot;: {
-            &amp;quot;enable&amp;quot;: false,
-            &amp;quot;max_ts_metrics&amp;quot;: 255,
-            &amp;quot;nb_symbols&amp;quot;: 1
-        },
-        //第一个SX1250
-        &amp;quot;radio_0&amp;quot;: {
-            &amp;quot;enable&amp;quot;: true, //包含了rx_enable与tx_enable
-            &amp;quot;type&amp;quot;: &amp;quot;SX1250&amp;quot;,
-            &amp;quot;single_input_mode&amp;quot;: true,
-            &amp;quot;freq&amp;quot;: 470600000, //RX frequency
-            &amp;quot;rssi_offset&amp;quot;: -207.0,
-            &amp;quot;rssi_tcomp&amp;quot;: {&amp;quot;coeff_a&amp;quot;: 0, &amp;quot;coeff_b&amp;quot;: 0, &amp;quot;coeff_c&amp;quot;: 20.41, &amp;quot;coeff_d&amp;quot;: 2162.56, &amp;quot;coeff_e&amp;quot;: 0},
-            &amp;quot;tx_enable&amp;quot;: true, 
-            /* check TX frequency before trying to queue packet */ //thread_down
-            &amp;quot;tx_freq_min&amp;quot;: 470000000, 
-            &amp;quot;tx_freq_max&amp;quot;: 510000000,
-            /* check TX power before trying to queue packet, send a warning if not supported */ //thread_down
-            //tx_gain: transmit gain; lut: Look-Up-Table
-            &amp;quot;tx_gain_lut&amp;quot;:[ 
-                {&amp;quot;rf_power&amp;quot;: -6, &amp;quot;pa_gain&amp;quot;: 0, &amp;quot;pwr_idx&amp;quot;:  0},
-                {&amp;quot;rf_power&amp;quot;: -3, &amp;quot;pa_gain&amp;quot;: 0, &amp;quot;pwr_idx&amp;quot;:  1},
-                {&amp;quot;rf_power&amp;quot;:  0, &amp;quot;pa_gain&amp;quot;: 0, &amp;quot;pwr_idx&amp;quot;:  2},
-                {&amp;quot;rf_power&amp;quot;:  3, &amp;quot;pa_gain&amp;quot;: 1, &amp;quot;pwr_idx&amp;quot;:  3},
-                {&amp;quot;rf_power&amp;quot;:  6, &amp;quot;pa_gain&amp;quot;: 1, &amp;quot;pwr_idx&amp;quot;:  4},
-                {&amp;quot;rf_power&amp;quot;: 10, &amp;quot;pa_gain&amp;quot;: 1, &amp;quot;pwr_idx&amp;quot;:  5},
-                {&amp;quot;rf_power&amp;quot;: 11, &amp;quot;pa_gain&amp;quot;: 1, &amp;quot;pwr_idx&amp;quot;:  6},
-                {&amp;quot;rf_power&amp;quot;: 12, &amp;quot;pa_gain&amp;quot;: 2, &amp;quot;pwr_idx&amp;quot;:  7},
-                {&amp;quot;rf_power&amp;quot;: 13, &amp;quot;pa_gain&amp;quot;: 1, &amp;quot;pwr_idx&amp;quot;:  8},
-                {&amp;quot;rf_power&amp;quot;: 14, &amp;quot;pa_gain&amp;quot;: 2, &amp;quot;pwr_idx&amp;quot;:  9},
-                {&amp;quot;rf_power&amp;quot;: 16, &amp;quot;pa_gain&amp;quot;: 2, &amp;quot;pwr_idx&amp;quot;: 10},
-                {&amp;quot;rf_power&amp;quot;: 20, &amp;quot;pa_gain&amp;quot;: 3, &amp;quot;pwr_idx&amp;quot;: 11},
-                {&amp;quot;rf_power&amp;quot;: 23, &amp;quot;pa_gain&amp;quot;: 3, &amp;quot;pwr_idx&amp;quot;: 12},
-                {&amp;quot;rf_power&amp;quot;: 25, &amp;quot;pa_gain&amp;quot;: 3, &amp;quot;pwr_idx&amp;quot;: 13},
-                {&amp;quot;rf_power&amp;quot;: 26, &amp;quot;pa_gain&amp;quot;: 3, &amp;quot;pwr_idx&amp;quot;: 14},
-                {&amp;quot;rf_power&amp;quot;: 27, &amp;quot;pa_gain&amp;quot;: 3, &amp;quot;pwr_idx&amp;quot;: 15}
-            ]
-        },
-        //第二个SX1250
-        &amp;quot;radio_1&amp;quot;: {
-            &amp;quot;enable&amp;quot;: true,
-            &amp;quot;type&amp;quot;: &amp;quot;SX1250&amp;quot;,
-            &amp;quot;single_input_mode&amp;quot;: true,
-            &amp;quot;freq&amp;quot;: 471400000,
-            &amp;quot;rssi_offset&amp;quot;: -207.0,
-            &amp;quot;rssi_tcomp&amp;quot;: {&amp;quot;coeff_a&amp;quot;: 0, &amp;quot;coeff_b&amp;quot;: 0, &amp;quot;coeff_c&amp;quot;: 20.41, &amp;quot;coeff_d&amp;quot;: 2162.56, &amp;quot;coeff_e&amp;quot;: 0},
-            &amp;quot;tx_enable&amp;quot;: false //SELECTED RF_CHAIN IS DISABLED FOR TX ON SELECTED BOARD
-        },
-        //The SX1302 digital baseband chip contains ten programmable reception paths.
-        //Receive 8 LoRa channels multi-data rates (SF5 ~ SF12 / 125 Simultaneously kHz) 
-        &amp;quot;chan_multiSF_0&amp;quot;: {&amp;quot;enable&amp;quot;: true, &amp;quot;radio&amp;quot;: 0, &amp;quot;if&amp;quot;: -300000},
-        &amp;quot;chan_multiSF_1&amp;quot;: {&amp;quot;enable&amp;quot;: true, &amp;quot;radio&amp;quot;: 0, &amp;quot;if&amp;quot;: -100000},
-        &amp;quot;chan_multiSF_2&amp;quot;: {&amp;quot;enable&amp;quot;: true, &amp;quot;radio&amp;quot;: 0, &amp;quot;if&amp;quot;:  100000},
-        &amp;quot;chan_multiSF_3&amp;quot;: {&amp;quot;enable&amp;quot;: true, &amp;quot;radio&amp;quot;: 0, &amp;quot;if&amp;quot;:  300000},
-        &amp;quot;chan_multiSF_4&amp;quot;: {&amp;quot;enable&amp;quot;: true, &amp;quot;radio&amp;quot;: 1, &amp;quot;if&amp;quot;: -300000},
-        &amp;quot;chan_multiSF_5&amp;quot;: {&amp;quot;enable&amp;quot;: true, &amp;quot;radio&amp;quot;: 1, &amp;quot;if&amp;quot;: -100000},
-        &amp;quot;chan_multiSF_6&amp;quot;: {&amp;quot;enable&amp;quot;: true, &amp;quot;radio&amp;quot;: 1, &amp;quot;if&amp;quot;:  100000},
-        &amp;quot;chan_multiSF_7&amp;quot;: {&amp;quot;enable&amp;quot;: true, &amp;quot;radio&amp;quot;: 1, &amp;quot;if&amp;quot;:  300000},
-        //high mono-data rate
-        //用于网关间通讯
-        &amp;quot;chan_Lora_std&amp;quot;:  {&amp;quot;enable&amp;quot;: true, &amp;quot;radio&amp;quot;: 1, &amp;quot;if&amp;quot;: -200000, &amp;quot;bandwidth&amp;quot;: 250000, &amp;quot;spread_factor&amp;quot;: 7,
-                           &amp;quot;implicit_hdr&amp;quot;: false, &amp;quot;implicit_payload_length&amp;quot;: 17, &amp;quot;implicit_crc_en&amp;quot;: false, &amp;quot;implicit_coderate&amp;quot;: 1},
-        //and FSK 50 kbps
-        &amp;quot;chan_FSK&amp;quot;:       {&amp;quot;enable&amp;quot;: true, &amp;quot;radio&amp;quot;: 1, &amp;quot;if&amp;quot;:  300000, &amp;quot;bandwidth&amp;quot;: 125000, &amp;quot;datarate&amp;quot;: 50000}
-    },
-
-    &amp;quot;gateway_conf&amp;quot;: { //gateway parameters；所有prase的参数都存为全局变量
-        &amp;quot;gateway_ID&amp;quot;: &amp;quot;fffedca6320e9516&amp;quot;,
-        /* change with default server address/ports */
-        &amp;quot;server_address&amp;quot;: &amp;quot;loragw.things.qcloud.com&amp;quot;,
-        &amp;quot;serv_port_up&amp;quot;: 1700,
-        &amp;quot;serv_port_down&amp;quot;: 1700,
-        /* adjust the following parameters for your network */
-        &amp;quot;keepalive_interval&amp;quot;: 10,
-        &amp;quot;stat_interval&amp;quot;: 30,
-        &amp;quot;push_timeout_ms&amp;quot;: 100,
-        /* forward only valid packets */
-        &amp;quot;forward_crc_valid&amp;quot;: true,
-        &amp;quot;forward_crc_error&amp;quot;: false,
-        &amp;quot;forward_crc_disabled&amp;quot;: false,
-        /* Beaconing parameters */
-        &amp;quot;beacon_period&amp;quot;: 0,
-        &amp;quot;beacon_freq_hz&amp;quot;: 869525000,
-        &amp;quot;beacon_datarate&amp;quot;: 9,
-        &amp;quot;beacon_bw_hz&amp;quot;: 125000,
-        &amp;quot;beacon_power&amp;quot;: 14,
-        &amp;quot;beacon_infodesc&amp;quot;: 0
-    },
-
-    &amp;quot;debug_conf&amp;quot;: {
-        &amp;quot;ref_payload&amp;quot;:[
-            {&amp;quot;id&amp;quot;: &amp;quot;0xCAFE1234&amp;quot;},
-            {&amp;quot;id&amp;quot;: &amp;quot;0xCAFE2345&amp;quot;}
-        ],
-        &amp;quot;log_file&amp;quot;: &amp;quot;loragw_hal.log&amp;quot;
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
+      <description>&lt;h1 id=&#34;0-code-version&#34;&gt;0 Code Version&lt;/h1&gt;
+&lt;h2 id=&#34;0-github&#34;&gt;0 Github&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/Lora-net/sx1302_hal&#34;&gt;https://github.com/Lora-net/sx1302_hal&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Reference design:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.semtech.com/products/wireless-rf/lora-gateways/sx1303ctsxxxgw1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;SX1303CTSXXXGW1&lt;/a&gt;，可从&lt;a href=&#34;https://github.com/Lora-net/sx1302_hal/releases/tag/V2.0.0&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Added support for SX1303 chip, for further Fine Timestamping support.&lt;/a&gt;看出&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.semtech.com/products/wireless-rf/lora-gateways/sx1302cssxxxgw1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;SX1302CSSXXXGW1&lt;/a&gt;，可从&lt;a href=&#34;https://github.com/Lora-net/sx1302_hal/releases/tag/V2.0.0&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Added support for Listen-Before-Talk for AS923 region / Added support for Spectral Scan with additional sx1261 radio&lt;/a&gt;看出&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.semtech.com/products/wireless-rf/lora-gateways/sx1302cfdxxxgw1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;SX1302CFDXXXGW1&lt;/a&gt;：可从&lt;a href=&#34;https://github.com/Lora-net/sx1302_hal/releases/tag/V2.0.0&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Merged the master-fdd-cn490 branch to bring support for CN490 Full-Duplex reference design&lt;/a&gt;看出&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;1-gitee&#34;&gt;1 Gitee&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://gitee.com/rejeee/gw1302s&#34;&gt;https://gitee.com/rejeee/gw1302s&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Reference design:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.semtech.com/products/wireless-rf/lora-gateways/sx1302cxxxgw1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;SX1302CxxxGW1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;与GitHub的&lt;a href=&#34;https://gitee.com/wonghao/gw1302s/commit/b06b85a7c87fce9f7d462f55b5913a3dc0c47df9&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;区别&lt;/a&gt;：
+&lt;ul&gt;
+&lt;li&gt;使用&lt;code&gt;#if USE_I2C_SENSOR ... #endif&lt;/code&gt;注释了 I2C 接口的温度传感器代码&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;boardconf.lorawan_public = true&lt;/strong&gt;改成了&lt;strong&gt;boardconf.lorawan_public = false&lt;/strong&gt;，收发测试程序的同步字修改为 &lt;strong&gt;private&lt;/strong&gt; 即 &lt;strong&gt;0x12&lt;/strong&gt;；但这与安装生成的&lt;strong&gt;global.config&lt;/strong&gt;文件中的同步字设置不同，故实际收发与测试时，终端同步字设置相反
+&lt;ul&gt;
+&lt;li&gt;同步字：&lt;a href=&#34;https://forum.chirpstack.io/t/relation-between-sync-word-private-network-and-end-nodes/191/13?u=haowong&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Chirpstack&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;SX1302_RESET_PIN=23&lt;/strong&gt;改成了&lt;strong&gt;SX1302_RESET_PIN=7&lt;/strong&gt;且去掉了其他GPIO引脚代码
+（&lt;em&gt;用GPIO7才能启动，其他引脚变化一点用没有&lt;/em&gt;）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;1-json-configuration-file-globalconfig&#34;&gt;1 JSON configuration file: global.config&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/wong-hao/sx1302_hal/blob/master/packet_forwarder/global_conf.json&#34;&gt;https://github.com/wong-hao/sx1302_hal/blob/master/packet_forwarder/global_conf.json&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;11-参数含义&#34;&gt;1.1 参数含义&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/13154904.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;AnswerInTheWind&lt;/a&gt;&lt;/li&gt;
@@ -328,25 +263,23 @@
 &lt;/ul&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;32-empirical-experiment&#34;&gt;3.2 Empirical experiment&lt;/h2&gt;
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;//main(): display version informations
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;pi@raspberrypi:~/sx1302_hal/bin $ ./lora_pkt_fwd
 *** Packet Forwarder ***
-Version: 1.0.5
+Version: 2.0.1
 *** SX1302 HAL library version info ***
-Version: 1.0.5;
+Version: 2.0.1;
 ***
-//main(): display host endianness
 INFO: Little endian host
 INFO: found configuration file global_conf.json, parsing it
-
-//parse_SX130x_configuration(): point to the gateway configuration object
 INFO: global_conf.json does contain a JSON object named SX130x_conf, parsing SX1302 parameters
-INFO: spidev_path /dev/spidev0.0, lorawan_public 1, clksrc 0, full_duplex 0
+INFO: com_type SPI, com_path /dev/spidev0.0, lorawan_public 1, clksrc 0, full_duplex 0
 INFO: antenna_gain 0 dBi
 INFO: Configuring legacy timestamp
+INFO: no configuration for SX1261
 INFO: Configuring Tx Gain LUT for rf_chain 0 with 16 indexes for sx1250
-INFO: radio 0 enabled (type SX1250), center frequency 471400000, RSSI offset -207.000000, tx enabled 1, single input mode 1
-INFO: radio 1 enabled (type SX1250), center frequency 475000000, RSSI offset -207.000000, tx enabled 0, single input mode 1
-INFO: Lora multi-SF channel 0&amp;gt;  radio 0, IF -300000 Hz, 125 kHz bw, SF 5 to 12 //Rb与Rs都由SF和BW决定
+INFO: radio 0 enabled (type SX1250), center frequency 475500000, RSSI offset -207.000000, tx enabled 1, single input mode 1
+INFO: radio 1 enabled (type SX1250), center frequency 476500000, RSSI offset -207.000000, tx enabled 0, single input mode 1
+INFO: Lora multi-SF channel 0&amp;gt;  radio 0, IF -300000 Hz, 125 kHz bw, SF 5 to 12
 INFO: Lora multi-SF channel 1&amp;gt;  radio 0, IF -100000 Hz, 125 kHz bw, SF 5 to 12
 INFO: Lora multi-SF channel 2&amp;gt;  radio 0, IF 100000 Hz, 125 kHz bw, SF 5 to 12
 INFO: Lora multi-SF channel 3&amp;gt;  radio 0, IF 300000 Hz, 125 kHz bw, SF 5 to 12
@@ -355,9 +288,7 @@ INFO: Lora multi-SF channel 5&amp;gt;  radio 1, IF -100000 Hz, 125 kHz bw, SF 5 
 INFO: Lora multi-SF channel 6&amp;gt;  radio 1, IF 100000 Hz, 125 kHz bw, SF 5 to 12
 INFO: Lora multi-SF channel 7&amp;gt;  radio 1, IF 300000 Hz, 125 kHz bw, SF 5 to 12
 INFO: Lora std channel&amp;gt; radio 1, IF -200000 Hz, 250000 Hz bw, SF 7, Explicit header
-INFO: FSK channel&amp;gt; radio 1, IF 300000 Hz, 125000 Hz bw, 50000 bps datarate //Rb (bps = bit/s);
-
-//parse_gateway_configuration(): point to the gateway configuration object
+INFO: FSK channel&amp;gt; radio 1, IF 300000 Hz, 125000 Hz bw, 50000 bps datarate
 INFO: global_conf.json does contain a JSON object named gateway_conf, parsing gateway parameters
 INFO: gateway MAC address is configured to 0016C001FF10D3F6
 INFO: server hostname or IP address is configured to &amp;quot;47.110.36.225&amp;quot;
@@ -369,99 +300,84 @@ INFO: upstream PUSH_DATA time-out is configured to 100 ms
 INFO: packets received with a valid CRC will be forwarded
 INFO: packets received with a CRC error will NOT be forwarded
 INFO: packets received with no CRC will NOT be forwarded
-INFO: Beaconing period is configured to 0 seconds //disable class B beacon
+INFO: Beaconing period is configured to 0 seconds
 INFO: Beaconing signal will be emitted at 869525000 Hz
 INFO: Beaconing datarate is set to SF9
 INFO: Beaconing modulation bandwidth is set to 125000Hz
 INFO: Beaconing TX power is set to 14dBm
 INFO: Beaconing information descriptor is set to 0
-
-//parse_debug_configuration(): point to the gateway configuration object
 INFO: global_conf.json does contain a JSON object named debug_conf, parsing debug parameters
 INFO: got 2 debug reference payload
 INFO: reference payload ID 0 is 0xCAFE1234
 INFO: reference payload ID 1 is 0xCAFE2345
 INFO: setting debug log file name to loragw_hal.log
-
-//main(): Board reset
 CoreCell reset through GPIO7...
-
-//&amp;quot;single_input_mode&amp;quot;: true
+SX1261 reset through GPIO7...
+CoreCell power enable through GPIO18...
+CoreCell ADC reset through GPIO13...
+Opening SPI communication interface
+Note: chip version is 0x10 (v1.0)
 INFO: Configuring SX1250_0 in single input mode
 INFO: Configuring SX1250_1 in single input mode
-
-//main(): starting the concentrator
+INFO: using legacy timestamp
+INFO: LoRa Service modem: configuring preamble size to 8 symbols
+ARB: dual demodulation disabled for all SF
 INFO: [main] concentrator started, packet can now be received
 INFO: concentrator EUI: 0x0016c001ff10d3f6
 &lt;/code&gt;&lt;/pre&gt;
 &lt;hr&gt;
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;
-INFO: Received pkt from mote: 1350200C (fcnt=13)
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;INFO: [down] PULL_ACK received in 18 ms
+INFO: [down] PULL_ACK received in 23 ms
+INFO: [down] PULL_ACK received in 23 ms
 
-//thread_up(): start of JSON structure
-JSON up: {&amp;quot;rxpk&amp;quot;:[{&amp;quot;jver&amp;quot;:1,&amp;quot;tmst&amp;quot;:137795171,&amp;quot;chan&amp;quot;:4,&amp;quot;rfch&amp;quot;:1,&amp;quot;freq&amp;quot;:471.100000,&amp;quot;mid&amp;quot;:0,&amp;quot;stat&amp;quot;:1,&amp;quot;modu&amp;quot;:&amp;quot;LORA&amp;quot;,&amp;quot;datr&amp;quot;:&amp;quot;SF12Bw125&amp;quot;,&amp;quot;codr&amp;quot;:&amp;quot;4/5&amp;quot;,&amp;quot;rssis&amp;quot;:-84,&amp;quot;lsnr&amp;quot;:-5.0,&amp;quot;foff&amp;quot;:786,&amp;quot;rssi&amp;quot;:-80,&amp;quot;size&amp;quot;:13,&amp;quot;data&amp;quot;:&amp;quot;gQwgUBMADQANAKvN7w==&amp;quot;}]} //datr由SF、Bw计算得；freq是frequence of Concentrator “IF” channel on which the frame was；rssis、foff是SX1302新增的；
-received
+INFO: Received pkt from mote: 1350200C (fcnt=40)
 
-INFO: [up] PUSH_ACK received in 40ms
-INFO: [down] PULL_ACK received in 34ms
+JSON up: {&amp;quot;rxpk&amp;quot;:[{&amp;quot;jver&amp;quot;:1,&amp;quot;tmst&amp;quot;:86523675,&amp;quot;chan&amp;quot;:5,&amp;quot;rfch&amp;quot;:1,&amp;quot;freq&amp;quot;:476.400000,&amp;quot;mid&amp;quot;: 1,&amp;quot;stat&amp;quot;:1,&amp;quot;modu&amp;quot;:&amp;quot;LORA&amp;quot;,&amp;quot;datr&amp;quot;:&amp;quot;SF12BW125&amp;quot;,&amp;quot;codr&amp;quot;:&amp;quot;4/5&amp;quot;,&amp;quot;rssis&amp;quot;:-60,&amp;quot;lsnr&amp;quot;:0.0,&amp;quot;foff&amp;quot;:-108,&amp;quot;rssi&amp;quot;:-59,&amp;quot;size&amp;quot;:13,&amp;quot;data&amp;quot;:&amp;quot;gQwgUBMAKAAoABI0Vg==&amp;quot;}]}
+INFO: [up] PUSH_ACK received in 20 ms
 
-//main(): display a report
-##### 2020-10-18 10:49:51 GMT #####
-
+##### 2021-01-01 15:35:43 GMT #####
 ### [UPSTREAM] ###
-# RF packets received by concentrator: 1 //thread_up
-# CRC_OK: 100.00%, CRC_FAIL: 0.00%, NO_CRC: 0.00% //thread_up
-# RF packets forwarded: 1 (13 bytes) //thread_up(thread_up)：很少的原因是接收到的packet不通过CRC
-# PUSH_DATA datagrams sent: 2 (360 bytes) //PUSH_DATA：thread_up(thread_up)：比packet多的原因是有stat发
-# PUSH_DATA acknowledeged: 100.00% //PUSH_ACK：thread_up
-
+# RF packets received by concentrator: 3
+# CRC_OK: 33.33%, CRC_FAIL: 66.67%, NO_CRC: 0.00%
+# RF packets forwarded: 1 (13 bytes)
+# PUSH_DATA datagrams sent: 2 (359 bytes)
+# PUSH_DATA acknowledged: 100.00%
 ### [DOWNSTREAM] ###
-# PULL_DATA sent: 3 (100.00%) //PULL_DATA(PULL_ACK)：thread_down
-# PULL_RESP(onse) datagrams received: 0 (0 bytes) //PULL_RESP：thread_down(thread_down)
-# RF packets sent to concentrator: 0 (0 bytes) //thread_jit发送jit里的downlink packet(thread_down)
-/*sent = ok + error*/
-# TX errors: 0 //RF packets sent to concentrator失败的；其实这个应该在TX rejected下面，毕竟这里是lgw_send错误，跟jit_peek/jit_dequeue的错误都没关系，更别说下面的jit_enqueue错误
-
-if (cp_nb_tx_requested != 0 ) //thread_down根据PULL_RESP得到的downlink_type使得packet enqueue jit
-# TX rejected... //TX_ACK：packet send_tx_ack发送jit_enqueue得到的jit_result；注意与TX errors无关
-
-
+# PULL_DATA sent: 3 (100.00% acknowledged)
+# PULL_RESP(onse) datagrams received: 0 (0 bytes)
+# RF packets sent to concentrator: 0 (0 bytes)
+# TX errors: 0
 ### SX1302 Status ###
-# SX1302 counter (INST): 150921885
-# SX1302 counter (PPS): 0
-# BEACON queued: 0 //thread_down根据JIT_PKT_TYPE_BEACON使得beacon enqueue jit
-# BEACON sent so far: 0 //RF packets sent to concentrator对应的
-# BEACON rejected: 0 //BEACON queued失败的
-
-### [JIT] ### //jit = RF chains
-src/jitqueue.c:442:jit_print_queue(): INFO: [jit] queue is empty //thread_down：已经enqueue jit[0]里的beacon和packet
+# SX1302 counter (INST): 90943261
+# SX1302 counter (PPS):  0
+# BEACON queued: 0
+# BEACON sent so far: 0
+# BEACON rejected: 0
+### [JIT] ###
+src/jitqueue.c:440:jit_print_queue(): INFO: [jit] queue is empty
 #--------
-src/jitqueue.c:442:jit_print_queue(): INFO: [jit] queue is empty //thread_down:已经enqueue jit[1]里的beacon和packet
-
+src/jitqueue.c:440:jit_print_queue(): INFO: [jit] queue is empty
 ### [GPS] ###
 # GPS sync is disabled
-### Concentrator temperature 0 C ###
+ERROR: invalid I2C file descriptor
+### Concentrator temperature unknown ###
 ##### END #####
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;/*main()生成： generate a JSON report (will be sent to server by upstream thread)
-thread_up()发送：add status report if a new one is available (&#39;status report&#39;: &amp;quot;stat&amp;quot; object)
 
-stat和上面的rxpt对象同属于一个json，即“同时发送显示”；但是因为程序运行顺序原因“同时发送不同时显示”了
-优点：rxok和dwnb是接收/发射成功数，rxpt只有接收/发射总数，挺有用的；其他的都可以在rxpt找到
-*/
-JSON up: {&amp;quot;stat&amp;quot;:{&amp;quot;time&amp;quot;:&amp;quot;2020-10-18 10:49:51 GMT&amp;quot;,&amp;quot;rxnb&amp;quot;:1,&amp;quot;rxok&amp;quot;:1,&amp;quot;rxfw&amp;quot;:1,&amp;quot;ackr&amp;quot;:100.0,&amp;quot;dwnb&amp;quot;:0,&amp;quot;txnb&amp;quot;:0,&amp;quot;temp&amp;quot;:0.0}}
-
-INFO: [up] PUSH_ACK received in 34ms
-INFO: [down] PULL_ACK received in 35ms
-INFO: [down] PULL_ACK received in 37ms
+JSON up: {&amp;quot;stat&amp;quot;:{&amp;quot;time&amp;quot;:&amp;quot;2021-01-01 15:35:43 GMT&amp;quot;,&amp;quot;rxnb&amp;quot;:3,&amp;quot;rxok&amp;quot;:1,&amp;quot;rxfw&amp;quot;:1,&amp;quot;ackr&amp;quot;:100.0,&amp;quot;dwnb&amp;quot;:0,&amp;quot;txnb&amp;quot;:0,&amp;quot;temp&amp;quot;:0.0}}
+INFO: [up] PUSH_ACK received in 20 ms
 &lt;/code&gt;&lt;/pre&gt;
 &lt;hr&gt;
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;//thread_up()
-INFO: End of upstream thread
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;INFO: End of upstream thread
 
-//main(): if an exit signal was received, try to quit properly + Board reset
+INFO: End of JIT thread
+
+INFO: End of downstream thread
+Closing SPI communication interface
 INFO: concentrator stopped successfully
 CoreCell reset through GPIO7...
+SX1261 reset through GPIO7...
+CoreCell power enable through GPIO18...
+CoreCell ADC reset through GPIO13...
 INFO: Exiting packet forwarder program
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;33-basic-communication-protocol-between-lora-gateway-and-network-server&#34;&gt;3.3 Basic communication protocol between LoRa gateway and Network Server&lt;/h2&gt;
@@ -469,7 +385,7 @@ INFO: Exiting packet forwarder program
 &lt;p&gt;可查的最详细的相关资料&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;https://gitee.com/rejeee/gw1302s/blob/master/packet_forwarder/PROTOCOL.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;PROTOCOL&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Lora-net/sx1302_hal/blob/master/packet_forwarder/PROTOCOL.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;PROTOCOL&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVJ4VTcxc1RCNFJEaFhVU0RUTXlXdU1CNHc1NHQyZ3JhT3NvdUpVckszYkt0dz9lPUVoWXBMdw==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoRaWAN Network Server Demonstration: Gateway to Server Interface Definition&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVJXaXJLdnJiVEZPaS1xUGk3OFFfVTRCUm4tM1dwLXVwNTNLdVJ6ZE9leDllZz9lPXR6OWh3eA==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;剖析 LoRaWAN Gateway 核心代码&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/m0_38008027/article/details/89086175&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;PROTOCOL相关&lt;/a&gt;&lt;/li&gt;
@@ -545,9 +461,6 @@ INFO: [down] PULL_ACK received in 56ms
 &lt;p&gt;Because I see it&amp;rsquo;s better not to use comfirmed message, so if this is a sign that has already used it, what kind of settings should be adopted and how can I use uncomfirmed message instead.&lt;/p&gt;
 &lt;h1 id=&#34;7-todo&#34;&gt;7 TODO&lt;/h1&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 优化2.0.1版本代码&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 测试2.0.1版本是否能够正常收发数据，注意修改global.config接受频率&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 查看2.0.1是否适应新版本树莓派系统&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 若上述都满足，保存旧版本修改代码，新fork代码并添加注释&lt;/li&gt;
 &lt;/ul&gt;
 </description>
@@ -599,7 +512,7 @@ INFO: [down] PULL_ACK received in 56ms
 &lt;h1 id=&#34;3-实验环境&#34;&gt;3 实验环境&lt;/h1&gt;
 &lt;h2 id=&#34;31-操作系统&#34;&gt;3.1 操作系统&lt;/h2&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Raspberry Pi OS (32-bit) with desktop and recommended software&lt;/p&gt;
+&lt;p&gt;Raspberry Pi OS (32-bit) with desktop&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;strong&gt;注意仅能使用Linux Kernel version:&lt;a href=&#34;http://downloads.raspberrypi.org/raspios_armhf/release_notes.txt&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;4.19.118&lt;/a&gt;及以下的版本，否则由于硬件使用GPIO7作为SX1302的RESET，与树莓派的SPI0.1的CS脚&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/13154904.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;冲突&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;// 报错提示
@@ -612,179 +525,139 @@ ERROR: failed to connect
 // 或者是
 ERROR: [main] failed to start the concentrator 
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;a href=&#34;https://gitee.com/rejeee/gw1302s/commit/b06b85a7c87fce9f7d462f55b5913a3dc0c47df9&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Gitee版本代码&lt;/a&gt;相比&lt;a href=&#34;https://github.com/Lora-net/sx1302_hal/commit/6291e62ef9a161ae41037a0df1a86e9943a907b9&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Github&lt;/a&gt;做了三点改变：
-&lt;strong&gt;&lt;em&gt;其实Gitee之前的commit全部是copy的Github，就最后改了下&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;使用&lt;code&gt;#if USE_I2C_SENSOR ... #endif&lt;/code&gt;注释了 I2C 接口的温度传感器代码（&lt;em&gt;据说不注释掉不能启动&lt;/em&gt;）&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;boardconf.lorawan_public = true&lt;/strong&gt;改成了&lt;strong&gt;boardconf.lorawan_public = false&lt;/strong&gt;，收发测试程序的同步字修改为 &lt;strong&gt;private&lt;/strong&gt; 即 &lt;strong&gt;0x12&lt;/strong&gt;；但这与安装生成的&lt;strong&gt;global.config&lt;/strong&gt;文件中的同步字设置不同，故实际收发与测试时，终端同步字设置相反&lt;/li&gt;
-&lt;li&gt;同步字：&lt;a href=&#34;https://forum.chirpstack.io/t/relation-between-sync-word-private-network-and-end-nodes/191/13?u=haowong&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Chirpstack&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;SX1302_RESET_PIN=23&lt;/strong&gt;改成了&lt;strong&gt;SX1302_RESET_PIN=7&lt;/strong&gt;且去掉了GPIO18相关代码
-（&lt;em&gt;GPIO7存在才能启动，GPIO18改不改没关系&lt;/em&gt;）&lt;/li&gt;
-&lt;/ol&gt;
 &lt;ul&gt;
 &lt;li&gt;安装与测试教程：
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.semtech.com/products/wireless-rf/lora-gateways/sx1302cxxxgw1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Semtech SX1302CxxxGW1&lt;/a&gt;：&lt;a href=&#34;https://semtech.my.salesforce.com/sfc/p/#E0000000JelG/a/2R000000HV3G/an5Oh4KfiY7tAO1MO7RiPOj08WUpOTjPHSF57_.NlJ0&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Corecell ref design User Guide V1.2&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://www.njrjzn.com/chanpinzhongxin/SX1302mozuxilie/21.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;M-GW1302S&lt;/a&gt;：&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVFEYUo0OHJlX1pPcUxjTUIwR1RyQThCaWVnS0lhVnJYeEVRUmNOLUVyb0xEQT9lPTVudm5BTA==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;M-GW1302S 用户手册(2)(1)(1)&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;寄存器读写测试：1%概率成功
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;pi@raspberrypi:~/gw1302s/bin $ ./test_loragw_reg
+&lt;li&gt;寄存器读写测试：1%概率成功&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;pi@raspberrypi:~/sx1302_hal/bin $ ./test_loragw_reg
 CoreCell reset through GPIO7...
+SX1261 reset through GPIO7...
+CoreCell power enable through GPIO18...
+CoreCell ADC reset through GPIO13...
+Opening SPI communication interface
+Note: chip version is 0x10 (v1.0)
 ## TEST#1: read all registers and check default value for non-read-only registers
-________________
-TEST#1 PASSED
-________________
+ERROR: default value for register at index 26 is 1, should be 0
+ERROR: default value for register at index 27 is 1, should be 0
+ERROR: default value for register at index 30 is 1, should be 0
+ERROR: default value for register at index 31 is 1, should be 0
+------------------
+TEST#1 FAILED
+------------------
 
-## TEST#2: read/write test on all non-read-only, non-pulse, non-w0clr, non-wlclr registers
-________________
+## TEST#2: read/write test on all non-read-only, non-pulse, non-w0clr, non-w1clr registers
+------------------
 TEST#2 PASSED
+------------------
+
+Closing SPI communication interface
+CoreCell reset through GPIO7...
+SX1261 reset through GPIO7...
+CoreCell power enable through GPIO18...
+CoreCell ADC reset through GPIO13...
 &lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;li&gt;发送测试成功
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;pi@raspberrypi:~/gw1302s/bin $ ./test_loragw_hal_tx -r 1250 -f 480.1 -m LORA -b 125 -s 12 -z 20
-Sending 1 LoRa packets on 480100000 Hz (Bw 125 kHz, SF 12, CR 1, 20 bytes payload, 8 symbols preamble, explicit header, non-inverted polarity) at 0 dBm TX done
+&lt;ul&gt;
+&lt;li&gt;发送测试成功&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;pi@raspberrypi:~/sx1302_hal/bin $ ./test_loragw_hal_tx -r 1250 -f 480.1 -m LORA -b 125 -s 12 -z 20
+Sending 1 LoRa packets on 480100000 Hz (BW 125 kHz, SF 12, CR 1, 20 bytes payload, 8 symbols preamble, explicit header, non-inverted polarity) at 0 dBm
+CoreCell reset through GPIO7...
+SX1261 reset through GPIO7...
+CoreCell power enable through GPIO18...
+CoreCell ADC reset through GPIO13...
+Opening SPI communication interface
+Note: chip version is 0x10 (v1.0)
+INFO: using legacy timestamp
+ARB: dual demodulation disabled for all SF
+TX done
 
 Nb packets sent: 1 (1)
+Closing SPI communication interface
+CoreCell reset through GPIO7...
+SX1261 reset through GPIO7...
+CoreCell power enable through GPIO18...
+CoreCell ADC reset through GPIO13...
+=========== Test End ===========
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;接受测试：官方建议&lt;a href=&#34;https://www.bilibili.com/video/BV1Yt411N7MV&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;M-HL9-EV连金黄天线&lt;/a&gt;，但实测用直黑天线也行，且发包间隔要长，避免丢包接收不到&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;pi@raspberrypi:~/sx1302_hal/bin $ ./test_loragw_hal_rx -r 1250 -a 475.5 -b 476.5
+===== sx1302 HAL RX test =====
+INFO: rxpkt buffer size is set to 16
+INFO: Select channel mode 0
+CoreCell reset through GPIO7...
+Opening SPI communication interface
+Note: chip version is 0x10 (v1.0)
+INFO: using legacy timestamp
+ARB: dual demodulation disabled for all SF
+Waiting for packets...
+
+----- LoRa packet -----
+  count_us: 11242393
+  size:     18
+  chan:     7
+  status:   0x10
+  datr:     12
+  codr:     1
+  rf_chain  0
+  freq_hz   475900000
+  snr_avg:  -10.2
+  rssi_chan:128.0
+  rssi_sig :118.0
+  crc:      0xD228
+81 0C 20 50 13 00 00 00 00 00 31 32 33 34 35 36 0D 0A 
+Received 1 packets (total:1)
+
+----- LoRa packet -----
+  count_us: 21244909
+  size:     18
+  chan:     2
+  status:   0x11
+  datr:     12
+  codr:     1
+  rf_chain  1
+  freq_hz   476500000
+  snr_avg:  -6.5
+  rssi_chan:142.0
+  rssi_sig :136.0
+  crc:      0x7ABE
+81 0C 20 50 13 00 01 00 01 10 31 32 33 34 35 06 09 0A 
+
+----- LoRa packet -----
+  count_us: 21244961
+  size:     18
+  chan:     7
+  status:   0x10
+  datr:     12
+  codr:     1
+  rf_chain  0
+  freq_hz   475900000
+  snr_avg:  -10.0
+  rssi_chan:128.0
+  rssi_sig :119.0
+  crc:      0xFABE
+81 0C 20 50 13 00 01 00 01 00 31 32 33 34 35 36 0D 0A 
+Received 2 packets (total:2)
+^C
+Nb valid packets received: 2 CRC OK (1)
+Closing SPI communication interface
 CoreCell reset through GPIO7...
 =========== Test End ===========
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
-&lt;li&gt;接受测试：官方建议&lt;a href=&#34;https://www.bilibili.com/video/BV1Yt411N7MV&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;M-HL9-EV连金黄天线&lt;/a&gt;，但实测用直黑天线也行，且发包间隔要长，避免丢包接收不到
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;pi@raspberrypi:~/gw1302s/bin $ ./test_loragw_hal_rx -r 1250 -a 475.5 -b 476.5
-===== sx1302 HAL RX test =====
-INFO: rxpkt buffer size is set to 16
-INFO: Select channel mode 0
-CoreCell reset through GPIO7...
-Waiting for packets...
-
------ LoRa packet -----
-count_us: 51070567
-size:     3
-chan:     2
-status:   0x11
-datr:     12
-codr:     1
-rf_chain  1
-freq_hez  476500000
-snr_avg   -10.5
-rssi_chan:95.0
-rssi_sig :88.0
-crc:      0x496E
-AB CD EF
-Received 1 packets (total:0)
-
------ LoRa packet -----
-count_us: 71074694
-size:     3
-chan:     5
-status:   0x10
-datr:     12
-codr:     1
-rf_chain  0
-freq_hez  475500000
-snr_avg   6.8
-rssi_chan:146.0
-rssi_sig :147.0
-crc:      0xC96E
-AB CD EF
-Received 1 packets (total:1)
-
------ LoRa packet -----
-count_us: 91068896
-size:     3
-chan:     0
-status:   0x10
-datr:     12
-codr:     1
-rf_chain  1
-freq_hez  476100000
-snr_avg   8.5
-rssi_chan:149.0
-rssi_sig :150.0
-crc:      0xC96E
-AB CD EF
-Received 1 packets (total:2)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;pi@raspberrypi:~/gw1302s/bin $ ./test_loragw_hal_rx -r 1250 -a 475.5 -b 476.5
-===== sx1302 HAL RX test =====
-INFO: rxpkt buffer size is set to 16
-INFO: Select channel mode 0
-CoreCell reset through GPIO7...
-Waiting for packets...
-
------ LoRa packet -----
-  count_us: 48944281
-  size:     3
-  chan:     3
-  status:   0x10
-  datr:     12
-  codr:     1
-  rf_chain  0
-  freq_hez  475100000
-  snr_avg   -6.5
-  rssi_chan:131.0
-  rssi_sig :125.0
-  crc:      0x0625
-12 34 56
-
- ----- LoRa packet -----
-  count_us: 48944290
-  size:     3
-  chan:     0
-  status:   0x10
-  datr:     12
-  codr:     1
-  rf_chain  1
-  freq_hez  476100000
-  snr_avg   10.2
-  rssi_chan:197.0
-  rssi_sig :198.0
-  crc:      0x0625
-12 34 56
-      
- ----- LoRa packet -----
-  count_us: 48944289
-  size:     3
-  chan:     6
-  status:   0x10
-  datr:     12
-  codr:     1
-  rf_chain  0
-  freq_hez  475100000
-  snr_avg   -5.8
-  rssi_chan:131.0
-  rssi_sig :126.0
-  crc:      0x0625
-12 34 56
-Received 3 packets (total:3)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;li&gt;发送接收均用的&lt;strong&gt;Hex&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;32-系统备份hal-and-packet-forwarder&#34;&gt;3.2 系统备份(hal and packet forwarder)&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOnU6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVdLWEhRd1h5cnRDaGVTMDM0WTFsSjhCVlhJSThGUmd3QzhuZ0lFRlpqVW5EQT9lPWR1WXNKVQ==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Gitee版&lt;/a&gt;采用的代码Commit id（&lt;em&gt;选用自动安装脚本&amp;rsquo;install.sh&#39;&lt;/em&gt;）: &lt;a href=&#34;https://gitee.com/rejeee/gw1302s/commit/d9ef27fdecf2352d7ab6b85d50fb7a3e38a162ae&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;d9ef27fdecf2352d7ab6b85d50fb7a3e38a162ae&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#&#34;&gt;官方Github版&lt;/a&gt;采用的代码Commit id（&lt;em&gt;Gitee抄到这后面就自己改了&lt;/em&gt;）: &lt;a href=&#34;https://github.com/Lora-net/sx1302_hal/commit/6291e62ef9a161ae41037a0df1a86e9943a907b9&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;6291e62ef9a161ae41037a0df1a86e9943a907b9&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;注意：官方2020.12更新后的&lt;a href=&#34;https://github.com/Lora-net/sx1302_hal/commit/2c14708bdbf110d8ed2f2f3b2d33942249bbe2ba&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;代码2.0&lt;/a&gt;对应于&lt;a href=&#34;https://www.semtech.com/products/wireless-rf/lora-gateways/sx1302cssxxxgw1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Semtech SX1302CSSXXXGW1&lt;/a&gt;：&lt;a href=&#34;https://semtech.my.salesforce.com/sfc/p/#E0000000JelG/a/2R000000Hokn/i4xzbsLU2V6V92uDISoUfd3brd4MOpa0kyPyC_FPKXo&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;USB Corecell ref design for LBT Spectral Scan gateway User Guide&lt;/a&gt;；还包含了&lt;a href=&#34;https://www.semtech.com/products/wireless-rf/lora-gateways/sx1302cfdxxxgw1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Semtech SX1302CFDXXXGW1&lt;/a&gt;：可从&lt;a href=&#34;https://github.com/Lora-net/sx1302_hal/blob/master/packet_forwarder/global_conf.json.sx1255.CN490.full-duplex&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;global_conf.json.sx1255.CN490.full-duplex&lt;/a&gt;看出&lt;/li&gt;
+&lt;p&gt;发送接收均用的&lt;strong&gt;Hex&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;卖家给了所谓&lt;strong&gt;搭建好基本环境&lt;/strong&gt;的&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOnU6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVpVeXREN1pkTDVBZy14c3hjTXQ0NElCVEI1TTgyV2xHcWJOUFgxOGZZWmhaUT9lPXRrQUx1Zg==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;系统&lt;/a&gt;，实际上就是刷了4.19，升级了还是不能用，没解决任何问题&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://downloads.raspberrypi.org/raspbian/images/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;树莓派历代系统&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://mirrors.tuna.tsinghua.edu.cn/raspbian-images/raspios_armhf/images/raspios_armhf-2020-05-28/2020-05-27-raspios-buster-armhf.zip&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;4.19.118系统清华镜像&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;每次更换为备份时:
-&lt;ul&gt;
-&lt;li&gt;&amp;ldquo;global.config&amp;quot;中&amp;quot;gateway_ID&amp;quot;都要修改与树莓派保持一致&lt;/li&gt;
-&lt;li&gt;&amp;ldquo;lorawan_public&amp;quot;与发射端保持一致&lt;/li&gt;
-&lt;li&gt;先连接外接显示器，寝室新wifi密码见群公告；注意显示器已开启热插拔,但这样会占用额外内存&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;/ol&gt;
+&lt;/ul&gt;
 &lt;h1 id=&#34;4-实验步骤&#34;&gt;4 实验步骤&lt;/h1&gt;
 &lt;h2 id=&#34;41-lorawan&#34;&gt;4.1 LoRaWAN&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;https://connect.ed-diamond.com/MISC/MISCHS-015/LORAWAN-deploiement-d-une-infrastructure-de-test&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;完整案例&lt;/a&gt;&lt;/p&gt;

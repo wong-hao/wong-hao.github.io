@@ -962,7 +962,7 @@
 <h1 id="3-实验环境">3 实验环境</h1>
 <h2 id="31-操作系统">3.1 操作系统</h2>
 <blockquote>
-<p>Raspberry Pi OS (32-bit) with desktop and recommended software</p>
+<p>Raspberry Pi OS (32-bit) with desktop</p>
 </blockquote>
 <p><strong>注意仅能使用Linux Kernel version:<a href="http://downloads.raspberrypi.org/raspios_armhf/release_notes.txt" target="_blank" rel="noopener">4.19.118</a>及以下的版本，否则由于硬件使用GPIO7作为SX1302的RESET，与树莓派的SPI0.1的CS脚<a href="https://www.cnblogs.com/answerinthewind/p/13154904.html" target="_blank" rel="noopener">冲突</a></strong></p>
 <pre><code class="language-cpp">// 报错提示
@@ -975,179 +975,139 @@ ERROR: failed to connect
 // 或者是
 ERROR: [main] failed to start the concentrator 
 </code></pre>
-<p><a href="https://gitee.com/rejeee/gw1302s/commit/b06b85a7c87fce9f7d462f55b5913a3dc0c47df9" target="_blank" rel="noopener">Gitee版本代码</a>相比<a href="https://github.com/Lora-net/sx1302_hal/commit/6291e62ef9a161ae41037a0df1a86e9943a907b9" target="_blank" rel="noopener">Github</a>做了三点改变：
-<strong><em>其实Gitee之前的commit全部是copy的Github，就最后改了下</em></strong></p>
-<ol>
-<li>使用<code>#if USE_I2C_SENSOR ... #endif</code>注释了 I2C 接口的温度传感器代码（<em>据说不注释掉不能启动</em>）</li>
-<li><strong>boardconf.lorawan_public = true</strong>改成了<strong>boardconf.lorawan_public = false</strong>，收发测试程序的同步字修改为 <strong>private</strong> 即 <strong>0x12</strong>；但这与安装生成的<strong>global.config</strong>文件中的同步字设置不同，故实际收发与测试时，终端同步字设置相反</li>
-<li>同步字：<a href="https://forum.chirpstack.io/t/relation-between-sync-word-private-network-and-end-nodes/191/13?u=haowong" target="_blank" rel="noopener">Chirpstack</a></li>
-<li><strong>SX1302_RESET_PIN=23</strong>改成了<strong>SX1302_RESET_PIN=7</strong>且去掉了GPIO18相关代码
-（<em>GPIO7存在才能启动，GPIO18改不改没关系</em>）</li>
-</ol>
 <ul>
 <li>安装与测试教程：
 <ul>
 <li><a href="https://www.semtech.com/products/wireless-rf/lora-gateways/sx1302cxxxgw1" target="_blank" rel="noopener">Semtech SX1302CxxxGW1</a>：<a href="https://semtech.my.salesforce.com/sfc/p/#E0000000JelG/a/2R000000HV3G/an5Oh4KfiY7tAO1MO7RiPOj08WUpOTjPHSF57_.NlJ0" target="_blank" rel="noopener">Corecell ref design User Guide V1.2</a></li>
 <li><a href="http://www.njrjzn.com/chanpinzhongxin/SX1302mozuxilie/21.html" target="_blank" rel="noopener">M-GW1302S</a>：<a href="https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVFEYUo0OHJlX1pPcUxjTUIwR1RyQThCaWVnS0lhVnJYeEVRUmNOLUVyb0xEQT9lPTVudm5BTA==.mp3" target="_blank" rel="noopener">M-GW1302S 用户手册(2)(1)(1)</a>
 <ul>
-<li>寄存器读写测试：1%概率成功
-<pre><code class="language-cpp">pi@raspberrypi:~/gw1302s/bin $ ./test_loragw_reg
+<li>寄存器读写测试：1%概率成功</li>
+</ul>
+<pre><code class="language-cpp">pi@raspberrypi:~/sx1302_hal/bin $ ./test_loragw_reg
 CoreCell reset through GPIO7...
+SX1261 reset through GPIO7...
+CoreCell power enable through GPIO18...
+CoreCell ADC reset through GPIO13...
+Opening SPI communication interface
+Note: chip version is 0x10 (v1.0)
 ## TEST#1: read all registers and check default value for non-read-only registers
-________________
-TEST#1 PASSED
-________________
+ERROR: default value for register at index 26 is 1, should be 0
+ERROR: default value for register at index 27 is 1, should be 0
+ERROR: default value for register at index 30 is 1, should be 0
+ERROR: default value for register at index 31 is 1, should be 0
+------------------
+TEST#1 FAILED
+------------------
 
-## TEST#2: read/write test on all non-read-only, non-pulse, non-w0clr, non-wlclr registers
-________________
+## TEST#2: read/write test on all non-read-only, non-pulse, non-w0clr, non-w1clr registers
+------------------
 TEST#2 PASSED
+------------------
+
+Closing SPI communication interface
+CoreCell reset through GPIO7...
+SX1261 reset through GPIO7...
+CoreCell power enable through GPIO18...
+CoreCell ADC reset through GPIO13...
 </code></pre>
-</li>
-<li>发送测试成功
-<pre><code class="language-cpp">pi@raspberrypi:~/gw1302s/bin $ ./test_loragw_hal_tx -r 1250 -f 480.1 -m LORA -b 125 -s 12 -z 20
-Sending 1 LoRa packets on 480100000 Hz (Bw 125 kHz, SF 12, CR 1, 20 bytes payload, 8 symbols preamble, explicit header, non-inverted polarity) at 0 dBm TX done
+<ul>
+<li>发送测试成功</li>
+</ul>
+<pre><code class="language-cpp">pi@raspberrypi:~/sx1302_hal/bin $ ./test_loragw_hal_tx -r 1250 -f 480.1 -m LORA -b 125 -s 12 -z 20
+Sending 1 LoRa packets on 480100000 Hz (BW 125 kHz, SF 12, CR 1, 20 bytes payload, 8 symbols preamble, explicit header, non-inverted polarity) at 0 dBm
+CoreCell reset through GPIO7...
+SX1261 reset through GPIO7...
+CoreCell power enable through GPIO18...
+CoreCell ADC reset through GPIO13...
+Opening SPI communication interface
+Note: chip version is 0x10 (v1.0)
+INFO: using legacy timestamp
+ARB: dual demodulation disabled for all SF
+TX done
 
 Nb packets sent: 1 (1)
+Closing SPI communication interface
+CoreCell reset through GPIO7...
+SX1261 reset through GPIO7...
+CoreCell power enable through GPIO18...
+CoreCell ADC reset through GPIO13...
+=========== Test End ===========
+</code></pre>
+<ul>
+<li>
+<p>接受测试：官方建议<a href="https://www.bilibili.com/video/BV1Yt411N7MV" target="_blank" rel="noopener">M-HL9-EV连金黄天线</a>，但实测用直黑天线也行，且发包间隔要长，避免丢包接收不到</p>
+<pre><code class="language-cpp">pi@raspberrypi:~/sx1302_hal/bin $ ./test_loragw_hal_rx -r 1250 -a 475.5 -b 476.5
+===== sx1302 HAL RX test =====
+INFO: rxpkt buffer size is set to 16
+INFO: Select channel mode 0
+CoreCell reset through GPIO7...
+Opening SPI communication interface
+Note: chip version is 0x10 (v1.0)
+INFO: using legacy timestamp
+ARB: dual demodulation disabled for all SF
+Waiting for packets...
+
+----- LoRa packet -----
+  count_us: 11242393
+  size:     18
+  chan:     7
+  status:   0x10
+  datr:     12
+  codr:     1
+  rf_chain  0
+  freq_hz   475900000
+  snr_avg:  -10.2
+  rssi_chan:128.0
+  rssi_sig :118.0
+  crc:      0xD228
+81 0C 20 50 13 00 00 00 00 00 31 32 33 34 35 36 0D 0A 
+Received 1 packets (total:1)
+
+----- LoRa packet -----
+  count_us: 21244909
+  size:     18
+  chan:     2
+  status:   0x11
+  datr:     12
+  codr:     1
+  rf_chain  1
+  freq_hz   476500000
+  snr_avg:  -6.5
+  rssi_chan:142.0
+  rssi_sig :136.0
+  crc:      0x7ABE
+81 0C 20 50 13 00 01 00 01 10 31 32 33 34 35 06 09 0A 
+
+----- LoRa packet -----
+  count_us: 21244961
+  size:     18
+  chan:     7
+  status:   0x10
+  datr:     12
+  codr:     1
+  rf_chain  0
+  freq_hz   475900000
+  snr_avg:  -10.0
+  rssi_chan:128.0
+  rssi_sig :119.0
+  crc:      0xFABE
+81 0C 20 50 13 00 01 00 01 00 31 32 33 34 35 36 0D 0A 
+Received 2 packets (total:2)
+^C
+Nb valid packets received: 2 CRC OK (1)
+Closing SPI communication interface
 CoreCell reset through GPIO7...
 =========== Test End ===========
 </code></pre>
 </li>
-<li>接受测试：官方建议<a href="https://www.bilibili.com/video/BV1Yt411N7MV" target="_blank" rel="noopener">M-HL9-EV连金黄天线</a>，但实测用直黑天线也行，且发包间隔要长，避免丢包接收不到
-<pre><code class="language-cpp">pi@raspberrypi:~/gw1302s/bin $ ./test_loragw_hal_rx -r 1250 -a 475.5 -b 476.5
-===== sx1302 HAL RX test =====
-INFO: rxpkt buffer size is set to 16
-INFO: Select channel mode 0
-CoreCell reset through GPIO7...
-Waiting for packets...
-
------ LoRa packet -----
-count_us: 51070567
-size:     3
-chan:     2
-status:   0x11
-datr:     12
-codr:     1
-rf_chain  1
-freq_hez  476500000
-snr_avg   -10.5
-rssi_chan:95.0
-rssi_sig :88.0
-crc:      0x496E
-AB CD EF
-Received 1 packets (total:0)
-
------ LoRa packet -----
-count_us: 71074694
-size:     3
-chan:     5
-status:   0x10
-datr:     12
-codr:     1
-rf_chain  0
-freq_hez  475500000
-snr_avg   6.8
-rssi_chan:146.0
-rssi_sig :147.0
-crc:      0xC96E
-AB CD EF
-Received 1 packets (total:1)
-
------ LoRa packet -----
-count_us: 91068896
-size:     3
-chan:     0
-status:   0x10
-datr:     12
-codr:     1
-rf_chain  1
-freq_hez  476100000
-snr_avg   8.5
-rssi_chan:149.0
-rssi_sig :150.0
-crc:      0xC96E
-AB CD EF
-Received 1 packets (total:2)
-</code></pre>
-<pre><code class="language-cpp">pi@raspberrypi:~/gw1302s/bin $ ./test_loragw_hal_rx -r 1250 -a 475.5 -b 476.5
-===== sx1302 HAL RX test =====
-INFO: rxpkt buffer size is set to 16
-INFO: Select channel mode 0
-CoreCell reset through GPIO7...
-Waiting for packets...
-
------ LoRa packet -----
-  count_us: 48944281
-  size:     3
-  chan:     3
-  status:   0x10
-  datr:     12
-  codr:     1
-  rf_chain  0
-  freq_hez  475100000
-  snr_avg   -6.5
-  rssi_chan:131.0
-  rssi_sig :125.0
-  crc:      0x0625
-12 34 56
-
- ----- LoRa packet -----
-  count_us: 48944290
-  size:     3
-  chan:     0
-  status:   0x10
-  datr:     12
-  codr:     1
-  rf_chain  1
-  freq_hez  476100000
-  snr_avg   10.2
-  rssi_chan:197.0
-  rssi_sig :198.0
-  crc:      0x0625
-12 34 56
-      
- ----- LoRa packet -----
-  count_us: 48944289
-  size:     3
-  chan:     6
-  status:   0x10
-  datr:     12
-  codr:     1
-  rf_chain  0
-  freq_hez  475100000
-  snr_avg   -5.8
-  rssi_chan:131.0
-  rssi_sig :126.0
-  crc:      0x0625
-12 34 56
-Received 3 packets (total:3)
-</code></pre>
-</li>
-<li>发送接收均用的<strong>Hex</strong></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="32-系统备份hal-and-packet-forwarder">3.2 系统备份(hal and packet forwarder)</h2>
-<ol>
-<li><a href="https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOnU6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVdLWEhRd1h5cnRDaGVTMDM0WTFsSjhCVlhJSThGUmd3QzhuZ0lFRlpqVW5EQT9lPWR1WXNKVQ==.mp3" target="_blank" rel="noopener">Gitee版</a>采用的代码Commit id（<em>选用自动安装脚本&rsquo;install.sh'</em>）: <a href="https://gitee.com/rejeee/gw1302s/commit/d9ef27fdecf2352d7ab6b85d50fb7a3e38a162ae" target="_blank" rel="noopener">d9ef27fdecf2352d7ab6b85d50fb7a3e38a162ae</a></li>
 <li>
-<ul>
-<li><a href="#">官方Github版</a>采用的代码Commit id（<em>Gitee抄到这后面就自己改了</em>）: <a href="https://github.com/Lora-net/sx1302_hal/commit/6291e62ef9a161ae41037a0df1a86e9943a907b9" target="_blank" rel="noopener">6291e62ef9a161ae41037a0df1a86e9943a907b9</a></li>
-<li>注意：官方2020.12更新后的<a href="https://github.com/Lora-net/sx1302_hal/commit/2c14708bdbf110d8ed2f2f3b2d33942249bbe2ba" target="_blank" rel="noopener">代码2.0</a>对应于<a href="https://www.semtech.com/products/wireless-rf/lora-gateways/sx1302cssxxxgw1" target="_blank" rel="noopener">Semtech SX1302CSSXXXGW1</a>：<a href="https://semtech.my.salesforce.com/sfc/p/#E0000000JelG/a/2R000000Hokn/i4xzbsLU2V6V92uDISoUfd3brd4MOpa0kyPyC_FPKXo" target="_blank" rel="noopener">USB Corecell ref design for LBT Spectral Scan gateway User Guide</a>；还包含了<a href="https://www.semtech.com/products/wireless-rf/lora-gateways/sx1302cfdxxxgw1" target="_blank" rel="noopener">Semtech SX1302CFDXXXGW1</a>：可从<a href="https://github.com/Lora-net/sx1302_hal/blob/master/packet_forwarder/global_conf.json.sx1255.CN490.full-duplex" target="_blank" rel="noopener">global_conf.json.sx1255.CN490.full-duplex</a>看出</li>
+<p>发送接收均用的<strong>Hex</strong></p>
+</li>
 </ul>
 </li>
-<li>卖家给了所谓<strong>搭建好基本环境</strong>的<a href="https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOnU6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVpVeXREN1pkTDVBZy14c3hjTXQ0NElCVEI1TTgyV2xHcWJOUFgxOGZZWmhaUT9lPXRrQUx1Zg==.mp3" target="_blank" rel="noopener">系统</a>，实际上就是刷了4.19，升级了还是不能用，没解决任何问题</li>
-<li><a href="https://downloads.raspberrypi.org/raspbian/images/" target="_blank" rel="noopener">树莓派历代系统</a></li>
-<li><a href="https://mirrors.tuna.tsinghua.edu.cn/raspbian-images/raspios_armhf/images/raspios_armhf-2020-05-28/2020-05-27-raspios-buster-armhf.zip" target="_blank" rel="noopener">4.19.118系统清华镜像</a></li>
-<li>每次更换为备份时:
-<ul>
-<li>&ldquo;global.config&quot;中&quot;gateway_ID&quot;都要修改与树莓派保持一致</li>
-<li>&ldquo;lorawan_public&quot;与发射端保持一致</li>
-<li>先连接外接显示器，寝室新wifi密码见群公告；注意显示器已开启热插拔,但这样会占用额外内存</li>
 </ul>
 </li>
-</ol>
+</ul>
 <h1 id="4-实验步骤">4 实验步骤</h1>
 <h2 id="41-lorawan">4.1 LoRaWAN</h2>
 <p><a href="https://connect.ed-diamond.com/MISC/MISCHS-015/LORAWAN-deploiement-d-une-infrastructure-de-test" target="_blank" rel="noopener">完整案例</a></p>
