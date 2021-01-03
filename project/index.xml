@@ -188,9 +188,9 @@
 &lt;li&gt;&lt;code&gt;parse_gateway_configuration&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;parse_debug_configuration&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;sig_handler&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;5 threads&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;6 threads&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;作用：2~4显示固定内容，thread_up显示UPSTREAM json内容，main显示5 threads得到的统计内容，详见3.2节&lt;/p&gt;
+&lt;p&gt;作用：2~4显示固定内容，thread_up显示UPSTREAM json内容，main显示6 threads得到的统计内容，详见3.2节&lt;/p&gt;
 &lt;hr&gt;
 &lt;h3 id=&#34;312-5-threads&#34;&gt;3.1.2 5 threads&lt;/h3&gt;
 &lt;p&gt;/* &amp;mdash; THREAD 1: RECEIVING PACKETS AND FORWARDING THEM &amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;- */&lt;/p&gt;
@@ -238,13 +238,19 @@
 &lt;/ul&gt;
 &lt;h2 id=&#34;分析是从gateway到node的通信--just-in-time-downlink-schedulinghttpsgiteecomrejeeegw1302streemasterpacket_forwarder&#34;&gt;分析：是从gateway到node的通信,  &lt;a href=&#34;https://gitee.com/rejeee/gw1302s/tree/master/packet_forwarder&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Just-In-Time&amp;quot; downlink scheduling&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;/* &amp;mdash; THREAD 4: PARSE GPS MESSAGE AND KEEP GATEWAY IN SYNC &amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;ndash; */&lt;/p&gt;
-&lt;p&gt;// &lt;a href=&#34;https://lora-developers.semtech.com/library/tech-papers-and-guides/lorawan-class-b-devices&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;In order for a LoRaWAN network to support Class B devices, all the LoRaWAN gateways in this network need to have a built-in GPS timing source, so they all can be synchronized to the exact beacon timing.&lt;/a&gt;
-&lt;a href=&#34;https://lora-developers.semtech.com/library/tech-papers-and-guides/lora-and-lorawan/&#34;&gt;https://lora-developers.semtech.com/library/tech-papers-and-guides/lora-and-lorawan/&lt;/a&gt;
-&lt;code&gt;thread_gps&lt;/code&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://lora-developers.semtech.com/library/tech-papers-and-guides/lorawan-class-b-devices&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;In order for a LoRaWAN network to support Class B devices, all the LoRaWAN gateways in this network need to have a built-in GPS timing source, so they all can be synchronized to the exact beacon timing.&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://lora-developers.semtech.com/library/tech-papers-and-guides/lora-and-lorawan/&#34;&gt;https://lora-developers.semtech.com/library/tech-papers-and-guides/lora-and-lorawan/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;thread_gps&lt;/code&gt;：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;code&gt;gps_process_sync&lt;/code&gt;：time_reference_gps；具体的GPS &amp;lt;-&amp;gt; timestamp TIME REFERENCE&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;gps_process_coords&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;hr&gt;
 &lt;p&gt;/* &amp;mdash; THREAD 5: CHECK TIME REFERENCE AND CALCULATE XTAL CORRECTION &amp;mdash;&amp;mdash;&amp;mdash; */&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;thread_valid&lt;/code&gt;：&lt;/p&gt;
@@ -261,6 +267,9 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;/* &amp;mdash; THREAD 6: BACKGROUND SPECTRAL SCAN                           &amp;mdash;&amp;mdash;&amp;mdash; */&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;thread_spectral_scan&lt;/code&gt;：略&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;32-empirical-experiment&#34;&gt;3.2 Empirical experiment&lt;/h2&gt;
 &lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;pi@raspberrypi:~/sx1302_hal/bin $ ./lora_pkt_fwd
@@ -326,7 +335,8 @@ INFO: [main] concentrator started, packet can now be received
 INFO: concentrator EUI: 0x0016c001ff10d3f6
 &lt;/code&gt;&lt;/pre&gt;
 &lt;hr&gt;
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;INFO: [down] PULL_ACK received in 18 ms
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;//正常流程版
+INFO: [down] PULL_ACK received in 18 ms
 INFO: [down] PULL_ACK received in 23 ms
 INFO: [down] PULL_ACK received in 23 ms
 
@@ -367,6 +377,48 @@ JSON up: {&amp;quot;stat&amp;quot;:{&amp;quot;time&amp;quot;:&amp;quot;2021-01-0
 INFO: [up] PUSH_ACK received in 20 ms
 &lt;/code&gt;&lt;/pre&gt;
 &lt;hr&gt;
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;//仅有thread_up版
+INFO: Received pkt from mote: 1350200C (fcnt=7)
+
+JSON up: {&amp;quot;rxpk&amp;quot;:[{&amp;quot;jver&amp;quot;:1,&amp;quot;tmst&amp;quot;:95039857,&amp;quot;chan&amp;quot;:5,&amp;quot;rfch&amp;quot;:1,&amp;quot;freq&amp;quot;:476.400000,&amp;quot;mid&amp;quot;: 1,&amp;quot;stat&amp;quot;:1,&amp;quot;modu&amp;quot;:&amp;quot;LORA&amp;quot;,&amp;quot;datr&amp;quot;:&amp;quot;SF12BW125&amp;quot;,&amp;quot;codr&amp;quot;:&amp;quot;4/5&amp;quot;,&amp;quot;rssis&amp;quot;:-75,&amp;quot;lsnr&amp;quot;:-7.2,&amp;quot;foff&amp;quot;:244,&amp;quot;rssi&amp;quot;:-69,&amp;quot;size&amp;quot;:13,&amp;quot;data&amp;quot;:&amp;quot;gQwgUBMABwAHABI0Vg==&amp;quot;}]}
+INFO: [up] PUSH_ACK received in 21 ms
+
+INFO: Received pkt from mote: 1350200C (fcnt=8)
+
+JSON up: {&amp;quot;rxpk&amp;quot;:[{&amp;quot;jver&amp;quot;:1,&amp;quot;tmst&amp;quot;:105035907,&amp;quot;chan&amp;quot;:5,&amp;quot;rfch&amp;quot;:1,&amp;quot;freq&amp;quot;:476.400000,&amp;quot;mid&amp;quot;: 1,&amp;quot;stat&amp;quot;:1,&amp;quot;modu&amp;quot;:&amp;quot;LORA&amp;quot;,&amp;quot;datr&amp;quot;:&amp;quot;SF12BW125&amp;quot;,&amp;quot;codr&amp;quot;:&amp;quot;4/5&amp;quot;,&amp;quot;rssis&amp;quot;:-70,&amp;quot;lsnr&amp;quot;:-3.5,&amp;quot;foff&amp;quot;:200,&amp;quot;rssi&amp;quot;:-67,&amp;quot;size&amp;quot;:13,&amp;quot;data&amp;quot;:&amp;quot;gQwgUBMACAAIABI0Vg==&amp;quot;}]}
+INFO: [up] PUSH_ACK received in 22 ms
+
+##### 2021-01-02 15:03:47 GMT #####
+### [UPSTREAM] ###
+# RF packets received by concentrator: 4
+# CRC_OK: 50.00%, CRC_FAIL: 50.00%, NO_CRC: 0.00%
+# RF packets forwarded: 2 (26 bytes)
+# PUSH_DATA datagrams sent: 3 (595 bytes)
+# PUSH_DATA acknowledged: 100.00%
+### [DOWNSTREAM] ###
+# PULL_DATA sent: 0 (0.00% acknowledged)
+# PULL_RESP(onse) datagrams received: 0 (0 bytes)
+# RF packets sent to concentrator: 0 (0 bytes)
+# TX errors: 0
+### SX1302 Status ###
+# SX1302 counter (INST): 120943826
+# SX1302 counter (PPS):  0
+# BEACON queued: 0
+# BEACON sent so far: 0
+# BEACON rejected: 0
+### [JIT] ###
+src/jitqueue.c:440:jit_print_queue(): INFO: [jit] queue is empty
+#--------
+src/jitqueue.c:440:jit_print_queue(): INFO: [jit] queue is empty
+### [GPS] ###
+# GPS sync is disabled
+ERROR: invalid I2C file descriptor
+### Concentrator temperature unknown ###
+##### END #####
+
+JSON up: {&amp;quot;stat&amp;quot;:{&amp;quot;time&amp;quot;:&amp;quot;2021-01-02 15:03:47 GMT&amp;quot;,&amp;quot;rxnb&amp;quot;:4,&amp;quot;rxok&amp;quot;:2,&amp;quot;rxfw&amp;quot;:2,&amp;quot;ackr&amp;quot;:100.0,&amp;quot;dwnb&amp;quot;:0,&amp;quot;txnb&amp;quot;:0,&amp;quot;temp&amp;quot;:0.0}}
+INFO: [up] PUSH_ACK received in 16 ms
+&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;INFO: End of upstream thread
 
 INFO: End of JIT thread
@@ -679,7 +731,7 @@ TSF:       12
 RSF:       12
 CR:        4/5
 MODE:      LORA
-SYNC:      0x12/0x34
+SYNC:      0x34
 PREM:      8, 10
 FIX:       0, 0
 CRC:       ON
