@@ -925,7 +925,7 @@
 <h2 id="0-github">0 Github</h2>
 <ol>
 <li>
-<p><a href="https://github.com/Lora-net/sx1302_hal">https://github.com/Lora-net/sx1302_hal</a></p>
+<p><a href="https://github.com/Lora-net/sx1302_hal" target="_blank" rel="noopener">repo</a></p>
 </li>
 <li>
 <p>Reference design:</p>
@@ -939,29 +939,24 @@
 <h2 id="1-gitee">1 Gitee</h2>
 <ol>
 <li>
-<p><a href="https://gitee.com/rejeee/gw1302s">https://gitee.com/rejeee/gw1302s</a></p>
+<p><a href="https://gitee.com/rejeee/gw1302s" target="_blank" rel="noopener">repo</a></p>
 </li>
 <li>
 <p>Reference design:</p>
 <ul>
 <li><a href="https://www.semtech.com/products/wireless-rf/lora-gateways/sx1302cxxxgw1" target="_blank" rel="noopener">SX1302CxxxGW1</a></li>
-<li>与GitHub的<a href="https://gitee.com/wonghao/gw1302s/commit/b06b85a7c87fce9f7d462f55b5913a3dc0c47df9" target="_blank" rel="noopener">区别</a>：
+<li>与GitHub的<a href="https://gitee.com/rejeee/gw1302s/commit/b06b85a7c87fce9f7d462f55b5913a3dc0c47df9" target="_blank" rel="noopener">区别</a>：
 <ul>
-<li>使用<code>#if USE_I2C_SENSOR ... #endif</code>注释了 I2C 接口的温度传感器代码</li>
-<li><strong>boardconf.lorawan_public = true</strong>改成了<strong>boardconf.lorawan_public = false</strong>，收发测试程序的同步字修改为 <strong>private</strong> 即 <strong>0x12</strong>；但这与安装生成的<strong>global.config</strong>文件中的同步字设置不同，故实际收发与测试时，终端同步字设置相反
-<ul>
-<li>同步字：<a href="https://forum.chirpstack.io/t/relation-between-sync-word-private-network-and-end-nodes/191/13?u=haowong" target="_blank" rel="noopener">Chirpstack</a></li>
-</ul>
-</li>
-<li><strong>SX1302_RESET_PIN=23</strong>改成了<strong>SX1302_RESET_PIN=7</strong>且去掉了其他GPIO引脚代码
-（<em>用GPIO7才能启动，其他引脚变化一点用没有</em>）</li>
+<li>使用<code>#if USE_I2C_SENSOR ... #endif</code>注释了 I2C 相关代码</li>
+<li>测试程序中默认的<strong>boardconf.lorawan_public = true</strong>改成了<strong>boardconf.lorawan_public = false</strong>，即 <strong>private</strong> 即 <strong>0x12</strong>；但这与<strong>global.config</strong>默认<a href="https://forum.chirpstack.io/t/relation-between-sync-word-private-network-and-end-nodes/191/13?u=haowong" target="_blank" rel="noopener">同步字</a>设置不同，故实际收发与测试时，终端同步字设置相反</li>
+<li><strong>SX1302_RESET_PIN=23</strong>改成了<strong>SX1302_RESET_PIN=7</strong>且去掉了其他GPIO引脚代码 (必须用GPOI7，其他没啥用)</li>
 </ul>
 </li>
 </ul>
 </li>
 </ol>
 <h1 id="1-json-configuration-file-globalconfig">1 JSON configuration file: global.config</h1>
-<p><a href="https://github.com/wong-hao/sx1302_hal/blob/master/packet_forwarder/global_conf.json">https://github.com/wong-hao/sx1302_hal/blob/master/packet_forwarder/global_conf.json</a></p>
+<p><a href="https://github.com/wong-hao/sx1302_hal/blob/master/packet_forwarder/global_conf.json" target="_blank" rel="noopener">本人配置好的</a></p>
 <h2 id="11-参数含义">1.1 参数含义</h2>
 <ol>
 <li><a href="https://www.cnblogs.com/answerinthewind/p/13154904.html" target="_blank" rel="noopener">AnswerInTheWind</a></li>
