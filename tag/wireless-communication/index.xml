@@ -495,25 +495,8 @@ concentrator.&lt;/li&gt;
 &lt;p&gt;thread_jit入队出队的队列正是两个SX1250对应的radio_0、radio_1&lt;/p&gt;
 &lt;h1 id=&#34;6-问题&#34;&gt;6 问题&lt;/h1&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 温度相关&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; RF packets forwarded比PUSH_DATA datagrams sent少&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; DEPENDANCIES相关的函数定义及实现&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &amp;ldquo;SX130x_conf&amp;quot;相关，如RF chain、IF chain等参数&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 我现在发的是不是confirmed message：发帖问之前先实验不连接NS会不会被网关ACK就知道是不是NS发的downlink了
-When I look at the gateway log, do the following messages indicate that a &lt;strong&gt;confirmed message&lt;/strong&gt; is being sent:&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;...
-INFO: [up] PUSH_ACK received in 34ms
-...
-INFO: [down] PULL_ACK received in 56ms
-...
-# PUSH_DATA acknowledeged: **100.00% **
-...
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Because I see it&amp;rsquo;s better not to use comfirmed message, so if this is a sign that has already used it, what kind of settings should be adopted and how can I use uncomfirmed message instead.&lt;/p&gt;
-&lt;h1 id=&#34;7-todo&#34;&gt;7 TODO&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 若上述都满足，保存旧版本修改代码，新fork代码并添加注释&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
@@ -740,7 +723,7 @@ RIQ:       ON
 SEQ:       OFF
 IP:        ON
 AES:       OFF
-ACK:       ON
+ACK:       ON //Confirmed message
 LDR:       0, 0
 LCP:       0
 LFT:       0
