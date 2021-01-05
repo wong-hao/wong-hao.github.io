@@ -98,7 +98,7 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;h4 id=&#34;2112-socket&#34;&gt;2.1.1.2 socket&lt;/h4&gt;
+&lt;h4 id=&#34;2112-socket-用于gateway与server通信&#34;&gt;2.1.1.2 socket: 用于gateway与server通信&lt;/h4&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/77023584&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;setsockopt()&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.cnblogs.com/jianqiang2010/archive/2010/08/20/1804598.htmll&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;send()&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
@@ -158,7 +158,9 @@
 &lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include &amp;quot;jitqueue.h&amp;quot; //.. / packet_forwarder / src / jitqueue.c
 #include &amp;quot;trace.h&amp;quot; //.. / packet_forwarder / inc / trace.h
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;25-注意&#34;&gt;2.5 注意&lt;/h2&gt;
+&lt;h2 id=&#34;25-tools&#34;&gt;2.5 tools&lt;/h2&gt;
+&lt;p&gt;lgw_receive接收到的包调用其crc函数校验&lt;/p&gt;
+&lt;h2 id=&#34;26-注意&#34;&gt;2.6 注意&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;.h文件介绍用法，.c文件介绍实现，都需要看&lt;/li&gt;
 &lt;li&gt;jit_*函数和lgw _*_*函数的用法：
@@ -194,13 +196,13 @@
 &lt;li&gt;&lt;code&gt;sig_handler&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;difftimespec&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id=&#34;lgw_receive接收数据包rxpkt并根据其属性构建upstream的datagram&#34;&gt;&lt;code&gt;lgw_receive&lt;/code&gt;接收数据包rxpkt，并根据其属性构建UPSTREAM的datagram&lt;/h2&gt;
+&lt;h2 id=&#34;lgw_receive-gateway从node接收rxpkt并根据其属性构建upstream的datagram&#34;&gt;&lt;code&gt;lgw_receive&lt;/code&gt;: gateway从node接收rxpkt，并根据其属性构建UPSTREAM的datagram&lt;/h2&gt;
 &lt;p&gt;/* &amp;mdash; THREAD 2: POLLING SERVER AND ENQUEUING PACKETS IN JIT QUEUE &amp;mdash;&amp;mdash;&amp;mdash;- */&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;thread_down&lt;/code&gt;：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;code&gt;sig_handler&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;difftimespec&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;crc16&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;crc16&lt;/code&gt;：对发射的包进行crc检验&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;get_tx_gain_lut_index&lt;/code&gt; //jit_enqueue前查tx_gain_lut表&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;send_tx_ack&lt;/code&gt;：返回jit_enqueue相关错误；gps_enabled与gps_ref_valid任意一个不满足都会发送JIT_ERROR_GPS_UNLOCKED，说明gps出问题统一用&lt;strong&gt;UNLOCKED&lt;/strong&gt;代替&lt;/li&gt;
 &lt;/ol&gt;
@@ -210,6 +212,9 @@
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;code&gt;jit_enqueue&lt;/code&gt;：对应THREAD 2：thread_down&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;lgw_receive&lt;/code&gt;: gateway向node发送数据包&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
@@ -330,8 +335,7 @@ INFO: [main] concentrator started, packet can now be received
 INFO: concentrator EUI: 0x0016c001ff10d3f6
 &lt;/code&gt;&lt;/pre&gt;
 &lt;hr&gt;
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;//正常流程版
-INFO: [down] PULL_ACK received in 18 ms
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;INFO: [down] PULL_ACK received in 18 ms //like the PUSH_ACK in downstream
 INFO: [down] PULL_ACK received in 23 ms
 INFO: [down] PULL_ACK received in 23 ms
 
@@ -340,7 +344,9 @@ INFO: Received pkt from mote: 1350200C (fcnt=40)
 JSON up: {&amp;quot;rxpk&amp;quot;:[{&amp;quot;jver&amp;quot;:1,&amp;quot;tmst&amp;quot;:86523675,&amp;quot;chan&amp;quot;:5,&amp;quot;rfch&amp;quot;:1,&amp;quot;freq&amp;quot;:476.400000,&amp;quot;mid&amp;quot;: 1,&amp;quot;stat&amp;quot;:1,&amp;quot;modu&amp;quot;:&amp;quot;LORA&amp;quot;,&amp;quot;datr&amp;quot;:&amp;quot;SF12BW125&amp;quot;,&amp;quot;codr&amp;quot;:&amp;quot;4/5&amp;quot;,&amp;quot;rssis&amp;quot;:-60,&amp;quot;lsnr&amp;quot;:0.0,&amp;quot;foff&amp;quot;:-108,&amp;quot;rssi&amp;quot;:-59,&amp;quot;size&amp;quot;:13,&amp;quot;data&amp;quot;:&amp;quot;gQwgUBMAKAAoABI0Vg==&amp;quot;}]}
 INFO: [up] PUSH_ACK received in 20 ms
 
-##### 2021-01-01 15:35:43 GMT #####
+/* main loop task : statistics collection */
+/* display a report */
+##### 2021-01-01 15:35:43 GMT ##### 
 ### [UPSTREAM] ###
 # RF packets received by concentrator: 3
 # CRC_OK: 33.33%, CRC_FAIL: 66.67%, NO_CRC: 0.00%
@@ -367,53 +373,11 @@ src/jitqueue.c:440:jit_print_queue(): INFO: [jit] queue is empty
 ERROR: invalid I2C file descriptor
 ### Concentrator temperature unknown ###
 ##### END #####
-
+/* generate a JSON report (will be sent to server by upstream thread) */
 JSON up: {&amp;quot;stat&amp;quot;:{&amp;quot;time&amp;quot;:&amp;quot;2021-01-01 15:35:43 GMT&amp;quot;,&amp;quot;rxnb&amp;quot;:3,&amp;quot;rxok&amp;quot;:1,&amp;quot;rxfw&amp;quot;:1,&amp;quot;ackr&amp;quot;:100.0,&amp;quot;dwnb&amp;quot;:0,&amp;quot;txnb&amp;quot;:0,&amp;quot;temp&amp;quot;:0.0}}
 INFO: [up] PUSH_ACK received in 20 ms
 &lt;/code&gt;&lt;/pre&gt;
 &lt;hr&gt;
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;//仅有thread_up版
-INFO: Received pkt from mote: 1350200C (fcnt=7)
-
-JSON up: {&amp;quot;rxpk&amp;quot;:[{&amp;quot;jver&amp;quot;:1,&amp;quot;tmst&amp;quot;:95039857,&amp;quot;chan&amp;quot;:5,&amp;quot;rfch&amp;quot;:1,&amp;quot;freq&amp;quot;:476.400000,&amp;quot;mid&amp;quot;: 1,&amp;quot;stat&amp;quot;:1,&amp;quot;modu&amp;quot;:&amp;quot;LORA&amp;quot;,&amp;quot;datr&amp;quot;:&amp;quot;SF12BW125&amp;quot;,&amp;quot;codr&amp;quot;:&amp;quot;4/5&amp;quot;,&amp;quot;rssis&amp;quot;:-75,&amp;quot;lsnr&amp;quot;:-7.2,&amp;quot;foff&amp;quot;:244,&amp;quot;rssi&amp;quot;:-69,&amp;quot;size&amp;quot;:13,&amp;quot;data&amp;quot;:&amp;quot;gQwgUBMABwAHABI0Vg==&amp;quot;}]}
-INFO: [up] PUSH_ACK received in 21 ms
-
-INFO: Received pkt from mote: 1350200C (fcnt=8)
-
-JSON up: {&amp;quot;rxpk&amp;quot;:[{&amp;quot;jver&amp;quot;:1,&amp;quot;tmst&amp;quot;:105035907,&amp;quot;chan&amp;quot;:5,&amp;quot;rfch&amp;quot;:1,&amp;quot;freq&amp;quot;:476.400000,&amp;quot;mid&amp;quot;: 1,&amp;quot;stat&amp;quot;:1,&amp;quot;modu&amp;quot;:&amp;quot;LORA&amp;quot;,&amp;quot;datr&amp;quot;:&amp;quot;SF12BW125&amp;quot;,&amp;quot;codr&amp;quot;:&amp;quot;4/5&amp;quot;,&amp;quot;rssis&amp;quot;:-70,&amp;quot;lsnr&amp;quot;:-3.5,&amp;quot;foff&amp;quot;:200,&amp;quot;rssi&amp;quot;:-67,&amp;quot;size&amp;quot;:13,&amp;quot;data&amp;quot;:&amp;quot;gQwgUBMACAAIABI0Vg==&amp;quot;}]}
-INFO: [up] PUSH_ACK received in 22 ms
-
-##### 2021-01-02 15:03:47 GMT #####
-### [UPSTREAM] ###
-# RF packets received by concentrator: 4
-# CRC_OK: 50.00%, CRC_FAIL: 50.00%, NO_CRC: 0.00%
-# RF packets forwarded: 2 (26 bytes)
-# PUSH_DATA datagrams sent: 3 (595 bytes)
-# PUSH_DATA acknowledged: 100.00%
-### [DOWNSTREAM] ###
-# PULL_DATA sent: 0 (0.00% acknowledged)
-# PULL_RESP(onse) datagrams received: 0 (0 bytes)
-# RF packets sent to concentrator: 0 (0 bytes)
-# TX errors: 0
-### SX1302 Status ###
-# SX1302 counter (INST): 120943826
-# SX1302 counter (PPS):  0
-# BEACON queued: 0
-# BEACON sent so far: 0
-# BEACON rejected: 0
-### [JIT] ###
-src/jitqueue.c:440:jit_print_queue(): INFO: [jit] queue is empty
-#--------
-src/jitqueue.c:440:jit_print_queue(): INFO: [jit] queue is empty
-### [GPS] ###
-# GPS sync is disabled
-ERROR: invalid I2C file descriptor
-### Concentrator temperature unknown ###
-##### END #####
-
-JSON up: {&amp;quot;stat&amp;quot;:{&amp;quot;time&amp;quot;:&amp;quot;2021-01-02 15:03:47 GMT&amp;quot;,&amp;quot;rxnb&amp;quot;:4,&amp;quot;rxok&amp;quot;:2,&amp;quot;rxfw&amp;quot;:2,&amp;quot;ackr&amp;quot;:100.0,&amp;quot;dwnb&amp;quot;:0,&amp;quot;txnb&amp;quot;:0,&amp;quot;temp&amp;quot;:0.0}}
-INFO: [up] PUSH_ACK received in 16 ms
-&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;INFO: End of upstream thread
 
 INFO: End of JIT thread
@@ -601,7 +565,7 @@ CoreCell power enable through GPIO18...
 CoreCell ADC reset through GPIO13...
 Opening SPI communication interface
 Note: chip version is 0x10 (v1.0)
-INFO: using legacy timestamp
+INFO: using legacy timestamp //本程序默认值，与global.config配置文件无关
 ARB: dual demodulation disabled for all SF
 TX done
 
