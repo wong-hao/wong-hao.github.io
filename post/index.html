@@ -75,7 +75,7 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous" media="print" onload="this.media='all'">
 
     
     
@@ -86,14 +86,14 @@
       
       
         
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github.min.css" crossorigin="anonymous" title="hl-light">
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
         
       
     
 
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.css" integrity="sha512-1xoFisiGdy9nvho8EgXuXvnpR5GAMSjFwp40gSRE3NwdUdIMIKuPa7bqoUhLD0O/5tPNhteAsE5XyyMi5reQVA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.css" integrity="sha512-1xoFisiGdy9nvho8EgXuXvnpR5GAMSjFwp40gSRE3NwdUdIMIKuPa7bqoUhLD0O/5tPNhteAsE5XyyMi5reQVA==" crossorigin="anonymous" media="print" onload="this.media='all'">
     
 
     
@@ -231,8 +231,8 @@
   
     
       
-      
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
     
   
 
@@ -240,7 +240,8 @@
   
   
   
-  <link rel="stylesheet" href="/css/wowchemy.min.8e43d31e888508b173bbc2cc83c6a116.css">
+  
+  <link rel="stylesheet" href="/css/wowchemy.32968a9cbe927b8fff0a8da87b3f87fd.css">
 
   
 
@@ -267,7 +268,10 @@
   <link rel="alternate" href="/post/index.xml" type="application/rss+xml" title="Room of Requirement">
   
 
+  
   <link rel="manifest" href="/index.webmanifest">
+  
+
   <link rel="icon" type="image/png" href="/images/icon_hub0cb53550ede56fdccc60540659dbf84_11803_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="/images/icon_hub0cb53550ede56fdccc60540659dbf84_11803_192x192_fill_lanczos_center_2.png">
 
@@ -321,9 +325,14 @@
   
   
   
-  <script src="/js/wowchemy-init.js"></script>
+  
+  
+  
+  <script src="/js/wowchemy-init.min.7264cf0eba3b66951b36da7d2cecf9c5.js"></script>
 
-  <aside class="search-results" id="search">
+  
+
+<aside class="search-modal" id="search">
   <div class="container">
     <section class="search-header">
 
@@ -332,16 +341,22 @@
           <h1>Search</h1>
         </div>
         <div class="col-6 col-search-close">
-          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+          <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
         </div>
       </div>
 
       <div id="search-box">
         
         <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
-        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control">
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Search...">
         
       </div>
+
+      
+      
+
+      
 
     </section>
     <section class="section-search-results">
@@ -353,6 +368,7 @@
     </section>
   </div>
 </aside>
+
 
 
   <div class="page-header">
@@ -370,7 +386,7 @@
 
 
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
-  <div class="container">
+  <div class="container-xl">
 
     
     <div class="d-none d-lg-inline-flex">
@@ -695,6 +711,12 @@
     </div>
 
     <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+      
+      
+        
+      
+
       
       
       <li class="nav-item">
@@ -789,9 +811,9 @@
 <div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0">
+    <div class="section-subheading article-title mb-0 mt-0">
       <a href="/2020/09/26/markdown%E8%AF%AD%E6%B3%95/" >Markdown语法</a>
-    </h3>
+    </div>
 
     
     <a href="/2020/09/26/markdown%E8%AF%AD%E6%B3%95/"  class="summary-link">
@@ -827,8 +849,8 @@
   <div>
     
 
-  
-  <span ><a href="/author/haowong/">HaoWong</a></span>
+  <span >
+      <a href="/author/haowong/">HaoWong</a></span>
   </div>
   
   
@@ -904,9 +926,9 @@
 <div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0">
+    <div class="section-subheading article-title mb-0 mt-0">
       <a href="/2020/09/09/%E7%AC%AC%E4%B8%83%E6%AC%A1%E6%B1%87%E6%8A%A5/" >第七次汇报</a>
-    </h3>
+    </div>
 
     
     <a href="/2020/09/09/%E7%AC%AC%E4%B8%83%E6%AC%A1%E6%B1%87%E6%8A%A5/"  class="summary-link">
@@ -933,8 +955,8 @@
   <div>
     
 
-  
-  <span ><a href="/author/haowong/">HaoWong</a></span>
+  <span >
+      <a href="/author/haowong/">HaoWong</a></span>
   </div>
   
   
@@ -1010,9 +1032,9 @@
 <div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0">
+    <div class="section-subheading article-title mb-0 mt-0">
       <a href="/2020/09/09/%E7%AC%AC%E4%B9%9D%E6%AC%A1%E6%B1%87%E6%8A%A5/" >第九次汇报</a>
-    </h3>
+    </div>
 
     
     <a href="/2020/09/09/%E7%AC%AC%E4%B9%9D%E6%AC%A1%E6%B1%87%E6%8A%A5/"  class="summary-link">
@@ -1046,8 +1068,8 @@
   <div>
     
 
-  
-  <span ><a href="/author/haowong/">HaoWong</a></span>
+  <span >
+      <a href="/author/haowong/">HaoWong</a></span>
   </div>
   
   
@@ -1123,9 +1145,9 @@
 <div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0">
+    <div class="section-subheading article-title mb-0 mt-0">
       <a href="/2020/09/09/%E7%AC%AC%E5%85%AB%E6%AC%A1%E6%B1%87%E6%8A%A5/" >第八次汇报</a>
-    </h3>
+    </div>
 
     
     <a href="/2020/09/09/%E7%AC%AC%E5%85%AB%E6%AC%A1%E6%B1%87%E6%8A%A5/"  class="summary-link">
@@ -1163,8 +1185,8 @@
   <div>
     
 
-  
-  <span ><a href="/author/haowong/">HaoWong</a></span>
+  <span >
+      <a href="/author/haowong/">HaoWong</a></span>
   </div>
   
   
@@ -1240,9 +1262,9 @@
 <div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0">
+    <div class="section-subheading article-title mb-0 mt-0">
       <a href="/2020/08/24/%E7%AC%AC%E5%85%AD%E6%AC%A1%E6%B1%87%E6%8A%A5/" >第六次汇报</a>
-    </h3>
+    </div>
 
     
     <a href="/2020/08/24/%E7%AC%AC%E5%85%AD%E6%AC%A1%E6%B1%87%E6%8A%A5/"  class="summary-link">
@@ -1269,8 +1291,8 @@
   <div>
     
 
-  
-  <span ><a href="/author/haowong/">HaoWong</a></span>
+  <span >
+      <a href="/author/haowong/">HaoWong</a></span>
   </div>
   
   
@@ -1346,9 +1368,9 @@
 <div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0">
+    <div class="section-subheading article-title mb-0 mt-0">
       <a href="/2020/08/18/%E7%AC%AC%E4%BA%94%E6%AC%A1%E6%B1%87%E6%8A%A5/" >第五次汇报</a>
-    </h3>
+    </div>
 
     
     <a href="/2020/08/18/%E7%AC%AC%E4%BA%94%E6%AC%A1%E6%B1%87%E6%8A%A5/"  class="summary-link">
@@ -1378,8 +1400,8 @@
   <div>
     
 
-  
-  <span ><a href="/author/haowong/">HaoWong</a></span>
+  <span >
+      <a href="/author/haowong/">HaoWong</a></span>
   </div>
   
   
@@ -1455,9 +1477,9 @@
 <div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0">
+    <div class="section-subheading article-title mb-0 mt-0">
       <a href="/2020/08/12/%E7%AC%AC%E4%B8%89%E6%AC%A1%E6%B1%87%E6%8A%A5/" >第三次汇报</a>
-    </h3>
+    </div>
 
     
     <a href="/2020/08/12/%E7%AC%AC%E4%B8%89%E6%AC%A1%E6%B1%87%E6%8A%A5/"  class="summary-link">
@@ -1484,8 +1506,8 @@
   <div>
     
 
-  
-  <span ><a href="/author/haowong/">HaoWong</a></span>
+  <span >
+      <a href="/author/haowong/">HaoWong</a></span>
   </div>
   
   
@@ -1561,9 +1583,9 @@
 <div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0">
+    <div class="section-subheading article-title mb-0 mt-0">
       <a href="/2020/07/22/%E7%AC%AC%E4%BA%8C%E6%AC%A1%E6%B1%87%E6%8A%A5/" >第二次汇报</a>
-    </h3>
+    </div>
 
     
     <a href="/2020/07/22/%E7%AC%AC%E4%BA%8C%E6%AC%A1%E6%B1%87%E6%8A%A5/"  class="summary-link">
@@ -1590,8 +1612,8 @@
   <div>
     
 
-  
-  <span ><a href="/author/haowong/">HaoWong</a></span>
+  <span >
+      <a href="/author/haowong/">HaoWong</a></span>
   </div>
   
   
@@ -1667,9 +1689,9 @@
 <div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0">
+    <div class="section-subheading article-title mb-0 mt-0">
       <a href="/2020/07/22/%E7%AC%AC%E5%9B%9B%E6%AC%A1%E6%B1%87%E6%8A%A5/" >第四次汇报</a>
-    </h3>
+    </div>
 
     
     <a href="/2020/07/22/%E7%AC%AC%E5%9B%9B%E6%AC%A1%E6%B1%87%E6%8A%A5/"  class="summary-link">
@@ -1704,8 +1726,8 @@
   <div>
     
 
-  
-  <span ><a href="/author/haowong/">HaoWong</a></span>
+  <span >
+      <a href="/author/haowong/">HaoWong</a></span>
   </div>
   
   
@@ -1781,9 +1803,9 @@
 <div class="media stream-item">
   <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0">
+    <div class="section-subheading article-title mb-0 mt-0">
       <a href="/2020/07/18/%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%B1%87%E6%8A%A5/" >第一次汇报</a>
-    </h3>
+    </div>
 
     
     <a href="/2020/07/18/%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%B1%87%E6%8A%A5/"  class="summary-link">
@@ -1810,8 +1832,8 @@
   <div>
     
 
-  
-  <span ><a href="/author/haowong/">HaoWong</a></span>
+  <span >
+      <a href="/author/haowong/">HaoWong</a></span>
   </div>
   
   
@@ -1914,7 +1936,7 @@
     
     
     Published with
-    <a href="https://wowchemy.com" target="_blank" rel="noopener">Wowchemy</a>  —
+    <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a>  —
     the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">
     open source</a> website builder that empowers creators.
     
@@ -1988,42 +2010,18 @@
 
     
     
-    <script>const code_highlighting = true;</script>
-    
-
-    
-    
-    
-    
-    
-    
-    <script>
-      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
-      const i18n = {"no_results":"No results found","placeholder":"Search...","results":"results found"};
-      const content_type = {
-        'post': "Posts",
-        'project': "Projects",
-        'publication' : "Publications",
-        'talk' : "Talks",
-        'slides' : "Slides"
-        };
-    </script>
-    
-
-    
-    
 
     
     
     <script id="search-hit-fuse-template" type="text/x-template">
       <div class="search-hit" id="summary-{{key}}">
-      <div class="search-hit-content">
-        <div class="search-hit-name">
-          <a href="{{relpermalink}}">{{title}}</a>
-          <div class="article-metadata search-hit-type">{{type}}</div>
-          <p class="search-hit-description">{{snippet}}</p>
+        <div class="search-hit-content">
+          <div class="search-hit-name">
+            <a href="{{relpermalink}}">{{title}}</a>
+            <div class="article-metadata search-hit-type">{{type}}</div>
+            <p class="search-hit-description">{{snippet}}</p>
+          </div>
         </div>
-      </div>
       </div>
     </script>
     
@@ -2034,6 +2032,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
     
 
+    
     
     
 
@@ -2051,6 +2050,18 @@
 
     
     
+      
+      
+      
+      
+      
+      
+      
+    
+
+    
+    
+    
     
     
     
@@ -2059,11 +2070,10 @@
     
     
       
+      
     
     
-    
-    
-    <script src="/js/wowchemy.min.7c1f36db068b19853b100160e00076ac.js"></script>
+    <script src="/js/wowchemy.min.297f736e130400781cfee00eff1f1afd.js"></script>
 
     
 

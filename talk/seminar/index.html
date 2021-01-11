@@ -78,7 +78,7 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous" media="print" onload="this.media='all'">
 
     
     
@@ -89,14 +89,14 @@
       
       
         
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github.min.css" crossorigin="anonymous" title="hl-light">
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
         
       
     
 
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.css" integrity="sha512-1xoFisiGdy9nvho8EgXuXvnpR5GAMSjFwp40gSRE3NwdUdIMIKuPa7bqoUhLD0O/5tPNhteAsE5XyyMi5reQVA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.css" integrity="sha512-1xoFisiGdy9nvho8EgXuXvnpR5GAMSjFwp40gSRE3NwdUdIMIKuPa7bqoUhLD0O/5tPNhteAsE5XyyMi5reQVA==" crossorigin="anonymous" media="print" onload="this.media='all'">
     
 
     
@@ -234,8 +234,8 @@
   
     
       
-      
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
     
   
 
@@ -243,7 +243,8 @@
   
   
   
-  <link rel="stylesheet" href="/css/wowchemy.min.8e43d31e888508b173bbc2cc83c6a116.css">
+  
+  <link rel="stylesheet" href="/css/wowchemy.32968a9cbe927b8fff0a8da87b3f87fd.css">
 
   
 
@@ -268,7 +269,10 @@
 
   
 
+  
   <link rel="manifest" href="/index.webmanifest">
+  
+
   <link rel="icon" type="image/png" href="/images/icon_hub0cb53550ede56fdccc60540659dbf84_11803_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="/images/icon_hub0cb53550ede56fdccc60540659dbf84_11803_192x192_fill_lanczos_center_2.png">
 
@@ -303,55 +307,6 @@
 
 
   
-    
-
-
-
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Event",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://haowong.com/talk/seminar/"
-  },
-  "name": "Seminar on security \u0026 networking",
-  
-  "location": {
-    "@type": "Place",
-    "name": "Tencent Meeting",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Jiangsu Provincial Key Laboratory of Network \u0026 Information Security",
-      "addressLocality": "",
-      "postalCode": "",
-      "addressRegion": "",
-      "addressCountry": ""
-    }
-    
-  },
-  
-  
-  "image": [
-    "https://haowong.com/talk/seminar/featured.jpg"
-  ],
-  
-  "startDate": "2020-12-22T18:30:00Z",
-  
-  "endDate": "2020-12-22T19:00:00Z",
-  
-  
-  "performer": {
-    "@type": "Person",
-    "name": "HaoWong"
-  },
-  
-  "description": "All for Lora"
-}
-</script>
-
-  
 
 
   
@@ -375,9 +330,14 @@
   
   
   
-  <script src="/js/wowchemy-init.js"></script>
+  
+  
+  
+  <script src="/js/wowchemy-init.min.7264cf0eba3b66951b36da7d2cecf9c5.js"></script>
 
-  <aside class="search-results" id="search">
+  
+
+<aside class="search-modal" id="search">
   <div class="container">
     <section class="search-header">
 
@@ -386,16 +346,22 @@
           <h1>Search</h1>
         </div>
         <div class="col-6 col-search-close">
-          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+          <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
         </div>
       </div>
 
       <div id="search-box">
         
         <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
-        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control">
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Search...">
         
       </div>
+
+      
+      
+
+      
 
     </section>
     <section class="section-search-results">
@@ -407,6 +373,7 @@
     </section>
   </div>
 </aside>
+
 
 
   <div class="page-header">
@@ -424,7 +391,7 @@
 
 
 <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
-  <div class="container">
+  <div class="container-xl">
 
     
     <div class="d-none d-lg-inline-flex">
@@ -749,6 +716,12 @@
     </div>
 
     <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+      
+      
+        
+      
+
       
       
       <li class="nav-item">
@@ -787,7 +760,7 @@
   </div>
 
   <div class="page-body">
-    <div class="pub">
+    <article class="article">
 
   
 
@@ -833,12 +806,20 @@
   <div>
     
 
-  
-  <span ><a href="/author/haowong/">HaoWong</a></span>
+  <span >
+      <a href="/author/haowong/">HaoWong</a></span>
   </div>
   
   
 
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Dec 22, 2020
+  </span>
   
 
   
@@ -890,7 +871,7 @@
 
 
 
-<a class="btn btn-outline-primary my-1 mr-1" href="/Abstract" target="_blank" rel="noopener">
+<a class="btn btn-outline-primary btn-page-header" href="/Abstract" target="_blank" rel="noopener">
   PDF
 </a>
 
@@ -908,7 +889,7 @@
   
     
   
-<a class="btn btn-outline-primary my-1 mr-1" href="https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWNxU3VvYXg1R2xFdE1Jc2kwNzZXSVFCcHR1aTVnT0xFVVBBUmdtbFdVYUNRdz9lPTA1QXFjYg==.mp3" target="_blank" rel="noopener">
+<a class="btn btn-outline-primary btn-page-header" href="https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWNxU3VvYXg1R2xFdE1Jc2kwNzZXSVFCcHR1aTVnT0xFVVBBUmdtbFdVYUNRdz9lPTA1QXFjYg==.mp3" target="_blank" rel="noopener">
   Slides
 </a>
 
@@ -918,7 +899,7 @@
   
     
   
-<a class="btn btn-outline-primary my-1 mr-1" href="https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOnY6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVZRc1pXX1BHMVpEbmx1QkZTRGpubGtCSWdQY3M0VE51M0o5SDV1MnZzeFpYUT9lPVhwVFkyQw==.mp3" target="_blank" rel="noopener">
+<a class="btn btn-outline-primary btn-page-header" href="https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOnY6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVZRc1pXX1BHMVpEbmx1QkZTRGpubGtCSWdQY3M0VE51M0o5SDV1MnZzeFpYUT9lPVhwVFkyQw==.mp3" target="_blank" rel="noopener">
   Video
 </a>
 
@@ -942,63 +923,6 @@
 
 
   <div class="article-container">
-
-    
-      <h3>Abstract</h3>
-      <p class="pub-abstract">重点关注做了什么工作</p>
-    
-
-    <div class="row">
-      <div class="col-md-1"></div>
-      <div class="col-md-10">
-        <div class="row">
-          <div class="col-12 col-md-3 pub-row-heading">Date</div>
-          <div class="col-12 col-md-9">
-            Dec 22, 2020 6:30 PM &mdash; 7:00 PM
-          </div>
-        </div>
-      </div>
-      <div class="col-md-1"></div>
-    </div>
-    <div class="d-md-none space-below"></div>
-
-    
-    <div class="row">
-      <div class="col-md-1"></div>
-      <div class="col-md-10">
-        <div class="row">
-          <div class="col-12 col-md-3 pub-row-heading">Event</div>
-          <div class="col-12 col-md-9">
-            <a href="https://docs.qq.com/sheet/DRVFQUExjaXZKbVdk?tdsourcetag=s_pcqq_send_grpfile&amp;ADUIN=229077035&amp;ADSESSION=1608636138&amp;ADTAG=CLIENT.QQ.5785_.0&amp;ADPUBNO=27077&amp;tab=BB08J2" target="_blank" rel="noopener">
-            Academic Seminar
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-1"></div>
-    </div>
-    <div class="d-md-none space-below"></div>
-    
-
-    
-    <div class="row">
-      <div class="col-md-1"></div>
-      <div class="col-md-10">
-        <div class="row">
-          <div class="col-12 col-md-3 pub-row-heading">Location</div>
-          <div class="col-12 col-md-9">Tencent Meeting</div>
-          
-            <div class="col-md-3"></div>
-            <div class="col-12 col-md-9">Jiangsu Provincial Key Laboratory of Network & Information Security, </div>
-          
-        </div>
-      </div>
-      <div class="col-md-1"></div>
-    </div>
-    <div class="d-md-none space-below"></div>
-    
-
-    <div class="space-below"></div>
 
     <div class="article-style">
       <div class="alert alert-note">
@@ -1406,7 +1330,7 @@
 
 
   </div>
-</div>
+</article>
   </div>
 
   <div class="page-footer">
@@ -1440,7 +1364,7 @@
     
     
     Published with
-    <a href="https://wowchemy.com" target="_blank" rel="noopener">Wowchemy</a>  —
+    <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a>  —
     the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">
     open source</a> website builder that empowers creators.
     
@@ -1514,42 +1438,18 @@
 
     
     
-    <script>const code_highlighting = true;</script>
-    
-
-    
-    
-    
-    
-    
-    
-    <script>
-      const search_config = {"indexURI":"/index.json","minLength":1,"threshold":0.3};
-      const i18n = {"no_results":"No results found","placeholder":"Search...","results":"results found"};
-      const content_type = {
-        'post': "Posts",
-        'project': "Projects",
-        'publication' : "Publications",
-        'talk' : "Talks",
-        'slides' : "Slides"
-        };
-    </script>
-    
-
-    
-    
 
     
     
     <script id="search-hit-fuse-template" type="text/x-template">
       <div class="search-hit" id="summary-{{key}}">
-      <div class="search-hit-content">
-        <div class="search-hit-name">
-          <a href="{{relpermalink}}">{{title}}</a>
-          <div class="article-metadata search-hit-type">{{type}}</div>
-          <p class="search-hit-description">{{snippet}}</p>
+        <div class="search-hit-content">
+          <div class="search-hit-name">
+            <a href="{{relpermalink}}">{{title}}</a>
+            <div class="article-metadata search-hit-type">{{type}}</div>
+            <p class="search-hit-description">{{snippet}}</p>
+          </div>
         </div>
-      </div>
       </div>
     </script>
     
@@ -1560,6 +1460,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
     
 
+    
     
     
 
@@ -1577,6 +1478,18 @@
 
     
     
+      
+      
+      
+      
+      
+      
+      
+    
+
+    
+    
+    
     
     
     
@@ -1585,11 +1498,10 @@
     
     
       
+      
     
     
-    
-    
-    <script src="/js/wowchemy.min.7c1f36db068b19853b100160e00076ac.js"></script>
+    <script src="/js/wowchemy.min.297f736e130400781cfee00eff1f1afd.js"></script>
 
     
 

@@ -222,7 +222,7 @@
 &lt;li&gt;&lt;a href=&#34;https://www.semtech.com/products/wireless-rf/lora-gateways/sx1302cxxxgw1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;SX1302CxxxGW1&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;与GitHub的&lt;a href=&#34;https://gitee.com/rejeee/gw1302s/commit/b06b85a7c87fce9f7d462f55b5913a3dc0c47df9&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;区别&lt;/a&gt;：
 &lt;ul&gt;
-&lt;li&gt;使用&lt;code&gt;#if USE_I2C_SENSOR ... #endif&lt;/code&gt;注释了 I2C 相关代码&lt;/li&gt;
+&lt;li&gt;使用&lt;code&gt;#if USE_I2C_SENSOR ... #endif&lt;/code&gt;注释了 &lt;a href=&#34;https://github.com/Lora-net/sx1302_hal/issues/28#issuecomment-755148306&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;I2C&lt;/a&gt; 相关代码&lt;/li&gt;
 &lt;li&gt;测试程序中默认的&lt;strong&gt;boardconf.lorawan_public = true&lt;/strong&gt;改成了&lt;strong&gt;boardconf.lorawan_public = false&lt;/strong&gt;，即 &lt;strong&gt;private&lt;/strong&gt; 即 &lt;strong&gt;0x12&lt;/strong&gt;；但这与&lt;strong&gt;global.config&lt;/strong&gt;默认&lt;a href=&#34;https://forum.chirpstack.io/t/relation-between-sync-word-private-network-and-end-nodes/191/13?u=haowong&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;同步字&lt;/a&gt;设置不同，故实际收发与测试时，终端同步字设置相反&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;SX1302_RESET_PIN=23&lt;/strong&gt;改成了&lt;strong&gt;SX1302_RESET_PIN=7&lt;/strong&gt;且去掉了其他GPIO引脚代码 (必须用GPOI7，其他没啥用)&lt;/li&gt;
 &lt;/ul&gt;
@@ -338,7 +338,7 @@
 #include &amp;quot;trace.h&amp;quot; //.. / packet_forwarder / inc / trace.h
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;25-tools&#34;&gt;2.5 tools&lt;/h2&gt;
-&lt;p&gt;lgw_receive接收到的包调用其crc函数校验&lt;/p&gt;
+&lt;p&gt;lgw_receive接收到的包调用其crc函数校验，与private function: crc16有本质区别&lt;/p&gt;
 &lt;h2 id=&#34;26-注意&#34;&gt;2.6 注意&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;.h文件介绍用法，.c文件介绍实现，都需要看&lt;/li&gt;
@@ -1803,7 +1803,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-981257346&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-642985713&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -1813,7 +1813,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-981257346&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-642985713&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
@@ -2017,18 +2017,10 @@ You found me!
 {{&amp;lt; /spoiler &amp;gt;}}
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;renders as&lt;/p&gt;
-&lt;div class=&#34;spoiler &#34; &gt;
-  &lt;p&gt;
-    &lt;a class=&#34;btn btn-primary&#34; data-toggle=&#34;collapse&#34; href=&#34;#spoiler-2&#34; role=&#34;button&#34; aria-expanded=&#34;false&#34; aria-controls=&#34;spoiler-2&#34;&gt;
-      Click to view the spoiler
-    &lt;/a&gt;
-  &lt;/p&gt;
-  &lt;div class=&#34;collapse card &#34; id=&#34;spoiler-2&#34;&gt;
-    &lt;div class=&#34;card-body&#34;&gt;
-      You found me!
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
+&lt;details class=&#34;spoiler &#34;  id=&#34;spoiler-2&#34;&gt;
+  &lt;summary&gt;Click to view the spoiler&lt;/summary&gt;
+  &lt;p&gt;You found me!&lt;/p&gt;
+&lt;/details&gt;
 &lt;h3 id=&#34;icons&#34;&gt;Icons&lt;/h3&gt;
 &lt;p&gt;Academic enables you to use a wide range of &lt;a href=&#34;https://sourcethemes.com/academic/docs/page-builder/#icons&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;icons from &lt;em&gt;Font Awesome&lt;/em&gt; and &lt;em&gt;Academicons&lt;/em&gt;&lt;/a&gt; in addition to &lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/#emojis&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;emojis&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Here are some examples using the &lt;code&gt;icon&lt;/code&gt; shortcode to render icons:&lt;/p&gt;

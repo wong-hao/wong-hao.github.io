@@ -43,7 +43,7 @@
 &lt;li&gt;&lt;a href=&#34;https://www.semtech.com/products/wireless-rf/lora-gateways/sx1302cxxxgw1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;SX1302CxxxGW1&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;与GitHub的&lt;a href=&#34;https://gitee.com/rejeee/gw1302s/commit/b06b85a7c87fce9f7d462f55b5913a3dc0c47df9&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;区别&lt;/a&gt;：
 &lt;ul&gt;
-&lt;li&gt;使用&lt;code&gt;#if USE_I2C_SENSOR ... #endif&lt;/code&gt;注释了 I2C 相关代码&lt;/li&gt;
+&lt;li&gt;使用&lt;code&gt;#if USE_I2C_SENSOR ... #endif&lt;/code&gt;注释了 &lt;a href=&#34;https://github.com/Lora-net/sx1302_hal/issues/28#issuecomment-755148306&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;I2C&lt;/a&gt; 相关代码&lt;/li&gt;
 &lt;li&gt;测试程序中默认的&lt;strong&gt;boardconf.lorawan_public = true&lt;/strong&gt;改成了&lt;strong&gt;boardconf.lorawan_public = false&lt;/strong&gt;，即 &lt;strong&gt;private&lt;/strong&gt; 即 &lt;strong&gt;0x12&lt;/strong&gt;；但这与&lt;strong&gt;global.config&lt;/strong&gt;默认&lt;a href=&#34;https://forum.chirpstack.io/t/relation-between-sync-word-private-network-and-end-nodes/191/13?u=haowong&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;同步字&lt;/a&gt;设置不同，故实际收发与测试时，终端同步字设置相反&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;SX1302_RESET_PIN=23&lt;/strong&gt;改成了&lt;strong&gt;SX1302_RESET_PIN=7&lt;/strong&gt;且去掉了其他GPIO引脚代码 (必须用GPOI7，其他没啥用)&lt;/li&gt;
 &lt;/ul&gt;
@@ -159,7 +159,7 @@
 #include &amp;quot;trace.h&amp;quot; //.. / packet_forwarder / inc / trace.h
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;25-tools&#34;&gt;2.5 tools&lt;/h2&gt;
-&lt;p&gt;lgw_receive接收到的包调用其crc函数校验&lt;/p&gt;
+&lt;p&gt;lgw_receive接收到的包调用其crc函数校验，与private function: crc16有本质区别&lt;/p&gt;
 &lt;h2 id=&#34;26-注意&#34;&gt;2.6 注意&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;.h文件介绍用法，.c文件介绍实现，都需要看&lt;/li&gt;
