@@ -646,7 +646,7 @@ concentrator.&lt;/li&gt;
       <guid>https://haowong.com/project/internal-project/</guid>
       <description>&lt;h1 id=&#34;1-lora调制解调基础知识&#34;&gt;1 LoRa调制解调基础知识&lt;/h1&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.semtech.com/search/results?keywords=Modulation&amp;#43;Basics%2A&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Semetech Modulation Basics&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.semtech.com/search/results?keywords=Modulation&amp;#43;Basics%2A&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Semtech Modulation Basics&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;chip、chirp/symbol、bit：
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://electronics.stackexchange.com/questions/278192/understanding-the-relationship-between-lora-chips-chirps-symbols-and-bits&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;stackexchange&lt;/a&gt;，结合上面的看&lt;/li&gt;
@@ -663,7 +663,7 @@ concentrator.&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://revspace.nl/DecodingLora&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DecodingLora&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.rfwireless-world.com/Terminology/What-is-difference-between-Implicit-header-and-Explicit-header-in-LoRaWAN-packet.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Implicit header and Explicit header&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://myriadrf.org/news/lora-modem-limesdr/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Demodulation&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://lora-developers.semtech.com/knowledge-base/faq/P40&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Semetech&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://lora-developers.semtech.com/knowledge-base/faq/P40&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Semtech&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;lorawan mac command：&lt;a href=&#34;https://lora-alliance.org/lorawan-for-developers&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Core LoRaWAN Specification&lt;/a&gt;&lt;/li&gt;
@@ -1034,7 +1034,6 @@ raspberrypi2    0016c001ff10d3f7    -              苏州市           在线   
 &lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://openchirp.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;OpenChirp&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.lancaster.ac.uk/scc/sites/lora/lorasim.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoraSim&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://apac.iot.semtech.cloud/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Semtech network test servers&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://cn1.loriot.io/dashboard&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Loriot&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;上面所有需要自行安装Stack的方法都需要注意：&lt;strong&gt;&lt;a href=&#34;https://help.aliyun.com/document_detail/25475.html?spm=a2c4g.11186623.2.14.81c071afVJYuXn#allowRemoteAccess&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;阿里云服务器配置&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
 &lt;/ol&gt;
@@ -1060,14 +1059,14 @@ UDP             1700/1700        0.0.0.0/0
 &lt;h3 id=&#34;444-adr&#34;&gt;4.4.4 ADR&lt;/h3&gt;
 &lt;p&gt;&lt;a href=&#34;https://lora-alliance.org/lorawan-for-developers&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Core LoRaWAN Specification&lt;/a&gt;：NS发送&lt;code&gt;LinkADRReq&lt;/code&gt;到device&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;http://lora.timeddd.com/forum.php?mod=viewthread&amp;amp;tid=428&amp;amp;extra=page%3D1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoraWAN论坛&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVZiNEttMzVTVWRMclNTMl91elRLaW9CZTNSLVJCakVVb3JINEFtZ0VpVW5jdz9lPXlFWXI1bA==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Semetech1&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVZiNEttMzVTVWRMclNTMl91elRLaW9CZTNSLVJCakVVb3JINEFtZ0VpVW5jdz9lPXlFWXI1bA==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Semtech1&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.sghoslya.com/p/how-does-lorawan-nodes-changes-their.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Sakshama Ghoslya&lt;/a&gt;，对上面的补充&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVNxdEZVbm9hQUpQaGZycl9nbTBDMjBCZFM4Wk1hQzFBZ2l6Z0p5bXJFcTdhQT9lPUhTOU1Gdw==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Semetech2&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://lora-developers.semtech.com/library/tech-papers-and-guides/understanding-adr/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Semetech3&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVNxdEZVbm9hQUpQaGZycl9nbTBDMjBCZFM4Wk1hQzFBZ2l6Z0p5bXJFcTdhQT9lPUhTOU1Gdw==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Semtech2&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://lora-developers.semtech.com/library/tech-papers-and-guides/understanding-adr/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Semtech3&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;45-application-server-console&#34;&gt;4.5 Application Server console&lt;/h2&gt;
 &lt;h3 id=&#34;451-去重&#34;&gt;4.5.1 去重&lt;/h3&gt;
 &lt;p&gt;&lt;a href=&#34;http://lora.timeddd.com/forum.php?mod=viewthread&amp;amp;tid=478&amp;amp;extra=page%3D1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoraWAN论坛&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://lora-developers.semtech.com/library/tech-papers-and-guides/lora-and-lorawan/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Semetech&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://lora-developers.semtech.com/library/tech-papers-and-guides/lora-and-lorawan/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Semtech&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&#34;452-下行通信&#34;&gt;4.5.2 下行通信&lt;/h3&gt;
 &lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/freemote/article/details/90315395&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;freemote&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://forum.chirpstack.io/t/how-to-get-downlink-communication/9816/3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Chirpstack&lt;/a&gt;&lt;/p&gt;
@@ -1089,8 +1088,8 @@ UDP             1700/1700        0.0.0.0/0
 &lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/freemote/article/details/106361732&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;freemote&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.instructables.com/Store-Messages-From-Mosquitto-MQTT-Broker-Into-SQL/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;MQTT数据（有效负载）存储到数据库中的方法&lt;/a&gt;&lt;/p&gt;
 &lt;h4 id=&#34;4612-mqtt下行通信&#34;&gt;4.6.1.2 MQTT下行通信&lt;/h4&gt;
-&lt;p&gt;&lt;a href=&#34;https://lora-developers.semtech.com/library/tech-papers-and-guides/lorawan-class-a-devices&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Semetech1&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://lora-developers.semtech.com/library/tech-papers-and-guides/lorawan-class-b-devices&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Semetech2&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://lora-developers.semtech.com/library/tech-papers-and-guides/lorawan-class-a-devices&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Semtech1&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://lora-developers.semtech.com/library/tech-papers-and-guides/lorawan-class-b-devices&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Semtech2&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.chirpstack.io/project/architecture/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Chirpstack1&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://forum.chirpstack.io/t/how-to-get-downlink-communication/9816/3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Chirpstack2&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/13154904.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;AnswerInTheWind&lt;/a&gt;&lt;/p&gt;
@@ -1803,7 +1802,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-642985713&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-816293574&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -1813,7 +1812,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-642985713&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-816293574&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
