@@ -133,11 +133,6 @@
   </url>
   
   <url>
-    <loc>https://haowong.com/files/</loc>
-    <lastmod>2020-09-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://haowong.com/2020/09/09/%E7%AC%AC%E5%85%AB%E6%AC%A1%E6%B1%87%E6%8A%A5/</loc>
     <lastmod>2020-09-09T00:00:00+00:00</lastmod>
   </url>
@@ -285,6 +280,10 @@
   <url>
     <loc>https://haowong.com/publication/conference-paper/</loc>
     <lastmod>2013-07-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://haowong.com/about/</loc>
   </url>
   
   <url>
