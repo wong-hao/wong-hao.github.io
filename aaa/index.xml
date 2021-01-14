@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>docs | Room of Requirement</title>
+    <link>https://haowong.com/aaa/</link>
+      <atom:link href="https://haowong.com/aaa/index.xml" rel="self" type="application/rss+xml" />
+    <description>docs</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>©</copyright><lastBuildDate>Sun, 09 Sep 2018 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://haowong.com/images/icon_hub0cb53550ede56fdccc60540659dbf84_11803_512x512_fill_lanczos_center_2.png</url>
+      <title>docs</title>
+      <link>https://haowong.com/aaa/</link>
+    </image>
+    
+  </channel>
+</rss>

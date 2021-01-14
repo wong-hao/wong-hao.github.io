@@ -1,28 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Fathers | Room of Requirement</title>
+    <title>Courses | Room of Requirement</title>
     <link>https://haowong.com/father/</link>
       <atom:link href="https://haowong.com/father/index.xml" rel="self" type="application/rss+xml" />
-    <description>Fathers</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>©</copyright><lastBuildDate>Thu, 28 Jun 2018 00:00:00 +0100</lastBuildDate>
+    <description>Courses</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>©</copyright><lastBuildDate>Sun, 05 May 2019 00:00:00 +0100</lastBuildDate>
     <image>
       <url>https://haowong.com/images/icon_hub0cb53550ede56fdccc60540659dbf84_11803_512x512_fill_lanczos_center_2.png</url>
-      <title>Fathers</title>
+      <title>Courses</title>
       <link>https://haowong.com/father/</link>
     </image>
-    
-    <item>
-      <title>Privacy Policy</title>
-      <link>https://haowong.com/father/privacy/</link>
-      <pubDate>Thu, 28 Jun 2018 00:00:00 +0100</pubDate>
-      <guid>https://haowong.com/father/privacy/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;We&amp;rsquo;re having a really bad day.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;The Unicorns have taken over. We&amp;rsquo;re doing our best to get them under control and get GitHub back up and running.&lt;/p&gt;
-&lt;p&gt;Contact Support — GitHub Status — @githubstatus
-&amp;hellip;&lt;/p&gt;
-</description>
-    </item>
     
   </channel>
 </rss>
