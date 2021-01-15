@@ -1,0 +1,10 @@
+{
+    "cSpell.enableFiletypes": [
+        "!markdown",
+        "bibtex",
+        "jupyter",
+        "powershell",
+        "sql",
+        "tex"
+    ]
+}
