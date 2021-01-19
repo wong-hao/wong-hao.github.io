@@ -44,7 +44,7 @@ url_video: ""
 2. Reference design: 
    - [SX1302CxxxGW1](https://www.semtech.com/products/wireless-rf/lora-gateways/sx1302cxxxgw1)
    - 与GitHub的[区别](https://gitee.com/rejeee/gw1302s/commit/b06b85a7c87fce9f7d462f55b5913a3dc0c47df9)：
-     - 使用``#if USE_I2C_SENSOR ... #endif``注释了 [I2C](https://github.com/Lora-net/sx1302_hal/issues/28#issuecomment-755148306) 相关代码
+     - 使用``#if USE_I2C_SENSOR ... #endif``注释了 [I2C](https://github.com/Lora-net/sx1302_hal/issues/28#issuecomment-755148306) 相关代码 (Source Insight 4.0不能看出哪些代码不能实际运行，而VS code可以通过虚化代码显示)
      - 测试程序中默认的**boardconf.lorawan_public = true**改成了**boardconf.lorawan_public = false**，即 **private** 即 **0x12**；但这与**global.config**默认[同步字](https://forum.chirpstack.io/t/relation-between-sync-word-private-network-and-end-nodes/191/13?u=haowong)设置不同，故实际收发与测试时，终端同步字设置相反
      - **SX1302_RESET_PIN=23**改成了**SX1302_RESET_PIN=7**且去掉了其他GPIO引脚代码 (必须用GPOI7，其他没啥用)
 
@@ -86,17 +86,25 @@ url_video: ""
 
 ### 2.1.1 复杂函数
 
-#### 2.1.1.1 thread
+#### 2.1.1.1 signal
+1. https://blog.csdn.net/pmt123456/article/details/53544295
+2. [```system()```](https://blog.csdn.net/joker0910/article/details/6646336)
+
+#### 2.1.1.2 unistd
+1. https://blog.csdn.net/u014470361/article/details/84110216
+
+#### 2.1.1.3 thread
 1. [```pthread_mutex_lock() / pthread_mutex_unlock()```](https://blog.csdn.net/yusiguyuan/article/details/40627775)，注意每次使用时lock的pthread_mutex_t对象都不同
-2. [```pthread_join()```](https://ask.csdn.net/questions/267690?utm_medium=distribute.pc_relevant_t0.none-task-ask_topic-BlogCommendFromBaidu-1.control&depth_1-utm_source=distribute.pc_relevant_t0.none-task-ask_topic-BlogCommendFromBaidu-1.control)
-3. [```phtread_cancel()```](https://www.cnblogs.com/lijunamneg/archive/2013/01/25/2877211.html)
-4. - [```time()```](https://blog.csdn.net/zyex1108/article/details/45154211)
+2. [```pthread_create()```](https://blog.csdn.net/liangxanhai/article/details/7767430)
+3. [```pthread_join()```](https://ask.csdn.net/questions/267690?utm_medium=distribute.pc_relevant_t0.none-task-ask_topic-BlogCommendFromBaidu-1.control&depth_1-utm_source=distribute.pc_relevant_t0.none-task-ask_topic-BlogCommendFromBaidu-1.control)
+4. [```phtread_cancel()```](https://www.cnblogs.com/lijunamneg/archive/2013/01/25/2877211.html)
+5. - [```time()```](https://blog.csdn.net/zyex1108/article/details/45154211)
    - [```gtime()```](https://www.runoob.com/cprogramming/c-function-gmtime.html)
    - [```strftime()```](https://blog.csdn.net/SanQi_Abao/article/details/94964665)：获得stat_timestamp：目前的格林威治时间
    - [```clock_gettime```](https://blog.csdn.net/weixin_44880138/article/details/102605681)
 
-#### 2.1.1.2 socket: 用于gateway与server通信
-1. [```setsockopt()```](https://zhuanlan.zhihu.com/p/77023584)
+#### 2.1.1.4 socket: 用于gateway与server通信
+1. [```setsockopt()```](https://allen.blog.csdn.net/article/details/71078044?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.control&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.control)
 2. [```send()```](https://www.cnblogs.com/jianqiang2010/archive/2010/08/20/1804598.htmll)
 3. [```recv()```](https://www.cnblogs.com/fnlingnzb-learner/p/8523206.html)
 4. [```getaddrinfo()```](https://www.jianshu.com/p/df165c54d0b2)
@@ -104,6 +112,7 @@ url_video: ""
    - for (q=result; q!=NULL; q=q->ai_next)：简单来说就是遍历。因为一个域名可能不止一个IP地址，所以，需要遍历res中的next，如下，是否还有下一个节点(即是否还有下一个IP地址信息)
 6. [```getnameinfo()```]()
 7. [```connect()```](https://blog.csdn.net/cj83111/article/details/5364138)
+8. [字节序](https://www.ruanyifeng.com/blog/2016/11/byte-order.html)
 
 sock_up：
 - init：main
@@ -117,12 +126,12 @@ sock_down：
   - PULL_ACK 
   - PULL_RESP 
 
-#### 2.1.1.3 String
+#### 2.1.1.5 String
 1. [```snprintf()```](https://baike.baidu.com/item/snprintf())
 2. [```modf()```](https://www.runoob.com/cprogramming/c-function-modf.html)
 
-#### 2.1.1.4 Sequence
-[```#if...#endif ```](https://blog.csdn.net/dwell548560/article/details/76187095)
+#### 2.1.1.6 Sequence
+[```#if...#endif ```](https://blog.csdn.net/dwell548560/article/details/76187095): Source Insight 4.0不能看出哪些代码不能实际运行，而VS code可以通过虚化代码显示
 
 ## 2.2 Third party libraries：libtools
 ```cpp
@@ -315,27 +324,32 @@ INFO: [down] PULL_ACK received in 18 ms //like the PUSH_ACK in downstream
 INFO: [down] PULL_ACK received in 23 ms
 INFO: [down] PULL_ACK received in 23 ms
 
-INFO: Received pkt from mote: 1350200C (fcnt=40)
+INFO: [up] PUSH_ACK received in 38 ms
 
-JSON up: {"rxpk":[{"jver":1,"tmst":86523675,"chan":5,"rfch":1,"freq":476.400000,"mid": 1,"stat":1,"modu":"LORA","datr":"SF12BW125","codr":"4/5","rssis":-60,"lsnr":0.0,"foff":-108,"rssi":-59,"size":13,"data":"gQwgUBMAKAAoABI0Vg=="}]}
-INFO: [up] PUSH_ACK received in 20 ms
+INFO: Received pkt from mote: 1350200C (fcnt=34)
 
-/* main loop task : statistics collection */
-/* display a report */
-##### 2021-01-01 15:35:43 GMT ##### 
+JSON up: {"rxpk":[{"jver":1,"tmst":70224668,"chan":5,"rfch":1,"freq":476.400000,"mid": 1,"stat":1,"modu":"LORA","datr":"SF12BW125","codr":"4/5","rssis":-75,"lsnr":0.8,"foff":166,"rssi":-73,"size":25,"data":"gQwgUBMAIgAiAKGyw9TloaKjpKWmp6ipqg=="}]}
+INFO: [up] PUSH_ACK received in 38 ms
+
+INFO: Received pkt from mote: 1350200C (fcnt=35)
+
+JSON up: {"rxpk":[{"jver":1,"tmst":80227818,"chan":5,"rfch":1,"freq":476.400000,"mid": 1,"stat":1,"modu":"LORA","datr":"SF12BW125","codr":"4/5","rssis":-77,"lsnr":0.2,"foff":167,"rssi":-75,"size":25,"data":"gQwgUBMAIwAjAKGyw9TloaKjpKWmp6ipqg=="}]}
+INFO: [up] PUSH_ACK received in 38 ms
+
+##### 2021-01-19 02:36:12 GMT #####
 ### [UPSTREAM] ###
-# RF packets received by concentrator: 3
-# CRC_OK: 33.33%, CRC_FAIL: 66.67%, NO_CRC: 0.00%
-# RF packets forwarded: 1 (13 bytes)
-# PUSH_DATA datagrams sent: 2 (359 bytes)
+# RF packets received by concentrator: 4
+# CRC_OK: 50.00%, CRC_FAIL: 50.00%, NO_CRC: 0.00%
+# RF packets forwarded: 2 (50 bytes)
+# PUSH_DATA datagrams sent: 3 (624 bytes)
 # PUSH_DATA acknowledged: 100.00%
 ### [DOWNSTREAM] ###
-# PULL_DATA sent: 3 (100.00% acknowledged)
+# PULL_DATA sent: 0 (0.00% acknowledged)
 # PULL_RESP(onse) datagrams received: 0 (0 bytes)
 # RF packets sent to concentrator: 0 (0 bytes)
 # TX errors: 0
 ### SX1302 Status ###
-# SX1302 counter (INST): 90943261
+# SX1302 counter (INST): 90941928
 # SX1302 counter (PPS):  0
 # BEACON queued: 0
 # BEACON sent so far: 0
@@ -349,10 +363,11 @@ src/jitqueue.c:440:jit_print_queue(): INFO: [jit] queue is empty
 ERROR: invalid I2C file descriptor
 ### Concentrator temperature unknown ###
 ##### END #####
-/* generate a JSON report (will be sent to server by upstream thread) */
-JSON up: {"stat":{"time":"2021-01-01 15:35:43 GMT","rxnb":3,"rxok":1,"rxfw":1,"ackr":100.0,"dwnb":0,"txnb":0,"temp":0.0}}
-INFO: [up] PUSH_ACK received in 20 ms
+
+JSON up: {"stat":{"time":"2021-01-19 02:36:12 GMT","rxnb":2,"rxok":2,"rxfw":2,"ackr":100.0,"dwnb":0,"txnb":0,"temp":0.0}}
+INFO: [up] PUSH_ACK received in 38 ms
 ```
+
 ---
 
 
