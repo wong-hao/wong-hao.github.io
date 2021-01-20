@@ -184,6 +184,7 @@ ERROR: [main] failed to start the concentrator
 
 ## 4.2 Devices/End Nodes
 
+### 4.2.1 评估板
   **[M-HL9-EV](http://www.njrjzn.com/chanpinzhongxin/SX127xmozuxilie/4.html)**
   1. [进入配置方法](http://www.rejeee.com/documents/APP_DOC/M-KL9_how_to_enter_configuration_mode.pdf)
   2. [**M-KL9**参数意义](http://www.rejeee.com/documents/APP_DOC/M-KL9_parameter.pdf)，具体配置参数看用户手册
@@ -223,25 +224,7 @@ ERROR: [main] failed to start the concentrator
 6. - 发送接收均用的**Hex**，内容单位Byte，可在串口工具下方看到tx大小
    - 但网关接收到的为PHYpayload，是发送的数据tx加上其他部分(10bytes)
 
-### 4.2.1 入网
-
-#### 4.2.1.1 概述
-
-[AnswerInTheWind](https://www.cnblogs.com/answerinthewind/p/6213027.html)
-
-[TTN](https://www.thethingsnetwork.org/docs/lorawan/addressing.html)
-
-#### 4.2.1.2 ABP
-[RAKwireless](https://blog.csdn.net/RAKwireless/article/details/106186894)
-
-[Chirpstack](https://www.chirpstack.io/application-server/use/devices/)
-
-#### 4.2.1.3 OTAA
-[RAKwireless](https://blog.csdn.net/RAKwireless/article/details/106135373)
-
-[AnswerInTheWind](https://www.cnblogs.com/answerinthewind/p/6213529.html)
-
-#### 4.2.1.4 Rejeee
+#### 4.2.1.1 Rejeee
 
 [这家的节点不支持LoRaWAN，节点只有私有协议的](https://www.cnblogs.com/answerinthewind/p/13517529.html#4758586)
 
@@ -253,10 +236,29 @@ ERROR: [main] failed to start the concentrator
 
 - [ ] 弄清楚[私有网络](https://forum.chirpstack.io/t/relation-between-sync-word-private-network-and-end-nodes/191/13?u=haowong)/非LoRaWAN网络怎么导出数据
 
+### 4.2.2 End device
+比评估板复杂，有时候是module+raspberrypi，有时候是module+stem32
 
+#### 4.2.2.1 入网
+
+##### 4.2.2.1.1 概述
+
+[AnswerInTheWind](https://www.cnblogs.com/answerinthewind/p/6213027.html)
+
+[TTN](https://www.thethingsnetwork.org/docs/lorawan/addressing.html)
+
+##### 4.2.2.1.2 ABP
+[RAKwireless](https://blog.csdn.net/RAKwireless/article/details/106186894)
+
+[Chirpstack](https://www.chirpstack.io/application-server/use/devices/)
+
+##### 4.2.2.1.3 OTAA
+[RAKwireless](https://blog.csdn.net/RAKwireless/article/details/106135373)
+
+[AnswerInTheWind](https://www.cnblogs.com/answerinthewind/p/6213529.html)
 
 ## 4.3 Gateway
-
+### 4.3.1 Real module
 **SX1302**
 1. [Semtech](https://www.semtech.com/products/wireless-rf/lora-gateways/sx1302cxxxgw1)
 2. [Rejeee](http://www.njrjzn.com/chanpinzhongxin/SX1302mozuxilie/28.html)
@@ -271,6 +273,10 @@ ERROR: [main] failed to start the concentrator
   - [Gitee版本](https://gitee.com/rejeee/gw1302s/commit/c425b67a5ccaaef0dd1042da08974245124c069b)直接增加了一个文件**gw1302s/packet_forwarder/global_conf.json**，其特点是**gateway_conf**下面的**server_address**[由localhost修改为了loragw.things.qcloud.com](https://blog.csdn.net/RAKwireless/article/details/107101582)
   - ``make install_conf``即安装**global_conf.json**
   - 卖家给的[攻略](https://www.cnblogs.com/answerinthewind/p/13154904.html)跟用``install.sh``生成的主要差别在radio_1与radio_2的**ferq**不同，攻略的效果好；官方的[参考文献](https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVQzOWdIRUc4YU5DbHFMVzBjRGkwVjBCZjZGQmUzWUpkSnh0YVhXbUlLdnFtUT9lPW9qNjEzcg==.mp3)给出了**global_conf.json**的参数意义
+
+### 4.3.2 SDR
+1. [GUNRadio](https://www.gnuradio.org/)
+2. 与Software-defined radio (SDR)设备共用，如USRP N210、USRP B210、hackrf
 
 ## 4.4 LoraWAN Network Server
 ---
@@ -457,7 +463,3 @@ ERROR: [main] failed to start the concentrator
 - [TTN](https://www.loracloud.com/documentation/device_management?url=gettingstarted.html#example-minimal-integration-with-the-things-network)
 
 
-
-# 5 其他
-1. [GUNRadio](https://www.gnuradio.org/)
-2. 与Software-defined radio (SDR)设备共用，如USRP、hackrf
