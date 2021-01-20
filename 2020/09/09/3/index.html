@@ -34,10 +34,17 @@
   
     
   
-  <meta name="description" content="没学过">
+  <meta name="description" content="1 问题
+
+ ADR原理及如何在NS上实现/开启
+ TTN[11]
+ 美化ppt布局
+ 根据作者演讲和ppt修改自己的ppt
+ 与seminar No.3很像，都是根据比目前已有的SF选择方法&rsquo;ADR&rsquo;更好的输入输出模型选择SF
+">
 
   
-  <link rel="alternate" hreflang="en-us" href="https://haowong.com/courses/course2/">
+  <link rel="alternate" hreflang="en-us" href="https://haowong.com/2020/09/09/3/">
 
   
 
@@ -265,8 +272,6 @@
   
 
   
-  <link rel="alternate" href="/courses/course2/index.xml" type="application/rss+xml" title="Room of Requirement">
-  
 
   
   <link rel="manifest" href="/index.webmanifest">
@@ -275,7 +280,7 @@
   <link rel="icon" type="image/png" href="/images/icon_hub0cb53550ede56fdccc60540659dbf84_11803_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="/images/icon_hub0cb53550ede56fdccc60540659dbf84_11803_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="https://haowong.com/courses/course2/">
+  <link rel="canonical" href="https://haowong.com/2020/09/09/3/">
 
   
   
@@ -291,18 +296,70 @@
   <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Room of Requirement">
-  <meta property="og:url" content="https://haowong.com/courses/course2/">
-  <meta property="og:title" content="Overview | Room of Requirement">
-  <meta property="og:description" content="没学过"><meta property="og:image" content="https://haowong.com/images/icon_hub0cb53550ede56fdccc60540659dbf84_11803_512x512_fill_lanczos_center_2.png">
+  <meta property="og:url" content="https://haowong.com/2020/09/09/3/">
+  <meta property="og:title" content="3 | Room of Requirement">
+  <meta property="og:description" content="1 问题
+
+ ADR原理及如何在NS上实现/开启
+ TTN[11]
+ 美化ppt布局
+ 根据作者演讲和ppt修改自己的ppt
+ 与seminar No.3很像，都是根据比目前已有的SF选择方法&rsquo;ADR&rsquo;更好的输入输出模型选择SF
+"><meta property="og:image" content="https://haowong.com/images/icon_hub0cb53550ede56fdccc60540659dbf84_11803_512x512_fill_lanczos_center_2.png">
   <meta property="twitter:image" content="https://haowong.com/images/icon_hub0cb53550ede56fdccc60540659dbf84_11803_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
   
-    <meta property="og:updated_time" content="2020-10-12T00:00:00&#43;00:00">
+    
+      <meta property="article:published_time" content="2020-09-09T00:00:00&#43;00:00">
+    
+    <meta property="article:modified_time" content="2020-09-09T00:00:00&#43;00:00">
   
 
   
 
 
+    
 
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://haowong.com/2020/09/09/3/"
+  },
+  "headline": "3",
+  
+  "datePublished": "2020-09-09T00:00:00Z",
+  "dateModified": "2020-09-09T00:00:00Z",
+  
+  "author": {
+    "@type": "Person",
+    "name": "HaoWong"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Room of Requirement",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://haowong.com/images/icon_hub0cb53550ede56fdccc60540659dbf84_11803_192x192_fill_lanczos_center_2.png"
+    }
+  },
+  "description": "\u003ch3 id=\"1-问题\"\u003e1 问题\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cinput disabled=\"\" type=\"checkbox\"\u003e ADR原理及如何在NS上实现/开启\u003c/li\u003e\n\u003cli\u003e\u003cinput disabled=\"\" type=\"checkbox\"\u003e TTN[11]\u003c/li\u003e\n\u003cli\u003e\u003cinput disabled=\"\" type=\"checkbox\"\u003e 美化ppt布局\u003c/li\u003e\n\u003cli\u003e\u003cinput checked=\"\" disabled=\"\" type=\"checkbox\"\u003e 根据作者演讲和ppt修改自己的ppt\u003c/li\u003e\n\u003cli\u003e\u003cinput disabled=\"\" type=\"checkbox\"\u003e 与seminar No.3很像，都是根据比目前已有的SF选择方法\u0026rsquo;ADR\u0026rsquo;更好的输入输出模型选择SF\u003c/li\u003e\n\u003c/ul\u003e"
+}
+</script>
+
+  
 
   
 
@@ -310,10 +367,13 @@
   
 
 
+  
 
 
 
-  <title>Overview | Room of Requirement</title>
+
+
+  <title>3 | Room of Requirement</title>
 
 </head>
 
@@ -496,136 +556,243 @@
   </div>
 
   <div class="page-body">
+    <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>3</h1>
+
+  
+
+  
     
 
-<div class="container-fluid docs">
-  <div class="row flex-xl-nowrap">
-    <div class="col-12 col-md-3 col-xl-2 docs-sidebar">
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+  <span >
+      <a href="/author/haowong/">HaoWong</a></span>
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
       
+    
+    Sep 9, 2020
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    1 min read
+  </span>
+  
+
+  
+  
+  
+  
+  
+  <span class="middot-divider"></span>
+  <a href="/2020/09/09/3/#disqus_thread"></a>
+  
+
+  
+  
+  <span class="middot-divider"></span>
+  <span class="article-categories">
+    <i class="fas fa-folder mr-1"></i><a href="/category/%E6%B1%87%E6%8A%A5/">汇报</a></span>
+  
+
+</div>
+
+    
+
+
+
+
+<div class="btn-links mb-3">
+  
+  
 
 
 
 
 
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
   
     
   
+<a class="btn btn-outline-primary btn-page-header" href="https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVRIb2JKYTJNRjVQak44Q1RqQkswbHdCQmo1V3NOdTNMczBHVlJ3ZWFzZWZjZz9lPU5rTU1uMA==.mp3" target="_blank" rel="noopener">
+  Source Document
+</a>
 
 
 
 
-<form class="docs-search d-flex align-items-center">
-  <button class="btn docs-toggle d-md-none p-0 mr-3" type="button" data-toggle="collapse" data-target="#docs-nav" aria-controls="docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
-    <span><i class="fas fa-bars"></i></span>
-  </button>
-
-  
-  <input name="q" type="search" class="form-control" placeholder="Search..." autocomplete="off">
-  
-</form>
-
-<nav class="collapse docs-links" id="docs-nav">
-  
-
-  
-  
-  
-    
-  
-
-  
-  <div class="docs-toc-item">
-    <a class="docs-toc-link" href="/courses/courselist/">课表</a>
-
-  </div>
-  
-  <div class="docs-toc-item">
-    <a class="docs-toc-link" href="/courses/course1/">计算机网络体系结构</a>
-
-  </div>
-  
-  <div class="docs-toc-item active">
-    <a class="docs-toc-link" href="/courses/course2/">模式识别</a>
-
-  </div>
-  
-  <div class="docs-toc-item">
-    <a class="docs-toc-link" href="/courses/course3/">数据库管理系统及其实现</a>
-
-  </div>
-  
-  <div class="docs-toc-item">
-    <a class="docs-toc-link" href="/courses/course4/">万维网科学</a>
-
-  </div>
-  
-  <div class="docs-toc-item">
-    <a class="docs-toc-link" href="/courses/course5/">算法设计与分析</a>
-
-  </div>
-  
-  
-</nav>
-
-    </div>
-
-    
-    <div class="d-none d-xl-block col-xl-2 docs-toc">
-      <ul class="nav toc-top">
-        <li><a href="#" id="back_to_top" class="docs-toc-title">Contents</a></li>
-      </ul>
-
-      <nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#1-课件">1 课件</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-
-      
-    </div>
-    
-
-    <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 docs-content" role="main">
-
-      <article class="article">
-
-        <div class="docs-article-container">
-          <h1>Overview</h1>
-
-          <div class="article-style">
-            <h3 id="1-课件">1 课件</h3>
-<h4 id="11-总览">1.1 总览</h4>
-<p><a href="https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmY6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWo1VV9CanRVOTVCc3lEaHhleUphM3NCLVZ0cWxEOGdzbEYtZmZrUTZSdV9WQT9lPXFvOFB0dw==.mp3" target="_blank" rel="noopener">下载</a></p>
-<h4 id="12-教材">1.2 教材</h4>
-<p><a href="https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVJncmRUTFlfbGxNaldaQk41aTdvUDRCamNzWnZ5MnVnX2p2Ump6YTI0dEdiZz9lPWxmR1o5aw==.mp3" target="_blank" rel="noopener">原版</a></p>
-<p><a href="https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVZ5NGNhbEI4M05KcUctaEg4X3FFNElCN1hHZy1HSzJaZTFPTkdqV1FpQkluQT9lPW5abm5LcQ==.mp3" target="_blank" rel="noopener">翻译</a></p>
-
-          </div>
-
-          
+</div>
 
 
-
-          
-          <div class="article-widget">
-            
-<div class="post-nav">
-  
   
 </div>
 
-          </div>
-          
-        </div>
 
-        <div class="body-footer">
-          <p>Last updated on Oct 12, 2020</p>
 
-          
+  <div class="article-container">
+
+    <div class="article-style">
+      <h3 id="1-问题">1 问题</h3>
+<ul>
+<li><input disabled="" type="checkbox"> ADR原理及如何在NS上实现/开启</li>
+<li><input disabled="" type="checkbox"> TTN[11]</li>
+<li><input disabled="" type="checkbox"> 美化ppt布局</li>
+<li><input checked="" disabled="" type="checkbox"> 根据作者演讲和ppt修改自己的ppt</li>
+<li><input disabled="" type="checkbox"> 与seminar No.3很像，都是根据比目前已有的SF选择方法&rsquo;ADR&rsquo;更好的输入输出模型选择SF</li>
+</ul>
+<h3 id="2-源文件">2 源文件</h3>
+<h4 id="21-作者的演讲">2.1 作者的演讲</h4>
+<p><a href="https://www.youtube.com/watch?v=-z16odpf_eg&amp;feature=youtu.be" target="_blank" rel="noopener">31′40″</a></p>
+<h4 id="22-作者的ppt">2.2 作者的ppt</h4>
+<p><a href="https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWExWHZzd0V0dGxEazVjdkc1dDhmTVlCaDFwUm5XbUxLdnA1QzQzWmYyUW9vdz9lPWFCT3RvbA==.mp3" target="_blank" rel="noopener">下载</a></p>
+<h4 id="22-会议的详情">2.2 会议的详情</h4>
+<p><a href="https://icnp20.cs.ucr.edu/program.html#posterdemo" target="_blank" rel="noopener">ICNP 2020</a></p>
+    </div>
+
+    
+
+
+
+
+
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://haowong.com/2020/09/09/3/&amp;text=3" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://haowong.com/2020/09/09/3/&amp;t=3" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=3&amp;body=https://haowong.com/2020/09/09/3/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://haowong.com/2020/09/09/3/&amp;title=3" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://haowong.com/2020/09/09/3/&amp;title=3" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
 
 
 
@@ -634,17 +801,120 @@
 
   
   
-
-<p class="edit-page">
-  <a href="https://github.com/gcushen/hugo-academic/edit/master/content/courses%5ccourse2%5c_index.md">
-    <i class="fas fa-pen pr-2"></i>Edit this page
-  </a>
-</p>
+    
 
 
 
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="https://haowong.com/"><img class="avatar mr-3 avatar-circle" src="/author/haowong/avatar_huc2a8063aa4399eb4d97483d10e337980_66269_270x270_fill_q90_lanczos_center.JPG" alt="HaoWong"></a>
+    
 
-          
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://haowong.com/">HaoWong</a></h5>
+      <h6 class="card-subtitle">Master Candidate</h6>
+      <p class="card-text">Enjoy your reading</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+    <li>
+      <a href="mailto:haowong@seu.edu.cn" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/wong-hao" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/" >
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/" >
+        <i class="ai ai-researchgate"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://arxiv.org/set_author_id" target="_blank" rel="noopener">
+        <i class="ai ai-arxiv"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+  
+
+
+
+
+
 
 
 <section id="comments">
@@ -677,18 +947,43 @@
 
 
 
-          
+
+
+
 
 
   
   
+  <div class="article-widget content-widget-hr">
+    <h3>Related</h3>
+    <ul>
+      
+      <li><a href="/2020/09/09/2/">2</a></li>
+      
+      <li><a href="/2020/09/09/2/">2</a></li>
+      
+      <li><a href="/2020/09/09/4/">4</a></li>
+      
+      <li><a href="/2020/09/09/%E7%AC%AC%E4%B8%83%E6%AC%A1%E6%B1%87%E6%8A%A5/">第七次汇报</a></li>
+      
+      <li><a href="/2020/09/09/%E7%AC%AC%E4%B9%9D%E6%AC%A1%E6%B1%87%E6%8A%A5/">第九次汇报</a></li>
+      
+    </ul>
+  </div>
+  
 
 
 
-        </div>
 
-      </article>
 
+  </div>
+</article>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
       <footer class="site-footer">
   
   <p class="powered-by">
@@ -723,15 +1018,7 @@
   </p>
 </footer>
 
-
-    </main>
-  </div>
-</div>
-
-  </div>
-
-  <div class="page-footer">
-    
+    </div>
     
   </div>
 
@@ -797,11 +1084,6 @@
     
 
     
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.2/anchor.min.js" integrity="sha512-I7w3ZdSFzw5j3jU3ZkNikBNeIrl3i+hEuEdwNmqUJvwNcaBUNcijnP2gd9DtGlgVYDplfjGoD8vTNsID+lCjqg==" crossorigin="anonymous"></script>
-    <script>
-      anchors.add();
-    </script>
     
 
     

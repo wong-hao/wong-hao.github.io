@@ -30,21 +30,8 @@
 &lt;/ul&gt;
 &lt;p&gt;Further talk details can easily be added to this page using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
 &lt;h3 id=&#34;1-问题&#34;&gt;1 问题&lt;/h3&gt;
-&lt;h4 id=&#34;11-第一篇&#34;&gt;1.1 第一篇&lt;/h4&gt;
-&lt;p&gt;同第四次汇报&lt;/p&gt;
-&lt;h4 id=&#34;12-第二篇&#34;&gt;1.2 第二篇&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 复数权重&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 三次样条插值法&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 保护频带&lt;/li&gt;
-&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 同第一篇，多接受、考虑多径效应的&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;13-第三篇&#34;&gt;1.3 第三篇&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; TTN[2]&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;14-共性&#34;&gt;1.4 共性&lt;/h4&gt;
-&lt;ul&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 备注：所有页面都写，只有图、公式、算法读；文字性叙述备用&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 演习一遍&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 看相关工作以拓宽知识面，可以观察哪些被多次提到&lt;/li&gt;
@@ -140,33 +127,11 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;4-总览&#34;&gt;4 总览&lt;/h3&gt;
-&lt;h4 id=&#34;41-第一场&#34;&gt;4.1 第一场&lt;/h4&gt;
-&lt;p&gt;同第四次汇报&lt;/p&gt;
-&lt;h4 id=&#34;42-第二场&#34;&gt;4.2 第二场&lt;/h4&gt;
-&lt;h5 id=&#34;421-源文件&#34;&gt;4.2.1 源文件&lt;/h5&gt;
-&lt;h6 id=&#34;4211-阅读的文件1&#34;&gt;4.2.1.1 阅读的文件1&lt;/h6&gt;
-&lt;p&gt;&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9oaHUyMDE2LW15LnNoYXJlcG9pbnQuY29tLzpiOi9nL3BlcnNvbmFsL3pvbmU5NzEwMTZfaGh1X2VkdV9jbi9FYU1Xd0hUX1ZZcEVyWTBlZFdaOXByZ0J1MWNxTHpDMWdmZlBMUjJjbzBSLXlRP2U9eVl3WENk.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击下载&lt;/a&gt;&lt;/p&gt;
-&lt;h6 id=&#34;4212-作者的演讲&#34;&gt;4.2.1.2 作者的演讲&lt;/h6&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.usenix.org/conference/nsdi20/presentation/gadre&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击下载&lt;/a&gt;&lt;/p&gt;
-&lt;h6 id=&#34;4213-作者的主页&#34;&gt;4.2.1.3 作者的主页&lt;/h6&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.akshaygadre.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击下载&lt;/a&gt;&lt;/p&gt;
-&lt;h6 id=&#34;4214-项目的主页&#34;&gt;4.2.1.4 项目的主页&lt;/h6&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.witechlab.com/chime.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击下载&lt;/a&gt;&lt;/p&gt;
-&lt;h6 id=&#34;4215-作者的ppt&#34;&gt;4.2.1.5 作者的ppt&lt;/h6&gt;
-&lt;p&gt;&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9oaHUyMDE2LW15LnNoYXJlcG9pbnQuY29tLzpiOi9nL3BlcnNvbmFsL3pvbmU5NzEwMTZfaGh1X2VkdV9jbi9FYnFfeGVKTkRqeE1zZTFNM2ZjTlhtNEJDRWJEZzB0TTVyY1RiUzdMSmd2bHdBP2U9N3I4bWwx.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击下载&lt;/a&gt;&lt;/p&gt;
-&lt;h6 id=&#34;4215-会议的详情&#34;&gt;4.2.1.5 会议的详情&lt;/h6&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.usenix.org/conference/nsdi20&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;NSDI &amp;lsquo;20&lt;/a&gt;&lt;/p&gt;
-&lt;h4 id=&#34;43-第三场&#34;&gt;4.3 第三场&lt;/h4&gt;
 &lt;h5 id=&#34;431-源文件&#34;&gt;4.3.1 源文件&lt;/h5&gt;
-&lt;h6 id=&#34;4311-阅读的文件1&#34;&gt;4.3.1.1 阅读的文件1&lt;/h6&gt;
-&lt;p&gt;&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9oaHUyMDE2LW15LnNoYXJlcG9pbnQuY29tLzpiOi9nL3BlcnNvbmFsL3pvbmU5NzEwMTZfaGh1X2VkdV9jbi9FVUpZNmh6MUh0OVBoeTZ3X0tNcllJc0JUMjRzRG9BMVkwWUJIMGdrNHFEU013P2U9YzMySmZj.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击下载&lt;/a&gt;&lt;/p&gt;
-&lt;h6 id=&#34;4312-会议的详情&#34;&gt;4.3.1.2 会议的详情&lt;/h6&gt;
+&lt;h6 id=&#34;4311-会议的详情&#34;&gt;4.3.1.1 会议的详情&lt;/h6&gt;
 &lt;p&gt;&lt;a href=&#34;https://infocom.info/day/1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;INFOCOM 2020&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&#34;5-演讲方式&#34;&gt;5 演讲方式&lt;/h3&gt;
-&lt;h4 id=&#34;51-内容&#34;&gt;5.1 内容&lt;/h4&gt;
-&lt;p&gt;2020级新生报告只介绍一篇文章&lt;/p&gt;
-&lt;p&gt;故我选择&lt;strong&gt;第三篇&lt;/strong&gt;&lt;/p&gt;
-&lt;h4 id=&#34;52-win10tencentmeeting&#34;&gt;5.2 Win10+TencentMeeting&lt;/h4&gt;
+&lt;h4 id=&#34;51-win10tencentmeeting&#34;&gt;5.1 Win10+TencentMeeting&lt;/h4&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.zhihu.com/question/386623822/answer/1143684767&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;腾讯会议共享屏幕播放PPT的时候可以实现只能在自己电脑上可以看到PPT的备注么？&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
@@ -667,10 +632,37 @@ $$&lt;/p&gt;
     </item>
     
     <item>
-      <title>备用一</title>
-      <link>https://haowong.com/2020/09/09/%E5%A4%87%E7%94%A8%E4%B8%80/</link>
+      <title>2</title>
+      <link>https://haowong.com/2020/09/09/2/</link>
       <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>
-      <guid>https://haowong.com/2020/09/09/%E5%A4%87%E7%94%A8%E4%B8%80/</guid>
+      <guid>https://haowong.com/2020/09/09/2/</guid>
+      <description>&lt;h3 id=&#34;1-问题&#34;&gt;1 问题&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 复数权重&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 三次样条插值法&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 保护频带&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 同第四次汇报，多接受、考虑多径效应的&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;2-源文件&#34;&gt;2 源文件&lt;/h3&gt;
+&lt;h4 id=&#34;21-阅读的文件&#34;&gt;2.1 阅读的文件&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9oaHUyMDE2LW15LnNoYXJlcG9pbnQuY29tLzpiOi9nL3BlcnNvbmFsL3pvbmU5NzEwMTZfaGh1X2VkdV9jbi9FYU1Xd0hUX1ZZcEVyWTBlZFdaOXByZ0J1MWNxTHpDMWdmZlBMUjJjbzBSLXlRP2U9eVl3WENk.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击下载&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;22-作者的演讲&#34;&gt;2.2 作者的演讲&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.usenix.org/conference/nsdi20/presentation/gadre&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击下载&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;23-作者的主页&#34;&gt;2.3 作者的主页&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.akshaygadre.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击下载&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;24-项目的主页&#34;&gt;2.4 项目的主页&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.witechlab.com/chime.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击下载&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;25-作者的ppt&#34;&gt;2.5 作者的ppt&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9oaHUyMDE2LW15LnNoYXJlcG9pbnQuY29tLzpiOi9nL3BlcnNvbmFsL3pvbmU5NzEwMTZfaGh1X2VkdV9jbi9FYnFfeGVKTkRqeE1zZTFNM2ZjTlhtNEJDRWJEZzB0TTVyY1RiUzdMSmd2bHdBP2U9N3I4bWwx.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;点击下载&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&#34;26-会议的详情&#34;&gt;2.6 会议的详情&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.usenix.org/conference/nsdi20&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;NSDI &amp;lsquo;20&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>2</title>
+      <link>https://haowong.com/2020/09/09/2/</link>
+      <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>https://haowong.com/2020/09/09/2/</guid>
       <description>&lt;h3 id=&#34;1-问题&#34;&gt;1 问题&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 快速傅里叶变换加窗&lt;/li&gt;
@@ -714,24 +706,10 @@ $$&lt;/p&gt;
     </item>
     
     <item>
-      <title>备用三</title>
-      <link>https://haowong.com/2020/09/09/%E5%A4%87%E7%94%A8%E4%B8%89/</link>
+      <title>3</title>
+      <link>https://haowong.com/2020/09/09/3/</link>
       <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>
-      <guid>https://haowong.com/2020/09/09/%E5%A4%87%E7%94%A8%E4%B8%89/</guid>
-      <description>&lt;h3 id=&#34;1-问题&#34;&gt;1 问题&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 还没看&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;2-源文件&#34;&gt;2 源文件&lt;/h3&gt;
-&lt;h4 id=&#34;21-来源&#34;&gt;2.1 来源&lt;/h4&gt;
-&lt;p&gt;学长给的，关于安全&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>备用二</title>
-      <link>https://haowong.com/2020/09/09/%E5%A4%87%E7%94%A8%E4%BA%8C/</link>
-      <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>
-      <guid>https://haowong.com/2020/09/09/%E5%A4%87%E7%94%A8%E4%BA%8C/</guid>
+      <guid>https://haowong.com/2020/09/09/3/</guid>
       <description>&lt;h3 id=&#34;1-问题&#34;&gt;1 问题&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; ADR原理及如何在NS上实现/开启&lt;/li&gt;
@@ -747,6 +725,20 @@ $$&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWExWHZzd0V0dGxEazVjdkc1dDhmTVlCaDFwUm5XbUxLdnA1QzQzWmYyUW9vdz9lPWFCT3RvbA==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;下载&lt;/a&gt;&lt;/p&gt;
 &lt;h4 id=&#34;22-会议的详情&#34;&gt;2.2 会议的详情&lt;/h4&gt;
 &lt;p&gt;&lt;a href=&#34;https://icnp20.cs.ucr.edu/program.html#posterdemo&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ICNP 2020&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>4</title>
+      <link>https://haowong.com/2020/09/09/4/</link>
+      <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>
+      <guid>https://haowong.com/2020/09/09/4/</guid>
+      <description>&lt;h3 id=&#34;1-问题&#34;&gt;1 问题&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 还没看&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;2-源文件&#34;&gt;2 源文件&lt;/h3&gt;
+&lt;h4 id=&#34;21-来源&#34;&gt;2.1 来源&lt;/h4&gt;
+&lt;p&gt;学长给的，关于安全&lt;/p&gt;</description>
     </item>
     
     <item>
