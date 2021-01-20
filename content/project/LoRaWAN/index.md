@@ -1,5 +1,5 @@
 ---
-title: LoRa and LoRaWAN
+title: LoRaWAN
 summary: Rejeee M-HL9-EV, SX1302S and Raspberry pi 4B
 tags:
 - Wireless Communication
@@ -30,8 +30,8 @@ url_video: ""
 #slides: example
 ---
 
-# 3 实验环境
-## 3.1 操作系统
+# 1 实验环境
+## 1.1 操作系统
 > Raspberry Pi OS (32-bit) with desktop
 
 **注意仅能使用Linux Kernel version:[4.19.118](http://downloads.raspberrypi.org/raspios_armhf/release_notes.txt)及以下的版本，否则由于硬件使用GPIO7作为SX1302的RESET，与树莓派的SPI0.1的CS脚[冲突](https://www.cnblogs.com/answerinthewind/p/13154904.html)**
@@ -170,9 +170,9 @@ ERROR: [main] failed to start the concentrator
 	- 发送接收均用的**Hex**
 
 
-# 4 实验步骤
+# 2 实验步骤
 
-## 4.1 [LoRaWAN Specification](https://lora-alliance.org/lorawan-for-developers/)
+## 2.1 [LoRaWAN Specification](https://lora-alliance.org/lorawan-for-developers/)
 1. Core LoRaWAN Specification
 2. LoRaWAN Regional Parameters
    - 中国
@@ -182,7 +182,7 @@ ERROR: [main] failed to start the concentrator
 3. Back-End Interfaces
 
 
-## 4.2 Devices/End Nodes
+## 2.2 Devices/End Nodes
 
   **[M-HL9-EV](http://www.njrjzn.com/chanpinzhongxin/SX127xmozuxilie/4.html)**
   1. [进入配置方法](http://www.rejeee.com/documents/APP_DOC/M-KL9_how_to_enter_configuration_mode.pdf)
@@ -219,27 +219,27 @@ ERROR: [main] failed to start the concentrator
   TYPE:      0x00
   Flash:     0
   ```
-### 4.2.1 入网
+### 2.2.1 入网
 
-#### 4.2.1.1 概述
+#### 2.2.1.1 概述
 1. [Back-End Interfaces](https://lora-alliance.org/lorawan-for-developers)：最官方的文件，下面的东西都有包含
 2. [AnswerInTheWind](https://www.cnblogs.com/answerinthewind/p/6213027.html)
 3. [TTN](https://www.thethingsnetwork.org/docs/lorawan/addressing.html)
 
-#### 4.2.1.2 ABP
+#### 2.2.1.2 ABP
 [RAKwireless](https://blog.csdn.net/RAKwireless/article/details/106186894)
 
 [Chirpstack](https://www.chirpstack.io/application-server/use/devices/)
 
-#### 4.2.1.3 OTAA
+#### 2.2.1.3 OTAA
 [RAKwireless](https://blog.csdn.net/RAKwireless/article/details/106135373)
 
 [AnswerInTheWind](https://www.cnblogs.com/answerinthewind/p/6213529.html)
 
-#### 4.2.1.4 Security
+#### 2.2.1.4 Security
 1. [TTN](https://www.thethingsnetwork.org/docs/lorawan/security.html)
 
-#### 4.2.1.5 Rejeee
+#### 2.2.1.5 Rejeee
 
 [这家的节点不支持LoRaWAN，节点只有私有协议的](https://www.cnblogs.com/answerinthewind/p/13517529.html#4758586)
 
@@ -253,8 +253,8 @@ ERROR: [main] failed to start the concentrator
 
 
 
-## 4.3 Gateway
-
+## 2.3 Gateway
+### 2.3.1 Real module
 **SX1302**
 1. [Semtech](https://www.semtech.com/products/wireless-rf/lora-gateways/sx1302cxxxgw1)
 2. [Rejeee](http://www.njrjzn.com/chanpinzhongxin/SX1302mozuxilie/28.html)
@@ -270,9 +270,13 @@ ERROR: [main] failed to start the concentrator
   - ``make install_conf``即安装**global_conf.json**
   - 卖家给的[攻略](https://www.cnblogs.com/answerinthewind/p/13154904.html)跟用``install.sh``生成的主要差别在radio_1与radio_2的**ferq**不同，攻略的效果好；官方的[参考文献](https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVQzOWdIRUc4YU5DbHFMVzBjRGkwVjBCZjZGQmUzWUpkSnh0YVhXbUlLdnFtUT9lPW9qNjEzcg==.mp3)给出了**global_conf.json**的参数意义
 
-## 4.4 LoraWAN Network Server
+### 2.3.2 SDR
+1. [GUNRadio](https://www.gnuradio.org/)
+2. 与Software-defined radio (SDR)设备共用，如USRP N210、USRP B210、hackrf
+
+## 2.4 LoraWAN Network Server
 ---
-### 4.4.1 Cloud-hosted: Close Source LoRaWAN Network Servers Platforms
+### 2.4.1 Cloud-hosted: Close Source LoRaWAN Network Servers Platforms
 
   - **global.config**中的**lorawan_public: true**，[连接不通](http://lora.timeddd.com/forum.php?mod=viewthread&tid=521)的元凶，true对应于sync word **0x34**
   - 使用树莓派搭建网关注册到腾讯物联网开发平台
@@ -296,7 +300,7 @@ ERROR: [main] failed to start the concentrator
   
 ---
 
-### 4.4.2 Cloud-hosted: Open Source LoRaWAN Network Servers Platforms
+### 2.4.2 Cloud-hosted: Open Source LoRaWAN Network Servers Platforms
 1. - [The Things Network：在线版](https://www.thethingsnetwork.org/)
      - [TTN官方入门](https://console.thethingsnetwork.org/)
      - [TTN](https://learn.adafruit.com/the-things-network-for-feather?view=all)
@@ -305,8 +309,8 @@ ERROR: [main] failed to start the concentrator
      - [Mbed-Os: TTN](https://os.mbed.com/docs/mbed-os/v5.15/tutorials/LoRa-tutorial.html)
      - [SX1302网关转发器修改版讨论](https://www.thethingsnetwork.org/forum/t/sx1302-using-semtech-packet-forwarder-can-not-register-the-gateway/41211/34)：server_address选择[router.cn.thethings.network](https://blog.csdn.net/freemote/article/details/90315395)；温度改为int可保证console显示connected
      - [Limitations](https://www.thethingsnetwork.org/forum/t/limitations-data-rate-packet-size-30-seconds-uplink-and-10-messages-downlink-per-day-fair-access-policy-guidelines/1300)
-   - [The Things Stack：安装版](https://www.thethingsindustries.com/docs/)，[Base64工具1](https://cryptii.com/)
-     - Docket install， [Base64工具2](https://lorawan-packet-decoder-0ta6puiniaut.runkit.sh/)
+   - [The Things Stack：安装版](https://www.thethingsindustries.com/docs/)
+     - Docket install， [LoRa数据包在线解码base64](https://lorawan-packet-decoder-0ta6puiniaut.runkit.sh/)
    - [Rakwireless](https://forum.rakwireless.com/) 
 2. - [ChirpStack：安装版](https://www.chirpstack.io/)
       - Debian install
@@ -315,7 +319,7 @@ ERROR: [main] failed to start the concentrator
           - NS配置文件：**dsn="postgres://chirpstack_ns:dbpassword@localhost/chirpstack_ns?sslmode=disable"**
           - NS配置文件：注释掉所有**extral chanels**
           - AS配置文件：**dsn="postgres://chirpstack_as:dbpassword@localhost/chirpstack_as?sslmode=disable"**
-          - AS配置文件：服务器运行``openssl rand -base64 32``，添加到 **JWT_SECRET**
+          - AS配置文件：服务器运行``openssl rand -base64 32``，添加到 **JWT_SECRET**：解决了长时间运行导致的**authentication failed: jwt parse error: token is expired by ?h?m?s**问题
           - 查看日志方法与Docker不同：通过命令行
       - Docket install
         - [Fireware: ChirpStack+TTN](https://fiware-lorawan.readthedocs.io/en/latest/users_manual/index.html) 
@@ -357,7 +361,7 @@ ERROR: [main] failed to start the concentrator
 
 ---
 
-### 4.4.3 Integrated: Gateway-Embedded LoRaWAN Network Servers Platforms
+### 2.4.3 Integrated: Gateway-Embedded LoRaWAN Network Servers Platforms
 
 [特点](https://www.actility.com/lorawan-network-server/)
 
@@ -365,7 +369,7 @@ ERROR: [main] failed to start the concentrator
 
 ---
 
-### 4.4.4 ADR
+### 2.4.4 ADR
 [Core LoRaWAN Specification](https://lora-alliance.org/lorawan-for-developers)：NS发送``LinkADRReq``到device
 
 [LoraWAN论坛](http://lora.timeddd.com/forum.php?mod=viewthread&tid=428&extra=page%3D1)
@@ -379,14 +383,14 @@ ERROR: [main] failed to start the concentrator
 [Semtech3](https://lora-developers.semtech.com/library/tech-papers-and-guides/understanding-adr/)
 
 
-## 4.5 Application Server console
+## 2.5 Application Server console
 
-### 4.5.1 去重
+### 2.5.1 去重
 [LoraWAN论坛](http://lora.timeddd.com/forum.php?mod=viewthread&tid=478&extra=page%3D1)
 
 [Semtech](https://lora-developers.semtech.com/library/tech-papers-and-guides/lora-and-lorawan/)
 
-### 4.5.2 下行通信
+### 2.5.2 下行通信
 [freemote](https://blog.csdn.net/freemote/article/details/90315395)
 
 [Chirpstack](https://forum.chirpstack.io/t/how-to-get-downlink-communication/9816/3)
@@ -401,9 +405,9 @@ ERROR: [main] failed to start the concentrator
 
 [Rimelink](https://blog.hobairiku.site/2018/02/26/LoRa-Server-Project/) 
 
-## 4.6 End-application
-### 4.6.1 API
-#### 4.6.1.1 MQTT
+## 2.6 End-application
+### 2.6.1 API
+#### 2.6.1.1 MQTT
 [2020 年常见 MQTT 客户端工具比较](https://www.emqx.io/cn/blog/mqtt-client-tools)
 
 [RAKwireless](https://blog.csdn.net/RAKwireless/article/details/106711672)
@@ -423,7 +427,7 @@ ERROR: [main] failed to start the concentrator
 [MQTT数据（有效负载）存储到数据库中的方法](https://www.instructables.com/Store-Messages-From-Mosquitto-MQTT-Broker-Into-SQL/)
 
 
-#### 4.6.1.2 MQTT下行通信
+#### 2.6.1.2 MQTT下行通信
 [Semtech1](https://lora-developers.semtech.com/library/tech-papers-and-guides/lorawan-class-a-devices)
 
 [Semtech2](https://lora-developers.semtech.com/library/tech-papers-and-guides/lorawan-class-b-devices)
@@ -440,19 +444,14 @@ ERROR: [main] failed to start the concentrator
 
 
 
-#### 4.6.1.3 Metadata元数据
+#### 2.6.1.3 Metadata元数据
 [TTN](https://www.thethingsnetwork.org/forum/t/how-to-retrieve-metadata-from-data-storage-integration/19259/2?u=haowong)
 
-### 4.6.2 SDKs & Libraries
+### 2.6.2 SDKs & Libraries
 
 
-### 4.6.3 Integrations
+### 2.6.3 Integrations
 [Lora Cloud](https://www.loracloud.com/portal)
 - [Chirpstack](https://www.chirpstack.io/application-server/integrations/loracloud/)
 - [TTN](https://www.loracloud.com/documentation/device_management?url=gettingstarted.html#example-minimal-integration-with-the-things-network)
 
-
-
-# 5 其他
-1. [GUNRadio](https://www.gnuradio.org/)
-2. 与Software-defined radio (SDR)设备共用，如USRP、hackrf
