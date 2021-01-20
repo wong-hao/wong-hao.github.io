@@ -1299,6 +1299,7 @@ CoreCell reset through GPIO7...
 &lt;h2 id=&#34;41-lorawan&#34;&gt;4.1 LoRaWAN&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;https://connect.ed-diamond.com/MISC/MISCHS-015/LORAWAN-deploiement-d-une-infrastructure-de-test&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;完整案例&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;42-devicesend-nodes&#34;&gt;4.2 Devices/End Nodes&lt;/h2&gt;
+&lt;h3 id=&#34;421-评估板&#34;&gt;4.2.1 评估板&lt;/h3&gt;
 &lt;p&gt;&lt;strong&gt;&lt;a href=&#34;http://www.njrjzn.com/chanpinzhongxin/SX127xmozuxilie/4.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;M-HL9-EV&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&#34;http://www.rejeee.com/documents/APP_DOC/M-KL9_how_to_enter_configuration_mode.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;进入配置方法&lt;/a&gt;&lt;/li&gt;
@@ -1342,17 +1343,7 @@ Flash:     0
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id=&#34;421-入网&#34;&gt;4.2.1 入网&lt;/h3&gt;
-&lt;h4 id=&#34;4211-概述&#34;&gt;4.2.1.1 概述&lt;/h4&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/6213027.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;AnswerInTheWind&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.thethingsnetwork.org/docs/lorawan/addressing.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TTN&lt;/a&gt;&lt;/p&gt;
-&lt;h4 id=&#34;4212-abp&#34;&gt;4.2.1.2 ABP&lt;/h4&gt;
-&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/RAKwireless/article/details/106186894&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;RAKwireless&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.chirpstack.io/application-server/use/devices/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Chirpstack&lt;/a&gt;&lt;/p&gt;
-&lt;h4 id=&#34;4213-otaa&#34;&gt;4.2.1.3 OTAA&lt;/h4&gt;
-&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/RAKwireless/article/details/106135373&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;RAKwireless&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/6213529.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;AnswerInTheWind&lt;/a&gt;&lt;/p&gt;
-&lt;h4 id=&#34;4214-rejeee&#34;&gt;4.2.1.4 Rejeee&lt;/h4&gt;
+&lt;h4 id=&#34;4211-rejeee&#34;&gt;4.2.1.1 Rejeee&lt;/h4&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/13517529.html#4758586&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;这家的节点不支持LoRaWAN，节点只有私有协议的&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWVfQkIxUFl2M3RKb01ZUTMxQ1hidXdCZWVoZmdnNkpPUEJxX1FGdzBhb3NzUT9lPWJmbmM4TA==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;8. 芮捷LPWAN协议&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;http://www.rejeee.com/documents/SPEC/RJDS0052018-M-KL9_Specification_V1.1.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;模块不支持标准LoRaWAN协议模块&lt;/a&gt;&lt;/p&gt;
@@ -1360,7 +1351,20 @@ Flash:     0
 &lt;ul&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 弄清楚&lt;a href=&#34;https://forum.chirpstack.io/t/relation-between-sync-word-private-network-and-end-nodes/191/13?u=haowong&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;私有网络&lt;/a&gt;/非LoRaWAN网络怎么导出数据&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h3 id=&#34;422-end-device&#34;&gt;4.2.2 End device&lt;/h3&gt;
+&lt;p&gt;比评估板复杂，有时候是module+raspberrypi，有时候是module+stem32&lt;/p&gt;
+&lt;h4 id=&#34;4221-入网&#34;&gt;4.2.2.1 入网&lt;/h4&gt;
+&lt;h5 id=&#34;42211-概述&#34;&gt;4.2.2.1.1 概述&lt;/h5&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/6213027.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;AnswerInTheWind&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.thethingsnetwork.org/docs/lorawan/addressing.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TTN&lt;/a&gt;&lt;/p&gt;
+&lt;h5 id=&#34;42212-abp&#34;&gt;4.2.2.1.2 ABP&lt;/h5&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/RAKwireless/article/details/106186894&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;RAKwireless&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.chirpstack.io/application-server/use/devices/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Chirpstack&lt;/a&gt;&lt;/p&gt;
+&lt;h5 id=&#34;42213-otaa&#34;&gt;4.2.2.1.3 OTAA&lt;/h5&gt;
+&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/RAKwireless/article/details/106135373&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;RAKwireless&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/6213529.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;AnswerInTheWind&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;43-gateway&#34;&gt;4.3 Gateway&lt;/h2&gt;
+&lt;h3 id=&#34;431-real-module&#34;&gt;4.3.1 Real module&lt;/h3&gt;
 &lt;p&gt;&lt;strong&gt;SX1302&lt;/strong&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.semtech.com/products/wireless-rf/lora-gateways/sx1302cxxxgw1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Semtech&lt;/a&gt;&lt;/li&gt;
@@ -1382,6 +1386,11 @@ Flash:     0
 &lt;li&gt;&lt;code&gt;make install_conf&lt;/code&gt;即安装&lt;strong&gt;global_conf.json&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;卖家给的&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/13154904.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;攻略&lt;/a&gt;跟用&lt;code&gt;install.sh&lt;/code&gt;生成的主要差别在radio_1与radio_2的&lt;strong&gt;ferq&lt;/strong&gt;不同，攻略的效果好；官方的&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVQzOWdIRUc4YU5DbHFMVzBjRGkwVjBCZjZGQmUzWUpkSnh0YVhXbUlLdnFtUT9lPW9qNjEzcg==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;参考文献&lt;/a&gt;给出了&lt;strong&gt;global_conf.json&lt;/strong&gt;的参数意义&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h3 id=&#34;432-sdr&#34;&gt;4.3.2 SDR&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.gnuradio.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GUNRadio&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;与Software-defined radio (SDR)设备共用，如USRP N210、USRP B210、hackrf&lt;/li&gt;
+&lt;/ol&gt;
 &lt;h2 id=&#34;44-lorawan-network-server&#34;&gt;4.4 LoraWAN Network Server&lt;/h2&gt;
 &lt;hr&gt;
 &lt;h3 id=&#34;441-cloud-hosted-close-source-lorawan-network-servers-platforms&#34;&gt;4.4.1 Cloud-hosted: Close Source LoRaWAN Network Servers Platforms&lt;/h3&gt;
@@ -1578,11 +1587,6 @@ UDP             1700/1700        0.0.0.0/0
 &lt;li&gt;&lt;a href=&#34;https://www.chirpstack.io/application-server/integrations/loracloud/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Chirpstack&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.loracloud.com/documentation/device_management?url=gettingstarted.html#example-minimal-integration-with-the-things-network&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TTN&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&#34;5-其他&#34;&gt;5 其他&lt;/h1&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.gnuradio.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GUNRadio&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;与Software-defined radio (SDR)设备共用，如USRP、hackrf&lt;/li&gt;
-&lt;/ol&gt;
 </description>
     </item>
     
@@ -2386,7 +2390,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-218946573&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-429861735&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -2396,7 +2400,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-218946573&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-429861735&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();

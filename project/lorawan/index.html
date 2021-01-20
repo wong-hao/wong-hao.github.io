@@ -836,6 +836,7 @@ CoreCell reset through GPIO7...
 <h2 id="41-lorawan">4.1 LoRaWAN</h2>
 <p><a href="https://connect.ed-diamond.com/MISC/MISCHS-015/LORAWAN-deploiement-d-une-infrastructure-de-test" target="_blank" rel="noopener">完整案例</a></p>
 <h2 id="42-devicesend-nodes">4.2 Devices/End Nodes</h2>
+<h3 id="421-评估板">4.2.1 评估板</h3>
 <p><strong><a href="http://www.njrjzn.com/chanpinzhongxin/SX127xmozuxilie/4.html" target="_blank" rel="noopener">M-HL9-EV</a></strong></p>
 <ol>
 <li><a href="http://www.rejeee.com/documents/APP_DOC/M-KL9_how_to_enter_configuration_mode.pdf" target="_blank" rel="noopener">进入配置方法</a></li>
@@ -879,17 +880,7 @@ Flash:     0
 </ul>
 </li>
 </ol>
-<h3 id="421-入网">4.2.1 入网</h3>
-<h4 id="4211-概述">4.2.1.1 概述</h4>
-<p><a href="https://www.cnblogs.com/answerinthewind/p/6213027.html" target="_blank" rel="noopener">AnswerInTheWind</a></p>
-<p><a href="https://www.thethingsnetwork.org/docs/lorawan/addressing.html" target="_blank" rel="noopener">TTN</a></p>
-<h4 id="4212-abp">4.2.1.2 ABP</h4>
-<p><a href="https://blog.csdn.net/RAKwireless/article/details/106186894" target="_blank" rel="noopener">RAKwireless</a></p>
-<p><a href="https://www.chirpstack.io/application-server/use/devices/" target="_blank" rel="noopener">Chirpstack</a></p>
-<h4 id="4213-otaa">4.2.1.3 OTAA</h4>
-<p><a href="https://blog.csdn.net/RAKwireless/article/details/106135373" target="_blank" rel="noopener">RAKwireless</a></p>
-<p><a href="https://www.cnblogs.com/answerinthewind/p/6213529.html" target="_blank" rel="noopener">AnswerInTheWind</a></p>
-<h4 id="4214-rejeee">4.2.1.4 Rejeee</h4>
+<h4 id="4211-rejeee">4.2.1.1 Rejeee</h4>
 <p><a href="https://www.cnblogs.com/answerinthewind/p/13517529.html#4758586" target="_blank" rel="noopener">这家的节点不支持LoRaWAN，节点只有私有协议的</a></p>
 <p><a href="https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWVfQkIxUFl2M3RKb01ZUTMxQ1hidXdCZWVoZmdnNkpPUEJxX1FGdzBhb3NzUT9lPWJmbmM4TA==.mp3" target="_blank" rel="noopener">8. 芮捷LPWAN协议</a></p>
 <p><a href="http://www.rejeee.com/documents/SPEC/RJDS0052018-M-KL9_Specification_V1.1.pdf" target="_blank" rel="noopener">模块不支持标准LoRaWAN协议模块</a></p>
@@ -897,7 +888,20 @@ Flash:     0
 <ul>
 <li><input disabled="" type="checkbox"> 弄清楚<a href="https://forum.chirpstack.io/t/relation-between-sync-word-private-network-and-end-nodes/191/13?u=haowong" target="_blank" rel="noopener">私有网络</a>/非LoRaWAN网络怎么导出数据</li>
 </ul>
+<h3 id="422-end-device">4.2.2 End device</h3>
+<p>比评估板复杂，有时候是module+raspberrypi，有时候是module+stem32</p>
+<h4 id="4221-入网">4.2.2.1 入网</h4>
+<h5 id="42211-概述">4.2.2.1.1 概述</h5>
+<p><a href="https://www.cnblogs.com/answerinthewind/p/6213027.html" target="_blank" rel="noopener">AnswerInTheWind</a></p>
+<p><a href="https://www.thethingsnetwork.org/docs/lorawan/addressing.html" target="_blank" rel="noopener">TTN</a></p>
+<h5 id="42212-abp">4.2.2.1.2 ABP</h5>
+<p><a href="https://blog.csdn.net/RAKwireless/article/details/106186894" target="_blank" rel="noopener">RAKwireless</a></p>
+<p><a href="https://www.chirpstack.io/application-server/use/devices/" target="_blank" rel="noopener">Chirpstack</a></p>
+<h5 id="42213-otaa">4.2.2.1.3 OTAA</h5>
+<p><a href="https://blog.csdn.net/RAKwireless/article/details/106135373" target="_blank" rel="noopener">RAKwireless</a></p>
+<p><a href="https://www.cnblogs.com/answerinthewind/p/6213529.html" target="_blank" rel="noopener">AnswerInTheWind</a></p>
 <h2 id="43-gateway">4.3 Gateway</h2>
+<h3 id="431-real-module">4.3.1 Real module</h3>
 <p><strong>SX1302</strong></p>
 <ol>
 <li><a href="https://www.semtech.com/products/wireless-rf/lora-gateways/sx1302cxxxgw1" target="_blank" rel="noopener">Semtech</a></li>
@@ -919,6 +923,11 @@ Flash:     0
 <li><code>make install_conf</code>即安装<strong>global_conf.json</strong></li>
 <li>卖家给的<a href="https://www.cnblogs.com/answerinthewind/p/13154904.html" target="_blank" rel="noopener">攻略</a>跟用<code>install.sh</code>生成的主要差别在radio_1与radio_2的<strong>ferq</strong>不同，攻略的效果好；官方的<a href="https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVQzOWdIRUc4YU5DbHFMVzBjRGkwVjBCZjZGQmUzWUpkSnh0YVhXbUlLdnFtUT9lPW9qNjEzcg==.mp3" target="_blank" rel="noopener">参考文献</a>给出了<strong>global_conf.json</strong>的参数意义</li>
 </ul>
+<h3 id="432-sdr">4.3.2 SDR</h3>
+<ol>
+<li><a href="https://www.gnuradio.org/" target="_blank" rel="noopener">GUNRadio</a></li>
+<li>与Software-defined radio (SDR)设备共用，如USRP N210、USRP B210、hackrf</li>
+</ol>
 <h2 id="44-lorawan-network-server">4.4 LoraWAN Network Server</h2>
 <hr>
 <h3 id="441-cloud-hosted-close-source-lorawan-network-servers-platforms">4.4.1 Cloud-hosted: Close Source LoRaWAN Network Servers Platforms</h3>
@@ -1115,11 +1124,6 @@ UDP             1700/1700        0.0.0.0/0
 <li><a href="https://www.chirpstack.io/application-server/integrations/loracloud/" target="_blank" rel="noopener">Chirpstack</a></li>
 <li><a href="https://www.loracloud.com/documentation/device_management?url=gettingstarted.html#example-minimal-integration-with-the-things-network" target="_blank" rel="noopener">TTN</a></li>
 </ul>
-<h1 id="5-其他">5 其他</h1>
-<ol>
-<li><a href="https://www.gnuradio.org/" target="_blank" rel="noopener">GUNRadio</a></li>
-<li>与Software-defined radio (SDR)设备共用，如USRP、hackrf</li>
-</ol>
 
     </div>
 
