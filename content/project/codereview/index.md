@@ -104,15 +104,16 @@ url_video: ""
    - [```clock_gettime```](https://blog.csdn.net/weixin_44880138/article/details/102605681)
 
 #### 2.1.1.4 socket: 用于gateway与server通信
-1. [```setsockopt()```](https://allen.blog.csdn.net/article/details/71078044?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.control&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.control)
-2. [```send()```](https://www.cnblogs.com/jianqiang2010/archive/2010/08/20/1804598.htmll)
-3. [```recv()```](https://www.cnblogs.com/fnlingnzb-learner/p/8523206.html)
-4. [```getaddrinfo()```](https://www.jianshu.com/p/df165c54d0b2)
-5. [```getaddrinfo()```](https://blog.csdn.net/u011003120/article/details/78277133)
+1. [```getaddrinfo()```](https://www.jianshu.com/p/df165c54d0b2)
+2. [```getaddrinfo()```](https://blog.csdn.net/u011003120/article/details/78277133)
    - for (q=result; q!=NULL; q=q->ai_next)：简单来说就是遍历。因为一个域名可能不止一个IP地址，所以，需要遍历res中的next，如下，是否还有下一个节点(即是否还有下一个IP地址信息)
-6. [```getnameinfo()```]()
-7. [```connect()```](https://blog.csdn.net/cj83111/article/details/5364138)
-8. [字节序](https://www.ruanyifeng.com/blog/2016/11/byte-order.html)
+3. [```socket()```](http://c.biancheng.net/view/2131.html)
+4. [```getnameinfo()```](https://blog.csdn.net/ahafg/article/details/52908705)
+5. [```connect()```](https://blog.csdn.net/cj83111/article/details/5364138)
+6. [```send()```](https://www.cnblogs.com/jianqiang2010/archive/2010/08/20/1804598.htmll)
+7. [```recv()```](https://www.cnblogs.com/fnlingnzb-learner/p/8523206.html)
+8. [```setsockopt()```](https://allen.blog.csdn.net/article/details/71078044?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.control&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.control)
+9. [字节序](https://www.ruanyifeng.com/blog/2016/11/byte-order.html)
 
 sock_up：
 - init：main

@@ -32,14 +32,15 @@ url_video: ""
 
 # 1 LoRa调制解调基础知识
 1. [Semtech Modulation Basics](https://www.semtech.com/search/results?keywords=Modulation+Basics%2A)
-2. chip、chirp/symbol、bit：
+2. [SX1276-7-8-9 Datasheet](https://www.semtech.com/search/results?keywords=SX1276-7-8-9+Datasheet%2A)
+3. chip、chirp/symbol、bit：
    - [stackexchange](https://electronics.stackexchange.com/questions/278192/understanding-the-relationship-between-lora-chips-chirps-symbols-and-bits)，结合上面的看
    - [Mobilefish.com](https://lora.readthedocs.io/en/latest/#id11)
-3. Everything: [Sakshama Ghoslya](https://www.sghoslya.com/p/lora_9.html)
-4. 阅读过的paper
+4. Everything: [Sakshama Ghoslya](https://www.sghoslya.com/p/lora_9.html)
+5. 阅读过的paper
 
 # 2 逆向工程
-1. [Complete Reverse Engineering ofLoRa PHY](https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVdHa3JTSE4zWlZEc3ptZGIzN2tKUmNCZFhQMU1sSTFHcURFdXJjcGdYTkJrZz9lPXNYOHRIdA==.mp3)
+1. [Complete Reverse Engineering of LoRa PHY](https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVdHa3JTSE4zWlZEc3ptZGIzN2tKUmNCZFhQMU1sSTFHcURFdXJjcGdYTkJrZz9lPXNYOHRIdA==.mp3)
 2. [Matthew Knight and Balint Seeber. 2016. Decoding LoRa: Realizing a Modern LPWAN with SDR. Proceedings ofthe GNURadio Conference 1, 1 (2016).](https://pubs.gnuradio.org/index.php/grcon/article/view/8)
 
 # 3 数据包格式 /  Lora Packet Format
