@@ -40,6 +40,7 @@
       <description>&lt;h1 id=&#34;1-lora调制解调基础知识&#34;&gt;1 LoRa调制解调基础知识&lt;/h1&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.semtech.com/search/results?keywords=Modulation&amp;#43;Basics%2A&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Semtech Modulation Basics&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.semtech.com/search/results?keywords=SX1276-7-8-9&amp;#43;Datasheet%2A&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;SX1276-7-8-9 Datasheet&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;chip、chirp/symbol、bit：
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://electronics.stackexchange.com/questions/278192/understanding-the-relationship-between-lora-chips-chirps-symbols-and-bits&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;stackexchange&lt;/a&gt;，结合上面的看&lt;/li&gt;
@@ -51,7 +52,7 @@
 &lt;/ol&gt;
 &lt;h1 id=&#34;2-逆向工程&#34;&gt;2 逆向工程&lt;/h1&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVdHa3JTSE4zWlZEc3ptZGIzN2tKUmNCZFhQMU1sSTFHcURFdXJjcGdYTkJrZz9lPXNYOHRIdA==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Complete Reverse Engineering ofLoRa PHY&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVdHa3JTSE4zWlZEc3ptZGIzN2tKUmNCZFhQMU1sSTFHcURFdXJjcGdYTkJrZz9lPXNYOHRIdA==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Complete Reverse Engineering of LoRa PHY&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://pubs.gnuradio.org/index.php/grcon/article/view/8&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Matthew Knight and Balint Seeber. 2016. Decoding LoRa: Realizing a Modern LPWAN with SDR. Proceedings ofthe GNURadio Conference 1, 1 (2016).&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h1 id=&#34;3-数据包格式---lora-packet-format&#34;&gt;3 数据包格式 /  Lora Packet Format&lt;/h1&gt;
@@ -294,17 +295,18 @@
 &lt;/ol&gt;
 &lt;h4 id=&#34;2114-socket-用于gateway与server通信&#34;&gt;2.1.1.4 socket: 用于gateway与server通信&lt;/h4&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;https://allen.blog.csdn.net/article/details/71078044?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.control&amp;amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.control&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;setsockopt()&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.cnblogs.com/jianqiang2010/archive/2010/08/20/1804598.htmll&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;send()&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.cnblogs.com/fnlingnzb-learner/p/8523206.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;recv()&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.jianshu.com/p/df165c54d0b2&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;getaddrinfo()&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/u011003120/article/details/78277133&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;getaddrinfo()&lt;/code&gt;&lt;/a&gt;
 &lt;ul&gt;
 &lt;li&gt;for (q=result; q!=NULL; q=q-&amp;gt;ai_next)：简单来说就是遍历。因为一个域名可能不止一个IP地址，所以，需要遍历res中的next，如下，是否还有下一个节点(即是否还有下一个IP地址信息)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;&#34;&gt;&lt;code&gt;getnameinfo()&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://c.biancheng.net/view/2131.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;socket()&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/ahafg/article/details/52908705&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;getnameinfo()&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/cj83111/article/details/5364138&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;connect()&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.cnblogs.com/jianqiang2010/archive/2010/08/20/1804598.htmll&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;send()&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.cnblogs.com/fnlingnzb-learner/p/8523206.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;recv()&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://allen.blog.csdn.net/article/details/71078044?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.control&amp;amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.control&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;setsockopt()&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.ruanyifeng.com/blog/2016/11/byte-order.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;字节序&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;sock_up：&lt;/p&gt;
@@ -662,48 +664,10 @@ concentrator.&lt;/li&gt;
     
     <item>
       <title>LoRa and LoRaWAN</title>
-      <link>https://haowong.com/project/internal-project/</link>
+      <link>https://haowong.com/project/lorawan/</link>
       <pubDate>Tue, 06 Oct 2020 00:00:00 +0000</pubDate>
-      <guid>https://haowong.com/project/internal-project/</guid>
-      <description>&lt;h1 id=&#34;1-lora调制解调基础知识&#34;&gt;1 LoRa调制解调基础知识&lt;/h1&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.semtech.com/search/results?keywords=Modulation&amp;#43;Basics%2A&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Semtech Modulation Basics&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;chip、chirp/symbol、bit：
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://electronics.stackexchange.com/questions/278192/understanding-the-relationship-between-lora-chips-chirps-symbols-and-bits&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;stackexchange&lt;/a&gt;，结合上面的看&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://lora.readthedocs.io/en/latest/#id11&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Mobilefish.com&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Everything: &lt;a href=&#34;https://www.sghoslya.com/p/lora_9.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Sakshama Ghoslya&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.sghoslya.com/p/how-to-buy-lora-matlab-codes.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;仿真代码&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;数据包格式 / Lora Packet Format:
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://lora-alliance.org/lorawan-for-developers&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Core LoRaWAN Specification&lt;/a&gt;：最官方的文件，下面的东西都有包含&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/6206706.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;AnswerInTheWind&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.sghoslya.com/p/lora-is-chirp-spread-spectrum.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Sakshama Ghoslya&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://revspace.nl/DecodingLora&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DecodingLora&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.rfwireless-world.com/Terminology/What-is-difference-between-Implicit-header-and-Explicit-header-in-LoRaWAN-packet.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Implicit header and Explicit header&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://myriadrf.org/news/lora-modem-limesdr/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Demodulation&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://lora-developers.semtech.com/knowledge-base/faq/P40&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Semtech&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;lorawan mac command：&lt;a href=&#34;https://lora-alliance.org/lorawan-for-developers&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Core LoRaWAN Specification&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVdHa3JTSE4zWlZEc3ptZGIzN2tKUmNCZFhQMU1sSTFHcURFdXJjcGdYTkJrZz9lPXNYOHRIdA==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Complete Reverse Engineering ofLoRa PHY&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;阅读过的paper&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h1 id=&#34;2-lorawan-specification地区规范&#34;&gt;2 LoRaWAN Specification地区规范&lt;/h1&gt;
-&lt;h2 id=&#34;21-lorawan-regional-parametershttpslora-allianceorglorawan-for-developers&#34;&gt;2.1 &lt;a href=&#34;https://lora-alliance.org/lorawan-for-developers&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoRaWAN Regional Parameters&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;22-特例&#34;&gt;2.2 特例&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;中国
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/jiangjunjie_2005/article/details/54754927&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;RimeLink&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/iotisan/article/details/55056092&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;iotisan&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.sghoslya.com/p/table-01-data-rate-configuration.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;EU&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h1 id=&#34;3-实验环境&#34;&gt;3 实验环境&lt;/h1&gt;
+      <guid>https://haowong.com/project/lorawan/</guid>
+      <description>&lt;h1 id=&#34;3-实验环境&#34;&gt;3 实验环境&lt;/h1&gt;
 &lt;h2 id=&#34;31-操作系统&#34;&gt;3.1 操作系统&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Raspberry Pi OS (32-bit) with desktop&lt;/p&gt;
@@ -853,8 +817,22 @@ CoreCell reset through GPIO7...
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&#34;4-实验步骤&#34;&gt;4 实验步骤&lt;/h1&gt;
-&lt;h2 id=&#34;41-lorawan&#34;&gt;4.1 LoRaWAN&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://connect.ed-diamond.com/MISC/MISCHS-015/LORAWAN-deploiement-d-une-infrastructure-de-test&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;完整案例&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;41-lorawan-specificationhttpslora-allianceorglorawan-for-developers&#34;&gt;4.1 &lt;a href=&#34;https://lora-alliance.org/lorawan-for-developers/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoRaWAN Specification&lt;/a&gt;&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Core LoRaWAN Specification&lt;/li&gt;
+&lt;li&gt;LoRaWAN Regional Parameters
+&lt;ul&gt;
+&lt;li&gt;中国
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/jiangjunjie_2005/article/details/54754927&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;RimeLink&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/iotisan/article/details/55056092&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;iotisan&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.sghoslya.com/p/table-01-data-rate-configuration.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;EU&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Back-End Interfaces&lt;/li&gt;
+&lt;/ol&gt;
 &lt;h2 id=&#34;42-devicesend-nodes&#34;&gt;4.2 Devices/End Nodes&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;&lt;a href=&#34;http://www.njrjzn.com/chanpinzhongxin/SX127xmozuxilie/4.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;M-HL9-EV&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;ol&gt;
@@ -893,15 +871,22 @@ Flash:     0
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;421-入网&#34;&gt;4.2.1 入网&lt;/h3&gt;
 &lt;h4 id=&#34;4211-概述&#34;&gt;4.2.1.1 概述&lt;/h4&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/6213027.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;AnswerInTheWind&lt;/a&gt;
-&lt;a href=&#34;https://www.thethingsnetwork.org/docs/lorawan/addressing.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TTN&lt;/a&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://lora-alliance.org/lorawan-for-developers&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Back-End Interfaces&lt;/a&gt;：最官方的文件，下面的东西都有包含&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/6213027.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;AnswerInTheWind&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.thethingsnetwork.org/docs/lorawan/addressing.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TTN&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
 &lt;h4 id=&#34;4212-abp&#34;&gt;4.2.1.2 ABP&lt;/h4&gt;
 &lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/RAKwireless/article/details/106186894&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;RAKwireless&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.chirpstack.io/application-server/use/devices/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Chirpstack&lt;/a&gt;&lt;/p&gt;
 &lt;h4 id=&#34;4213-otaa&#34;&gt;4.2.1.3 OTAA&lt;/h4&gt;
 &lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/RAKwireless/article/details/106135373&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;RAKwireless&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/6213529.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;AnswerInTheWind&lt;/a&gt;&lt;/p&gt;
-&lt;h4 id=&#34;4214-rejeee&#34;&gt;4.2.1.4 Rejeee&lt;/h4&gt;
+&lt;h4 id=&#34;4214-security&#34;&gt;4.2.1.4 Security&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.thethingsnetwork.org/docs/lorawan/security.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TTN&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;4215-rejeee&#34;&gt;4.2.1.5 Rejeee&lt;/h4&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/13517529.html#4758586&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;这家的节点不支持LoRaWAN，节点只有私有协议的&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWVfQkIxUFl2M3RKb01ZUTMxQ1hidXdCZWVoZmdnNkpPUEJxX1FGdzBhb3NzUT9lPWJmbmM4TA==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;8. 芮捷LPWAN协议&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;http://www.rejeee.com/documents/SPEC/RJDS0052018-M-KL9_Specification_V1.1.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;模块不支持标准LoRaWAN协议模块&lt;/a&gt;&lt;/p&gt;
@@ -1130,463 +1115,6 @@ UDP             1700/1700        0.0.0.0/0
 &lt;li&gt;&lt;a href=&#34;https://www.gnuradio.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GUNRadio&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;与Software-defined radio (SDR)设备共用，如USRP、hackrf&lt;/li&gt;
 &lt;/ol&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>LoRaWAN</title>
-      <link>https://haowong.com/project/lorawan/</link>
-      <pubDate>Tue, 06 Oct 2020 00:00:00 +0000</pubDate>
-      <guid>https://haowong.com/project/lorawan/</guid>
-      <description>&lt;h1 id=&#34;2-lorawan-specification地区规范&#34;&gt;2 LoRaWAN Specification地区规范&lt;/h1&gt;
-&lt;h2 id=&#34;21-lorawan-regional-parametershttpslora-allianceorglorawan-for-developers&#34;&gt;2.1 &lt;a href=&#34;https://lora-alliance.org/lorawan-for-developers&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoRaWAN Regional Parameters&lt;/a&gt;&lt;/h2&gt;
-&lt;h2 id=&#34;22-特例&#34;&gt;2.2 特例&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;中国
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/jiangjunjie_2005/article/details/54754927&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;RimeLink&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/iotisan/article/details/55056092&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;iotisan&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.sghoslya.com/p/table-01-data-rate-configuration.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;EU&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h1 id=&#34;3-实验环境&#34;&gt;3 实验环境&lt;/h1&gt;
-&lt;h2 id=&#34;31-操作系统&#34;&gt;3.1 操作系统&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Raspberry Pi OS (32-bit) with desktop&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;strong&gt;注意仅能使用Linux Kernel version:&lt;a href=&#34;http://downloads.raspberrypi.org/raspios_armhf/release_notes.txt&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;4.19.118&lt;/a&gt;及以下的版本，否则由于硬件使用GPIO7作为SX1302的RESET，与树莓派的SPI0.1的CS脚&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/13154904.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;冲突&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;// 报错提示
-./reset_lgw.sh: 22: echo: echo: I/O error
-./reset_lgw.sh: 25: ./reset_lgw.sh: cannot create /sys/class/gpio/gpio7/direction: Directory noexistent
-CoreCell reset through GPIO7...
-./reset_lgw.sh: 32: ./reset_lgw.sh: cannot create /sys/class/gpio/gpio7/value: Directory noexistent
-./reset_lgw.sh: 33: ./reset_lgw.sh: cannot create /sys/class/gpio/gpio7/value: Directory noexistent
-ERROR: failed to connect
-// 或者是
-ERROR: [main] failed to start the concentrator 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;ul&gt;
-&lt;li&gt;安装与测试教程：
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.semtech.com/products/wireless-rf/lora-gateways/sx1302cxxxgw1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Semtech SX1302CxxxGW1&lt;/a&gt;：&lt;a href=&#34;https://semtech.my.salesforce.com/sfc/p/#E0000000JelG/a/2R000000HV3G/an5Oh4KfiY7tAO1MO7RiPOj08WUpOTjPHSF57_.NlJ0&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Corecell ref design User Guide V1.2&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.njrjzn.com/chanpinzhongxin/SX1302mozuxilie/21.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;M-GW1302S&lt;/a&gt;：&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVFEYUo0OHJlX1pPcUxjTUIwR1RyQThCaWVnS0lhVnJYeEVRUmNOLUVyb0xEQT9lPTVudm5BTA==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;M-GW1302S 用户手册(2)(1)(1)&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;寄存器读写测试：1%概率成功&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;pi@raspberrypi:~/sx1302_hal/bin $ ./test_loragw_reg
-CoreCell reset through GPIO7...
-SX1261 reset through GPIO7...
-CoreCell power enable through GPIO18...
-CoreCell ADC reset through GPIO13...
-Opening SPI communication interface
-Note: chip version is 0x10 (v1.0)
-## TEST#1: read all registers and check default value for non-read-only registers
-ERROR: default value for register at index 26 is 1, should be 0
-ERROR: default value for register at index 27 is 1, should be 0
-ERROR: default value for register at index 30 is 1, should be 0
-ERROR: default value for register at index 31 is 1, should be 0
-------------------
-TEST#1 FAILED
-------------------
-
-## TEST#2: read/write test on all non-read-only, non-pulse, non-w0clr, non-w1clr registers
-------------------
-TEST#2 PASSED
-------------------
-
-Closing SPI communication interface
-CoreCell reset through GPIO7...
-SX1261 reset through GPIO7...
-CoreCell power enable through GPIO18...
-CoreCell ADC reset through GPIO13...
-&lt;/code&gt;&lt;/pre&gt;
-&lt;ul&gt;
-&lt;li&gt;发送测试成功&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;pi@raspberrypi:~/sx1302_hal/bin $ ./test_loragw_hal_tx -r 1250 -f 480.1 -m LORA -b 125 -s 12 -z 20
-Sending 1 LoRa packets on 480100000 Hz (BW 125 kHz, SF 12, CR 1, 20 bytes payload, 8 symbols preamble, explicit header, non-inverted polarity) at 0 dBm
-CoreCell reset through GPIO7...
-SX1261 reset through GPIO7...
-CoreCell power enable through GPIO18...
-CoreCell ADC reset through GPIO13...
-Opening SPI communication interface
-Note: chip version is 0x10 (v1.0)
-INFO: using legacy timestamp //本程序默认值，与global.config配置文件无关
-ARB: dual demodulation disabled for all SF
-TX done
-
-Nb packets sent: 1 (1)
-Closing SPI communication interface
-CoreCell reset through GPIO7...
-SX1261 reset through GPIO7...
-CoreCell power enable through GPIO18...
-CoreCell ADC reset through GPIO13...
-=========== Test End ===========
-&lt;/code&gt;&lt;/pre&gt;
-&lt;ul&gt;
-&lt;li&gt;接受测试：官方建议&lt;a href=&#34;https://www.bilibili.com/video/BV1Yt411N7MV&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;M-HL9-EV连金黄天线&lt;/a&gt;，但实测用直黑天线也行，且发包间隔要长，避免丢包接收不到
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;pi@raspberrypi:~/sx1302_hal/bin $ ./test_loragw_hal_rx -r 1250 -a 475.5 -b 476.5
-===== sx1302 HAL RX test =====
-INFO: rxpkt buffer size is set to 16
-INFO: Select channel mode 0
-CoreCell reset through GPIO7...
-Opening SPI communication interface
-Note: chip version is 0x10 (v1.0)
-INFO: using legacy timestamp
-ARB: dual demodulation disabled for all SF
-Waiting for packets...
-
------ LoRa packet -----
-  count_us: 11242393
-  size:     18
-  chan:     7
-  status:   0x10
-  datr:     12
-  codr:     1
-  rf_chain  0
-  freq_hz   475900000
-  snr_avg:  -10.2
-  rssi_chan:128.0
-  rssi_sig :118.0
-  crc:      0xD228
-81 0C 20 50 13 00 00 00 00 00 31 32 33 34 35 36 0D 0A 
-Received 1 packets (total:1)
-
------ LoRa packet -----
-  count_us: 21244909
-  size:     18
-  chan:     2
-  status:   0x11
-  datr:     12
-  codr:     1
-  rf_chain  1
-  freq_hz   476500000
-  snr_avg:  -6.5
-  rssi_chan:142.0
-  rssi_sig :136.0
-  crc:      0x7ABE
-81 0C 20 50 13 00 01 00 01 10 31 32 33 34 35 06 09 0A 
-
------ LoRa packet -----
-  count_us: 21244961
-  size:     18
-  chan:     7
-  status:   0x10
-  datr:     12
-  codr:     1
-  rf_chain  0
-  freq_hz   475900000
-  snr_avg:  -10.0
-  rssi_chan:128.0
-  rssi_sig :119.0
-  crc:      0xFABE
-81 0C 20 50 13 00 01 00 01 00 31 32 33 34 35 36 0D 0A 
-Received 2 packets (total:2)
-^C
-Nb valid packets received: 2 CRC OK (1)
-Closing SPI communication interface
-CoreCell reset through GPIO7...
-=========== Test End ===========
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&#34;4-实验步骤&#34;&gt;4 实验步骤&lt;/h1&gt;
-&lt;h2 id=&#34;41-lorawan&#34;&gt;4.1 LoRaWAN&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://connect.ed-diamond.com/MISC/MISCHS-015/LORAWAN-deploiement-d-une-infrastructure-de-test&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;完整案例&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;42-devicesend-nodes&#34;&gt;4.2 Devices/End Nodes&lt;/h2&gt;
-&lt;h3 id=&#34;421-评估板&#34;&gt;4.2.1 评估板&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;http://www.njrjzn.com/chanpinzhongxin/SX127xmozuxilie/4.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;M-HL9-EV&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.rejeee.com/documents/APP_DOC/M-KL9_how_to_enter_configuration_mode.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;进入配置方法&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.rejeee.com/documents/APP_DOC/M-KL9_parameter.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;M-KL9&lt;/strong&gt;参数意义&lt;/a&gt;，具体配置参数看用户手册&lt;/li&gt;
-&lt;li&gt;配置用的&lt;strong&gt;Ascii&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;串口工具注册码: &lt;strong&gt;CCCCC-AAAAA-FFFFF-0E013-6EE85&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;配置&lt;/li&gt;
-&lt;/ol&gt;
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;NET:       Node to Gateway
-TFREQ:     475.5MHz
-RFREQ:     506.5MHz
-POW:       20dBm
-BW:        125kHz
-TSF:       12
-RSF:       12
-CR:        4/5
-MODE:      LORA
-SYNC:      0x34
-PREM:      8, 10
-FIX:       0, 0
-CRC:       ON
-TIQ:       OFF
-RIQ:       ON
-SEQ:       OFF
-IP:        ON
-AES:       OFF
-ACK:       ON //Confirmed message
-LDR:       0, 0
-LCP:       0
-LFT:       0
-RXW:       0
-FNB:       0x00
-TYPE:      0x00
-Flash:     0
-&lt;/code&gt;&lt;/pre&gt;
-&lt;ol start=&#34;6&#34;&gt;
-&lt;li&gt;
-&lt;ul&gt;
-&lt;li&gt;发送接收均用的&lt;strong&gt;Hex&lt;/strong&gt;，内容单位Byte，可在串口工具下方看到tx大小&lt;/li&gt;
-&lt;li&gt;但网关接收到的为PHYpayload，是发送的数据tx加上其他部分(10bytes)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h4 id=&#34;4211-rejeee&#34;&gt;4.2.1.1 Rejeee&lt;/h4&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/13517529.html#4758586&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;这家的节点不支持LoRaWAN，节点只有私有协议的&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWVfQkIxUFl2M3RKb01ZUTMxQ1hidXdCZWVoZmdnNkpPUEJxX1FGdzBhb3NzUT9lPWJmbmM4TA==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;8. 芮捷LPWAN协议&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;http://www.rejeee.com/documents/SPEC/RJDS0052018-M-KL9_Specification_V1.1.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;模块不支持标准LoRaWAN协议模块&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://space.bilibili.com/7682653?spm_id_from=333.788.b_765f7570696e666f.1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;视频&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 弄清楚&lt;a href=&#34;https://forum.chirpstack.io/t/relation-between-sync-word-private-network-and-end-nodes/191/13?u=haowong&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;私有网络&lt;/a&gt;/非LoRaWAN网络怎么导出数据&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;422-end-device&#34;&gt;4.2.2 End device&lt;/h3&gt;
-&lt;p&gt;比评估板复杂，有时候是module+raspberrypi，有时候是module+stem32&lt;/p&gt;
-&lt;h4 id=&#34;4221-入网&#34;&gt;4.2.2.1 入网&lt;/h4&gt;
-&lt;h5 id=&#34;42211-概述&#34;&gt;4.2.2.1.1 概述&lt;/h5&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/6213027.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;AnswerInTheWind&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.thethingsnetwork.org/docs/lorawan/addressing.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TTN&lt;/a&gt;&lt;/p&gt;
-&lt;h5 id=&#34;42212-abp&#34;&gt;4.2.2.1.2 ABP&lt;/h5&gt;
-&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/RAKwireless/article/details/106186894&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;RAKwireless&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.chirpstack.io/application-server/use/devices/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Chirpstack&lt;/a&gt;&lt;/p&gt;
-&lt;h5 id=&#34;42213-otaa&#34;&gt;4.2.2.1.3 OTAA&lt;/h5&gt;
-&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/RAKwireless/article/details/106135373&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;RAKwireless&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/6213529.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;AnswerInTheWind&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;43-gateway&#34;&gt;4.3 Gateway&lt;/h2&gt;
-&lt;h3 id=&#34;431-real-module&#34;&gt;4.3.1 Real module&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;SX1302&lt;/strong&gt;&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.semtech.com/products/wireless-rf/lora-gateways/sx1302cxxxgw1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Semtech&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.njrjzn.com/chanpinzhongxin/SX1302mozuxilie/28.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Rejeee&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;strong&gt;LoRaWAN gateway software implementation&lt;/strong&gt;&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Lora-net/sx1302_hal&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;UDP Packet forwarder project&lt;/a&gt;，默认&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://tech-journal.semtech.com/expert-series-5-things-you-need-to-know-about-lorawan-based-gateways&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoRa Basics Station&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;LoRa Basics Station = Semtech UDP packet forwarder + ChirpStack Gateway Bridge&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/lorabasics/basicstation&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;源码&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;strong&gt;global_conf.json&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://gitee.com/rejeee/gw1302s/commit/c425b67a5ccaaef0dd1042da08974245124c069b&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Gitee版本&lt;/a&gt;直接增加了一个文件&lt;strong&gt;gw1302s/packet_forwarder/global_conf.json&lt;/strong&gt;，其特点是&lt;strong&gt;gateway_conf&lt;/strong&gt;下面的&lt;strong&gt;server_address&lt;/strong&gt;&lt;a href=&#34;https://blog.csdn.net/RAKwireless/article/details/107101582&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;由localhost修改为了loragw.things.qcloud.com&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;make install_conf&lt;/code&gt;即安装&lt;strong&gt;global_conf.json&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;卖家给的&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/13154904.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;攻略&lt;/a&gt;跟用&lt;code&gt;install.sh&lt;/code&gt;生成的主要差别在radio_1与radio_2的&lt;strong&gt;ferq&lt;/strong&gt;不同，攻略的效果好；官方的&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVQzOWdIRUc4YU5DbHFMVzBjRGkwVjBCZjZGQmUzWUpkSnh0YVhXbUlLdnFtUT9lPW9qNjEzcg==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;参考文献&lt;/a&gt;给出了&lt;strong&gt;global_conf.json&lt;/strong&gt;的参数意义&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;432-sdr&#34;&gt;4.3.2 SDR&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.gnuradio.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GUNRadio&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;与Software-defined radio (SDR)设备共用，如USRP N210、USRP B210、hackrf&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;44-lorawan-network-server&#34;&gt;4.4 LoraWAN Network Server&lt;/h2&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;441-cloud-hosted-close-source-lorawan-network-servers-platforms&#34;&gt;4.4.1 Cloud-hosted: Close Source LoRaWAN Network Servers Platforms&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;global.config&lt;/strong&gt;中的&lt;strong&gt;lorawan_public: true&lt;/strong&gt;，&lt;a href=&#34;http://lora.timeddd.com/forum.php?mod=viewthread&amp;amp;tid=521&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;连接不通&lt;/a&gt;的元凶，true对应于sync word &lt;strong&gt;0x34&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;使用树莓派搭建网关注册到腾讯物联网开发平台
-&lt;ul&gt;
-&lt;li&gt;主要步骤
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/13517529.html#4758586&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;AnswerInTheWind&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;补充
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.wpgdadatong.com/cn/solution/detail?PID=5357&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;获取GwEUI&lt;/a&gt;，即在&lt;strong&gt;gw1302s/bin&lt;/strong&gt;下使用&lt;code&gt;./chip_id&lt;/code&gt;，注意还要用该值替换掉&lt;strong&gt;gw1302s/bin/global_conf.json&lt;/strong&gt;中的&lt;strong&gt;gateway_ID`&lt;/strong&gt;，且需要去掉开头的0x，这是代表十六进制的开头&lt;/li&gt;
-&lt;li&gt;运行&lt;code&gt;./lora_pkt_fwd&lt;/code&gt;即可看到&lt;a href=&#34;https://console.cloud.tencent.com/iotexplorer/project/prj-xpc7prs7/gateway/list?table&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;状态在线&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;云解析数据
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/RAKwireless/article/details/107251605&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;数据模板1&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://cloud.tencent.com/document/product/1081/44921&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;数据模板2&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;作用
-&lt;ul&gt;
-&lt;li&gt;判断是否真正上网了，或者说真正处理数据了&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;网关名称            GwEUI            描述            区域            运行状态       最后上报时间       添加时间
-raspberrypi1    0016c001ff10d3f6    -              苏州市           在线         2020-10-01        2020-10-01
-raspberrypi2    0016c001ff10d3f7    -              苏州市           在线         2020-10-01        2020-10-01
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://console.cloud.tencent.com/iotexplorer&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;腾讯物联网开发平台&lt;/a&gt;&lt;/strong&gt; 对标 &lt;strong&gt;&lt;a href=&#34;https://linkwan.console.aliyun.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;阿里云物联网络管理平台&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://console.cloud.tencent.com/iothub&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;腾讯物联网通信&lt;/a&gt;&lt;/strong&gt; 对标 &lt;strong&gt;&lt;a href=&#34;https://iot.console.aliyun.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;阿里云物联网平台&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;442-cloud-hosted-open-source-lorawan-network-servers-platforms&#34;&gt;4.4.2 Cloud-hosted: Open Source LoRaWAN Network Servers Platforms&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.thethingsnetwork.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;The Things Network：在线版&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://console.thethingsnetwork.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TTN官方入门&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://learn.adafruit.com/the-things-network-for-feather?view=all&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TTN&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.thethingsnetwork.org/docs/gateways/packet-forwarder/semtech-udp.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TTN global.config1&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.thethingsnetwork.org/docs/gateways/start/connection.html#semtech-udp-protocol&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TTN global.config2&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://os.mbed.com/docs/mbed-os/v5.15/tutorials/LoRa-tutorial.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Mbed-Os: TTN&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.thethingsnetwork.org/forum/t/sx1302-using-semtech-packet-forwarder-can-not-register-the-gateway/41211/34&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;SX1302网关转发器修改版讨论&lt;/a&gt;：server_address选择&lt;a href=&#34;https://blog.csdn.net/freemote/article/details/90315395&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;router.cn.thethings.network&lt;/a&gt;；温度改为int可保证console显示connected&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.thethingsnetwork.org/forum/t/limitations-data-rate-packet-size-30-seconds-uplink-and-10-messages-downlink-per-day-fair-access-policy-guidelines/1300&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Limitations&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.thethingsindustries.com/docs/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;The Things Stack：安装版&lt;/a&gt;，&lt;a href=&#34;https://cryptii.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Base64工具1&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;Docket install， &lt;a href=&#34;https://lorawan-packet-decoder-0ta6puiniaut.runkit.sh/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Base64工具2&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://forum.rakwireless.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Rakwireless&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.chirpstack.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ChirpStack：安装版&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;Debian install
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.chirpstack.io/project/guides/debian-ubuntu/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ChirpStack:Debian 1&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/a1989214/article/details/106832570&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ChirpStack:Debian 2&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;NS配置文件：&lt;strong&gt;dsn=&amp;ldquo;postgres://chirpstack_ns:dbpassword@localhost/chirpstack_ns?sslmode=disable&amp;rdquo;&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;NS配置文件：注释掉所有&lt;strong&gt;extral chanels&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;AS配置文件：&lt;strong&gt;dsn=&amp;ldquo;postgres://chirpstack_as:dbpassword@localhost/chirpstack_as?sslmode=disable&amp;rdquo;&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;AS配置文件：服务器运行&lt;code&gt;openssl rand -base64 32&lt;/code&gt;，添加到 &lt;strong&gt;JWT_SECRET&lt;/strong&gt;: 解决&lt;strong&gt;jwt parse error: token is expired by AhBmCs&lt;/strong&gt;问题&lt;/li&gt;
-&lt;li&gt;查看日志方法与Docker不同：通过命令行&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Docket install
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://fiware-lorawan.readthedocs.io/en/latest/users_manual/index.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Fireware: ChirpStack+TTN&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.debugself.com/2019/12/08/lorawan_guide/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ChirpStack:docker0&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.chirpstack.io/project/guides/docker-compose/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ChirpStack:docker1&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/Mculover666/article/details/104059771&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ChirpStack:docker2&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.freesion.com/article/1023121538/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ChirpStack:docker3&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/iotisan/article/details/90412873&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ChirpStack:docker4&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/iotisan/article/details/78398978&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ChirpStack:docker5&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.chirpstack.io/gateway-bridge/backends/semtech-udp/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ChirpStack global.config&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;NS配置文件：注释掉所有&lt;a href=&#34;https://blog.csdn.net/zoug16/article/details/104928565&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;extral chanels&lt;/strong&gt;&lt;/a&gt;，其在/chirpstack-docker/configuration/chirpstack-network-server/chirpstack-network-server.toml&lt;/li&gt;
-&lt;li&gt;Docker分离模式后台运行 &lt;code&gt;docker-compose up -d&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;停止部分容器 &lt;code&gt;docker ps -a&lt;/code&gt; + &lt;code&gt;docker stop 容器ID&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;停止所有容器 &lt;code&gt;docker stop $(docker ps -aq)&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;查看日志方法：与Debian不同，不通过命令行
-&lt;ul&gt;
-&lt;li&gt;显示部分容器日志 &lt;code&gt;docker logs -f &amp;lt;container_ID&amp;gt;&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;显示所有容器日志  &lt;code&gt;docker-compose logs&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://forum.chirpstack.io/t/semtech-udp-packet-forwarder-setting/9490/2&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&amp;ldquo;server_address&amp;quot;与ChirpStack Gateway Bridge运行地址一致&lt;/a&gt;，Docker安装时ChirpStack Gateway Bridge默认安装在&lt;a href=&#34;https://www.chirpstack.io/project/architecture/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;云端&lt;/a&gt;，如故这里设为47.110.36.225而不是localhost&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.chirpstack.io/project/guides/connect-gateway/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;查看网关是否连接上了网络服务器&lt;/a&gt;，&lt;code&gt;tcpdump&lt;/code&gt;指令需要通过&lt;code&gt;sudo apt update &amp;amp;&amp;amp; sudo apt install tcpdump&lt;/code&gt;安装&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://lora-developers.semtech.com/resources/network-server/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Semtech Network Server：在线版&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://lora-developers.semtech.com/resources/network-server/faq-network-server/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;指南&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;在网关上安装ChirpStack Gateway Bridge后与Semtech UDP packet forwarder联用&lt;/li&gt;
-&lt;li&gt;或直接使用LoRa Basics Station&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;优点：可同时选用不同频段，如CN470，EU868&amp;hellip;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://openchirp.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;OpenChirp&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.lancaster.ac.uk/scc/sites/lora/lorasim.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoraSim&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://cn1.loriot.io/dashboard&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Loriot&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;上面所有需要自行安装Stack的方法都需要注意：&lt;strong&gt;&lt;a href=&#34;https://help.aliyun.com/document_detail/25475.html?spm=a2c4g.11186623.2.14.81c071afVJYuXn#allowRemoteAccess&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;阿里云服务器配置&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;协议类型          端口范围          授权对象
-UDP             8080/8080        0.0.0.0/0
-UDP             1700/1700        0.0.0.0/0
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;account  password
- admin    admin
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;服务器地址&lt;/strong&gt;: http://47.110.36.225:8080/，不能设置域名解析（需要备案）&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;443-integrated-gateway-embedded-lorawan-network-servers-platforms&#34;&gt;4.4.3 Integrated: Gateway-Embedded LoRaWAN Network Servers Platforms&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.actility.com/lorawan-network-server/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;特点&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/RAKwireless/article/details/105298319&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;RAKwireless&lt;/a&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;444-adr&#34;&gt;4.4.4 ADR&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&#34;https://lora-alliance.org/lorawan-for-developers&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Core LoRaWAN Specification&lt;/a&gt;：NS发送&lt;code&gt;LinkADRReq&lt;/code&gt;到device&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;http://lora.timeddd.com/forum.php?mod=viewthread&amp;amp;tid=428&amp;amp;extra=page%3D1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoraWAN论坛&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVZiNEttMzVTVWRMclNTMl91elRLaW9CZTNSLVJCakVVb3JINEFtZ0VpVW5jdz9lPXlFWXI1bA==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Semtech1&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.sghoslya.com/p/how-does-lorawan-nodes-changes-their.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Sakshama Ghoslya&lt;/a&gt;，对上面的补充&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVNxdEZVbm9hQUpQaGZycl9nbTBDMjBCZFM4Wk1hQzFBZ2l6Z0p5bXJFcTdhQT9lPUhTOU1Gdw==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Semtech2&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://lora-developers.semtech.com/library/tech-papers-and-guides/understanding-adr/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Semtech3&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;45-application-server-console&#34;&gt;4.5 Application Server console&lt;/h2&gt;
-&lt;h3 id=&#34;451-去重&#34;&gt;4.5.1 去重&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&#34;http://lora.timeddd.com/forum.php?mod=viewthread&amp;amp;tid=478&amp;amp;extra=page%3D1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoraWAN论坛&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://lora-developers.semtech.com/library/tech-papers-and-guides/lora-and-lorawan/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Semtech&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&#34;452-下行通信&#34;&gt;4.5.2 下行通信&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/freemote/article/details/90315395&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;freemote&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://forum.chirpstack.io/t/how-to-get-downlink-communication/9816/3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Chirpstack&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.thethingsnetwork.org/forum/t/how-to-get-downlink-communication/41712/12&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TheThingsNetwork1&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.thethingsnetwork.org/forum/u/haowong/messages/archive&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TheThingsNetwork2&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.thethingsnetwork.org/docs/devices/uno/quick-start.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TheThingsNetwork3&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/quending/article/details/86481598&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;quending&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://blog.hobairiku.site/2018/02/26/LoRa-Server-Project/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Rimelink&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&#34;453-mac-command&#34;&gt;4.5.3 Mac command&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&#34;https://lora-alliance.org/lorawan-for-developers&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Core LoRaWAN Specification&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;46-end-application&#34;&gt;4.6 End-application&lt;/h2&gt;
-&lt;h3 id=&#34;461-api&#34;&gt;4.6.1 API&lt;/h3&gt;
-&lt;h4 id=&#34;4611-mqtt&#34;&gt;4.6.1.1 MQTT&lt;/h4&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.emqx.io/cn/blog/mqtt-client-tools&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;2020 年常见 MQTT 客户端工具比较&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/RAKwireless/article/details/106711672&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;RAKwireless&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/6200497.html#4472555&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;AnswerInTheWind&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.thethingsnetwork.org/docs/applications/mqtt/quick-start.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TheThingsNetwork&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://forum.chirpstack.io/t/forming-downlink-packet-to-lora-node/215/16&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ChirpStack1&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.chirpstack.io/application-server/integrations/mqtt/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ChirpStack2&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://thethingsstack.io/integrations/mqtt/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TheThingStack&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/freemote/article/details/106361732&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;freemote&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.instructables.com/Store-Messages-From-Mosquitto-MQTT-Broker-Into-SQL/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;MQTT数据（有效负载）存储到数据库中的方法&lt;/a&gt;&lt;/p&gt;
-&lt;h4 id=&#34;4612-mqtt下行通信&#34;&gt;4.6.1.2 MQTT下行通信&lt;/h4&gt;
-&lt;p&gt;&lt;a href=&#34;https://lora-developers.semtech.com/library/tech-papers-and-guides/lorawan-class-a-devices&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Semtech1&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://lora-developers.semtech.com/library/tech-papers-and-guides/lorawan-class-b-devices&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Semtech2&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.chirpstack.io/project/architecture/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Chirpstack1&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://forum.chirpstack.io/t/how-to-get-downlink-communication/9816/3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Chirpstack2&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/13154904.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;AnswerInTheWind&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/jiangjunjie_2005/article/details/104439355&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Rimelink&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;http://lora.timeddd.com/forum.php?mod=viewthread&amp;amp;tid=540&amp;amp;extra=page%3D1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoraWAN论坛&lt;/a&gt;&lt;/p&gt;
-&lt;h4 id=&#34;4613-metadata元数据&#34;&gt;4.6.1.3 Metadata元数据&lt;/h4&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.thethingsnetwork.org/forum/t/how-to-retrieve-metadata-from-data-storage-integration/19259/2?u=haowong&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TTN&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&#34;462-sdks--libraries&#34;&gt;4.6.2 SDKs &amp;amp; Libraries&lt;/h3&gt;
-&lt;h3 id=&#34;463-integrations&#34;&gt;4.6.3 Integrations&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.loracloud.com/portal&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Lora Cloud&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.chirpstack.io/application-server/integrations/loracloud/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Chirpstack&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.loracloud.com/documentation/device_management?url=gettingstarted.html#example-minimal-integration-with-the-things-network&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TTN&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 </description>
     </item>
     
@@ -2390,7 +1918,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-429861735&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-574183296&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -2400,7 +1928,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-429861735&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-574183296&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
