@@ -39,7 +39,7 @@ image:
   #name: Follow
   #url: https://twitter.com/georgecushen
 url_code: ""
-url_pdf: Abstract
+url_pdf: https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWRlckJlQ2dDV1JEdENmOUF1aWJiUlFCREJ1QW1rWDIwM0JtdUV6WEhWTUpxQT9lPVhJTGZSQw==.mp3
 url_slides: https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWNxU3VvYXg1R2xFdE1Jc2kwNzZXSVFCcHR1aTVnT0xFVVBBUmdtbFdVYUNRdz9lPTA1QXFjYg==.mp3
 url_video: "https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOnY6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVZRc1pXX1BHMVpEbmx1QkZTRGpubGtCSWdQY3M0VE51M0o5SDV1MnZzeFpYUT9lPVhwVFkyQw==.mp3"
 
@@ -76,21 +76,11 @@ Further talk details can easily be added to this page using *Markdown* and $\rm 
 
 
 ### 1 问题
-#### 1.1 第一篇
-同第四次汇报
-#### 1.2 第二篇
-- [ ] 复数权重
-- [ ] 三次样条插值法
-- [ ] 保护频带
-- [x] 同第一篇，多接受、考虑多径效应的
-#### 1.3 第三篇
 - [ ] TTN[2]
-#### 1.4 共性
 - [ ] 备注：所有页面都写，只有图、公式、算法读；文字性叙述备用
 - [ ] 演习一遍
 - [ ] 看相关工作以拓宽知识面，可以观察哪些被多次提到
 - [ ] 看未来工作找到方向
-
 
 ### 2 日期
 #### 2.1 时间安排表
@@ -139,47 +129,14 @@ Further talk details can easily be added to this page using *Markdown* and $\rm 
 		- 边缘计算
 
 ### 4 总览
-#### 4.1 第一场
-同第四次汇报
-#### 4.2 第二场
-##### 4.2.1 源文件
-###### 4.2.1.1 阅读的文件1 
-[点击下载](https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9oaHUyMDE2LW15LnNoYXJlcG9pbnQuY29tLzpiOi9nL3BlcnNvbmFsL3pvbmU5NzEwMTZfaGh1X2VkdV9jbi9FYU1Xd0hUX1ZZcEVyWTBlZFdaOXByZ0J1MWNxTHpDMWdmZlBMUjJjbzBSLXlRP2U9eVl3WENk.mp3)
-
-###### 4.2.1.2 作者的演讲 
-[点击下载](https://www.usenix.org/conference/nsdi20/presentation/gadre)
-
-###### 4.2.1.3 作者的主页 
-[点击下载](https://www.akshaygadre.com/)
-
-###### 4.2.1.4 项目的主页 
-[点击下载](https://www.witechlab.com/chime.html)
-
-###### 4.2.1.5 作者的ppt 
-[点击下载](https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9oaHUyMDE2LW15LnNoYXJlcG9pbnQuY29tLzpiOi9nL3BlcnNvbmFsL3pvbmU5NzEwMTZfaGh1X2VkdV9jbi9FYnFfeGVKTkRqeE1zZTFNM2ZjTlhtNEJDRWJEZzB0TTVyY1RiUzdMSmd2bHdBP2U9N3I4bWwx.mp3)
-
-###### 4.2.1.5 会议的详情 
-[NSDI '20](https://www.usenix.org/conference/nsdi20)
-
-
-
-#### 4.3 第三场
 ##### 4.3.1 源文件
-###### 4.3.1.1 阅读的文件1 
-[点击下载](https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9oaHUyMDE2LW15LnNoYXJlcG9pbnQuY29tLzpiOi9nL3BlcnNvbmFsL3pvbmU5NzEwMTZfaGh1X2VkdV9jbi9FVUpZNmh6MUh0OVBoeTZ3X0tNcllJc0JUMjRzRG9BMVkwWUJIMGdrNHFEU013P2U9YzMySmZj.mp3)
 
-###### 4.3.1.2 会议的详情 
+###### 4.3.1.1 会议的详情 
 [INFOCOM 2020](https://infocom.info/day/1)
-
 
 ### 5 演讲方式
 
-#### 5.1 内容
-2020级新生报告只介绍一篇文章
-
-故我选择**第三篇**
-
-#### 5.2 Win10+TencentMeeting
+#### 5.1 Win10+TencentMeeting
 [腾讯会议共享屏幕播放PPT的时候可以实现只能在自己电脑上可以看到PPT的备注么？](https://www.zhihu.com/question/386623822/answer/1143684767)
 
 
