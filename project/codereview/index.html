@@ -1,0 +1,1658 @@
+<!DOCTYPE html><html lang="en-us" >
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  
+  
+  <meta name="generator" content="Wowchemy 5.0.0-beta.1 for Hugo">
+  
+
+  
+
+  
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="HaoWong">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="This is an code review and comments">
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://haowong.com/project/codereview/">
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+
+  
+  
+  
+  <meta name="theme-color" content="#3f51b5">
+  
+
+  
+  
+
+  
+  
+  
+  
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous" media="print" onload="this.media='all'">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
+        
+      
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.css" integrity="sha512-1xoFisiGdy9nvho8EgXuXvnpR5GAMSjFwp40gSRE3NwdUdIMIKuPa7bqoUhLD0O/5tPNhteAsE5XyyMi5reQVA==" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+
+    
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.2/lazysizes.min.js" integrity="sha512-TmDwFLhg3UA4ZG0Eb4MIyT1O1Mb+Oww5kFG0uHqXsdbyZz9DcvYQhKpGgNkamAI6h2lGGZq2X8ftOJvF/XjTUg==" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+        
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.5dced6f7bce36230706e6fce871bf98e.css">
+
+  
+
+
+
+
+  
+<script>
+  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KWMZJGQ');
+</script>
+
+
+  
+
+
+  
+  
+
+  
+
+  
+  <link rel="manifest" href="/index.webmanifest">
+  
+
+  <link rel="icon" type="image/png" href="/images/icon_hub0cb53550ede56fdccc60540659dbf84_11803_32x32_fill_lanczos_center_2.png">
+  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hub0cb53550ede56fdccc60540659dbf84_11803_192x192_fill_lanczos_center_2.png">
+
+  <link rel="canonical" href="https://haowong.com/project/codereview/">
+
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="og:site_name" content="Room of Requirement">
+  <meta property="og:url" content="https://haowong.com/project/codereview/">
+  <meta property="og:title" content="Code Review of Helper programs &#39;LoRa_PKT_FWD&#39; | Room of Requirement">
+  <meta property="og:description" content="This is an code review and comments"><meta property="og:image" content="https://haowong.com/project/codereview/featured.png">
+  <meta property="twitter:image" content="https://haowong.com/project/codereview/featured.png"><meta property="og:locale" content="en-us">
+  
+    
+      <meta property="article:published_time" content="2020-10-21T00:00:00&#43;00:00">
+    
+    <meta property="article:modified_time" content="2020-10-21T00:00:00&#43;00:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://haowong.com/project/codereview/"
+  },
+  "headline": "Code Review of Helper programs 'LoRa_PKT_FWD'",
+  
+  "image": [
+    "https://haowong.com/project/codereview/featured.png"
+  ],
+  
+  "datePublished": "2020-10-21T00:00:00Z",
+  "dateModified": "2020-10-21T00:00:00Z",
+  
+  "author": {
+    "@type": "Person",
+    "name": "HaoWong"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Room of Requirement",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://haowong.com/images/icon_hub0cb53550ede56fdccc60540659dbf84_11803_192x192_fill_lanczos_center_2.png"
+    }
+  },
+  "description": "This is an code review and comments"
+}
+</script>
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>Code Review of Helper programs &#39;LoRa_PKT_FWD&#39; | Room of Requirement</title>
+
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper  ">
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.7264cf0eba3b66951b36da7d2cecf9c5.js"></script>
+
+  
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Search...">
+        
+      </div>
+
+      
+      
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+  <div class="page-header">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container-xl">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">Room of Requirement</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Room of Requirement</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/about/"><span>About</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+      
+      
+        
+      
+
+      
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      
+      <li class="nav-item dropdown theme-dropdown">
+        <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Display preferences">
+          <i class="fas fa-moon" aria-hidden="true"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item js-set-theme-light">
+            <span>Light</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-dark">
+            <span>Dark</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-auto">
+            <span>Automatic</span>
+          </a>
+        </div>
+      </li>
+      
+
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  </div>
+
+  <div class="page-body">
+    <article class="article article-project">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+
+<div class="article-container pt-3">
+  <h1>Code Review of Helper programs &#39;LoRa_PKT_FWD&#39;</h1>
+
+  
+
+  
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Oct 21, 2020
+  </span>
+  
+
+  
+
+  
+
+  
+  
+  
+  
+  
+  <span class="middot-divider"></span>
+  <a href="/project/codereview/#disqus_thread"></a>
+  
+
+  
+  
+
+</div>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="btn-links mb-3">
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  
+    
+  
+<a class="btn btn-outline-primary btn-page-header" href="https://github.com/wong-hao/sx1302_hal" target="_blank" rel="noopener">
+  Code
+</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+</div>
+
+
+<div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 226px;">
+  <div style="position: relative">
+    <img src="/project/codereview/featured_hu84dfb21f757a46b5302a4f6bf04b8da4_88406_720x0_resize_lanczos_2.png" alt="" class="featured-image">
+    <span class="article-header-caption">Photo by Chirpstack</span>
+  </div>
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <h1 id="0-code-version">0 Code Version</h1>
+<h2 id="0-github">0 Github</h2>
+<ol>
+<li>
+<p><a href="https://github.com/Lora-net/sx1302_hal" target="_blank" rel="noopener">repo</a></p>
+</li>
+<li>
+<p>Reference design:</p>
+<ul>
+<li><a href="https://www.semtech.com/products/wireless-rf/lora-gateways/sx1303ctsxxxgw1" target="_blank" rel="noopener">SX1303CTSXXXGW1</a>，可从<a href="https://github.com/Lora-net/sx1302_hal/releases/tag/V2.0.0" target="_blank" rel="noopener">Added support for SX1303 chip, for further Fine Timestamping support.</a>看出</li>
+<li><a href="https://www.semtech.com/products/wireless-rf/lora-gateways/sx1302cssxxxgw1" target="_blank" rel="noopener">SX1302CSSXXXGW1</a>，可从<a href="https://github.com/Lora-net/sx1302_hal/releases/tag/V2.0.0" target="_blank" rel="noopener">Added support for Listen-Before-Talk for AS923 region / Added support for Spectral Scan with additional sx1261 radio</a>看出</li>
+<li><a href="https://www.semtech.com/products/wireless-rf/lora-gateways/sx1302cfdxxxgw1" target="_blank" rel="noopener">SX1302CFDXXXGW1</a>：可从<a href="https://github.com/Lora-net/sx1302_hal/releases/tag/V2.0.0" target="_blank" rel="noopener">Merged the master-fdd-cn490 branch to bring support for CN490 Full-Duplex reference design</a>看出</li>
+</ul>
+</li>
+</ol>
+<h2 id="1-gitee">1 Gitee</h2>
+<ol>
+<li>
+<p><a href="https://gitee.com/rejeee/gw1302s" target="_blank" rel="noopener">repo</a></p>
+</li>
+<li>
+<p>Reference design:</p>
+<ul>
+<li><a href="https://www.semtech.com/products/wireless-rf/lora-gateways/sx1302cxxxgw1" target="_blank" rel="noopener">SX1302CxxxGW1</a></li>
+<li>与GitHub的<a href="https://gitee.com/rejeee/gw1302s/commit/b06b85a7c87fce9f7d462f55b5913a3dc0c47df9" target="_blank" rel="noopener">区别</a>：
+<ul>
+<li>使用<code>#if USE_I2C_SENSOR ... #endif</code>注释了 <a href="https://github.com/Lora-net/sx1302_hal/issues/28#issuecomment-755148306" target="_blank" rel="noopener">I2C</a> 相关代码 (Source Insight 4.0不能看出哪些代码不能实际运行，而VS code可以通过虚化代码显示)</li>
+<li>测试程序中默认的<strong>boardconf.lorawan_public = true</strong>改成了<strong>boardconf.lorawan_public = false</strong>，即 <strong>private</strong> 即 <strong>0x12</strong>；但这与<strong>global.config</strong>默认<a href="https://forum.chirpstack.io/t/relation-between-sync-word-private-network-and-end-nodes/191/13?u=haowong" target="_blank" rel="noopener">同步字</a>设置不同，故实际收发与测试时，终端同步字设置相反</li>
+<li><strong>SX1302_RESET_PIN=23</strong>改成了<strong>SX1302_RESET_PIN=7</strong>且去掉了其他GPIO引脚代码 (必须用GPOI7，其他没啥用)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h1 id="1-json-configuration-file-globalconfig">1 JSON configuration file: global.config</h1>
+<p><a href="https://github.com/wong-hao/sx1302_hal/blob/master/packet_forwarder/global_conf.json" target="_blank" rel="noopener">本人配置好的</a></p>
+<h2 id="11-参数含义">1.1 参数含义</h2>
+<ol>
+<li><a href="https://www.cnblogs.com/answerinthewind/p/13154904.html" target="_blank" rel="noopener">AnswerInTheWind</a></li>
+<li><a href="https://blog.csdn.net/jiangjunjie_2005/article/details/54603122" target="_blank" rel="noopener">Rimelink</a></li>
+<li>IF chain: <a href="https://lora-developers.semtech.com/knowledge-base/faq/P40" target="_blank" rel="noopener">Semetech</a></li>
+<li>antenna gain: <a href="https://lora-developers.semtech.com/knowledge-base/faq/P40" target="_blank" rel="noopener">Semetech</a></li>
+</ol>
+<h1 id="2-dependancies">2 DEPENDANCIES</h1>
+<h2 id="21-c-library-function">2.1 c library function</h2>
+<pre><code class="language-cpp">#include &lt;stdint.h&gt;         /* C99 types */
+#include &lt;stdbool.h&gt;        /* bool type */
+#include &lt;stdio.h&gt;          /* printf, fprintf, snprintf, fopen, fputs */
+#include &lt;inttypes.h&gt;       /* PRIx64, PRIu64... */
+
+#include &lt;string.h&gt;         /* memset */
+#include &lt;signal.h&gt;         /* sigaction */
+#include &lt;time.h&gt;           /* time, clock_gettime, strftime, gmtime */
+#include &lt;sys/time.h&gt;       /* timeval */
+#include &lt;unistd.h&gt;         /* getopt, access */
+#include &lt;stdlib.h&gt;         /* atoi, exit */
+#include &lt;errno.h&gt;          /* error messages */
+#include &lt;math.h&gt;           /* modf */
+
+#include &lt;sys/socket.h&gt;     /* socket specific definitions */
+#include &lt;netinet/in.h&gt;     /* INET constants and stuff */
+#include &lt;arpa/inet.h&gt;      /* IP address conversion stuff */
+#include &lt;netdb.h&gt;          /* gai_strerror */
+
+#include &lt;pthread.h&gt;
+</code></pre>
+<h3 id="211-复杂函数">2.1.1 复杂函数</h3>
+<h4 id="2111-signal">2.1.1.1 signal</h4>
+<ol>
+<li><a href="https://blog.csdn.net/pmt123456/article/details/53544295">https://blog.csdn.net/pmt123456/article/details/53544295</a></li>
+<li><a href="https://blog.csdn.net/joker0910/article/details/6646336" target="_blank" rel="noopener"><code>system()</code></a></li>
+</ol>
+<h4 id="2112-unistd">2.1.1.2 unistd</h4>
+<ol>
+<li><a href="https://blog.csdn.net/u014470361/article/details/84110216">https://blog.csdn.net/u014470361/article/details/84110216</a></li>
+</ol>
+<h4 id="2113-thread">2.1.1.3 thread</h4>
+<ol>
+<li><a href="https://blog.csdn.net/yusiguyuan/article/details/40627775" target="_blank" rel="noopener"><code>pthread_mutex_lock() / pthread_mutex_unlock()</code></a>，注意每次使用时lock的pthread_mutex_t对象都不同</li>
+<li><a href="https://blog.csdn.net/liangxanhai/article/details/7767430" target="_blank" rel="noopener"><code>pthread_create()</code></a></li>
+<li><a href="https://ask.csdn.net/questions/267690?utm_medium=distribute.pc_relevant_t0.none-task-ask_topic-BlogCommendFromBaidu-1.control&amp;depth_1-utm_source=distribute.pc_relevant_t0.none-task-ask_topic-BlogCommendFromBaidu-1.control" target="_blank" rel="noopener"><code>pthread_join()</code></a></li>
+<li><a href="https://www.cnblogs.com/lijunamneg/archive/2013/01/25/2877211.html" target="_blank" rel="noopener"><code>phtread_cancel()</code></a></li>
+<li>
+<ul>
+<li><a href="https://blog.csdn.net/zyex1108/article/details/45154211" target="_blank" rel="noopener"><code>time()</code></a></li>
+<li><a href="https://www.runoob.com/cprogramming/c-function-gmtime.html" target="_blank" rel="noopener"><code>gtime()</code></a></li>
+<li><a href="https://blog.csdn.net/SanQi_Abao/article/details/94964665" target="_blank" rel="noopener"><code>strftime()</code></a>：获得stat_timestamp：目前的格林威治时间</li>
+<li><a href="https://blog.csdn.net/weixin_44880138/article/details/102605681" target="_blank" rel="noopener"><code>clock_gettime</code></a></li>
+</ul>
+</li>
+</ol>
+<h4 id="2114-socket-用于gateway与server通信">2.1.1.4 socket: 用于gateway与server通信</h4>
+<ol>
+<li><a href="https://allen.blog.csdn.net/article/details/71078044?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.control&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.control" target="_blank" rel="noopener"><code>setsockopt()</code></a></li>
+<li><a href="https://www.cnblogs.com/jianqiang2010/archive/2010/08/20/1804598.htmll" target="_blank" rel="noopener"><code>send()</code></a></li>
+<li><a href="https://www.cnblogs.com/fnlingnzb-learner/p/8523206.html" target="_blank" rel="noopener"><code>recv()</code></a></li>
+<li><a href="https://www.jianshu.com/p/df165c54d0b2" target="_blank" rel="noopener"><code>getaddrinfo()</code></a></li>
+<li><a href="https://blog.csdn.net/u011003120/article/details/78277133" target="_blank" rel="noopener"><code>getaddrinfo()</code></a>
+<ul>
+<li>for (q=result; q!=NULL; q=q-&gt;ai_next)：简单来说就是遍历。因为一个域名可能不止一个IP地址，所以，需要遍历res中的next，如下，是否还有下一个节点(即是否还有下一个IP地址信息)</li>
+</ul>
+</li>
+<li><a href=""><code>getnameinfo()</code></a></li>
+<li><a href="https://blog.csdn.net/cj83111/article/details/5364138" target="_blank" rel="noopener"><code>connect()</code></a></li>
+<li><a href="https://www.ruanyifeng.com/blog/2016/11/byte-order.html" target="_blank" rel="noopener">字节序</a></li>
+</ol>
+<p>sock_up：</p>
+<ul>
+<li>init：main</li>
+<li>send：PUSH_DATA</li>
+<li>recv：PUSH_ACK</li>
+</ul>
+<p>sock_down：</p>
+<ul>
+<li>init：main</li>
+<li>send：PULL_DATA</li>
+<li>recv：
+<ul>
+<li>PULL_ACK</li>
+<li>PULL_RESP</li>
+</ul>
+</li>
+</ul>
+<h4 id="2115-string">2.1.1.5 String</h4>
+<ol>
+<li><a href="https://baike.baidu.com/item/snprintf%28%29" target="_blank" rel="noopener"><code>snprintf()</code></a></li>
+<li><a href="https://www.runoob.com/cprogramming/c-function-modf.html" target="_blank" rel="noopener"><code>modf()</code></a></li>
+</ol>
+<h4 id="2116-sequence">2.1.1.6 Sequence</h4>
+<p><a href="https://blog.csdn.net/dwell548560/article/details/76187095" target="_blank" rel="noopener"><code>#if...#endif </code></a>: Source Insight 4.0不能看出哪些代码不能实际运行，而VS code可以通过虚化代码显示</p>
+<h2 id="22-third-party-librarieslibtools">2.2 Third party libraries：libtools</h2>
+<pre><code class="language-cpp">#include &quot;parson.h&quot;  //.. / libtools / src / parson.c
+#include &quot;base64.h&quot; //.. / libtools / src / base64.c
+</code></pre>
+<h3 id="221-复杂函数">2.2.1 复杂函数</h3>
+<p><a href="http://kgabis.github.io/parson/" target="_blank" rel="noopener">Parson library</a></p>
+<h2 id="23-core-library-libloragw">2.3 Core library: libloragw</h2>
+<blockquote>
+<p>statically linked with the libloragw Lora concentrator library</p>
+</blockquote>
+<blockquote>
+<p>The sx1302_hal is a host driver/HAL to build a Corecell reference design which communicates through SPI with a concentrator board based on Semtech SX1302 multi-channel modem and SX1250 RF transceivers</p>
+</blockquote>
+<pre><code class="language-cpp">#include &quot;loragw_hal.h&quot; //.. / libloragw / src / loragw_hal.c
+#include &quot;loragw_aux.h&quot; //.. / libloragw / src / loragw_aux.c
+#include &quot;loragw_reg.h&quot; //.. / libloragw / src / loragw_reg.c
+#include &quot;loragw_gps.h&quot; //.. / libloragw / src / loragw_gps.c
+</code></pre>
+<h2 id="24-jitqueue">2.4 jitqueue</h2>
+<pre><code class="language-cpp">#include &quot;jitqueue.h&quot; //.. / packet_forwarder / src / jitqueue.c
+#include &quot;trace.h&quot; //.. / packet_forwarder / inc / trace.h
+</code></pre>
+<h2 id="25-tools">2.5 tools</h2>
+<p>lgw_receive接收到的包调用其crc函数校验，与private function: crc16有本质区别</p>
+<h2 id="26-注意">2.6 注意</h2>
+<ol>
+<li>.h文件介绍用法，.c文件介绍实现，都需要看</li>
+<li>jit_*函数和lgw _*_*函数的用法：
+<ul>
+<li>a = function(b, &amp;c, &hellip;)
+<ul>
+<li>a：判断函数是否调用 (执行)成功的返回值</li>
+<li>b：函数利用的变量</li>
+<li>c：<em><strong>函数改变的/得到的变量</strong></em></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h1 id="3-private-functions-and-threads">3 PRIVATE FUNCTIONS and threads</h1>
+<h2 id="31-theory">3.1 Theory</h2>
+<h3 id="311-main">3.1.1 main</h3>
+<p><code>main</code>：</p>
+<ol>
+<li><code>usage</code>：<code>./lora_pkt_fwd -h</code></li>
+<li><code>parse_SX130x_configuration</code></li>
+<li><code>parse_gateway_configuration</code></li>
+<li><code>parse_debug_configuration</code></li>
+<li><code>sig_handler</code></li>
+<li><code>6 threads</code></li>
+</ol>
+<p>作用：2~4显示固定内容，thread_up显示UPSTREAM json内容，main显示6 threads得到的统计内容，详见3.2节</p>
+<hr>
+<h3 id="312-5-threads">3.1.2 5 threads</h3>
+<p>/* &mdash; THREAD 1: RECEIVING PACKETS AND FORWARDING THEM &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;- */</p>
+<p><code>thread_up</code>：</p>
+<ol>
+<li><code>sig_handler</code></li>
+<li><code>difftimespec</code></li>
+</ol>
+<h2 id="lgw_receive-gateway从node接收rxpkt并根据其属性构建upstream的datagram"><code>lgw_receive</code>: gateway从node接收rxpkt，并根据其属性构建UPSTREAM的datagram</h2>
+<p>/* &mdash; THREAD 2: POLLING SERVER AND ENQUEUING PACKETS IN JIT QUEUE &mdash;&mdash;&mdash;- */</p>
+<p><code>thread_down</code>：</p>
+<ol>
+<li><code>sig_handler</code></li>
+<li><code>difftimespec</code></li>
+<li><code>crc16</code>：对发射的包进行crc检验</li>
+<li><code>get_tx_gain_lut_index</code> //jit_enqueue前查tx_gain_lut表</li>
+<li><code>send_tx_ack</code>：返回jit_enqueue相关错误；gps_enabled与gps_ref_valid任意一个不满足都会发送JIT_ERROR_GPS_UNLOCKED，说明gps出问题统一用<strong>UNLOCKED</strong>代替</li>
+</ol>
+<ul>
+<li>
+<p><code>jit_init</code>：对应THREAD 2：thread_down</p>
+</li>
+<li>
+<p><code>jit_enqueue</code>：对应THREAD 2：thread_down</p>
+</li>
+<li>
+<p><code>lgw_receive</code>: gateway向node发送数据包</p>
+</li>
+</ul>
+<hr>
+<p>/* &mdash; THREAD 3: CHECKING PACKETS TO BE SENT FROM JIT QUEUE AND SEND THEM &mdash; */
+//大部分的处理都在thread_down jit_enqueue时判断，发射时需要判断的东西很少，最多看是否lgw发射成功
+<code>thread_jit</code>：</p>
+<ol>
+<li><code>sig_handler</code></li>
+<li><code>print_tx_status</code></li>
+</ol>
+<ul>
+<li>
+<p><code>jit_peek</code>：对应THREAD 3：thread_jit</p>
+</li>
+<li>
+<p><code>jit_dequeue</code>：对应THREAD 3：thread_jit</p>
+</li>
+<li>
+<p><code>jit_queue_is_full/jit_queue_is_empty</code>：被上述四个函数调用的private functions</p>
+</li>
+</ul>
+<h2 id="分析是从gateway到node的通信--just-in-time-downlink-schedulinghttpsgiteecomrejeeegw1302streemasterpacket_forwarder">分析：是从gateway到node的通信,  <a href="https://gitee.com/rejeee/gw1302s/tree/master/packet_forwarder" target="_blank" rel="noopener">Just-In-Time&quot; downlink scheduling</a></h2>
+<p>/* &mdash; THREAD 4: PARSE GPS MESSAGE AND KEEP GATEWAY IN SYNC &mdash;&mdash;&mdash;&mdash;&mdash;&ndash; */</p>
+<ul>
+<li>
+<p><a href="https://lora-developers.semtech.com/library/tech-papers-and-guides/lorawan-class-b-devices" target="_blank" rel="noopener">In order for a LoRaWAN network to support Class B devices, all the LoRaWAN gateways in this network need to have a built-in GPS timing source, so they all can be synchronized to the exact beacon timing.</a></p>
+</li>
+<li>
+<p><a href="https://lora-developers.semtech.com/library/tech-papers-and-guides/lora-and-lorawan/">https://lora-developers.semtech.com/library/tech-papers-and-guides/lora-and-lorawan/</a></p>
+<p><code>thread_gps</code>：</p>
+<ol>
+<li><code>gps_process_sync</code>：time_reference_gps；具体的GPS &lt;-&gt; timestamp TIME REFERENCE</li>
+<li><code>gps_process_coords</code></li>
+</ol>
+</li>
+</ul>
+<hr>
+<p>/* &mdash; THREAD 5: CHECK TIME REFERENCE AND CALCULATE XTAL CORRECTION &mdash;&mdash;&mdash; */</p>
+<p><code>thread_valid</code>：</p>
+<ol>
+<li><code>sig_handler</code></li>
+<li>变量控制</li>
+</ol>
+<ul>
+<li>TIME REFERENCE：gps_ref_valid；用于判断是否启用TIME REFERENCE</li>
+<li>XTAL CORRECTION：
+<ul>
+<li>xtal_correct_ok</li>
+<li>xtal_correct</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>/* &mdash; THREAD 6: BACKGROUND SPECTRAL SCAN                           &mdash;&mdash;&mdash; */</p>
+<p><code>thread_spectral_scan</code>：略</p>
+<hr>
+<h2 id="32-empirical-experiment">3.2 Empirical experiment</h2>
+<pre><code class="language-cpp">pi@raspberrypi:~/sx1302_hal/bin $ ./lora_pkt_fwd
+*** Packet Forwarder ***
+Version: 2.0.1
+*** SX1302 HAL library version info ***
+Version: 2.0.1;
+***
+INFO: Little endian host
+INFO: found configuration file global_conf.json, parsing it
+INFO: global_conf.json does contain a JSON object named SX130x_conf, parsing SX1302 parameters
+INFO: com_type SPI, com_path /dev/spidev0.0, lorawan_public 1, clksrc 0, full_duplex 0
+INFO: antenna_gain 0 dBi
+INFO: Configuring legacy timestamp
+INFO: no configuration for SX1261
+INFO: Configuring Tx Gain LUT for rf_chain 0 with 16 indexes for sx1250
+INFO: radio 0 enabled (type SX1250), center frequency 475500000, RSSI offset -207.000000, tx enabled 1, single input mode 1
+INFO: radio 1 enabled (type SX1250), center frequency 476500000, RSSI offset -207.000000, tx enabled 0, single input mode 1
+INFO: Lora multi-SF channel 0&gt;  radio 0, IF -300000 Hz, 125 kHz bw, SF 5 to 12
+INFO: Lora multi-SF channel 1&gt;  radio 0, IF -100000 Hz, 125 kHz bw, SF 5 to 12
+INFO: Lora multi-SF channel 2&gt;  radio 0, IF 100000 Hz, 125 kHz bw, SF 5 to 12
+INFO: Lora multi-SF channel 3&gt;  radio 0, IF 300000 Hz, 125 kHz bw, SF 5 to 12
+INFO: Lora multi-SF channel 4&gt;  radio 1, IF -300000 Hz, 125 kHz bw, SF 5 to 12
+INFO: Lora multi-SF channel 5&gt;  radio 1, IF -100000 Hz, 125 kHz bw, SF 5 to 12
+INFO: Lora multi-SF channel 6&gt;  radio 1, IF 100000 Hz, 125 kHz bw, SF 5 to 12
+INFO: Lora multi-SF channel 7&gt;  radio 1, IF 300000 Hz, 125 kHz bw, SF 5 to 12
+INFO: Lora std channel&gt; radio 1, IF -200000 Hz, 250000 Hz bw, SF 7, Explicit header
+INFO: FSK channel&gt; radio 1, IF 300000 Hz, 125000 Hz bw, 50000 bps datarate
+INFO: global_conf.json does contain a JSON object named gateway_conf, parsing gateway parameters
+INFO: gateway MAC address is configured to 0016C001FF10D3F6
+INFO: server hostname or IP address is configured to &quot;47.110.36.225&quot;
+INFO: upstream port is configured to &quot;1700&quot;
+INFO: downstream port is configured to &quot;1700&quot;
+INFO: downstream keep-alive interval is configured to 10 seconds
+INFO: statistics display interval is configured to 30 seconds
+INFO: upstream PUSH_DATA time-out is configured to 100 ms
+INFO: packets received with a valid CRC will be forwarded
+INFO: packets received with a CRC error will NOT be forwarded
+INFO: packets received with no CRC will NOT be forwarded
+INFO: Beaconing period is configured to 0 seconds
+INFO: Beaconing signal will be emitted at 869525000 Hz
+INFO: Beaconing datarate is set to SF9
+INFO: Beaconing modulation bandwidth is set to 125000Hz
+INFO: Beaconing TX power is set to 14dBm
+INFO: Beaconing information descriptor is set to 0
+INFO: global_conf.json does contain a JSON object named debug_conf, parsing debug parameters
+INFO: got 2 debug reference payload
+INFO: reference payload ID 0 is 0xCAFE1234
+INFO: reference payload ID 1 is 0xCAFE2345
+INFO: setting debug log file name to loragw_hal.log
+CoreCell reset through GPIO7...
+SX1261 reset through GPIO7...
+CoreCell power enable through GPIO18...
+CoreCell ADC reset through GPIO13...
+Opening SPI communication interface
+Note: chip version is 0x10 (v1.0)
+INFO: Configuring SX1250_0 in single input mode
+INFO: Configuring SX1250_1 in single input mode
+INFO: using legacy timestamp
+INFO: LoRa Service modem: configuring preamble size to 8 symbols
+ARB: dual demodulation disabled for all SF
+INFO: [main] concentrator started, packet can now be received
+INFO: concentrator EUI: 0x0016c001ff10d3f6
+</code></pre>
+<hr>
+<pre><code class="language-cpp">INFO: [down] PULL_ACK received in 18 ms //like the PUSH_ACK in downstream
+INFO: [down] PULL_ACK received in 23 ms
+INFO: [down] PULL_ACK received in 23 ms
+
+INFO: [up] PUSH_ACK received in 38 ms
+
+INFO: Received pkt from mote: 1350200C (fcnt=34)
+
+JSON up: {&quot;rxpk&quot;:[{&quot;jver&quot;:1,&quot;tmst&quot;:70224668,&quot;chan&quot;:5,&quot;rfch&quot;:1,&quot;freq&quot;:476.400000,&quot;mid&quot;: 1,&quot;stat&quot;:1,&quot;modu&quot;:&quot;LORA&quot;,&quot;datr&quot;:&quot;SF12BW125&quot;,&quot;codr&quot;:&quot;4/5&quot;,&quot;rssis&quot;:-75,&quot;lsnr&quot;:0.8,&quot;foff&quot;:166,&quot;rssi&quot;:-73,&quot;size&quot;:25,&quot;data&quot;:&quot;gQwgUBMAIgAiAKGyw9TloaKjpKWmp6ipqg==&quot;}]}
+INFO: [up] PUSH_ACK received in 38 ms
+
+INFO: Received pkt from mote: 1350200C (fcnt=35)
+
+JSON up: {&quot;rxpk&quot;:[{&quot;jver&quot;:1,&quot;tmst&quot;:80227818,&quot;chan&quot;:5,&quot;rfch&quot;:1,&quot;freq&quot;:476.400000,&quot;mid&quot;: 1,&quot;stat&quot;:1,&quot;modu&quot;:&quot;LORA&quot;,&quot;datr&quot;:&quot;SF12BW125&quot;,&quot;codr&quot;:&quot;4/5&quot;,&quot;rssis&quot;:-77,&quot;lsnr&quot;:0.2,&quot;foff&quot;:167,&quot;rssi&quot;:-75,&quot;size&quot;:25,&quot;data&quot;:&quot;gQwgUBMAIwAjAKGyw9TloaKjpKWmp6ipqg==&quot;}]}
+INFO: [up] PUSH_ACK received in 38 ms
+
+##### 2021-01-19 02:36:12 GMT #####
+### [UPSTREAM] ###
+# RF packets received by concentrator: 4
+# CRC_OK: 50.00%, CRC_FAIL: 50.00%, NO_CRC: 0.00%
+# RF packets forwarded: 2 (50 bytes)
+# PUSH_DATA datagrams sent: 3 (624 bytes)
+# PUSH_DATA acknowledged: 100.00%
+### [DOWNSTREAM] ###
+# PULL_DATA sent: 0 (0.00% acknowledged)
+# PULL_RESP(onse) datagrams received: 0 (0 bytes)
+# RF packets sent to concentrator: 0 (0 bytes)
+# TX errors: 0
+### SX1302 Status ###
+# SX1302 counter (INST): 90941928
+# SX1302 counter (PPS):  0
+# BEACON queued: 0
+# BEACON sent so far: 0
+# BEACON rejected: 0
+### [JIT] ###
+src/jitqueue.c:440:jit_print_queue(): INFO: [jit] queue is empty
+#--------
+src/jitqueue.c:440:jit_print_queue(): INFO: [jit] queue is empty
+### [GPS] ###
+# GPS sync is disabled
+ERROR: invalid I2C file descriptor
+### Concentrator temperature unknown ###
+##### END #####
+
+JSON up: {&quot;stat&quot;:{&quot;time&quot;:&quot;2021-01-19 02:36:12 GMT&quot;,&quot;rxnb&quot;:2,&quot;rxok&quot;:2,&quot;rxfw&quot;:2,&quot;ackr&quot;:100.0,&quot;dwnb&quot;:0,&quot;txnb&quot;:0,&quot;temp&quot;:0.0}}
+INFO: [up] PUSH_ACK received in 38 ms
+</code></pre>
+<hr>
+<pre><code class="language-cpp">INFO: End of upstream thread
+
+INFO: End of JIT thread
+
+INFO: End of downstream thread
+Closing SPI communication interface
+INFO: concentrator stopped successfully
+CoreCell reset through GPIO7...
+SX1261 reset through GPIO7...
+CoreCell power enable through GPIO18...
+CoreCell ADC reset through GPIO13...
+INFO: Exiting packet forwarder program
+</code></pre>
+<h2 id="33-basic-communication-protocol-between-lora-gateway-and-network-server">3.3 Basic communication protocol between LoRa gateway and Network Server</h2>
+<blockquote>
+<p>可查的最详细的相关资料</p>
+</blockquote>
+<ol>
+<li><a href="https://github.com/Lora-net/sx1302_hal/blob/master/packet_forwarder/PROTOCOL.md" target="_blank" rel="noopener">PROTOCOL</a></li>
+<li><a href="https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVJ4VTcxc1RCNFJEaFhVU0RUTXlXdU1CNHc1NHQyZ3JhT3NvdUpVckszYkt0dz9lPUVoWXBMdw==.mp3" target="_blank" rel="noopener">LoRaWAN Network Server Demonstration: Gateway to Server Interface Definition</a></li>
+<li><a href="https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVJXaXJLdnJiVEZPaS1xUGk3OFFfVTRCUm4tM1dwLXVwNTNLdVJ6ZE9leDllZz9lPXR6OWh3eA==.mp3" target="_blank" rel="noopener">剖析 LoRaWAN Gateway 核心代码</a></li>
+<li><a href="https://blog.csdn.net/m0_38008027/article/details/89086175" target="_blank" rel="noopener">PROTOCOL相关</a></li>
+</ol>
+<h3 id="331-upstream-protocol">3.3.1 UPstream protocol</h3>
+<ol>
+<li>PUSH_DATA packet：thread_up</li>
+<li>PUSH_ACK packet：thread_up</li>
+</ol>
+<h3 id="332-downstream-protocol">3.3.2 Downstream protocol</h3>
+<ol>
+<li>
+<p>PULL_DATA packet：thread_down</p>
+</li>
+<li>
+<p>PULL_ACK packet：thread_down</p>
+</li>
+<li>
+<p>PULL_RESP packet：thread_down</p>
+<p>prase这些packet的json分辨downlink packet class，决定发射时间（与beacon无关）</p>
+<ul>
+<li>Class C：imme (immediately)</li>
+<li>Class A：tmst (timestamp)，一般不采用：因为global.config中gps_tty_path与beacon_period的设置</li>
+<li>Class B：tmms (GPS time -&gt; timestamp)</li>
+</ul>
+<p>根据数据包类型将其<code>jit_enqueue</code>到jit_queue</p>
+</li>
+<li>
+<p>TX_ACK packet：thread_down</p>
+</li>
+</ol>
+<h1 id="4-compile-install-and-run-instructions">4 Compile, install and run instructions</h1>
+<p>卖家给的<a href="https://www.cnblogs.com/answerinthewind/p/13154904.html" target="_blank" rel="noopener">攻略</a>：</p>
+<p>在<strong>gw1302s</strong>执行<code>make clean all</code>，调用所有helper program的make clean，即Clean and compile everything</p>
+<p>再执行<code>make install</code>，调用所有helper program的make install，把可执行程序都<code>scp</code>到gw1302s/bin中</p>
+<h1 id="5-硬件">5 硬件</h1>
+<h2 id="51-组成">5.1 组成</h2>
+<ol>
+<li>multi-channel SX1302 baseband IC</li>
+<li>two SX1250 RF transceivers</li>
+</ol>
+<p>这与global.config中的&quot;SX130x_conf&quot;紧密相关：<a href="https://gitee.com/rejeee/gw1302s/tree/master/packet_forwarder" target="_blank" rel="noopener">&ldquo;SX130x_conf&rdquo; that should contain the parameters for the Lora concentrator board (RF channels definition, modem parameters, etc) </a></p>
+<h2 id="52-concentrator">5.2 Concentrator</h2>
+<p><a href="https://www.semtech.com/products/wireless-rf/lora-gateways/sx1302cxxxgw1" target="_blank" rel="noopener">SX1302CxxxGW1</a>：<a href="https://semtech.my.salesforce.com/sfc/p/E0000000JelG/a/2R000000HV3G/an5Oh4KfiY7tAO1MO7RiPOj08WUpOTjPHSF57_.NlJ0?__hstc=212684107.9a923fbb2062c017aeab3e39902f6094.1606449781040.1608212935544.1608641620506.43&amp;__hssc=212684107.2.1608641620506&amp;__hsfp=2049775356" target="_blank" rel="noopener">Corecell ref design User Guide V1.2</a></p>
+<ol>
+<li>The SX1302 digital baseband chip is a highly innovative digital signal processing engine
+equipped with 16 modulators, capable of demodulating 64 combinations of LoRa packets,
+and 2 separate modulators</li>
+<li>The SX1250 is a highly integrated RF to IQ transceiver capable of supporting multiple
+modulation schemes over the 150-960 MHz ISM frequency bands.</li>
+<li>One SX1302 and two SX1250 transceivers are used to complete an eight channel LoRa
+concentrator.</li>
+</ol>
+<h2 id="53-与程序的关系">5.3 与程序的关系</h2>
+<p>thread_jit入队出队的队列正是两个SX1250对应的radio_0、radio_1</p>
+<h1 id="6-问题">6 问题</h1>
+<ul>
+<li><input disabled="" type="checkbox"> DEPENDANCIES相关的函数定义及实现</li>
+<li><input disabled="" type="checkbox"> &ldquo;SX130x_conf&quot;相关，如RF chain、IF chain等参数</li>
+</ul>
+
+    </div>
+
+    
+
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tag/wireless-communication/">Wireless Communication</a>
+  
+</div>
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://haowong.com/project/codereview/&amp;text=Code%20Review%20of%20Helper%20programs%20&amp;#39;LoRa_PKT_FWD&amp;#39;" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://haowong.com/project/codereview/&amp;t=Code%20Review%20of%20Helper%20programs%20&amp;#39;LoRa_PKT_FWD&amp;#39;" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Code%20Review%20of%20Helper%20programs%20&amp;#39;LoRa_PKT_FWD&amp;#39;&amp;body=https://haowong.com/project/codereview/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://haowong.com/project/codereview/&amp;title=Code%20Review%20of%20Helper%20programs%20&amp;#39;LoRa_PKT_FWD&amp;#39;" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://haowong.com/project/codereview/&amp;title=Code%20Review%20of%20Helper%20programs%20&amp;#39;LoRa_PKT_FWD&amp;#39;" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="https://haowong.com/"><img class="avatar mr-3 avatar-circle" src="/author/haowong/avatar_huc2a8063aa4399eb4d97483d10e337980_66269_270x270_fill_q90_lanczos_center.JPG" alt="HaoWong"></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://haowong.com/">HaoWong</a></h5>
+      <h6 class="card-subtitle">Master Candidate</h6>
+      <p class="card-text">Enjoy your reading</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+    <li>
+      <a href="mailto:haowong@seu.edu.cn" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/wong-hao" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/" >
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/" >
+        <i class="ai ai-researchgate"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://arxiv.org/set_author_id" target="_blank" rel="noopener">
+        <i class="ai ai-arxiv"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+<section id="comments">
+  
+    
+<div id="disqus_thread"></div>
+<script>
+  var disqus_config = function () {
+    
+    
+    
+  };
+  (function() {
+    if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+      document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+      return;
+    }
+    var d = document, s = d.createElement('script'); s.async = true;
+    s.src = 'https://' + "hugoblog-6" + '.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+  
+</section>
+
+
+
+
+
+
+
+
+  
+  
+  <div class="article-widget content-widget-hr">
+    <h3>Related</h3>
+    <ul>
+      
+      <li><a href="/project/lora/">LoRa</a></li>
+      
+      <li><a href="/project/internal-project/">LoRa and LoRaWAN</a></li>
+      
+      <li><a href="/project/lorawan/">LoRaWAN</a></li>
+      
+      <li><a href="/project/external-project/">External Project</a></li>
+      
+    </ul>
+  </div>
+  
+
+
+
+
+
+    <div class="project-related-pages content-widget-hr">
+      
+      
+
+      
+      
+      
+
+      
+      
+      
+
+      
+      
+      
+    </div>
+  </div>
+</article>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+  
+  <p class="powered-by">
+    
+      <a href="/privacy/">Privacy policy</a>
+    
+    
+  </p>
+  
+
+  <p class="powered-by">
+    ©
+  </p>
+
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+    Published with
+    <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a>  —
+    the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">
+    open source</a> website builder that empowers creators.
+    
+  </p>
+</footer>
+
+    </div>
+    
+  </div>
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+      
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/latex.min.js"></script>
+        
+      
+
+    
+
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.js" integrity="sha512-SeiQaaDh73yrb56sTW/RgVdi/mMqNeM2oBwubFHagc5BkixSpP1fvqF47mKzPGWYSSy4RwbBunrJBQ4Co8fRWA==" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+        <div class="search-hit-content">
+          <div class="search-hit-name">
+            <a href="{{relpermalink}}">{{title}}</a>
+            <div class="article-metadata search-hit-type">{{type}}</div>
+            <p class="search-hit-description">{{snippet}}</p>
+          </div>
+        </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    
+
+    
+    
+    
+
+    
+    
+    
+
+    
+    
+
+    
+    
+    <script id="dsq-count-scr" src="https://hugoblog-6.disqus.com/count.js" async></script>
+    
+
+    
+    
+      
+      
+      
+      
+      
+      
+      
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      
+      
+    
+    
+    <script src="/en/js/wowchemy.min.297f736e130400781cfee00eff1f1afd.js"></script>
+
+    
+
+<center>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次<br>
+</span>
+<span id="busuanzi_container_site_uv">
+    本站访客数<span id="busuanzi_value_site_uv"></span>人次<br>
+</span>
+</center>
+
+
+<center>
+<span id="timeDate">载入天数...</span>
+<span id="times">载入时分秒...</span>  
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("07/19/2020 13:14:21");
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+setInterval("createtime()",250);
+</script>
+</center>
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7HJ175Y3TY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-7HJ175Y3TY');
+</script>
+
+
+<center>
+    <script type="text/javascript" src="//rf.revolvermaps.com/0/0/1.js?i=5k01kpl1ga8&amp;s=220&amp;m=7&amp;v=true&amp;r=false&amp;b=000000&amp;n=false&amp;c=ff0000" async="async"></script>
+</center>
+
+
+
+
+</body>
+</html>
