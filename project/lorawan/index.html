@@ -640,7 +640,7 @@
   
     
   
-<a class="btn btn-outline-primary btn-page-header" href="https://gitee.com/rejeee/gw1302s/commit/c425b67a5ccaaef0dd1042da08974245124c069b" target="_blank" rel="noopener">
+<a class="btn btn-outline-primary btn-page-header" href="https://github.com/wong-hao/sx1302_hal" target="_blank" rel="noopener">
   Code
 </a>
 
@@ -893,6 +893,8 @@ Flash:     0
 <h4 id="2214-security">2.2.1.4 Security</h4>
 <ol>
 <li><a href="https://www.thethingsnetwork.org/docs/lorawan/security.html" target="_blank" rel="noopener">TTN</a></li>
+<li><a href="https://www.cyberark.com/resources/threat-research-blog/lorawan-mqtt-what-to-know-when-securing-your-iot-network" target="_blank" rel="noopener">Cyberark</a></li>
+<li><a href="https://ask.csdn.net/questions/3109264" target="_blank" rel="noopener">CSDN</a></li>
 </ol>
 <h4 id="2215-rejeee">2.2.1.5 Rejeee</h4>
 <p><a href="https://www.cnblogs.com/answerinthewind/p/13517529.html#4758586" target="_blank" rel="noopener">这家的节点不支持LoRaWAN，节点只有私有协议的</a></p>
@@ -1036,7 +1038,12 @@ raspberrypi2    0016c001ff10d3f7    -              苏州市           在线   
 </ul>
 </li>
 <li><a href="https://forum.chirpstack.io/t/semtech-udp-packet-forwarder-setting/9490/2" target="_blank" rel="noopener">&ldquo;server_address&quot;与ChirpStack Gateway Bridge运行地址一致</a>，Docker安装时ChirpStack Gateway Bridge默认安装在<a href="https://www.chirpstack.io/project/architecture/" target="_blank" rel="noopener">云端</a>，如故这里设为47.110.36.225而不是localhost</li>
-<li><a href="https://www.chirpstack.io/project/guides/connect-gateway/" target="_blank" rel="noopener">查看网关是否连接上了网络服务器</a>，<code>tcpdump</code>指令需要通过<code>sudo apt update &amp;&amp; sudo apt install tcpdump</code>安装</li>
+<li><a href="https://www.chirpstack.io/project/guides/connect-gateway/" target="_blank" rel="noopener">纠错查看网关是否通过网关桥连接上了网络服务器</a>
+<ul>
+<li><code>tcpdump</code>指令需要通过<code>sudo apt update &amp;&amp; sudo apt install tcpdump</code>安装</li>
+<li>总结下来即查看日志显示、订阅mqtt</li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="https://lora-developers.semtech.com/resources/network-server/" target="_blank" rel="noopener">Semtech Network Server：在线版</a>
@@ -1097,17 +1104,52 @@ UDP             1700/1700        0.0.0.0/0
 <p><a href="https://blog.hobairiku.site/2018/02/26/LoRa-Server-Project/" target="_blank" rel="noopener">Rimelink</a></p>
 <h2 id="26-end-application">2.6 End-application</h2>
 <h3 id="261-api">2.6.1 API</h3>
-<h4 id="2611-mqtt">2.6.1.1 MQTT</h4>
-<p><a href="https://www.emqx.io/cn/blog/mqtt-client-tools" target="_blank" rel="noopener">2020 年常见 MQTT 客户端工具比较</a></p>
-<p><a href="https://blog.csdn.net/RAKwireless/article/details/106711672" target="_blank" rel="noopener">RAKwireless</a></p>
-<p><a href="https://www.cnblogs.com/answerinthewind/p/6200497.html#4472555" target="_blank" rel="noopener">AnswerInTheWind</a></p>
-<p><a href="https://www.thethingsnetwork.org/docs/applications/mqtt/quick-start.html" target="_blank" rel="noopener">TheThingsNetwork</a></p>
-<p><a href="https://forum.chirpstack.io/t/forming-downlink-packet-to-lora-node/215/16" target="_blank" rel="noopener">ChirpStack1</a></p>
-<p><a href="https://www.chirpstack.io/application-server/integrations/mqtt/" target="_blank" rel="noopener">ChirpStack2</a></p>
-<p><a href="https://thethingsstack.io/integrations/mqtt/" target="_blank" rel="noopener">TheThingStack</a></p>
-<p><a href="https://blog.csdn.net/freemote/article/details/106361732" target="_blank" rel="noopener">freemote</a></p>
-<p><a href="https://www.instructables.com/Store-Messages-From-Mosquitto-MQTT-Broker-Into-SQL/" target="_blank" rel="noopener">MQTT数据（有效负载）存储到数据库中的方法</a></p>
+<h4 id="2611-mqtt上行通信">2.6.1.1 MQTT上行通信</h4>
+<ol>
+<li>Event-topic-template</li>
+</ol>
+<ul>
+<li>所有组件都可以在各自的Configuration里找到
+<ul>
+<li><a href="https://www.cnblogs.com/liujiabing/p/13692308.html" target="_blank" rel="noopener">实战</a></li>
+<li><a href="https://www.cyberark.com/resources/threat-research-blog/lorawan-mqtt-what-to-know-when-securing-your-iot-network" target="_blank" rel="noopener">Cyberark</a></li>
+</ul>
+</li>
+<li>以gateway-bridge为例
+<ul>
+<li>注意：gateway-bridge在云端安装的就在云服务器上操作，在网关上安装的就在网关上操作</li>
+<li>可以从运行日志<code>sudo journalctl -u chirpstack-gateway-bridge -f -n 50</code>可看到topic为<strong>gateway/0016c001ff10d3f6/event/up</strong>，故使用<code>mosquitto_sub -t &quot;gateway/0016c001ff10d3f6/event/up&quot; -v</code></li>
+<li>也可以从配置文件<code>vi /etc/chirpstack-gateway-bridge/chirpstack-gateway-bridge.toml</code>中找到</li>
+<li><a href="https://www.chirpstack.io/project/guides/connect-gateway/" target="_blank" rel="noopener">在配置文件中设置marshaler=&ldquo;json&quot;后</a><code>sudo systemctl restart chirpstack-gateway-bridge</code>重启，可以得到和Live LoRaWAN frames网页接收一样的效果，但没有fcnt；且两者都不接收CRC_EEROR的数据包</li>
+</ul>
+</li>
+<li>以Application server为例
+<ul>
+<li><a href="https://forum.chirpstack.io/t/forming-downlink-packet-to-lora-node/215/16" target="_blank" rel="noopener">ChirpStack1</a></li>
+<li><a href="https://www.chirpstack.io/application-server/integrations/mqtt/" target="_blank" rel="noopener">ChirpStack2</a></li>
+<li><a href="https://thethingsstack.io/integrations/mqtt/" target="_blank" rel="noopener">TheThingStack</a></li>
+<li><a href="https://www.thethingsnetwork.org/docs/applications/mqtt/quick-start.html" target="_blank" rel="noopener">TheThingsNetwork</a></li>
+</ul>
+</li>
+</ul>
+<ol start="2">
+<li>如何使用客户端工具
+<ul>
+<li><a href="https://www.emqx.io/cn/blog/mqtt-client-tools" target="_blank" rel="noopener">2020 年常见 MQTT 客户端工具比较</a></li>
+<li><a href="https://blog.csdn.net/RAKwireless/article/details/106711672" target="_blank" rel="noopener">RAKwireless</a></li>
+<li><a href="https://blog.csdn.net/freemote/article/details/106361732" target="_blank" rel="noopener">freemote</a></li>
+</ul>
+</li>
+<li><a href="https://www.instructables.com/Store-Messages-From-Mosquitto-MQTT-Broker-Into-SQL/" target="_blank" rel="noopener">MQTT数据（有效负载）存储到数据库中的方法</a></li>
+</ol>
 <h4 id="2612-mqtt下行通信">2.6.1.2 MQTT下行通信</h4>
+<ol>
+<li>Command-topic-template
+<ul>
+<li>所有组件都可以在各自的Configuration里找到</li>
+</ul>
+</li>
+</ol>
 <p><a href="https://lora-developers.semtech.com/library/tech-papers-and-guides/lorawan-class-a-devices" target="_blank" rel="noopener">Semtech1</a></p>
 <p><a href="https://lora-developers.semtech.com/library/tech-papers-and-guides/lorawan-class-b-devices" target="_blank" rel="noopener">Semtech2</a></p>
 <p><a href="https://www.chirpstack.io/project/architecture/" target="_blank" rel="noopener">Chirpstack1</a></p>
