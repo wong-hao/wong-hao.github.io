@@ -883,6 +883,7 @@ Flash:     0
 <li><a href="https://lora-alliance.org/lorawan-for-developers" target="_blank" rel="noopener">Back-End Interfaces</a>：最官方的文件，下面的东西都有包含</li>
 <li><a href="https://www.cnblogs.com/answerinthewind/p/6213027.html" target="_blank" rel="noopener">AnswerInTheWind</a></li>
 <li><a href="https://www.thethingsnetwork.org/docs/lorawan/addressing.html" target="_blank" rel="noopener">TTN</a></li>
+<li><a href="https://blog.csdn.net/quending/article/details/86481598" target="_blank" rel="noopener">quending</a></li>
 </ol>
 <h4 id="2212-abp">2.2.1.2 ABP</h4>
 <p><a href="https://blog.csdn.net/RAKwireless/article/details/106186894" target="_blank" rel="noopener">RAKwireless</a></p>
@@ -1023,8 +1024,12 @@ raspberrypi2    0016c001ff10d3f7    -              苏州市           在线   
 <li><a href="https://blog.csdn.net/iotisan/article/details/78398978" target="_blank" rel="noopener">ChirpStack:docker5</a></li>
 <li><a href="https://www.chirpstack.io/gateway-bridge/backends/semtech-udp/" target="_blank" rel="noopener">ChirpStack global.config</a>
 <ul>
-<li>NS配置文件：注释掉所有<a href="https://blog.csdn.net/zoug16/article/details/104928565" target="_blank" rel="noopener"><strong>extral chanels</strong></a>，其在/chirpstack-docker/configuration/chirpstack-network-server/chirpstack-network-server.toml</li>
-<li>Docker分离模式后台运行 <code>docker-compose up -d</code></li>
+<li>配置文件：所有都在<strong>chirpstack-docker/configuration</strong>目录中
+<ul>
+<li>注释掉NS配置文件中所有<a href="https://blog.csdn.net/zoug16/article/details/104928565" target="_blank" rel="noopener"><strong>extral chanels</strong></a></li>
+</ul>
+</li>
+<li>Docker分离模式后台启动 <code>docker-compose up -d</code>:需要进入<strong>root/chirpstack-docker</strong>目录，且恢复镜像之后docker不会自动重启</li>
 <li>停止部分容器 <code>docker ps -a</code> + <code>docker stop 容器ID</code></li>
 <li>停止所有容器 <code>docker stop $(docker ps -aq)</code></li>
 <li>查看日志方法：与Debian不同，不通过命令行
@@ -1057,6 +1062,12 @@ raspberrypi2    0016c001ff10d3f7    -              苏州市           在线   
 <li>优点：可同时选用不同频段，如CN470，EU868&hellip;</li>
 </ul>
 </li>
+<li>Mainflux
+<ul>
+<li><a href="https://mainflux.readthedocs.io/en/latest/lora/" target="_blank" rel="noopener">docs</a></li>
+<li><a href="https://medium.com/mainflux-iot-platform/mainflux-lorawan-tutorial-c54632ffee99" target="_blank" rel="noopener">medium</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="https://openchirp.io/" target="_blank" rel="noopener">OpenChirp</a></li>
@@ -1077,6 +1088,7 @@ UDP             1700/1700        0.0.0.0/0
 </code></pre>
 </li>
 <li><strong>服务器地址</strong>: http://47.110.36.225:8080/，不能设置域名解析（需要备案）</li>
+<li><a href="https://help.aliyun.com/document_detail/38034.html" target="_blank" rel="noopener">ECS Linux解决SSH会话连接超时问题</a></li>
 </ul>
 <hr>
 <h3 id="243-integrated-gateway-embedded-lorawan-network-servers-platforms">2.4.3 Integrated: Gateway-Embedded LoRaWAN Network Servers Platforms</h3>
@@ -1100,21 +1112,29 @@ UDP             1700/1700        0.0.0.0/0
 <p><a href="https://www.thethingsnetwork.org/forum/t/how-to-get-downlink-communication/41712/12" target="_blank" rel="noopener">TheThingsNetwork1</a></p>
 <p><a href="https://www.thethingsnetwork.org/forum/u/haowong/messages/archive" target="_blank" rel="noopener">TheThingsNetwork2</a></p>
 <p><a href="https://www.thethingsnetwork.org/docs/devices/uno/quick-start.html" target="_blank" rel="noopener">TheThingsNetwork3</a></p>
-<p><a href="https://blog.csdn.net/quending/article/details/86481598" target="_blank" rel="noopener">quending</a></p>
-<p><a href="https://blog.hobairiku.site/2018/02/26/LoRa-Server-Project/" target="_blank" rel="noopener">Rimelink</a></p>
 <h2 id="26-end-application">2.6 End-application</h2>
 <h3 id="261-api">2.6.1 API</h3>
-<h4 id="2611-mqtt上行通信">2.6.1.1 MQTT上行通信</h4>
+<h4 id="2611-grpc">2.6.1.1 gRPC</h4>
+<p>http://47.110.36.225:8080/api</p>
+<h4 id="2612-mqtt上行通信">2.6.1.2 MQTT上行通信</h4>
 <ol>
-<li>Event-topic-template</li>
-</ol>
+<li><a href="https://blog.hobairiku.site/2018/02/26/LoRa-Server-Project/" target="_blank" rel="noopener">流程</a></li>
+<li>Tools
 <ul>
-<li>所有组件都可以在各自的Configuration里找到
+<li>Mosquitto
 <ul>
-<li><a href="https://www.cnblogs.com/liujiabing/p/13692308.html" target="_blank" rel="noopener">实战</a></li>
-<li><a href="https://www.cyberark.com/resources/threat-research-blog/lorawan-mqtt-what-to-know-when-securing-your-iot-network" target="_blank" rel="noopener">Cyberark</a></li>
+<li>配置方法
+<ul>
+<li><a href="https://www.chirpstack.io/project/guides/mqtt-authentication/" target="_blank" rel="noopener">MQTT authentication &amp; authorization</a></li>
+<li><a href="https://www.hangge.com/blog/cache/detail_2896.html" target="_blank" rel="noopener">hangge</a></li>
+<li><a href="https://blog.csdn.net/hanhui22/article/details/106693684" target="_blank" rel="noopener">Docker </a></li>
 </ul>
 </li>
+<li>Event-topic-template
+<ul>
+<li>所有组件都可以在各自的Configuration里找到</li>
+<li><a href="https://www.cnblogs.com/liujiabing/p/13692308.html" target="_blank" rel="noopener">坚持坚持</a></li>
+<li><a href="https://www.cyberark.com/resources/threat-research-blog/lorawan-mqtt-what-to-know-when-securing-your-iot-network" target="_blank" rel="noopener">Cyberark</a></li>
 <li>以gateway-bridge为例
 <ul>
 <li>注意：gateway-bridge在云端安装的就在云服务器上操作，在网关上安装的就在网关上操作</li>
@@ -1127,37 +1147,50 @@ UDP             1700/1700        0.0.0.0/0
 <ul>
 <li><a href="https://forum.chirpstack.io/t/forming-downlink-packet-to-lora-node/215/16" target="_blank" rel="noopener">ChirpStack1</a></li>
 <li><a href="https://www.chirpstack.io/application-server/integrations/mqtt/" target="_blank" rel="noopener">ChirpStack2</a></li>
-<li><a href="https://thethingsstack.io/integrations/mqtt/" target="_blank" rel="noopener">TheThingStack</a></li>
-<li><a href="https://www.thethingsnetwork.org/docs/applications/mqtt/quick-start.html" target="_blank" rel="noopener">TheThingsNetwork</a></li>
+<li><a href="https://thethingsstack.io/integrations/mqtt/" target="_blank" rel="noopener">Thethingsstack</a></li>
+<li><a href="https://www.thethingsnetwork.org/docs/applications/mqtt/quick-start.html" target="_blank" rel="noopener">Thethingsnetwork1</a></li>
+<li><a href="https://www.thethingsnetwork.org/docs/applications/mqtt/api.html" target="_blank" rel="noopener">Thethingsnetwork2</a></li>
 </ul>
 </li>
 </ul>
-<ol start="2">
-<li>如何使用客户端工具
+</li>
+</ul>
+</li>
+<li>其他
 <ul>
+<li><a href="https://mqtt.org/software/" target="_blank" rel="noopener">mqttorg</a></li>
+<li><a href="https://www.thethingsnetwork.org/docs/applications/mqtt/" target="_blank" rel="noopener">TTN</a></li>
 <li><a href="https://www.emqx.io/cn/blog/mqtt-client-tools" target="_blank" rel="noopener">2020 年常见 MQTT 客户端工具比较</a></li>
-<li><a href="https://blog.csdn.net/RAKwireless/article/details/106711672" target="_blank" rel="noopener">RAKwireless</a></li>
-<li><a href="https://blog.csdn.net/freemote/article/details/106361732" target="_blank" rel="noopener">freemote</a></li>
+<li><a href="https://blog.csdn.net/RAKwireless/article/details/106711672" target="_blank" rel="noopener">MQTT.fx1</a></li>
+<li><a href="https://blog.csdn.net/freemote/article/details/106361732" target="_blank" rel="noopener">MQTT.fx2</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="https://www.instructables.com/Store-Messages-From-Mosquitto-MQTT-Broker-Into-SQL/" target="_blank" rel="noopener">MQTT数据（有效负载）存储到数据库中的方法</a></li>
 </ol>
-<h4 id="2612-mqtt下行通信">2.6.1.2 MQTT下行通信</h4>
+<h4 id="2613-mqtt下行通信">2.6.1.3 MQTT下行通信</h4>
 <ol>
 <li>Command-topic-template
 <ul>
 <li>所有组件都可以在各自的Configuration里找到</li>
 </ul>
 </li>
+<li>概念性
+<ul>
+<li><a href="https://lora-developers.semtech.com/library/tech-papers-and-guides/lorawan-class-a-devices" target="_blank" rel="noopener">Semtech1</a></li>
+<li><a href="https://lora-developers.semtech.com/library/tech-papers-and-guides/lorawan-class-b-devices" target="_blank" rel="noopener">Semtech2</a></li>
+<li><a href="https://forum.chirpstack.io/t/how-to-get-downlink-communication/9816/3" target="_blank" rel="noopener">Chirpstack2</a></li>
+<li><a href="https://www.cnblogs.com/answerinthewind/p/13154904.html" target="_blank" rel="noopener">AnswerInTheWind</a></li>
+</ul>
+</li>
+<li>实际操作
+<ul>
+<li><a href="https://blog.csdn.net/jiangjunjie_2005/article/details/104439355" target="_blank" rel="noopener">Rimelink</a></li>
+</ul>
+</li>
 </ol>
-<p><a href="https://lora-developers.semtech.com/library/tech-papers-and-guides/lorawan-class-a-devices" target="_blank" rel="noopener">Semtech1</a></p>
-<p><a href="https://lora-developers.semtech.com/library/tech-papers-and-guides/lorawan-class-b-devices" target="_blank" rel="noopener">Semtech2</a></p>
-<p><a href="https://www.chirpstack.io/project/architecture/" target="_blank" rel="noopener">Chirpstack1</a></p>
-<p><a href="https://forum.chirpstack.io/t/how-to-get-downlink-communication/9816/3" target="_blank" rel="noopener">Chirpstack2</a></p>
-<p><a href="https://www.cnblogs.com/answerinthewind/p/13154904.html" target="_blank" rel="noopener">AnswerInTheWind</a></p>
-<p><a href="https://blog.csdn.net/jiangjunjie_2005/article/details/104439355" target="_blank" rel="noopener">Rimelink</a></p>
-<p><a href="http://lora.timeddd.com/forum.php?mod=viewthread&amp;tid=540&amp;extra=page%3D1" target="_blank" rel="noopener">LoraWAN论坛</a></p>
-<h4 id="2613-metadata元数据">2.6.1.3 Metadata元数据</h4>
+<h4 id="2614-metadata元数据">2.6.1.4 Metadata元数据</h4>
 <p><a href="https://www.thethingsnetwork.org/forum/t/how-to-retrieve-metadata-from-data-storage-integration/19259/2?u=haowong" target="_blank" rel="noopener">TTN</a></p>
 <h3 id="262-sdks--libraries">2.6.2 SDKs &amp; Libraries</h3>
 <h3 id="263-integrations">2.6.3 Integrations</h3>
