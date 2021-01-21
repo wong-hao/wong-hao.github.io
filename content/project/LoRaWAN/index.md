@@ -17,7 +17,7 @@ image:
 #  icon_pack: fab
 #  name: Follow
 #  url: https://twitter.com/georgecushen
-url_code: https://gitee.com/rejeee/gw1302s/commit/c425b67a5ccaaef0dd1042da08974245124c069b
+url_code: https://github.com/wong-hao/sx1302_hal
 url_pdf: ""
 url_slides: ""
 url_video: ""
@@ -238,6 +238,8 @@ ERROR: [main] failed to start the concentrator
 
 #### 2.2.1.4 Security
 1. [TTN](https://www.thethingsnetwork.org/docs/lorawan/security.html)
+2. [Cyberark](https://www.cyberark.com/resources/threat-research-blog/lorawan-mqtt-what-to-know-when-securing-your-iot-network)
+3. [CSDN](https://ask.csdn.net/questions/3109264)
 
 #### 2.2.1.5 Rejeee
 
@@ -338,7 +340,9 @@ ERROR: [main] failed to start the concentrator
             - 显示部分容器日志 ``docker logs -f <container_ID>``
             - 显示所有容器日志  ``docker-compose logs``
       - ["server_address"与ChirpStack Gateway Bridge运行地址一致](https://forum.chirpstack.io/t/semtech-udp-packet-forwarder-setting/9490/2)，Docker安装时ChirpStack Gateway Bridge默认安装在[云端](https://www.chirpstack.io/project/architecture/)，如故这里设为47.110.36.225而不是localhost 
-      - [查看网关是否连接上了网络服务器](https://www.chirpstack.io/project/guides/connect-gateway/)，``tcpdump``指令需要通过``sudo apt update && sudo apt install tcpdump``安装
+      - [纠错查看网关是否通过网关桥连接上了网络服务器](https://www.chirpstack.io/project/guides/connect-gateway/)
+        - ``tcpdump``指令需要通过``sudo apt update && sudo apt install tcpdump``安装
+        - 总结下来即查看日志显示、订阅mqtt
     - [Semtech Network Server：在线版](https://lora-developers.semtech.com/resources/network-server/)
       - [指南](https://lora-developers.semtech.com/resources/network-server/faq-network-server/)
         - 在网关上安装ChirpStack Gateway Bridge后与Semtech UDP packet forwarder联用
@@ -407,27 +411,34 @@ ERROR: [main] failed to start the concentrator
 
 ## 2.6 End-application
 ### 2.6.1 API
-#### 2.6.1.1 MQTT
-[2020 年常见 MQTT 客户端工具比较](https://www.emqx.io/cn/blog/mqtt-client-tools)
+#### 2.6.1.1 MQTT上行通信
 
-[RAKwireless](https://blog.csdn.net/RAKwireless/article/details/106711672)
-
-[AnswerInTheWind](https://www.cnblogs.com/answerinthewind/p/6200497.html#4472555)
-
-[TheThingsNetwork](https://www.thethingsnetwork.org/docs/applications/mqtt/quick-start.html)
-
-[ChirpStack1](https://forum.chirpstack.io/t/forming-downlink-packet-to-lora-node/215/16)
-
-[ChirpStack2](https://www.chirpstack.io/application-server/integrations/mqtt/)
-
-[TheThingStack](https://thethingsstack.io/integrations/mqtt/)
-
-[freemote](https://blog.csdn.net/freemote/article/details/106361732)
-
-[MQTT数据（有效负载）存储到数据库中的方法](https://www.instructables.com/Store-Messages-From-Mosquitto-MQTT-Broker-Into-SQL/)
+1. Event-topic-template
+  - 所有组件都可以在各自的Configuration里找到
+    - [实战](https://www.cnblogs.com/liujiabing/p/13692308.html)
+    - [Cyberark](https://www.cyberark.com/resources/threat-research-blog/lorawan-mqtt-what-to-know-when-securing-your-iot-network)
+  - 以gateway-bridge为例
+    - 注意：gateway-bridge在云端安装的就在云服务器上操作，在网关上安装的就在网关上操作
+    - 可以从运行日志``sudo journalctl -u chirpstack-gateway-bridge -f -n 50``可看到topic为**gateway/0016c001ff10d3f6/event/up**，故使用``mosquitto_sub -t "gateway/0016c001ff10d3f6/event/up" -v``
+    - 也可以从配置文件``vi /etc/chirpstack-gateway-bridge/chirpstack-gateway-bridge.toml``中找到
+    - [在配置文件中设置marshaler="json"后](https://www.chirpstack.io/project/guides/connect-gateway/)``sudo systemctl restart chirpstack-gateway-bridge``重启，可以得到和Live LoRaWAN frames网页接收一样的效果，但没有fcnt；且两者都不接收CRC_EEROR的数据包
+  - 以Application server为例
+    - [ChirpStack1](https://forum.chirpstack.io/t/forming-downlink-packet-to-lora-node/215/16)
+    - [ChirpStack2](https://www.chirpstack.io/application-server/integrations/mqtt/)
+    - [TheThingStack](https://thethingsstack.io/integrations/mqtt/)
+    - [TheThingsNetwork](https://www.thethingsnetwork.org/docs/applications/mqtt/quick-start.html)
+2. 如何使用客户端工具
+   - [2020 年常见 MQTT 客户端工具比较](https://www.emqx.io/cn/blog/mqtt-client-tools)
+   - [RAKwireless](https://blog.csdn.net/RAKwireless/article/details/106711672)
+   - [freemote](https://blog.csdn.net/freemote/article/details/106361732)
+3. [MQTT数据（有效负载）存储到数据库中的方法](https://www.instructables.com/Store-Messages-From-Mosquitto-MQTT-Broker-Into-SQL/)
 
 
 #### 2.6.1.2 MQTT下行通信
+
+1. Command-topic-template
+   - 所有组件都可以在各自的Configuration里找到
+
 [Semtech1](https://lora-developers.semtech.com/library/tech-papers-and-guides/lorawan-class-a-devices)
 
 [Semtech2](https://lora-developers.semtech.com/library/tech-papers-and-guides/lorawan-class-b-devices)
