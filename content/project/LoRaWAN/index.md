@@ -225,6 +225,8 @@ ERROR: [main] failed to start the concentrator
 1. [Back-End Interfaces](https://lora-alliance.org/lorawan-for-developers)：最官方的文件，下面的东西都有包含
 2. [AnswerInTheWind](https://www.cnblogs.com/answerinthewind/p/6213027.html)
 3. [TTN](https://www.thethingsnetwork.org/docs/lorawan/addressing.html)
+4. [quending](https://blog.csdn.net/quending/article/details/86481598)
+
 
 #### 2.2.1.2 ABP
 [RAKwireless](https://blog.csdn.net/RAKwireless/article/details/106186894)
@@ -332,8 +334,9 @@ ERROR: [main] failed to start the concentrator
         - [ChirpStack:docker4](https://blog.csdn.net/iotisan/article/details/90412873)
         - [ChirpStack:docker5](https://blog.csdn.net/iotisan/article/details/78398978)
         - [ChirpStack global.config](https://www.chirpstack.io/gateway-bridge/backends/semtech-udp/)
-          - NS配置文件：注释掉所有[**extral chanels**](https://blog.csdn.net/zoug16/article/details/104928565)，其在/chirpstack-docker/configuration/chirpstack-network-server/chirpstack-network-server.toml
-          - Docker分离模式后台运行 ``docker-compose up -d`` 
+          - 配置文件：所有都在**chirpstack-docker/configuration**目录中
+            - 注释掉NS配置文件中所有[**extral chanels**](https://blog.csdn.net/zoug16/article/details/104928565)
+          - Docker分离模式后台启动 ``docker-compose up -d``:需要进入**root/chirpstack-docker**目录，且恢复镜像之后docker不会自动重启
           - 停止部分容器 ``docker ps -a`` + ``docker stop 容器ID``
           - 停止所有容器 ``docker stop $(docker ps -aq)``
           - 查看日志方法：与Debian不同，不通过命令行
@@ -348,6 +351,9 @@ ERROR: [main] failed to start the concentrator
         - 在网关上安装ChirpStack Gateway Bridge后与Semtech UDP packet forwarder联用
         - 或直接使用LoRa Basics Station 
       - 优点：可同时选用不同频段，如CN470，EU868... 
+    - Mainflux
+      - [docs](https://mainflux.readthedocs.io/en/latest/lora/) 
+      - [medium](https://medium.com/mainflux-iot-platform/mainflux-lorawan-tutorial-c54632ffee99) 
 3. [OpenChirp](https://openchirp.io/)
 4. [LoraSim](https://www.lancaster.ac.uk/scc/sites/lora/lorasim.html)
 5. [Loriot](https://cn1.loriot.io/dashboard)
@@ -362,6 +368,7 @@ ERROR: [main] failed to start the concentrator
    admin    admin
   ```
 - **服务器地址**: http://47.110.36.225:8080/，不能设置域名解析（需要备案）
+- [ECS Linux解决SSH会话连接超时问题](https://help.aliyun.com/document_detail/38034.html)
 
 ---
 
@@ -405,57 +412,61 @@ ERROR: [main] failed to start the concentrator
 
 [TheThingsNetwork3](https://www.thethingsnetwork.org/docs/devices/uno/quick-start.html)
 
-[quending](https://blog.csdn.net/quending/article/details/86481598)
-
-[Rimelink](https://blog.hobairiku.site/2018/02/26/LoRa-Server-Project/) 
-
 ## 2.6 End-application
 ### 2.6.1 API
-#### 2.6.1.1 MQTT上行通信
+#### 2.6.1.1 gRPC
+http://47.110.36.225:8080/api
 
-1. Event-topic-template
-  - 所有组件都可以在各自的Configuration里找到
-    - [实战](https://www.cnblogs.com/liujiabing/p/13692308.html)
-    - [Cyberark](https://www.cyberark.com/resources/threat-research-blog/lorawan-mqtt-what-to-know-when-securing-your-iot-network)
-  - 以gateway-bridge为例
-    - 注意：gateway-bridge在云端安装的就在云服务器上操作，在网关上安装的就在网关上操作
-    - 可以从运行日志``sudo journalctl -u chirpstack-gateway-bridge -f -n 50``可看到topic为**gateway/0016c001ff10d3f6/event/up**，故使用``mosquitto_sub -t "gateway/0016c001ff10d3f6/event/up" -v``
-    - 也可以从配置文件``vi /etc/chirpstack-gateway-bridge/chirpstack-gateway-bridge.toml``中找到
-    - [在配置文件中设置marshaler="json"后](https://www.chirpstack.io/project/guides/connect-gateway/)``sudo systemctl restart chirpstack-gateway-bridge``重启，可以得到和Live LoRaWAN frames网页接收一样的效果，但没有fcnt；且两者都不接收CRC_EEROR的数据包
-  - 以Application server为例
-    - [ChirpStack1](https://forum.chirpstack.io/t/forming-downlink-packet-to-lora-node/215/16)
-    - [ChirpStack2](https://www.chirpstack.io/application-server/integrations/mqtt/)
-    - [TheThingStack](https://thethingsstack.io/integrations/mqtt/)
-    - [TheThingsNetwork](https://www.thethingsnetwork.org/docs/applications/mqtt/quick-start.html)
-2. 如何使用客户端工具
-   - [2020 年常见 MQTT 客户端工具比较](https://www.emqx.io/cn/blog/mqtt-client-tools)
-   - [RAKwireless](https://blog.csdn.net/RAKwireless/article/details/106711672)
-   - [freemote](https://blog.csdn.net/freemote/article/details/106361732)
+#### 2.6.1.2 MQTT上行通信
+
+1. [流程](https://blog.hobairiku.site/2018/02/26/LoRa-Server-Project/) 
+2. Tools
+   - Mosquitto
+     - 配置方法
+       - [MQTT authentication & authorization](https://www.chirpstack.io/project/guides/mqtt-authentication/)
+       - [hangge](https://www.hangge.com/blog/cache/detail_2896.html)
+       - [Docker ](https://blog.csdn.net/hanhui22/article/details/106693684)
+     - Event-topic-template
+       - 所有组件都可以在各自的Configuration里找到
+       - [坚持坚持](https://www.cnblogs.com/liujiabing/p/13692308.html)
+       - [Cyberark](https://www.cyberark.com/resources/threat-research-blog/lorawan-mqtt-what-to-know-when-securing-your-iot-network)
+       - 以gateway-bridge为例
+         - 注意：gateway-bridge在云端安装的就在云服务器上操作，在网关上安装的就在网关上操作
+         - 可以从运行日志``sudo journalctl -u chirpstack-gateway-bridge -f -n 50``可看到topic为**gateway/0016c001ff10d3f6/event/up**，故使用``mosquitto_sub -t "gateway/0016c001ff10d3f6/event/up" -v``
+         - 也可以从配置文件``vi /etc/chirpstack-gateway-bridge/chirpstack-gateway-bridge.toml``中找到
+         - [在配置文件中设置marshaler="json"后](https://www.chirpstack.io/project/guides/connect-gateway/)``sudo systemctl restart chirpstack-gateway-bridge``重启，可以得到和Live LoRaWAN frames网页接收一样的效果，但没有fcnt；且两者都不接收CRC_EEROR的数据包
+       - 以Application server为例
+         - [ChirpStack1](https://forum.chirpstack.io/t/forming-downlink-packet-to-lora-node/215/16)
+         - [ChirpStack2](https://www.chirpstack.io/application-server/integrations/mqtt/)
+         - [Thethingsstack](https://thethingsstack.io/integrations/mqtt/)
+         - [Thethingsnetwork1](https://www.thethingsnetwork.org/docs/applications/mqtt/quick-start.html)
+         - [Thethingsnetwork2](https://www.thethingsnetwork.org/docs/applications/mqtt/api.html)
+   - 其他
+     - [mqttorg](https://mqtt.org/software/)
+     - [TTN](https://www.thethingsnetwork.org/docs/applications/mqtt/)
+     - [2020 年常见 MQTT 客户端工具比较](https://www.emqx.io/cn/blog/mqtt-client-tools)
+     - [MQTT.fx1](https://blog.csdn.net/RAKwireless/article/details/106711672)
+     - [MQTT.fx2](https://blog.csdn.net/freemote/article/details/106361732)
 3. [MQTT数据（有效负载）存储到数据库中的方法](https://www.instructables.com/Store-Messages-From-Mosquitto-MQTT-Broker-Into-SQL/)
 
 
-#### 2.6.1.2 MQTT下行通信
+
+#### 2.6.1.3 MQTT下行通信
 
 1. Command-topic-template
    - 所有组件都可以在各自的Configuration里找到
-
-[Semtech1](https://lora-developers.semtech.com/library/tech-papers-and-guides/lorawan-class-a-devices)
-
-[Semtech2](https://lora-developers.semtech.com/library/tech-papers-and-guides/lorawan-class-b-devices)
-
-[Chirpstack1](https://www.chirpstack.io/project/architecture/)
-
-[Chirpstack2](https://forum.chirpstack.io/t/how-to-get-downlink-communication/9816/3)
-
-[AnswerInTheWind](https://www.cnblogs.com/answerinthewind/p/13154904.html)
-
-[Rimelink](https://blog.csdn.net/jiangjunjie_2005/article/details/104439355)
-
-[LoraWAN论坛](http://lora.timeddd.com/forum.php?mod=viewthread&tid=540&extra=page%3D1)
+2. 概念性
+   - [Semtech1](https://lora-developers.semtech.com/library/tech-papers-and-guides/lorawan-class-a-devices)
+   - [Semtech2](https://lora-developers.semtech.com/library/tech-papers-and-guides/lorawan-class-b-devices)
+   - [Chirpstack2](https://forum.chirpstack.io/t/how-to-get-downlink-communication/9816/3)
+   - [AnswerInTheWind](https://www.cnblogs.com/answerinthewind/p/13154904.html)
+3. 实际操作
+   - [Rimelink](https://blog.csdn.net/jiangjunjie_2005/article/details/104439355)
 
 
 
-#### 2.6.1.3 Metadata元数据
+
+#### 2.6.1.4 Metadata元数据
 [TTN](https://www.thethingsnetwork.org/forum/t/how-to-retrieve-metadata-from-data-storage-integration/19259/2?u=haowong)
 
 ### 2.6.2 SDKs & Libraries
