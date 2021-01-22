@@ -306,18 +306,7 @@ ERROR: [main] failed to start the concentrator
 ---
 
 ### 2.4.2 Cloud-hosted: Open Source LoRaWAN Network Servers Platforms
-1. - [The Things Network：在线版](https://www.thethingsnetwork.org/)
-     - [TTN官方入门](https://console.thethingsnetwork.org/)
-     - [TTN](https://learn.adafruit.com/the-things-network-for-feather?view=all)
-     - [TTN global.config1](https://www.thethingsnetwork.org/docs/gateways/packet-forwarder/semtech-udp.html)
-     - [TTN global.config2](https://www.thethingsnetwork.org/docs/gateways/start/connection.html#semtech-udp-protocol)
-     - [Mbed-Os: TTN](https://os.mbed.com/docs/mbed-os/v5.15/tutorials/LoRa-tutorial.html)
-     - [SX1302网关转发器修改版讨论](https://www.thethingsnetwork.org/forum/t/sx1302-using-semtech-packet-forwarder-can-not-register-the-gateway/41211/34)：server_address选择[router.cn.thethings.network](https://blog.csdn.net/freemote/article/details/90315395)；温度改为int可保证console显示connected
-     - [Limitations](https://www.thethingsnetwork.org/forum/t/limitations-data-rate-packet-size-30-seconds-uplink-and-10-messages-downlink-per-day-fair-access-policy-guidelines/1300)
-   - [The Things Stack：安装版](https://www.thethingsindustries.com/docs/)
-     - Docket install， [LoRa数据包在线解码base64](https://lorawan-packet-decoder-0ta6puiniaut.runkit.sh/)
-   - [Rakwireless](https://forum.rakwireless.com/) 
-2. - [ChirpStack：安装版](https://www.chirpstack.io/)
+1. - [ChirpStack：安装版](https://www.chirpstack.io/)
       - Debian install配置
         - [ChirpStack:Debian 1](https://www.chirpstack.io/project/guides/debian-ubuntu/)
         - [ChirpStack:Debian 2](https://blog.csdn.net/a1989214/article/details/106832570)
@@ -357,6 +346,18 @@ ERROR: [main] failed to start the concentrator
     - Mainflux
       - [docs](https://mainflux.readthedocs.io/en/latest/lora/) 
       - [medium](https://medium.com/mainflux-iot-platform/mainflux-lorawan-tutorial-c54632ffee99) 
+2. - [The Things Network：在线版](https://www.thethingsnetwork.org/)
+     - [TTN官方入门](https://console.thethingsnetwork.org/)
+     - [TTN](https://learn.adafruit.com/the-things-network-for-feather?view=all)
+     - [TTN global.config1](https://www.thethingsnetwork.org/docs/gateways/packet-forwarder/semtech-udp.html)
+     - [TTN global.config2](https://www.thethingsnetwork.org/docs/gateways/start/connection.html#semtech-udp-protocol)
+     - [Mbed-Os: TTN](https://os.mbed.com/docs/mbed-os/v5.15/tutorials/LoRa-tutorial.html)
+     - [SX1302网关转发器修改版讨论](https://www.thethingsnetwork.org/forum/t/sx1302-using-semtech-packet-forwarder-can-not-register-the-gateway/41211/34)：server_address选择[router.cn.thethings.network](https://blog.csdn.net/freemote/article/details/90315395)；温度改为int可保证console显示connected
+     - [Limitations](https://www.thethingsnetwork.org/forum/t/limitations-data-rate-packet-size-30-seconds-uplink-and-10-messages-downlink-per-day-fair-access-policy-guidelines/1300)
+   - [The Things Stack：安装版](https://www.thethingsindustries.com/docs/)
+     - Docket install， [LoRa数据包在线解码base64](https://lorawan-packet-decoder-0ta6puiniaut.runkit.sh/)
+     - [video](https://www.youtube.com/watch?v=XgPSU4UkDuE&feature=youtu.be)
+   - [Rakwireless](https://forum.rakwireless.com/) 
 3. [OpenChirp](https://openchirp.io/)
 4. [LoraSim](https://www.lancaster.ac.uk/scc/sites/lora/lorasim.html)
 5. [Loriot](https://cn1.loriot.io/dashboard)
@@ -440,7 +441,9 @@ http://47.110.36.225:8080/api
        - 以Application server为例
          - [ChirpStack1](https://forum.chirpstack.io/t/forming-downlink-packet-to-lora-node/215/16)
          - [ChirpStack2](https://www.chirpstack.io/application-server/integrations/mqtt/)
-         - [Thethingsstack](https://thethingsstack.io/integrations/mqtt/)
+         - [Thethingsstack1](https://thethingsstack.io/integrations/mqtt/)
+         - [Thethingsstack2](https://www.thethingsindustries.com/docs/integrations/mqtt-clients/)
+         - [Thethingsstack3](https://www.thethingsindustries.com/docs/integrations/pubsub/mqtt-client/)
          - [Thethingsnetwork1](https://www.thethingsnetwork.org/docs/applications/mqtt/quick-start.html)
          - [Thethingsnetwork2](https://www.thethingsnetwork.org/docs/applications/mqtt/api.html)
        - 存储数据
