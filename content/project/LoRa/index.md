@@ -52,6 +52,9 @@ url_video: ""
 6. [Demodulation](https://myriadrf.org/news/lora-modem-limesdr/)
 7. [Semtech](https://lora-developers.semtech.com/knowledge-base/faq/P40)
 8. [LoRa数据包在线解码base64](https://lorawan-packet-decoder-0ta6puiniaut.runkit.sh/)
+   - [Live LoRaWAN frames网页](http://47.110.36.225:8080/#/organizations/1/gateways/0016c001ff10d3f6/frames)自动解码，项目较为全面
+   - [gateway-bridge](https://www.chirpstack.io/gateway-bridge/payloads/events/)得到base64 encoded LoRaWAN frame
+   - [applicaiton](https://www.chirpstack.io/application-server/integrations/mqtt/)自动解码
 
 #### 1.3 仿真代码
 1. [Sakshama Ghoslya](https://www.sghoslya.com/p/how-to-buy-lora-matlab-codes.html)

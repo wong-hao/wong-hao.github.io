@@ -434,7 +434,7 @@ http://47.110.36.225:8080/api
          - 注意：gateway-bridge在云端安装的就在云服务器上操作，在网关上安装的就在网关上操作
          - 可以从运行日志``sudo journalctl -u chirpstack-gateway-bridge -f -n 50``可看到topic为**gateway/0016c001ff10d3f6/event/up**，故使用``mosquitto_sub -t "gateway/0016c001ff10d3f6/event/up" -v``
          - 也可以从配置文件``vi /etc/chirpstack-gateway-bridge/chirpstack-gateway-bridge.toml``中找到
-         - [在配置文件中设置marshaler="json"后](https://www.chirpstack.io/project/guides/connect-gateway/)``sudo systemctl restart chirpstack-gateway-bridge``重启，可以得到和Live LoRaWAN frames网页接收一样的效果，但没有fcnt；且两者都不接收CRC_EEROR的数据包
+         - [在配置文件中设置marshaler="json"后](https://www.chirpstack.io/project/guides/connect-gateway/)``sudo systemctl restart chirpstack-gateway-bridge``重启，可以得到[base64 encoded LoRaWAN frame](https://www.chirpstack.io/gateway-bridge/payloads/events/)；而Live LoRaWAN frames网页可以直接得到已解码的数据帧；两者都无法得到CRC失败的数据帧
        - 以Application server为例
          - [ChirpStack1](https://forum.chirpstack.io/t/forming-downlink-packet-to-lora-node/215/16)
          - [ChirpStack2](https://www.chirpstack.io/application-server/integrations/mqtt/)
@@ -447,6 +447,7 @@ http://47.110.36.225:8080/api
      - [2020 年常见 MQTT 客户端工具比较](https://www.emqx.io/cn/blog/mqtt-client-tools)
      - [MQTT.fx1](https://blog.csdn.net/RAKwireless/article/details/106711672)
      - [MQTT.fx2](https://blog.csdn.net/freemote/article/details/106361732)
+     - [MQTT.fx3](https://blog.csdn.net/iotisan/article/details/90486655)
 3. [MQTT数据（有效负载）存储到数据库中的方法](https://www.instructables.com/Store-Messages-From-Mosquitto-MQTT-Broker-Into-SQL/)
 
 
@@ -462,6 +463,7 @@ http://47.110.36.225:8080/api
    - [AnswerInTheWind](https://www.cnblogs.com/answerinthewind/p/13154904.html)
 3. 实际操作
    - [Rimelink](https://blog.csdn.net/jiangjunjie_2005/article/details/104439355)
+   - [iotisan](https://blog.csdn.net/iotisan/article/details/90486655)
 
 
 
