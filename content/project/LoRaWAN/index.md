@@ -353,7 +353,7 @@ ERROR: [main] failed to start the concentrator
      - [TTN global.config2](https://www.thethingsnetwork.org/docs/gateways/start/connection.html#semtech-udp-protocol)
      - [Mbed-Os: TTN](https://os.mbed.com/docs/mbed-os/v5.15/tutorials/LoRa-tutorial.html)
      - [SX1302网关转发器修改版讨论](https://www.thethingsnetwork.org/forum/t/sx1302-using-semtech-packet-forwarder-can-not-register-the-gateway/41211/34)：server_address选择[router.cn.thethings.network](https://blog.csdn.net/freemote/article/details/90315395)；温度改为int可保证console显示connected
-     - [Limitations](https://www.thethingsnetwork.org/forum/t/limitations-data-rate-packet-size-30-seconds-uplink-and-10-messages-downlink-per-day-fair-access-policy-guidelines/1300)
+     - [Limitations fair access policy](https://www.thethingsnetwork.org/forum/t/limitations-data-rate-packet-size-30-seconds-uplink-and-10-messages-downlink-per-day-fair-access-policy-guidelines/1300)
    - [The Things Stack：安装版](https://www.thethingsindustries.com/docs/)
      - Docket install， [LoRa数据包在线解码base64](https://lorawan-packet-decoder-0ta6puiniaut.runkit.sh/)
      - [video](https://www.youtube.com/watch?v=XgPSU4UkDuE&feature=youtu.be)
