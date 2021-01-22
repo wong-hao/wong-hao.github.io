@@ -423,7 +423,6 @@ http://47.110.36.225:8080/api
 2. Tools
    - Mosquitto
      - 配置方法
-       - [MQTT authentication & authorization](https://www.chirpstack.io/project/guides/mqtt-authentication/)
        - [hangge](https://www.hangge.com/blog/cache/detail_2896.html)
        - [Docker ](https://blog.csdn.net/hanhui22/article/details/106693684)
      - Event-topic-template
@@ -441,6 +440,9 @@ http://47.110.36.225:8080/api
          - [Thethingsstack](https://thethingsstack.io/integrations/mqtt/)
          - [Thethingsnetwork1](https://www.thethingsnetwork.org/docs/applications/mqtt/quick-start.html)
          - [Thethingsnetwork2](https://www.thethingsnetwork.org/docs/applications/mqtt/api.html)
+       - 存储数据
+         - [Mosquitto-Auth-Plugin](https://www.chirpstack.io/project/guides/mqtt-authentication/)
+         - [MQTT数据（有效负载）存储到数据库中的方法](https://www.instructables.com/Store-Messages-From-Mosquitto-MQTT-Broker-Into-SQL/)
    - 其他
      - [mqttorg](https://mqtt.org/software/)
      - [TTN](https://www.thethingsnetwork.org/docs/applications/mqtt/)
@@ -448,7 +450,6 @@ http://47.110.36.225:8080/api
      - [MQTT.fx1](https://blog.csdn.net/RAKwireless/article/details/106711672)
      - [MQTT.fx2](https://blog.csdn.net/freemote/article/details/106361732)
      - [MQTT.fx3](https://blog.csdn.net/iotisan/article/details/90486655)
-3. [MQTT数据（有效负载）存储到数据库中的方法](https://www.instructables.com/Store-Messages-From-Mosquitto-MQTT-Broker-Into-SQL/)
 
 
 
