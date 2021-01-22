@@ -1140,7 +1140,7 @@ UDP             1700/1700        0.0.0.0/0
 <li>注意：gateway-bridge在云端安装的就在云服务器上操作，在网关上安装的就在网关上操作</li>
 <li>可以从运行日志<code>sudo journalctl -u chirpstack-gateway-bridge -f -n 50</code>可看到topic为<strong>gateway/0016c001ff10d3f6/event/up</strong>，故使用<code>mosquitto_sub -t &quot;gateway/0016c001ff10d3f6/event/up&quot; -v</code></li>
 <li>也可以从配置文件<code>vi /etc/chirpstack-gateway-bridge/chirpstack-gateway-bridge.toml</code>中找到</li>
-<li><a href="https://www.chirpstack.io/project/guides/connect-gateway/" target="_blank" rel="noopener">在配置文件中设置marshaler=&ldquo;json&quot;后</a><code>sudo systemctl restart chirpstack-gateway-bridge</code>重启，可以得到和Live LoRaWAN frames网页接收一样的效果，但没有fcnt；且两者都不接收CRC_EEROR的数据包</li>
+<li><a href="https://www.chirpstack.io/project/guides/connect-gateway/" target="_blank" rel="noopener">在配置文件中设置marshaler=&ldquo;json&quot;后</a><code>sudo systemctl restart chirpstack-gateway-bridge</code>重启，可以得到<a href="https://www.chirpstack.io/gateway-bridge/payloads/events/" target="_blank" rel="noopener">base64 encoded LoRaWAN frame</a>；而Live LoRaWAN frames网页可以直接得到已解码的数据帧；两者都无法得到CRC失败的数据帧</li>
 </ul>
 </li>
 <li>以Application server为例
@@ -1163,6 +1163,7 @@ UDP             1700/1700        0.0.0.0/0
 <li><a href="https://www.emqx.io/cn/blog/mqtt-client-tools" target="_blank" rel="noopener">2020 年常见 MQTT 客户端工具比较</a></li>
 <li><a href="https://blog.csdn.net/RAKwireless/article/details/106711672" target="_blank" rel="noopener">MQTT.fx1</a></li>
 <li><a href="https://blog.csdn.net/freemote/article/details/106361732" target="_blank" rel="noopener">MQTT.fx2</a></li>
+<li><a href="https://blog.csdn.net/iotisan/article/details/90486655" target="_blank" rel="noopener">MQTT.fx3</a></li>
 </ul>
 </li>
 </ul>
@@ -1187,6 +1188,7 @@ UDP             1700/1700        0.0.0.0/0
 <li>实际操作
 <ul>
 <li><a href="https://blog.csdn.net/jiangjunjie_2005/article/details/104439355" target="_blank" rel="noopener">Rimelink</a></li>
+<li><a href="https://blog.csdn.net/iotisan/article/details/90486655" target="_blank" rel="noopener">iotisan</a></li>
 </ul>
 </li>
 </ol>
