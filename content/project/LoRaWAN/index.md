@@ -239,9 +239,10 @@ ERROR: [main] failed to start the concentrator
 [AnswerInTheWind](https://www.cnblogs.com/answerinthewind/p/6213529.html)
 
 #### 2.2.1.4 Security
-1. [TTN](https://www.thethingsnetwork.org/docs/lorawan/security.html)
-2. [Cyberark](https://www.cyberark.com/resources/threat-research-blog/lorawan-mqtt-what-to-know-when-securing-your-iot-network)
-3. [CSDN](https://ask.csdn.net/questions/3109264)
+1. 没有入网的后果: **time="2021-01-22T13:52:00+08:00" level=error msg="uplink: processing uplink frame error" ctx_id=423aecd8-b38e-4b5f-8521-b8c20b0e710b error="get device-session error: object does not exist"**
+2. [TTN](https://www.thethingsnetwork.org/docs/lorawan/security.html)
+3. [Cyberark](https://www.cyberark.com/resources/threat-research-blog/lorawan-mqtt-what-to-know-when-securing-your-iot-network)
+4. [CSDN](https://ask.csdn.net/questions/3109264)
 
 #### 2.2.1.5 Rejeee
 
@@ -317,9 +318,11 @@ ERROR: [main] failed to start the concentrator
      - Docket install， [LoRa数据包在线解码base64](https://lorawan-packet-decoder-0ta6puiniaut.runkit.sh/)
    - [Rakwireless](https://forum.rakwireless.com/) 
 2. - [ChirpStack：安装版](https://www.chirpstack.io/)
-      - Debian install
+      - Debian install配置
         - [ChirpStack:Debian 1](https://www.chirpstack.io/project/guides/debian-ubuntu/)
         - [ChirpStack:Debian 2](https://blog.csdn.net/a1989214/article/details/106832570)
+          - gateway-bridge配置文件：**skip_crc_check = true**，转发CRC_bad packets
+          - gateway-bridge配置文件: **fake_rx_time = true**，fake UTC time
           - NS配置文件：**dsn="postgres://chirpstack_ns:dbpassword@localhost/chirpstack_ns?sslmode=disable"**
           - NS配置文件：注释掉所有**extral chanels**
           - AS配置文件：**dsn="postgres://chirpstack_as:dbpassword@localhost/chirpstack_as?sslmode=disable"**
@@ -433,7 +436,7 @@ http://47.110.36.225:8080/api
          - 注意：gateway-bridge在云端安装的就在云服务器上操作，在网关上安装的就在网关上操作
          - 可以从运行日志``sudo journalctl -u chirpstack-gateway-bridge -f -n 50``可看到topic为**gateway/0016c001ff10d3f6/event/up**，故使用``mosquitto_sub -t "gateway/0016c001ff10d3f6/event/up" -v``
          - 也可以从配置文件``vi /etc/chirpstack-gateway-bridge/chirpstack-gateway-bridge.toml``中找到
-         - [在配置文件中设置marshaler="json"后](https://www.chirpstack.io/project/guides/connect-gateway/)``sudo systemctl restart chirpstack-gateway-bridge``重启，可以得到[base64 encoded LoRaWAN frame](https://www.chirpstack.io/gateway-bridge/payloads/events/)；而Live LoRaWAN frames网页可以直接得到已解码的数据帧；两者都无法得到CRC失败的数据帧
+         - [在配置文件中设置marshaler="json"后](https://www.chirpstack.io/project/guides/connect-gateway/)``sudo systemctl restart chirpstack-gateway-bridge``重启，可以得到[base64 encoded LoRaWAN frame](https://www.chirpstack.io/gateway-bridge/payloads/events/)；而Live LoRaWAN frames网页可以直接得到已解码的数据帧
        - 以Application server为例
          - [ChirpStack1](https://forum.chirpstack.io/t/forming-downlink-packet-to-lora-node/215/16)
          - [ChirpStack2](https://www.chirpstack.io/application-server/integrations/mqtt/)
