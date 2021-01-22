@@ -1123,7 +1123,6 @@ UDP             1700/1700        0.0.0.0/0
 &lt;ul&gt;
 &lt;li&gt;配置方法
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.chirpstack.io/project/guides/mqtt-authentication/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;MQTT authentication &amp;amp; authorization&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.hangge.com/blog/cache/detail_2896.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;hangge&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/hanhui22/article/details/106693684&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Docker &lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -1150,6 +1149,12 @@ UDP             1700/1700        0.0.0.0/0
 &lt;li&gt;&lt;a href=&#34;https://www.thethingsnetwork.org/docs/applications/mqtt/api.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Thethingsnetwork2&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
+&lt;li&gt;存储数据
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.chirpstack.io/project/guides/mqtt-authentication/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Mosquitto-Auth-Plugin&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.instructables.com/Store-Messages-From-Mosquitto-MQTT-Broker-Into-SQL/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;MQTT数据（有效负载）存储到数据库中的方法&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -1166,7 +1171,6 @@ UDP             1700/1700        0.0.0.0/0
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.instructables.com/Store-Messages-From-Mosquitto-MQTT-Broker-Into-SQL/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;MQTT数据（有效负载）存储到数据库中的方法&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h4 id=&#34;2613-mqtt下行通信&#34;&gt;2.6.1.3 MQTT下行通信&lt;/h4&gt;
 &lt;ol&gt;
@@ -2002,7 +2006,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-652837491&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-245791638&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -2012,7 +2016,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-652837491&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-245791638&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
