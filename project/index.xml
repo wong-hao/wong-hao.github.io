@@ -747,6 +747,7 @@ Flash:     0
 &lt;p&gt;&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/6213529.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;AnswerInTheWind&lt;/a&gt;&lt;/p&gt;
 &lt;h4 id=&#34;2214-security&#34;&gt;2.2.1.4 Security&lt;/h4&gt;
 &lt;ol&gt;
+&lt;li&gt;没有入网的后果: &lt;strong&gt;time=&amp;ldquo;2021-01-22T13:52:00+08:00&amp;rdquo; level=error msg=&amp;ldquo;uplink: processing uplink frame error&amp;rdquo; ctx_id=423aecd8-b38e-4b5f-8521-b8c20b0e710b error=&amp;ldquo;get device-session error: object does not exist&amp;rdquo;&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.thethingsnetwork.org/docs/lorawan/security.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TTN&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.cyberark.com/resources/threat-research-blog/lorawan-mqtt-what-to-know-when-securing-your-iot-network&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Cyberark&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://ask.csdn.net/questions/3109264&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CSDN&lt;/a&gt;&lt;/li&gt;
@@ -853,11 +854,13 @@ raspberrypi2    0016c001ff10d3f7    -              苏州市           在线   
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.chirpstack.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ChirpStack：安装版&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;Debian install
+&lt;li&gt;Debian install配置
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.chirpstack.io/project/guides/debian-ubuntu/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ChirpStack:Debian 1&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/a1989214/article/details/106832570&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ChirpStack:Debian 2&lt;/a&gt;
 &lt;ul&gt;
+&lt;li&gt;gateway-bridge配置文件：&lt;strong&gt;skip_crc_check = true&lt;/strong&gt;，转发CRC_bad packets&lt;/li&gt;
+&lt;li&gt;gateway-bridge配置文件: &lt;strong&gt;fake_rx_time = true&lt;/strong&gt;，fake UTC time&lt;/li&gt;
 &lt;li&gt;NS配置文件：&lt;strong&gt;dsn=&amp;ldquo;postgres://chirpstack_ns:dbpassword@localhost/chirpstack_ns?sslmode=disable&amp;rdquo;&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;NS配置文件：注释掉所有&lt;strong&gt;extral chanels&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;AS配置文件：&lt;strong&gt;dsn=&amp;ldquo;postgres://chirpstack_as:dbpassword@localhost/chirpstack_as?sslmode=disable&amp;rdquo;&lt;/strong&gt;&lt;/li&gt;
@@ -993,7 +996,7 @@ UDP             1700/1700        0.0.0.0/0
 &lt;li&gt;注意：gateway-bridge在云端安装的就在云服务器上操作，在网关上安装的就在网关上操作&lt;/li&gt;
 &lt;li&gt;可以从运行日志&lt;code&gt;sudo journalctl -u chirpstack-gateway-bridge -f -n 50&lt;/code&gt;可看到topic为&lt;strong&gt;gateway/0016c001ff10d3f6/event/up&lt;/strong&gt;，故使用&lt;code&gt;mosquitto_sub -t &amp;quot;gateway/0016c001ff10d3f6/event/up&amp;quot; -v&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;也可以从配置文件&lt;code&gt;vi /etc/chirpstack-gateway-bridge/chirpstack-gateway-bridge.toml&lt;/code&gt;中找到&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.chirpstack.io/project/guides/connect-gateway/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;在配置文件中设置marshaler=&amp;ldquo;json&amp;quot;后&lt;/a&gt;&lt;code&gt;sudo systemctl restart chirpstack-gateway-bridge&lt;/code&gt;重启，可以得到&lt;a href=&#34;https://www.chirpstack.io/gateway-bridge/payloads/events/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;base64 encoded LoRaWAN frame&lt;/a&gt;；而Live LoRaWAN frames网页可以直接得到已解码的数据帧；两者都无法得到CRC失败的数据帧&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.chirpstack.io/project/guides/connect-gateway/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;在配置文件中设置marshaler=&amp;ldquo;json&amp;quot;后&lt;/a&gt;&lt;code&gt;sudo systemctl restart chirpstack-gateway-bridge&lt;/code&gt;重启，可以得到&lt;a href=&#34;https://www.chirpstack.io/gateway-bridge/payloads/events/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;base64 encoded LoRaWAN frame&lt;/a&gt;；而Live LoRaWAN frames网页可以直接得到已解码的数据帧&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;以Application server为例

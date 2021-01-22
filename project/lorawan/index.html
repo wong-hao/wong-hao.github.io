@@ -893,6 +893,7 @@ Flash:     0
 <p><a href="https://www.cnblogs.com/answerinthewind/p/6213529.html" target="_blank" rel="noopener">AnswerInTheWind</a></p>
 <h4 id="2214-security">2.2.1.4 Security</h4>
 <ol>
+<li>没有入网的后果: <strong>time=&ldquo;2021-01-22T13:52:00+08:00&rdquo; level=error msg=&ldquo;uplink: processing uplink frame error&rdquo; ctx_id=423aecd8-b38e-4b5f-8521-b8c20b0e710b error=&ldquo;get device-session error: object does not exist&rdquo;</strong></li>
 <li><a href="https://www.thethingsnetwork.org/docs/lorawan/security.html" target="_blank" rel="noopener">TTN</a></li>
 <li><a href="https://www.cyberark.com/resources/threat-research-blog/lorawan-mqtt-what-to-know-when-securing-your-iot-network" target="_blank" rel="noopener">Cyberark</a></li>
 <li><a href="https://ask.csdn.net/questions/3109264" target="_blank" rel="noopener">CSDN</a></li>
@@ -999,11 +1000,13 @@ raspberrypi2    0016c001ff10d3f7    -              苏州市           在线   
 <ul>
 <li><a href="https://www.chirpstack.io/" target="_blank" rel="noopener">ChirpStack：安装版</a>
 <ul>
-<li>Debian install
+<li>Debian install配置
 <ul>
 <li><a href="https://www.chirpstack.io/project/guides/debian-ubuntu/" target="_blank" rel="noopener">ChirpStack:Debian 1</a></li>
 <li><a href="https://blog.csdn.net/a1989214/article/details/106832570" target="_blank" rel="noopener">ChirpStack:Debian 2</a>
 <ul>
+<li>gateway-bridge配置文件：<strong>skip_crc_check = true</strong>，转发CRC_bad packets</li>
+<li>gateway-bridge配置文件: <strong>fake_rx_time = true</strong>，fake UTC time</li>
 <li>NS配置文件：<strong>dsn=&ldquo;postgres://chirpstack_ns:dbpassword@localhost/chirpstack_ns?sslmode=disable&rdquo;</strong></li>
 <li>NS配置文件：注释掉所有<strong>extral chanels</strong></li>
 <li>AS配置文件：<strong>dsn=&ldquo;postgres://chirpstack_as:dbpassword@localhost/chirpstack_as?sslmode=disable&rdquo;</strong></li>
@@ -1139,7 +1142,7 @@ UDP             1700/1700        0.0.0.0/0
 <li>注意：gateway-bridge在云端安装的就在云服务器上操作，在网关上安装的就在网关上操作</li>
 <li>可以从运行日志<code>sudo journalctl -u chirpstack-gateway-bridge -f -n 50</code>可看到topic为<strong>gateway/0016c001ff10d3f6/event/up</strong>，故使用<code>mosquitto_sub -t &quot;gateway/0016c001ff10d3f6/event/up&quot; -v</code></li>
 <li>也可以从配置文件<code>vi /etc/chirpstack-gateway-bridge/chirpstack-gateway-bridge.toml</code>中找到</li>
-<li><a href="https://www.chirpstack.io/project/guides/connect-gateway/" target="_blank" rel="noopener">在配置文件中设置marshaler=&ldquo;json&quot;后</a><code>sudo systemctl restart chirpstack-gateway-bridge</code>重启，可以得到<a href="https://www.chirpstack.io/gateway-bridge/payloads/events/" target="_blank" rel="noopener">base64 encoded LoRaWAN frame</a>；而Live LoRaWAN frames网页可以直接得到已解码的数据帧；两者都无法得到CRC失败的数据帧</li>
+<li><a href="https://www.chirpstack.io/project/guides/connect-gateway/" target="_blank" rel="noopener">在配置文件中设置marshaler=&ldquo;json&quot;后</a><code>sudo systemctl restart chirpstack-gateway-bridge</code>重启，可以得到<a href="https://www.chirpstack.io/gateway-bridge/payloads/events/" target="_blank" rel="noopener">base64 encoded LoRaWAN frame</a>；而Live LoRaWAN frames网页可以直接得到已解码的数据帧</li>
 </ul>
 </li>
 <li>以Application server为例
