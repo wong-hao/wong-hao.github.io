@@ -1,12 +1,12 @@
 ---
-title: '第八次汇报'
-subtitle: ''
+title: 'SCLoRa Leveraging Multi-Dimensionality in Decoding Collided LoRa Transmissions'
+subtitle: '保留的第二篇文章'
 summary: 
 authors:
 - admin
 tags:
 categories:
-- 汇报
+- Multiple access
 date: "2020-09-09T00:00:00Z"
 lastmod: ""
 featured: false
@@ -33,6 +33,7 @@ url_pdf:
 #   Otherwise, set `projects = []`.
 projects: []
 ---
+<!--more-->
 
 ### 1 问题
 
@@ -46,7 +47,6 @@ projects: []
 - [x] 根据作者演讲和ppt修改自己的ppt
 - [x] 与第四次汇报的区别：(1)Physical Layer / Link Layer，(2)**many**(devices)-**to**-**one**(gateway) / **one**(device)-**to**-**many**(gateways)
 
-<!--more-->
 
 ### 2 源文件
 

@@ -1,12 +1,12 @@
 ---
-title: '2'
-subtitle: ''
+title: 'Frequency Configuration for Low-Power Wide-Area Networks in a Heartbeat'
+subtitle: '保留的第一篇文章'
 summary: 
 authors:
 - admin
 tags:
 categories:
-- 汇报
+- Energy consumption
 date: "2020-09-09T00:00:00Z"
 lastmod: ""
 featured: false
@@ -33,6 +33,7 @@ url_pdf:
 #   Otherwise, set `projects = []`.
 projects: []
 ---
+<!--more-->
 
 ### 1 问题
 
@@ -40,8 +41,6 @@ projects: []
 - [ ] 三次样条插值法
 - [ ] 保护频带
 - [x] 同第四次汇报，多接受、考虑多径效应的
-
-<!--more-->
 
 ### 2 源文件
 #### 2.1 阅读的文件

@@ -1,17 +1,17 @@
 ---
-title: '第六次汇报'
-subtitle: ''
+title: 'Copy of Effective Note-taking - Cornell Template'
+subtitle: '第六次汇报'
 summary: 
 authors:
 - admin
 tags:
 - 备课
 categories:
-- 汇报
+- Miscellaneous
 date: "2020-08-24T00:00:00Z"
 lastmod: ""
 featured: false
-draft: false
+draft: true
 
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder.
@@ -35,7 +35,7 @@ url_pdf: https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hh
 projects: []
 ---
 
-
+<!--more-->
 ### 1 问题
 
 - [ ] 无

@@ -1,12 +1,12 @@
 ---
-title: '第四次汇报'
-subtitle: ''
+title: 'A Cloud-Optimized Link Layer for Low-Power Wide-Area Networks'
+subtitle: '第四次汇报'
 summary: 
 authors:
 - admin
 tags:
 categories:
-- 汇报
+- Error correction
 date: "2020-07-22T00:00:00Z"
 lastmod: ""
 featured: false
@@ -37,7 +37,7 @@ url_slides: https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc
 #   Otherwise, set `projects = []`.
 projects: []
 ---
-
+<!--more-->
 ### 1 问题
 
 - [x] 删去一些不要的内容
@@ -52,8 +52,6 @@ projects: []
 - [x] focus on upstream packets
 - [x] [no open sourced](https://github.com/OpenChirp/lorawan-service/issues/3#issuecomment-765803005)
 
-
-<!--more-->
 
 ### 2 源文件
 

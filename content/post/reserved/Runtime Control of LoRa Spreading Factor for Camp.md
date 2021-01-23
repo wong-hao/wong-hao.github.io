@@ -1,12 +1,12 @@
 ---
-title: '3'
-subtitle: ''
+title: 'Runtime Control of LoRa Spreading Factor for Camp'
+subtitle: '保留的第三篇文章'
 summary: 
 authors:
 - admin
 tags:
 categories:
-- 汇报
+- Energy consumption
 date: "2020-09-09T00:00:00Z"
 lastmod: ""
 featured: false
@@ -33,6 +33,7 @@ url_pdf:
 #   Otherwise, set `projects = []`.
 projects: []
 ---
+<!--more-->
 
 ### 1 问题
 
@@ -42,7 +43,6 @@ projects: []
 - [x] 根据作者演讲和ppt修改自己的ppt
 - [ ] 与seminar No.3很像，都是根据比目前已有的SF选择方法'ADR'更好的输入输出模型选择SF
 
-<!--more-->
 
 ### 2 源文件
 

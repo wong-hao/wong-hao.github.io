@@ -68,3 +68,7 @@ url_video: ""
 3. [lora tools](https://www.loratools.nl/#/airtime)
 4. [TTN Limitations fair access policy](https://www.thethingsnetwork.org/forum/t/limitations-data-rate-packet-size-30-seconds-uplink-and-10-messages-downlink-per-day-fair-access-policy-guidelines/1300)
 5. [TTN calculator](https://www.thethingsnetwork.org/airtime-calculator/#)
+
+### 7 功耗
+1. [msoon](https://doc.sm.tc/station/index.html)
+2. [利尔达](https://zhuanlan.zhihu.com/p/107189375)

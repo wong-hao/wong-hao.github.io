@@ -1,17 +1,17 @@
 ---
-title: '第五次汇报'
-subtitle: ''
+title: 'How to Read a CS Research Paper'
+subtitle: '第五次汇报'
 summary: 
 authors:
 - admin
 tags:
 - 备课
 categories:
-- 汇报
+- Miscellaneous
 date: "2020-08-18T00:00:00Z"
 lastmod: ""
 featured: false
-draft: false
+draft: true
 
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder.
@@ -34,13 +34,12 @@ url_pdf: https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hh
 #   Otherwise, set `projects = []`.
 projects: []
 ---
+<!--more-->
 
 ### 1 问题
 
 - [ ] 无
 
-
-<!--more-->
 
 ### 2 自己工作
 

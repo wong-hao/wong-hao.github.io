@@ -1,16 +1,17 @@
 ---
-title: '第一次汇报'
-subtitle: ''
+title: 'Writing for Computer Science2'
+subtitle: '第七次汇报'
 summary: 
 authors:
 - admin
 tags:
+- 备课
 categories:
-- 汇报
-date: "2020-07-18T00:00:00Z"
+- Miscellaneous
+date: "2020-09-09T00:00:00Z"
 lastmod: ""
 featured: false
-draft: false
+draft: true
 
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder.
@@ -22,9 +23,9 @@ image:
   focal_point: ""
   preview_only: false
 
-url_source: https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWY0eUpzUnRJYVJNbFYxc3dwM2pyMk1CdE82VnVnWHhmaEZDNUtMRFVVZXM1UT9lPW9aQ1Rlbg==.mp3
+url_source: https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVZKZFc1c3k0TmxCc2lVTEJabXZ5OFFCU3dyQ3ZJX3BUaDhrZGp5b0pPYVRpUT9lPUQ5SGI2NQ==.mp3
 
-url_slides: https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWR6NUg3c0JCa0pKb2Qxbm5TQmowSm9CNUMtcXVTVGFfemhzX1hFd2I1cC1QZz9lPWZBT2FnOQ==.mp3
+url_pdf: https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVg2WG9UTU54THREa0YyWDFLcXd0WGNCS2pIZXdSaWFUbTlmWGJadUp5c0lKZz9lPTloeVNWbQ==.mp3
 
 # Projects (optional).
 #   Associate this post with one or more of your projects.
@@ -33,15 +34,10 @@ url_slides: https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc
 #   Otherwise, set `projects = []`.
 projects: []
 ---
+<!--more-->
 
 ### 1 问题
 
-- [x] 已经在ppt中标注了
-
-
-
-
-
-
+- [x] 学习Latex
 
 

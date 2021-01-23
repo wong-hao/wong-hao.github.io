@@ -1,17 +1,17 @@
 ---
-title: '第三次汇报'
-subtitle: ''
+title: 'How to Read a Paper'
+subtitle: '第二次汇报'
 summary: 
 authors:
 - admin
 tags:
 - 备课
 categories:
-- 汇报
-date: "2020-08-12T00:00:00Z"
+- Miscellaneous
+date: "2020-07-22T00:00:00Z"
 lastmod: ""
 featured: false
-draft: false
+draft: true
 
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder.
@@ -23,9 +23,9 @@ image:
   focal_point: ""
   preview_only: false
 
-url_source: https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmY6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRXZnb1J0U1h0Q3hKblZKcGJlR1F0NDRCbkt4bHhzbzBuZ1dFY2k0bzk4eXA1dz9lPWFBbW9MdA==.mp3
+url_source: https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVNabTRPOXRicnBFamxMVHl0OV9EYjhCRTBmSFlQRmdETVp5VmRhWU5zV2F2dz9lPXdnU0RjVQ==.mp3
 
-url_pdf: https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWZLWGhXTURCb3hPaFczUE5pVWR4eUFCSWZJQk1SaU00SldNRVJuSFV6dm02dz9lPUR6MElmRA==.mp3
+url_slides: https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWVKY09rLWlGdUZDZ3NjdmpYNUczb2tCR2dNTE9fNWEyUWlGQjhJWDRnemRrdz9lPWRDTHFJaw==.mp3
 
 # Projects (optional).
 #   Associate this post with one or more of your projects.
@@ -34,10 +34,15 @@ url_pdf: https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hh
 #   Otherwise, set `projects = []`.
 projects: []
 ---
+<!--more-->
+
 
 ### 1 问题
 
 - [ ] 无
+
+
+
 
 
 

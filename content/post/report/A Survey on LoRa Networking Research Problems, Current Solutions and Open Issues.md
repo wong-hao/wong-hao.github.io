@@ -1,13 +1,13 @@
 ---
-title: '4'
-subtitle: ''
+title: 'A Survey on LoRa Networking Research Problems, Current Solutions and Open Issues'
+subtitle: '第一次汇报'
 summary: 
 authors:
 - admin
 tags:
 categories:
-- 汇报
-date: "2020-09-09T00:00:00Z"
+- Summary
+date: "2020-07-18T00:00:00Z"
 lastmod: ""
 featured: false
 draft: false
@@ -22,9 +22,9 @@ image:
   focal_point: ""
   preview_only: false
 
-url_source: https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVhxUXFBV0hYU0ZEbjhkemxrMTBkU01CSkRYWnhublljZEt2clNXWGFuTjZBZz9lPUp1VGhKZg==.mp3
+url_source: https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWY0eUpzUnRJYVJNbFYxc3dwM2pyMk1CdE82VnVnWHhmaEZDNUtMRFVVZXM1UT9lPW9aQ1Rlbg==.mp3
 
-url_pdf: 
+url_slides: https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWR6NUg3c0JCa0pKb2Qxbm5TQmowSm9CNUMtcXVTVGFfemhzX1hFd2I1cC1QZz9lPWZBT2FnOQ==.mp3
 
 # Projects (optional).
 #   Associate this post with one or more of your projects.
@@ -33,15 +33,15 @@ url_pdf:
 #   Otherwise, set `projects = []`.
 projects: []
 ---
-
+<!--more-->
 ### 1 问题
 
-- [ ] 还没看
-
-<!--more-->
-
-### 2 源文件
+- [x] 已经在ppt中标注了
 
 
-#### 2.1 来源
-学长给的，关于安全
+
+
+
+
+
+

@@ -243,6 +243,7 @@ ERROR: [main] failed to start the concentrator
 2. [TTN](https://www.thethingsnetwork.org/docs/lorawan/security.html)
 3. [Cyberark](https://www.cyberark.com/resources/threat-research-blog/lorawan-mqtt-what-to-know-when-securing-your-iot-network)
 4. [CSDN](https://ask.csdn.net/questions/3109264)
+5. [AnswerInTheWind](https://www.cnblogs.com/answerinthewind/p/6208915.html)
 
 #### 2.2.1.5 Rejeee
 
@@ -269,6 +270,7 @@ ERROR: [main] failed to start the concentrator
 2. [LoRa Basics Station](https://tech-journal.semtech.com/expert-series-5-things-you-need-to-know-about-lorawan-based-gateways)
    - LoRa Basics Station = Semtech UDP packet forwarder + ChirpStack Gateway Bridge
    - [源码](https://github.com/lorabasics/basicstation)
+   - [docs](https://doc.sm.tc/station/index.html)
 
 **global_conf.json**
   - [Gitee版本](https://gitee.com/rejeee/gw1302s/commit/c425b67a5ccaaef0dd1042da08974245124c069b)直接增加了一个文件**gw1302s/packet_forwarder/global_conf.json**，其特点是**gateway_conf**下面的**server_address**[由localhost修改为了loragw.things.qcloud.com](https://blog.csdn.net/RAKwireless/article/details/107101582)
