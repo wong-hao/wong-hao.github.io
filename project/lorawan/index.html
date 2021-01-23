@@ -1120,7 +1120,7 @@ UDP             1700/1700        0.0.0.0/0
 <h3 id="261-api">2.6.1 API</h3>
 <h4 id="2611-grpc">2.6.1.1 gRPC</h4>
 <p>http://47.110.36.225:8080/api</p>
-<h4 id="2612-mqtt上行通信">2.6.1.2 MQTT上行通信</h4>
+<h4 id="2612-mqtt-event">2.6.1.2 MQTT event</h4>
 <ol>
 <li><a href="https://blog.hobairiku.site/2018/02/26/LoRa-Server-Project/" target="_blank" rel="noopener">流程</a></li>
 <li>Tools
@@ -1138,18 +1138,17 @@ UDP             1700/1700        0.0.0.0/0
 <li>所有组件都可以在各自的Configuration里找到</li>
 <li><a href="https://www.cnblogs.com/liujiabing/p/13692308.html" target="_blank" rel="noopener">坚持坚持</a></li>
 <li><a href="https://www.cyberark.com/resources/threat-research-blog/lorawan-mqtt-what-to-know-when-securing-your-iot-network" target="_blank" rel="noopener">Cyberark</a></li>
-<li>以gateway-bridge为例
+<li><a href="https://www.chirpstack.io/gateway-bridge/payloads/events/" target="_blank" rel="noopener">Gateway-bridge</a>
 <ul>
 <li>注意：gateway-bridge在云端安装的就在云服务器上操作，在网关上安装的就在网关上操作</li>
-<li>可以从运行日志<code>sudo journalctl -u chirpstack-gateway-bridge -f -n 50</code>可看到topic为<strong>gateway/0016c001ff10d3f6/event/up</strong>，故使用<code>mosquitto_sub -t &quot;gateway/0016c001ff10d3f6/event/up&quot; -v</code></li>
-<li>也可以从配置文件<code>vi /etc/chirpstack-gateway-bridge/chirpstack-gateway-bridge.toml</code>中找到</li>
+<li>topic可以在配置文件或者运行文件中找到</li>
+<li>topic: <strong>gateway/0016c001ff10d3f6/event/#</strong>，故使用<code>mosquitto_sub -t &quot;gateway/0016c001ff10d3f6/event/#&quot; -v</code>，且#可以具体为stats、up等</li>
 <li><a href="https://www.chirpstack.io/project/guides/connect-gateway/" target="_blank" rel="noopener">在配置文件中设置marshaler=&ldquo;json&quot;后</a><code>sudo systemctl restart chirpstack-gateway-bridge</code>重启，可以得到<a href="https://www.chirpstack.io/gateway-bridge/payloads/events/" target="_blank" rel="noopener">base64 encoded LoRaWAN frame</a>；而Live LoRaWAN frames网页可以直接得到已解码的数据帧</li>
 </ul>
 </li>
-<li>以Application server为例
+<li><a href="https://www.chirpstack.io/application-server/integrations/mqtt/" target="_blank" rel="noopener">Application server</a>
 <ul>
-<li><a href="https://forum.chirpstack.io/t/forming-downlink-packet-to-lora-node/215/16" target="_blank" rel="noopener">ChirpStack1</a></li>
-<li><a href="https://www.chirpstack.io/application-server/integrations/mqtt/" target="_blank" rel="noopener">ChirpStack2</a></li>
+<li><a href="https://forum.chirpstack.io/t/forming-downlink-packet-to-lora-node/215/16" target="_blank" rel="noopener">ChirpStack</a></li>
 <li><a href="https://thethingsstack.io/integrations/mqtt/" target="_blank" rel="noopener">Thethingsstack1</a></li>
 <li><a href="https://www.thethingsindustries.com/docs/integrations/mqtt-clients/" target="_blank" rel="noopener">Thethingsstack2</a></li>
 <li><a href="https://www.thethingsindustries.com/docs/integrations/pubsub/mqtt-client/" target="_blank" rel="noopener">Thethingsstack3</a></li>
@@ -1180,7 +1179,7 @@ UDP             1700/1700        0.0.0.0/0
 </ul>
 </li>
 </ol>
-<h4 id="2613-mqtt下行通信">2.6.1.3 MQTT下行通信</h4>
+<h4 id="2613-mqtt-command">2.6.1.3 MQTT command</h4>
 <ol>
 <li>Command-topic-template
 <ul>

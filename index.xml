@@ -1127,7 +1127,7 @@ UDP             1700/1700        0.0.0.0/0
 &lt;h3 id=&#34;261-api&#34;&gt;2.6.1 API&lt;/h3&gt;
 &lt;h4 id=&#34;2611-grpc&#34;&gt;2.6.1.1 gRPC&lt;/h4&gt;
 &lt;p&gt;http://47.110.36.225:8080/api&lt;/p&gt;
-&lt;h4 id=&#34;2612-mqtt上行通信&#34;&gt;2.6.1.2 MQTT上行通信&lt;/h4&gt;
+&lt;h4 id=&#34;2612-mqtt-event&#34;&gt;2.6.1.2 MQTT event&lt;/h4&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&#34;https://blog.hobairiku.site/2018/02/26/LoRa-Server-Project/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;流程&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Tools
@@ -1145,18 +1145,17 @@ UDP             1700/1700        0.0.0.0/0
 &lt;li&gt;所有组件都可以在各自的Configuration里找到&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.cnblogs.com/liujiabing/p/13692308.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;坚持坚持&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.cyberark.com/resources/threat-research-blog/lorawan-mqtt-what-to-know-when-securing-your-iot-network&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Cyberark&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;以gateway-bridge为例
+&lt;li&gt;&lt;a href=&#34;https://www.chirpstack.io/gateway-bridge/payloads/events/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Gateway-bridge&lt;/a&gt;
 &lt;ul&gt;
 &lt;li&gt;注意：gateway-bridge在云端安装的就在云服务器上操作，在网关上安装的就在网关上操作&lt;/li&gt;
-&lt;li&gt;可以从运行日志&lt;code&gt;sudo journalctl -u chirpstack-gateway-bridge -f -n 50&lt;/code&gt;可看到topic为&lt;strong&gt;gateway/0016c001ff10d3f6/event/up&lt;/strong&gt;，故使用&lt;code&gt;mosquitto_sub -t &amp;quot;gateway/0016c001ff10d3f6/event/up&amp;quot; -v&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;也可以从配置文件&lt;code&gt;vi /etc/chirpstack-gateway-bridge/chirpstack-gateway-bridge.toml&lt;/code&gt;中找到&lt;/li&gt;
+&lt;li&gt;topic可以在配置文件或者运行文件中找到&lt;/li&gt;
+&lt;li&gt;topic: &lt;strong&gt;gateway/0016c001ff10d3f6/event/#&lt;/strong&gt;，故使用&lt;code&gt;mosquitto_sub -t &amp;quot;gateway/0016c001ff10d3f6/event/#&amp;quot; -v&lt;/code&gt;，且#可以具体为stats、up等&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.chirpstack.io/project/guides/connect-gateway/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;在配置文件中设置marshaler=&amp;ldquo;json&amp;quot;后&lt;/a&gt;&lt;code&gt;sudo systemctl restart chirpstack-gateway-bridge&lt;/code&gt;重启，可以得到&lt;a href=&#34;https://www.chirpstack.io/gateway-bridge/payloads/events/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;base64 encoded LoRaWAN frame&lt;/a&gt;；而Live LoRaWAN frames网页可以直接得到已解码的数据帧&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;以Application server为例
+&lt;li&gt;&lt;a href=&#34;https://www.chirpstack.io/application-server/integrations/mqtt/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Application server&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://forum.chirpstack.io/t/forming-downlink-packet-to-lora-node/215/16&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ChirpStack1&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.chirpstack.io/application-server/integrations/mqtt/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ChirpStack2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://forum.chirpstack.io/t/forming-downlink-packet-to-lora-node/215/16&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ChirpStack&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://thethingsstack.io/integrations/mqtt/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Thethingsstack1&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.thethingsindustries.com/docs/integrations/mqtt-clients/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Thethingsstack2&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.thethingsindustries.com/docs/integrations/pubsub/mqtt-client/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Thethingsstack3&lt;/a&gt;&lt;/li&gt;
@@ -1187,7 +1186,7 @@ UDP             1700/1700        0.0.0.0/0
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;h4 id=&#34;2613-mqtt下行通信&#34;&gt;2.6.1.3 MQTT下行通信&lt;/h4&gt;
+&lt;h4 id=&#34;2613-mqtt-command&#34;&gt;2.6.1.3 MQTT command&lt;/h4&gt;
 &lt;ol&gt;
 &lt;li&gt;Command-topic-template
 &lt;ul&gt;
@@ -1977,6 +1976,7 @@ $$&lt;/p&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 给作者发邮件请教：BCL长什么样，其0-100体现在哪，如何trace RSSI throughout the duration of a packet，纠错的过程究竟是什么，是对所有copy都纠错吗&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; LoRaServer[7]&lt;/li&gt;
 &lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; focus on upstream packets&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;a href=&#34;https://github.com/OpenChirp/lorawan-service/issues/3#issuecomment-765803005&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;no open sourced&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&#34;2-源文件&#34;&gt;2 源文件&lt;/h3&gt;
 &lt;h4 id=&#34;21-作者的主页&#34;&gt;2.1 作者的主页&lt;/h4&gt;
@@ -2025,7 +2025,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-461735982&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-943172658&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -2035,7 +2035,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-461735982&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-943172658&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
