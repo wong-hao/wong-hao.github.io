@@ -421,7 +421,7 @@ ERROR: [main] failed to start the concentrator
 #### 2.6.1.1 gRPC
 http://47.110.36.225:8080/api
 
-#### 2.6.1.2 MQTT上行通信
+#### 2.6.1.2 MQTT event
 
 1. [流程](https://blog.hobairiku.site/2018/02/26/LoRa-Server-Project/) 
 2. Tools
@@ -433,14 +433,13 @@ http://47.110.36.225:8080/api
        - 所有组件都可以在各自的Configuration里找到
        - [坚持坚持](https://www.cnblogs.com/liujiabing/p/13692308.html)
        - [Cyberark](https://www.cyberark.com/resources/threat-research-blog/lorawan-mqtt-what-to-know-when-securing-your-iot-network)
-       - 以gateway-bridge为例
+       - [Gateway-bridge](https://www.chirpstack.io/gateway-bridge/payloads/events/)
          - 注意：gateway-bridge在云端安装的就在云服务器上操作，在网关上安装的就在网关上操作
-         - 可以从运行日志``sudo journalctl -u chirpstack-gateway-bridge -f -n 50``可看到topic为**gateway/0016c001ff10d3f6/event/up**，故使用``mosquitto_sub -t "gateway/0016c001ff10d3f6/event/up" -v``
-         - 也可以从配置文件``vi /etc/chirpstack-gateway-bridge/chirpstack-gateway-bridge.toml``中找到
+         - topic可以在配置文件或者运行文件中找到
+         - topic: **gateway/0016c001ff10d3f6/event/#**，故使用``mosquitto_sub -t "gateway/0016c001ff10d3f6/event/#" -v``，且#可以具体为stats、up等
          - [在配置文件中设置marshaler="json"后](https://www.chirpstack.io/project/guides/connect-gateway/)``sudo systemctl restart chirpstack-gateway-bridge``重启，可以得到[base64 encoded LoRaWAN frame](https://www.chirpstack.io/gateway-bridge/payloads/events/)；而Live LoRaWAN frames网页可以直接得到已解码的数据帧
-       - 以Application server为例
-         - [ChirpStack1](https://forum.chirpstack.io/t/forming-downlink-packet-to-lora-node/215/16)
-         - [ChirpStack2](https://www.chirpstack.io/application-server/integrations/mqtt/)
+       - [Application server](https://www.chirpstack.io/application-server/integrations/mqtt/)
+         - [ChirpStack](https://forum.chirpstack.io/t/forming-downlink-packet-to-lora-node/215/16)
          - [Thethingsstack1](https://thethingsstack.io/integrations/mqtt/)
          - [Thethingsstack2](https://www.thethingsindustries.com/docs/integrations/mqtt-clients/)
          - [Thethingsstack3](https://www.thethingsindustries.com/docs/integrations/pubsub/mqtt-client/)
@@ -459,7 +458,7 @@ http://47.110.36.225:8080/api
 
 
 
-#### 2.6.1.3 MQTT下行通信
+#### 2.6.1.3 MQTT command
 
 1. Command-topic-template
    - 所有组件都可以在各自的Configuration里找到
