@@ -99,102 +99,57 @@
   
   <url>
     <loc>https://haowong.com/categories/</loc>
-    <lastmod>2020-09-26T00:00:00+00:00</lastmod>
+    <lastmod>2020-09-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://haowong.com/2020/09/26/markdown%E8%AF%AD%E6%B3%95/</loc>
-    <lastmod>2020-09-26T00:00:00+00:00</lastmod>
+    <loc>https://haowong.com/category/energy-consumption/</loc>
+    <lastmod>2020-09-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://haowong.com/2020/09/09/frequency-configuration-for-low-power-wide-area-networks-in-a-heartbeat/</loc>
+    <lastmod>2020-09-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://haowong.com/category/multiple-access/</loc>
+    <lastmod>2020-09-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://haowong.com/post/</loc>
-    <lastmod>2020-09-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://haowong.com/category/%E7%9F%A5%E8%AF%86/</loc>
-    <lastmod>2020-09-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://haowong.com/2020/09/09/2/</loc>
     <lastmod>2020-09-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://haowong.com/2020/09/09/2/</loc>
+    <loc>https://haowong.com/2020/09/09/runtime-control-of-lora-spreading-factor-for-camp/</loc>
     <lastmod>2020-09-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://haowong.com/2020/09/09/3/</loc>
+    <loc>https://haowong.com/2020/09/09/sclora-leveraging-multi-dimensionality-in-decoding-collided-lora-transmissions/</loc>
     <lastmod>2020-09-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://haowong.com/2020/09/09/4/</loc>
-    <lastmod>2020-09-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://haowong.com/tag/%E5%A4%87%E8%AF%BE/</loc>
-    <lastmod>2020-09-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://haowong.com/category/%E6%B1%87%E6%8A%A5/</loc>
-    <lastmod>2020-09-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://haowong.com/2020/09/09/%E7%AC%AC%E4%B8%83%E6%AC%A1%E6%B1%87%E6%8A%A5/</loc>
-    <lastmod>2020-09-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://haowong.com/2020/09/09/%E7%AC%AC%E4%B9%9D%E6%AC%A1%E6%B1%87%E6%8A%A5/</loc>
-    <lastmod>2020-09-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://haowong.com/2020/09/09/%E7%AC%AC%E5%85%AB%E6%AC%A1%E6%B1%87%E6%8A%A5/</loc>
-    <lastmod>2020-09-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://haowong.com/2020/08/24/%E7%AC%AC%E5%85%AD%E6%AC%A1%E6%B1%87%E6%8A%A5/</loc>
-    <lastmod>2020-08-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://haowong.com/2020/08/18/%E7%AC%AC%E4%BA%94%E6%AC%A1%E6%B1%87%E6%8A%A5/</loc>
-    <lastmod>2020-08-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://haowong.com/2020/08/12/%E7%AC%AC%E4%B8%89%E6%AC%A1%E6%B1%87%E6%8A%A5/</loc>
-    <lastmod>2020-08-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://haowong.com/2020/07/22/%E7%AC%AC%E4%BA%8C%E6%AC%A1%E6%B1%87%E6%8A%A5/</loc>
+    <loc>https://haowong.com/2020/07/22/a-cloud-optimized-link-layer-for-low-power-wide-area-networks/</loc>
     <lastmod>2020-07-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://haowong.com/2020/07/22/%E7%AC%AC%E5%9B%9B%E6%AC%A1%E6%B1%87%E6%8A%A5/</loc>
+    <loc>https://haowong.com/category/error-correction/</loc>
     <lastmod>2020-07-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://haowong.com/2020/07/18/%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%B1%87%E6%8A%A5/</loc>
+    <loc>https://haowong.com/2020/07/18/a-survey-on-lora-networking-research-problems-current-solutions-and-open-issues/</loc>
     <lastmod>2020-07-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://haowong.com/2019/07/12/writing-technical-content-in-academic/</loc>
-    <lastmod>2019-07-12T00:00:00+00:00</lastmod>
+    <loc>https://haowong.com/category/summary/</loc>
+    <lastmod>2020-07-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -228,11 +183,6 @@
   </url>
   
   <url>
-    <loc>https://haowong.com/2019/02/05/display-jupyter-notebooks-with-academic/</loc>
-    <lastmod>2019-09-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://haowong.com/slides/</loc>
     <lastmod>2019-02-05T00:00:00+00:00</lastmod>
   </url>
@@ -250,36 +200,6 @@
   <url>
     <loc>https://haowong.com/project/external-project/</loc>
     <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://haowong.com/tag/academic/</loc>
-    <lastmod>2019-04-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://haowong.com/2016/04/20/academic-the-website-builder-for-hugo/</loc>
-    <lastmod>2019-04-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://haowong.com/category/demo/</loc>
-    <lastmod>2019-04-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://haowong.com/author/%E5%90%B3%E6%81%A9%E9%81%94/</loc>
-    <lastmod>2019-04-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://haowong.com/tag/%E5%BC%80%E6%BA%90/</loc>
-    <lastmod>2019-04-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://haowong.com/category/%E6%95%99%E7%A8%8B/</loc>
-    <lastmod>2019-04-17T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -313,6 +233,10 @@
   
   <url>
     <loc>https://haowong.com/privacy/</loc>
+  </url>
+  
+  <url>
+    <loc>https://haowong.com/author/%E5%90%B3%E6%81%A9%E9%81%94/</loc>
   </url>
   
 </urlset>

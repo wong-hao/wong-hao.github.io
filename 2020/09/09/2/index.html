@@ -36,10 +36,15 @@
   
   <meta name="description" content="1 问题
 
- 复数权重
- 三次样条插值法
- 保护频带
- 同第四次汇报，多接受、考虑多径效应的
+ 快速傅里叶变换加窗
+ 快速傅里叶变换频谱泄露
+ 快速傅里叶变换频谱信道衰落
+ 离散傅里叶变换采样
+ MATLAB信号处理
+ 频率偏移相关和semenar no.2相关
+ 美化ppt布局
+ 根据作者演讲和ppt修改自己的ppt
+ 与第四次汇报的区别：(1)Physical Layer / Link Layer，(2)many(devices)-to-one(gateway) / one(device)-to-many(gateways)
 ">
 
   
@@ -299,10 +304,15 @@
   <meta property="og:title" content="2 | Room of Requirement">
   <meta property="og:description" content="1 问题
 
- 复数权重
- 三次样条插值法
- 保护频带
- 同第四次汇报，多接受、考虑多径效应的
+ 快速傅里叶变换加窗
+ 快速傅里叶变换频谱泄露
+ 快速傅里叶变换频谱信道衰落
+ 离散傅里叶变换采样
+ MATLAB信号处理
+ 频率偏移相关和semenar no.2相关
+ 美化ppt布局
+ 根据作者演讲和ppt修改自己的ppt
+ 与第四次汇报的区别：(1)Physical Layer / Link Layer，(2)many(devices)-to-one(gateway) / one(device)-to-many(gateways)
 "><meta property="og:image" content="https://haowong.com/images/icon_hub0cb53550ede56fdccc60540659dbf84_11803_512x512_fill_lanczos_center_2.png">
   <meta property="twitter:image" content="https://haowong.com/images/icon_hub0cb53550ede56fdccc60540659dbf84_11803_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
   
@@ -353,7 +363,7 @@
       "url": "https://haowong.com/images/icon_hub0cb53550ede56fdccc60540659dbf84_11803_192x192_fill_lanczos_center_2.png"
     }
   },
-  "description": "\u003ch3 id=\"1-问题\"\u003e1 问题\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cinput disabled=\"\" type=\"checkbox\"\u003e 复数权重\u003c/li\u003e\n\u003cli\u003e\u003cinput disabled=\"\" type=\"checkbox\"\u003e 三次样条插值法\u003c/li\u003e\n\u003cli\u003e\u003cinput disabled=\"\" type=\"checkbox\"\u003e 保护频带\u003c/li\u003e\n\u003cli\u003e\u003cinput checked=\"\" disabled=\"\" type=\"checkbox\"\u003e 同第四次汇报，多接受、考虑多径效应的\u003c/li\u003e\n\u003c/ul\u003e"
+  "description": "\u003ch3 id=\"1-问题\"\u003e1 问题\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cinput checked=\"\" disabled=\"\" type=\"checkbox\"\u003e 快速傅里叶变换加窗\u003c/li\u003e\n\u003cli\u003e\u003cinput checked=\"\" disabled=\"\" type=\"checkbox\"\u003e 快速傅里叶变换频谱泄露\u003c/li\u003e\n\u003cli\u003e\u003cinput disabled=\"\" type=\"checkbox\"\u003e 快速傅里叶变换频谱信道衰落\u003c/li\u003e\n\u003cli\u003e\u003cinput checked=\"\" disabled=\"\" type=\"checkbox\"\u003e 离散傅里叶变换采样\u003c/li\u003e\n\u003cli\u003e\u003cinput disabled=\"\" type=\"checkbox\"\u003e MATLAB信号处理\u003c/li\u003e\n\u003cli\u003e\u003cinput checked=\"\" disabled=\"\" type=\"checkbox\"\u003e 频率偏移相关和semenar no.2相关\u003c/li\u003e\n\u003cli\u003e\u003cinput disabled=\"\" type=\"checkbox\"\u003e 美化ppt布局\u003c/li\u003e\n\u003cli\u003e\u003cinput checked=\"\" disabled=\"\" type=\"checkbox\"\u003e 根据作者演讲和ppt修改自己的ppt\u003c/li\u003e\n\u003cli\u003e\u003cinput checked=\"\" disabled=\"\" type=\"checkbox\"\u003e 与第四次汇报的区别：(1)Physical Layer / Link Layer，(2)\u003cstrong\u003emany\u003c/strong\u003e(devices)-\u003cstrong\u003eto\u003c/strong\u003e-\u003cstrong\u003eone\u003c/strong\u003e(gateway) / \u003cstrong\u003eone\u003c/strong\u003e(device)-\u003cstrong\u003eto\u003c/strong\u003e-\u003cstrong\u003emany\u003c/strong\u003e(gateways)\u003c/li\u003e\n\u003c/ul\u003e"
 }
 </script>
 
@@ -692,24 +702,44 @@
     <div class="article-style">
       <h3 id="1-问题">1 问题</h3>
 <ul>
-<li><input disabled="" type="checkbox"> 复数权重</li>
-<li><input disabled="" type="checkbox"> 三次样条插值法</li>
-<li><input disabled="" type="checkbox"> 保护频带</li>
-<li><input checked="" disabled="" type="checkbox"> 同第四次汇报，多接受、考虑多径效应的</li>
+<li><input checked="" disabled="" type="checkbox"> 快速傅里叶变换加窗</li>
+<li><input checked="" disabled="" type="checkbox"> 快速傅里叶变换频谱泄露</li>
+<li><input disabled="" type="checkbox"> 快速傅里叶变换频谱信道衰落</li>
+<li><input checked="" disabled="" type="checkbox"> 离散傅里叶变换采样</li>
+<li><input disabled="" type="checkbox"> MATLAB信号处理</li>
+<li><input checked="" disabled="" type="checkbox"> 频率偏移相关和semenar no.2相关</li>
+<li><input disabled="" type="checkbox"> 美化ppt布局</li>
+<li><input checked="" disabled="" type="checkbox"> 根据作者演讲和ppt修改自己的ppt</li>
+<li><input checked="" disabled="" type="checkbox"> 与第四次汇报的区别：(1)Physical Layer / Link Layer，(2)<strong>many</strong>(devices)-<strong>to</strong>-<strong>one</strong>(gateway) / <strong>one</strong>(device)-<strong>to</strong>-<strong>many</strong>(gateways)</li>
 </ul>
 <h3 id="2-源文件">2 源文件</h3>
-<h4 id="21-阅读的文件">2.1 阅读的文件</h4>
-<p><a href="https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9oaHUyMDE2LW15LnNoYXJlcG9pbnQuY29tLzpiOi9nL3BlcnNvbmFsL3pvbmU5NzEwMTZfaGh1X2VkdV9jbi9FYU1Xd0hUX1ZZcEVyWTBlZFdaOXByZ0J1MWNxTHpDMWdmZlBMUjJjbzBSLXlRP2U9eVl3WENk.mp3" target="_blank" rel="noopener">点击下载</a></p>
-<h4 id="22-作者的演讲">2.2 作者的演讲</h4>
-<p><a href="https://www.usenix.org/conference/nsdi20/presentation/gadre" target="_blank" rel="noopener">点击下载</a></p>
-<h4 id="23-作者的主页">2.3 作者的主页</h4>
-<p><a href="https://www.akshaygadre.com/" target="_blank" rel="noopener">点击下载</a></p>
-<h4 id="24-项目的主页">2.4 项目的主页</h4>
-<p><a href="https://www.witechlab.com/chime.html" target="_blank" rel="noopener">点击下载</a></p>
-<h4 id="25-作者的ppt">2.5 作者的ppt</h4>
-<p><a href="https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9oaHUyMDE2LW15LnNoYXJlcG9pbnQuY29tLzpiOi9nL3BlcnNvbmFsL3pvbmU5NzEwMTZfaGh1X2VkdV9jbi9FYnFfeGVKTkRqeE1zZTFNM2ZjTlhtNEJDRWJEZzB0TTVyY1RiUzdMSmd2bHdBP2U9N3I4bWwx.mp3" target="_blank" rel="noopener">点击下载</a></p>
-<h4 id="26-会议的详情">2.6 会议的详情</h4>
-<p><a href="https://www.usenix.org/conference/nsdi20" target="_blank" rel="noopener">NSDI &lsquo;20</a></p>
+<h4 id="21-作者的演讲">2.1 作者的演讲</h4>
+<p><a href="https://www.youtube.com/watch?v=Fnw-Qz6QyLc&amp;feature=youtu.be" target="_blank" rel="noopener">46′10″</a></p>
+<h4 id="22-作者的ppt">2.2 作者的ppt</h4>
+<p><a href="https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOnA6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWNnWW1PV1dLVGxJZ2dpOFMza3kxRGtCS1BYaDZ2R0pOMS1KS1NKY1RiMnFndz9lPVdLd3RCUg==.mp3" target="_blank" rel="noopener">下载</a></p>
+<h4 id="23-会议的详情">2.3 会议的详情</h4>
+<p><a href="https://icnp20.cs.ucr.edu/program.html#posterdemo" target="_blank" rel="noopener">ICNP 2020</a></p>
+<h3 id="3-傅里叶变换-fourier-transform">3 傅里叶变换 (Fourier transform)</h3>
+<ol>
+<li><a href="https://www.jianshu.com/p/4cb34e716fd1" target="_blank" rel="noopener">FT</a></li>
+<li>
+<ul>
+<li><a href="https://blog.csdn.net/shenziheng1/article/details/52891807" target="_blank" rel="noopener">FFT1</a></li>
+<li><a href="https://zh.wikipedia.org/wiki/%E5%BF%AB%E9%80%9F%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2" target="_blank" rel="noopener">FFT2</a>：用FFT计算DFT会得到与直接用DFT定义计算相同的结果；最重要的区别是FFT更快</li>
+</ul>
+</li>
+<li>算法课给了相关PPT</li>
+<li>频谱泄漏与窗函数：
+<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/24318554" target="_blank" rel="noopener">1</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/77275353" target="_blank" rel="noopener">2</a></li>
+<li><a href="https://books.google.com.sg/books?id=zqsLHyQFu5wC&amp;pg=PA118&amp;lpg=PA118&amp;dq=%E9%A2%91%E8%B0%B1%E6%B3%84%E6%BC%8F&amp;source=bl&amp;ots=5GNlc_x05D&amp;sig=ACfU3U29UElO5Mm5FcMRDefZNXwDLBFfwg&amp;hl=zh-CN&amp;sa=X&amp;ved=2ahUKEwiazNCh6L3tAhXww4sBHU-sC68Q6AEwBHoECAUQAg#v=onepage&amp;q=%E9%A2%91%E8%B0%B1%E6%B3%84%E6%BC%8F&amp;f=false" target="_blank" rel="noopener">3</a></li>
+<li><a href="https://zhidao.baidu.com/question/514716417.html" target="_blank" rel="noopener">4</a></li>
+<li><a href="https://au.mathworks.com/matlabcentral/answers/435508-how-can-i-get-proper-length-of-fft" target="_blank" rel="noopener">matlab</a></li>
+</ul>
+</li>
+<li>采样：https://zhuanlan.zhihu.com/p/74736706</li>
+</ol>
     </div>
 
     

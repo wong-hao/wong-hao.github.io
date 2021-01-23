@@ -65,6 +65,11 @@
 &lt;li&gt;&lt;a href=&#34;https://www.thethingsnetwork.org/forum/t/limitations-data-rate-packet-size-30-seconds-uplink-and-10-messages-downlink-per-day-fair-access-policy-guidelines/1300&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TTN Limitations fair access policy&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.thethingsnetwork.org/airtime-calculator/#&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TTN calculator&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
+&lt;h3 id=&#34;7-功耗&#34;&gt;7 功耗&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://doc.sm.tc/station/index.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;msoon&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/107189375&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;利尔达&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
 </description>
     </item>
     
@@ -760,6 +765,7 @@ Flash:     0
 &lt;li&gt;&lt;a href=&#34;https://www.thethingsnetwork.org/docs/lorawan/security.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TTN&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.cyberark.com/resources/threat-research-blog/lorawan-mqtt-what-to-know-when-securing-your-iot-network&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Cyberark&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://ask.csdn.net/questions/3109264&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CSDN&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/6208915.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;AnswerInTheWind&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h4 id=&#34;2215-rejeee&#34;&gt;2.2.1.5 Rejeee&lt;/h4&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/13517529.html#4758586&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;这家的节点不支持LoRaWAN，节点只有私有协议的&lt;/a&gt;&lt;/p&gt;
@@ -783,6 +789,7 @@ Flash:     0
 &lt;ul&gt;
 &lt;li&gt;LoRa Basics Station = Semtech UDP packet forwarder + ChirpStack Gateway Bridge&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/lorabasics/basicstation&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;源码&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://doc.sm.tc/station/index.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;docs&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
