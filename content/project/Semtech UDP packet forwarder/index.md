@@ -224,7 +224,7 @@ lgw_receive接收到的包调用其crc函数校验，与private function: crc16�
 
    - ```jit_queue_is_full/jit_queue_is_empty```：被上述四个函数调用的private functions
       
-   分析：是从gateway到node的通信,  [Just-In-Time" downlink scheduling](https://gitee.com/rejeee/gw1302s/tree/master/packet_forwarder)
+   分析：是从gateway到node的通信,  [Just-In-Time" downlink scheduling](https://github.com/Lora-net/sx1302_hal/tree/master/packet_forwarder)
 ---
 /* --- THREAD 4: PARSE GPS MESSAGE AND KEEP GATEWAY IN SYNC ----------------- */ 
 
@@ -397,7 +397,7 @@ INFO: Exiting packet forwarder program
 ### 3.3.2 Downstream protocol
 1. PULL_DATA packet：thread_down
 2. PULL_ACK packet：thread_down
-   - 与Confirmed message没有一点关系，这个是被动的
+   - 与Confirmed message没有一点关系，这个是NS自动发送的
 3. PULL_RESP packet：thread_down
    
    prase这些packet的json分辨downlink packet class，决定发射时间（与beacon无关）
@@ -421,7 +421,7 @@ INFO: Exiting packet forwarder program
 1. multi-channel SX1302 baseband IC
 2. two SX1250 RF transceivers
    
-这与global.config中的"SX130x_conf"紧密相关：["SX130x_conf" that should contain the parameters for the Lora concentrator board (RF channels definition, modem parameters, etc) ](https://gitee.com/rejeee/gw1302s/tree/master/packet_forwarder)
+这与global.config中的"SX130x_conf"紧密相关：["SX130x_conf" that should contain the parameters for the Lora concentrator board (RF channels definition, modem parameters, etc) ](https://github.com/Lora-net/sx1302_hal/tree/master/packet_forwarder)
 
 ## 5.2 Concentrator
 [SX1302CxxxGW1](https://www.semtech.com/products/wireless-rf/lora-gateways/sx1302cxxxgw1)：[Corecell ref design User Guide V1.2](https://semtech.my.salesforce.com/sfc/p/E0000000JelG/a/2R000000HV3G/an5Oh4KfiY7tAO1MO7RiPOj08WUpOTjPHSF57_.NlJ0?__hstc=212684107.9a923fbb2062c017aeab3e39902f6094.1606449781040.1608212935544.1608641620506.43&__hssc=212684107.2.1608641620506&__hsfp=2049775356)

@@ -101,7 +101,9 @@ ERROR: [main] failed to start the concentrator
     CoreCell ADC reset through GPIO13...
     =========== Test End ===========
     ```
-	- 接受测试：官方建议[M-HL9-EV连金黄天线](https://www.bilibili.com/video/BV1Yt411N7MV)，但实测用直黑天线也行，且发包间隔要长，避免丢包接收不到
+	- 接受测试：
+	  - 官方建议[M-HL9-EV连金黄天线](https://www.bilibili.com/video/BV1Yt411N7MV)，但实测用直黑天线也行，且发包间隔要长，避免丢包接收不到
+	  - 接收到的数据就是原始的**PHYPayload**，而不是data
         ```cpp
         pi@raspberrypi:~/sx1302_hal/bin $ ./test_loragw_hal_rx -r 1250 -a 475.5 -b 476.5
         ===== sx1302 HAL RX test =====
@@ -231,11 +233,12 @@ ERROR: [main] failed to start the concentrator
 
   5. 发送数据
    - 以hex发送
-     - FRMPayload：在线解码直接得到结果
+     - FRMPayload：在线解码直接查看相关条目得到结果
      - frmPayload bytes: [base64解码工具1](https://cryptii.com/)从text->bytes
    - 以asicii发送
      - FRMPayload: 在线解码后需要[从hex到asicii](https://www.rapidtables.com/convert/number/hex-to-ascii.html)
-     - frmPayload bytes: 直接base64解码
+     - frmPayload bytes: 任意base64工具解码
+   - 同样的内容，两者发送的payload size不同
 
 ### 2.2.2 节点入网
 
