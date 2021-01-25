@@ -880,6 +880,23 @@ FNB:       0x00
 TYPE:      0x00
 Flash:     0
 </code></pre>
+<ol start="5">
+<li>发送数据</li>
+</ol>
+<ul>
+<li>以hex发送
+<ul>
+<li>FRMPayload：在线解码直接得到结果</li>
+<li>frmPayload bytes: <a href="https://cryptii.com/" target="_blank" rel="noopener">base64解码工具1</a>从text-&gt;bytes</li>
+</ul>
+</li>
+<li>以asicii发送
+<ul>
+<li>FRMPayload: 在线解码后需要<a href="https://www.rapidtables.com/convert/number/hex-to-ascii.html" target="_blank" rel="noopener">从hex到asicii</a></li>
+<li>frmPayload bytes: 直接base64解码</li>
+</ul>
+</li>
+</ul>
 </li>
 </ul>
 <h3 id="222-节点入网">2.2.2 节点入网</h3>
@@ -1084,7 +1101,7 @@ raspberrypi2    0016c001ff10d3f7    -              苏州市           在线   
 </li>
 <li><a href="https://www.thethingsindustries.com/docs/" target="_blank" rel="noopener">The Things Stack：安装版</a>
 <ul>
-<li>Docket install， <a href="https://lorawan-packet-decoder-0ta6puiniaut.runkit.sh/" target="_blank" rel="noopener">LoRa数据包在线解码</a></li>
+<li>Docket install</li>
 <li><a href="https://www.youtube.com/watch?v=XgPSU4UkDuE&amp;feature=youtu.be" target="_blank" rel="noopener">video</a></li>
 </ul>
 </li>
@@ -1118,7 +1135,9 @@ UDP             1700/1700        0.0.0.0/0
 <hr>
 <h3 id="244-adr">2.4.4 ADR</h3>
 <p><a href="https://lora-alliance.org/lorawan-for-developers" target="_blank" rel="noopener">Core LoRaWAN Specification</a>：NS发送<code>LinkADRReq</code>到device</p>
+<p><a href="https://machineq.com/post/how-to-detect-connection-loss-on-a-lorawan-device-and-why-it-matters" target="_blank" rel="noopener">Confirmed and Unconfirmed message</a></p>
 <p><a href="http://lora.timeddd.com/forum.php?mod=viewthread&amp;tid=428&amp;extra=page%3D1" target="_blank" rel="noopener">LoraWAN论坛</a></p>
+<p><a href="https://www.thethingsnetwork.org/docs/lorawan/adaptive-data-rate.html" target="_blank" rel="noopener">TTN</a></p>
 <p><a href="https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVZiNEttMzVTVWRMclNTMl91elRLaW9CZTNSLVJCakVVb3JINEFtZ0VpVW5jdz9lPXlFWXI1bA==.mp3" target="_blank" rel="noopener">Semtech1</a></p>
 <p><a href="https://www.sghoslya.com/p/how-does-lorawan-nodes-changes-their.html" target="_blank" rel="noopener">Sakshama Ghoslya</a>，对上面的补充</p>
 <p><a href="https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVNxdEZVbm9hQUpQaGZycl9nbTBDMjBCZFM4Wk1hQzFBZ2l6Z0p5bXJFcTdhQT9lPUhTOU1Gdw==.mp3" target="_blank" rel="noopener">Semtech2</a></p>
@@ -1128,10 +1147,10 @@ UDP             1700/1700        0.0.0.0/0
 <ol>
 <li><a href="http://47.110.36.225:8080/#/organizations/1/gateways/0016c001ff10d3f6/frames" target="_blank" rel="noopener">Gateway frame logs</a>可以直接得到已解码的数据帧
 <ul>
-<li><a href="https://cryptii.com/" target="_blank" rel="noopener">base64解码1</a></li>
-<li><a href="https://forum.chirpstack.io/t/receiving-decrypted-device-data-frmpayload/501/24?u=haowong" target="_blank" rel="noopener">base64解码2</a></li>
-<li><a href="https://www.base64decode.org/" target="_blank" rel="noopener">base64解码3</a></li>
-<li><a href="https://baike.baidu.com/item/ASCII/309296?fromtitle=ascii%E7%A0%81%E8%A1%A8&amp;fromid=19660475&amp;fr=aladdin" target="_blank" rel="noopener">ascii码表</a></li>
+<li><a href="https://cryptii.com/" target="_blank" rel="noopener">base64解码工具1</a></li>
+<li><a href="https://forum.chirpstack.io/t/receiving-decrypted-device-data-frmpayload/501/24?u=haowong" target="_blank" rel="noopener">base64解码工具2</a></li>
+<li><a href="https://www.base64decode.org/" target="_blank" rel="noopener">base64解码工具3</a></li>
+<li>自己发送的数据 = frmPayload bytes + mic</li>
 </ul>
 </li>
 </ol>
@@ -1172,6 +1191,11 @@ UDP             1700/1700        0.0.0.0/0
 <li>topic可以在配置文件或者运行文件中找到</li>
 <li>topic: <strong>gateway/0016c001ff10d3f6/event/#</strong>，故使用<code>mosquitto_sub -t &quot;gateway/0016c001ff10d3f6/event/#&quot; -v</code>，且#可以具体为stats、up等</li>
 <li><a href="https://www.chirpstack.io/project/guides/connect-gateway/" target="_blank" rel="noopener">在配置文件中设置marshaler=&ldquo;json&quot;后</a><code>sudo systemctl restart chirpstack-gateway-bridge</code>重启，可以得到<a href="https://www.chirpstack.io/gateway-bridge/payloads/events/" target="_blank" rel="noopener">base64 encoded LoRaWAN frame</a></li>
+<li><a href="https://lorawan-packet-decoder-0ta6puiniaut.runkit.sh/" target="_blank" rel="noopener">LoRa数据包在线解码</a>
+<ul>
+<li>自己发送的数据 = FRMPayload + MIC</li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="https://www.chirpstack.io/application-server/integrations/mqtt/" target="_blank" rel="noopener">Application server</a>
