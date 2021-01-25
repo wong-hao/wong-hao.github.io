@@ -750,7 +750,10 @@ CoreCell ADC reset through GPIO13...
 =========== Test End ===========
 </code></pre>
 <ul>
-<li>接受测试：官方建议<a href="https://www.bilibili.com/video/BV1Yt411N7MV" target="_blank" rel="noopener">M-HL9-EV连金黄天线</a>，但实测用直黑天线也行，且发包间隔要长，避免丢包接收不到
+<li>接受测试：
+<ul>
+<li>官方建议<a href="https://www.bilibili.com/video/BV1Yt411N7MV" target="_blank" rel="noopener">M-HL9-EV连金黄天线</a>，但实测用直黑天线也行，且发包间隔要长，避免丢包接收不到</li>
+<li>接收到的数据就是原始的<strong>PHYPayload</strong>，而不是data
 <pre><code class="language-cpp">pi@raspberrypi:~/sx1302_hal/bin $ ./test_loragw_hal_rx -r 1250 -a 475.5 -b 476.5
 ===== sx1302 HAL RX test =====
 INFO: rxpkt buffer size is set to 16
@@ -813,6 +816,10 @@ Nb valid packets received: 2 CRC OK (1)
 Closing SPI communication interface
 CoreCell reset through GPIO7...
 =========== Test End ===========
+</code></pre>
+</li>
+</ul>
+<pre><code>
 </code></pre>
 </li>
 </ul>
@@ -886,16 +893,17 @@ Flash:     0
 <ul>
 <li>以hex发送
 <ul>
-<li>FRMPayload：在线解码直接得到结果</li>
+<li>FRMPayload：在线解码直接查看相关条目得到结果</li>
 <li>frmPayload bytes: <a href="https://cryptii.com/" target="_blank" rel="noopener">base64解码工具1</a>从text-&gt;bytes</li>
 </ul>
 </li>
 <li>以asicii发送
 <ul>
 <li>FRMPayload: 在线解码后需要<a href="https://www.rapidtables.com/convert/number/hex-to-ascii.html" target="_blank" rel="noopener">从hex到asicii</a></li>
-<li>frmPayload bytes: 直接base64解码</li>
+<li>frmPayload bytes: 任意base64工具解码</li>
 </ul>
 </li>
+<li>同样的内容，两者发送的payload size不同</li>
 </ul>
 </li>
 </ul>

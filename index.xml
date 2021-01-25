@@ -447,7 +447,7 @@
 &lt;p&gt;&lt;code&gt;jit_queue_is_full/jit_queue_is_empty&lt;/code&gt;：被上述四个函数调用的private functions&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;分析是从gateway到node的通信--just-in-time-downlink-schedulinghttpsgiteecomrejeeegw1302streemasterpacket_forwarder&#34;&gt;分析：是从gateway到node的通信,  &lt;a href=&#34;https://gitee.com/rejeee/gw1302s/tree/master/packet_forwarder&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Just-In-Time&amp;quot; downlink scheduling&lt;/a&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;分析是从gateway到node的通信--just-in-time-downlink-schedulinghttpsgithubcomlora-netsx1302_haltreemasterpacket_forwarder&#34;&gt;分析：是从gateway到node的通信,  &lt;a href=&#34;https://github.com/Lora-net/sx1302_hal/tree/master/packet_forwarder&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Just-In-Time&amp;quot; downlink scheduling&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;/* &amp;mdash; THREAD 4: PARSE GPS MESSAGE AND KEEP GATEWAY IN SYNC &amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;ndash; */&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -626,7 +626,7 @@ INFO: Exiting packet forwarder program
 &lt;li&gt;
 &lt;p&gt;PULL_ACK packet：thread_down&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;与Confirmed message没有一点关系，这个是被动的&lt;/li&gt;
+&lt;li&gt;与Confirmed message没有一点关系，这个是NS自动发送的&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -653,7 +653,7 @@ INFO: Exiting packet forwarder program
 &lt;li&gt;multi-channel SX1302 baseband IC&lt;/li&gt;
 &lt;li&gt;two SX1250 RF transceivers&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;这与global.config中的&amp;quot;SX130x_conf&amp;quot;紧密相关：&lt;a href=&#34;https://gitee.com/rejeee/gw1302s/tree/master/packet_forwarder&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&amp;ldquo;SX130x_conf&amp;rdquo; that should contain the parameters for the Lora concentrator board (RF channels definition, modem parameters, etc) &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;这与global.config中的&amp;quot;SX130x_conf&amp;quot;紧密相关：&lt;a href=&#34;https://github.com/Lora-net/sx1302_hal/tree/master/packet_forwarder&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&amp;ldquo;SX130x_conf&amp;rdquo; that should contain the parameters for the Lora concentrator board (RF channels definition, modem parameters, etc) &lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;52-concentrator&#34;&gt;5.2 Concentrator&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.semtech.com/products/wireless-rf/lora-gateways/sx1302cxxxgw1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;SX1302CxxxGW1&lt;/a&gt;：&lt;a href=&#34;https://semtech.my.salesforce.com/sfc/p/E0000000JelG/a/2R000000HV3G/an5Oh4KfiY7tAO1MO7RiPOj08WUpOTjPHSF57_.NlJ0?__hstc=212684107.9a923fbb2062c017aeab3e39902f6094.1606449781040.1608212935544.1608641620506.43&amp;amp;__hssc=212684107.2.1608641620506&amp;amp;__hsfp=2049775356&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Corecell ref design User Guide V1.2&lt;/a&gt;&lt;/p&gt;
 &lt;ol&gt;
@@ -754,7 +754,10 @@ CoreCell ADC reset through GPIO13...
 =========== Test End ===========
 &lt;/code&gt;&lt;/pre&gt;
 &lt;ul&gt;
-&lt;li&gt;接受测试：官方建议&lt;a href=&#34;https://www.bilibili.com/video/BV1Yt411N7MV&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;M-HL9-EV连金黄天线&lt;/a&gt;，但实测用直黑天线也行，且发包间隔要长，避免丢包接收不到
+&lt;li&gt;接受测试：
+&lt;ul&gt;
+&lt;li&gt;官方建议&lt;a href=&#34;https://www.bilibili.com/video/BV1Yt411N7MV&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;M-HL9-EV连金黄天线&lt;/a&gt;，但实测用直黑天线也行，且发包间隔要长，避免丢包接收不到&lt;/li&gt;
+&lt;li&gt;接收到的数据就是原始的&lt;strong&gt;PHYPayload&lt;/strong&gt;，而不是data
 &lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;pi@raspberrypi:~/sx1302_hal/bin $ ./test_loragw_hal_rx -r 1250 -a 475.5 -b 476.5
 ===== sx1302 HAL RX test =====
 INFO: rxpkt buffer size is set to 16
@@ -817,6 +820,10 @@ Nb valid packets received: 2 CRC OK (1)
 Closing SPI communication interface
 CoreCell reset through GPIO7...
 =========== Test End ===========
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -890,16 +897,17 @@ Flash:     0
 &lt;ul&gt;
 &lt;li&gt;以hex发送
 &lt;ul&gt;
-&lt;li&gt;FRMPayload：在线解码直接得到结果&lt;/li&gt;
+&lt;li&gt;FRMPayload：在线解码直接查看相关条目得到结果&lt;/li&gt;
 &lt;li&gt;frmPayload bytes: &lt;a href=&#34;https://cryptii.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;base64解码工具1&lt;/a&gt;从text-&amp;gt;bytes&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;以asicii发送
 &lt;ul&gt;
 &lt;li&gt;FRMPayload: 在线解码后需要&lt;a href=&#34;https://www.rapidtables.com/convert/number/hex-to-ascii.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;从hex到asicii&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;frmPayload bytes: 直接base64解码&lt;/li&gt;
+&lt;li&gt;frmPayload bytes: 任意base64工具解码&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
+&lt;li&gt;同样的内容，两者发送的payload size不同&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;

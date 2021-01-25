@@ -906,7 +906,7 @@
 <p><code>jit_queue_is_full/jit_queue_is_empty</code>：被上述四个函数调用的private functions</p>
 </li>
 </ul>
-<h2 id="分析是从gateway到node的通信--just-in-time-downlink-schedulinghttpsgiteecomrejeeegw1302streemasterpacket_forwarder">分析：是从gateway到node的通信,  <a href="https://gitee.com/rejeee/gw1302s/tree/master/packet_forwarder" target="_blank" rel="noopener">Just-In-Time&quot; downlink scheduling</a></h2>
+<h2 id="分析是从gateway到node的通信--just-in-time-downlink-schedulinghttpsgithubcomlora-netsx1302_haltreemasterpacket_forwarder">分析：是从gateway到node的通信,  <a href="https://github.com/Lora-net/sx1302_hal/tree/master/packet_forwarder" target="_blank" rel="noopener">Just-In-Time&quot; downlink scheduling</a></h2>
 <p>/* &mdash; THREAD 4: PARSE GPS MESSAGE AND KEEP GATEWAY IN SYNC &mdash;&mdash;&mdash;&mdash;&mdash;&ndash; */</p>
 <ul>
 <li>
@@ -1085,7 +1085,7 @@ INFO: Exiting packet forwarder program
 <li>
 <p>PULL_ACK packet：thread_down</p>
 <ul>
-<li>与Confirmed message没有一点关系，这个是被动的</li>
+<li>与Confirmed message没有一点关系，这个是NS自动发送的</li>
 </ul>
 </li>
 <li>
@@ -1112,7 +1112,7 @@ INFO: Exiting packet forwarder program
 <li>multi-channel SX1302 baseband IC</li>
 <li>two SX1250 RF transceivers</li>
 </ol>
-<p>这与global.config中的&quot;SX130x_conf&quot;紧密相关：<a href="https://gitee.com/rejeee/gw1302s/tree/master/packet_forwarder" target="_blank" rel="noopener">&ldquo;SX130x_conf&rdquo; that should contain the parameters for the Lora concentrator board (RF channels definition, modem parameters, etc) </a></p>
+<p>这与global.config中的&quot;SX130x_conf&quot;紧密相关：<a href="https://github.com/Lora-net/sx1302_hal/tree/master/packet_forwarder" target="_blank" rel="noopener">&ldquo;SX130x_conf&rdquo; that should contain the parameters for the Lora concentrator board (RF channels definition, modem parameters, etc) </a></p>
 <h2 id="52-concentrator">5.2 Concentrator</h2>
 <p><a href="https://www.semtech.com/products/wireless-rf/lora-gateways/sx1302cxxxgw1" target="_blank" rel="noopener">SX1302CxxxGW1</a>：<a href="https://semtech.my.salesforce.com/sfc/p/E0000000JelG/a/2R000000HV3G/an5Oh4KfiY7tAO1MO7RiPOj08WUpOTjPHSF57_.NlJ0?__hstc=212684107.9a923fbb2062c017aeab3e39902f6094.1606449781040.1608212935544.1608641620506.43&amp;__hssc=212684107.2.1608641620506&amp;__hsfp=2049775356" target="_blank" rel="noopener">Corecell ref design User Guide V1.2</a></p>
 <ol>
