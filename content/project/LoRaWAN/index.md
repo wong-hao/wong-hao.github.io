@@ -228,6 +228,15 @@ ERROR: [main] failed to start the concentrator
   TYPE:      0x00
   Flash:     0
   ```
+
+  5. 发送数据
+   - 以hex发送
+     - FRMPayload：在线解码直接得到结果
+     - frmPayload bytes: [base64解码工具1](https://cryptii.com/)从text->bytes
+   - 以asicii发送
+     - FRMPayload: 在线解码后需要[从hex到asicii](https://www.rapidtables.com/convert/number/hex-to-ascii.html)
+     - frmPayload bytes: 直接base64解码
+
 ### 2.2.2 节点入网
 
 #### 2.2.2.1 节点示例
@@ -363,7 +372,7 @@ ERROR: [main] failed to start the concentrator
      - [SX1302网关转发器修改版讨论](https://www.thethingsnetwork.org/forum/t/sx1302-using-semtech-packet-forwarder-can-not-register-the-gateway/41211/34)：server_address选择[router.cn.thethings.network](https://blog.csdn.net/freemote/article/details/90315395)；温度改为int可保证console显示connected
      - [Limitations fair access policy](https://www.thethingsnetwork.org/forum/t/limitations-data-rate-packet-size-30-seconds-uplink-and-10-messages-downlink-per-day-fair-access-policy-guidelines/1300)
    - [The Things Stack：安装版](https://www.thethingsindustries.com/docs/)
-     - Docket install， [LoRa数据包在线解码](https://lorawan-packet-decoder-0ta6puiniaut.runkit.sh/)
+     - Docket install
      - [video](https://www.youtube.com/watch?v=XgPSU4UkDuE&feature=youtu.be)
    - [Rakwireless](https://forum.rakwireless.com/) 
 3. [OpenChirp](https://openchirp.io/)
@@ -393,9 +402,14 @@ ERROR: [main] failed to start the concentrator
 ---
 
 ### 2.4.4 ADR
+
 [Core LoRaWAN Specification](https://lora-alliance.org/lorawan-for-developers)：NS发送``LinkADRReq``到device
 
+[Confirmed and Unconfirmed message](https://machineq.com/post/how-to-detect-connection-loss-on-a-lorawan-device-and-why-it-matters)
+
 [LoraWAN论坛](http://lora.timeddd.com/forum.php?mod=viewthread&tid=428&extra=page%3D1)
+
+[TTN](https://www.thethingsnetwork.org/docs/lorawan/adaptive-data-rate.html)
 
 [Semtech1](https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVZiNEttMzVTVWRMclNTMl91elRLaW9CZTNSLVJCakVVb3JINEFtZ0VpVW5jdz9lPXlFWXI1bA==.mp3)
 
@@ -410,10 +424,10 @@ ERROR: [main] failed to start the concentrator
 
 ### 2.5.1 [Live LoRaWAN frames logging](https://www.chirpstack.io/application-server/use/frame-logging/)
 1. [Gateway frame logs](http://47.110.36.225:8080/#/organizations/1/gateways/0016c001ff10d3f6/frames)可以直接得到已解码的数据帧
-     - [base64解码1](https://cryptii.com/)
-     - [base64解码2](https://forum.chirpstack.io/t/receiving-decrypted-device-data-frmpayload/501/24?u=haowong)
-     - [base64解码3](https://www.base64decode.org/)
-     - [ascii码表](https://baike.baidu.com/item/ASCII/309296?fromtitle=ascii%E7%A0%81%E8%A1%A8&fromid=19660475&fr=aladdin)
+     - [base64解码工具1](https://cryptii.com/)
+     - [base64解码工具2](https://forum.chirpstack.io/t/receiving-decrypted-device-data-frmpayload/501/24?u=haowong)
+     - [base64解码工具3](https://www.base64decode.org/)
+     - 自己发送的数据 = frmPayload bytes + mic
 
 ### 2.5.1 去重
 [LoraWAN论坛](http://lora.timeddd.com/forum.php?mod=viewthread&tid=478&extra=page%3D1)
@@ -453,6 +467,8 @@ http://47.110.36.225:8080/api
          - topic可以在配置文件或者运行文件中找到
          - topic: **gateway/0016c001ff10d3f6/event/#**，故使用``mosquitto_sub -t "gateway/0016c001ff10d3f6/event/#" -v``，且#可以具体为stats、up等
          - [在配置文件中设置marshaler="json"后](https://www.chirpstack.io/project/guides/connect-gateway/)``sudo systemctl restart chirpstack-gateway-bridge``重启，可以得到[base64 encoded LoRaWAN frame](https://www.chirpstack.io/gateway-bridge/payloads/events/)
+         - [LoRa数据包在线解码](https://lorawan-packet-decoder-0ta6puiniaut.runkit.sh/)
+           - 自己发送的数据 = FRMPayload + MIC
        - [Application server](https://www.chirpstack.io/application-server/integrations/mqtt/)
          - [ChirpStack](https://forum.chirpstack.io/t/forming-downlink-packet-to-lora-node/215/16)
          - [Thethingsstack1](https://thethingsstack.io/integrations/mqtt/)

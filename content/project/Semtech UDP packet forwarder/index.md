@@ -1,6 +1,6 @@
 ---
-title: Code Review of Helper programs 'LoRa_PKT_FWD'
-summary: This is an code review and comments
+title: Semtech UDP packet forwarder
+summary: Code Review of Helper programs 'LoRa_PKT_FWD'
 tags:
 - Wireless Communication
 date: "2020-10-21T00:00:00Z"
@@ -397,6 +397,7 @@ INFO: Exiting packet forwarder program
 ### 3.3.2 Downstream protocol
 1. PULL_DATA packet：thread_down
 2. PULL_ACK packet：thread_down
+   - 与Confirmed message没有一点关系，这个是被动的
 3. PULL_RESP packet：thread_down
    
    prase这些packet的json分辨downlink packet class，决定发射时间（与beacon无关）
@@ -438,7 +439,6 @@ thread_jit入队出队的队列正是两个SX1250对应的radio_0、radio_1
 
 # 6 问题
 - [ ] DEPENDANCIES相关的函数定义及实现
-- [ ] "SX130x_conf"相关，如RF chain、IF chain等参数
 
 
 
