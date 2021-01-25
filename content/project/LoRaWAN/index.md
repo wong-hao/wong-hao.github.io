@@ -184,6 +184,19 @@ ERROR: [main] failed to start the concentrator
 
 ## 2.2 Devices/End Nodes
 
+
+### 2.2.1 Rejeee评估板
+
+[这家的节点不支持LoRaWAN，节点只有私有协议的](https://www.cnblogs.com/answerinthewind/p/13517529.html#4758586)
+
+[8. 芮捷LPWAN协议](https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWVfQkIxUFl2M3RKb01ZUTMxQ1hidXdCZWVoZmdnNkpPUEJxX1FGdzBhb3NzUT9lPWJmbmM4TA==.mp3)
+
+[模块不支持标准LoRaWAN协议模块](http://www.rejeee.com/documents/SPEC/RJDS0052018-M-KL9_Specification_V1.1.pdf)
+
+[视频](https://space.bilibili.com/7682653?spm_id_from=333.788.b_765f7570696e666f.1)
+
+- [ ] 弄清楚[私有网络](https://forum.chirpstack.io/t/relation-between-sync-word-private-network-and-end-nodes/191/13?u=haowong)/非LoRaWAN网络怎么导出数据
+
   **[M-HL9-EV](http://www.njrjzn.com/chanpinzhongxin/SX127xmozuxilie/4.html)**
   1. [进入配置方法](http://www.rejeee.com/documents/APP_DOC/M-KL9_how_to_enter_configuration_mode.pdf)
   2. [**M-KL9**参数意义](http://www.rejeee.com/documents/APP_DOC/M-KL9_parameter.pdf)，具体配置参数看用户手册
@@ -210,7 +223,7 @@ ERROR: [main] failed to start the concentrator
   SEQ:       OFF
   IP:        ON
   AES:       OFF
-  ACK:       ON //Confirmed message
+  ACK:       OFF //Unconfirmed message
   LDR:       0, 0
   LCP:       0
   LFT:       0
@@ -219,43 +232,36 @@ ERROR: [main] failed to start the concentrator
   TYPE:      0x00
   Flash:     0
   ```
-### 2.2.1 入网
+### 2.2.2 节点入网
 
-#### 2.2.1.1 概述
+#### 2.2.2.1 节点示例
+1. [Arduino1](https://circuitdigest.com/microcontroller-projects/arduino-lora-sx1278-interfacing-tutorial)
+2. [Arduino2](https://makersportal.com/blog/2019/10/5/arduino-lora-network)
+3. [TTN](https://www.thethingsnetwork.org/docs/devices/)
+
+#### 2.2.2.1 概述
 1. [Back-End Interfaces](https://lora-alliance.org/lorawan-for-developers)：最官方的文件，下面的东西都有包含
 2. [AnswerInTheWind](https://www.cnblogs.com/answerinthewind/p/6213027.html)
 3. [TTN](https://www.thethingsnetwork.org/docs/lorawan/addressing.html)
 4. [quending](https://blog.csdn.net/quending/article/details/86481598)
 
 
-#### 2.2.1.2 ABP
+#### 2.2.2.2 ABP
 [RAKwireless](https://blog.csdn.net/RAKwireless/article/details/106186894)
 
 [Chirpstack](https://www.chirpstack.io/application-server/use/devices/)
 
-#### 2.2.1.3 OTAA
+#### 2.2.2.3 OTAA
 [RAKwireless](https://blog.csdn.net/RAKwireless/article/details/106135373)
 
 [AnswerInTheWind](https://www.cnblogs.com/answerinthewind/p/6213529.html)
 
-#### 2.2.1.4 Security
+#### 2.2.2.4 Security
 1. 没有入网的后果: **time="2021-01-22T13:52:00+08:00" level=error msg="uplink: processing uplink frame error" ctx_id=423aecd8-b38e-4b5f-8521-b8c20b0e710b error="get device-session error: object does not exist"**
 2. [TTN](https://www.thethingsnetwork.org/docs/lorawan/security.html)
 3. [Cyberark](https://www.cyberark.com/resources/threat-research-blog/lorawan-mqtt-what-to-know-when-securing-your-iot-network)
 4. [CSDN](https://ask.csdn.net/questions/3109264)
 5. [AnswerInTheWind](https://www.cnblogs.com/answerinthewind/p/6208915.html)
-
-#### 2.2.1.5 Rejeee
-
-[这家的节点不支持LoRaWAN，节点只有私有协议的](https://www.cnblogs.com/answerinthewind/p/13517529.html#4758586)
-
-[8. 芮捷LPWAN协议](https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWVfQkIxUFl2M3RKb01ZUTMxQ1hidXdCZWVoZmdnNkpPUEJxX1FGdzBhb3NzUT9lPWJmbmM4TA==.mp3)
-
-[模块不支持标准LoRaWAN协议模块](http://www.rejeee.com/documents/SPEC/RJDS0052018-M-KL9_Specification_V1.1.pdf)
-
-[视频](https://space.bilibili.com/7682653?spm_id_from=333.788.b_765f7570696e666f.1)
-
-- [ ] 弄清楚[私有网络](https://forum.chirpstack.io/t/relation-between-sync-word-private-network-and-end-nodes/191/13?u=haowong)/非LoRaWAN网络怎么导出数据
 
 
 
@@ -284,7 +290,7 @@ ERROR: [main] failed to start the concentrator
 ## 2.4 LoraWAN Network Server
 ---
 ### 2.4.1 Cloud-hosted: Close Source LoRaWAN Network Servers Platforms
-
+1. 阿里云
   - **global.config**中的**lorawan_public: true**，[连接不通](http://lora.timeddd.com/forum.php?mod=viewthread&tid=521)的元凶，true对应于sync word **0x34**
   - 使用树莓派搭建网关注册到腾讯物联网开发平台
 	- 主要步骤
@@ -305,6 +311,10 @@ ERROR: [main] failed to start the concentrator
     - **[腾讯物联网开发平台](https://console.cloud.tencent.com/iotexplorer)** 对标 **[阿里云物联网络管理平台](https://linkwan.console.aliyun.com/)**
     - **[腾讯物联网通信](https://console.cloud.tencent.com/iothub)** 对标 **[阿里云物联网平台](https://iot.console.aliyun.com/)**
   
+2. Thingpark
+   - [Thingpark Wireless Logger](http://actility.thingpark.com/wlogger/#)
+   - https://sparkiot.bitbucket.io/tpw-portal.html
+   - https://partners.thingpark.com/sites/default/files/2017-11/AdvancedThingParkDeveloperGuide_V4.pdf
 ---
 
 ### 2.4.2 Cloud-hosted: Open Source LoRaWAN Network Servers Platforms
@@ -357,7 +367,7 @@ ERROR: [main] failed to start the concentrator
      - [SX1302网关转发器修改版讨论](https://www.thethingsnetwork.org/forum/t/sx1302-using-semtech-packet-forwarder-can-not-register-the-gateway/41211/34)：server_address选择[router.cn.thethings.network](https://blog.csdn.net/freemote/article/details/90315395)；温度改为int可保证console显示connected
      - [Limitations fair access policy](https://www.thethingsnetwork.org/forum/t/limitations-data-rate-packet-size-30-seconds-uplink-and-10-messages-downlink-per-day-fair-access-policy-guidelines/1300)
    - [The Things Stack：安装版](https://www.thethingsindustries.com/docs/)
-     - Docket install， [LoRa数据包在线解码base64](https://lorawan-packet-decoder-0ta6puiniaut.runkit.sh/)
+     - Docket install， [LoRa数据包在线解码](https://lorawan-packet-decoder-0ta6puiniaut.runkit.sh/)
      - [video](https://www.youtube.com/watch?v=XgPSU4UkDuE&feature=youtu.be)
    - [Rakwireless](https://forum.rakwireless.com/) 
 3. [OpenChirp](https://openchirp.io/)
@@ -380,7 +390,7 @@ ERROR: [main] failed to start the concentrator
 
 ### 2.4.3 Integrated: Gateway-Embedded LoRaWAN Network Servers Platforms
 
-[特点](https://www.actility.com/lorawan-network-server/)
+[Actility Thingpark](https://www.actility.com/lorawan-network-server/)
 
 [RAKwireless](https://blog.csdn.net/RAKwireless/article/details/105298319)
 
@@ -401,6 +411,10 @@ ERROR: [main] failed to start the concentrator
 
 
 ## 2.5 Application Server console
+
+### 2.5.1 [Live LoRaWAN frames logging](https://www.chirpstack.io/application-server/use/frame-logging/)
+1. [Gateway frame logs](http://47.110.36.225:8080/#/organizations/1/gateways/0016c001ff10d3f6/frames)可以直接得到已解码的数据帧
+   - 需要配合[base64解码](https://cryptii.com/): text->bytes (frmPayload里的bytes是FRMPayload经过base64加密的结果)
 
 ### 2.5.1 去重
 [LoraWAN论坛](http://lora.timeddd.com/forum.php?mod=viewthread&tid=478&extra=page%3D1)
@@ -439,7 +453,7 @@ http://47.110.36.225:8080/api
          - 注意：gateway-bridge在云端安装的就在云服务器上操作，在网关上安装的就在网关上操作
          - topic可以在配置文件或者运行文件中找到
          - topic: **gateway/0016c001ff10d3f6/event/#**，故使用``mosquitto_sub -t "gateway/0016c001ff10d3f6/event/#" -v``，且#可以具体为stats、up等
-         - [在配置文件中设置marshaler="json"后](https://www.chirpstack.io/project/guides/connect-gateway/)``sudo systemctl restart chirpstack-gateway-bridge``重启，可以得到[base64 encoded LoRaWAN frame](https://www.chirpstack.io/gateway-bridge/payloads/events/)；而Live LoRaWAN frames网页可以直接得到已解码的数据帧
+         - [在配置文件中设置marshaler="json"后](https://www.chirpstack.io/project/guides/connect-gateway/)``sudo systemctl restart chirpstack-gateway-bridge``重启，可以得到[base64 encoded LoRaWAN frame](https://www.chirpstack.io/gateway-bridge/payloads/events/)
        - [Application server](https://www.chirpstack.io/application-server/integrations/mqtt/)
          - [ChirpStack](https://forum.chirpstack.io/t/forming-downlink-packet-to-lora-node/215/16)
          - [Thethingsstack1](https://thethingsstack.io/integrations/mqtt/)

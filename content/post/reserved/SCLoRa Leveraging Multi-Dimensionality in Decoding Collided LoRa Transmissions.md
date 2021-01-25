@@ -6,7 +6,7 @@ authors:
 - admin
 tags:
 categories:
-- Multiple access
+- Multiple access and Error correction
 date: "2020-09-09T00:00:00Z"
 lastmod: ""
 featured: false
