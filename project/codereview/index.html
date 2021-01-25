@@ -977,8 +977,12 @@ INFO: downstream keep-alive interval is configured to 10 seconds
 INFO: statistics display interval is configured to 30 seconds
 INFO: upstream PUSH_DATA time-out is configured to 100 ms
 INFO: packets received with a valid CRC will be forwarded
-INFO: packets received with a CRC error will NOT be forwarded
+INFO: packets received with a CRC error will be forwarded
 INFO: packets received with no CRC will NOT be forwarded
+INFO: Reference latitude is configured to 31.268575 deg
+INFO: Reference longitude is configured to 120.746857 deg
+INFO: Reference altitude is configured to 100 meters
+INFO: fake GPS is enabled
 INFO: Beaconing period is configured to 0 seconds
 INFO: Beaconing signal will be emitted at 869525000 Hz
 INFO: Beaconing datarate is set to SF9
@@ -1002,39 +1006,31 @@ INFO: using legacy timestamp
 INFO: LoRa Service modem: configuring preamble size to 8 symbols
 ARB: dual demodulation disabled for all SF
 INFO: [main] concentrator started, packet can now be received
-INFO: concentrator EUI: 0x0016c001ff10d3f6
 </code></pre>
 <hr>
-<pre><code class="language-cpp">INFO: [down] PULL_ACK received in 18 ms //like the PUSH_ACK in downstream
-INFO: [down] PULL_ACK received in 23 ms
-INFO: [down] PULL_ACK received in 23 ms
+<pre><code class="language-cpp">INFO: [down] PULL_ACK received in 38 ms
+INFO: [down] PULL_ACK received in 37 ms
+INFO: [down] PULL_ACK received in 39 ms
 
-INFO: [up] PUSH_ACK received in 38 ms
+INFO: Received pkt from mote: 1350200C (fcnt=8)
 
-INFO: Received pkt from mote: 1350200C (fcnt=34)
+JSON up: {&quot;rxpk&quot;:[{&quot;jver&quot;:1,&quot;tmst&quot;:84648380,&quot;chan&quot;:5,&quot;rfch&quot;:1,&quot;freq&quot;:476.400000,&quot;mid&quot;: 1,&quot;stat&quot;:1,&quot;modu&quot;:&quot;LORA&quot;,&quot;datr&quot;:&quot;SF12BW125&quot;,&quot;codr&quot;:&quot;4/5&quot;,&quot;rssis&quot;:-87,&quot;lsnr&quot;:-1.8,&quot;foff&quot;:-188,&quot;rssi&quot;:-84,&quot;size&quot;:25,&quot;data&quot;:&quot;QQwgUBMACAAIAKGyw9TloaKjpKWmp6ipqg==&quot;}]}
+INFO: [up] PUSH_ACK received in 41 ms
 
-JSON up: {&quot;rxpk&quot;:[{&quot;jver&quot;:1,&quot;tmst&quot;:70224668,&quot;chan&quot;:5,&quot;rfch&quot;:1,&quot;freq&quot;:476.400000,&quot;mid&quot;: 1,&quot;stat&quot;:1,&quot;modu&quot;:&quot;LORA&quot;,&quot;datr&quot;:&quot;SF12BW125&quot;,&quot;codr&quot;:&quot;4/5&quot;,&quot;rssis&quot;:-75,&quot;lsnr&quot;:0.8,&quot;foff&quot;:166,&quot;rssi&quot;:-73,&quot;size&quot;:25,&quot;data&quot;:&quot;gQwgUBMAIgAiAKGyw9TloaKjpKWmp6ipqg==&quot;}]}
-INFO: [up] PUSH_ACK received in 38 ms
-
-INFO: Received pkt from mote: 1350200C (fcnt=35)
-
-JSON up: {&quot;rxpk&quot;:[{&quot;jver&quot;:1,&quot;tmst&quot;:80227818,&quot;chan&quot;:5,&quot;rfch&quot;:1,&quot;freq&quot;:476.400000,&quot;mid&quot;: 1,&quot;stat&quot;:1,&quot;modu&quot;:&quot;LORA&quot;,&quot;datr&quot;:&quot;SF12BW125&quot;,&quot;codr&quot;:&quot;4/5&quot;,&quot;rssis&quot;:-77,&quot;lsnr&quot;:0.2,&quot;foff&quot;:167,&quot;rssi&quot;:-75,&quot;size&quot;:25,&quot;data&quot;:&quot;gQwgUBMAIwAjAKGyw9TloaKjpKWmp6ipqg==&quot;}]}
-INFO: [up] PUSH_ACK received in 38 ms
-
-##### 2021-01-19 02:36:12 GMT #####
+##### 2021-01-25 02:14:23 GMT #####
 ### [UPSTREAM] ###
-# RF packets received by concentrator: 4
-# CRC_OK: 50.00%, CRC_FAIL: 50.00%, NO_CRC: 0.00%
-# RF packets forwarded: 2 (50 bytes)
-# PUSH_DATA datagrams sent: 3 (624 bytes)
+# RF packets received by concentrator: 1
+# CRC_OK: 100.00%, CRC_FAIL: 0.00%, NO_CRC: 0.00%
+# RF packets forwarded: 1 (25 bytes)
+# PUSH_DATA datagrams sent: 2 (420 bytes)
 # PUSH_DATA acknowledged: 100.00%
 ### [DOWNSTREAM] ###
-# PULL_DATA sent: 0 (0.00% acknowledged)
+# PULL_DATA sent: 3 (100.00% acknowledged)
 # PULL_RESP(onse) datagrams received: 0 (0 bytes)
 # RF packets sent to concentrator: 0 (0 bytes)
 # TX errors: 0
 ### SX1302 Status ###
-# SX1302 counter (INST): 90941928
+# SX1302 counter (INST): 90939625
 # SX1302 counter (PPS):  0
 # BEACON queued: 0
 # BEACON sent so far: 0
@@ -1044,13 +1040,13 @@ src/jitqueue.c:440:jit_print_queue(): INFO: [jit] queue is empty
 #--------
 src/jitqueue.c:440:jit_print_queue(): INFO: [jit] queue is empty
 ### [GPS] ###
-# GPS sync is disabled
+# GPS *FAKE* coordinates: latitude 31.26857, longitude 120.74686, altitude 100 m
 ERROR: invalid I2C file descriptor
 ### Concentrator temperature unknown ###
 ##### END #####
 
-JSON up: {&quot;stat&quot;:{&quot;time&quot;:&quot;2021-01-19 02:36:12 GMT&quot;,&quot;rxnb&quot;:2,&quot;rxok&quot;:2,&quot;rxfw&quot;:2,&quot;ackr&quot;:100.0,&quot;dwnb&quot;:0,&quot;txnb&quot;:0,&quot;temp&quot;:0.0}}
-INFO: [up] PUSH_ACK received in 38 ms
+JSON up: {&quot;stat&quot;:{&quot;time&quot;:&quot;2021-01-25 02:14:23 GMT&quot;,&quot;lati&quot;:31.26857,&quot;long&quot;:120.74686,&quot;alti&quot;:100,&quot;rxnb&quot;:1,&quot;rxok&quot;:1,&quot;rxfw&quot;:1,&quot;ackr&quot;:100.0,&quot;dwnb&quot;:0,&quot;txnb&quot;:0,&quot;temp&quot;:0.0}}
+INFO: [up] PUSH_ACK received in 40 ms
 </code></pre>
 <hr>
 <pre><code class="language-cpp">INFO: End of upstream thread

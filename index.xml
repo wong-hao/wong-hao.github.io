@@ -65,9 +65,9 @@
 &lt;li&gt;&lt;a href=&#34;https://www.rfwireless-world.com/Terminology/What-is-difference-between-Implicit-header-and-Explicit-header-in-LoRaWAN-packet.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Implicit header and Explicit header&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://myriadrf.org/news/lora-modem-limesdr/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Demodulation&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://lora-developers.semtech.com/knowledge-base/faq/P40&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Semtech&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://lorawan-packet-decoder-0ta6puiniaut.runkit.sh/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoRa数据包在线解码base64&lt;/a&gt;
+&lt;li&gt;&lt;a href=&#34;https://lorawan-packet-decoder-0ta6puiniaut.runkit.sh/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoRa数据包在线解码&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://47.110.36.225:8080/#/organizations/1/gateways/0016c001ff10d3f6/frames&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Live LoRaWAN frames网页&lt;/a&gt;自动解码，项目较为全面&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://47.110.36.225:8080/#/organizations/1/gateways/0016c001ff10d3f6/frames&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Live LoRaWAN frames网页&lt;/a&gt;，需要配合&lt;a href=&#34;https://cryptii.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;base64解码&lt;/a&gt;: text-&amp;gt;bytes (frmPayload里的bytes是FRMPayload经过base64加密的结果)&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.chirpstack.io/gateway-bridge/payloads/events/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;gateway-bridge&lt;/a&gt;得到base64 encoded LoRaWAN frame&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.chirpstack.io/application-server/integrations/mqtt/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;applicaiton&lt;/a&gt;自动解码&lt;/li&gt;
 &lt;/ul&gt;
@@ -524,8 +524,12 @@ INFO: downstream keep-alive interval is configured to 10 seconds
 INFO: statistics display interval is configured to 30 seconds
 INFO: upstream PUSH_DATA time-out is configured to 100 ms
 INFO: packets received with a valid CRC will be forwarded
-INFO: packets received with a CRC error will NOT be forwarded
+INFO: packets received with a CRC error will be forwarded
 INFO: packets received with no CRC will NOT be forwarded
+INFO: Reference latitude is configured to 31.268575 deg
+INFO: Reference longitude is configured to 120.746857 deg
+INFO: Reference altitude is configured to 100 meters
+INFO: fake GPS is enabled
 INFO: Beaconing period is configured to 0 seconds
 INFO: Beaconing signal will be emitted at 869525000 Hz
 INFO: Beaconing datarate is set to SF9
@@ -549,39 +553,31 @@ INFO: using legacy timestamp
 INFO: LoRa Service modem: configuring preamble size to 8 symbols
 ARB: dual demodulation disabled for all SF
 INFO: [main] concentrator started, packet can now be received
-INFO: concentrator EUI: 0x0016c001ff10d3f6
 &lt;/code&gt;&lt;/pre&gt;
 &lt;hr&gt;
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;INFO: [down] PULL_ACK received in 18 ms //like the PUSH_ACK in downstream
-INFO: [down] PULL_ACK received in 23 ms
-INFO: [down] PULL_ACK received in 23 ms
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;INFO: [down] PULL_ACK received in 38 ms
+INFO: [down] PULL_ACK received in 37 ms
+INFO: [down] PULL_ACK received in 39 ms
 
-INFO: [up] PUSH_ACK received in 38 ms
+INFO: Received pkt from mote: 1350200C (fcnt=8)
 
-INFO: Received pkt from mote: 1350200C (fcnt=34)
+JSON up: {&amp;quot;rxpk&amp;quot;:[{&amp;quot;jver&amp;quot;:1,&amp;quot;tmst&amp;quot;:84648380,&amp;quot;chan&amp;quot;:5,&amp;quot;rfch&amp;quot;:1,&amp;quot;freq&amp;quot;:476.400000,&amp;quot;mid&amp;quot;: 1,&amp;quot;stat&amp;quot;:1,&amp;quot;modu&amp;quot;:&amp;quot;LORA&amp;quot;,&amp;quot;datr&amp;quot;:&amp;quot;SF12BW125&amp;quot;,&amp;quot;codr&amp;quot;:&amp;quot;4/5&amp;quot;,&amp;quot;rssis&amp;quot;:-87,&amp;quot;lsnr&amp;quot;:-1.8,&amp;quot;foff&amp;quot;:-188,&amp;quot;rssi&amp;quot;:-84,&amp;quot;size&amp;quot;:25,&amp;quot;data&amp;quot;:&amp;quot;QQwgUBMACAAIAKGyw9TloaKjpKWmp6ipqg==&amp;quot;}]}
+INFO: [up] PUSH_ACK received in 41 ms
 
-JSON up: {&amp;quot;rxpk&amp;quot;:[{&amp;quot;jver&amp;quot;:1,&amp;quot;tmst&amp;quot;:70224668,&amp;quot;chan&amp;quot;:5,&amp;quot;rfch&amp;quot;:1,&amp;quot;freq&amp;quot;:476.400000,&amp;quot;mid&amp;quot;: 1,&amp;quot;stat&amp;quot;:1,&amp;quot;modu&amp;quot;:&amp;quot;LORA&amp;quot;,&amp;quot;datr&amp;quot;:&amp;quot;SF12BW125&amp;quot;,&amp;quot;codr&amp;quot;:&amp;quot;4/5&amp;quot;,&amp;quot;rssis&amp;quot;:-75,&amp;quot;lsnr&amp;quot;:0.8,&amp;quot;foff&amp;quot;:166,&amp;quot;rssi&amp;quot;:-73,&amp;quot;size&amp;quot;:25,&amp;quot;data&amp;quot;:&amp;quot;gQwgUBMAIgAiAKGyw9TloaKjpKWmp6ipqg==&amp;quot;}]}
-INFO: [up] PUSH_ACK received in 38 ms
-
-INFO: Received pkt from mote: 1350200C (fcnt=35)
-
-JSON up: {&amp;quot;rxpk&amp;quot;:[{&amp;quot;jver&amp;quot;:1,&amp;quot;tmst&amp;quot;:80227818,&amp;quot;chan&amp;quot;:5,&amp;quot;rfch&amp;quot;:1,&amp;quot;freq&amp;quot;:476.400000,&amp;quot;mid&amp;quot;: 1,&amp;quot;stat&amp;quot;:1,&amp;quot;modu&amp;quot;:&amp;quot;LORA&amp;quot;,&amp;quot;datr&amp;quot;:&amp;quot;SF12BW125&amp;quot;,&amp;quot;codr&amp;quot;:&amp;quot;4/5&amp;quot;,&amp;quot;rssis&amp;quot;:-77,&amp;quot;lsnr&amp;quot;:0.2,&amp;quot;foff&amp;quot;:167,&amp;quot;rssi&amp;quot;:-75,&amp;quot;size&amp;quot;:25,&amp;quot;data&amp;quot;:&amp;quot;gQwgUBMAIwAjAKGyw9TloaKjpKWmp6ipqg==&amp;quot;}]}
-INFO: [up] PUSH_ACK received in 38 ms
-
-##### 2021-01-19 02:36:12 GMT #####
+##### 2021-01-25 02:14:23 GMT #####
 ### [UPSTREAM] ###
-# RF packets received by concentrator: 4
-# CRC_OK: 50.00%, CRC_FAIL: 50.00%, NO_CRC: 0.00%
-# RF packets forwarded: 2 (50 bytes)
-# PUSH_DATA datagrams sent: 3 (624 bytes)
+# RF packets received by concentrator: 1
+# CRC_OK: 100.00%, CRC_FAIL: 0.00%, NO_CRC: 0.00%
+# RF packets forwarded: 1 (25 bytes)
+# PUSH_DATA datagrams sent: 2 (420 bytes)
 # PUSH_DATA acknowledged: 100.00%
 ### [DOWNSTREAM] ###
-# PULL_DATA sent: 0 (0.00% acknowledged)
+# PULL_DATA sent: 3 (100.00% acknowledged)
 # PULL_RESP(onse) datagrams received: 0 (0 bytes)
 # RF packets sent to concentrator: 0 (0 bytes)
 # TX errors: 0
 ### SX1302 Status ###
-# SX1302 counter (INST): 90941928
+# SX1302 counter (INST): 90939625
 # SX1302 counter (PPS):  0
 # BEACON queued: 0
 # BEACON sent so far: 0
@@ -591,13 +587,13 @@ src/jitqueue.c:440:jit_print_queue(): INFO: [jit] queue is empty
 #--------
 src/jitqueue.c:440:jit_print_queue(): INFO: [jit] queue is empty
 ### [GPS] ###
-# GPS sync is disabled
+# GPS *FAKE* coordinates: latitude 31.26857, longitude 120.74686, altitude 100 m
 ERROR: invalid I2C file descriptor
 ### Concentrator temperature unknown ###
 ##### END #####
 
-JSON up: {&amp;quot;stat&amp;quot;:{&amp;quot;time&amp;quot;:&amp;quot;2021-01-19 02:36:12 GMT&amp;quot;,&amp;quot;rxnb&amp;quot;:2,&amp;quot;rxok&amp;quot;:2,&amp;quot;rxfw&amp;quot;:2,&amp;quot;ackr&amp;quot;:100.0,&amp;quot;dwnb&amp;quot;:0,&amp;quot;txnb&amp;quot;:0,&amp;quot;temp&amp;quot;:0.0}}
-INFO: [up] PUSH_ACK received in 38 ms
+JSON up: {&amp;quot;stat&amp;quot;:{&amp;quot;time&amp;quot;:&amp;quot;2021-01-25 02:14:23 GMT&amp;quot;,&amp;quot;lati&amp;quot;:31.26857,&amp;quot;long&amp;quot;:120.74686,&amp;quot;alti&amp;quot;:100,&amp;quot;rxnb&amp;quot;:1,&amp;quot;rxok&amp;quot;:1,&amp;quot;rxfw&amp;quot;:1,&amp;quot;ackr&amp;quot;:100.0,&amp;quot;dwnb&amp;quot;:0,&amp;quot;txnb&amp;quot;:0,&amp;quot;temp&amp;quot;:0.0}}
+INFO: [up] PUSH_ACK received in 40 ms
 &lt;/code&gt;&lt;/pre&gt;
 &lt;hr&gt;
 &lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;INFO: End of upstream thread
@@ -854,6 +850,14 @@ CoreCell reset through GPIO7...
 &lt;li&gt;Back-End Interfaces&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;22-devicesend-nodes&#34;&gt;2.2 Devices/End Nodes&lt;/h2&gt;
+&lt;h3 id=&#34;221-rejeee评估板&#34;&gt;2.2.1 Rejeee评估板&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/13517529.html#4758586&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;这家的节点不支持LoRaWAN，节点只有私有协议的&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWVfQkIxUFl2M3RKb01ZUTMxQ1hidXdCZWVoZmdnNkpPUEJxX1FGdzBhb3NzUT9lPWJmbmM4TA==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;8. 芮捷LPWAN协议&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.rejeee.com/documents/SPEC/RJDS0052018-M-KL9_Specification_V1.1.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;模块不支持标准LoRaWAN协议模块&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://space.bilibili.com/7682653?spm_id_from=333.788.b_765f7570696e666f.1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;视频&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 弄清楚&lt;a href=&#34;https://forum.chirpstack.io/t/relation-between-sync-word-private-network-and-end-nodes/191/13?u=haowong&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;私有网络&lt;/a&gt;/非LoRaWAN网络怎么导出数据&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;&lt;a href=&#34;http://www.njrjzn.com/chanpinzhongxin/SX127xmozuxilie/4.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;M-HL9-EV&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&#34;http://www.rejeee.com/documents/APP_DOC/M-KL9_how_to_enter_configuration_mode.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;进入配置方法&lt;/a&gt;&lt;/li&gt;
@@ -880,7 +884,7 @@ RIQ:       ON
 SEQ:       OFF
 IP:        ON
 AES:       OFF
-ACK:       ON //Confirmed message
+ACK:       OFF //Unconfirmed message
 LDR:       0, 0
 LCP:       0
 LFT:       0
@@ -889,21 +893,29 @@ FNB:       0x00
 TYPE:      0x00
 Flash:     0
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;221-入网&#34;&gt;2.2.1 入网&lt;/h3&gt;
-&lt;h4 id=&#34;2211-概述&#34;&gt;2.2.1.1 概述&lt;/h4&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;222-节点入网&#34;&gt;2.2.2 节点入网&lt;/h3&gt;
+&lt;h4 id=&#34;2221-节点示例&#34;&gt;2.2.2.1 节点示例&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://circuitdigest.com/microcontroller-projects/arduino-lora-sx1278-interfacing-tutorial&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Arduino1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://makersportal.com/blog/2019/10/5/arduino-lora-network&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Arduino2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.thethingsnetwork.org/docs/devices/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TTN&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;2221-概述&#34;&gt;2.2.2.1 概述&lt;/h4&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&#34;https://lora-alliance.org/lorawan-for-developers&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Back-End Interfaces&lt;/a&gt;：最官方的文件，下面的东西都有包含&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/6213027.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;AnswerInTheWind&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.thethingsnetwork.org/docs/lorawan/addressing.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TTN&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/quending/article/details/86481598&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;quending&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h4 id=&#34;2212-abp&#34;&gt;2.2.1.2 ABP&lt;/h4&gt;
+&lt;h4 id=&#34;2222-abp&#34;&gt;2.2.2.2 ABP&lt;/h4&gt;
 &lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/RAKwireless/article/details/106186894&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;RAKwireless&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.chirpstack.io/application-server/use/devices/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Chirpstack&lt;/a&gt;&lt;/p&gt;
-&lt;h4 id=&#34;2213-otaa&#34;&gt;2.2.1.3 OTAA&lt;/h4&gt;
+&lt;h4 id=&#34;2223-otaa&#34;&gt;2.2.2.3 OTAA&lt;/h4&gt;
 &lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/RAKwireless/article/details/106135373&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;RAKwireless&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/6213529.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;AnswerInTheWind&lt;/a&gt;&lt;/p&gt;
-&lt;h4 id=&#34;2214-security&#34;&gt;2.2.1.4 Security&lt;/h4&gt;
+&lt;h4 id=&#34;2224-security&#34;&gt;2.2.2.4 Security&lt;/h4&gt;
 &lt;ol&gt;
 &lt;li&gt;没有入网的后果: &lt;strong&gt;time=&amp;ldquo;2021-01-22T13:52:00+08:00&amp;rdquo; level=error msg=&amp;ldquo;uplink: processing uplink frame error&amp;rdquo; ctx_id=423aecd8-b38e-4b5f-8521-b8c20b0e710b error=&amp;ldquo;get device-session error: object does not exist&amp;rdquo;&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.thethingsnetwork.org/docs/lorawan/security.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TTN&lt;/a&gt;&lt;/li&gt;
@@ -911,14 +923,6 @@ Flash:     0
 &lt;li&gt;&lt;a href=&#34;https://ask.csdn.net/questions/3109264&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CSDN&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/6208915.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;AnswerInTheWind&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h4 id=&#34;2215-rejeee&#34;&gt;2.2.1.5 Rejeee&lt;/h4&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/13517529.html#4758586&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;这家的节点不支持LoRaWAN，节点只有私有协议的&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRWVfQkIxUFl2M3RKb01ZUTMxQ1hidXdCZWVoZmdnNkpPUEJxX1FGdzBhb3NzUT9lPWJmbmM4TA==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;8. 芮捷LPWAN协议&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;http://www.rejeee.com/documents/SPEC/RJDS0052018-M-KL9_Specification_V1.1.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;模块不支持标准LoRaWAN协议模块&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://space.bilibili.com/7682653?spm_id_from=333.788.b_765f7570696e666f.1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;视频&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 弄清楚&lt;a href=&#34;https://forum.chirpstack.io/t/relation-between-sync-word-private-network-and-end-nodes/191/13?u=haowong&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;私有网络&lt;/a&gt;/非LoRaWAN网络怎么导出数据&lt;/li&gt;
-&lt;/ul&gt;
 &lt;h2 id=&#34;23-gateway&#34;&gt;2.3 Gateway&lt;/h2&gt;
 &lt;h3 id=&#34;231-real-module&#34;&gt;2.3.1 Real module&lt;/h3&gt;
 &lt;p&gt;&lt;strong&gt;SX1302&lt;/strong&gt;&lt;/p&gt;
@@ -951,6 +955,9 @@ Flash:     0
 &lt;h2 id=&#34;24-lorawan-network-server&#34;&gt;2.4 LoraWAN Network Server&lt;/h2&gt;
 &lt;hr&gt;
 &lt;h3 id=&#34;241-cloud-hosted-close-source-lorawan-network-servers-platforms&#34;&gt;2.4.1 Cloud-hosted: Close Source LoRaWAN Network Servers Platforms&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;阿里云&lt;/li&gt;
+&lt;/ol&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;global.config&lt;/strong&gt;中的&lt;strong&gt;lorawan_public: true&lt;/strong&gt;，&lt;a href=&#34;http://lora.timeddd.com/forum.php?mod=viewthread&amp;amp;tid=521&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;连接不通&lt;/a&gt;的元凶，true对应于sync word &lt;strong&gt;0x34&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;使用树莓派搭建网关注册到腾讯物联网开发平台
@@ -986,6 +993,15 @@ raspberrypi2    0016c001ff10d3f7    -              苏州市           在线   
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Thingpark
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://actility.thingpark.com/wlogger/#&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Thingpark Wireless Logger&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://sparkiot.bitbucket.io/tpw-portal.html&#34;&gt;https://sparkiot.bitbucket.io/tpw-portal.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://partners.thingpark.com/sites/default/files/2017-11/AdvancedThingParkDeveloperGuide_V4.pdf&#34;&gt;https://partners.thingpark.com/sites/default/files/2017-11/AdvancedThingParkDeveloperGuide_V4.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
 &lt;hr&gt;
 &lt;h3 id=&#34;242-cloud-hosted-open-source-lorawan-network-servers-platforms&#34;&gt;2.4.2 Cloud-hosted: Open Source LoRaWAN Network Servers Platforms&lt;/h3&gt;
 &lt;ol&gt;
@@ -1081,7 +1097,7 @@ raspberrypi2    0016c001ff10d3f7    -              苏州市           在线   
 &lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.thethingsindustries.com/docs/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;The Things Stack：安装版&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;Docket install， &lt;a href=&#34;https://lorawan-packet-decoder-0ta6puiniaut.runkit.sh/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoRa数据包在线解码base64&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Docket install， &lt;a href=&#34;https://lorawan-packet-decoder-0ta6puiniaut.runkit.sh/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoRa数据包在线解码&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=XgPSU4UkDuE&amp;amp;feature=youtu.be&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;video&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -1110,7 +1126,7 @@ UDP             1700/1700        0.0.0.0/0
 &lt;/ul&gt;
 &lt;hr&gt;
 &lt;h3 id=&#34;243-integrated-gateway-embedded-lorawan-network-servers-platforms&#34;&gt;2.4.3 Integrated: Gateway-Embedded LoRaWAN Network Servers Platforms&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.actility.com/lorawan-network-server/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;特点&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.actility.com/lorawan-network-server/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Actility Thingpark&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/RAKwireless/article/details/105298319&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;RAKwireless&lt;/a&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;h3 id=&#34;244-adr&#34;&gt;2.4.4 ADR&lt;/h3&gt;
@@ -1121,6 +1137,14 @@ UDP             1700/1700        0.0.0.0/0
 &lt;p&gt;&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVNxdEZVbm9hQUpQaGZycl9nbTBDMjBCZFM4Wk1hQzFBZ2l6Z0p5bXJFcTdhQT9lPUhTOU1Gdw==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Semtech2&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://lora-developers.semtech.com/library/tech-papers-and-guides/understanding-adr/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Semtech3&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;25-application-server-console&#34;&gt;2.5 Application Server console&lt;/h2&gt;
+&lt;h3 id=&#34;251-live-lorawan-frames-logginghttpswwwchirpstackioapplication-serveruseframe-logging&#34;&gt;2.5.1 &lt;a href=&#34;https://www.chirpstack.io/application-server/use/frame-logging/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Live LoRaWAN frames logging&lt;/a&gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;http://47.110.36.225:8080/#/organizations/1/gateways/0016c001ff10d3f6/frames&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Gateway frame logs&lt;/a&gt;可以直接得到已解码的数据帧
+&lt;ul&gt;
+&lt;li&gt;需要配合&lt;a href=&#34;https://cryptii.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;base64解码&lt;/a&gt;: text-&amp;gt;bytes (frmPayload里的bytes是FRMPayload经过base64加密的结果)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
 &lt;h3 id=&#34;251-去重&#34;&gt;2.5.1 去重&lt;/h3&gt;
 &lt;p&gt;&lt;a href=&#34;http://lora.timeddd.com/forum.php?mod=viewthread&amp;amp;tid=478&amp;amp;extra=page%3D1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoraWAN论坛&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://lora-developers.semtech.com/library/tech-papers-and-guides/lora-and-lorawan/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Semtech&lt;/a&gt;&lt;/p&gt;
@@ -1157,7 +1181,7 @@ UDP             1700/1700        0.0.0.0/0
 &lt;li&gt;注意：gateway-bridge在云端安装的就在云服务器上操作，在网关上安装的就在网关上操作&lt;/li&gt;
 &lt;li&gt;topic可以在配置文件或者运行文件中找到&lt;/li&gt;
 &lt;li&gt;topic: &lt;strong&gt;gateway/0016c001ff10d3f6/event/#&lt;/strong&gt;，故使用&lt;code&gt;mosquitto_sub -t &amp;quot;gateway/0016c001ff10d3f6/event/#&amp;quot; -v&lt;/code&gt;，且#可以具体为stats、up等&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.chirpstack.io/project/guides/connect-gateway/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;在配置文件中设置marshaler=&amp;ldquo;json&amp;quot;后&lt;/a&gt;&lt;code&gt;sudo systemctl restart chirpstack-gateway-bridge&lt;/code&gt;重启，可以得到&lt;a href=&#34;https://www.chirpstack.io/gateway-bridge/payloads/events/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;base64 encoded LoRaWAN frame&lt;/a&gt;；而Live LoRaWAN frames网页可以直接得到已解码的数据帧&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.chirpstack.io/project/guides/connect-gateway/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;在配置文件中设置marshaler=&amp;ldquo;json&amp;quot;后&lt;/a&gt;&lt;code&gt;sudo systemctl restart chirpstack-gateway-bridge&lt;/code&gt;重启，可以得到&lt;a href=&#34;https://www.chirpstack.io/gateway-bridge/payloads/events/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;base64 encoded LoRaWAN frame&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.chirpstack.io/application-server/integrations/mqtt/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Application server&lt;/a&gt;
