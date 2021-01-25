@@ -68,10 +68,10 @@
     </item>
     
     <item>
-      <title>Code Review of Helper programs &#39;LoRa_PKT_FWD&#39;</title>
-      <link>https://haowong.com/project/codereview/</link>
+      <title>Semtech UDP packet forwarder</title>
+      <link>https://haowong.com/project/semtech-udp-packet-forwarder/</link>
       <pubDate>Wed, 21 Oct 2020 00:00:00 +0000</pubDate>
-      <guid>https://haowong.com/project/codereview/</guid>
+      <guid>https://haowong.com/project/semtech-udp-packet-forwarder/</guid>
       <description>&lt;h1 id=&#34;0-code-version&#34;&gt;0 Code Version&lt;/h1&gt;
 &lt;h2 id=&#34;0-github&#34;&gt;0 Github&lt;/h2&gt;
 &lt;ol&gt;
@@ -481,6 +481,9 @@ INFO: Exiting packet forwarder program
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;PULL_ACK packet：thread_down&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;与Confirmed message没有一点关系，这个是被动的&lt;/li&gt;
+&lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;PULL_RESP packet：thread_down&lt;/p&gt;
@@ -523,7 +526,6 @@ concentrator.&lt;/li&gt;
 &lt;h1 id=&#34;6-问题&#34;&gt;6 问题&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; DEPENDANCIES相关的函数定义及实现&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &amp;ldquo;SX130x_conf&amp;quot;相关，如RF chain、IF chain等参数&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
