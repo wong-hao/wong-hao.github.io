@@ -67,7 +67,14 @@
 &lt;li&gt;&lt;a href=&#34;https://lora-developers.semtech.com/knowledge-base/faq/P40&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Semtech&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://lorawan-packet-decoder-0ta6puiniaut.runkit.sh/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoRa数据包在线解码&lt;/a&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://47.110.36.225:8080/#/organizations/1/gateways/0016c001ff10d3f6/frames&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Live LoRaWAN frames网页&lt;/a&gt;，需要配合&lt;a href=&#34;https://cryptii.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;base64解码&lt;/a&gt;: text-&amp;gt;bytes (frmPayload里的bytes是FRMPayload经过base64加密的结果)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://47.110.36.225:8080/#/organizations/1/gateways/0016c001ff10d3f6/frames&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Live LoRaWAN frames网页&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://cryptii.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;base64解码1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://forum.chirpstack.io/t/receiving-decrypted-device-data-frmpayload/501/24?u=haowong&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;base64解码2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.base64decode.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;base64解码3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://baike.baidu.com/item/ASCII/309296?fromtitle=ascii%E7%A0%81%E8%A1%A8&amp;amp;fromid=19660475&amp;amp;fr=aladdin&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ascii码表&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.chirpstack.io/gateway-bridge/payloads/events/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;gateway-bridge&lt;/a&gt;得到base64 encoded LoRaWAN frame&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.chirpstack.io/application-server/integrations/mqtt/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;applicaiton&lt;/a&gt;自动解码&lt;/li&gt;
 &lt;/ul&gt;
@@ -555,21 +562,21 @@ ARB: dual demodulation disabled for all SF
 INFO: [main] concentrator started, packet can now be received
 &lt;/code&gt;&lt;/pre&gt;
 &lt;hr&gt;
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;INFO: [down] PULL_ACK received in 38 ms
-INFO: [down] PULL_ACK received in 37 ms
-INFO: [down] PULL_ACK received in 39 ms
+&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;INFO: [down] PULL_ACK received in 45 ms
+INFO: [down] PULL_ACK received in 44 ms
+INFO: [down] PULL_ACK received in 54 ms
 
-INFO: Received pkt from mote: 1350200C (fcnt=8)
+INFO: Received pkt from mote: 1350200C (fcnt=2)
 
-JSON up: {&amp;quot;rxpk&amp;quot;:[{&amp;quot;jver&amp;quot;:1,&amp;quot;tmst&amp;quot;:84648380,&amp;quot;chan&amp;quot;:5,&amp;quot;rfch&amp;quot;:1,&amp;quot;freq&amp;quot;:476.400000,&amp;quot;mid&amp;quot;: 1,&amp;quot;stat&amp;quot;:1,&amp;quot;modu&amp;quot;:&amp;quot;LORA&amp;quot;,&amp;quot;datr&amp;quot;:&amp;quot;SF12BW125&amp;quot;,&amp;quot;codr&amp;quot;:&amp;quot;4/5&amp;quot;,&amp;quot;rssis&amp;quot;:-87,&amp;quot;lsnr&amp;quot;:-1.8,&amp;quot;foff&amp;quot;:-188,&amp;quot;rssi&amp;quot;:-84,&amp;quot;size&amp;quot;:25,&amp;quot;data&amp;quot;:&amp;quot;QQwgUBMACAAIAKGyw9TloaKjpKWmp6ipqg==&amp;quot;}]}
-INFO: [up] PUSH_ACK received in 41 ms
+JSON up: {&amp;quot;rxpk&amp;quot;:[{&amp;quot;jver&amp;quot;:1,&amp;quot;tmst&amp;quot;:29446526,&amp;quot;chan&amp;quot;:5,&amp;quot;rfch&amp;quot;:1,&amp;quot;freq&amp;quot;:476.400000,&amp;quot;mid&amp;quot;: 1,&amp;quot;stat&amp;quot;:1,&amp;quot;modu&amp;quot;:&amp;quot;LORA&amp;quot;,&amp;quot;datr&amp;quot;:&amp;quot;SF12BW125&amp;quot;,&amp;quot;codr&amp;quot;:&amp;quot;4/5&amp;quot;,&amp;quot;rssis&amp;quot;:-86,&amp;quot;lsnr&amp;quot;:-1.2,&amp;quot;foff&amp;quot;:-124,&amp;quot;rssi&amp;quot;:-83,&amp;quot;size&amp;quot;:20,&amp;quot;data&amp;quot;:&amp;quot;QQwgUBMAAgACAEExQjJDM0Q0RTU=&amp;quot;}]}
+INFO: [up] PUSH_ACK received in 51 ms
 
-##### 2021-01-25 02:14:23 GMT #####
+##### 2021-01-25 03:17:49 GMT #####
 ### [UPSTREAM] ###
 # RF packets received by concentrator: 1
 # CRC_OK: 100.00%, CRC_FAIL: 0.00%, NO_CRC: 0.00%
-# RF packets forwarded: 1 (25 bytes)
-# PUSH_DATA datagrams sent: 2 (420 bytes)
+# RF packets forwarded: 1 (20 bytes)
+# PUSH_DATA datagrams sent: 1 (244 bytes)
 # PUSH_DATA acknowledged: 100.00%
 ### [DOWNSTREAM] ###
 # PULL_DATA sent: 3 (100.00% acknowledged)
@@ -577,7 +584,7 @@ INFO: [up] PUSH_ACK received in 41 ms
 # RF packets sent to concentrator: 0 (0 bytes)
 # TX errors: 0
 ### SX1302 Status ###
-# SX1302 counter (INST): 90939625
+# SX1302 counter (INST): 30877572
 # SX1302 counter (PPS):  0
 # BEACON queued: 0
 # BEACON sent so far: 0
@@ -592,8 +599,8 @@ ERROR: invalid I2C file descriptor
 ### Concentrator temperature unknown ###
 ##### END #####
 
-JSON up: {&amp;quot;stat&amp;quot;:{&amp;quot;time&amp;quot;:&amp;quot;2021-01-25 02:14:23 GMT&amp;quot;,&amp;quot;lati&amp;quot;:31.26857,&amp;quot;long&amp;quot;:120.74686,&amp;quot;alti&amp;quot;:100,&amp;quot;rxnb&amp;quot;:1,&amp;quot;rxok&amp;quot;:1,&amp;quot;rxfw&amp;quot;:1,&amp;quot;ackr&amp;quot;:100.0,&amp;quot;dwnb&amp;quot;:0,&amp;quot;txnb&amp;quot;:0,&amp;quot;temp&amp;quot;:0.0}}
-INFO: [up] PUSH_ACK received in 40 ms
+JSON up: {&amp;quot;stat&amp;quot;:{&amp;quot;time&amp;quot;:&amp;quot;2021-01-25 03:17:49 GMT&amp;quot;,&amp;quot;lati&amp;quot;:31.26857,&amp;quot;long&amp;quot;:120.74686,&amp;quot;alti&amp;quot;:100,&amp;quot;rxnb&amp;quot;:1,&amp;quot;rxok&amp;quot;:1,&amp;quot;rxfw&amp;quot;:1,&amp;quot;ackr&amp;quot;:100.0,&amp;quot;dwnb&amp;quot;:0,&amp;quot;txnb&amp;quot;:0,&amp;quot;temp&amp;quot;:0.0}}
+INFO: [up] PUSH_ACK received in 52 ms
 &lt;/code&gt;&lt;/pre&gt;
 &lt;hr&gt;
 &lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;INFO: End of upstream thread
@@ -758,8 +765,7 @@ CoreCell ADC reset through GPIO13...
 =========== Test End ===========
 &lt;/code&gt;&lt;/pre&gt;
 &lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;接受测试：官方建议&lt;a href=&#34;https://www.bilibili.com/video/BV1Yt411N7MV&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;M-HL9-EV连金黄天线&lt;/a&gt;，但实测用直黑天线也行，且发包间隔要长，避免丢包接收不到&lt;/p&gt;
+&lt;li&gt;接受测试：官方建议&lt;a href=&#34;https://www.bilibili.com/video/BV1Yt411N7MV&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;M-HL9-EV连金黄天线&lt;/a&gt;，但实测用直黑天线也行，且发包间隔要长，避免丢包接收不到
 &lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;pi@raspberrypi:~/sx1302_hal/bin $ ./test_loragw_hal_rx -r 1250 -a 475.5 -b 476.5
 ===== sx1302 HAL RX test =====
 INFO: rxpkt buffer size is set to 16
@@ -824,9 +830,6 @@ CoreCell reset through GPIO7...
 =========== Test End ===========
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;发送接收均用的&lt;strong&gt;Hex&lt;/strong&gt;&lt;/p&gt;
-&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -862,7 +865,6 @@ CoreCell reset through GPIO7...
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&#34;http://www.rejeee.com/documents/APP_DOC/M-KL9_how_to_enter_configuration_mode.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;进入配置方法&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://www.rejeee.com/documents/APP_DOC/M-KL9_parameter.pdf&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;M-KL9&lt;/strong&gt;参数意义&lt;/a&gt;，具体配置参数看用户手册&lt;/li&gt;
-&lt;li&gt;发送接收均用的&lt;strong&gt;Ascii&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;串口工具注册码: &lt;strong&gt;CCCCC-AAAAA-FFFFF-0E013-6EE85&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;配置&lt;/li&gt;
 &lt;/ol&gt;
@@ -1141,7 +1143,10 @@ UDP             1700/1700        0.0.0.0/0
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&#34;http://47.110.36.225:8080/#/organizations/1/gateways/0016c001ff10d3f6/frames&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Gateway frame logs&lt;/a&gt;可以直接得到已解码的数据帧
 &lt;ul&gt;
-&lt;li&gt;需要配合&lt;a href=&#34;https://cryptii.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;base64解码&lt;/a&gt;: text-&amp;gt;bytes (frmPayload里的bytes是FRMPayload经过base64加密的结果)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://cryptii.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;base64解码1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://forum.chirpstack.io/t/receiving-decrypted-device-data-frmpayload/501/24?u=haowong&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;base64解码2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.base64decode.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;base64解码3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://baike.baidu.com/item/ASCII/309296?fromtitle=ascii%E7%A0%81%E8%A1%A8&amp;amp;fromid=19660475&amp;amp;fr=aladdin&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ascii码表&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;

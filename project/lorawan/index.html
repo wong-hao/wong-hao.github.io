@@ -750,8 +750,7 @@ CoreCell ADC reset through GPIO13...
 =========== Test End ===========
 </code></pre>
 <ul>
-<li>
-<p>接受测试：官方建议<a href="https://www.bilibili.com/video/BV1Yt411N7MV" target="_blank" rel="noopener">M-HL9-EV连金黄天线</a>，但实测用直黑天线也行，且发包间隔要长，避免丢包接收不到</p>
+<li>接受测试：官方建议<a href="https://www.bilibili.com/video/BV1Yt411N7MV" target="_blank" rel="noopener">M-HL9-EV连金黄天线</a>，但实测用直黑天线也行，且发包间隔要长，避免丢包接收不到
 <pre><code class="language-cpp">pi@raspberrypi:~/sx1302_hal/bin $ ./test_loragw_hal_rx -r 1250 -a 475.5 -b 476.5
 ===== sx1302 HAL RX test =====
 INFO: rxpkt buffer size is set to 16
@@ -816,9 +815,6 @@ CoreCell reset through GPIO7...
 =========== Test End ===========
 </code></pre>
 </li>
-<li>
-<p>发送接收均用的<strong>Hex</strong></p>
-</li>
 </ul>
 </li>
 </ul>
@@ -854,7 +850,6 @@ CoreCell reset through GPIO7...
 <ol>
 <li><a href="http://www.rejeee.com/documents/APP_DOC/M-KL9_how_to_enter_configuration_mode.pdf" target="_blank" rel="noopener">进入配置方法</a></li>
 <li><a href="http://www.rejeee.com/documents/APP_DOC/M-KL9_parameter.pdf" target="_blank" rel="noopener"><strong>M-KL9</strong>参数意义</a>，具体配置参数看用户手册</li>
-<li>发送接收均用的<strong>Ascii</strong></li>
 <li>串口工具注册码: <strong>CCCCC-AAAAA-FFFFF-0E013-6EE85</strong></li>
 <li>配置</li>
 </ol>
@@ -1133,7 +1128,10 @@ UDP             1700/1700        0.0.0.0/0
 <ol>
 <li><a href="http://47.110.36.225:8080/#/organizations/1/gateways/0016c001ff10d3f6/frames" target="_blank" rel="noopener">Gateway frame logs</a>可以直接得到已解码的数据帧
 <ul>
-<li>需要配合<a href="https://cryptii.com/" target="_blank" rel="noopener">base64解码</a>: text-&gt;bytes (frmPayload里的bytes是FRMPayload经过base64加密的结果)</li>
+<li><a href="https://cryptii.com/" target="_blank" rel="noopener">base64解码1</a></li>
+<li><a href="https://forum.chirpstack.io/t/receiving-decrypted-device-data-frmpayload/501/24?u=haowong" target="_blank" rel="noopener">base64解码2</a></li>
+<li><a href="https://www.base64decode.org/" target="_blank" rel="noopener">base64解码3</a></li>
+<li><a href="https://baike.baidu.com/item/ASCII/309296?fromtitle=ascii%E7%A0%81%E8%A1%A8&amp;fromid=19660475&amp;fr=aladdin" target="_blank" rel="noopener">ascii码表</a></li>
 </ul>
 </li>
 </ol>
