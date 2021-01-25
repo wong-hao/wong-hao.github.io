@@ -167,9 +167,6 @@ ERROR: [main] failed to start the concentrator
         =========== Test End ===========
       ```
 
-	- 发送接收均用的**Hex**
-
-
 # 2 实验步骤
 
 ## 2.1 [LoRaWAN Specification](https://lora-alliance.org/lorawan-for-developers/)
@@ -200,9 +197,8 @@ ERROR: [main] failed to start the concentrator
   **[M-HL9-EV](http://www.njrjzn.com/chanpinzhongxin/SX127xmozuxilie/4.html)**
   1. [进入配置方法](http://www.rejeee.com/documents/APP_DOC/M-KL9_how_to_enter_configuration_mode.pdf)
   2. [**M-KL9**参数意义](http://www.rejeee.com/documents/APP_DOC/M-KL9_parameter.pdf)，具体配置参数看用户手册
-  3. 发送接收均用的**Ascii**
-  4. 串口工具注册码: **CCCCC-AAAAA-FFFFF-0E013-6EE85**
-  5. 配置
+  3. 串口工具注册码: **CCCCC-AAAAA-FFFFF-0E013-6EE85**
+  4. 配置
    
   ```cpp
   NET:       Node to Gateway
@@ -414,7 +410,10 @@ ERROR: [main] failed to start the concentrator
 
 ### 2.5.1 [Live LoRaWAN frames logging](https://www.chirpstack.io/application-server/use/frame-logging/)
 1. [Gateway frame logs](http://47.110.36.225:8080/#/organizations/1/gateways/0016c001ff10d3f6/frames)可以直接得到已解码的数据帧
-   - 需要配合[base64解码](https://cryptii.com/): text->bytes (frmPayload里的bytes是FRMPayload经过base64加密的结果)
+     - [base64解码1](https://cryptii.com/)
+     - [base64解码2](https://forum.chirpstack.io/t/receiving-decrypted-device-data-frmpayload/501/24?u=haowong)
+     - [base64解码3](https://www.base64decode.org/)
+     - [ascii码表](https://baike.baidu.com/item/ASCII/309296?fromtitle=ascii%E7%A0%81%E8%A1%A8&fromid=19660475&fr=aladdin)
 
 ### 2.5.1 去重
 [LoraWAN论坛](http://lora.timeddd.com/forum.php?mod=viewthread&tid=478&extra=page%3D1)

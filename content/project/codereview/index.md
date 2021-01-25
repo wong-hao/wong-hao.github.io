@@ -324,21 +324,21 @@ INFO: [main] concentrator started, packet can now be received
 ---
 
 ```cpp
-INFO: [down] PULL_ACK received in 38 ms
-INFO: [down] PULL_ACK received in 37 ms
-INFO: [down] PULL_ACK received in 39 ms
+INFO: [down] PULL_ACK received in 45 ms
+INFO: [down] PULL_ACK received in 44 ms
+INFO: [down] PULL_ACK received in 54 ms
 
-INFO: Received pkt from mote: 1350200C (fcnt=8)
+INFO: Received pkt from mote: 1350200C (fcnt=2)
 
-JSON up: {"rxpk":[{"jver":1,"tmst":84648380,"chan":5,"rfch":1,"freq":476.400000,"mid": 1,"stat":1,"modu":"LORA","datr":"SF12BW125","codr":"4/5","rssis":-87,"lsnr":-1.8,"foff":-188,"rssi":-84,"size":25,"data":"QQwgUBMACAAIAKGyw9TloaKjpKWmp6ipqg=="}]}
-INFO: [up] PUSH_ACK received in 41 ms
+JSON up: {"rxpk":[{"jver":1,"tmst":29446526,"chan":5,"rfch":1,"freq":476.400000,"mid": 1,"stat":1,"modu":"LORA","datr":"SF12BW125","codr":"4/5","rssis":-86,"lsnr":-1.2,"foff":-124,"rssi":-83,"size":20,"data":"QQwgUBMAAgACAEExQjJDM0Q0RTU="}]}
+INFO: [up] PUSH_ACK received in 51 ms
 
-##### 2021-01-25 02:14:23 GMT #####
+##### 2021-01-25 03:17:49 GMT #####
 ### [UPSTREAM] ###
 # RF packets received by concentrator: 1
 # CRC_OK: 100.00%, CRC_FAIL: 0.00%, NO_CRC: 0.00%
-# RF packets forwarded: 1 (25 bytes)
-# PUSH_DATA datagrams sent: 2 (420 bytes)
+# RF packets forwarded: 1 (20 bytes)
+# PUSH_DATA datagrams sent: 1 (244 bytes)
 # PUSH_DATA acknowledged: 100.00%
 ### [DOWNSTREAM] ###
 # PULL_DATA sent: 3 (100.00% acknowledged)
@@ -346,7 +346,7 @@ INFO: [up] PUSH_ACK received in 41 ms
 # RF packets sent to concentrator: 0 (0 bytes)
 # TX errors: 0
 ### SX1302 Status ###
-# SX1302 counter (INST): 90939625
+# SX1302 counter (INST): 30877572
 # SX1302 counter (PPS):  0
 # BEACON queued: 0
 # BEACON sent so far: 0
@@ -361,8 +361,8 @@ ERROR: invalid I2C file descriptor
 ### Concentrator temperature unknown ###
 ##### END #####
 
-JSON up: {"stat":{"time":"2021-01-25 02:14:23 GMT","lati":31.26857,"long":120.74686,"alti":100,"rxnb":1,"rxok":1,"rxfw":1,"ackr":100.0,"dwnb":0,"txnb":0,"temp":0.0}}
-INFO: [up] PUSH_ACK received in 40 ms
+JSON up: {"stat":{"time":"2021-01-25 03:17:49 GMT","lati":31.26857,"long":120.74686,"alti":100,"rxnb":1,"rxok":1,"rxfw":1,"ackr":100.0,"dwnb":0,"txnb":0,"temp":0.0}}
+INFO: [up] PUSH_ACK received in 52 ms
 ```
 
 ---

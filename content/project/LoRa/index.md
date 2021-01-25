@@ -55,7 +55,11 @@ url_video: ""
 6. [Demodulation](https://myriadrf.org/news/lora-modem-limesdr/)
 7. [Semtech](https://lora-developers.semtech.com/knowledge-base/faq/P40)
 8. [LoRa数据包在线解码](https://lorawan-packet-decoder-0ta6puiniaut.runkit.sh/)
-   - [Live LoRaWAN frames网页](http://47.110.36.225:8080/#/organizations/1/gateways/0016c001ff10d3f6/frames)，需要配合[base64解码](https://cryptii.com/): text->bytes (frmPayload里的bytes是FRMPayload经过base64加密的结果)
+   - [Live LoRaWAN frames网页](http://47.110.36.225:8080/#/organizations/1/gateways/0016c001ff10d3f6/frames)
+     - [base64解码1](https://cryptii.com/)
+     - [base64解码2](https://forum.chirpstack.io/t/receiving-decrypted-device-data-frmpayload/501/24?u=haowong)
+     - [base64解码3](https://www.base64decode.org/)
+     - [ascii码表](https://baike.baidu.com/item/ASCII/309296?fromtitle=ascii%E7%A0%81%E8%A1%A8&fromid=19660475&fr=aladdin)
    - [gateway-bridge](https://www.chirpstack.io/gateway-bridge/payloads/events/)得到base64 encoded LoRaWAN frame
    - [applicaiton](https://www.chirpstack.io/application-server/integrations/mqtt/)自动解码
 
