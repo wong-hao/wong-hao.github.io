@@ -22,7 +22,6 @@
 &lt;li&gt;&lt;a href=&#34;https://www.semtech.com/search/results?keywords=Modulation&amp;#43;Basics%2A&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Semtech Modulation Basics&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.semtech.com/search/results?keywords=SX1276-7-8-9&amp;#43;Datasheet%2A&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;SX1276-7-8-9 Datasheet&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Everything: &lt;a href=&#34;https://www.sghoslya.com/p/lora_9.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Sakshama Ghoslya&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.jianshu.com/p/7b6a1732ff05&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoRa重要知识&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id=&#34;2-chipchirpsymbolbit&#34;&gt;2 chip、chirp/symbol、bit&lt;/h3&gt;
 &lt;ol&gt;
@@ -35,6 +34,7 @@
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVdHa3JTSE4zWlZEc3ptZGIzN2tKUmNCZFhQMU1sSTFHcURFdXJjcGdYTkJrZz9lPXNYOHRIdA==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Complete Reverse Engineering of LoRa PHY&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://pubs.gnuradio.org/index.php/grcon/article/view/8&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Matthew Knight and Balint Seeber. 2016. Decoding LoRa: Realizing a Modern LPWAN with SDR. Proceedings ofthe GNURadio Conference 1, 1 (2016).&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/matt-knight/research/tree/master/2016_12_29_ccc-33c3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;matt-knight&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id=&#34;4-数据包格式---lora-packet-format&#34;&gt;4 数据包格式 /  Lora Packet Format&lt;/h3&gt;
 &lt;ol&gt;
@@ -43,7 +43,6 @@
 &lt;li&gt;&lt;a href=&#34;https://www.sghoslya.com/p/lora-is-chirp-spread-spectrum.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Sakshama Ghoslya&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://revspace.nl/DecodingLora&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;DecodingLora&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.rfwireless-world.com/Terminology/What-is-difference-between-Implicit-header-and-Explicit-header-in-LoRaWAN-packet.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Implicit header and Explicit header&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://myriadrf.org/news/lora-modem-limesdr/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Demodulation&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://lora-developers.semtech.com/knowledge-base/faq/P40&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Semtech&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;LoRaWAN部分的解码相关&lt;/li&gt;
 &lt;/ol&gt;
@@ -64,6 +63,21 @@
 &lt;li&gt;&lt;a href=&#34;https://doc.sm.tc/station/index.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;msoon&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/107189375&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;利尔达&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
+&lt;h3 id=&#34;8-spectrograms&#34;&gt;8 Spectrograms&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.jianshu.com/p/7b6a1732ff05&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoRa重要知识&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;获得方式:
+&lt;ul&gt;
+&lt;li&gt;SDR
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/myriadrf/LoRa-SDR&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;myriadrf&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/rpp0/gr-lora&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;gr-lora&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Spectrograms analyzer&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
 </description>
     </item>
     
@@ -72,462 +86,7 @@
       <link>https://haowong.com/project/semtech-udp-packet-forwarder/</link>
       <pubDate>Wed, 21 Oct 2020 00:00:00 +0000</pubDate>
       <guid>https://haowong.com/project/semtech-udp-packet-forwarder/</guid>
-      <description>&lt;h1 id=&#34;0-code-version&#34;&gt;0 Code Version&lt;/h1&gt;
-&lt;h2 id=&#34;0-github&#34;&gt;0 Github&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/Lora-net/sx1302_hal&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;repo&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Reference design:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.semtech.com/products/wireless-rf/lora-gateways/sx1303ctsxxxgw1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;SX1303CTSXXXGW1&lt;/a&gt;，可从&lt;a href=&#34;https://github.com/Lora-net/sx1302_hal/releases/tag/V2.0.0&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Added support for SX1303 chip, for further Fine Timestamping support.&lt;/a&gt;看出&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.semtech.com/products/wireless-rf/lora-gateways/sx1302cssxxxgw1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;SX1302CSSXXXGW1&lt;/a&gt;，可从&lt;a href=&#34;https://github.com/Lora-net/sx1302_hal/releases/tag/V2.0.0&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Added support for Listen-Before-Talk for AS923 region / Added support for Spectral Scan with additional sx1261 radio&lt;/a&gt;看出&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.semtech.com/products/wireless-rf/lora-gateways/sx1302cfdxxxgw1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;SX1302CFDXXXGW1&lt;/a&gt;：可从&lt;a href=&#34;https://github.com/Lora-net/sx1302_hal/releases/tag/V2.0.0&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Merged the master-fdd-cn490 branch to bring support for CN490 Full-Duplex reference design&lt;/a&gt;看出&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;1-gitee&#34;&gt;1 Gitee&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://gitee.com/rejeee/gw1302s&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;repo&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Reference design:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.semtech.com/products/wireless-rf/lora-gateways/sx1302cxxxgw1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;SX1302CxxxGW1&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;与GitHub的&lt;a href=&#34;https://gitee.com/rejeee/gw1302s/commit/b06b85a7c87fce9f7d462f55b5913a3dc0c47df9&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;区别&lt;/a&gt;：
-&lt;ul&gt;
-&lt;li&gt;使用&lt;code&gt;#if USE_I2C_SENSOR ... #endif&lt;/code&gt;注释了 &lt;a href=&#34;https://github.com/Lora-net/sx1302_hal/issues/28#issuecomment-755148306&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;I2C&lt;/a&gt; 相关代码 (Source Insight 4.0不能看出哪些代码不能实际运行，而VS code可以通过虚化代码显示)&lt;/li&gt;
-&lt;li&gt;测试程序中默认的&lt;strong&gt;boardconf.lorawan_public = true&lt;/strong&gt;改成了&lt;strong&gt;boardconf.lorawan_public = false&lt;/strong&gt;，即 &lt;strong&gt;private&lt;/strong&gt; 即 &lt;strong&gt;0x12&lt;/strong&gt;；但这与&lt;strong&gt;global.config&lt;/strong&gt;默认&lt;a href=&#34;https://forum.chirpstack.io/t/relation-between-sync-word-private-network-and-end-nodes/191/13?u=haowong&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;同步字&lt;/a&gt;设置不同，故实际收发与测试时，终端同步字设置相反&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;SX1302_RESET_PIN=23&lt;/strong&gt;改成了&lt;strong&gt;SX1302_RESET_PIN=7&lt;/strong&gt;且去掉了其他GPIO引脚代码 (必须用GPOI7，其他没啥用)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h1 id=&#34;1-json-configuration-file-globalconfig&#34;&gt;1 JSON configuration file: global.config&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/wong-hao/sx1302_hal/blob/master/packet_forwarder/global_conf.json&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;本人配置好的&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;11-参数含义&#34;&gt;1.1 参数含义&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/13154904.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;AnswerInTheWind&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/jiangjunjie_2005/article/details/54603122&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Rimelink&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;IF chain: &lt;a href=&#34;https://lora-developers.semtech.com/knowledge-base/faq/P40&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Semetech&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;antenna gain: &lt;a href=&#34;https://lora-developers.semtech.com/knowledge-base/faq/P40&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Semetech&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h1 id=&#34;2-dependancies&#34;&gt;2 DEPENDANCIES&lt;/h1&gt;
-&lt;h2 id=&#34;21-c-library-function&#34;&gt;2.1 c library function&lt;/h2&gt;
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include &amp;lt;stdint.h&amp;gt;         /* C99 types */
-#include &amp;lt;stdbool.h&amp;gt;        /* bool type */
-#include &amp;lt;stdio.h&amp;gt;          /* printf, fprintf, snprintf, fopen, fputs */
-#include &amp;lt;inttypes.h&amp;gt;       /* PRIx64, PRIu64... */
-
-#include &amp;lt;string.h&amp;gt;         /* memset */
-#include &amp;lt;signal.h&amp;gt;         /* sigaction */
-#include &amp;lt;time.h&amp;gt;           /* time, clock_gettime, strftime, gmtime */
-#include &amp;lt;sys/time.h&amp;gt;       /* timeval */
-#include &amp;lt;unistd.h&amp;gt;         /* getopt, access */
-#include &amp;lt;stdlib.h&amp;gt;         /* atoi, exit */
-#include &amp;lt;errno.h&amp;gt;          /* error messages */
-#include &amp;lt;math.h&amp;gt;           /* modf */
-
-#include &amp;lt;sys/socket.h&amp;gt;     /* socket specific definitions */
-#include &amp;lt;netinet/in.h&amp;gt;     /* INET constants and stuff */
-#include &amp;lt;arpa/inet.h&amp;gt;      /* IP address conversion stuff */
-#include &amp;lt;netdb.h&amp;gt;          /* gai_strerror */
-
-#include &amp;lt;pthread.h&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;211-复杂函数&#34;&gt;2.1.1 复杂函数&lt;/h3&gt;
-&lt;h4 id=&#34;2111-signal&#34;&gt;2.1.1.1 signal&lt;/h4&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/pmt123456/article/details/53544295&#34;&gt;https://blog.csdn.net/pmt123456/article/details/53544295&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/joker0910/article/details/6646336&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;system()&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h4 id=&#34;2112-unistd&#34;&gt;2.1.1.2 unistd&lt;/h4&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/u014470361/article/details/84110216&#34;&gt;https://blog.csdn.net/u014470361/article/details/84110216&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h4 id=&#34;2113-thread&#34;&gt;2.1.1.3 thread&lt;/h4&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/yusiguyuan/article/details/40627775&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;pthread_mutex_lock() / pthread_mutex_unlock()&lt;/code&gt;&lt;/a&gt;，注意每次使用时lock的pthread_mutex_t对象都不同&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/liangxanhai/article/details/7767430&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;pthread_create()&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://ask.csdn.net/questions/267690?utm_medium=distribute.pc_relevant_t0.none-task-ask_topic-BlogCommendFromBaidu-1.control&amp;amp;depth_1-utm_source=distribute.pc_relevant_t0.none-task-ask_topic-BlogCommendFromBaidu-1.control&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;pthread_join()&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.cnblogs.com/lijunamneg/archive/2013/01/25/2877211.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;phtread_cancel()&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/zyex1108/article/details/45154211&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;time()&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.runoob.com/cprogramming/c-function-gmtime.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;gtime()&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/SanQi_Abao/article/details/94964665&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;strftime()&lt;/code&gt;&lt;/a&gt;：获得stat_timestamp：目前的格林威治时间&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/weixin_44880138/article/details/102605681&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;clock_gettime&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h4 id=&#34;2114-socket-用于gateway与server通信&#34;&gt;2.1.1.4 socket: 用于gateway与server通信&lt;/h4&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.jianshu.com/p/df165c54d0b2&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;getaddrinfo()&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/u011003120/article/details/78277133&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;getaddrinfo()&lt;/code&gt;&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;for (q=result; q!=NULL; q=q-&amp;gt;ai_next)：简单来说就是遍历。因为一个域名可能不止一个IP地址，所以，需要遍历res中的next，如下，是否还有下一个节点(即是否还有下一个IP地址信息)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://c.biancheng.net/view/2131.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;socket()&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/ahafg/article/details/52908705&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;getnameinfo()&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/cj83111/article/details/5364138&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;connect()&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.cnblogs.com/jianqiang2010/archive/2010/08/20/1804598.htmll&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;send()&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.cnblogs.com/fnlingnzb-learner/p/8523206.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;recv()&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://allen.blog.csdn.net/article/details/71078044?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.control&amp;amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.control&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;setsockopt()&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.ruanyifeng.com/blog/2016/11/byte-order.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;字节序&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;sock_up：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;init：main&lt;/li&gt;
-&lt;li&gt;send：PUSH_DATA&lt;/li&gt;
-&lt;li&gt;recv：PUSH_ACK&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;sock_down：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;init：main&lt;/li&gt;
-&lt;li&gt;send：PULL_DATA&lt;/li&gt;
-&lt;li&gt;recv：
-&lt;ul&gt;
-&lt;li&gt;PULL_ACK&lt;/li&gt;
-&lt;li&gt;PULL_RESP&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;2115-string&#34;&gt;2.1.1.5 String&lt;/h4&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;https://baike.baidu.com/item/snprintf%28%29&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;snprintf()&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.runoob.com/cprogramming/c-function-modf.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;modf()&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h4 id=&#34;2116-sequence&#34;&gt;2.1.1.6 Sequence&lt;/h4&gt;
-&lt;p&gt;&lt;a href=&#34;https://blog.csdn.net/dwell548560/article/details/76187095&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;code&gt;#if...#endif &lt;/code&gt;&lt;/a&gt;: Source Insight 4.0不能看出哪些代码不能实际运行，而VS code可以通过虚化代码显示&lt;/p&gt;
-&lt;h2 id=&#34;22-third-party-librarieslibtools&#34;&gt;2.2 Third party libraries：libtools&lt;/h2&gt;
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include &amp;quot;parson.h&amp;quot;  //.. / libtools / src / parson.c
-#include &amp;quot;base64.h&amp;quot; //.. / libtools / src / base64.c
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;221-复杂函数&#34;&gt;2.2.1 复杂函数&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&#34;http://kgabis.github.io/parson/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Parson library&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;23-core-library-libloragw&#34;&gt;2.3 Core library: libloragw&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;statically linked with the libloragw Lora concentrator library&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;The sx1302_hal is a host driver/HAL to build a Corecell reference design which communicates through SPI with a concentrator board based on Semtech SX1302 multi-channel modem and SX1250 RF transceivers&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include &amp;quot;loragw_hal.h&amp;quot; //.. / libloragw / src / loragw_hal.c
-#include &amp;quot;loragw_aux.h&amp;quot; //.. / libloragw / src / loragw_aux.c
-#include &amp;quot;loragw_reg.h&amp;quot; //.. / libloragw / src / loragw_reg.c
-#include &amp;quot;loragw_gps.h&amp;quot; //.. / libloragw / src / loragw_gps.c
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;24-jitqueue&#34;&gt;2.4 jitqueue&lt;/h2&gt;
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;#include &amp;quot;jitqueue.h&amp;quot; //.. / packet_forwarder / src / jitqueue.c
-#include &amp;quot;trace.h&amp;quot; //.. / packet_forwarder / inc / trace.h
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;25-tools&#34;&gt;2.5 tools&lt;/h2&gt;
-&lt;p&gt;lgw_receive接收到的包调用其crc函数校验，与private function: crc16有本质区别&lt;/p&gt;
-&lt;h2 id=&#34;26-注意&#34;&gt;2.6 注意&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;.h文件介绍用法，.c文件介绍实现，都需要看&lt;/li&gt;
-&lt;li&gt;jit_*函数和lgw _*_*函数的用法：
-&lt;ul&gt;
-&lt;li&gt;a = function(b, &amp;amp;c, &amp;hellip;)
-&lt;ul&gt;
-&lt;li&gt;a：判断函数是否调用 (执行)成功的返回值&lt;/li&gt;
-&lt;li&gt;b：函数利用的变量&lt;/li&gt;
-&lt;li&gt;c：&lt;em&gt;&lt;strong&gt;函数改变的/得到的变量&lt;/strong&gt;&lt;/em&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h1 id=&#34;3-private-functions-and-threads&#34;&gt;3 PRIVATE FUNCTIONS and threads&lt;/h1&gt;
-&lt;h2 id=&#34;31-theory&#34;&gt;3.1 Theory&lt;/h2&gt;
-&lt;h3 id=&#34;311-main&#34;&gt;3.1.1 main&lt;/h3&gt;
-&lt;p&gt;&lt;code&gt;main&lt;/code&gt;：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;code&gt;usage&lt;/code&gt;：&lt;code&gt;./lora_pkt_fwd -h&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;parse_SX130x_configuration&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;parse_gateway_configuration&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;parse_debug_configuration&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;sig_handler&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;6 threads&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;作用：2~4显示固定内容，thread_up显示UPSTREAM json内容，main显示6 threads得到的统计内容，详见3.2节&lt;/p&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;312-5-threads&#34;&gt;3.1.2 5 threads&lt;/h3&gt;
-&lt;p&gt;/* &amp;mdash; THREAD 1: RECEIVING PACKETS AND FORWARDING THEM &amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;- */&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;thread_up&lt;/code&gt;：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;code&gt;sig_handler&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;difftimespec&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;lgw_receive-gateway从node接收rxpkt并根据其属性构建upstream的datagram&#34;&gt;&lt;code&gt;lgw_receive&lt;/code&gt;: gateway从node接收rxpkt，并根据其属性构建UPSTREAM的datagram&lt;/h2&gt;
-&lt;p&gt;/* &amp;mdash; THREAD 2: POLLING SERVER AND ENQUEUING PACKETS IN JIT QUEUE &amp;mdash;&amp;mdash;&amp;mdash;- */&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;thread_down&lt;/code&gt;：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;code&gt;sig_handler&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;difftimespec&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;crc16&lt;/code&gt;：对发射的包进行crc检验&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;get_tx_gain_lut_index&lt;/code&gt; //jit_enqueue前查tx_gain_lut表&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;send_tx_ack&lt;/code&gt;：返回jit_enqueue相关错误；gps_enabled与gps_ref_valid任意一个不满足都会发送JIT_ERROR_GPS_UNLOCKED，说明gps出问题统一用&lt;strong&gt;UNLOCKED&lt;/strong&gt;代替&lt;/li&gt;
-&lt;/ol&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;jit_init&lt;/code&gt;：对应THREAD 2：thread_down&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;jit_enqueue&lt;/code&gt;：对应THREAD 2：thread_down&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;lgw_receive&lt;/code&gt;: gateway向node发送数据包&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;p&gt;/* &amp;mdash; THREAD 3: CHECKING PACKETS TO BE SENT FROM JIT QUEUE AND SEND THEM &amp;mdash; */
-//大部分的处理都在thread_down jit_enqueue时判断，发射时需要判断的东西很少，最多看是否lgw发射成功
-&lt;code&gt;thread_jit&lt;/code&gt;：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;code&gt;sig_handler&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;print_tx_status&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;jit_peek&lt;/code&gt;：对应THREAD 3：thread_jit&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;jit_dequeue&lt;/code&gt;：对应THREAD 3：thread_jit&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;jit_queue_is_full/jit_queue_is_empty&lt;/code&gt;：被上述四个函数调用的private functions&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;分析是从gateway到node的通信--just-in-time-downlink-schedulinghttpsgithubcomlora-netsx1302_haltreemasterpacket_forwarder&#34;&gt;分析：是从gateway到node的通信,  &lt;a href=&#34;https://github.com/Lora-net/sx1302_hal/tree/master/packet_forwarder&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Just-In-Time&amp;quot; downlink scheduling&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;/* &amp;mdash; THREAD 4: PARSE GPS MESSAGE AND KEEP GATEWAY IN SYNC &amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;ndash; */&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://lora-developers.semtech.com/library/tech-papers-and-guides/lorawan-class-b-devices&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;In order for a LoRaWAN network to support Class B devices, all the LoRaWAN gateways in this network need to have a built-in GPS timing source, so they all can be synchronized to the exact beacon timing.&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://lora-developers.semtech.com/library/tech-papers-and-guides/lora-and-lorawan/&#34;&gt;https://lora-developers.semtech.com/library/tech-papers-and-guides/lora-and-lorawan/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;thread_gps&lt;/code&gt;：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;code&gt;gps_process_sync&lt;/code&gt;：time_reference_gps；具体的GPS &amp;lt;-&amp;gt; timestamp TIME REFERENCE&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;gps_process_coords&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;p&gt;/* &amp;mdash; THREAD 5: CHECK TIME REFERENCE AND CALCULATE XTAL CORRECTION &amp;mdash;&amp;mdash;&amp;mdash; */&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;thread_valid&lt;/code&gt;：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;code&gt;sig_handler&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;变量控制&lt;/li&gt;
-&lt;/ol&gt;
-&lt;ul&gt;
-&lt;li&gt;TIME REFERENCE：gps_ref_valid；用于判断是否启用TIME REFERENCE&lt;/li&gt;
-&lt;li&gt;XTAL CORRECTION：
-&lt;ul&gt;
-&lt;li&gt;xtal_correct_ok&lt;/li&gt;
-&lt;li&gt;xtal_correct&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;p&gt;/* &amp;mdash; THREAD 6: BACKGROUND SPECTRAL SCAN                           &amp;mdash;&amp;mdash;&amp;mdash; */&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;thread_spectral_scan&lt;/code&gt;：略&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;32-empirical-experiment&#34;&gt;3.2 Empirical experiment&lt;/h2&gt;
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;pi@raspberrypi:~/sx1302_hal/bin $ ./lora_pkt_fwd
-*** Packet Forwarder ***
-Version: 2.0.1
-*** SX1302 HAL library version info ***
-Version: 2.0.1;
-***
-INFO: Little endian host
-INFO: found configuration file global_conf.json, parsing it
-INFO: global_conf.json does contain a JSON object named SX130x_conf, parsing SX1302 parameters
-INFO: com_type SPI, com_path /dev/spidev0.0, lorawan_public 1, clksrc 0, full_duplex 0
-INFO: antenna_gain 0 dBi
-INFO: Configuring legacy timestamp
-INFO: no configuration for SX1261
-INFO: Configuring Tx Gain LUT for rf_chain 0 with 16 indexes for sx1250
-INFO: radio 0 enabled (type SX1250), center frequency 475500000, RSSI offset -207.000000, tx enabled 1, single input mode 1
-INFO: radio 1 enabled (type SX1250), center frequency 476500000, RSSI offset -207.000000, tx enabled 0, single input mode 1
-INFO: Lora multi-SF channel 0&amp;gt;  radio 0, IF -300000 Hz, 125 kHz bw, SF 5 to 12
-INFO: Lora multi-SF channel 1&amp;gt;  radio 0, IF -100000 Hz, 125 kHz bw, SF 5 to 12
-INFO: Lora multi-SF channel 2&amp;gt;  radio 0, IF 100000 Hz, 125 kHz bw, SF 5 to 12
-INFO: Lora multi-SF channel 3&amp;gt;  radio 0, IF 300000 Hz, 125 kHz bw, SF 5 to 12
-INFO: Lora multi-SF channel 4&amp;gt;  radio 1, IF -300000 Hz, 125 kHz bw, SF 5 to 12
-INFO: Lora multi-SF channel 5&amp;gt;  radio 1, IF -100000 Hz, 125 kHz bw, SF 5 to 12
-INFO: Lora multi-SF channel 6&amp;gt;  radio 1, IF 100000 Hz, 125 kHz bw, SF 5 to 12
-INFO: Lora multi-SF channel 7&amp;gt;  radio 1, IF 300000 Hz, 125 kHz bw, SF 5 to 12
-INFO: Lora std channel&amp;gt; radio 1, IF -200000 Hz, 250000 Hz bw, SF 7, Explicit header
-INFO: FSK channel&amp;gt; radio 1, IF 300000 Hz, 125000 Hz bw, 50000 bps datarate
-INFO: global_conf.json does contain a JSON object named gateway_conf, parsing gateway parameters
-INFO: gateway MAC address is configured to 0016C001FF10D3F6
-INFO: server hostname or IP address is configured to &amp;quot;47.110.36.225&amp;quot;
-INFO: upstream port is configured to &amp;quot;1700&amp;quot;
-INFO: downstream port is configured to &amp;quot;1700&amp;quot;
-INFO: downstream keep-alive interval is configured to 10 seconds
-INFO: statistics display interval is configured to 30 seconds
-INFO: upstream PUSH_DATA time-out is configured to 100 ms
-INFO: packets received with a valid CRC will be forwarded
-INFO: packets received with a CRC error will be forwarded
-INFO: packets received with no CRC will NOT be forwarded
-INFO: Reference latitude is configured to 31.268575 deg
-INFO: Reference longitude is configured to 120.746857 deg
-INFO: Reference altitude is configured to 100 meters
-INFO: fake GPS is enabled
-INFO: Beaconing period is configured to 0 seconds
-INFO: Beaconing signal will be emitted at 869525000 Hz
-INFO: Beaconing datarate is set to SF9
-INFO: Beaconing modulation bandwidth is set to 125000Hz
-INFO: Beaconing TX power is set to 14dBm
-INFO: Beaconing information descriptor is set to 0
-INFO: global_conf.json does contain a JSON object named debug_conf, parsing debug parameters
-INFO: got 2 debug reference payload
-INFO: reference payload ID 0 is 0xCAFE1234
-INFO: reference payload ID 1 is 0xCAFE2345
-INFO: setting debug log file name to loragw_hal.log
-CoreCell reset through GPIO7...
-SX1261 reset through GPIO7...
-CoreCell power enable through GPIO18...
-CoreCell ADC reset through GPIO13...
-Opening SPI communication interface
-Note: chip version is 0x10 (v1.0)
-INFO: Configuring SX1250_0 in single input mode
-INFO: Configuring SX1250_1 in single input mode
-INFO: using legacy timestamp
-INFO: LoRa Service modem: configuring preamble size to 8 symbols
-ARB: dual demodulation disabled for all SF
-INFO: [main] concentrator started, packet can now be received
-&lt;/code&gt;&lt;/pre&gt;
-&lt;hr&gt;
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;INFO: [down] PULL_ACK received in 45 ms
-INFO: [down] PULL_ACK received in 44 ms
-INFO: [down] PULL_ACK received in 54 ms
-
-INFO: Received pkt from mote: 1350200C (fcnt=2)
-
-JSON up: {&amp;quot;rxpk&amp;quot;:[{&amp;quot;jver&amp;quot;:1,&amp;quot;tmst&amp;quot;:29446526,&amp;quot;chan&amp;quot;:5,&amp;quot;rfch&amp;quot;:1,&amp;quot;freq&amp;quot;:476.400000,&amp;quot;mid&amp;quot;: 1,&amp;quot;stat&amp;quot;:1,&amp;quot;modu&amp;quot;:&amp;quot;LORA&amp;quot;,&amp;quot;datr&amp;quot;:&amp;quot;SF12BW125&amp;quot;,&amp;quot;codr&amp;quot;:&amp;quot;4/5&amp;quot;,&amp;quot;rssis&amp;quot;:-86,&amp;quot;lsnr&amp;quot;:-1.2,&amp;quot;foff&amp;quot;:-124,&amp;quot;rssi&amp;quot;:-83,&amp;quot;size&amp;quot;:20,&amp;quot;data&amp;quot;:&amp;quot;QQwgUBMAAgACAEExQjJDM0Q0RTU=&amp;quot;}]}
-INFO: [up] PUSH_ACK received in 51 ms
-
-##### 2021-01-25 03:17:49 GMT #####
-### [UPSTREAM] ###
-# RF packets received by concentrator: 1
-# CRC_OK: 100.00%, CRC_FAIL: 0.00%, NO_CRC: 0.00%
-# RF packets forwarded: 1 (20 bytes)
-# PUSH_DATA datagrams sent: 1 (244 bytes)
-# PUSH_DATA acknowledged: 100.00%
-### [DOWNSTREAM] ###
-# PULL_DATA sent: 3 (100.00% acknowledged)
-# PULL_RESP(onse) datagrams received: 0 (0 bytes)
-# RF packets sent to concentrator: 0 (0 bytes)
-# TX errors: 0
-### SX1302 Status ###
-# SX1302 counter (INST): 30877572
-# SX1302 counter (PPS):  0
-# BEACON queued: 0
-# BEACON sent so far: 0
-# BEACON rejected: 0
-### [JIT] ###
-src/jitqueue.c:440:jit_print_queue(): INFO: [jit] queue is empty
-#--------
-src/jitqueue.c:440:jit_print_queue(): INFO: [jit] queue is empty
-### [GPS] ###
-# GPS *FAKE* coordinates: latitude 31.26857, longitude 120.74686, altitude 100 m
-ERROR: invalid I2C file descriptor
-### Concentrator temperature unknown ###
-##### END #####
-
-JSON up: {&amp;quot;stat&amp;quot;:{&amp;quot;time&amp;quot;:&amp;quot;2021-01-25 03:17:49 GMT&amp;quot;,&amp;quot;lati&amp;quot;:31.26857,&amp;quot;long&amp;quot;:120.74686,&amp;quot;alti&amp;quot;:100,&amp;quot;rxnb&amp;quot;:1,&amp;quot;rxok&amp;quot;:1,&amp;quot;rxfw&amp;quot;:1,&amp;quot;ackr&amp;quot;:100.0,&amp;quot;dwnb&amp;quot;:0,&amp;quot;txnb&amp;quot;:0,&amp;quot;temp&amp;quot;:0.0}}
-INFO: [up] PUSH_ACK received in 52 ms
-&lt;/code&gt;&lt;/pre&gt;
-&lt;hr&gt;
-&lt;pre&gt;&lt;code class=&#34;language-cpp&#34;&gt;INFO: End of upstream thread
-
-INFO: End of JIT thread
-
-INFO: End of downstream thread
-Closing SPI communication interface
-INFO: concentrator stopped successfully
-CoreCell reset through GPIO7...
-SX1261 reset through GPIO7...
-CoreCell power enable through GPIO18...
-CoreCell ADC reset through GPIO13...
-INFO: Exiting packet forwarder program
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;33-basic-communication-protocol-between-lora-gateway-and-network-server&#34;&gt;3.3 Basic communication protocol between LoRa gateway and Network Server&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;可查的最详细的相关资料&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Lora-net/sx1302_hal/blob/master/packet_forwarder/PROTOCOL.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;PROTOCOL&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVJ4VTcxc1RCNFJEaFhVU0RUTXlXdU1CNHc1NHQyZ3JhT3NvdUpVckszYkt0dz9lPUVoWXBMdw==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LoRaWAN Network Server Demonstration: Gateway to Server Interface Definition&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVJXaXJLdnJiVEZPaS1xUGk3OFFfVTRCUm4tM1dwLXVwNTNLdVJ6ZE9leDllZz9lPXR6OWh3eA==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;剖析 LoRaWAN Gateway 核心代码&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://blog.csdn.net/m0_38008027/article/details/89086175&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;PROTOCOL相关&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&#34;331-upstream-protocol&#34;&gt;3.3.1 UPstream protocol&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;PUSH_DATA packet：thread_up&lt;/li&gt;
-&lt;li&gt;PUSH_ACK packet：thread_up&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&#34;332-downstream-protocol&#34;&gt;3.3.2 Downstream protocol&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;PULL_DATA packet：thread_down&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;PULL_ACK packet：thread_down&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;与Confirmed message没有一点关系，这个是NS自动发送的&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;PULL_RESP packet：thread_down&lt;/p&gt;
-&lt;p&gt;prase这些packet的json分辨downlink packet class，决定发射时间（与beacon无关）&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Class C：imme (immediately)&lt;/li&gt;
-&lt;li&gt;Class A：tmst (timestamp)，一般不采用：因为global.config中gps_tty_path与beacon_period的设置&lt;/li&gt;
-&lt;li&gt;Class B：tmms (GPS time -&amp;gt; timestamp)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;根据数据包类型将其&lt;code&gt;jit_enqueue&lt;/code&gt;到jit_queue&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;TX_ACK packet：thread_down&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h1 id=&#34;4-compile-install-and-run-instructions&#34;&gt;4 Compile, install and run instructions&lt;/h1&gt;
-&lt;p&gt;卖家给的&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/13154904.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;攻略&lt;/a&gt;：&lt;/p&gt;
-&lt;p&gt;在&lt;strong&gt;gw1302s&lt;/strong&gt;执行&lt;code&gt;make clean all&lt;/code&gt;，调用所有helper program的make clean，即Clean and compile everything&lt;/p&gt;
-&lt;p&gt;再执行&lt;code&gt;make install&lt;/code&gt;，调用所有helper program的make install，把可执行程序都&lt;code&gt;scp&lt;/code&gt;到gw1302s/bin中&lt;/p&gt;
-&lt;h1 id=&#34;5-硬件&#34;&gt;5 硬件&lt;/h1&gt;
-&lt;h2 id=&#34;51-组成&#34;&gt;5.1 组成&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;multi-channel SX1302 baseband IC&lt;/li&gt;
-&lt;li&gt;two SX1250 RF transceivers&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;这与global.config中的&amp;quot;SX130x_conf&amp;quot;紧密相关：&lt;a href=&#34;https://github.com/Lora-net/sx1302_hal/tree/master/packet_forwarder&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&amp;ldquo;SX130x_conf&amp;rdquo; that should contain the parameters for the Lora concentrator board (RF channels definition, modem parameters, etc) &lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;52-concentrator&#34;&gt;5.2 Concentrator&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.semtech.com/products/wireless-rf/lora-gateways/sx1302cxxxgw1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;SX1302CxxxGW1&lt;/a&gt;：&lt;a href=&#34;https://semtech.my.salesforce.com/sfc/p/E0000000JelG/a/2R000000HV3G/an5Oh4KfiY7tAO1MO7RiPOj08WUpOTjPHSF57_.NlJ0?__hstc=212684107.9a923fbb2062c017aeab3e39902f6094.1606449781040.1608212935544.1608641620506.43&amp;amp;__hssc=212684107.2.1608641620506&amp;amp;__hsfp=2049775356&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Corecell ref design User Guide V1.2&lt;/a&gt;&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;The SX1302 digital baseband chip is a highly innovative digital signal processing engine
-equipped with 16 modulators, capable of demodulating 64 combinations of LoRa packets,
-and 2 separate modulators&lt;/li&gt;
-&lt;li&gt;The SX1250 is a highly integrated RF to IQ transceiver capable of supporting multiple
-modulation schemes over the 150-960 MHz ISM frequency bands.&lt;/li&gt;
-&lt;li&gt;One SX1302 and two SX1250 transceivers are used to complete an eight channel LoRa
-concentrator.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;53-与程序的关系&#34;&gt;5.3 与程序的关系&lt;/h2&gt;
-&lt;p&gt;thread_jit入队出队的队列正是两个SX1250对应的radio_0、radio_1&lt;/p&gt;
-&lt;h1 id=&#34;6-问题&#34;&gt;6 问题&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; DEPENDANCIES相关的函数定义及实现&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <description></description>
     </item>
     
     <item>
@@ -789,7 +348,12 @@ Flash:     0
 &lt;p&gt;&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/6213529.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;AnswerInTheWind&lt;/a&gt;&lt;/p&gt;
 &lt;h4 id=&#34;2224-security&#34;&gt;2.2.2.4 Security&lt;/h4&gt;
 &lt;ol&gt;
-&lt;li&gt;没有入网的后果: &lt;strong&gt;time=&amp;ldquo;2021-01-22T13:52:00+08:00&amp;rdquo; level=error msg=&amp;ldquo;uplink: processing uplink frame error&amp;rdquo; ctx_id=423aecd8-b38e-4b5f-8521-b8c20b0e710b error=&amp;ldquo;get device-session error: object does not exist&amp;rdquo;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;没有入网的后果:
+&lt;ul&gt;
+&lt;li&gt;chirpstack: &lt;strong&gt;time=&amp;ldquo;2021-01-22T13:52:00+08:00&amp;rdquo; level=error msg=&amp;ldquo;uplink: processing uplink frame error&amp;rdquo; ctx_id=423aecd8-b38e-4b5f-8521-b8c20b0e710b error=&amp;ldquo;get device-session error: object does not exist&amp;rdquo;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.thethingsnetwork.org/forum/t/is-it-possible-to-use-a-sw-defined-radio-tuned-to-868-mhz-to-detect-lora-node-radio-transmissions/37608/20?u=haowong&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TTN&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.thethingsnetwork.org/docs/lorawan/security.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;TTN&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.cyberark.com/resources/threat-research-blog/lorawan-mqtt-what-to-know-when-securing-your-iot-network&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Cyberark&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://ask.csdn.net/questions/3109264&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CSDN&lt;/a&gt;&lt;/li&gt;
@@ -819,10 +383,37 @@ Flash:     0
 &lt;li&gt;&lt;code&gt;make install_conf&lt;/code&gt;即安装&lt;strong&gt;global_conf.json&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;卖家给的&lt;a href=&#34;https://www.cnblogs.com/answerinthewind/p/13154904.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;攻略&lt;/a&gt;跟用&lt;code&gt;install.sh&lt;/code&gt;生成的主要差别在radio_1与radio_2的&lt;strong&gt;ferq&lt;/strong&gt;不同，攻略的效果好；官方的&lt;a href=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVQzOWdIRUc4YU5DbHFMVzBjRGkwVjBCZjZGQmUzWUpkSnh0YVhXbUlLdnFtUT9lPW9qNjEzcg==.mp3&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;参考文献&lt;/a&gt;给出了&lt;strong&gt;global_conf.json&lt;/strong&gt;的参数意义&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;232-sdr&#34;&gt;2.3.2 SDR&lt;/h3&gt;
+&lt;h3 id=&#34;232-software-defined-radiohttpswwwdigikeyhkenarticleslearn-the-fundamentals-of-software-defined-radio-sdr&#34;&gt;2.3.2 &lt;a href=&#34;https://www.digikey.hk/en/articles/learn-the-fundamentals-of-software-defined-radio&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Software-defined radio&lt;/a&gt; (SDR)&lt;/h3&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.gnuradio.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GUNRadio&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;与Software-defined radio (SDR)设备共用，如USRP N210、USRP B210、hackrf&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.gnuradio.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GUNRadio&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.gnuradio.org/doc/doxygen/page_uhd.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GNURadio UHD&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;c++&lt;/li&gt;
+&lt;li&gt;matlab&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;设备
+&lt;ul&gt;
+&lt;li&gt;USRP N210&lt;/li&gt;
+&lt;li&gt;USRP B210&lt;/li&gt;
+&lt;li&gt;USRP X300&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://myriadrf.org/news/lora-modem-limesdr/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LimeSDR&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;RTL-SDR&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Spectrogram
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.digikey.hk/en/articles/learn-the-fundamentals-of-software-defined-radio&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Digikey&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;凡是涉及到
+&lt;ul&gt;
+&lt;li&gt;FFT&lt;/li&gt;
+&lt;li&gt;Spectrograms&lt;/li&gt;
+&lt;li&gt;PHY layer method&lt;/li&gt;
+&lt;li&gt;The mathematical expression of chirp&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;24-lorawan-network-server&#34;&gt;2.4 LoraWAN Network Server&lt;/h2&gt;
 &lt;hr&gt;
@@ -967,6 +558,7 @@ raspberrypi2    0016c001ff10d3f7    -              苏州市           在线   
 &lt;li&gt;&lt;a href=&#34;https://www.thethingsnetwork.org/forum/t/limitations-data-rate-packet-size-30-seconds-uplink-and-10-messages-downlink-per-day-fair-access-policy-guidelines/1300&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Limitations fair access policy&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.thethingsnetwork.org/forum/t/setting-up-a-private-routing-environment/4445&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;The Things network: 安装版&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.thethingsindustries.com/docs/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;The Things Stack：安装版&lt;/a&gt;
 &lt;ul&gt;
 &lt;li&gt;Docket install&lt;/li&gt;
