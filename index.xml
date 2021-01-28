@@ -33,7 +33,7 @@
     </item>
     
     <item>
-      <title>LoRa</title>
+      <title>LoRa and LoRaWAN</title>
       <link>https://haowong.com/project/lora/</link>
       <pubDate>Sun, 17 Jan 2021 00:00:00 +0000</pubDate>
       <guid>https://haowong.com/project/lora/</guid>
@@ -169,14 +169,6 @@
       <link>https://haowong.com/project/semtech-udp-packet-forwarder/</link>
       <pubDate>Wed, 21 Oct 2020 00:00:00 +0000</pubDate>
       <guid>https://haowong.com/project/semtech-udp-packet-forwarder/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>LoRaWAN</title>
-      <link>https://haowong.com/project/lorawan/</link>
-      <pubDate>Tue, 06 Oct 2020 00:00:00 +0000</pubDate>
-      <guid>https://haowong.com/project/lorawan/</guid>
       <description></description>
     </item>
     
