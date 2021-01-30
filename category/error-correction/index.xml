@@ -70,10 +70,11 @@
 &lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 可以写稿子，但一定不能按稿念，会对不上&lt;/li&gt;
 &lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Frame Structure和7.2里的安全部分&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 如何获得原来的frame，比如获得哪些位置错了&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; CRC benchmark，获得了错误位后如何具体CRC过滤的&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 是PHYpayload吗，如果不是可以只看FRAMEpayload吗&lt;/li&gt;
 &lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;a href=&#34;https://bbs.csdn.net/topics/80119439&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;FEC与CRC的区别&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 怎么禁用FEC的&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 给作者发邮件请教：BCL长什么样，其0-100体现在哪，如何trace RSSI throughout the duration of a packet，纠错的过程究竟是什么，是对所有copy都纠错吗&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; BCL长什么样，其0-100体现在哪，如何trace RSSI throughout the duration of a packet，是对所有copy都纠错吗&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; LoRaServer[7]&lt;/li&gt;
 &lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; focus on upstream packets&lt;/li&gt;
 &lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;a href=&#34;https://github.com/OpenChirp/lorawan-service/issues/3#issuecomment-765803005&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;no open sourced&lt;/a&gt;&lt;/li&gt;

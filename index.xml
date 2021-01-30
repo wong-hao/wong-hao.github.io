@@ -165,6 +165,118 @@
     </item>
     
     <item>
+      <title>DyLoRa Towards Energy Efﬁcient Dynamic LoRa Transmission Control</title>
+      <link>https://haowong.com/2020/12/22/dylora-towards-energy-ef%EF%AC%81cient-dynamic-lora-transmission-control/</link>
+      <pubDate>Tue, 22 Dec 2020 00:00:00 +0000</pubDate>
+      <guid>https://haowong.com/2020/12/22/dylora-towards-energy-ef%EF%AC%81cient-dynamic-lora-transmission-control/</guid>
+      <description>&lt;h3 id=&#34;1-问题&#34;&gt;1 问题&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; TTN[2]&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 备注：所有页面都写，只有图、公式、算法读；文字性叙述备用&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 演习一遍&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 看相关工作以拓宽知识面，可以观察哪些被多次提到&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 看未来工作找到方向&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 网关怎么向设备发送信息&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;2-日期&#34;&gt;2 日期&lt;/h3&gt;
+&lt;h4 id=&#34;21-时间安排表&#34;&gt;2.1 时间安排表&lt;/h4&gt;
+&lt;h5 id=&#34;211-实时&#34;&gt;2.1.1 实时&lt;/h5&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.qq.com/sheet/DRVFQUExjaXZKbVdk?tab=BB08J2&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;每周二晚6.30&lt;/a&gt;&lt;/p&gt;
+&lt;h5 id=&#34;212-可视化&#34;&gt;2.1.2 可视化&lt;/h5&gt;
+&lt;p&gt;&lt;img src=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVZuX2R2b3cxS1JMZ2w4Z3dhOEhUWVFCY3FDNzlrMjdIbEl5V2dDLXZzblFtQT9lPW13QmYxZA==.mp3&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;h5 id=&#34;213-最终安排&#34;&gt;2.1.3 最终安排&lt;/h5&gt;
+&lt;p&gt;&lt;img src=&#34;https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmk6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVF0ajFWd2RuZEpMcWFSMnRKQTNYMlVCcGRfcm5GdnR6TEtnXzJ1U3dDc1RiQT9lPWFHcnQyNg==.mp3&#34; alt=&#34;image&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;3-团队组成&#34;&gt;3 团队组成&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;刘彧静&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;年级
+&lt;ul&gt;
+&lt;li&gt;研一&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;研究方向
+&lt;ul&gt;
+&lt;li&gt;软院保研计院&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;马胜&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;年级
+&lt;ul&gt;
+&lt;li&gt;研二&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;研究方向
+&lt;ul&gt;
+&lt;li&gt;无线网络视频传输优化&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;孙声宇&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;年级
+&lt;ul&gt;
+&lt;li&gt;研二&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;研究方向
+&lt;ul&gt;
+&lt;li&gt;数据采集&lt;/li&gt;
+&lt;li&gt;资源调度分配&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;顾啸林&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;年级
+&lt;ul&gt;
+&lt;li&gt;博二&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;研究方向
+&lt;ul&gt;
+&lt;li&gt;无线网络&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;业苇渡&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;年级
+&lt;ul&gt;
+&lt;li&gt;硕读一年&lt;/li&gt;
+&lt;li&gt;博五&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;研究方向
+&lt;ul&gt;
+&lt;li&gt;无人机调度&lt;/li&gt;
+&lt;li&gt;边缘计算&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;4-总览&#34;&gt;4 总览&lt;/h3&gt;
+&lt;h5 id=&#34;431-源文件&#34;&gt;4.3.1 源文件&lt;/h5&gt;
+&lt;h6 id=&#34;4311-会议的详情&#34;&gt;4.3.1.1 会议的详情&lt;/h6&gt;
+&lt;p&gt;&lt;a href=&#34;https://infocom.info/day/1&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;INFOCOM 2020&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;5-演讲方式&#34;&gt;5 演讲方式&lt;/h3&gt;
+&lt;h4 id=&#34;51-win10tencentmeeting&#34;&gt;5.1 Win10+TencentMeeting&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.zhihu.com/question/386623822/answer/1143684767&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;腾讯会议共享屏幕播放PPT的时候可以实现只能在自己电脑上可以看到PPT的备注么？&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>Semtech UDP packet forwarder</title>
       <link>https://haowong.com/project/semtech-udp-packet-forwarder/</link>
       <pubDate>Wed, 21 Oct 2020 00:00:00 +0000</pubDate>
@@ -278,10 +390,11 @@
 &lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 可以写稿子，但一定不能按稿念，会对不上&lt;/li&gt;
 &lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Frame Structure和7.2里的安全部分&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 如何获得原来的frame，比如获得哪些位置错了&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; CRC benchmark，获得了错误位后如何具体CRC过滤的&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 是PHYpayload吗，如果不是可以只看FRAMEpayload吗&lt;/li&gt;
 &lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;a href=&#34;https://bbs.csdn.net/topics/80119439&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;FEC与CRC的区别&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 怎么禁用FEC的&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 给作者发邮件请教：BCL长什么样，其0-100体现在哪，如何trace RSSI throughout the duration of a packet，纠错的过程究竟是什么，是对所有copy都纠错吗&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; BCL长什么样，其0-100体现在哪，如何trace RSSI throughout the duration of a packet，是对所有copy都纠错吗&lt;/li&gt;
 &lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; LoRaServer[7]&lt;/li&gt;
 &lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; focus on upstream packets&lt;/li&gt;
 &lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; &lt;a href=&#34;https://github.com/OpenChirp/lorawan-service/issues/3#issuecomment-765803005&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;no open sourced&lt;/a&gt;&lt;/li&gt;
