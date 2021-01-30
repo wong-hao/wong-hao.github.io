@@ -1,12 +1,12 @@
 ---
-title: LoRa
+title: LoRa Wiki
 summary: 111
 tags:
 - Wireless Communication
 date: "2021-01-17T00:00:00Z"
 
 # Optional external URL for project (replaces project detail page).
-external_link: https://github.com/wong-hao/Brief-introduction-of-LoRa-Technology/wiki/LoRa
+external_link: https://github.com/wong-hao/LoRa-Wiki/wiki
 
 image:
   caption: 111

@@ -6,7 +6,7 @@ authors:
 - admin
 tags:
 categories:
-- Multiple access and Error correction
+- Error correction
 date: "2020-07-22T00:00:00Z"
 lastmod: ""
 featured: false
@@ -44,10 +44,11 @@ projects: []
 - [x] 可以写稿子，但一定不能按稿念，会对不上
 - [x] Frame Structure和7.2里的安全部分
 - [ ] 如何获得原来的frame，比如获得哪些位置错了
+- [ ] CRC benchmark，获得了错误位后如何具体CRC过滤的
 - [ ] 是PHYpayload吗，如果不是可以只看FRAMEpayload吗
 - [x] [FEC与CRC的区别](https://bbs.csdn.net/topics/80119439)
 - [ ] 怎么禁用FEC的
-- [ ] 给作者发邮件请教：BCL长什么样，其0-100体现在哪，如何trace RSSI throughout the duration of a packet，纠错的过程究竟是什么，是对所有copy都纠错吗
+- [ ] BCL长什么样，其0-100体现在哪，如何trace RSSI throughout the duration of a packet，是对所有copy都纠错吗
 - [ ] LoRaServer[7]
 - [x] focus on upstream packets
 - [x] [no open sourced](https://github.com/OpenChirp/lorawan-service/issues/3#issuecomment-765803005)

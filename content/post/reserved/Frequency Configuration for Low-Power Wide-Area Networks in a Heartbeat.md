@@ -6,7 +6,7 @@ authors:
 - admin
 tags:
 categories:
-- Energy consumption
+- Multiple Access
 date: "2020-09-09T00:00:00Z"
 lastmod: ""
 featured: false

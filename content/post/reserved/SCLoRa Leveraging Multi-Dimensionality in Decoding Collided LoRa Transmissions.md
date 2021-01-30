@@ -6,7 +6,7 @@ authors:
 - admin
 tags:
 categories:
-- Multiple access and Error correction
+- Error correction
 date: "2020-09-09T00:00:00Z"
 lastmod: ""
 featured: false
@@ -41,7 +41,7 @@ projects: []
 - [x] 快速傅里叶变换频谱泄露
 - [ ] 快速傅里叶变换频谱信道衰落
 - [x] 离散傅里叶变换采样
-- [ ] MATLAB信号处理
+- [x] SDR结合MATLAB信号处理
 - [x] 频率偏移相关和semenar no.2相关
 - [ ] 美化ppt布局
 - [x] 根据作者演讲和ppt修改自己的ppt

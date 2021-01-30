@@ -37,6 +37,8 @@ projects: []
 ### 1 问题
 
 - [x] 已经在ppt中标注了
+- [ ] AI算法的使用：SVM、遗传算法、KNN
+- [x] 模拟器：NS-3、LoRaSim、LoRaWANSim
 
 
 

@@ -6,7 +6,7 @@ authors:
 - admin
 tags:
 categories:
-- Energy consumption
+- Multiple Access
 date: "2020-09-09T00:00:00Z"
 lastmod: ""
 featured: false
@@ -38,10 +38,9 @@ projects: []
 ### 1 问题
 
 - [ ] ADR原理及如何在NS上实现/开启
-- [ ] TTN[11]
-- [ ] 美化ppt布局
+- [x] TTN[11]
+- [x] 美化ppt布局
 - [x] 根据作者演讲和ppt修改自己的ppt
-- [ ] 与seminar No.3很像，都是根据比目前已有的SF选择方法'ADR'更好的输入输出模型选择SF
 
 
 ### 2 源文件
