@@ -6,7 +6,7 @@ tags:
 date: "2020-10-21T00:00:00Z"
 
 # Optional external URL for project (replaces project detail page).
-external_link: https://github.com/wong-hao/sx1302_hal/wiki/Semtech-UDP-packet-forwarder
+external_link: https://github.com/wong-hao/sx1302_hal/wiki/
 
 image:
   caption: Photo by Chirpstack
