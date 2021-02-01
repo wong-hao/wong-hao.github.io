@@ -83,31 +83,6 @@
   </url>
   
   <url>
-    <loc>https://haowong.com/tag/academic-seminar/</loc>
-    <lastmod>2020-12-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://haowong.com/categories/</loc>
-    <lastmod>2020-12-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://haowong.com/2020/12/22/dylora-towards-energy-ef%EF%AC%81cient-dynamic-lora-transmission-control/</loc>
-    <lastmod>2020-12-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://haowong.com/category/multiple-access/</loc>
-    <lastmod>2020-12-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://haowong.com/post/</loc>
-    <lastmod>2020-12-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://haowong.com/project/semtech-udp-packet-forwarder/</loc>
     <lastmod>2020-10-21T00:00:00+00:00</lastmod>
   </url>
@@ -115,41 +90,6 @@
   <url>
     <loc>https://haowong.com/courses/</loc>
     <lastmod>2020-10-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://haowong.com/category/error-correction/</loc>
-    <lastmod>2020-09-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://haowong.com/2020/09/09/frequency-configuration-for-low-power-wide-area-networks-in-a-heartbeat/</loc>
-    <lastmod>2020-09-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://haowong.com/2020/09/09/runtime-control-of-lora-spreading-factor-for-camp/</loc>
-    <lastmod>2020-09-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://haowong.com/2020/09/09/sclora-leveraging-multi-dimensionality-in-decoding-collided-lora-transmissions/</loc>
-    <lastmod>2020-09-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://haowong.com/2020/07/22/a-cloud-optimized-link-layer-for-low-power-wide-area-networks/</loc>
-    <lastmod>2020-07-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://haowong.com/2020/07/18/a-survey-on-lora-networking-research-problems-current-solutions-and-open-issues/</loc>
-    <lastmod>2020-07-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://haowong.com/category/summary/</loc>
-    <lastmod>2020-07-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -224,6 +164,14 @@
   
   <url>
     <loc>https://haowong.com/about/</loc>
+  </url>
+  
+  <url>
+    <loc>https://haowong.com/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>https://haowong.com/post/</loc>
   </url>
   
   <url>
