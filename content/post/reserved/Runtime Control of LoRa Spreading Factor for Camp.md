@@ -10,7 +10,7 @@ categories:
 date: "2020-09-09T00:00:00Z"
 lastmod: ""
 featured: false
-draft: false
+draft: true
 
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder.
@@ -38,6 +38,7 @@ projects: []
 ### 1 问题
 
 - [ ] ADR原理及如何在NS上实现/开启
+- [ ] Base station怎么向device发送NM packet
 - [x] TTN[11]
 - [x] 美化ppt布局
 - [x] 根据作者演讲和ppt修改自己的ppt
