@@ -21,6 +21,7 @@ interests:
 - Wireless Communication
 - Long Range Wide-Area Network (LoRa)
 - Low-Power Wide-Area Network (LPWAN)
+- Wireless Sensor Network (WSN)
 
 # Education to show in About widget
 education:
