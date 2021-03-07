@@ -1,12 +1,603 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Page Title</title>
+<title>index.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
 </head>
 <body>
-
-<h1>This is a Heading</h1>
-<p>This is a paragraph.</p>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h3 id="1-reverse-engineering">1 Reverse Engineering</h3>
+<ol>
+<li>
+<p>semtech european patent application 13154071.8</p>
+<ul>
+<li>Application:
+<ul>
+<li><a href="https://data.epo.org/gpi/EP2763321A1">Global Patent Index</a></li>
+<li><a href="https://patents.google.com/patent/EP2763321A1/">Google</a></li>
+</ul>
+</li>
+<li>Specification:
+<ul>
+<li><a href="https://data.epo.org/gpi/EP2763321B1">Global Patent Index</a></li>
+<li><a href="https://patents.google.com/patent/EP2763321B1/">Google</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="https://www.epfl.ch/labs/tcl/resources-and-sw/">epfl</a>:</p>
+<ul>
+<li><a href="https://github.com/wong-hao/LoRa-Wiki/blob/main/LoRa%20documents/Complete%20Reverse%20Engineering%20of%20LoRa%20PHY.pdf">Complete Reverse Engineering of LoRa PHY</a></li>
+<li><a href="https://github.com/wong-hao/LoRa-Wiki/blob/main/LoRa%20documents/An%20Open-Source%20LoRa%20Physical%20Layer%20Prototype%20on%20GNU%20Radio.pdf">An Open-Source LoRa Physical Layer Prototype on GNU Radio</a></li>
+<li><a href="https://github.com/wong-hao/LoRa-Wiki/blob/main/LoRa%20documents/A%20Maximum-Likelihood-based%20Multi-User%20LoRa%20Receiver%20Implemented%20in%20GNU%20Radio.pdf">A Maximum-Likelihood-based Multi-User LoRa Receiver Implemented in GNU Radio</a></li>
+</ul>
+</li>
+<li>
+<p>Github:</p>
+<ul>
+<li>matt-knight:
+<ul>
+<li><a href="https://github.com/BastilleResearch/gr-lora">github</a></li>
+<li><a href="https://github.com/matt-knight/research/tree/master/2016_12_29_ccc-33c3">ccc-33c3</a>: 最详细的video</li>
+<li><a href="https://github.com/matt-knight/research/tree/master/2016_09_15_grcon">grcon</a>
+<ul>
+<li><a href="https://github.com/wong-hao/LoRa-Wiki/blob/main/LoRa%20documents/Decoding%20LoRa%20Realizing%20a%20Modern%20LPWAN%20with%20SDR.pdf">paper</a></li>
+</ul>
+</li>
+<li><a href="https://github.com/matt-knight/research/tree/master/2016_10_18_pocorgtfo">pocorgtfo</a>: 含book</li>
+<li><a href="https://youtu.be/XICcn_70NSA">the things conference</a></li>
+</ul>
+</li>
+<li>rpp0:
+<ul>
+<li><a href="https://github.com/rpp0/gr-lora">github</a></li>
+<li><a href="https://youtu.be/Q-0u87eFAm8">youtube</a></li>
+</ul>
+</li>
+<li>其他Github库</li>
+</ul>
+</li>
+<li>
+<p><a href="https://revspace.nl/DecodingLora">DecodingLora</a></p>
+</li>
+<li>
+<p><a href="https://github.com/wong-hao/LoRa-Literature/blob/main/reported/Error%20correction/A%20Cloud-Optimized%20Link%20Layer%20for%20Low-Power%20Wide-Area%20Networks/References/21.pdf">Known and Unknown Facts of LoRa: Experiences from a Large-scale Measurement Study</a></p>
+</li>
+<li>
+<p><a href="https://www.jianshu.com/p/7b6a1732ff05">jianshu</a></p>
+</li>
+<li>
+<p><a href="https://www.sghoslya.com/p/lora_9.html">sghoslya</a></p>
+</li>
+<li>
+<p>Mobilefish.com:</p>
+</li>
+</ol>
+<ul>
+<li><a href="https://www.youtube.com/playlist?list=PLmL13yqb6OxdeOi97EvI8QeO8o-PqeQ0g">vedio</a></li>
+<li><a href="https://lora.readthedocs.io/en/latest/">documents</a></li>
+</ul>
+<ol start="11">
+<li><a href="https://youtu.be/WizST6gighs?t=2447">Richard</a></li>
+</ol>
+<h3 id="2-encoding">2 Encoding</h3>
+<h4 id="21-forward-error-correction">2.1 <a href="https://en.wikipedia.org/wiki/Error_correction_code#Forward_error_correction">Forward Error correction</a></h4>
+<ol>
+<li>
+<p><a href="https://en.wikipedia.org/wiki/Linear_code">Linear code</a></p>
+<ul>
+<li>
+<p><a href="https://en.wikipedia.org/wiki/Convolutional_code">Convolutional code</a></p>
+</li>
+<li>
+<p><a href="https://en.wikipedia.org/wiki/Block_code">Block codes</a></p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Hamming_code#Hamming_codes">Hamming code</a>:
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Hamming(7,4)">Hamming(7,4)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Coding rate</p>
+<ul>
+<li>Header:
+<ul>
+<li>SX1276-7-8-9 Datasheet (4/8)</li>
+<li>SX1261/SX1262 Datasheet</li>
+</ul>
+</li>
+<li>PHYPayload:
+<ul>
+<li>Physical layer: 4/5/-4/8</li>
+<li>LoRaWAN Regional Parameters: default 4/5</li>
+<li><a href="https://lora-developers.semtech.com/knowledge-base/faq/P40">What coding rate should I use for my LoRaWAN application?</a></li>
+</ul>
+</li>
+<li>效果:
+<ul>
+<li>4/5、4/6 = error detection</li>
+<li>4/7、4/8 = double error dection / 1 bit error correction</li>
+<li>无法解决<a href="https://www.guru99.com/hamming-code-error-correction-example.html">burst error</a></li>
+</ul>
+</li>
+<li>decoding error probability
+<ul>
+<li>paper:
+<ul>
+<li>DyLoRa</li>
+<li>matt knight</li>
+<li>known and unknown</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>评估指标</p>
+<ul>
+<li>需要自行推导的:
+<ul>
+<li>Bit error rate</li>
+<li>Symbol error rate</li>
+<li>Frame error rate</li>
+<li>papers:
+<ul>
+<li>On the Error Rate of the LoRa Modulation With Interference</li>
+<li>DyLoRa</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>有现成指标的:
+<ul>
+<li>Packet Reception rate</li>
+<li>Packet Delivery rate</li>
+<li>throughout</li>
+<li>goodput</li>
+<li>papers:
+Known and Unknown Facts of LoRa Experiences from a Large-scale Measurement Study</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<p>插入图片示例：[[/images/audio/wsjtx_audio_1.png|SSB setup]]</p>
+<h4 id="22-whitening">2.2 Whitening</h4>
+<h4 id="23-interleaving">2.3 Interleaving</h4>
+<h4 id="24-gray-indexing">2.4 Gray indexing</h4>
+<h3 id="3-lora-modulation">3 LoRa Modulation</h3>
+<h4 id="31-discrete-time-baseband-equivalent-representation-of-a-lora-symbol-sequence">3.1 Discrete-time baseband equivalent representation of a LoRa symbol sequence</h4>
+<ol>
+<li>paper:</li>
+</ol>
+<ul>
+<li>SCLoRa</li>
+<li>DyLoRa</li>
+<li>An Open-Source LoRa Physical Layer Prototype on GNU Radio</li>
+</ul>
+<ol start="2">
+<li>与采样定理有关</li>
+</ol>
+<h3 id="4-software-defined-radio--sdr">4 <a href="https://arachnoid.com/software_defined_radios/">Software-defined radio / SDR</a></h3>
+<ol>
+<li>software:
+<ul>
+<li><a href="https://www.gnuradio.org/">GUNRadio</a></li>
+<li>c++</li>
+<li>matlab
+<ul>
+<li>signal proces</li>
+<li>physical decoder / receiver algorithm</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>设备
+<ul>
+<li><a href="https://greatscottgadgets.com/hackrf/">hackrf</a></li>
+<li>RTL-SDR dongle
+<ul>
+<li><a href="https://www.mathworks.com/hardware-support/rtl-sdr.html">matlab</a></li>
+</ul>
+</li>
+<li>USRP B210 / N210 / X300 ...
+<ul>
+<li><a href="https://kb.ettus.com/UHD">UHD</a></li>
+<li><a href="https://www.gnuradio.org/doc/doxygen/page_uhd.html">GNURadio UHD</a></li>
+<li><a href="https://www.mathworks.com/hardware-support/usrp.html">matlab</a></li>
+</ul>
+</li>
+<li><a href="https://myriadrf.org/news/lora-modem-limesdr/">LimeSDR</a></li>
+</ul>
+</li>
+<li>Spectrogram
+<ul>
+<li><a href="https://www.digikey.hk/en/articles/learn-the-fundamentals-of-software-defined-radio">Digikey</a></li>
+</ul>
+</li>
+<li>凡是涉及到
+<ul>
+<li>FFT</li>
+<li>Spectrograms</li>
+<li><strong>Physical</strong> layer method</li>
+<li>对数表达式</li>
+</ul>
+</li>
+</ol>
+<h3 id="5-lora-simulation">5 LoRa Simulation</h3>
+<h4 id="51-matlab">5.1 MATLAB</h4>
+<ol>
+<li><a href="https://www.sghoslya.com/p/how-to-buy-lora-matlab-codes.html">sghoslya</a>
+<ul>
+<li><a href="https://github.com/wong-hao/LoRa-Wiki/tree/main/LoRa%20documents/LoRa_Complete_Material">Code</a></li>
+</ul>
+</li>
+</ol>
 
 </body>
 </html>
