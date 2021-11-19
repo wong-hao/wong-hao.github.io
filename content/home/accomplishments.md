@@ -52,4 +52,13 @@ item:
   organization_url: https://www.gs.cuhk.edu.hk/
   title: 'CUHK Student Certificate'
   url: ""
+  
+- certificate_url: https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVd6NmNvZEVBb1ZMb1c3ZUk5MWRlYlFCdktsMmJpdmpRSGVlN2phNGQ4QVNMUT9lPTNRY290Rw==.mp3
+  date_end: ""
+  date_start: "2020-10-01"
+  description: "Experience"
+  organization: Southeast University
+  organization_url: https://www.seu.edu.cn/
+  title: 'Three good graduate students of Southeast University'
+  url: ""
 ---
