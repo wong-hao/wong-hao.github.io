@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Wireless Communication | Room of Requirement</title>
+    <link>https://haowong.com/tag/wireless-communication/</link>
+      <atom:link href="https://haowong.com/tag/wireless-communication/index.xml" rel="self" type="application/rss+xml" />
+    <description>Wireless Communication</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 31 Aug 2021 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://haowong.com/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_3.png</url>
+      <title>Wireless Communication</title>
+      <link>https://haowong.com/tag/wireless-communication/</link>
+    </image>
+    
+    <item>
+      <title>MCCI LMIC</title>
+      <link>https://haowong.com/project/mcci-lmic/</link>
+      <pubDate>Tue, 31 Aug 2021 00:00:00 +0000</pubDate>
+      <guid>https://haowong.com/project/mcci-lmic/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>LoRa Wiki</title>
+      <link>https://haowong.com/project/lora/</link>
+      <pubDate>Sun, 17 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>https://haowong.com/project/lora/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Chirpstack docker</title>
+      <link>https://haowong.com/project/chirpstack-docker/</link>
+      <pubDate>Wed, 21 Oct 2020 00:00:00 +0000</pubDate>
+      <guid>https://haowong.com/project/chirpstack-docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Semtech UDP packet forwarder</title>
+      <link>https://haowong.com/project/semtech-udp-packet-forwarder/</link>
+      <pubDate>Wed, 21 Oct 2020 00:00:00 +0000</pubDate>
+      <guid>https://haowong.com/project/semtech-udp-packet-forwarder/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
