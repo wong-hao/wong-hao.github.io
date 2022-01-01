@@ -1,25 +1,25 @@
 ---
 # An instance of the Pages widget.
-# Documentation: https://sourcethemes.com/academic/docs/page-builder/
+# Documentation: https://wowchemy.com/docs/page-builder/
 widget: pages
-
-# Activate this widget? true/false
-active: false
 
 # This file represents a page section.
 headless: true
 
+# Activate this widget? true/false
+active: false
+
 # Order that this section appears on the page.
 weight: 70
 
-title: Recent & Upcoming Talks
+title: 'Recent & Upcoming Talks'
 subtitle:
 
 content:
-  # Page type to display. E.g. post, talk, publication...
-  page_type: talk
-  # Choose how much pages you would like to display (0 = all pages)
-  count: 1
+  # Page type to display. E.g. post, event, publication...
+  page_type: event
+  # Choose how many pages you would like to display (0 = all pages)
+  count: 5
   # Filter on criteria
   filters:
     author: ""

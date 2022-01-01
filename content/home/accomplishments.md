@@ -1,10 +1,7 @@
 ---
 # An instance of the Accomplishments widget.
-# Documentation: https://sourcethemes.com/academic/docs/page-builder/
+# Documentation: https://wowchemy.com/docs/page-builder/
 widget: accomplishments
-
-# Activate this widget? true/false
-active: true
 
 # This file represents a page section.
 headless: true
@@ -12,18 +9,19 @@ headless: true
 # Order that this section appears on the page.
 weight: 50
 
-title: Accomplish&shy;ments
+# Note: `&shy;` is used to add a 'soft' hyphen in a long heading.
+title: 'Accomplish&shy;ments'
 subtitle:
 
 # Date format
-#   Refer to https://sourcethemes.com/academic/docs/customization/#date-format
+#   Refer to https://wowchemy.com/docs/customization/#date-format
 date_format: Jan 2006
 
 # Accomplishments.
 #   Add/remove as many `item` blocks below as you like.
-#   `title`, `organization` and `date_start` are the required parameters.
+#   `title`, `organization`, and `date_start` are the required parameters.
 #   Leave other parameters empty if not required.
-#   You can begin a multiline `description` using YAML's `|-`.
+#   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
 item:
 
 - certificate_url: https://onedrive.gimhoy.com/sharepoint/aHR0cHM6Ly9zZXVlZHVjbjEtbXkuc2hhcmVwb2ludC5jb20vOmI6L2cvcGVyc29uYWwvMjIwMjA0NjAxX3NldV9lZHVfY24vRVlHVlYwLXFTWmxPcUdxQnNSdUFweVFCalgzS01JeWtUTldWeUllb3Z4SG04UT9lPWc5NUxVQw==.mp3
@@ -61,4 +59,7 @@ item:
   organization_url: https://www.seu.edu.cn/
   title: 'Three good graduate students of Southeast University'
   url: ""
+
+design:
+  columns: '2' 
 ---
