@@ -1,16 +1,17 @@
 ---
-title: "An example journal article"
+title: "ReLoRaWAN: Reliable data delivery in LoRaWAN networks with multiple gateways"
 authors:
+- Wenjia Wu
 - admin
-- Robert Ford
-author_notes:
-- "Equal contribution"
-- "Equal contribution"
-date: "2015-09-01T00:00:00Z"
-doi: ""
+- Zisheng Cheng
+# author_notes:
+# - "Equal contribution"
+# - "Equal contribution"
+date: "2023-05-15T00:00:00Z"
+doi: "https://doi.org/10.1016/j.adhoc.2023.103203"
 
 # Schedule page publish date (NOT publication's date).
-publishDate: "2017-01-01T00:00:00Z"
+# publishDate: "2023-08-01T00:00:00Z"
 
 # Publication type.
 # Legend: 0 = Uncategorized; 1 = Conference paper; 2 = Journal article;
@@ -19,10 +20,10 @@ publishDate: "2017-01-01T00:00:00Z"
 publication_types: ["2"]
 
 # Publication name and optional abbreviated publication name.
-publication: "*Journal of Source Themes, 1*(1)"
+publication: "Ad Hoc Networks"
 publication_short: ""
 
-abstract: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.
+abstract: LoRa has emerged as a promising technology to provide low-power and long-range communication for IoT devices. LoRaWAN networks build on top of the LoRa physical layer and adopt a centralized network architecture that supports one or more gateways connected with a large number of end devices. Although LoRa communication is resistant to channel noises, it still frequently suffers data delivery failures in LoRaWAN networks due to packet collisions of the concurrent transmissions. The delivery failures trigger the retransmission procedure in LoRaWAN protocol, which causes additional power consumption on end devices and further exacerbates packet collisions. To solve this issue, we investigate the reliable data delivery mechanism that utilizes with the packet reception of multiple gateways to recover the distorted payload. Firstly, we present a ReLoRaWAN framework, where the central server aggregates distorted packet payload from multi-gateway reception of the same packet and executes the corresponding data recovery operations. Then, we design a Tri-operation Integrated Data Recovery (TIDR) algorithm for recovering the distorted packet payload, which involves exclusive-OR based bitwise inversion operation, majority voting based bitwise inversion operation, and weighted bitwise decision operation. Finally, we implement a ReLoRaWAN testbed and conduct real-world experiments to evaluate the performance of our solution. Compared with existing works, the ReLoRaWAN greatly optimizes the quality of service and power consumption in the network. It improves the packet delivery ratio by 35% and reduces the average power consumption of the end device by 30%.
 
 # Summary. An optional shortened abstract.
 summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum.
@@ -34,7 +35,7 @@ featured: false
 # links:
 # - name: ""
 #   url: ""
-url_pdf: http://arxiv.org/pdf/1512.04133v1
+url_pdf: '/publication/journal-article/ReLoRaWAN.pdf'
 url_code: 'https://github.com/wowchemy/wowchemy-hugo-themes'
 url_dataset: ''
 url_poster: ''

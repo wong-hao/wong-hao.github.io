@@ -1,80 +1,80 @@
 ---
 # Display name
-title: Haowong
+title: Hao Wang
+
+# Full name (for SEO)
+first_name: Hao
+last_name: Wang
+
+# Status emoji
+status:
+  icon: ☕️
 
 # Is this the primary user of the site?
 superuser: true
 
 # Role/position/tagline
-role: Master Candidate
+role: Worker
 
 # Organizations/Affiliations to show in About widget
 organizations:
-- name: Southeast University
-  url: https://www.seu.edu.cn/english/
+  - name: Southeast University
+    url: https://www.seu.edu.cn/
 
 # Short bio (displayed in user profile at end of posts)
 bio: My research interests include distributed robotics, mobile computing and programmable matter.
 
 # Interests to show in About widget
 interests:
-- Wireless Communication
-- Long Range Wide-Area Network (LoRa)
-- Low-Power Wide-Area Network (LPWAN)
-- Wireless Sensor Network (WSN)
+  - wireless networks
+  - computer networks
+  - mobile computing
 
 # Education to show in About widget
 education:
   courses:
-  - course: MSc in Computer Science
-    institution: The Chinese University of HongKong
-    year: 2020
-  - course: MEng in Information Technology
-    institution: Monash University
-    year: 2020
-  - course: MEng in Computer Technology
-    institution: Southeast University, 
-    year: 2020
-  - course: BSc in Computer Science and Technology
-    institution: Hohai Universtity
-    year: 2016
+    - course: MEng in Computer Technology
+      institution: Southeast University
+      year: 2020
+    - course: BSc in Computer Science and Technology
+      institution: Hohai University
+      year: 2016
 
 # Social/Academic Networking
 # For available icons, see: https://wowchemy.com/docs/getting-started/page-builder/#icons
 #   For an email link, use "fas" icon pack, "envelope" icon, and a link in the
 #   form "mailto:your-email@example.com" or "/#contact" for contact widget.
 social:
-- icon: envelope
-  icon_pack: fas
-  #link: '/#contact'
-  link: 'mailto:haowong@seu.edu.cn'
-- icon: github
-  icon_pack: fab
-  link: https://github.com/wong-hao
-- icon: linkedin
-  icon_pack: fab
-  #link: https://www.linkedin.com/in/wonghao/
-- icon: researchgate  # OR `google-scholar`
-  icon_pack: ai  # OR `ai`
-  link: https://www.researchgate.net/profile/Hao_Wang549
-- icon: arxiv
-  icon_pack: ai
-  link: https://arxiv.org/set_author_id
-
-# Link to a PDF of your resume/CV from the About widget.
-# To use: copy your resume to `static/uploads/resume.pdf`, enable `ai` icons in `params.toml`,
-# and uncomment the lines below.
-# - icon: cv
-#   icon_pack: ai
-#   link: uploads/resume.pdf
+  - icon: envelope
+    icon_pack: fas
+    link: '/#contact'
+  - icon: twitter
+    icon_pack: fab
+    link: https://twitter.com/GeorgeCushen
+    label: Follow me on Twitter
+    display:
+      header: true   
+  - icon: graduation-cap # Alternatively, use `google-scholar` icon from `ai` icon pack
+    icon_pack: fas
+    link: https://scholar.google.com/citations?user=U9uYoxMAAAAJ&hl=zh-CN
+  - icon: github
+    icon_pack: fab
+    link: https://github.com/wong-hao
+  - icon: linkedin
+    icon_pack: fab
+    link: https://www.linkedin.com/
+  # Link to a PDF of your resume/CV.
+  # To use: copy your resume to `static/uploads/resume.pdf`, enable `ai` icons in `params.yaml`,
+  # and uncomment the lines below.
+  - icon: cv
+    icon_pack: ai
+    link: uploads/resume.pdf 
 
 # Enter email to display Gravatar (if Gravatar enabled in Config)
-email: "haowong@seu.edu.cn"
+email: ''
 
 # Highlight the author in author lists? (true/false)
 highlight_name: true
 ---
 
-Hello
-
-{{< icon name="download" pack="fas" >}} Download my {{< staticref "uploads/resume.pdf" "newtab" >}}resumé{{< /staticref >}}.
+Work on computer networks
