@@ -1,8 +1,13 @@
-@article{example2,
-  title = {An example journal article},
-  author={Bighetti, Nelson and Ford, Robert},
-  journal = {Journal of Source Themes},
-  year    = 2015,
-  volume  = 1,
-  number  = 1
+@article{WU2023103203,
+  title = {ReLoRaWAN: Reliable data delivery in LoRaWAN networks with multiple gateways},
+  journal = {Ad Hoc Networks},
+  volume = {147},
+  pages = {103203},
+  year = {2023},
+  issn = {1570-8705},
+  doi = {https://doi.org/10.1016/j.adhoc.2023.103203},
+  url = {https://www.sciencedirect.com/science/article/pii/S1570870523001233},
+  author = {Wenjia Wu and Hao Wang and Zisheng Cheng},
+  keywords = {LPWAN, LoRa, LoRaWAN, Multi-packet reception, Data recovery},
+  abstract = {LoRa has emerged as a promising technology to provide low-power and long-range communication for IoT devices. LoRaWAN networks build on top of the LoRa physical layer and adopt a centralized network architecture that supports one or more gateways connected with a large number of end devices. Although LoRa communication is resistant to channel noises, it still frequently suffers data delivery failures in LoRaWAN networks due to packet collisions of the concurrent transmissions. The delivery failures trigger the retransmission procedure in LoRaWAN protocol, which causes additional power consumption on end devices and further exacerbates packet collisions. To solve this issue, we investigate the reliable data delivery mechanism that utilizes with the packet reception of multiple gateways to recover the distorted payload. Firstly, we present a ReLoRaWAN framework, where the central server aggregates distorted packet payload from multi-gateway reception of the same packet and executes the corresponding data recovery operations. Then, we design a Tri-operation Integrated Data Recovery (TIDR) algorithm for recovering the distorted packet payload, which involves exclusive-OR based bitwise inversion operation, majority voting based bitwise inversion operation, and weighted bitwise decision operation. Finally, we implement a ReLoRaWAN testbed and conduct real-world experiments to evaluate the performance of our solution. Compared with existing works, the ReLoRaWAN greatly optimizes the quality of service and power consumption in the network. It improves the packet delivery ratio by 35% and reduces the average power consumption of the end device by 30%.}
 }
